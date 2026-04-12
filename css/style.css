@@ -303,6 +303,34 @@ section { padding:96px 0; }
 .nav-phone:hover { color:var(--orange); }
 .nav-phone i { color:var(--orange); }
 
+/* Navbar CTA — shimmer + sparkle stars */
+.nav-cta {
+    position: relative;
+    overflow: hidden;
+}
+.nav-cta::before {
+    content: '';
+    position: absolute; top: -50%; left: -75%;
+    width: 40%; height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+    transform: skewX(-12deg);
+    animation: ctaShimmer 3.2s ease-in-out infinite;
+    pointer-events: none;
+}
+.btn-spark {
+    position: absolute;
+    color: rgba(255,255,255,.85);
+    pointer-events: none;
+    animation: btnSparkle 2.6s ease-in-out infinite;
+}
+.bs-1 { width:  8px; top: -4px;  right:  7px; animation-delay: 0s;   }
+.bs-2 { width:  6px; bottom: -3px; left: 9px; animation-delay: 1s;   }
+.bs-3 { width:  7px; top:  4px;  left:  4px;  animation-delay: 1.8s; }
+@keyframes btnSparkle {
+    0%,100% { opacity:0;   transform:scale(.55) rotate(0deg);  }
+    40%,60% { opacity:.9;  transform:scale(1)   rotate(22deg); }
+}
+
 /* Hamburger */
 .hamburger {
     display:none; flex-direction:column; gap:5px;
