@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Fix Wizard – Professional home repair services. Drywall, doors, TV mounting, woodwork, plumbing, and electrical.">
+    <title>The Fix Wizard – Professional Home Repair Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== LOADER ===== -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <img src="assets/images/the-fix-wizard-logo-3.png" alt="The Fix Wizard" class="loader-logo-img">
+            <div class="loader-brand">
+                <span class="ldr-sub">HOME REPAIR CO.</span>
+            </div>
+            <div class="level-bar">
+                <div class="level-bar-track">
+                    <div class="level-bar-bubble"></div>
+                    <div class="level-bar-tick lbt-l"></div>
+                    <div class="level-bar-tick lbt-r"></div>
+                </div>
+            </div>
+            <p class="loader-tagline">GETTING THINGS LEVEL...</p>
+        </div>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <img src="assets/images/the-fix-wizard-logo-3.png" alt="The Fix Wizard" class="logo-img">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#why-us" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="tel:+15551234567" class="nav-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>(555) 123-4567</span>
+                </a>
+                <a href="#contact" class="btn btn-primary">Free Quote</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="mobile-link">Home</a></li>
+            <li><a href="#services" class="mobile-link">Services</a></li>
+            <li><a href="#why-us" class="mobile-link">About</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+        <a href="tel:+15551234567" class="mobile-phone"><i class="fas fa-phone"></i>(555) 123-4567</a>
+        <a href="#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+
+            <!-- LEFT COLUMN -->
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Trusted by 500+ Homeowners</span>
+                </div>
+                <h1 class="hero-title">
+                    Your Home Deserves<br>
+                    <span class="text-accent">Expert Care</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Professional handyman services for every corner of your home.
+                    Fast, reliable, and done right the first time.
+                </p>
+                <div class="hero-actions">
+                    <a href="#services" class="btn btn-primary btn-lg">
+                        <i class="fas fa-wrench"></i> Our Services
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-lg">
+                        <i class="fas fa-calendar-alt"></i> Book a Visit
+                    </a>
+                </div>
+                <div class="hero-divider"></div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="stat-num"><span class="counter" data-target="500">0</span>+</div>
+                        <div class="stat-lbl">Projects Done</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="hero-stat">
+                        <div class="stat-num"><span class="counter" data-target="10">0</span>+</div>
+                        <div class="stat-lbl">Years Exp.</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="hero-stat">
+                        <div class="stat-num"><span class="counter" data-target="98">0</span>%</div>
+                        <div class="stat-lbl">Satisfaction</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="hero-stat">
+                        <div class="stat-num"><span class="counter" data-target="6">0</span></div>
+                        <div class="stat-lbl">Services</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="hero-right">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <div class="hero-card-icon">
+                            <i class="fas fa-house-chimney-crack"></i>
+                        </div>
+                        <div>
+                            <h3>Get a Free Estimate</h3>
+                            <p>Response within 2 hours</p>
+                        </div>
+                    </div>
+                    <div class="hero-card-services">
+                        <div class="hcs-item">
+                            <i class="fas fa-border-all"></i><span>Drywall Repair</span>
+                        </div>
+                        <div class="hcs-item">
+                            <i class="fas fa-door-open"></i><span>Door Installation</span>
+                        </div>
+                        <div class="hcs-item">
+                            <i class="fas fa-tv"></i><span>TV Mounting</span>
+                        </div>
+                        <div class="hcs-item">
+                            <i class="fas fa-hammer"></i><span>Woodwork</span>
+                        </div>
+                        <div class="hcs-item">
+                            <i class="fas fa-faucet"></i><span>Light Plumbing</span>
+                        </div>
+                        <div class="hcs-item">
+                            <i class="fas fa-bolt"></i><span>Light Electrical</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i> Request a Quote
+                    </a>
+                    <div class="hero-card-badges">
+                        <div class="hcb-item"><i class="fas fa-shield-halved"></i><span>Licensed &amp; Insured</span></div>
+                        <div class="hcb-item"><i class="fas fa-clock"></i><span>Same Day Available</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">What We Do</span>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-desc">From minor fixes to major installations — we handle it all with precision and care.</p>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-border-all"></i></div>
+                    <div class="service-body">
+                        <h3>Drywall Repair</h3>
+                        <p>Patch holes, fix cracks, and restore walls to a flawless finish. We match textures seamlessly.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Hole patching</li>
+                            <li><i class="fas fa-check"></i> Crack repair</li>
+                            <li><i class="fas fa-check"></i> Texture matching</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-door-open"></i></div>
+                    <div class="service-body">
+                        <h3>Door Installation</h3>
+                        <p>Interior and exterior door installation and replacement with proper fitting for security and efficiency.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> New installation</li>
+                            <li><i class="fas fa-check"></i> Door replacement</li>
+                            <li><i class="fas fa-check"></i> Hardware fitting</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-tv"></i></div>
+                    <div class="service-body">
+                        <h3>TV Mounting</h3>
+                        <p>Secure flat-screen mounting on any wall type. Clean cable management included for a polished look.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Any wall type</li>
+                            <li><i class="fas fa-check"></i> Cable management</li>
+                            <li><i class="fas fa-check"></i> All screen sizes</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-hammer"></i></div>
+                    <div class="service-body">
+                        <h3>Woodwork</h3>
+                        <p>Custom trim, molding, shelving, and furniture assembly. Skilled carpentry to enhance every room.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Trim &amp; molding</li>
+                            <li><i class="fas fa-check"></i> Custom shelving</li>
+                            <li><i class="fas fa-check"></i> Furniture assembly</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-faucet"></i></div>
+                    <div class="service-body">
+                        <h3>Light Plumbing</h3>
+                        <p>Faucet repairs, fixture installation, and minor leak fixes. Keep your water systems running smoothly.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Faucet repair</li>
+                            <li><i class="fas fa-check"></i> Fixture install</li>
+                            <li><i class="fas fa-check"></i> Leak repairs</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="service-body">
+                        <h3>Light Electrical</h3>
+                        <p>Outlet replacements, light fixture installs, and switch repairs. Safe, code-compliant work.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Outlet replacement</li>
+                            <li><i class="fas fa-check"></i> Light fixtures</li>
+                            <li><i class="fas fa-check"></i> Switch repairs</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY US ===== -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-content reveal">
+                    <span class="section-tag">Why Choose Us</span>
+                    <h2 class="section-title">Repairs Done Right,<br>The First Time</h2>
+                    <p class="section-desc">We bring years of experience, quality materials, and honest pricing to every job.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-medal"></i></div>
+                            <div>
+                                <h4>Licensed &amp; Insured</h4>
+                                <p>Fully licensed professionals with comprehensive insurance for your peace of mind.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>On-Time, Every Time</h4>
+                                <p>We respect your schedule. Punctual arrivals and efficient work completion.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-tags"></i></div>
+                            <div>
+                                <h4>Transparent Pricing</h4>
+                                <p>No hidden fees. Clear upfront estimates before any work begins.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                            <div>
+                                <h4>Satisfaction Guaranteed</h4>
+                                <p>We stand behind our work. If it's not right, we'll make it right.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-stats reveal">
+                    <div class="why-stat-card">
+                        <div class="why-stat-num"><span class="counter" data-target="500">0</span>+</div>
+                        <div class="why-stat-lbl">Happy Homeowners</div>
+                    </div>
+                    <div class="why-stat-card accent">
+                        <div class="why-stat-num"><span class="counter" data-target="10">0</span>+</div>
+                        <div class="why-stat-lbl">Years Experience</div>
+                    </div>
+                    <div class="why-stat-card accent">
+                        <div class="why-stat-num"><span class="counter" data-target="6">0</span></div>
+                        <div class="why-stat-lbl">Core Services</div>
+                    </div>
+                    <div class="why-stat-card">
+                        <div class="why-stat-num"><span class="counter" data-target="98">0</span>%</div>
+                        <div class="why-stat-lbl">5-Star Reviews</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ / Q&A ===== -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Q&A</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Answers to common questions about our services, pricing, and availability.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you provide same-day service?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer" aria-hidden="true">
+                        <p>Yes — subject to availability. Contact us or call the phone number in the header to check same-day options.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do you price small repairs?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer" aria-hidden="true">
+                        <p>We provide transparent estimates based on the work required. For many small repairs we offer flat-rate pricing after a quick assessment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Are your technicians licensed and insured?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer" aria-hidden="true">
+                        <p>Yes. All technicians are licensed where required and carry liability insurance for your peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+        <div class="container cta-inner reveal">
+            <div class="cta-text">
+                <h2>Ready to Fix It?</h2>
+                <p>Contact us today for a free estimate. No job too small.</p>
+            </div>
+            <div class="cta-btns">
+                <a href="tel:+15551234567" class="btn btn-white btn-lg">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <a href="#contact" class="btn btn-outline-white btn-lg">
+                    <i class="fas fa-envelope"></i> Send Message
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Request a Free Quote</h2>
+                <p class="section-desc">Fill out the form and we'll get back to you within 24 hours.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <div class="ci-item">
+                        <div class="ci-icon"><i class="fas fa-phone"></i></div>
+                        <div><h4>Call Us</h4><a href="tel:+15551234567">(555) 123-4567</a></div>
+                    </div>
+                    <div class="ci-item">
+                        <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                        <div><h4>Email Us</h4><a href="mailto:hello@handypro.com">hello@handypro.com</a></div>
+                    </div>
+                    <div class="ci-item">
+                        <div class="ci-icon"><i class="fas fa-location-dot"></i></div>
+                        <div><h4>Service Area</h4><p>Greater Metro Area &amp; Suburbs</p></div>
+                    </div>
+                    <div class="ci-item">
+                        <div class="ci-icon"><i class="fas fa-clock"></i></div>
+                        <div><h4>Working Hours</h4><p>Mon–Sat: 7am – 7pm</p></div>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal" id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="(555) 000-0000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service">
+                            <option value="">Select a service…</option>
+                            <option>Drywall Repair</option>
+                            <option>Door Installation</option>
+                            <option>TV Mounting</option>
+                            <option>Woodwork</option>
+                            <option>Light Plumbing</option>
+                            <option>Light Electrical</option>
+                            <option>Other / Not Sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Describe the Job</label>
+                        <textarea id="message" rows="4" placeholder="Tell us about the repair or project…"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full btn-lg">
+                        <i class="fas fa-paper-plane"></i> Send Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <img src="assets/images/the-fix-wizard-logo-3.png" alt="The Fix Wizard" class="logo-img footer-logo-img">
+                </a>
+                <p>Professional handyman services for homes and small businesses. Quality work, honest pricing, reliable results.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Drywall Repair</a></li>
+                    <li><a href="#services">Door Installation</a></li>
+                    <li><a href="#services">TV Mounting</a></li>
+                    <li><a href="#services">Woodwork</a></li>
+                    <li><a href="#services">Light Plumbing</a></li>
+                    <li><a href="#services">Light Electrical</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">About</a></li>
+                    <li><a href="#contact">Get a Quote</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-phone"></i><a href="tel:+15551234567">(555) 123-4567</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:hello@handypro.com">hello@handypro.com</a></li>
+                    <li><i class="fas fa-clock"></i><span>Mon–Sat: 7am – 7pm</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; <span id="year"></span> The Fix Wizard. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart" style="color:var(--orange)"></i> for homeowners everywhere</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
