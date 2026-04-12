@@ -21,7 +21,7 @@ const navbar = document.getElementById('navbar');
 // Cache root and compute expanded nav height (50% larger)
 const _root = document.documentElement;
 const _baseNavHVal = getComputedStyle(_root).getPropertyValue('--nav-h') || '72px';
-const _baseNavH = parseFloat(_baseNavHVal) || 72;
+const _baseNavH = parseFloat(_baseNavHVal.trim()) || 72;
 const _expandedNavH = (_baseNavH * 1.5) + 'px';
 
 function handleNavScroll() {
@@ -135,7 +135,7 @@ function animateCounter(el) {
             el.textContent = target;
             clearInterval(tick);
         } else {
-            el.textContent = Math.floor(current);
+            el.textContent = Math.round(current);
         }
     }, 1000 / fps);
 }
