@@ -896,6 +896,100 @@ section { padding:96px 0; }
 
 
 /* ============================================================
+   THEME ACCENTS & SECTION PERSONALITY
+   ============================================================ */
+
+/* Cinzel on stat/headline numbers */
+.why-stat-num { font-family: 'Cinzel', serif; }
+.cta-text h2  { font-family: 'Cinzel', serif; }
+
+/* ---- Services: faint star shape top-right ---- */
+.services { position:relative; overflow:hidden; }
+.services::before {
+    content:'';
+    position:absolute; top:-90px; right:-90px;
+    width:320px; height:320px;
+    background:var(--orange);
+    clip-path:polygon(50% 0%,55% 45%,100% 50%,55% 55%,50% 100%,45% 55%,0% 50%,45% 45%);
+    opacity:.035; pointer-events:none;
+}
+
+/* Service icon bobs up when card is hovered */
+.service-card:hover .service-icon {
+    animation: iconBob .55s ease-in-out;
+}
+@keyframes iconBob {
+    0%,100% { transform:translateY(0); }
+    40%     { transform:translateY(-7px); }
+    70%     { transform:translateY(-3px); }
+}
+
+/* ---- Why Us: soft gradient bg + concentric rings bottom-right ---- */
+.why-us {
+    background:linear-gradient(165deg, var(--white) 0%, #eef1f8 100%);
+    position:relative; overflow:hidden;
+}
+.why-us::before {
+    content:'';
+    position:absolute; bottom:-120px; right:-120px;
+    width:440px; height:440px;
+    border:1.5px solid rgba(255,107,53,.07);
+    border-radius:50%; pointer-events:none;
+}
+.why-us::after {
+    content:'';
+    position:absolute; bottom:-70px; right:-70px;
+    width:260px; height:260px;
+    border:1.5px solid rgba(255,107,53,.05);
+    border-radius:50%; pointer-events:none;
+}
+
+/* Feature icon pops on hover */
+.feature:hover .feature-icon {
+    animation:featurePop .4s cubic-bezier(.2,.9,.1,1.3) both;
+}
+@keyframes featurePop {
+    0%   { transform:scale(1)    rotate(0deg);  }
+    50%  { transform:scale(1.18) rotate(-8deg); }
+    100% { transform:scale(1)    rotate(0deg);  }
+}
+
+/* ---- CTA Banner: shimmer sweep ---- */
+.cta-banner { position:relative; overflow:hidden; }
+.cta-banner::before {
+    content:'';
+    position:absolute; top:-50%; left:-75%;
+    width:45%; height:200%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+    transform:skewX(-12deg);
+    animation:ctaShimmer 5s ease-in-out infinite;
+    pointer-events:none;
+}
+@keyframes ctaShimmer {
+    0%        { left:-75%; }
+    55%,100%  { left:125%; }
+}
+
+/* ---- Contact: dot grid (matches services) ---- */
+.contact {
+    background-color:var(--off-white);
+    background-image:radial-gradient(circle, rgba(13,27,75,.06) 1px, transparent 1px);
+    background-size:28px 28px;
+}
+
+/* ---- Footer: star pattern + orange gradient border on footer-bottom ---- */
+.footer {
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M20 16L21.5 18.5L24 20L21.5 21.5L20 24L18.5 21.5L16 20L18.5 18.5Z' fill='rgba(255,255,255,.03)'/%3E%3Cpath d='M62 54L63 57L66 58L63 59L62 62L61 59L58 58L61 57Z' fill='rgba(255,255,255,.025)'/%3E%3C/svg%3E");
+    background-size:80px 80px;
+}
+.footer-bottom {
+    border-top:1px solid transparent;
+    background:
+        linear-gradient(var(--blue-darkest), var(--blue-darkest)) padding-box,
+        linear-gradient(90deg, transparent, rgba(255,107,53,.35), transparent) border-box;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
