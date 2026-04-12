@@ -233,8 +233,9 @@ section { padding:96px 0; }
     opacity: .75;
 }
 .section-title {
-    font-size:clamp(26px,4vw,42px); font-weight:800;
-    color:var(--text-dark); line-height:1.18; letter-spacing:-.5px;
+    font-family: 'Cinzel', serif;
+    font-size:clamp(24px,3.6vw,40px); font-weight:600;
+    color:var(--text-dark); line-height:1.22; letter-spacing:.2px;
     margin-bottom:14px;
 }
 .section-desc { font-size:17px; color:var(--text-muted); line-height:1.72; max-width:520px; }
@@ -567,8 +568,9 @@ section { padding:96px 0; }
     font-size: 22px; color: var(--white);
 }
 .hero-card-header h3 {
-    font-size: 17px; font-weight: 700; color: var(--white);
-    line-height: 1.2; margin-bottom: 3px;
+    font-family: 'Cinzel', serif;
+    font-size: 16px; font-weight: 600; color: var(--white);
+    line-height: 1.2; margin-bottom: 3px; letter-spacing: .2px;
 }
 .hero-card-header p {
     font-size: 13px; color: rgba(255,255,255,.5);
@@ -670,6 +672,60 @@ section { padding:96px 0; }
 }
 .scroll-hint i { font-size: 12px; }
 
+/* ---- "Wizard's" lightning effect ---- */
+.lightning-word {
+    position: relative;
+    color: var(--orange);
+    text-shadow:
+        0 0 8px  rgba(255,107,53,.95),
+        0 0 22px rgba(255,107,53,.65),
+        0 0 48px rgba(255,107,53,.35);
+    animation: lightningFlicker 4s ease-in-out infinite;
+}
+.lightning-word::before,
+.lightning-word::after {
+    content: '⚡';
+    font-size: .45em;
+    vertical-align: super;
+    opacity: .9;
+    animation: boltFlicker 4s ease-in-out infinite;
+}
+.lightning-word::before { margin-right: 5px; animation-delay: .1s; }
+.lightning-word::after  { margin-left:  5px; animation-delay: .25s; }
+
+@keyframes lightningFlicker {
+    0%,89%,100% {
+        text-shadow:
+            0 0 8px  rgba(255,107,53,.95),
+            0 0 22px rgba(255,107,53,.65),
+            0 0 48px rgba(255,107,53,.35);
+        opacity: 1;
+    }
+    90% { opacity:.75; text-shadow: 0 0 3px rgba(255,107,53,.5); }
+    91% {
+        text-shadow:
+            0 0 14px rgba(255,220,100,1),
+            0 0 36px rgba(255,107,53,.9),
+            0 0 70px rgba(255,107,53,.5);
+        opacity: 1;
+    }
+    92% { opacity:.8; text-shadow: 0 0 4px rgba(255,107,53,.5); }
+    93% {
+        text-shadow:
+            0 0 10px rgba(255,200,80,.95),
+            0 0 28px rgba(255,107,53,.7),
+            0 0 55px rgba(255,107,53,.4);
+        opacity: 1;
+    }
+}
+@keyframes boltFlicker {
+    0%,89%,100% { opacity:.9; }
+    90%  { opacity:.3; }
+    91%  { opacity:1;  }
+    92%  { opacity:.4; }
+    93%  { opacity:.95; }
+}
+
 /* ---- Hero sparkles ---- */
 .hero-sparkles {
     position: absolute; inset: 0;
@@ -735,7 +791,7 @@ section { padding:96px 0; }
 .service-card:hover .service-icon { background:var(--orange); color:var(--white); }
 
 .service-body { flex:1; }
-.service-body h3 { font-size:19px; font-weight:700; color:var(--text-dark); margin-bottom:9px; }
+.service-body h3 { font-family:'Cinzel',serif; font-size:17px; font-weight:600; color:var(--text-dark); margin-bottom:9px; letter-spacing:.2px; }
 .service-body p  { font-size:14px; color:var(--text-muted); line-height:1.68; margin-bottom:14px; }
 
 .service-list { display:flex; flex-direction:column; gap:7px; }
@@ -774,7 +830,7 @@ section { padding:96px 0; }
 }
 .feature:hover .feature-icon { background:var(--orange); color:var(--white); }
 
-.feature h4 { font-size:15px; font-weight:700; color:var(--text-dark); margin-bottom:5px; }
+.feature h4 { font-family:'Cinzel',serif; font-size:14px; font-weight:600; color:var(--text-dark); margin-bottom:5px; letter-spacing:.2px; }
 .feature p  { font-size:14px; color:var(--text-muted); line-height:1.6; }
 
 /* Stats grid */
@@ -801,7 +857,7 @@ section { padding:96px 0; }
 .cta-inner {
     display:flex; align-items:center; justify-content:space-between; gap:36px;
 }
-.cta-text h2 { font-size:clamp(26px,4vw,42px); font-weight:800; color:var(--white); margin-bottom:8px; }
+.cta-text h2 { font-family:'Cinzel',serif; font-size:clamp(24px,3.6vw,40px); font-weight:600; color:var(--white); margin-bottom:8px; letter-spacing:.2px; }
 .cta-text p  { font-size:17px; color:rgba(255,255,255,.85); }
 .cta-btns    { display:flex; gap:14px; flex-shrink:0; flex-wrap:wrap; }
 
