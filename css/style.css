@@ -225,6 +225,13 @@ section { padding:96px 0; }
     padding:6px 14px; border-radius:100px;
     margin-bottom:14px;
 }
+.section-tag::before,
+.section-tag::after {
+    content: ' ✦ ';
+    font-size: 8px;
+    vertical-align: middle;
+    opacity: .75;
+}
 .section-title {
     font-size:clamp(26px,4vw,42px); font-weight:800;
     color:var(--text-dark); line-height:1.18; letter-spacing:-.5px;
@@ -365,13 +372,11 @@ section { padding:96px 0; }
     align-items: center;
     overflow: hidden;
     padding-top: var(--nav-h);
+    border-radius: 0 0 56px 56px;
     background-color: var(--blue-darkest);
     background-image:
-        /* Diagonal hatching — gives directionality and energy */
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cline x1='-18' y1='18' x2='18' y2='-18' stroke='rgba(255,255,255,.045)' stroke-width='1'/%3E%3Cline x1='0' y1='72' x2='72' y2='0' stroke='rgba(255,255,255,.045)' stroke-width='1'/%3E%3Cline x1='54' y1='90' x2='90' y2='54' stroke='rgba(255,255,255,.045)' stroke-width='1'/%3E%3C/svg%3E"),
-        /* Fine blueprint grid overlay */
-        linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px),
+        /* Scattered star pattern */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M20 16L21.5 18.5L24 20L21.5 21.5L20 24L18.5 21.5L16 20L18.5 18.5Z' fill='rgba(255,255,255,.07)'/%3E%3Cpath d='M60 56L61.5 58.5L64 60L61.5 61.5L60 64L58.5 61.5L56 60L58.5 58.5Z' fill='rgba(255,255,255,.05)'/%3E%3Ccircle cx='72' cy='8' r='1.5' fill='rgba(255,255,255,.05)'/%3E%3Ccircle cx='8' cy='72' r='1.5' fill='rgba(255,255,255,.04)'/%3E%3C/svg%3E"),
         /* Dominant orange light — top right */
         radial-gradient(ellipse 65% 75% at 95% -5%, rgba(255,107,53,.32) 0%, rgba(255,107,53,.08) 45%, transparent 70%),
         /* Secondary warm flare — bottom left */
@@ -381,9 +386,7 @@ section { padding:96px 0; }
         /* Base gradient */
         linear-gradient(148deg, #060d2e 0%, var(--blue-dark) 52%, var(--blue-mid) 100%);
     background-size:
-        72px 72px,
-        36px 36px,
-        36px 36px,
+        80px 80px,
         100% 100%,
         100% 100%,
         100% 100%,
@@ -588,10 +591,11 @@ section { padding:96px 0; }
 .hero-badge i { color: var(--orange); font-size: 11px; }
 
 .hero-title {
-    font-size: clamp(38px, 6vw, 72px);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(32px, 5vw, 64px);
     font-weight: 900;
-    line-height: 1.06;
-    letter-spacing: -2.5px;
+    line-height: 1.1;
+    letter-spacing: -.5px;
     color: var(--white);
     margin-bottom: 24px;
 }
@@ -622,7 +626,8 @@ section { padding:96px 0; }
 }
 .hero-stat { text-align: left; }
 .stat-num {
-    font-size: 30px; font-weight: 800; color: var(--orange);
+    font-family: 'Cinzel', serif;
+    font-size: 28px; font-weight: 900; color: var(--orange);
     line-height: 1; margin-bottom: 5px;
 }
 .stat-lbl  { font-size: 12px; color: rgba(255,255,255,.5); font-weight: 500; letter-spacing: .5px; }
@@ -637,10 +642,34 @@ section { padding:96px 0; }
 }
 .scroll-hint i { font-size: 12px; }
 
+/* ---- Hero sparkles ---- */
+.hero-sparkles {
+    position: absolute; inset: 0;
+    pointer-events: none; z-index: 2; overflow: hidden;
+}
+.sparkle {
+    position: absolute;
+    color: var(--orange);
+    animation: spkTwinkle 4s ease-in-out infinite;
+}
+.sp-1 { width: 30px; top: 14%; right:  7%; animation-delay:  0s;   }
+.sp-2 { width: 16px; top: 32%; left:   5%; animation-delay:  1.2s; }
+.sp-3 { width: 12px; top: 62%; right: 16%; animation-delay:  2.5s; }
+.sp-4 { width: 22px; top: 20%; right: 32%; animation-delay:  0.6s; }
+.sp-5 { width: 10px; top: 75%; left:  14%; animation-delay:  1.8s; }
+@keyframes spkTwinkle {
+    0%, 100% { opacity: 0;    transform: scale(.7) rotate(0deg);  }
+    40%, 60% { opacity: .65;  transform: scale(1)  rotate(22deg); }
+}
+
 /* ============================================================
    SERVICES
    ============================================================ */
-.services { background:var(--off-white); }
+.services {
+    background: var(--off-white);
+    background-image: radial-gradient(circle, rgba(13,27,75,.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
 
 .services-grid {
     display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
