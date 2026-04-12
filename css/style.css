@@ -876,7 +876,7 @@ section { padding:96px 0; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .hero-container    { grid-template-columns:1fr; gap:48px; }
     .hero-right        { justify-content:center; }
     .hero-card         { max-width:520px; }
@@ -889,6 +889,12 @@ section { padding:96px 0; }
 
     .contact-grid      { grid-template-columns:1fr; }
 
+    .footer-grid       { grid-template-columns:1fr 1fr; gap:36px; }
+    .footer-brand      { grid-column:1/-1; }
+}
+
+@media (max-width: 1024px) {
+    .services-grid     { grid-template-columns:repeat(2,1fr); }
     .footer-grid       { grid-template-columns:1fr 1fr; gap:36px; }
     .footer-brand      { grid-column:1/-1; }
 }
