@@ -80,7 +80,7 @@ section { padding:96px 0; }
 
 /* ---- Logo icon ---- */
 .loader-logo-img {
-    height: 96px;
+    height: 144px;
     width: auto;
     object-fit: contain;
     border-radius: 8px;
@@ -512,8 +512,8 @@ section { padding:96px 0; }
 }
 
 /* Footer logo sizing */
-.footer .logo-img { height:48px; width:auto; }
-.footer .footer-logo-img { height:48px; }
+.footer .logo-img { height:72px; width:auto; }
+.footer .footer-logo-img { height:72px; }
 
 .hero-container {
     position: relative;
