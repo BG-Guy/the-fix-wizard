@@ -34,7 +34,7 @@
     --ease-slow: all 0.55s cubic-bezier(.4,0,.2,1);
 
     --font: 'Inter', sans-serif;
-    --nav-h: 96px;
+    --nav-h: 120px;
 }
 
 /* ---- Reset ---- */
@@ -1040,7 +1040,7 @@ section { padding:96px 0; }
 }
 
 @media (max-width: 768px) {
-    :root { --nav-h:76px; }
+    :root { --nav-h:95px; }
     section { padding:72px 0; }
 
     .nav-links, .nav-actions { display:none; }
