@@ -15,23 +15,11 @@ window.addEventListener('load', () => {
     document.body.classList.add('no-scroll');
 });
 
-/* ---- Navbar scroll effect ---- */
+/* ---- Navbar scroll effect (color only, height stays fixed) ---- */
 const navbar = document.getElementById('navbar');
 
-// Cache root and compute expanded nav height (50% larger)
-const _root = document.documentElement;
-const _baseNavHVal = getComputedStyle(_root).getPropertyValue('--nav-h') || '72px';
-const _baseNavH = parseFloat(_baseNavHVal.trim()) || 72;
-const _expandedNavH = (_baseNavH * 1.5) + 'px';
-
 function handleNavScroll() {
-    if (window.scrollY > 60) {
-        navbar.classList.add('scrolled');
-        _root.style.setProperty('--nav-h', _expandedNavH);
-    } else {
-        navbar.classList.remove('scrolled');
-        _root.style.setProperty('--nav-h', _baseNavH + 'px');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
 }
 
 window.addEventListener('scroll', handleNavScroll, { passive: true });
