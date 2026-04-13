@@ -682,16 +682,16 @@ section { padding:96px 0; }
         0 0 48px rgba(255,107,53,.35);
     animation: lightningFlicker 4s ease-in-out infinite;
 }
-.lightning-word::before,
-.lightning-word::after {
-    content: '⚡';
-    font-size: .45em;
-    vertical-align: super;
-    opacity: .9;
+.lbolt {
+    width: .55em; height: .55em;
+    vertical-align: middle;
+    color: var(--orange);
+    filter: drop-shadow(0 0 4px rgba(255,107,53,.9)) drop-shadow(0 0 10px rgba(255,107,53,.5));
     animation: boltFlicker 4s ease-in-out infinite;
+    flex-shrink: 0;
 }
-.lightning-word::before { margin-right: 5px; animation-delay: .1s; }
-.lightning-word::after  { margin-left:  5px; animation-delay: .25s; }
+.lbolt:first-child { margin-right: 6px; animation-delay: .1s; }
+.lbolt:last-child  { margin-left:  6px; animation-delay: .25s; }
 
 @keyframes lightningFlicker {
     0%,89%,100% {
