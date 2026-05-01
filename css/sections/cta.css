@@ -1,0 +1,34 @@
+/* =========================================================
+   CTA Banner Section
+   ========================================================= */
+
+.cta-banner {
+    position:relative; overflow:hidden;
+    background:linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+    padding:72px 0;
+}
+
+/* Shimmer sweep */
+.cta-banner::before {
+    content:'';
+    position:absolute; top:-50%; left:-75%;
+    width:45%; height:200%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+    transform:skewX(-12deg);
+    animation:ctaShimmer 5s ease-in-out infinite;
+    pointer-events:none;
+}
+@keyframes ctaShimmer {
+    0%        { left:-75%; }
+    55%,100%  { left:125%; }
+}
+
+.cta-inner {
+    display:flex; align-items:center; justify-content:space-between; gap:36px;
+}
+.cta-text h2 {
+    font-family:'Cinzel',serif; font-size:clamp(24px,3.6vw,40px);
+    font-weight:600; color:var(--white); margin-bottom:8px; letter-spacing:.2px;
+}
+.cta-text p  { font-size:17px; color:rgba(255,255,255,.85); }
+.cta-btns    { display:flex; gap:14px; flex-shrink:0; flex-wrap:wrap; }

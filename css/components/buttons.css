@@ -1,0 +1,46 @@
+/* =========================================================
+   Button Components
+   Variants: primary, outline, white, outline-white
+   ========================================================= */
+
+.btn {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 24px;
+    border-radius:var(--r-sm);
+    font-family:var(--font); font-size:15px; font-weight:600;
+    cursor:pointer; border:2px solid transparent;
+    transition:var(--ease); white-space:nowrap;
+}
+.btn-lg   { padding:14px 32px; font-size:16px; }
+.btn-full { width:100%; justify-content:center; }
+
+.btn-primary {
+    background:var(--orange); color:var(--white); border-color:var(--orange);
+}
+.btn-primary:hover {
+    background:var(--orange-dark); border-color:var(--orange-dark);
+    transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,107,53,.38);
+}
+
+.btn-outline {
+    background:transparent; color:var(--white); border-color:rgba(255,255,255,.45);
+}
+.btn-outline:hover {
+    background:var(--white); color:var(--blue-dark); border-color:var(--white);
+    transform:translateY(-2px);
+}
+
+.btn-white {
+    background:var(--white); color:var(--orange); border-color:var(--white);
+}
+.btn-white:hover {
+    background:var(--off-white); transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(0,0,0,.14);
+}
+
+.btn-outline-white {
+    background:transparent; color:var(--white); border-color:var(--white);
+}
+.btn-outline-white:hover {
+    background:var(--white); color:var(--orange); transform:translateY(-2px);
+}

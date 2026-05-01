@@ -1,0 +1,25 @@
+/* =========================================================
+   The Fix Wizard – Main Stylesheet Entry Point
+   Import order matters: base → components → sections → responsive
+   ========================================================= */
+
+@import 'base/variables.css';
+@import 'base/reset.css';
+@import 'base/layout.css';
+
+@import 'components/buttons.css';
+@import 'components/section-header.css';
+@import 'components/scroll-reveal.css';
+
+@import 'sections/loader.css';
+@import 'sections/navbar.css';
+@import 'sections/hero.css';
+@import 'sections/services.css';
+@import 'sections/why-us.css';
+@import 'sections/faq.css';
+@import 'sections/cta.css';
+@import 'sections/contact.css';
+@import 'sections/footer.css';
+
+@import 'base/responsive.css';
+@import 'pages/service-page.css';

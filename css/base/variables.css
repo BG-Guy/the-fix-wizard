@@ -1,0 +1,36 @@
+/* =========================================================
+   Design Tokens — colors, shadows, spacing, typography
+   ========================================================= */
+
+:root {
+    --blue-darkest:  #091236;
+    --blue-dark:     #0d1b4b;
+    --blue-mid:      #152468;
+    --blue-light:    #1e3480;
+    --orange:        #FF6B35;
+    --orange-light:  #FF8C42;
+    --orange-dark:   #e55a22;
+    --white:         #ffffff;
+    --off-white:     #f7f8fc;
+    --gray-light:    #e8ecf4;
+    --gray:          #adb5bd;
+    --text-dark:     #0d1b4b;
+    --text-body:     #3a4560;
+    --text-muted:    #6c757d;
+
+    --shadow-sm:  0 2px 8px  rgba(13,27,75,.07);
+    --shadow-md:  0 4px 20px rgba(13,27,75,.11);
+    --shadow-lg:  0 8px 40px rgba(13,27,75,.16);
+    --shadow-xl:  0 20px 60px rgba(13,27,75,.22);
+
+    --r-sm: 8px;
+    --r-md: 14px;
+    --r-lg: 22px;
+    --r-xl: 36px;
+
+    --ease: all 0.3s cubic-bezier(.4,0,.2,1);
+    --ease-slow: all 0.55s cubic-bezier(.4,0,.2,1);
+
+    --font: 'Inter', sans-serif;
+    --nav-h: 150px;
+}

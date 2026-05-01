@@ -1,0 +1,30 @@
+/* =========================================================
+   Section Header — shared tag / title / description pattern
+   ========================================================= */
+
+.section-tag {
+    display:inline-block;
+    background:rgba(255,107,53,.1); color:var(--orange);
+    font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+    padding:6px 14px; border-radius:100px;
+    margin-bottom:14px;
+}
+.section-tag::before,
+.section-tag::after {
+    content: ' ✦ ';
+    font-size: 8px;
+    vertical-align: middle;
+    opacity: .75;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size:clamp(24px,3.6vw,40px); font-weight:600;
+    color:var(--text-dark); line-height:1.22; letter-spacing:.2px;
+    margin-bottom:14px;
+}
+
+.section-desc { font-size:17px; color:var(--text-muted); line-height:1.72; max-width:520px; }
+
+.section-header { text-align:center; margin-bottom:60px; }
+.section-header .section-desc { margin:0 auto; }

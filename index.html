@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
@@ -93,7 +93,7 @@
                 <h1 class="hero-title">
                     Your Home Deserves<br>
                     <span class="text-accent">a <span class="lightning-word">
-                        <svg class="lbolt" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4 13.5H10.5L8 22L20 10.5H13.5L13 2Z" fill="currentColor"/></svg>Fix Wizard's<svg class="lbolt" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4 13.5H10.5L8 22L20 10.5H13.5L13 2Z" fill="currentColor"/></svg>
+Fix Wizard's
                     </span> Touch</span>
                 </h1>
                 <p class="hero-subtitle">
@@ -189,12 +189,77 @@
         </div>
     </section>
 
+    <!-- ===== WHY US ===== -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+
+            <div class="why-us-inner">
+                <!-- Left: magic bubble -->
+                <div class="magic-bubble-area reveal">
+                    <div class="magic-bubble" id="magicBubble" role="button" tabindex="0" aria-label="Click to discover why homeowners choose us">
+                        <div class="magic-bubble-content">
+                            <span class="magic-orb-star">✦</span>
+                            <p id="magicText">Licensed &amp; Insured on every job — your home is fully protected.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: feature list -->
+                <div class="why-features">
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon"><i class="fas fa-medal"></i></div>
+                        <div class="why-feature-body">
+                            <h4>Licensed &amp; Insured</h4>
+                            <p>Fully licensed and insured on every job — your home and peace of mind are protected.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon"><i class="fas fa-clock"></i></div>
+                        <div class="why-feature-body">
+                            <h4>On-Time, Every Time</h4>
+                            <p>We respect your schedule. Punctual arrivals, efficient work, no wasted hours.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon"><i class="fas fa-tags"></i></div>
+                        <div class="why-feature-body">
+                            <h4>Transparent Pricing</h4>
+                            <p>A clear, honest estimate before any work begins. No surprises on the invoice.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div class="why-feature-body">
+                            <h4>Satisfaction Guaranteed</h4>
+                            <p>Not happy? We come back and make it right — no drama, no extra charge.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+                        <div class="why-feature-body">
+                            <h4>Done Right, First Time</h4>
+                            <p>We diagnose the real problem, fix it properly, and leave your space spotless.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature reveal">
+                        <div class="why-feature-icon"><i class="fas fa-comments"></i></div>
+                        <div class="why-feature-body">
+                            <h4>Clear Communication</h4>
+                            <p>You're never left wondering. We keep you updated from booking to final walkthrough.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- ===== SERVICES ===== -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">What We Do</span>
-                <h2 class="section-title">Our Services</h2>
+                <h2 class="section-title">Our <span class="text-accent">Services</span></h2>
                 <p class="section-desc">Six crafts, one Fix Wizard. From a dripping faucet to a full room transformation — we handle it all with precision and care.</p>
             </div>
             <div class="services-grid">
@@ -210,7 +275,7 @@
                             <li><i class="fas fa-check"></i> Leak fixes &amp; P-trap repair</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                    <a href="plumbing-repair/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card reveal">
@@ -224,7 +289,7 @@
                             <li><i class="fas fa-check"></i> Exhaust fans &amp; LED retrofits</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                    <a href="electrical-repair/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card reveal">
@@ -238,7 +303,7 @@
                             <li><i class="fas fa-check"></i> Texture matching &amp; paint touch-ups</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                    <a href="drywall-repair/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card reveal">
@@ -252,7 +317,7 @@
                             <li><i class="fas fa-check"></i> Fix sagging or misaligned doors</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                    <a href="door-repair/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card reveal">
@@ -266,7 +331,7 @@
                             <li><i class="fas fa-check"></i> Mirrors, art &amp; soundbars</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                    <a href="mounting-installation/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card reveal">
@@ -280,70 +345,9 @@
                             <li><i class="fas fa-check"></i> Gym &amp; office equipment</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                    <a href="furniture-assembly/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== WHY US ===== -->
-    <section id="why-us" class="why-us">
-        <div class="container">
-            <div class="why-grid">
-                <div class="why-content reveal">
-                    <span class="section-tag">Why Choose Us</span>
-                    <h2 class="section-title">The Fix Wizard<br>Gets It Done Right</h2>
-                    <p class="section-desc">No guesswork, no excuses. We show up on time, charge what we quoted, and leave your home better than we found it.</p>
-                    <div class="features">
-                        <div class="feature">
-                            <div class="feature-icon"><i class="fas fa-medal"></i></div>
-                            <div>
-                                <h4>Licensed &amp; Insured</h4>
-                                <p>Fully licensed and insured on every job. Your home is in good hands.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                            <div>
-                                <h4>On-Time, Every Time</h4>
-                                <p>We respect your day. Punctual arrivals, efficient work, no wasted hours.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon"><i class="fas fa-tags"></i></div>
-                            <div>
-                                <h4>Transparent Pricing</h4>
-                                <p>No surprises on the invoice. You get a clear estimate before any work begins.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
-                            <div>
-                                <h4>Satisfaction Guaranteed</h4>
-                                <p>Not happy with the result? We come back and fix it. No drama, no extra charge.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="why-stats reveal">
-                    <div class="why-stat-card">
-                        <div class="why-stat-num"><span class="counter" data-target="500">0</span>+</div>
-                        <div class="why-stat-lbl">Happy Homeowners</div>
-                    </div>
-                    <div class="why-stat-card accent">
-                        <div class="why-stat-num"><span class="counter" data-target="10">0</span>+</div>
-                        <div class="why-stat-lbl">Years Experience</div>
-                    </div>
-                    <div class="why-stat-card accent">
-                        <div class="why-stat-num"><span class="counter" data-target="6">0</span></div>
-                        <div class="why-stat-lbl">Core Services</div>
-                    </div>
-                    <div class="why-stat-card">
-                        <div class="why-stat-num"><span class="counter" data-target="98">0</span>%</div>
-                        <div class="why-stat-lbl">5-Star Reviews</div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -353,7 +357,7 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Q&amp;A</span>
-                <h2 class="section-title">Got Questions?<br>The Fix Wizard Has Answers.</h2>
+                <h2 class="section-title">Got <span class="text-accent">Questions?</span><br>The Fix Wizard Has <span class="text-accent">Answers.</span></h2>
                 <p class="section-desc">The most common things people ask before they book. Still not sure? Just call.</p>
             </div>
 
@@ -414,7 +418,7 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Get In Touch</span>
-                <h2 class="section-title">Request a Free Quote</h2>
+                <h2 class="section-title">Request a <span class="text-accent">Free Quote</span></h2>
                 <p class="section-desc">Describe the job and we'll get back to you within 24 hours with a clear, honest number.</p>
             </div>
             <div class="contact-grid">
@@ -495,12 +499,12 @@
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="#services">Light Plumbing</a></li>
-                    <li><a href="#services">Light Electrical</a></li>
-                    <li><a href="#services">Drywall &amp; Interior Repairs</a></li>
-                    <li><a href="#services">Doors &amp; Hardware</a></li>
-                    <li><a href="#services">Mounting &amp; Installations</a></li>
-                    <li><a href="#services">Furniture &amp; Assembly</a></li>
+                    <li><a href="plumbing-repair/">Light Plumbing</a></li>
+                    <li><a href="electrical-repair/">Light Electrical</a></li>
+                    <li><a href="drywall-repair/">Drywall &amp; Interior Repairs</a></li>
+                    <li><a href="door-repair/">Doors &amp; Hardware</a></li>
+                    <li><a href="mounting-installation/">Mounting &amp; Installations</a></li>
+                    <li><a href="furniture-assembly/">Furniture &amp; Assembly</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -530,6 +534,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
