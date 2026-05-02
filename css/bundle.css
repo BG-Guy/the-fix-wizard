@@ -171,8 +171,8 @@ section { padding:96px 0; }
     text-decoration: none;
 
     box-shadow:
-        0 8px 32px rgba(255,107,53,.5),
-        0 2px 8px  rgba(0,0,0,.2);
+        0 6px 28px rgba(255,107,53,.28),
+        0 2px 10px rgba(0,0,0,.1);
 
     /* Hidden by default */
     opacity: 0;
@@ -251,8 +251,8 @@ section { padding:96px 0; }
 .sticky-cta.shown:hover {
     transform: scale(1.07) translateY(-2px);
     box-shadow:
-        0 14px 42px rgba(255,107,53,.65),
-        0 4px 12px  rgba(0,0,0,.28);
+        0 8px 36px rgba(255,107,53,.38),
+        0 3px 12px rgba(0,0,0,.13);
 }
 
 /* Poof-out exit */
