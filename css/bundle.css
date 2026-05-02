@@ -1219,7 +1219,11 @@ section { padding:96px 0; }
     section { padding:72px 0; }
 
     .nav-links, .nav-actions { display:none; }
-    .hamburger { display:flex; }
+
+    /* Burger left — logo centered */
+    .nav-container { position:relative; }
+    .hamburger     { display:flex; order:-1; margin-left:0; }
+    .logo          { position:absolute; left:50%; transform:translateX(-50%); }
 
     .services-grid { grid-template-columns:1fr; }
 
