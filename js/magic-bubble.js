@@ -88,8 +88,21 @@ export function initMagicBubble() {
         }, 380);
     }
 
-    bubble.addEventListener('click', poof);
+    const hint = document.getElementById('magicHint');
+
+    function dismissHint() {
+        if (hint) hint.classList.add('dismissed');
+    }
+
+    function poofAndDismiss() {
+        poof();
+        dismissHint();
+    }
+
+    bubble.addEventListener('click', poofAndDismiss);
     bubble.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); poof(); }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); poofAndDismiss(); }
     });
+
+    if (hint) hint.addEventListener('click', poofAndDismiss);
 }
