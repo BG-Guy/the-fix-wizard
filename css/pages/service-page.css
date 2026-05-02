@@ -244,15 +244,24 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
-    .sp-hero-inner { grid-template-columns: 1fr; gap: 40px; }
-    .sp-work-grid  { grid-template-columns: repeat(2, 1fr); }
+    .sp-hero-inner   { grid-template-columns: 1fr; gap: 36px; }
+    .sp-work-grid    { grid-template-columns: repeat(2, 1fr); }
     .sp-process-grid { grid-template-columns: 1fr; }
     .sp-process-grid::before { display: none; }
 }
 
 @media (max-width: 600px) {
-    .sp-work-grid { grid-template-columns: 1fr; }
-    .sp-hero { padding-bottom: 56px; }
-    .sp-actions { flex-direction: column; align-items: stretch; }
+    .sp-hero         { padding-top: calc(var(--nav-h) + 28px); padding-bottom: 48px; }
+    .sp-hero-inner   { margin-top: 16px; gap: 28px; }
+    .sp-subtitle     { max-width: 100%; }
+    .sp-work-grid    { grid-template-columns: 1fr; }
+    .sp-actions      { flex-direction: column; align-items: stretch; }
     .sp-actions .btn { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .sp-hero  { padding-top: calc(var(--nav-h) + 20px); padding-bottom: 40px; }
+    .sp-title { font-size: clamp(26px, 8vw, 40px); }
+    .sp-includes-card { padding: 22px; }
+    .sp-step  { padding: 26px 18px; }
 }
