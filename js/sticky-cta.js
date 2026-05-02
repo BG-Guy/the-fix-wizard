@@ -65,8 +65,10 @@ export function initStickyCTA() {
         spawnParticles(cta);
         cta.classList.add('entering');
         setTimeout(() => {
-            cta.classList.remove('entering');
+            // Add .shown BEFORE removing .entering so the transition
+            // never sees a scale(0) intermediate frame
             cta.classList.add('shown');
+            cta.classList.remove('entering');
             isAnimating = false;
         }, 650);
     }
