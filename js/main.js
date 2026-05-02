@@ -7,6 +7,7 @@ import { initCounters }     from './counters.js';
 import { initContactForm }  from './contact-form.js';
 import { initMagicBubble }  from './magic-bubble.js';
 import { initFAQ }          from './faq.js';
+import { initStickyCTA }    from './sticky-cta.js';
 
 initLoader();
 initNavbar();
@@ -17,5 +18,6 @@ initCounters();
 initContactForm();
 initMagicBubble();
 initFAQ();
+initStickyCTA();
 
 document.getElementById('year').textContent = new Date().getFullYear();
