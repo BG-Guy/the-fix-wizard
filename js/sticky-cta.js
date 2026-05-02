@@ -61,6 +61,12 @@ export function initStickyCTA() {
         if (isVisible || isAnimating) return;
         isVisible   = true;
         isAnimating = true;
+
+        // Dismiss the magic hint — its float animation competes with the
+        // CTA entrance animation on the GPU compositor, causing jank
+        const hint = document.getElementById('magicHint');
+        if (hint) hint.classList.add('dismissed');
+
         cta.classList.remove('shown', 'leaving');
         spawnParticles(cta);
         cta.classList.add('entering');
