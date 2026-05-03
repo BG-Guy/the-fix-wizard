@@ -96,7 +96,9 @@
     .hero-card-services { grid-template-columns:1fr; }
 
     /* ---- Service cards ---- */
-    .service-card   { padding:22px; }
+    .service-card-inner { padding:20px; }
+    /* Keep hero card services at 2 columns even on small mobile (8 items) */
+    .hero-card-services { grid-template-columns:repeat(2,1fr); }
 
     /* ---- Magic bubble ---- */
     .magic-bubble   { width:220px; height:220px; padding:28px; }

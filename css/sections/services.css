@@ -25,11 +25,17 @@
 
 .service-card {
     background:var(--white); border-radius:var(--r-lg);
-    padding:32px; border:1px solid var(--gray-light);
-    display:flex; flex-direction:column; gap:18px;
+    padding:0; border:1px solid var(--gray-light);
+    display:flex; flex-direction:column; gap:0;
     position:relative; overflow:hidden;
     transition:var(--ease-slow);
     cursor:pointer;
+}
+
+.service-card-inner {
+    padding:32px;
+    display:flex; flex-direction:column; gap:18px;
+    flex:1;
 }
 .service-card::before {
     content:''; position:absolute; bottom:0; left:0; right:0; height:5px;
@@ -52,11 +58,9 @@
     font-size:24px; color:var(--orange);
     transition:var(--ease);
 }
-/* Card image bleeds to card edges; object-position:top crops from the bottom */
 .service-card-img {
     display: block;
-    width: calc(100% + 64px);
-    margin: -32px -32px 0;
+    width: 100%;
     height: 200px;
     object-fit: cover;
     object-position: top;
