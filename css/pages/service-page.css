@@ -267,3 +267,79 @@
     .sp-includes-card { padding: 22px; }
     .sp-step  { padding: 26px 18px; }
 }
+
+/* =========================================================
+   Articles / From The Field
+   ========================================================= */
+.sp-articles {
+    background: var(--blue-dark);
+    padding: 96px 0;
+    position: relative;
+    overflow: hidden;
+}
+.sp-articles::before {
+    content: '';
+    position: absolute; top: -60px; left: -60px;
+    width: 300px; height: 300px;
+    background: var(--orange);
+    clip-path: polygon(50% 0%,55% 45%,100% 50%,55% 55%,50% 100%,45% 55%,0% 50%,45% 45%);
+    opacity: .03; pointer-events: none;
+}
+.sp-articles .section-tag   { color: rgba(255,107,53,.85); }
+.sp-articles .section-title { color: var(--white); }
+.sp-articles .section-desc  { color: rgba(255,255,255,.5); }
+
+.sp-articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.sp-article {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: var(--r-lg);
+    padding: 36px;
+    transition: border-color .25s ease, background .25s ease;
+}
+.sp-article:hover {
+    background: rgba(255,255,255,.07);
+    border-color: rgba(255,107,53,.22);
+}
+
+.sp-article-label {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 14px;
+}
+.sp-article-label i { font-size: 11px; }
+
+.sp-article h3 {
+    font-size: 19px; font-weight: 700;
+    color: var(--white); line-height: 1.45;
+    margin-bottom: 22px;
+}
+
+.sp-article-body p {
+    font-size: 15px; color: rgba(255,255,255,.62);
+    line-height: 1.8; margin-bottom: 14px;
+}
+.sp-article-body p:last-child { margin-bottom: 0; }
+
+.sp-article-footer {
+    margin-top: 22px; padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,.08);
+    font-size: 14px; color: rgba(255,255,255,.4);
+}
+.sp-article-footer a {
+    color: var(--orange); font-weight: 600; transition: var(--ease);
+}
+.sp-article-footer a:hover { color: var(--orange-light); }
+
+@media (max-width: 600px) {
+    .sp-article { padding: 24px 20px; }
+    .sp-article h3 { font-size: 17px; }
+}
