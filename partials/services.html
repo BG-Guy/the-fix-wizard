@@ -1,82 +1,95 @@
     <!-- ===== SERVICES ===== -->
-    <section id="services" class="services">
-        <div class="container">
+    <section id="services" class="relative overflow-hidden py-24" style="background-color:#f7f8fc;background-image:radial-gradient(circle,rgba(13,27,75,.07) 1px,transparent 1px);background-size:28px 28px;">
+        <!-- Star decoration -->
+        <div class="absolute top-[-90px] right-[-90px] w-[320px] h-[320px] bg-orange opacity-[.035] pointer-events-none" style="clip-path:polygon(50% 0%,55% 45%,100% 50%,55% 55%,50% 100%,45% 55%,0% 50%,45% 45%)"></div>
+
+        <div class="max-w-site mx-auto px-6">
             <div class="section-header reveal">
                 <span class="section-tag">What We Do</span>
-                <h2 class="section-title">Our <span class="text-accent">Services</span></h2>
+                <h2 class="section-title">Our <span class="text-orange">Services</span></h2>
                 <p class="section-desc">Eight expert crafts, one Fix Wizard. From Bergen County to Cape May — serving all of New Jersey with precision and care.</p>
             </div>
-            <div class="services-grid">
 
-                <div class="service-card reveal">
-                    <img src="assets/images/garage-door-repair-new-jersey.webp" alt="Garage door repair in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Garage Door Repair</h3>
-                        <p>From broken springs to full replacements — we keep your garage door operating safely and smoothly every day.</p>
-                        <a href="garage-door-repair-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            <!-- grid: 1-col mobile → 2-col md → 3-col lg -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/garage-door-repair-new-jersey.webp" alt="Garage door repair in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Garage Door Repair</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">From broken springs to full replacements — we keep your garage door operating safely and smoothly every day.</p>
+                        <a href="garage-door-repair-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/roof-repair-new-jersey.webp" alt="Drywall repair in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Drywall Repair</h3>
-                        <p>From small holes to water damage — we patch, repair, and restore walls so you'd never know anything happened.</p>
-                        <a href="drywall-repair-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/roof-repair-new-jersey.webp" alt="Drywall repair in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Drywall Repair</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">From small holes to water damage — we patch, repair, and restore walls so you'd never know anything happened.</p>
+                        <a href="drywall-repair-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/furniture-assmebly-new-jersey.webp" alt="Furniture assembly in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Furniture Assembly</h3>
-                        <p>From flat-pack chaos to fully built — we assemble anything so your weekend stays free.</p>
-                        <a href="furniture-assembly-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/furniture-assmebly-new-jersey.webp" alt="Furniture assembly in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Furniture Assembly</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">From flat-pack chaos to fully built — we assemble anything so your weekend stays free.</p>
+                        <a href="furniture-assembly-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/painting-new-jersey.webp" alt="Painting services in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Painting</h3>
-                        <p>Interior and exterior painting that transforms rooms and protects surfaces — clean lines, no drips, lasting results.</p>
-                        <a href="painting-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/painting-new-jersey.webp" alt="Painting services in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Painting</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">Interior and exterior painting that transforms rooms — clean lines, no drips, lasting results.</p>
+                        <a href="painting-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/door-repair-new-jersey.webp" alt="Door repair and replacement in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Door Repair &amp; Replacement</h3>
-                        <p>From stubborn hinges to full replacements — we make every door open, close, and lock exactly like it should.</p>
-                        <a href="door-repair-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/door-repair-new-jersey.webp" alt="Door repair in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Door Repair &amp; Replacement</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">From stubborn hinges to full replacements — every door opens, closes, and locks exactly as it should.</p>
+                        <a href="door-repair-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/chimney-repair-in-new-jersey.webp" alt="Chimney and masonry repair in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Chimney &amp; Masonry</h3>
-                        <p>Expert chimney repair and masonry restoration that protects your home from moisture, fire hazards, and structural damage.</p>
-                        <a href="chimney-masonry-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/chimney-repair-in-new-jersey.webp" alt="Chimney and masonry in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Chimney &amp; Masonry</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">Expert chimney repair and masonry restoration that protects your home from moisture and fire hazards.</p>
+                        <a href="chimney-masonry-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/tv-mounting-new-jersey.webp" alt="Light electrical services in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Light Electrical</h3>
-                        <p>Safe, code-compliant upgrades that make your home smarter and safer. No panel work — just clean results.</p>
-                        <a href="electrical-repair-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/tv-mounting-new-jersey.webp" alt="Light electrical services in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Light Electrical</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">Safe, code-compliant upgrades — fixtures, fans, outlets, smart switches, and LED retrofits.</p>
+                        <a href="electrical-repair-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/plumbing-repair-new-jersey.webp" alt="Light plumbing services in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Light Plumbing</h3>
-                        <p>Fast, high-value fixes most homeowners can't tackle alone. Faucets, disposals, toilets — done right, done fast.</p>
-                        <a href="plumbing-repair-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/plumbing-repair-new-jersey.webp" alt="Light plumbing services in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Light Plumbing</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">Faucets, disposals, toilets, leak fixes — fast, high-value repairs done right the first time.</p>
+                        <a href="plumbing-repair-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 

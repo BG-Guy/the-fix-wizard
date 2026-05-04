@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Global base ---- */
+@layer base {
+  :root { --nav-h: 150px; }
+
+  @media (max-width: 768px) { :root { --nav-h: 96px; } }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: #3a4560; overflow-x: hidden; line-height: 1.65; }
+  body.no-scroll { overflow: hidden; }
+  a { text-decoration: none; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+
+  ::-webkit-scrollbar       { width: 5px; }
+  ::-webkit-scrollbar-track { background: #f7f8fc; }
+  ::-webkit-scrollbar-thumb { background: #FF6B35; border-radius: 3px; }
+
+  section { @apply py-24; }
+}
+
+/* ---- Reusable component classes ---- */
+@layer components {
+
+  /* Container */
+  .site-container { @apply max-w-site mx-auto px-6; }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-md2 font-semibold text-[15px]
+           cursor-pointer border-2 border-transparent whitespace-nowrap
+           transition-all duration-300;
+  }
+  .btn-lg   { @apply px-8 py-[14px] text-base; }
+  .btn-full { @apply w-full justify-center; }
+  .btn-primary {
+    @apply bg-orange text-white border-orange
+           hover:bg-orange-dark hover:border-orange-dark hover:-translate-y-0.5
+           hover:shadow-[0_8px_24px_rgba(255,107,53,.38)];
+  }
+  .btn-outline {
+    @apply bg-transparent text-white border-white/50
+           hover:bg-white hover:text-navy-900 hover:border-white hover:-translate-y-0.5;
+  }
+  .btn-white {
+    @apply bg-white text-orange border-white
+           hover:bg-slate-50 hover:-translate-y-0.5 hover:shadow-md;
+  }
+  .btn-outline-white {
+    @apply bg-transparent text-white border-white
+           hover:bg-white hover:text-orange hover:-translate-y-0.5;
+  }
+
+  /* Section header */
+  .section-tag {
+    @apply inline-block bg-orange/10 text-orange text-[11px] font-bold tracking-[2px] uppercase
+           px-3.5 py-1.5 rounded-full mb-3;
+  }
+  .section-tag::before, .section-tag::after { content: ' ✦ '; font-size: 8px; vertical-align: middle; opacity: .75; }
+  .section-title {
+    @apply font-cinzel text-[clamp(24px,3.6vw,40px)] font-semibold text-navy-900
+           leading-tight tracking-wide mb-3;
+  }
+  .section-desc { @apply text-[17px] text-slate-500 leading-[1.72] max-w-[520px]; }
+  .section-header { @apply text-center mb-16; }
+  .section-header .section-desc { @apply mx-auto; }
+
+  /* Stretched link — makes entire card clickable via the <a> inside */
+  .stretched-link {
+    @apply relative z-[1];
+  }
+  .stretched-link::after {
+    content: '';
+    @apply absolute inset-[-9999px];
+  }
+}

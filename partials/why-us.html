@@ -1,12 +1,15 @@
     <!-- ===== WHY US ===== -->
-    <section id="why-us" class="why-us">
-        <div class="container">
+    <section id="why-us" class="relative overflow-hidden bg-white py-24">
+        <!-- Faint star decoration -->
+        <div class="absolute top-[-60px] right-[-60px] w-[320px] h-[320px] bg-orange opacity-[.04] pointer-events-none" style="clip-path:polygon(50% 0%,55% 45%,100% 50%,55% 55%,50% 100%,45% 55%,0% 50%,45% 45%)"></div>
 
-            <div class="why-us-inner">
-                <!-- Left: magic bubble -->
-                <div class="magic-bubble-area reveal">
+        <div class="max-w-site mx-auto px-6">
+            <div class="grid grid-cols-1 tab:grid-cols-2 gap-20 items-start">
+
+                <!-- Magic bubble -->
+                <div class="flex flex-col items-center gap-7 py-4 reveal">
                     <div class="magic-bubble" id="magicBubble" role="button" tabindex="0" aria-label="Click to discover why homeowners choose us">
-                        <div class="magic-bubble-content">
+                        <div class="flex flex-col items-center gap-4 relative z-[1]">
                             <span class="magic-orb-star">✦</span>
                             <p id="magicText">Licensed &amp; Insured</p>
                         </div>
@@ -18,52 +21,33 @@
                     </div>
                 </div>
 
-                <!-- Right: feature list -->
-                <div class="why-features">
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-medal"></i></div>
-                        <div class="why-feature-body">
-                            <h4>Licensed &amp; Insured</h4>
-                            <p>Fully licensed and insured on every job — your home and peace of mind are protected.</p>
-                        </div>
+                <!-- Feature list -->
+                <div class="flex flex-col" style="counter-reset: none;">
+                    <div class="why-feature flex gap-[18px] items-start py-[22px] border-b border-slate-200 border-t transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-medal"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">Licensed &amp; Insured</h4><p class="text-sm text-slate-500 leading-relaxed">Fully licensed and insured on every job — your home and peace of mind are protected.</p></div>
                     </div>
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-clock"></i></div>
-                        <div class="why-feature-body">
-                            <h4>On-Time, Every Time</h4>
-                            <p>We respect your schedule. Punctual arrivals, efficient work, no wasted hours.</p>
-                        </div>
+                    <div class="flex gap-[18px] items-start py-[22px] border-b border-slate-200 transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-clock"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">On-Time, Every Time</h4><p class="text-sm text-slate-500 leading-relaxed">We respect your schedule. Punctual arrivals, efficient work, no wasted hours.</p></div>
                     </div>
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-tags"></i></div>
-                        <div class="why-feature-body">
-                            <h4>Transparent Pricing</h4>
-                            <p>A clear, honest estimate before any work begins. No surprises on the invoice.</p>
-                        </div>
+                    <div class="flex gap-[18px] items-start py-[22px] border-b border-slate-200 transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-tags"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">Transparent Pricing</h4><p class="text-sm text-slate-500 leading-relaxed">A clear, honest estimate before any work begins. No surprises on the invoice.</p></div>
                     </div>
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-shield-halved"></i></div>
-                        <div class="why-feature-body">
-                            <h4>Satisfaction Guaranteed</h4>
-                            <p>Not happy? We come back and make it right — no drama, no extra charge.</p>
-                        </div>
+                    <div class="flex gap-[18px] items-start py-[22px] border-b border-slate-200 transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-shield-halved"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">Satisfaction Guaranteed</h4><p class="text-sm text-slate-500 leading-relaxed">Not happy? We come back and make it right — no drama, no extra charge.</p></div>
                     </div>
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-screwdriver-wrench"></i></div>
-                        <div class="why-feature-body">
-                            <h4>Done Right, First Time</h4>
-                            <p>We diagnose the real problem, fix it properly, and leave your space spotless.</p>
-                        </div>
+                    <div class="flex gap-[18px] items-start py-[22px] border-b border-slate-200 transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-screwdriver-wrench"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">Done Right, First Time</h4><p class="text-sm text-slate-500 leading-relaxed">We diagnose the real problem, fix it properly, and leave your space spotless.</p></div>
                     </div>
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-comments"></i></div>
-                        <div class="why-feature-body">
-                            <h4>Clear Communication</h4>
-                            <p>You're never left wondering. We keep you updated from booking to final walkthrough.</p>
-                        </div>
+                    <div class="flex gap-[18px] items-start py-[22px] border-b border-slate-200 transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-comments"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">Clear Communication</h4><p class="text-sm text-slate-500 leading-relaxed">You're never left wondering. We keep you updated from booking to final walkthrough.</p></div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>

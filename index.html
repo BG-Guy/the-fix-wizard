@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Fix Wizard – professional home repair services across New Jersey. Drywall, plumbing, electrical, doors, TV mounting & furniture assembly. Serving Bergen, Essex, Middlesex, Monmouth, Morris, Hudson & all NJ counties. Free estimates.">
+    <meta name="description" content="The Fix Wizard – professional home repair services across New Jersey. Drywall, plumbing, electrical, doors, garage doors, painting & chimney. Serving all NJ counties. Free estimates.">
     <title>Home Repair Services in New Jersey (NJ) | The Fix Wizard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/bundle.css">
+    <link rel="stylesheet" href="css/tw.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body>
@@ -33,178 +34,171 @@
     </div>
 
     <!-- ===== NAVBAR ===== -->
-    <nav id="navbar" class="navbar">
-        <div class="container nav-container">
-            <a href="#home" class="logo">
-                <img src="assets/images/the-fix-wizard-logo-3.png" alt="The Fix Wizard" class="logo-img" width="199" height="110">
+    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-[100]">
+        <div class="max-w-site mx-auto px-6 flex items-center h-full gap-8 nav-container">
+
+            <a href="#home" class="flex items-center shrink-0 logo">
+                <img src="assets/images/the-fix-wizard-logo-3.png" alt="The Fix Wizard" class="h-auto max-h-[110px] w-auto object-contain rounded-lg logo-img" width="199" height="110">
             </a>
 
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#why-us" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <ul class="hidden md:flex items-center gap-0.5 mx-auto nav-links">
+                <li><a href="#home"     class="nav-link active text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a></li>
+                <li><a href="#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
+                <li><a href="#why-us"   class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">About</a></li>
+                <li><a href="#contact"  class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
             </ul>
 
-            <div class="nav-actions">
-                <a href="tel:+15551234567" class="nav-phone">
-                    <i class="fas fa-phone"></i>
+            <div class="hidden md:flex items-center gap-4 shrink-0 nav-actions">
+                <a href="tel:+15551234567" class="flex items-center gap-2 text-white/75 text-sm font-medium hover:text-orange transition-colors">
+                    <i class="fas fa-phone text-orange"></i>
                     <span>(555) 123-4567</span>
                 </a>
-                <a href="#contact" class="btn btn-primary nav-cta">
+                <a href="#contact" class="btn btn-primary nav-cta relative overflow-hidden">
                     Free Quote
-                    <svg class="btn-spark bs-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-                    <svg class="btn-spark bs-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-                    <svg class="btn-spark bs-3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+                    <svg class="btn-spark bs-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+                    <svg class="btn-spark bs-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+                    <svg class="btn-spark bs-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
                 </a>
             </div>
 
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="hamburger md:hidden flex flex-col gap-[5px] cursor-pointer bg-transparent border-none p-2 order-first" id="hamburger" aria-label="Toggle menu">
+                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
+                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
+                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="mobileClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
-        <ul class="mobile-nav-links">
-            <li><a href="#home" class="mobile-link">Home</a></li>
-            <li><a href="#services" class="mobile-link">Services</a></li>
-            <li><a href="#why-us" class="mobile-link">About</a></li>
-            <li><a href="#contact" class="mobile-link">Contact</a></li>
+    <div class="mobile-menu fixed top-0 z-[101] w-[min(320px,88vw)] h-screen bg-navy-900 pt-[76px] px-7 pb-9 flex flex-col gap-1.5 overflow-y-auto" id="mobileMenu">
+        <button class="absolute top-[18px] right-[18px] bg-white/10 border-none text-white w-[38px] h-[38px] rounded-full flex items-center justify-center cursor-pointer text-[15px] transition-all hover:bg-orange mobile-menu-close" id="mobileClose" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="flex flex-col gap-0.5 mb-5 mobile-nav-links">
+            <li><a href="#home"     class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Home</a></li>
+            <li><a href="#services" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Services</a></li>
+            <li><a href="#why-us"   class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">About</a></li>
+            <li><a href="#contact"  class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
         </ul>
-        <a href="tel:+15551234567" class="mobile-phone"><i class="fas fa-phone"></i>(555) 123-4567</a>
-        <a href="#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
+        <a href="tel:+15551234567" class="mobile-phone flex items-center gap-2.5 text-white/65 text-sm mb-3.5 px-3.5">
+            <i class="fas fa-phone text-orange"></i>(555) 123-4567
+        </a>
+        <a href="#contact" class="btn btn-primary mobile-cta mobile-link mt-1.5">Get Free Quote</a>
     </div>
-    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-overlay fixed inset-0 bg-black/50 z-[100] opacity-0 invisible transition-all backdrop-blur-sm" id="mobileOverlay"></div>
 
     <!-- ===== HERO ===== -->
-    <section id="home" class="hero">
-        <div class="container hero-container">
+    <section id="home" class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)] rounded-b-[56px]">
+        <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
+            <div class="grid grid-cols-1 tab:grid-cols-[1fr_420px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
 
-            <!-- LEFT COLUMN -->
-            <div class="hero-left">
-                <div class="hero-badge">
-                    <i class="fas fa-star"></i>
-                    <span>Trusted by 500+ New Jersey Homeowners</span>
+                <!-- LEFT -->
+                <div class="flex flex-col items-center tab:items-start text-center tab:text-left">
+                    <div class="inline-flex items-center gap-2 bg-orange/[.14] border border-orange/30 text-orange-light px-4 py-1.5 rounded-full text-[13px] font-semibold mb-7 tracking-wide">
+                        <i class="fas fa-star text-orange text-[11px]"></i>
+                        <span>Trusted by 500+ New Jersey Homeowners</span>
+                    </div>
+                    <h1 class="font-cinzel text-[clamp(32px,5vw,64px)] font-black leading-[1.1] tracking-tight text-white mb-6">
+                        Your Home Deserves<br>
+                        <span class="text-orange">a <span class="lightning-word">Fix Wizard's</span> Touch</span>
+                    </h1>
+                    <p class="text-[18px] text-white/65 leading-[1.75] mb-10 max-w-[560px]">
+                        Professional home repair across New Jersey with a touch of mastery. Fast, reliable, and done right the first time — wherever in NJ you call home.
+                    </p>
+                    <div class="flex items-center gap-3 mb-12 flex-wrap justify-center tab:justify-start hero-actions">
+                        <a href="#services" class="btn btn-primary btn-lg">
+                            <i class="fas fa-wrench"></i> Our Services
+                        </a>
+                        <a href="#contact" class="btn btn-outline btn-lg">
+                            <i class="fas fa-calendar-alt"></i> Book a Visit
+                        </a>
+                    </div>
+                    <div class="w-full h-px bg-white/10 mb-8"></div>
+                    <div class="flex items-center gap-8 flex-wrap justify-center tab:justify-start hero-stats">
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="500">0</span>+</div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Projects Done</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="10">0</span>+</div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Years Exp</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="98">0</span>%</div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Satisfaction</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="8">0</span></div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Niche Services</div>
+                        </div>
+                    </div>
                 </div>
-                <h1 class="hero-title">
-                    Your Home Deserves<br>
-                    <span class="text-accent">a <span class="lightning-word">
-Fix Wizard's
-                    </span> Touch</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Professional home repair across New Jersey with a touch of mastery. Fast, reliable, and done right the first time — wherever in NJ you call home.
-                </p>
-                <div class="hero-actions">
-                    <a href="#services" class="btn btn-primary btn-lg">
-                        <i class="fas fa-wrench"></i> Our Services
-                    </a>
-                    <a href="#contact" class="btn btn-outline btn-lg">
-                        <i class="fas fa-calendar-alt"></i> Book a Visit
-                    </a>
-                </div>
-                <div class="hero-divider"></div>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <div class="stat-num"><span class="counter" data-target="500">0</span>+</div>
-                        <div class="stat-lbl">Projects Done</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="hero-stat">
-                        <div class="stat-num"><span class="counter" data-target="10">0</span>+</div>
-                        <div class="stat-lbl">Years Exp</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="hero-stat">
-                        <div class="stat-num"><span class="counter" data-target="98">0</span>%</div>
-                        <div class="stat-lbl">Satisfaction</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="hero-stat">
-                        <div class="stat-num"><span class="counter" data-target="8">0</span></div>
-                        <div class="stat-lbl">Niche Services</div>
+
+                <!-- RIGHT -->
+                <div class="flex items-center justify-center tab:justify-end">
+                    <div class="w-full max-w-[520px] bg-white/[.07] backdrop-blur-xl border border-white/[.13] rounded-xl2 p-8 flex flex-col gap-6">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-[52px] h-[52px] shrink-0 bg-orange rounded-md2 flex items-center justify-center text-[22px] text-white">
+                                <i class="fas fa-house-chimney-crack"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-[16px] font-semibold text-white leading-tight mb-1">Get a Free Estimate</h2>
+                                <p class="text-[13px] text-white/50">Response within 2 hours</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <div class="hcs-item flex items-center gap-2 bg-white/[.06] border border-white/[.08] rounded-lg px-3 py-2.5 text-[13px] font-medium text-white/80 transition-all hover:bg-orange/[.15] hover:border-orange/30 hover:text-white"><i class="fas fa-garage text-orange text-[13px] w-3.5 shrink-0"></i><span>Garage Door</span></div>
+                            <div class="hcs-item flex items-center gap-2 bg-white/[.06] border border-white/[.08] rounded-lg px-3 py-2.5 text-[13px] font-medium text-white/80 transition-all hover:bg-orange/[.15] hover:border-orange/30 hover:text-white"><i class="fas fa-border-all text-orange text-[13px] w-3.5 shrink-0"></i><span>Drywall</span></div>
+                            <div class="hcs-item flex items-center gap-2 bg-white/[.06] border border-white/[.08] rounded-lg px-3 py-2.5 text-[13px] font-medium text-white/80 transition-all hover:bg-orange/[.15] hover:border-orange/30 hover:text-white"><i class="fas fa-couch text-orange text-[13px] w-3.5 shrink-0"></i><span>Furniture</span></div>
+                            <div class="hcs-item flex items-center gap-2 bg-white/[.06] border border-white/[.08] rounded-lg px-3 py-2.5 text-[13px] font-medium text-white/80 transition-all hover:bg-orange/[.15] hover:border-orange/30 hover:text-white"><i class="fas fa-paint-roller text-orange text-[13px] w-3.5 shrink-0"></i><span>Painting</span></div>
+                            <div class="hcs-item flex items-center gap-2 bg-white/[.06] border border-white/[.08] rounded-lg px-3 py-2.5 text-[13px] font-medium text-white/80 transition-all hover:bg-orange/[.15] hover:border-orange/30 hover:text-white"><i class="fas fa-door-open text-orange text-[13px] w-3.5 shrink-0"></i><span>Door Repair</span></div>
+                            <div class="hcs-item flex items-center gap-2 bg-white/[.06] border border-white/[.08] rounded-lg px-3 py-2.5 text-[13px] font-medium text-white/80 transition-all hover:bg-orange/[.15] hover:border-orange/30 hover:text-white"><i class="fas fa-fire text-orange text-[13px] w-3.5 shrink-0"></i><span>Chimney</span></div>
+                            <div class="hcs-item flex items-center gap-2 bg-white/[.06] border border-white/[.08] rounded-lg px-3 py-2.5 text-[13px] font-medium text-white/80 transition-all hover:bg-orange/[.15] hover:border-orange/30 hover:text-white"><i class="fas fa-bolt text-orange text-[13px] w-3.5 shrink-0"></i><span>Electrical</span></div>
+                            <div class="hcs-item flex items-center gap-2 bg-white/[.06] border border-white/[.08] rounded-lg px-3 py-2.5 text-[13px] font-medium text-white/80 transition-all hover:bg-orange/[.15] hover:border-orange/30 hover:text-white"><i class="fas fa-faucet text-orange text-[13px] w-3.5 shrink-0"></i><span>Plumbing</span></div>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Request a Quote
+                        </a>
+                        <div class="flex gap-3 pt-1 border-t border-white/[.08]">
+                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-shield-halved text-orange text-[13px]"></i><span>Licensed &amp; Insured</span></div>
+                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-clock text-orange text-[13px]"></i><span>Same Day Available</span></div>
+                        </div>
                     </div>
                 </div>
+
             </div>
-
-            <!-- RIGHT COLUMN -->
-            <div class="hero-right">
-                <div class="hero-card">
-                    <div class="hero-card-header">
-                        <div class="hero-card-icon">
-                            <i class="fas fa-house-chimney-crack"></i>
-                        </div>
-                        <div>
-                            <h2>Get a Free Estimate</h2>
-                            <p>Response within 2 hours</p>
-                        </div>
-                    </div>
-                    <div class="hero-card-services">
-                        <div class="hcs-item">
-                            <i class="fas fa-garage"></i><span>Garage Door Repair</span>
-                        </div>
-                        <div class="hcs-item">
-                            <i class="fas fa-border-all"></i><span>Drywall Repair</span>
-                        </div>
-                        <div class="hcs-item">
-                            <i class="fas fa-couch"></i><span>Furniture Assembly</span>
-                        </div>
-                        <div class="hcs-item">
-                            <i class="fas fa-paint-roller"></i><span>Painting</span>
-                        </div>
-                        <div class="hcs-item">
-                            <i class="fas fa-door-open"></i><span>Door Repair</span>
-                        </div>
-                        <div class="hcs-item">
-                            <i class="fas fa-fire"></i><span>Chimney &amp; Masonry</span>
-                        </div>
-                        <div class="hcs-item">
-                            <i class="fas fa-bolt"></i><span>Light Electrical</span>
-                        </div>
-                        <div class="hcs-item">
-                            <i class="fas fa-faucet"></i><span>Light Plumbing</span>
-                        </div>
-                    </div>
-                    <a href="#contact" class="btn btn-primary btn-full">
-                        <i class="fas fa-paper-plane"></i> Request a Quote
-                    </a>
-                    <div class="hero-card-badges">
-                        <div class="hcb-item"><i class="fas fa-shield-halved"></i><span>Licensed &amp; Insured</span></div>
-                        <div class="hcb-item"><i class="fas fa-clock"></i><span>Same Day Available</span></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- Floating sparkle decorations -->
-        <div class="hero-sparkles" aria-hidden="true">
-            <svg class="sparkle sp-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
         </div>
 
-        <div class="scroll-hint">
+        <!-- Sparkles -->
+        <div class="hero-sparkles absolute inset-0 pointer-events-none z-[2] overflow-hidden" aria-hidden="true">
+            <svg class="sparkle sp-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-4" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-5" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+        </div>
+
+        <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/30 text-[10px] font-medium tracking-[2px] uppercase z-[2]">
             <span>Scroll</span>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down text-[12px]"></i>
         </div>
     </section>
 
     <!-- ===== WHY US ===== -->
-    <section id="why-us" class="why-us">
-        <div class="container">
+    <section id="why-us" class="relative overflow-hidden bg-white py-24">
+        <!-- Faint star decoration -->
+        <div class="absolute top-[-60px] right-[-60px] w-[320px] h-[320px] bg-orange opacity-[.04] pointer-events-none" style="clip-path:polygon(50% 0%,55% 45%,100% 50%,55% 55%,50% 100%,45% 55%,0% 50%,45% 45%)"></div>
 
-            <div class="why-us-inner">
-                <!-- Left: magic bubble -->
-                <div class="magic-bubble-area reveal">
+        <div class="max-w-site mx-auto px-6">
+            <div class="grid grid-cols-1 tab:grid-cols-2 gap-20 items-start">
+
+                <!-- Magic bubble -->
+                <div class="flex flex-col items-center gap-7 py-4 reveal">
                     <div class="magic-bubble" id="magicBubble" role="button" tabindex="0" aria-label="Click to discover why homeowners choose us">
-                        <div class="magic-bubble-content">
+                        <div class="flex flex-col items-center gap-4 relative z-[1]">
                             <span class="magic-orb-star">✦</span>
                             <p id="magicText">Licensed &amp; Insured</p>
                         </div>
@@ -216,135 +210,129 @@ Fix Wizard's
                     </div>
                 </div>
 
-                <!-- Right: feature list -->
-                <div class="why-features">
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-medal"></i></div>
-                        <div class="why-feature-body">
-                            <h4>Licensed &amp; Insured</h4>
-                            <p>Fully licensed and insured on every job — your home and peace of mind are protected.</p>
-                        </div>
+                <!-- Feature list -->
+                <div class="flex flex-col" style="counter-reset: none;">
+                    <div class="why-feature flex gap-[18px] items-start py-[22px] border-b border-slate-200 border-t transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-medal"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">Licensed &amp; Insured</h4><p class="text-sm text-slate-500 leading-relaxed">Fully licensed and insured on every job — your home and peace of mind are protected.</p></div>
                     </div>
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-clock"></i></div>
-                        <div class="why-feature-body">
-                            <h4>On-Time, Every Time</h4>
-                            <p>We respect your schedule. Punctual arrivals, efficient work, no wasted hours.</p>
-                        </div>
+                    <div class="flex gap-[18px] items-start py-[22px] border-b border-slate-200 transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-clock"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">On-Time, Every Time</h4><p class="text-sm text-slate-500 leading-relaxed">We respect your schedule. Punctual arrivals, efficient work, no wasted hours.</p></div>
                     </div>
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-tags"></i></div>
-                        <div class="why-feature-body">
-                            <h4>Transparent Pricing</h4>
-                            <p>A clear, honest estimate before any work begins. No surprises on the invoice.</p>
-                        </div>
+                    <div class="flex gap-[18px] items-start py-[22px] border-b border-slate-200 transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-tags"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">Transparent Pricing</h4><p class="text-sm text-slate-500 leading-relaxed">A clear, honest estimate before any work begins. No surprises on the invoice.</p></div>
                     </div>
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-shield-halved"></i></div>
-                        <div class="why-feature-body">
-                            <h4>Satisfaction Guaranteed</h4>
-                            <p>Not happy? We come back and make it right — no drama, no extra charge.</p>
-                        </div>
+                    <div class="flex gap-[18px] items-start py-[22px] border-b border-slate-200 transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-shield-halved"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">Satisfaction Guaranteed</h4><p class="text-sm text-slate-500 leading-relaxed">Not happy? We come back and make it right — no drama, no extra charge.</p></div>
                     </div>
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-screwdriver-wrench"></i></div>
-                        <div class="why-feature-body">
-                            <h4>Done Right, First Time</h4>
-                            <p>We diagnose the real problem, fix it properly, and leave your space spotless.</p>
-                        </div>
+                    <div class="flex gap-[18px] items-start py-[22px] border-b border-slate-200 transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-screwdriver-wrench"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">Done Right, First Time</h4><p class="text-sm text-slate-500 leading-relaxed">We diagnose the real problem, fix it properly, and leave your space spotless.</p></div>
                     </div>
-                    <div class="why-feature reveal">
-                        <div class="why-feature-icon"><i class="fas fa-comments"></i></div>
-                        <div class="why-feature-body">
-                            <h4>Clear Communication</h4>
-                            <p>You're never left wondering. We keep you updated from booking to final walkthrough.</p>
-                        </div>
+                    <div class="flex gap-[18px] items-start py-[22px] border-b border-slate-200 transition-all hover:pl-1.5 reveal">
+                        <div class="w-11 h-11 shrink-0 rounded-lg bg-orange/[.08] border border-orange/[.18] flex items-center justify-center text-[18px] text-orange transition-all hover:bg-orange hover:text-white hover:border-orange"><i class="fas fa-comments"></i></div>
+                        <div><h4 class="text-[15px] font-bold text-navy-900 mb-1">Clear Communication</h4><p class="text-sm text-slate-500 leading-relaxed">You're never left wondering. We keep you updated from booking to final walkthrough.</p></div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
     <!-- ===== SERVICES ===== -->
-    <section id="services" class="services">
-        <div class="container">
+    <section id="services" class="relative overflow-hidden py-24" style="background-color:#f7f8fc;background-image:radial-gradient(circle,rgba(13,27,75,.07) 1px,transparent 1px);background-size:28px 28px;">
+        <!-- Star decoration -->
+        <div class="absolute top-[-90px] right-[-90px] w-[320px] h-[320px] bg-orange opacity-[.035] pointer-events-none" style="clip-path:polygon(50% 0%,55% 45%,100% 50%,55% 55%,50% 100%,45% 55%,0% 50%,45% 45%)"></div>
+
+        <div class="max-w-site mx-auto px-6">
             <div class="section-header reveal">
                 <span class="section-tag">What We Do</span>
-                <h2 class="section-title">Our <span class="text-accent">Services</span></h2>
+                <h2 class="section-title">Our <span class="text-orange">Services</span></h2>
                 <p class="section-desc">Eight expert crafts, one Fix Wizard. From Bergen County to Cape May — serving all of New Jersey with precision and care.</p>
             </div>
-            <div class="services-grid">
 
-                <div class="service-card reveal">
-                    <img src="assets/images/garage-door-repair-new-jersey.webp" alt="Garage door repair in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Garage Door Repair</h3>
-                        <p>From broken springs to full replacements — we keep your garage door operating safely and smoothly every day.</p>
-                        <a href="garage-door-repair-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            <!-- grid: 1-col mobile → 2-col md → 3-col lg -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/garage-door-repair-new-jersey.webp" alt="Garage door repair in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Garage Door Repair</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">From broken springs to full replacements — we keep your garage door operating safely and smoothly every day.</p>
+                        <a href="garage-door-repair-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/roof-repair-new-jersey.webp" alt="Drywall repair in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Drywall Repair</h3>
-                        <p>From small holes to water damage — we patch, repair, and restore walls so you'd never know anything happened.</p>
-                        <a href="drywall-repair-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/roof-repair-new-jersey.webp" alt="Drywall repair in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Drywall Repair</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">From small holes to water damage — we patch, repair, and restore walls so you'd never know anything happened.</p>
+                        <a href="drywall-repair-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/furniture-assmebly-new-jersey.webp" alt="Furniture assembly in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Furniture Assembly</h3>
-                        <p>From flat-pack chaos to fully built — we assemble anything so your weekend stays free.</p>
-                        <a href="furniture-assembly-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/furniture-assmebly-new-jersey.webp" alt="Furniture assembly in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Furniture Assembly</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">From flat-pack chaos to fully built — we assemble anything so your weekend stays free.</p>
+                        <a href="furniture-assembly-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/painting-new-jersey.webp" alt="Painting services in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Painting</h3>
-                        <p>Interior and exterior painting that transforms rooms and protects surfaces — clean lines, no drips, lasting results.</p>
-                        <a href="painting-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/painting-new-jersey.webp" alt="Painting services in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Painting</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">Interior and exterior painting that transforms rooms — clean lines, no drips, lasting results.</p>
+                        <a href="painting-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/door-repair-new-jersey.webp" alt="Door repair and replacement in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Door Repair &amp; Replacement</h3>
-                        <p>From stubborn hinges to full replacements — we make every door open, close, and lock exactly like it should.</p>
-                        <a href="door-repair-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/door-repair-new-jersey.webp" alt="Door repair in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Door Repair &amp; Replacement</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">From stubborn hinges to full replacements — every door opens, closes, and locks exactly as it should.</p>
+                        <a href="door-repair-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/chimney-repair-in-new-jersey.webp" alt="Chimney and masonry repair in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Chimney &amp; Masonry</h3>
-                        <p>Expert chimney repair and masonry restoration that protects your home from moisture, fire hazards, and structural damage.</p>
-                        <a href="chimney-masonry-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/chimney-repair-in-new-jersey.webp" alt="Chimney and masonry in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Chimney &amp; Masonry</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">Expert chimney repair and masonry restoration that protects your home from moisture and fire hazards.</p>
+                        <a href="chimney-masonry-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/tv-mounting-new-jersey.webp" alt="Light electrical services in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Light Electrical</h3>
-                        <p>Safe, code-compliant upgrades that make your home smarter and safer. No panel work — just clean results.</p>
-                        <a href="electrical-repair-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/tv-mounting-new-jersey.webp" alt="Light electrical services in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Light Electrical</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">Safe, code-compliant upgrades — fixtures, fans, outlets, smart switches, and LED retrofits.</p>
+                        <a href="electrical-repair-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
-                <div class="service-card reveal">
-                    <img src="assets/images/plumbing-repair-new-jersey.webp" alt="Light plumbing services in New Jersey" class="service-card-img" loading="lazy" width="400" height="210">
-                    <div class="service-card-inner">
-                        <h3>Light Plumbing</h3>
-                        <p>Fast, high-value fixes most homeowners can't tackle alone. Faucets, disposals, toilets — done right, done fast.</p>
-                        <a href="plumbing-repair-new-jersey/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22),0_10px_24px_-6px_rgba(255,107,53,.2)] hover:border-transparent reveal">
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                    <img src="assets/images/plumbing-repair-new-jersey.webp" alt="Light plumbing services in New Jersey" class="w-full h-[210px] object-cover object-top shrink-0 transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="p-6 flex flex-col gap-2.5 flex-1">
+                        <h3 class="text-[18px] font-bold text-orange leading-snug">Light Plumbing</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed flex-1">Faucets, disposals, toilets, leak fixes — fast, high-value repairs done right the first time.</p>
+                        <a href="plumbing-repair-new-jersey/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-1.5">Learn More <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
                     </div>
                 </div>
 
@@ -352,43 +340,41 @@ Fix Wizard's
         </div>
     </section>
 
-    <!-- ===== FAQ / Q&A ===== -->
-    <section id="faq" class="faq">
-        <div class="container">
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="py-24 bg-navy-900">
+        <div class="max-w-site mx-auto px-6">
             <div class="section-header reveal">
-                <span class="section-tag">Q&amp;A</span>
-                <h2 class="section-title">Got <span class="text-accent">Questions?</span><br>The Fix Wizard Has <span class="text-accent">Answers.</span></h2>
-                <p class="section-desc">The most common questions New Jersey homeowners ask before they book. Still not sure? Just call.</p>
+                <span class="section-tag" style="color:rgba(255,107,53,.85);border-color:rgba(255,107,53,.25)">Q&amp;A</span>
+                <h2 class="section-title text-white">Got <span class="text-orange">Questions?</span><br>The Fix Wizard Has <span class="text-orange">Answers.</span></h2>
+                <p class="section-desc" style="color:rgba(255,255,255,.5)">The most common questions New Jersey homeowners ask before they book. Still not sure? Just call.</p>
             </div>
 
-            <div class="faq-accordion">
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
+            <div class="flex flex-col max-w-[820px] mx-auto border-t border-white/[.08]" style="counter-reset:faq-counter">
+                <div class="faq-item border-b border-white/[.08] overflow-hidden transition-colors hover:bg-white/[.03] reveal">
+                    <button class="faq-question w-full text-left grid items-center gap-4 px-5 py-6 text-[16px] font-bold text-white/80 bg-transparent border-none cursor-pointer transition-colors" aria-expanded="false" style="grid-template-columns:52px 1fr 34px">
                         <span>Can you come the same day?</span>
-                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus justify-self-end w-8 h-8 flex items-center justify-center text-[11px] text-orange bg-orange/[.12] border border-orange/25 rounded-full transition-all"></i>
                     </button>
                     <div class="faq-answer" aria-hidden="true">
-                        <p>Often, yes. The Fix Wizard moves fast — same-day slots fill up quickly, so call ahead and we'll tell you what's available.</p>
+                        <p class="text-white/50 leading-[1.78] text-[15px]" style="padding:0 20px 26px calc(20px + 52px + 16px)">Often, yes. The Fix Wizard moves fast — same-day slots fill up quickly, so call ahead and we'll tell you what's available.</p>
                     </div>
                 </div>
-
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
+                <div class="faq-item border-b border-white/[.08] overflow-hidden transition-colors hover:bg-white/[.03] reveal">
+                    <button class="faq-question w-full text-left grid items-center gap-4 px-5 py-6 text-[16px] font-bold text-white/80 bg-transparent border-none cursor-pointer transition-colors" aria-expanded="false" style="grid-template-columns:52px 1fr 34px">
                         <span>How do you price small repairs?</span>
-                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus justify-self-end w-8 h-8 flex items-center justify-center text-[11px] text-orange bg-orange/[.12] border border-orange/25 rounded-full transition-all"></i>
                     </button>
                     <div class="faq-answer" aria-hidden="true">
-                        <p>We give you a clear number before any work starts — no vague estimates. Many small jobs have flat-rate pricing after a quick look.</p>
+                        <p class="text-white/50 leading-[1.78] text-[15px]" style="padding:0 20px 26px calc(20px + 52px + 16px)">We give you a clear number before any work starts — no vague estimates. Many small jobs have flat-rate pricing after a quick look.</p>
                     </div>
                 </div>
-
-                <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
+                <div class="faq-item border-b border-white/[.08] overflow-hidden transition-colors hover:bg-white/[.03] reveal">
+                    <button class="faq-question w-full text-left grid items-center gap-4 px-5 py-6 text-[16px] font-bold text-white/80 bg-transparent border-none cursor-pointer transition-colors" aria-expanded="false" style="grid-template-columns:52px 1fr 34px">
                         <span>Are you licensed and insured?</span>
-                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus justify-self-end w-8 h-8 flex items-center justify-center text-[11px] text-orange bg-orange/[.12] border border-orange/25 rounded-full transition-all"></i>
                     </button>
                     <div class="faq-answer" aria-hidden="true">
-                        <p>Yes — fully licensed and insured on every job. You're covered, and so is your home.</p>
+                        <p class="text-white/50 leading-[1.78] text-[15px]" style="padding:0 20px 26px calc(20px + 52px + 16px)">Yes — fully licensed and insured on every job. You're covered, and so is your home.</p>
                     </div>
                 </div>
             </div>
@@ -396,69 +382,69 @@ Fix Wizard's
     </section>
 
     <!-- ===== CTA BANNER ===== -->
-    <section class="cta-banner">
-        <div class="container cta-inner reveal">
-            <div class="cta-text">
-                <h2>Ready to Call the Fix Wizard?</h2>
-                <p>Free estimates, fast response. No job too small, no problem too stubborn.</p>
+    <section class="relative overflow-hidden py-[72px]" style="background:linear-gradient(135deg,#FF6B35 0%,#e55a22 100%)">
+        <div class="absolute top-[-50%] left-[-75%] w-[45%] h-[200%] pointer-events-none" style="background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:skewX(-12deg);animation:ctaShimmer 5s ease-in-out infinite"></div>
+        <div class="max-w-site mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-9 reveal">
+            <div>
+                <h2 class="font-cinzel text-[clamp(24px,3.6vw,40px)] font-semibold text-white mb-2 tracking-wide">Ready to Call the Fix Wizard?</h2>
+                <p class="text-[17px] text-white/85">Free estimates, fast response. No job too small, no problem too stubborn.</p>
             </div>
-            <div class="cta-btns">
-                <a href="tel:+15551234567" class="btn btn-white btn-lg">
-                    <i class="fas fa-phone"></i> Call Now
-                </a>
-                <a href="#contact" class="btn btn-outline-white btn-lg">
-                    <i class="fas fa-envelope"></i> Send Message
-                </a>
+            <div class="flex gap-3.5 shrink-0 flex-wrap justify-center">
+                <a href="tel:+15551234567" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Send Message</a>
             </div>
         </div>
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section id="contact" class="contact">
-        <div class="container">
+    <section id="contact" class="py-24" style="background-color:#f7f8fc;background-image:radial-gradient(circle,rgba(13,27,75,.06) 1px,transparent 1px);background-size:28px 28px">
+        <div class="max-w-site mx-auto px-6">
             <div class="section-header reveal">
                 <span class="section-tag">Get In Touch</span>
-                <h2 class="section-title">Request a <span class="text-accent">Free Quote</span></h2>
+                <h2 class="section-title">Request a <span class="text-orange">Free Quote</span></h2>
                 <p class="section-desc">Serving all of New Jersey — describe the job and we'll get back to you within 24 hours with a clear, honest number.</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-info reveal">
-                    <div class="ci-item">
-                        <div class="ci-icon"><i class="fas fa-phone"></i></div>
-                        <div><h3>Call Us</h3><a href="tel:+15551234567">(555) 123-4567</a></div>
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-14">
+
+                <!-- Info -->
+                <div class="flex flex-col gap-[22px] reveal">
+                    <div class="flex gap-3.5 items-start">
+                        <div class="w-[46px] h-[46px] shrink-0 bg-navy-900 rounded-lg flex items-center justify-center text-[17px] text-orange"><i class="fas fa-phone"></i></div>
+                        <div><h3 class="text-[12px] font-bold text-slate-500 uppercase tracking-[1px] mb-1">Call Us</h3><a href="tel:+15551234567" class="text-[15px] text-navy-900 font-medium hover:text-orange transition-colors">(555) 123-4567</a></div>
                     </div>
-                    <div class="ci-item">
-                        <div class="ci-icon"><i class="fas fa-envelope"></i></div>
-                        <div><h3>Email Us</h3><a href="mailto:hello@handypro.com">hello@handypro.com</a></div>
+                    <div class="flex gap-3.5 items-start">
+                        <div class="w-[46px] h-[46px] shrink-0 bg-navy-900 rounded-lg flex items-center justify-center text-[17px] text-orange"><i class="fas fa-envelope"></i></div>
+                        <div><h3 class="text-[12px] font-bold text-slate-500 uppercase tracking-[1px] mb-1">Email Us</h3><a href="mailto:hello@handypro.com" class="text-[15px] text-navy-900 font-medium hover:text-orange transition-colors">hello@handypro.com</a></div>
                     </div>
-                    <div class="ci-item">
-                        <div class="ci-icon"><i class="fas fa-location-dot"></i></div>
-                        <div><h3>Service Area</h3><p>All of New Jersey — North, Central &amp; South NJ</p></div>
+                    <div class="flex gap-3.5 items-start">
+                        <div class="w-[46px] h-[46px] shrink-0 bg-navy-900 rounded-lg flex items-center justify-center text-[17px] text-orange"><i class="fas fa-location-dot"></i></div>
+                        <div><h3 class="text-[12px] font-bold text-slate-500 uppercase tracking-[1px] mb-1">Service Area</h3><p class="text-[15px] text-navy-900 font-medium">All of New Jersey — North, Central &amp; South NJ</p></div>
                     </div>
-                    <div class="ci-item">
-                        <div class="ci-icon"><i class="fas fa-clock"></i></div>
-                        <div><h3>Working Hours</h3><p>Mon–Sat: 7am – 7pm</p></div>
+                    <div class="flex gap-3.5 items-start">
+                        <div class="w-[46px] h-[46px] shrink-0 bg-navy-900 rounded-lg flex items-center justify-center text-[17px] text-orange"><i class="fas fa-clock"></i></div>
+                        <div><h3 class="text-[12px] font-bold text-slate-500 uppercase tracking-[1px] mb-1">Working Hours</h3><p class="text-[15px] text-navy-900 font-medium">Mon–Sat: 7am – 7pm</p></div>
                     </div>
                 </div>
 
-                <form class="contact-form reveal" id="contactForm" novalidate>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="John Smith" required>
+                <!-- Form -->
+                <form class="bg-white p-10 md:p-10 p-6 rounded-card shadow-card reveal" id="contactForm" novalidate>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-[18px] mb-[18px]">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[13px] font-semibold text-navy-900" for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Smith" required class="px-[15px] py-3 border-2 border-slate-200 rounded-lg font-sans text-[15px] text-navy-900 bg-white outline-none resize-y transition-all focus:border-orange focus:shadow-[0_0_0_4px_rgba(255,107,53,.1)] placeholder:text-slate-400">
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" placeholder="(555) 000-0000">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[13px] font-semibold text-navy-900" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="(555) 000-0000" class="px-[15px] py-3 border-2 border-slate-200 rounded-lg font-sans text-[15px] text-navy-900 bg-white outline-none transition-all focus:border-orange focus:shadow-[0_0_0_4px_rgba(255,107,53,.1)] placeholder:text-slate-400">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="you@example.com" required>
+                    <div class="flex flex-col gap-1.5 mb-[18px]">
+                        <label class="text-[13px] font-semibold text-navy-900" for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" required class="px-[15px] py-3 border-2 border-slate-200 rounded-lg font-sans text-[15px] text-navy-900 bg-white outline-none transition-all focus:border-orange focus:shadow-[0_0_0_4px_rgba(255,107,53,.1)] placeholder:text-slate-400">
                     </div>
-                    <div class="form-group">
-                        <label for="service">Service Needed</label>
-                        <select id="service">
+                    <div class="flex flex-col gap-1.5 mb-[18px]">
+                        <label class="text-[13px] font-semibold text-navy-900" for="service">Service Needed</label>
+                        <select id="service" class="px-[15px] py-3 border-2 border-slate-200 rounded-lg font-sans text-[15px] text-navy-900 bg-white outline-none transition-all focus:border-orange focus:shadow-[0_0_0_4px_rgba(255,107,53,.1)]">
                             <option value="">Select a service…</option>
                             <option>Garage Door Repair</option>
                             <option>Drywall Repair</option>
@@ -471,9 +457,9 @@ Fix Wizard's
                             <option>Other / Not Sure</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Describe the Job</label>
-                        <textarea id="message" rows="4" placeholder="Tell us about the repair or project…"></textarea>
+                    <div class="flex flex-col gap-1.5 mb-6">
+                        <label class="text-[13px] font-semibold text-navy-900" for="message">Describe the Job</label>
+                        <textarea id="message" rows="4" placeholder="Tell us about the repair or project…" class="px-[15px] py-3 border-2 border-slate-200 rounded-lg font-sans text-[15px] text-navy-900 bg-white outline-none resize-y transition-all focus:border-orange focus:shadow-[0_0_0_4px_rgba(255,107,53,.1)] placeholder:text-slate-400"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full btn-lg">
                         <i class="fas fa-paper-plane"></i> Send Request
@@ -484,56 +470,66 @@ Fix Wizard's
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="#home" class="logo">
-                    <img src="assets/images/the-fix-wizard-logo-3.png" alt="The Fix Wizard" class="logo-img footer-logo-img" width="199" height="110">
-                </a>
-                <p>The Fix Wizard handles the repairs most people dread. Quality work, honest pricing, and results that last — for homes and small businesses.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
-                    <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+    <footer class="pt-20 pb-0" style="background-color:#091236;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M20 16L21.5 18.5L24 20L21.5 21.5L20 24L18.5 21.5L16 20L18.5 18.5Z' fill='rgba(255,255,255,.03)'/%3E%3C/svg%3E\");background-size:80px 80px">
+        <div class="max-w-site mx-auto px-6 pb-[60px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12">
+
+                <!-- Brand -->
+                <div class="md:col-span-3 lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+                    <a href="#home" class="inline-block mb-[18px]">
+                        <img src="assets/images/the-fix-wizard-logo-3.png" alt="The Fix Wizard" class="h-[64px] w-auto object-contain rounded-lg">
+                    </a>
+                    <p class="text-[15px] leading-[1.7] mb-[22px]" style="color:rgba(255,255,255,.55)">The Fix Wizard handles the repairs most people dread. Quality work, honest pricing, and results that last.</p>
+                    <div class="flex gap-2.5 justify-center md:justify-start">
+                        <a href="#" aria-label="Facebook"  class="w-[38px] h-[38px] rounded-lg flex items-center justify-center text-[15px] transition-all hover:-translate-y-0.5 hover:bg-orange hover:border-orange hover:text-white" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55)"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram" class="w-[38px] h-[38px] rounded-lg flex items-center justify-center text-[15px] transition-all hover:-translate-y-0.5 hover:bg-orange hover:border-orange hover:text-white" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55)"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Google"    class="w-[38px] h-[38px] rounded-lg flex items-center justify-center text-[15px] transition-all hover:-translate-y-0.5 hover:bg-orange hover:border-orange hover:text-white" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55)"><i class="fab fa-google"></i></a>
+                        <a href="#" aria-label="Yelp"      class="w-[38px] h-[38px] rounded-lg flex items-center justify-center text-[15px] transition-all hover:-translate-y-0.5 hover:bg-orange hover:border-orange hover:text-white" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55)"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-[14px] font-bold text-white mb-[18px] tracking-wide">Services</h4>
+                    <ul class="flex flex-col gap-[9px]">
+                        <li><a href="garage-door-repair-new-jersey/"  class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Garage Door Repair</a></li>
+                        <li><a href="drywall-repair-new-jersey/"       class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Drywall Repair</a></li>
+                        <li><a href="furniture-assembly-new-jersey/"   class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Furniture Assembly</a></li>
+                        <li><a href="painting-new-jersey/"             class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Painting</a></li>
+                        <li><a href="door-repair-new-jersey/"          class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Door Repair &amp; Replacement</a></li>
+                        <li><a href="chimney-masonry-new-jersey/"      class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Chimney &amp; Masonry</a></li>
+                        <li><a href="electrical-repair-new-jersey/"    class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Light Electrical</a></li>
+                        <li><a href="plumbing-repair-new-jersey/"      class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Light Plumbing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-[14px] font-bold text-white mb-[18px] tracking-wide">Quick Links</h4>
+                    <ul class="flex flex-col gap-[9px]">
+                        <li><a href="#home"    class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Home</a></li>
+                        <li><a href="#services" class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Services</a></li>
+                        <li><a href="#why-us"  class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">About</a></li>
+                        <li><a href="#contact" class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Get a Quote</a></li>
+                        <li><a href="#"        class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-[14px] font-bold text-white mb-[18px] tracking-wide">Contact</h4>
+                    <ul class="flex flex-col gap-[9px]">
+                        <li class="flex items-center gap-2.5 text-[14px]" style="color:rgba(255,255,255,.5)"><i class="fas fa-phone text-orange w-4 shrink-0"></i><a href="tel:+15551234567" class="hover:text-orange transition-colors" style="color:rgba(255,255,255,.5)">(555) 123-4567</a></li>
+                        <li class="flex items-center gap-2.5 text-[14px]" style="color:rgba(255,255,255,.5)"><i class="fas fa-envelope text-orange w-4 shrink-0"></i><a href="mailto:hello@handypro.com" class="hover:text-orange transition-colors" style="color:rgba(255,255,255,.5)">hello@handypro.com</a></li>
+                        <li class="flex items-center gap-2.5 text-[14px]" style="color:rgba(255,255,255,.5)"><i class="fas fa-clock text-orange w-4 shrink-0"></i><span>Mon–Sat: 7am – 7pm</span></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="garage-door-repair-new-jersey/">Garage Door Repair</a></li>
-                    <li><a href="drywall-repair-new-jersey/">Drywall Repair</a></li>
-                    <li><a href="furniture-assembly-new-jersey/">Furniture Assembly</a></li>
-                    <li><a href="painting-new-jersey/">Painting</a></li>
-                    <li><a href="door-repair-new-jersey/">Door Repair &amp; Replacement</a></li>
-                    <li><a href="chimney-masonry-new-jersey/">Chimney &amp; Masonry</a></li>
-                    <li><a href="electrical-repair-new-jersey/">Light Electrical</a></li>
-                    <li><a href="plumbing-repair-new-jersey/">Light Plumbing</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#why-us">About</a></li>
-                    <li><a href="#contact">Get a Quote</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <ul class="footer-contact">
-                    <li><i class="fas fa-phone"></i><a href="tel:+15551234567">(555) 123-4567</a></li>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:hello@handypro.com">hello@handypro.com</a></li>
-                    <li><i class="fas fa-clock"></i><span>Mon–Sat: 7am – 7pm</span></li>
-                </ul>
-            </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container footer-bottom-inner">
-                <p>&copy; <span id="year"></span> The Fix Wizard. All rights reserved.</p>
-                <p>Made with <i class="fas fa-heart" style="color:var(--orange)"></i> for homeowners everywhere</p>
+        <div class="py-[22px] border-t border-transparent" style="background:linear-gradient(#091236,#091236) padding-box,linear-gradient(90deg,transparent,rgba(255,107,53,.35),transparent) border-box">
+            <div class="max-w-site mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-2 flex-wrap">
+                <p class="text-[13px]" style="color:rgba(255,255,255,.35)">&copy; <span id="year"></span> The Fix Wizard. All rights reserved.</p>
+                <p class="text-[13px]" style="color:rgba(255,255,255,.35)">Made with <i class="fas fa-heart text-orange"></i> for homeowners everywhere</p>
             </div>
         </div>
     </footer>

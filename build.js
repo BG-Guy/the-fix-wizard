@@ -1,37 +1,25 @@
-const fs = require('fs');
+const fs   = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
-const PARTIALS_DIR = path.join(__dirname, 'partials');
-const OUTPUT = path.join(__dirname, 'index.html');
+const PARTIALS = path.join(__dirname, 'partials');
+const OUTPUT   = path.join(__dirname, 'index.html');
 
 const order = [
-    'head',
-    'loader',
-    'navbar',
-    'hero',
-    'why-us',
-    'services',
-    'faq',
-    'cta-banner',
-    'contact',
-    'footer',
-    'sticky-cta',
+  'head', 'loader', 'navbar', 'hero', 'why-us',
+  'services', 'faq', 'cta-banner', 'contact', 'footer', 'sticky-cta',
 ];
 
-const parts = order.map(name => {
-    const file = path.join(PARTIALS_DIR, `${name}.html`);
-    return fs.readFileSync(file, 'utf8');
-});
-
-const html = `<!DOCTYPE html>
-<html lang="en">
-${parts[0]}
-<body>
-
-${parts.slice(1).join('\n')}
-</body>
-</html>
-`;
-
+// 1. Assemble index.html from partials
+const parts = order.map(n => fs.readFileSync(path.join(PARTIALS, `${n}.html`), 'utf8'));
+const html  = `<!DOCTYPE html>\n<html lang="en">\n${parts[0]}\n<body>\n\n${parts.slice(1).join('\n')}\n</body>\n</html>\n`;
 fs.writeFileSync(OUTPUT, html, 'utf8');
-console.log(`Built index.html from ${order.length} partials`);
+console.log(`✓ index.html assembled (${order.length} partials)`);
+
+// 2. Compile Tailwind
+try {
+  execSync('./node_modules/.bin/tailwind -i css/input.css -o css/tw.css --minify', { stdio: 'inherit' });
+  console.log('✓ css/tw.css compiled');
+} catch (e) {
+  process.exit(1);
+}
