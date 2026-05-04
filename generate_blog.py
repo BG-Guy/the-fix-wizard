@@ -10,7 +10,7 @@ def navbar_html(depth=2):
     root = '../' * depth
     return f'''    <nav id="navbar" class="navbar">
         <div class="container nav-container">
-            <a href="{root}" class="logo"><img src="{root}assets/images/the-fix-wizard-logo.png" alt="The Fix Wizard" class="logo-img" width="199" height="110"></a>
+            <a href="{root}" class="logo"><img src="{root}assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img" width="199" height="110"></a>
             <ul class="nav-links">
                 <li><a href="{root}" class="nav-link">Home</a></li>
                 <li><a href="{root}#services" class="nav-link active">Services</a></li>
@@ -46,7 +46,7 @@ def footer_html(depth=2):
     return f'''    <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="{root}" class="logo"><img src="{root}assets/images/the-fix-wizard-logo.png" alt="The Fix Wizard" class="logo-img footer-logo-img" width="199" height="110"></a>
+                <a href="{root}" class="logo"><img src="{root}assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img footer-logo-img" width="199" height="110"></a>
                 <p>The Fix Wizard handles the repairs most people dread. Quality work, honest pricing, and results that last.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
