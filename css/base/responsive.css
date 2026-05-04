@@ -8,6 +8,7 @@
 
 @media (max-width: 1024px) {
     .services-grid  { grid-template-columns:repeat(2,1fr); }
+    .service-card-img { height:180px; }
     .why-us-inner   { gap:48px; }
     .contact-grid   { grid-template-columns:1fr; }
     .footer-grid    { grid-template-columns:1fr 1fr; gap:36px; }
@@ -45,8 +46,12 @@
     /* ---- Section headers ---- */
     .section-header { margin-bottom:40px; }
 
-    /* ---- Services ---- */
-    .services-grid  { grid-template-columns:1fr; }
+    /* ---- Services — 2 columns on mobile, image shorter ---- */
+    .services-grid  { grid-template-columns:repeat(2,1fr); gap:16px; }
+    .service-card-img { height:160px; }
+    .service-card-inner { padding:18px 20px 22px; gap:8px; }
+    .service-card-inner h3 { font-size:16px; }
+    .service-card-inner p  { font-size:13px; }
 
     /* ---- Magic bubble ---- */
     .magic-bubble   { width:300px; height:300px; padding:40px; }
@@ -95,9 +100,11 @@
     .hero-card      { padding:20px; }
     .hero-card-services { grid-template-columns:1fr; }
 
-    /* ---- Service cards ---- */
-    .service-card-inner { padding:20px; }
-    /* Keep hero card services at 2 columns even on small mobile (8 items) */
+    /* ---- Services — single column on small mobile ---- */
+    .services-grid  { grid-template-columns:1fr; gap:14px; }
+    .service-card-img { height:200px; }
+    .service-card-inner { padding:20px 22px 24px; }
+    /* Keep hero card services at 2 columns (8 items) */
     .hero-card-services { grid-template-columns:repeat(2,1fr); }
 
     /* ---- Magic bubble ---- */
