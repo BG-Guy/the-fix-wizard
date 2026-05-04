@@ -752,7 +752,8 @@ def blog_post_page(service_dir, service_label, slug, post, keywords):
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="{root}css/bundle.css">
+    <link rel="stylesheet" href="{root}css/tw.css">
+    <link rel="stylesheet" href="{root}css/custom.css">
 </head>
 <body>
 

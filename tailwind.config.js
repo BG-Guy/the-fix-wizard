@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './partials/**/*.html',
     './index.html',
+    './partials/**/*.html',
+    './**/*-new-jersey/**/*.html',
+    './mounting-installation-new-jersey/**/*.html',
   ],
   theme: {
     extend: {

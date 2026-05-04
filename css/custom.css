@@ -161,3 +161,14 @@
     .magic-bubble { width:220px; height:220px; padding:28px; }
     #magicText { font-size:20px; }
 }
+
+/* ---- Service page hero background ---- */
+.sp-hero {
+    background-color: var(--blue-darkest);
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M20 16L21.5 18.5L24 20L21.5 21.5L20 24L18.5 21.5L16 20L18.5 18.5Z' fill='rgba(255,255,255,.07)'/%3E%3Ccircle cx='72' cy='8' r='1.5' fill='rgba(255,255,255,.05)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 65% 75% at 95% -5%, rgba(255,107,53,.28) 0%, rgba(255,107,53,.06) 45%, transparent 70%),
+        radial-gradient(ellipse 45% 40% at -5% 100%, rgba(255,140,66,.12) 0%, transparent 60%),
+        linear-gradient(148deg, #060d2e 0%, #0d1b4b 52%, #152468 100%);
+    background-size: 80px 80px, 100% 100%, 100% 100%, 100% 100%;
+}
