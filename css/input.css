@@ -690,6 +690,66 @@
 }
 
 /* =============================================================
+   Area Page — Improved Hero Header
+   ============================================================= */
+@layer components {
+
+  .area-hero-breadcrumb {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 13px; color: rgba(255,255,255,.45);
+    margin-bottom: 22px; flex-wrap: wrap;
+  }
+  .area-hero-breadcrumb a { color: rgba(255,255,255,.65); text-decoration: none; transition: color .2s; }
+  .area-hero-breadcrumb a:hover { color: var(--orange); }
+  .area-hero-breadcrumb .sep { color: rgba(255,255,255,.25); font-size: 11px; }
+  .area-hero-breadcrumb .current { color: rgba(255,255,255,.75); }
+
+  .area-hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,107,53,.15);
+    border: 1px solid rgba(255,107,53,.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    color: var(--orange);
+    font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .08em;
+    margin-bottom: 16px;
+  }
+  .area-hero-badge i { font-size: 11px; }
+
+  .area-hero-h1 {
+    font-size: clamp(24px, 4vw, 42px);
+    font-weight: 800;
+    color: white;
+    line-height: 1.18;
+    margin-bottom: 22px;
+    font-family: 'Cinzel', serif;
+  }
+  .area-hero-h1 em { font-style: normal; color: var(--orange); }
+
+  .area-hero-pills {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 28px;
+  }
+  .area-hero-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 13px; color: rgba(255,255,255,.82); font-weight: 500;
+  }
+  .area-hero-pill i { color: var(--orange); font-size: 11px; }
+
+  .area-hero-ctas { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 480px) {
+    .area-hero-h1 { font-size: 22px; }
+    .area-hero-ctas .btn { width: 100%; justify-content: center; }
+  }
+}
+
+/* =============================================================
    Locations Hub Page
    ============================================================= */
 @layer components {

@@ -257,13 +257,18 @@ SUB_SERVICES = {
 
 PIN_SVG = '<svg viewBox="0 0 24 30" fill="none" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 18 12 18S24 21 24 12C24 5.4 18.6 0 12 0z" fill="#FF6B35"/><circle cx="12" cy="12" r="4.5" fill="white"/></svg>'
 
-COMMON_HEAD = """\
+GFONTS = "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+FA     = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+
+COMMON_HEAD = f"""\
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">"""
+    <link rel="preload" href="{GFONTS}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{GFONTS}"></noscript>
+    <link rel="preload" href="{FA}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{FA}"></noscript>"""
 
 
 # ─── Shared templates ──────────────────────────────────────────────────────────
@@ -382,7 +387,7 @@ def county_card(county):
         f'                    <div class="loc-services-grid">',
     ]
     for svc in SERVICES:
-        url = f'../{svc["slug_prefix"]}-{slug}/'
+        url = f'{svc["slug_prefix"]}-{slug}/'   # same-dir: locations/index.html → locations/slug/
         lines.append(f'                        <a href="{url}" class="loc-svc-btn"><i class="fas {svc["icon"]}"></i> {svc["name"]}</a>')
     lines += ['                    </div>', '                </div>']
     return "\n".join(lines)
@@ -514,7 +519,7 @@ def area_page_html(svc, county):
       "description": "{meta_desc}"
     }}"""
     other_svcs = "\n".join(
-        f'                        <a href="../../{s["slug_prefix"]}-{slug}/"><i class="fas {s["icon"]}"></i> {s["name"]}</a>'
+        f'                        <a href="../{s["slug_prefix"]}-{slug}/"><i class="fas {s["icon"]}"></i> {s["name"]}</a>'
         for s in SERVICES if s["name"] != sn
     )
     sub_sections = sub_service_sections(sn, cn)
@@ -535,17 +540,30 @@ def area_page_html(svc, county):
 
     <section class="sp-hero" style="padding-bottom:52px;">
         <div class="container">
-            <nav class="blog-breadcrumb">
+            <nav class="area-hero-breadcrumb">
                 <a href="../../">Home</a>
-                <i class="fas fa-chevron-right"></i>
+                <span class="sep"><i class="fas fa-chevron-right"></i></span>
                 <a href="../../locations/">Locations</a>
-                <i class="fas fa-chevron-right"></i>
-                <span>{cn}</span>
-                <i class="fas fa-chevron-right"></i>
-                <span>{sn}</span>
+                <span class="sep"><i class="fas fa-chevron-right"></i></span>
+                <a href="../../locations/#{slug}">{cn}</a>
+                <span class="sep"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">{sn}</span>
             </nav>
-            <h1 class="sp-hero-title" style="margin-top:20px;">Expert {sn} in {cn}, New Jersey</h1>
-            <p class="sp-hero-desc">Licensed &amp; insured {sn.lower()} serving {towns} and all of {cn}. Free estimates — same-day appointments available.</p>
+            <div class="area-hero-badge">
+                <i class="fas {svc['icon']}"></i>
+                <span>{sn}</span>
+            </div>
+            <h1 class="area-hero-h1">Expert {sn} in <em>{cn}</em>, New Jersey</h1>
+            <div class="area-hero-pills">
+                <span class="area-hero-pill"><i class="fas fa-map-marker-alt"></i> {cn}, NJ</span>
+                <span class="area-hero-pill"><i class="fas fa-calendar-check"></i> Same-Day Available</span>
+                <span class="area-hero-pill"><i class="fas fa-tag"></i> Free Estimates</span>
+                <span class="area-hero-pill"><i class="fas fa-shield-halved"></i> Licensed &amp; Insured</span>
+            </div>
+            <div class="area-hero-ctas">
+                <a href="tel:+15551234567" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                <a href="../../#contact" class="btn btn-outline-white">Get Free Quote</a>
+            </div>
         </div>
     </section>
 
@@ -636,7 +654,7 @@ def build_area_pages():
     for county in COUNTIES:
         for svc in SERVICES:
             dir_name = f'{svc["slug_prefix"]}-{county["slug"]}'
-            out_dir = os.path.join(ROOT, dir_name)
+            out_dir = os.path.join(ROOT, "locations", dir_name)
             os.makedirs(out_dir, exist_ok=True)
             with open(os.path.join(out_dir, "index.html"), "w") as f:
                 f.write(area_page_html(svc, county))
