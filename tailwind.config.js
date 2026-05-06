@@ -5,6 +5,9 @@ module.exports = {
     './partials/**/*.html',
     './**/*-new-jersey/**/*.html',
     './mounting-installation-new-jersey/**/*.html',
+    './locations/**/*.html',
+    './**/*-county-nj/**/*.html',
+    './**/*-in-*-nj/**/*.html',
   ],
   theme: {
     extend: {

@@ -688,3 +688,168 @@
     .blog-body h3      { font-size: 16px; }
   }
 }
+
+/* =============================================================
+   Locations Hub Page
+   ============================================================= */
+@layer components {
+
+  .loc-section {
+    padding: 72px 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #F3F6FF;
+    background-image: radial-gradient(circle, rgba(13,27,75,.055) 1.5px, transparent 1.5px);
+    background-size: 26px 26px;
+  }
+
+  .loc-bg-pin {
+    position: absolute;
+    opacity: .04;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .loc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 640px) { .loc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .loc-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .loc-card {
+    background: #fff;
+    border-radius: var(--r-lg);
+    box-shadow: 0 8px 40px rgba(13,27,75,.09);
+    border: 1px solid rgba(13,27,75,.07);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: box-shadow .25s ease, transform .25s ease;
+  }
+  .loc-card:hover {
+    box-shadow: 0 20px 60px rgba(13,27,75,.17);
+    transform: translateY(-3px);
+  }
+
+  .loc-card__header { display: flex; align-items: flex-start; gap: 12px; }
+
+  .loc-pin-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: rgba(255,107,53,.1);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .loc-pin-icon svg { width: 18px; height: 22px; }
+
+  .loc-card__name { font-size: 17px; font-weight: 700; color: var(--blue-dark); line-height: 1.3; }
+  .loc-card__towns { font-size: 11px; color: #94a3b8; margin-top: 2px; line-height: 1.5; }
+  .loc-card__desc { font-size: 13px; color: #64748b; line-height: 1.65; }
+  .loc-card__divider { height: 1px; background: rgba(13,27,75,.06); }
+
+  .loc-services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .loc-svc-btn {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(13,27,75,.14);
+    color: var(--blue-dark);
+    font-size: 11.5px; font-weight: 600;
+    text-decoration: none;
+    transition: all .2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .loc-svc-btn i { color: var(--orange); font-size: 10px; flex-shrink: 0; transition: color .2s ease; }
+  .loc-svc-btn:hover { background: var(--blue-dark); color: #fff; border-color: var(--blue-dark); }
+  .loc-svc-btn:hover i { color: #FF8C42; }
+
+  /* ===== Service Area Pages ===== */
+
+  .area-content { padding: 72px 0; background: #fff; }
+
+  .area-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (min-width: 900px) { .area-layout { grid-template-columns: 2fr 1fr; gap: 56px; } }
+
+  .area-body h2 {
+    font-size: 21px; font-weight: 700; color: var(--blue-dark);
+    margin-bottom: 12px; margin-top: 36px;
+  }
+  .area-body h2:first-child { margin-top: 0; }
+  .area-body p { font-size: 15px; color: #475569; line-height: 1.8; margin-bottom: 16px; }
+  .area-body ul { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .area-body ul li {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; color: #334155;
+  }
+  .area-body ul li::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--orange); flex-shrink: 0;
+  }
+
+  .area-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: calc(var(--nav-h) + 20px); }
+
+  .area-cta-box {
+    background: var(--blue-dark); border-radius: 16px;
+    padding: 28px 24px; color: #fff;
+  }
+  .area-cta-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .area-cta-box p { font-size: 13px; color: rgba(255,255,255,.7); margin-bottom: 20px; line-height: 1.6; }
+  .area-cta-box .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
+  .area-cta-box .btn:last-child { margin-bottom: 0; }
+
+  .area-services-box {
+    background: #F3F6FF; border-radius: 16px;
+    padding: 24px; border: 1px solid rgba(13,27,75,.08);
+  }
+  .area-services-box h3 {
+    font-size: 12px; font-weight: 700; color: var(--blue-dark);
+    text-transform: uppercase; letter-spacing: .07em; margin-bottom: 14px;
+  }
+  .area-svc-list { display: flex; flex-direction: column; gap: 0; }
+  .area-svc-list a {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: #334155; font-weight: 500;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(13,27,75,.06);
+    text-decoration: none; transition: color .2s;
+  }
+  .area-svc-list a:last-child { border-bottom: none; padding-bottom: 0; }
+  .area-svc-list a i { color: var(--orange); font-size: 11px; width: 14px; text-align: center; }
+  .area-svc-list a:hover { color: var(--orange); }
+
+  .area-trust-box {
+    background: #fff; border-radius: 16px;
+    padding: 24px; border: 1.5px solid rgba(13,27,75,.08);
+    box-shadow: 0 4px 20px rgba(13,27,75,.07);
+  }
+  .area-trust-box h3 {
+    font-size: 12px; font-weight: 700; color: var(--blue-dark);
+    text-transform: uppercase; letter-spacing: .07em; margin-bottom: 14px;
+  }
+  .area-trust-list { display: flex; flex-direction: column; gap: 10px; }
+  .area-trust-list li {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: #475569;
+  }
+  .area-trust-list li i { color: var(--orange); font-size: 12px; width: 14px; text-align: center; }
+
+  @media (max-width: 768px) {
+    .loc-section   { padding: 48px 0; }
+    .area-content  { padding: 48px 0; }
+    .area-sidebar  { position: static; }
+  }
+}
