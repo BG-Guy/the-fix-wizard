@@ -195,7 +195,57 @@ Create at: `/[service]-[county]-new-jersey/index.html`
 - Link back to parent service page
 - Use same CSS/HTML structure as existing service pages
 
-### 11. Location in Every Heading
+### 11. Sub-Service H3 Keyword Targeting (High Impact)
+
+This is the most powerful on-page SEO technique for local service pages. Instead of one H1 and a few H2s, pack the page with **15–20 H3 headings**, each targeting a distinct sub-service + location keyword.
+
+**Structure:**
+```
+H1: Expert [Service] in [County], NJ
+H2: [Service] in [County] — Everything We Cover
+  H3: [Sub-service 1] in [County], NJ
+  H3: [Sub-service 2] in [County], NJ
+  ... (15–20 H3s)
+H2: Why [County] Homeowners Choose The Fix Wizard
+H2: Frequently Asked Questions About [Service] in [County]
+  H4: [question 1]
+  H4: [question 2]
+```
+
+**Sub-service lists by service (use ALL of these):**
+
+Garage Door Repair:
+- Garage Door Spring Repair · Garage Door Cable Repair · Garage Door Opener Repair · Garage Door Opener Installation · Garage Door Panel Replacement · Garage Door Track Repair · Garage Door Roller Replacement · Garage Door Sensor Repair · Emergency Garage Door Repair · Garage Door Tune-Up & Maintenance · Garage Door Weatherstripping · Garage Door Balance Adjustment · New Garage Door Installation
+
+Drywall Repair:
+- Drywall Hole Repair · Drywall Crack Repair · Water Damage Drywall Repair · Drywall Patch & Texture Matching · Ceiling Drywall Repair · Drywall Joint & Tape Repair · Drywall Corner Bead Repair · Popcorn Ceiling Removal · Drywall Skim Coat · Drywall Mold Damage Repair · Drywall Installation
+
+Painting:
+- Interior Wall Painting · Exterior House Painting · Ceiling Painting · Trim & Baseboard Painting · Door & Window Frame Painting · Cabinet Painting & Refinishing · Deck & Fence Staining · Paint Touch-Up & Blending · Wallpaper Removal & Painting · Garage Floor Epoxy Coating
+
+Door Repair:
+- Door Frame Repair · Door Hinge Repair & Replacement · Door Lock Repair · Sliding Door Repair · French Door Repair · Screen Door Repair & Replacement · Pocket Door Repair · Door Weatherstripping · Exterior Door Installation · Interior Door Installation · Bi-Fold Door Repair · Storm Door Installation
+
+Chimney & Masonry:
+- Chimney Sweeping & Cleaning · Chimney Tuckpointing · Chimney Crown Repair · Chimney Cap Installation · Chimney Flashing Repair · Firebox Repair · Chimney Liner Installation · Chimney Waterproofing · Chimney Draft Repair · Fireplace Damper Repair · Brick & Mortar Restoration · Chimney Inspection
+
+Electrical:
+- Electrical Outlet Repair · Light Switch Replacement · Ceiling Fan Installation · Light Fixture Installation · GFCI Outlet Installation · Dimmer Switch Installation · Recessed Lighting Installation · Outdoor Lighting Installation · USB Outlet Installation · Smart Switch Installation · Smoke Detector Installation · TV Outlet Installation
+
+Plumbing:
+- Faucet Repair & Replacement · Leaky Pipe Repair · Toilet Repair & Replacement · Drain Cleaning & Unclogging · Garbage Disposal Installation · Showerhead Replacement · Under-Sink Plumbing Repair · Kitchen Faucet Installation · Water Valve Replacement · Toilet Flapper Replacement · Bathtub Drain Repair · P-Trap Replacement
+
+Furniture Assembly:
+- IKEA Furniture Assembly · Wayfair Furniture Assembly · Bed Frame Assembly · Desk & Office Furniture Assembly · Wardrobe & Closet Assembly · Bookshelf Assembly · TV Stand Assembly · Dining Table & Chair Assembly · TV Mounting · Wall Shelving Installation · Exercise Equipment Assembly · Crib & Nursery Furniture Assembly
+
+**Rules:**
+- Every H3 must include the county name: `Garage Door Spring Repair in Bergen County, NJ`
+- Each H3 gets 2–3 sentences of contextual body text below it
+- This structure alone can rank a page for 15–20 long-tail keywords
+- ✅ `Chimney Crown Repair in Bergen County, NJ`
+- ❌ `Crown Repair` (no location = no local ranking signal)
+
+### 13. Location in Every Heading
 
 - H3s should include the location, not just H1
 - Format: `[Specific Service] in [County] County, NJ`
@@ -203,14 +253,14 @@ Create at: `/[service]-[county]-new-jersey/index.html`
 - ❌ Bad H3: `Spring Repair Services`
 - This targets long-tail queries and reinforces geo-relevance deeper in the page
 
-### 12. Sub-Area Expansion on County Pages
+### 14. Sub-Area Expansion on County Pages
 
 - Don't just list 3–5 towns — go deeper with neighborhoods, boroughs, townships
 - Mention sub-areas naturally in body text: "We serve homeowners across Bergen County — from Hackensack and Paramus to Fort Lee, Englewood, and the surrounding neighborhoods"
 - This captures hyperlocal "near me" queries
 - Aim for 6–10 specific place names per county page
 
-### 13. On-Page Trust Signals
+### 15. On-Page Trust Signals
 
 Every service page and county landing page should include:
 - **Star rating with review count** — e.g., `Rated 4.9 on Google (120+ reviews)` — above the fold
@@ -219,7 +269,7 @@ Every service page and county landing page should include:
 - **Insurance/bonding line** — "Licensed, bonded & insured in New Jersey"
 - Place at least one trust signal in the hero section, before the fold
 
-### 14. Semantic Keyword Modifiers
+### 16. Semantic Keyword Modifiers
 
 Pair every primary keyword with these modifiers across headings and body text:
 - `expert [service] NJ` / `certified [service] contractor NJ`
@@ -230,7 +280,7 @@ Pair every primary keyword with these modifiers across headings and body text:
 - ✅ Good: `Expert Drywall Repair in Bergen County, NJ`
 - ✅ Good: `Certified Handyman in New Jersey — Free Estimates`
 
-### 15. Hub-and-Spoke Page Architecture
+### 17. Hub-and-Spoke Page Architecture
 
 - **Hub** = service landing page (e.g., `/drywall-repair-new-jersey/`)
 - **Spokes** = county pages (e.g., `/drywall-repair-bergen-county-new-jersey/`)
@@ -240,7 +290,7 @@ Pair every primary keyword with these modifiers across headings and body text:
 - Blog posts link to the hub (not directly to spokes)
 - This creates a clear topical cluster that Google can crawl and understand
 
-### 17. Commit Convention
+### 18. Commit Convention
 
 ```bash
 git config user.email 'seo-agent@thefixwizard.com'
