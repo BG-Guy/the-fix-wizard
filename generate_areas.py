@@ -38,14 +38,9 @@ COUNTIES = [
 ]
 
 SERVICES = [
-    {"name": "Drywall Repair",       "slug_prefix": "drywall-repair-in",       "icon": "fa-layer-group",   "parent": "drywall-repair-new-jersey",       "parent_label": "Drywall Repair in NJ"},
-    {"name": "Garage Door Repair",   "slug_prefix": "garage-door-repair-in",   "icon": "fa-warehouse",     "parent": "garage-door-repair-new-jersey",   "parent_label": "Garage Door Repair in NJ"},
-    {"name": "Painting",             "slug_prefix": "painting-in",             "icon": "fa-paint-roller",  "parent": "painting-new-jersey",             "parent_label": "Painting in NJ"},
-    {"name": "Door Repair",          "slug_prefix": "door-repair-in",          "icon": "fa-door-open",     "parent": "door-repair-new-jersey",          "parent_label": "Door Repair in NJ"},
-    {"name": "Chimney Repair",       "slug_prefix": "chimney-repair-in",       "icon": "fa-fire",          "parent": "chimney-masonry-new-jersey",      "parent_label": "Chimney & Masonry in NJ"},
-    {"name": "Electrical Repair",    "slug_prefix": "electrical-repair-in",    "icon": "fa-bolt",          "parent": "electrical-repair-new-jersey",    "parent_label": "Electrical Repair in NJ"},
-    {"name": "Plumbing Repair",      "slug_prefix": "plumbing-repair-in",      "icon": "fa-faucet",        "parent": "plumbing-repair-new-jersey",      "parent_label": "Plumbing Repair in NJ"},
-    {"name": "Furniture Assembly",   "slug_prefix": "furniture-assembly-in",   "icon": "fa-chair",         "parent": "furniture-assembly-new-jersey",   "parent_label": "Furniture Assembly in NJ"},
+    {"name": "Garage Door Repair",  "slug_prefix": "garage-door-repair-in",  "icon": "fa-warehouse",           "parent": "garage-door-repair-new-jersey",  "parent_label": "Garage Door Repair in NJ"},
+    {"name": "Chimney Repair",      "slug_prefix": "chimney-repair-in",      "icon": "fa-fire",                "parent": "chimney-masonry-new-jersey",     "parent_label": "Chimney & Masonry in NJ"},
+    {"name": "Handyman Services",   "slug_prefix": "handyman-services-in",   "icon": "fa-screwdriver-wrench",  "parent": "handyman-services-new-jersey",   "parent_label": "Handyman Services in NJ"},
 ]
 
 # Sub-services: (heading_suffix, body_text_template)
@@ -227,6 +222,32 @@ SUB_SERVICES = {
         ("P-Trap Replacement",
          "Leaking or corroded P-traps under sinks and tubs allow sewer gas into the home and drip onto cabinet shelves. We replace chrome, PVC, or ABS P-traps in {cn} homes with correctly sized fittings, checking for level and testing all joints before reassembling the cabinet."),
     ],
+    "Handyman Services": [
+        ("Drywall Repair & Patching",
+         "Holes, cracks, water damage, and texture matching are among the most common handyman calls in {cn}. We patch drywall invisibly — blending the repair with your existing wall texture so you'd never know anything happened."),
+        ("Interior Painting",
+         "Interior painting in {cn} starts with proper prep: patching, sanding, priming, and taping before a single drop of paint goes on. We use low-VOC paints, protect all floors and furniture, and apply two full coats for lasting, even coverage."),
+        ("Door Repair & Installation",
+         "Sticking doors, broken hinges, damaged frames, and squeaking hardware are everyday handyman repairs in {cn} homes. We adjust, repair, or replace interior and exterior doors — leaving every door opening, closing, and latching cleanly."),
+        ("Furniture Assembly",
+         "Flat-pack furniture from IKEA, Wayfair, or Amazon assembled correctly in your {cn} home — beds, desks, wardrobes, shelving, and TV stands. We bring the tools and handle pieces of any size or complexity."),
+        ("TV Mounting & Installation",
+         "We mount TVs on all wall types in {cn} homes — drywall over studs, concrete, tile, and brick. We locate studs or use correct toggle anchors, level the mount, and route cables in-wall when requested."),
+        ("Light Electrical Repairs",
+         "Dead outlets, flickering lights, or switches that need replacing are routine handyman fixes throughout {cn}. We replace outlets, switches, ceiling fans, and light fixtures — all code-compliant work done safely."),
+        ("Light Plumbing Repairs",
+         "Dripping faucets, running toilets, slow drains, and under-sink leaks are common calls across {cn} homes. We repair or replace faucets, flappers, P-traps, showerheads, and garbage disposals on the same visit."),
+        ("Shelf & Storage Installation",
+         "Floating shelves, wall-mounted storage units, and closet organizers installed level and anchored to studs in {cn} homes. We locate framing, use correct anchors for the load, and leave shelves that are genuinely horizontal and secure."),
+        ("Weatherstripping & Door Seals",
+         "Drafty exterior doors are one of the biggest sources of energy loss in {cn} homes. We replace door weatherstripping, bottom seals, and threshold gaskets — stopping drafts and reducing heating and cooling costs."),
+        ("Caulking & Sealing",
+         "Failed caulk around bathtubs, sinks, windows, and exterior trim lets water infiltrate and causes mold, rot, and energy loss. We remove old caulk completely, clean the substrate, and apply fresh sealant with clean tooled lines throughout your {cn} home."),
+        ("Tile Repair & Grout",
+         "Cracked or loose tiles and failed grout in bathrooms and kitchens are common in older {cn} homes. We replace individual tiles, re-grout deteriorated joints, and re-caulk tub and shower transitions to restore a clean, waterproof surface."),
+        ("Handyman Home Inspection",
+         "Not sure what needs fixing? We'll walk through your {cn} home room by room, identify deferred maintenance items, prioritize them by urgency, and give you a written list with honest cost estimates — so you can plan repairs before small problems become expensive ones."),
+    ],
     "Furniture Assembly": [
         ("IKEA Furniture Assembly",
          "IKEA flat-pack furniture requires careful alignment of cam locks, dowels, and confirmat screws — and the instructions leave room for costly errors. We assemble all IKEA product lines in {cn} homes correctly the first time, including pre-drilling for wall-mounted anti-tip brackets."),
@@ -332,13 +353,8 @@ def footer_html(depth):
                 <h4>Services</h4>
                 <ul>
                     <li><a href="{p}garage-door-repair-new-jersey/">Garage Door Repair</a></li>
-                    <li><a href="{p}drywall-repair-new-jersey/">Drywall Repair</a></li>
-                    <li><a href="{p}furniture-assembly-new-jersey/">Furniture Assembly</a></li>
-                    <li><a href="{p}painting-new-jersey/">Painting</a></li>
-                    <li><a href="{p}door-repair-new-jersey/">Door Repair &amp; Replacement</a></li>
                     <li><a href="{p}chimney-masonry-new-jersey/">Chimney &amp; Masonry</a></li>
-                    <li><a href="{p}electrical-repair-new-jersey/">Light Electrical</a></li>
-                    <li><a href="{p}plumbing-repair-new-jersey/">Light Plumbing</a></li>
+                    <li><a href="{p}handyman-services-new-jersey/">Handyman Services</a></li>
                 </ul>
             </div>
             <div class="footer-col">
