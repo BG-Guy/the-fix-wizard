@@ -103,61 +103,121 @@
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <!-- HERO -->
-    <section class="hero relative flex items-center overflow-hidden min-h-[80vh] pt-[var(--nav-h)] rounded-b-[56px]">
+    <section class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)] rounded-b-[56px]">
         <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
-            <div class="grid grid-cols-1 tab:grid-cols-[1fr_400px] gap-12 items-center py-16 md:py-12">
+            <div class="grid grid-cols-1 tab:grid-cols-[1fr_420px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
+
+                <!-- LEFT -->
                 <div class="flex flex-col items-center tab:items-start text-center tab:text-left">
-                    <nav class="flex items-center gap-2 text-white/40 text-[13px] mb-6 flex-wrap justify-center tab:justify-start">
-                        <a href="../" class="hover:text-orange transition-colors">Home</a>
-                        <i class="fas fa-chevron-right text-[10px]"></i>
-                        <span class="text-white/70">Cleveland, Ohio</span>
-                    </nav>
-                    <div class="inline-flex items-center gap-2 bg-orange/[.14] border border-orange/30 text-orange-light px-4 py-1.5 rounded-full text-[13px] font-semibold mb-6 tracking-wide">
+                    <div class="inline-flex items-center gap-2 bg-orange/[.14] border border-orange/30 text-orange-light px-4 py-1.5 rounded-full text-[13px] font-semibold mb-7 tracking-wide">
                         <i class="fas fa-location-dot text-orange text-[11px]"></i>
                         <span>Serving Greater Cleveland, Ohio</span>
                     </div>
-                    <h1 class="font-cinzel text-[clamp(28px,4.5vw,56px)] font-black leading-[1.1] tracking-tight text-white mb-5">
+                    <h1 class="font-cinzel text-[clamp(32px,5vw,64px)] font-black leading-[1.1] tracking-tight text-white mb-6">
                         Chimney &amp; Handyman Services<br><span class="text-orange">in <span class="lightning-word">Cleveland, Ohio</span></span>
                     </h1>
-                    <p class="text-[17px] text-white/65 leading-[1.75] mb-8 max-w-[540px]">
+                    <p class="text-[18px] text-white/65 leading-[1.75] mb-6 max-w-[560px]">
                         Cleveland's trusted specialists for chimney repair, masonry, and handyman services. Licensed &amp; insured, same-day available across the greater Cleveland area.
                     </p>
-                    <div class="flex items-center gap-3 mb-10 flex-wrap justify-center tab:justify-start">
-                        <a href="tel:+15551234567" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Call Now</a>
-                        <a href="../#contact" class="btn btn-outline btn-lg"><i class="fas fa-calendar-alt"></i> Free Estimate</a>
-                    </div>
-                    <div class="flex items-center gap-6 flex-wrap justify-center tab:justify-start">
-                        <div class="flex items-center gap-2 text-[13px] font-semibold text-white/60"><i class="fas fa-shield-halved text-orange"></i> Licensed &amp; Insured</div>
-                        <div class="flex items-center gap-2 text-[13px] font-semibold text-white/60"><i class="fas fa-calendar-check text-orange"></i> Same-Day Available</div>
-                        <div class="flex items-center gap-2 text-[13px] font-semibold text-white/60"><i class="fas fa-tag text-orange"></i> Free Estimates</div>
-                    </div>
-                </div>
-                <div class="flex items-center justify-center tab:justify-end">
-                    <div class="w-full max-w-[400px] bg-white/[.07] backdrop-blur-xl border border-white/[.13] rounded-xl2 p-7 flex flex-col gap-5">
-                        <div class="text-center">
-                            <div class="text-[14px] font-semibold text-white/50 mb-1">Our 2 Specialties in Cleveland, Ohio</div>
+                    <div class="flex items-center gap-3 mb-8 flex-wrap justify-center tab:justify-start">
+                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
+                            <i class="fas fa-fire text-orange text-[12px]"></i> Chimney &amp; Masonry
                         </div>
-                        <a href="../chimney-masonry-new-jersey/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                            <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[20px] text-white transition-transform group-hover:scale-110"><i class="fas fa-fire"></i></div>
-                            <div class="flex-1 text-left">
-                                <div class="text-[14px] font-bold text-white">Chimney &amp; Masonry</div>
-                                <div class="text-[11px] text-white/50 mt-0.5">Sweeping · Tuckpointing · Crown · Liner</div>
-                            </div>
-                            <i class="fas fa-arrow-right text-orange text-[12px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
+                            <i class="fas fa-screwdriver-wrench text-orange text-[12px]"></i> Handyman Services
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 mb-12 flex-wrap justify-center tab:justify-start hero-actions">
+                        <a href="tel:+15551234567" class="btn btn-primary btn-lg">
+                            <i class="fas fa-phone"></i> Call Now
                         </a>
-                        <a href="../handyman-services-new-jersey/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                            <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[20px] text-white transition-transform group-hover:scale-110"><i class="fas fa-screwdriver-wrench"></i></div>
-                            <div class="flex-1 text-left">
-                                <div class="text-[14px] font-bold text-white">Handyman Services</div>
-                                <div class="text-[11px] text-white/50 mt-0.5">Drywall · Painting · Plumbing · Electrical</div>
-                            </div>
-                            <i class="fas fa-arrow-right text-orange text-[12px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        <a href="../#contact" class="btn btn-outline btn-lg">
+                            <i class="fas fa-calendar-alt"></i> Free Estimate
                         </a>
-                        <a href="../#contact" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Request a Free Quote</a>
-                        <p class="text-[11px] text-white/35 text-center">Response within 2 hours · No obligation</p>
+                    </div>
+                    <div class="w-full h-px bg-white/10 mb-8"></div>
+                    <div class="flex items-center gap-8 flex-wrap justify-center tab:justify-start hero-stats">
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="500">0</span>+</div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Projects Done</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="10">0</span>+</div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Years Exp</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="98">0</span>%</div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Satisfaction</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="2">0</span></div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Specialties</div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- RIGHT -->
+                <div class="flex items-center justify-center tab:justify-end">
+                    <div class="w-full max-w-[520px] bg-white/[.07] backdrop-blur-xl border border-white/[.13] rounded-xl2 p-8 flex flex-col gap-6">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-[52px] h-[52px] shrink-0 bg-orange rounded-md2 flex items-center justify-center text-[22px] text-white">
+                                <i class="fas fa-house-chimney-crack"></i>
+                            </div>
+                            <div>
+                                <div class="text-[16px] font-semibold text-white leading-tight mb-1">Get a Free Estimate</div>
+                                <p class="text-[13px] text-white/50">Response within 2 hours · No obligation</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <a href="../chimney-masonry-new-jersey/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="flex-1 text-left">
+                                    <div class="text-[15px] font-bold text-white leading-tight">Chimney &amp; Masonry</div>
+                                    <div class="text-[12px] text-white/50 mt-0.5">Sweeping · Tuckpointing · Crown Repair · Liner</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-orange text-[13px] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"></i>
+                            </a>
+                            <a href="../handyman-services-new-jersey/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110">
+                                    <i class="fas fa-screwdriver-wrench"></i>
+                                </div>
+                                <div class="flex-1 text-left">
+                                    <div class="text-[15px] font-bold text-white leading-tight">Handyman Services</div>
+                                    <div class="text-[12px] text-white/50 mt-0.5">Drywall · Painting · Plumbing · Electrical &amp; More</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-orange text-[13px] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"></i>
+                            </a>
+                        </div>
+                        <a href="../#contact" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Request a Quote
+                        </a>
+                        <div class="flex gap-3 pt-1 border-t border-white/[.08]">
+                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-shield-halved text-orange text-[13px]"></i><span>Licensed &amp; Insured</span></div>
+                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-clock text-orange text-[13px]"></i><span>Same Day Available</span></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+        </div>
+
+        <!-- Sparkles -->
+        <div class="hero-sparkles absolute inset-0 pointer-events-none z-[2] overflow-hidden" aria-hidden="true">
+            <svg class="sparkle sp-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-4" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-5" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+        </div>
+
+        <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/30 text-[10px] font-medium tracking-[2px] uppercase z-[2]">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down text-[12px]"></i>
         </div>
     </section>
 
