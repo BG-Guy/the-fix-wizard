@@ -306,7 +306,15 @@ def navbar_html(depth, active=""):
                 <li><a href="{prefix}#services" class="nav-link">Services</a></li>
                 <li><a href="{prefix}#why-us" class="nav-link">About</a></li>
                 <li><a href="{prefix}#contact" class="nav-link">Contact</a></li>
-                <li><a href="{prefix}locations/" class="nav-link"{loc_active}>Locations</a></li>
+                <li class="nav-dropdown">
+                    <a href="{prefix}locations/" class="nav-link flex items-center gap-1.5"{loc_active}>Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="{prefix}new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
+                        <a href="{prefix}cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                        <div class="nav-dropdown-divider"></div>
+                        <a href="{prefix}locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+                    </div>
+                </li>
             </ul>
             <div class="nav-actions">
                 <a href="tel:+15551234567" class="nav-phone"><i class="fas fa-phone"></i><span>(555) 123-4567</span></a>
@@ -326,7 +334,12 @@ def navbar_html(depth, active=""):
             <li><a href="{prefix}#services" class="mobile-link">Services</a></li>
             <li><a href="{prefix}#why-us" class="mobile-link">About</a></li>
             <li><a href="{prefix}#contact" class="mobile-link">Contact</a></li>
-            <li><a href="{prefix}locations/" class="mobile-link"{loc_active}>Locations</a></li>
+            <li>
+                <span class="mobile-loc-label">Locations</span>
+                <a href="{prefix}new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> New Jersey</a>
+                <a href="{prefix}cleveland-ohio/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                <a href="{prefix}locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+            </li>
         </ul>
         <a href="tel:+15551234567" class="mobile-phone"><i class="fas fa-phone"></i>(555) 123-4567</a>
         <a href="{prefix}#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
@@ -731,13 +744,200 @@ def patch_all_navbars():
     print(f"  ✓  {patched} existing pages patched with Locations nav link")
 
 
+# ─── 4. CLEVELAND SUBURBS ────────────────────────────────────────────────────────
+
+CLEVELAND_SUBURBS = [
+    {"name": "Cleveland",          "slug": "cleveland-oh",          "towns": "Downtown, Ohio City, Tremont, Lakewood border", "desc": "Ohio's second-largest city — dense urban housing stock with century-old properties and high demand for chimney and handyman work."},
+    {"name": "Cleveland Heights",  "slug": "cleveland-heights-oh",  "towns": "Cedar Lee, Coventry, Noble, Taylor",            "desc": "Historic inner-ring suburb with Tudor Revivals and Colonials built in the 1920s–1940s — aging masonry and older home systems."},
+    {"name": "Lakewood",           "slug": "lakewood-oh",           "towns": "Downtown Lakewood, Gold Coast, Birdtown",       "desc": "Dense west-side suburb with craftsman bungalows and brick Colonials — one of Ohio's most repair-active communities."},
+    {"name": "Parma",              "slug": "parma-oh",              "towns": "Parma Center, Ridgewood, Greenbriar",           "desc": "Ohio's seventh-largest city with postwar ranches and cape cods that need regular upkeep and skilled trade work."},
+    {"name": "Mentor",             "slug": "mentor-oh",             "towns": "Mentor-on-the-Lake, Mentor City Center",        "desc": "Growing northeastern suburb with diverse housing stock from mid-century builds to newer developments."},
+    {"name": "Strongsville",       "slug": "strongsville-oh",       "towns": "Old Town, SouthPark area, Northwood",           "desc": "Upscale southwestern suburb with established neighborhoods and growing demand for premium home services."},
+    {"name": "Westlake",           "slug": "westlake-oh",           "towns": "Crocker Park area, Bradley, Dover Center",      "desc": "Affluent western suburb with well-established neighborhoods, older chimneys, and active home improvement market."},
+    {"name": "Beachwood",          "slug": "beachwood-oh",          "towns": "Chagrin Highlands, Cedar Center, Richmond Hts border", "desc": "Prosperous eastern suburb known for custom homes, well-maintained properties, and high expectations for service quality."},
+    {"name": "Solon",              "slug": "solon-oh",              "towns": "Solon Square, Miles Road, Aurora Road corridor",  "desc": "High-income southeastern suburb with a mix of newer construction and older custom homes needing expert attention."},
+    {"name": "North Olmsted",      "slug": "north-olmsted-oh",      "towns": "Butternut Ridge, Great Northern area",           "desc": "Western suburb with postwar housing stock and strong demand for chimney cleaning and handyman services."},
+    {"name": "Rocky River",        "slug": "rocky-river-oh",        "towns": "Detroit Road, Wooster Road, Lake Road",         "desc": "Charming lakefront suburb with historic homes, older masonry, and waterfront properties requiring specialized care."},
+    {"name": "Euclid",             "slug": "euclid-oh",             "towns": "Euclid Beach, Nottingham, Shore Cultural Centre","desc": "Eastern suburb with industrial-era housing that demands skilled masonry and handyman repair work."},
+    {"name": "Shaker Heights",     "slug": "shaker-heights-oh",     "towns": "Van Aken, Ludlow, Onaway, Moreland",            "desc": "Architecturally significant planned community with Tudor Revivals and Colonials — premium masonry and handyman demand."},
+    {"name": "Bay Village",        "slug": "bay-village-oh",        "towns": "Bay Square, Wolf Road, Porter Creek area",      "desc": "Lakefront suburb with distinctive vintage properties and coastal exposure that accelerates wear on masonry."},
+    {"name": "Avon Lake",          "slug": "avon-lake-oh",          "towns": "Walker Road, Moore Road, Lake Road corridor",   "desc": "Growing western suburb with a mix of established lakeshore homes and newer residential developments."},
+    {"name": "Fairview Park",      "slug": "fairview-park-oh",      "towns": "Lorain Road, Mastick Road, Fairview Park Center","desc": "Established mid-century suburb with active home renovation and strong community investment in property upkeep."},
+    {"name": "Broadview Heights",  "slug": "broadview-heights-oh",  "towns": "Royalton Road, Broadview Road, SOM Center",     "desc": "Upscale southern suburb with custom builds and growing families investing in quality home services."},
+    {"name": "North Royalton",     "slug": "north-royalton-oh",     "towns": "Royalton Road, State Road, York Road",          "desc": "Suburban community with a range of housing types and consistent demand for chimney and handyman repairs."},
+    {"name": "Brunswick",          "slug": "brunswick-oh",          "towns": "Center Road, Pearl Road, Grafton Road",         "desc": "Growing suburban community with older and newer residential properties and a strong handyman service market."},
+    {"name": "Chardon",            "slug": "chardon-oh",            "towns": "Chardon Square, South Street, Water Street",    "desc": "Small-town Geauga County community with older housing and severe winter conditions that accelerate chimney wear."},
+]
+
+CLEVELAND_SERVICES = [
+    {"name": "Chimney Repair",     "slug_prefix": "chimney-repair-in",     "icon": "fa-fire",               "parent": "chimney-masonry-new-jersey",     "parent_label": "Chimney & Masonry"},
+    {"name": "Handyman Services",  "slug_prefix": "handyman-services-in",  "icon": "fa-screwdriver-wrench", "parent": "handyman-services-new-jersey",   "parent_label": "Handyman Services"},
+]
+
+
+def cleveland_area_page_html(svc, suburb):
+    sn = svc["name"]
+    cn = suburb["name"]
+    slug = suburb["slug"]
+    towns = suburb["towns"]
+    parent_url = f'../../{svc["parent"]}/'
+    parent_label = svc["parent_label"]
+    meta_desc = f'Expert {sn.lower()} in {cn}, Ohio. Licensed & insured technicians serving {cn} and the greater Cleveland area. Free estimate — same-day available.'
+    schema = f"""{{
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "{sn}",
+      "provider": {{"@type": "LocalBusiness", "name": "The Fix Wizard"}},
+      "areaServed": {{"@type": "City", "name": "{cn}", "containedInPlace": {{"@type": "State", "name": "Ohio"}}}},
+      "description": "{meta_desc}"
+    }}"""
+    sub_sections = sub_service_sections(sn, cn)
+    other_svcs = "\n".join(
+        f'                        <a href="../{s["slug_prefix"]}-{slug}/"><i class="fas {s["icon"]}"></i> {s["name"]}</a>'
+        for s in CLEVELAND_SERVICES if s["name"] != sn
+    )
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{COMMON_HEAD}
+    <meta name="description" content="{meta_desc}">
+    <title>{sn} in {cn}, Ohio | The Fix Wizard</title>
+    <link rel="stylesheet" href="../../css/tw.css">
+    <link rel="stylesheet" href="../../css/custom.css">
+    <script type="application/ld+json">{schema}</script>
+</head>
+<body>
+
+{navbar_html(2)}
+
+    <section class="sp-hero" style="padding-bottom:52px;">
+        <div class="container">
+            <nav class="area-hero-breadcrumb">
+                <a href="../../">Home</a>
+                <span class="sep"><i class="fas fa-chevron-right"></i></span>
+                <a href="../../cleveland-ohio/">Cleveland, Ohio</a>
+                <span class="sep"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">{sn}</span>
+            </nav>
+            <div class="area-hero-badge">
+                <i class="fas {svc['icon']}"></i>
+                <span>{sn}</span>
+            </div>
+            <h1 class="area-hero-h1">Expert {sn} in <em>{cn}</em>, Ohio</h1>
+            <div class="area-hero-pills">
+                <span class="area-hero-pill"><i class="fas fa-map-marker-alt"></i> {cn}, Ohio</span>
+                <span class="area-hero-pill"><i class="fas fa-calendar-check"></i> Same-Day Available</span>
+                <span class="area-hero-pill"><i class="fas fa-tag"></i> Free Estimates</span>
+                <span class="area-hero-pill"><i class="fas fa-shield-halved"></i> Licensed &amp; Insured</span>
+            </div>
+            <div class="area-hero-ctas">
+                <a href="tel:+15551234567" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                <a href="../../#contact" class="btn btn-outline-white">Get Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="area-content">
+        <div class="container">
+            <div class="area-layout">
+                <div class="area-body">
+                    <h2>Our {sn} Services in {cn}, Ohio</h2>
+                    <p>The Fix Wizard provides professional {sn.lower()} throughout {cn} and the greater Cleveland area. Whether you're near {towns}, we bring licensed technicians, transparent pricing, and same-day availability to your door.</p>
+
+{sub_sections}
+
+                    <h2>Why {cn} Homeowners Choose The Fix Wizard</h2>
+                    <p>Cleveland's climate — harsh winters, freeze-thaw cycles, and lake-effect weather — puts unique demands on homes. Our technicians understand the specific challenges that {cn}'s housing stock presents and bring the right materials and methods to every job.</p>
+                    <ul>
+                        <li>Licensed &amp; insured in Ohio</li>
+                        <li>Free estimates — no commitment required</li>
+                        <li>Same-day appointments available in {cn}</li>
+                        <li>Transparent, itemized pricing before we start</li>
+                        <li>All work backed by a satisfaction guarantee</li>
+                    </ul>
+
+                    <h2>Service Areas Near {cn}</h2>
+                    <p>We serve {cn} and the surrounding communities throughout the greater Cleveland area. Call us at (555) 123-4567 to confirm same-day availability in your neighborhood.</p>
+                </div>
+
+                <aside class="area-sidebar">
+                    <div class="area-cta-box">
+                        <h3>Get a Free Estimate</h3>
+                        <p>Available same-day in {cn}, Ohio. Licensed &amp; insured. No obligation.</p>
+                        <a href="tel:+15551234567" class="btn btn-primary"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                        <a href="../../#contact" class="btn btn-outline-white">Send a Message</a>
+                    </div>
+                    <div class="area-trust-box">
+                        <h3>Why Trust Us</h3>
+                        <ul class="area-trust-list">
+                            <li><i class="fas fa-shield-halved"></i> Licensed &amp; Insured in Ohio</li>
+                            <li><i class="fas fa-calendar-check"></i> Same-Day Available</li>
+                            <li><i class="fas fa-tag"></i> Free Estimates</li>
+                            <li><i class="fas fa-star"></i> 4.9&#x2605; Google Rating</li>
+                            <li><i class="fas fa-clock"></i> Mon–Sat 7am–7pm</li>
+                        </ul>
+                    </div>
+                    <div class="area-services-box">
+                        <h3>More Services in {cn}</h3>
+                        <div class="area-svc-list">
+{other_svcs}
+                        </div>
+                    </div>
+                    <div class="area-services-box">
+                        <h3>Back to Cleveland</h3>
+                        <div class="area-svc-list">
+                            <a href="../../cleveland-ohio/"><i class="fas fa-location-dot"></i> Cleveland, Ohio Hub</a>
+                            <a href="{parent_url}"><i class="fas {svc['icon']}"></i> {parent_label}</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container cta-inner reveal">
+            <div class="cta-text">
+                <h2>{sn} in {cn}, Ohio? We've Got You.</h2>
+                <p>Free estimates across the greater Cleveland area. Licensed &amp; insured. Same-day available.</p>
+            </div>
+            <div class="cta-btns">
+                <a href="tel:+15551234567" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="../../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+{footer_html(2)}
+
+    <script type="module" src="../../js/service-page.js"></script>
+</body>
+</html>"""
+
+
+def build_cleveland_area_pages():
+    count = 0
+    for suburb in CLEVELAND_SUBURBS:
+        for svc in CLEVELAND_SERVICES:
+            dir_name = f'{svc["slug_prefix"]}-{suburb["slug"]}'
+            out_dir = os.path.join(ROOT, "locations", dir_name)
+            os.makedirs(out_dir, exist_ok=True)
+            with open(os.path.join(out_dir, "index.html"), "w") as f:
+                f.write(cleveland_area_page_html(svc, suburb))
+            count += 1
+    print(f"  ✓  {count} Cleveland area pages generated")
+
+
 # ─── Main ──────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     print("Building locations hub page...")
     build_locations_page()
-    print("Generating service area pages...")
+    print("Generating NJ service area pages...")
     build_area_pages()
+    print("Generating Cleveland area pages...")
+    build_cleveland_area_pages()
     print("Patching existing navbars...")
     patch_all_navbars()
     print("\nDone. Run: ./node_modules/.bin/tailwind -i css/input.css -o css/tw.css --minify")

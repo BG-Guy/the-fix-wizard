@@ -122,7 +122,15 @@
                 <li><a href="#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
                 <li><a href="#why-us"   class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">About</a></li>
                 <li><a href="#contact"  class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
-                <li><a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Locations</a></li>
+                <li class="nav-dropdown">
+                    <a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
+                        <a href="/cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                        <div class="nav-dropdown-divider"></div>
+                        <a href="/locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+                    </div>
+                </li>
             </ul>
 
             <div class="hidden md:flex items-center gap-4 shrink-0 nav-actions">
@@ -156,7 +164,12 @@
             <li><a href="#services" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Services</a></li>
             <li><a href="#why-us"   class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">About</a></li>
             <li><a href="#contact"  class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
-            <li><a href="/locations/" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Locations</a></li>
+            <li>
+                <span class="mobile-loc-label">Locations</span>
+                <a href="/new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> New Jersey</a>
+                <a href="/cleveland-ohio/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                <a href="/locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+            </li>
         </ul>
         <a href="tel:+15551234567" class="mobile-phone flex items-center gap-2.5 text-white/65 text-sm mb-3.5 px-3.5">
             <i class="fas fa-phone text-orange"></i>(555) 123-4567

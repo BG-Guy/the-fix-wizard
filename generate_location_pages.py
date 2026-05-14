@@ -16,6 +16,55 @@ except:
 GFONTS = "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
 FA     = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
+PIN_SVG = '<svg viewBox="0 0 24 30" fill="none" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 18 12 18S24 21 24 12C24 5.4 18.6 0 12 0z" fill="#FF6B35"/><circle cx="12" cy="12" r="4.5" fill="white"/></svg>'
+
+NJ_COUNTIES = [
+    {"name": "Bergen County",     "slug": "bergen-county-nj",     "towns": "Hackensack · Paramus · Fort Lee · Englewood",             "desc": "NJ's most populous county — dense suburban neighborhoods with aging homes in need of expert repair."},
+    {"name": "Essex County",      "slug": "essex-county-nj",      "towns": "Newark · Montclair · Bloomfield · Maplewood",             "desc": "From Newark's urban housing to Montclair's Victorian homes — skilled repairs for every property type."},
+    {"name": "Middlesex County",  "slug": "middlesex-county-nj",  "towns": "Edison · New Brunswick · Woodbridge · Piscataway",       "desc": "Fast-growing county with diverse housing stock, from ranch homes to newer developments."},
+    {"name": "Monmouth County",   "slug": "monmouth-county-nj",   "towns": "Red Bank · Freehold · Asbury Park · Middletown",         "desc": "Shore county with coastal homes, salt-air wear, and a mix of historic and modern properties."},
+    {"name": "Morris County",     "slug": "morris-county-nj",     "towns": "Morristown · Parsippany · Madison · Rockaway",           "desc": "Wooded suburbs with colonial and split-level homes common across northern New Jersey."},
+    {"name": "Hudson County",     "slug": "hudson-county-nj",     "towns": "Jersey City · Hoboken · Bayonne · Union City",           "desc": "Densely packed brownstones, townhouses, and multi-family buildings in one of NJ's busiest counties."},
+    {"name": "Union County",      "slug": "union-county-nj",      "towns": "Elizabeth · Westfield · Summit · Plainfield",            "desc": "Central NJ county blending affluent suburbs with working-class neighborhoods — we serve them all."},
+    {"name": "Ocean County",      "slug": "ocean-county-nj",      "towns": "Toms River · Lakewood · Brick · Jackson",                "desc": "Shore and inland county where storm damage repairs and coastal home maintenance are a year-round need."},
+    {"name": "Somerset County",   "slug": "somerset-county-nj",   "towns": "Bridgewater · Somerville · Bound Brook · Raritan",       "desc": "Upscale suburban county with well-maintained homes that still benefit from expert professional repair."},
+    {"name": "Passaic County",    "slug": "passaic-county-nj",    "towns": "Paterson · Clifton · Wayne · Pompton Lakes",             "desc": "Busy northern county with dense residential neighborhoods and older building stock requiring skilled upkeep."},
+    {"name": "Camden County",     "slug": "camden-county-nj",     "towns": "Cherry Hill · Voorhees · Haddonfield · Camden",          "desc": "South Jersey's most populous county — rowhouses, ranches, and suburban homes served with care."},
+    {"name": "Burlington County", "slug": "burlington-county-nj", "towns": "Moorestown · Medford · Evesham · Mount Holly",           "desc": "Large central county with historic towns and newer suburban developments throughout the Pinelands."},
+    {"name": "Mercer County",     "slug": "mercer-county-nj",     "towns": "Trenton · Princeton · Hamilton · Lawrence",              "desc": "From Trenton's urban housing to Princeton's prestigious estates — expert repairs across the board."},
+    {"name": "Atlantic County",   "slug": "atlantic-county-nj",   "towns": "Atlantic City · Egg Harbor · Galloway · Absecon",        "desc": "Shore and casino country with aging properties and high demand for reliable home repair services."},
+    {"name": "Gloucester County", "slug": "gloucester-county-nj", "towns": "Woodbury · Deptford · Washington Twp · Glassboro",       "desc": "Growing suburb of Philadelphia with a range of home styles and steady demand for quality repairs."},
+    {"name": "Cumberland County", "slug": "cumberland-county-nj", "towns": "Vineland · Bridgeton · Millville · Commercial Twp",      "desc": "South Jersey's rural county with older housing stock and unique repair needs we're equipped to handle."},
+    {"name": "Cape May County",   "slug": "cape-may-county-nj",   "towns": "Cape May City · Wildwood · Ocean City · Avalon",         "desc": "Vacation homes, Victorian properties, and shore houses — seasonal and year-round maintenance covered."},
+    {"name": "Warren County",     "slug": "warren-county-nj",     "towns": "Hackettstown · Washington · Phillipsburg · Belvidere",   "desc": "Rural-suburban mix with older farmhouses and modest residential neighborhoods throughout the valley."},
+    {"name": "Sussex County",     "slug": "sussex-county-nj",     "towns": "Newton · Sparta · Vernon · Hardyston",                   "desc": "NJ's northernmost county — mountain-area homes with weather-related wear and older construction."},
+    {"name": "Hunterdon County",  "slug": "hunterdon-county-nj",  "towns": "Flemington · Clinton · Lambertville · Raritan",          "desc": "Scenic rural county with historic farmhouses, horse properties, and charming older homes."},
+    {"name": "Salem County",      "slug": "salem-county-nj",      "towns": "Salem City · Woodstown · Carneys Point · Penns Grove",  "desc": "South Jersey's smallest county — older housing requiring skilled, attentive home repair professionals."},
+]
+
+CLEVELAND_SUBURBS = [
+    {"name": "Cleveland",          "slug": "cleveland-oh",          "towns": "Downtown · Ohio City · Tremont",              "desc": "Ohio's second-largest city — century-old housing stock with high demand for chimney and handyman work."},
+    {"name": "Cleveland Heights",  "slug": "cleveland-heights-oh",  "towns": "Cedar Lee · Coventry · Noble · Taylor",        "desc": "Historic inner-ring suburb with Tudor Revivals and Colonials built in the 1920s–1940s."},
+    {"name": "Lakewood",           "slug": "lakewood-oh",           "towns": "Gold Coast · Birdtown · Downtown Lakewood",    "desc": "Dense west-side suburb with craftsman bungalows and brick Colonials — one of Ohio's most repair-active communities."},
+    {"name": "Parma",              "slug": "parma-oh",              "towns": "Parma Center · Ridgewood · Greenbriar",        "desc": "Ohio's seventh-largest city with postwar ranches and cape cods needing regular upkeep."},
+    {"name": "Mentor",             "slug": "mentor-oh",             "towns": "Mentor-on-the-Lake · City Center",             "desc": "Growing northeastern suburb with diverse housing from mid-century builds to newer developments."},
+    {"name": "Strongsville",       "slug": "strongsville-oh",       "towns": "Old Town · SouthPark · Northwood",             "desc": "Upscale southwestern suburb with established neighborhoods and growing demand for premium home services."},
+    {"name": "Westlake",           "slug": "westlake-oh",           "towns": "Crocker Park · Bradley · Dover Center",        "desc": "Affluent western suburb with well-established neighborhoods and active home improvement market."},
+    {"name": "Beachwood",          "slug": "beachwood-oh",          "towns": "Chagrin Highlands · Cedar Center",             "desc": "Prosperous eastern suburb with custom homes and high expectations for service quality."},
+    {"name": "Solon",              "slug": "solon-oh",              "towns": "Solon Square · Miles Road · Aurora Road",       "desc": "High-income southeastern suburb with newer construction and older custom homes."},
+    {"name": "North Olmsted",      "slug": "north-olmsted-oh",      "towns": "Butternut Ridge · Great Northern",              "desc": "Western suburb with postwar housing and strong demand for chimney and handyman services."},
+    {"name": "Rocky River",        "slug": "rocky-river-oh",        "towns": "Detroit Road · Wooster Road · Lake Road",      "desc": "Charming lakefront suburb with historic homes and waterfront properties requiring specialized care."},
+    {"name": "Euclid",             "slug": "euclid-oh",             "towns": "Euclid Beach · Nottingham · Shore Cultural",   "desc": "Eastern suburb with industrial-era housing demanding skilled masonry and handyman repair work."},
+    {"name": "Shaker Heights",     "slug": "shaker-heights-oh",     "towns": "Van Aken · Ludlow · Onaway · Moreland",        "desc": "Architecturally significant planned community — Tudor Revivals and Colonials with premium masonry demand."},
+    {"name": "Bay Village",        "slug": "bay-village-oh",        "towns": "Bay Square · Wolf Road · Porter Creek",        "desc": "Lakefront suburb with vintage properties and coastal exposure that accelerates masonry wear."},
+    {"name": "Avon Lake",          "slug": "avon-lake-oh",          "towns": "Walker Road · Moore Road · Lake Road",         "desc": "Growing western suburb with lakeshore homes and newer residential developments."},
+    {"name": "Fairview Park",      "slug": "fairview-park-oh",      "towns": "Lorain Road · Mastick Road",                   "desc": "Established mid-century suburb with active home renovation and community investment in property upkeep."},
+    {"name": "Broadview Heights",  "slug": "broadview-heights-oh",  "towns": "Royalton Road · Broadview Road",               "desc": "Upscale southern suburb with custom builds and growing families investing in quality home services."},
+    {"name": "North Royalton",     "slug": "north-royalton-oh",     "towns": "Royalton Road · State Road · York Road",       "desc": "Suburban community with consistent demand for chimney and handyman repairs."},
+    {"name": "Brunswick",          "slug": "brunswick-oh",          "towns": "Center Road · Pearl Road · Grafton Road",      "desc": "Growing suburban community with a strong handyman and chimney service market."},
+    {"name": "Chardon",            "slug": "chardon-oh",            "towns": "Chardon Square · South Street",                "desc": "Small-town Geauga County community with older housing and severe winters that accelerate chimney wear."},
+]
+
 LOCATIONS = [
     {
         "slug":       "new-jersey",
@@ -37,6 +86,10 @@ LOCATIONS = [
         "handyman_link":"../handyman-services-new-jersey/",
         "chimney_desc": "From chimney sweeping and tuckpointing to crown repair and full liner installation — we've serviced hundreds of NJ chimneys across Bergen, Morris, Essex, Monmouth, and all 21 counties.",
         "handyman_desc":"Drywall, painting, plumbing, electrical, doors, furniture assembly and more — one call covers your entire repair list across every NJ county.",
+        "card_areas":   NJ_COUNTIES,
+        "card_h2":      "Services by County in New Jersey",
+        "card_desc":    "Select your county below to see chimney repair and handyman services available in your area.",
+        "card_count":   "21 Counties",
         "faqs": [
             ("Do you offer chimney services in all NJ counties?",
              "Yes. The Fix Wizard serves all 21 New Jersey counties for chimney repair and masonry — from Bergen and Essex in the north to Camden, Atlantic, and Cape May in the south."),
@@ -72,6 +125,10 @@ LOCATIONS = [
         "handyman_link":"../handyman-services-new-jersey/",
         "chimney_desc": "Cleveland's older housing stock and harsh winters create demanding chimney conditions. We handle chimney sweeping, tuckpointing, crown repair, liner installation, and full masonry restoration across the greater Cleveland area.",
         "handyman_desc":"From Lakewood to Mentor, our licensed handymen tackle drywall, painting, plumbing, electrical, doors, furniture assembly, TV mounting, and any other repair on your list.",
+        "card_areas":   CLEVELAND_SUBURBS,
+        "card_h2":      "Services by Area in Greater Cleveland",
+        "card_desc":    "Select your area below to see chimney repair and handyman services available near you.",
+        "card_count":   "20 Areas",
         "faqs": [
             ("Do you offer chimney services in Cleveland and surrounding suburbs?",
              "Yes. The Fix Wizard serves Cleveland and the greater Cleveland area including Cleveland Heights, Lakewood, Parma, Mentor, Strongsville, Westlake, Beachwood, Solon, and more. Call us to confirm coverage in your specific area."),
@@ -88,6 +145,29 @@ LOCATIONS = [
         "url_path":    "https://thefixwizard.com/cleveland-ohio/",
     },
 ]
+
+
+def build_area_cards(loc):
+    cards = []
+    for a in loc["card_areas"]:
+        slug = a["slug"]
+        cards.append(f"""\
+                <div class="loc-card">
+                    <div class="loc-card__header">
+                        <div class="loc-pin-icon">{PIN_SVG}</div>
+                        <div>
+                            <h3 class="loc-card__name">{a['name']}</h3>
+                            <p class="loc-card__towns">{a['towns']}</p>
+                        </div>
+                    </div>
+                    <p class="loc-card__desc">{a['desc']}</p>
+                    <div class="loc-card__divider"></div>
+                    <div class="loc-services-grid">
+                        <a href="../locations/chimney-repair-in-{slug}/" class="loc-svc-btn"><i class="fas fa-fire"></i> Chimney Repair</a>
+                        <a href="../locations/handyman-services-in-{slug}/" class="loc-svc-btn"><i class="fas fa-screwdriver-wrench"></i> Handyman Services</a>
+                    </div>
+                </div>""")
+    return "\n".join(cards)
 
 
 def build_page(loc):
@@ -113,6 +193,8 @@ def build_page(loc):
         f'<span class="inline-flex items-center gap-1.5 bg-white border border-slate-200 rounded-full px-3.5 py-1.5 text-[13px] font-medium text-navy-900"><i class="fas fa-location-dot text-orange text-[11px]"></i>{a}</span>'
         for a in loc["areas"]
     )
+
+    cards_html = build_area_cards(loc)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -174,7 +256,15 @@ def build_page(loc):
                 <li><a href="../#services" class="nav-link">Services</a></li>
                 <li><a href="../#why-us" class="nav-link">About</a></li>
                 <li><a href="../#contact" class="nav-link">Contact</a></li>
-                <li><a href="../locations/" class="nav-link active">Locations</a></li>
+                <li class="nav-dropdown">
+                    <a href="../locations/" class="nav-link flex items-center gap-1.5" style="color:#FF6B35;">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="../new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
+                        <a href="../cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                        <div class="nav-dropdown-divider"></div>
+                        <a href="../locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+                    </div>
+                </li>
             </ul>
             <div class="nav-actions">
                 <a href="tel:+15551234567" class="nav-phone"><i class="fas fa-phone"></i><span>(555) 123-4567</span></a>
@@ -194,7 +284,12 @@ def build_page(loc):
             <li><a href="../#services" class="mobile-link">Services</a></li>
             <li><a href="../#why-us" class="mobile-link">About</a></li>
             <li><a href="../#contact" class="mobile-link">Contact</a></li>
-            <li><a href="../locations/" class="mobile-link">Locations</a></li>
+            <li>
+                <span class="mobile-loc-label">Locations</span>
+                <a href="../new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> New Jersey</a>
+                <a href="../cleveland-ohio/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                <a href="../locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+            </li>
         </ul>
         <a href="tel:+15551234567" class="mobile-phone"><i class="fas fa-phone"></i>(555) 123-4567</a>
         <a href="../#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
@@ -319,6 +414,41 @@ def build_page(loc):
             </div>
             <div class="flex flex-wrap gap-2.5 justify-center max-w-[900px] mx-auto reveal">
                 {areas_html}
+            </div>
+        </div>
+    </section>
+
+    <!-- AREA CARDS GRID -->
+    <section class="loc-section" style="position:relative;">
+        <div class="loc-bg-pin" style="right:-40px;top:40px;width:320px;height:400px;">
+            <svg viewBox="0 0 100 130" fill="#0d1b4b" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><path d="M50 0C22.4 0 0 22.4 0 50c0 37.5 50 80 50 80S100 87.5 100 50C100 22.4 77.6 0 50 0z"/><circle cx="50" cy="50" r="19" fill="white" fill-opacity=".6"/></svg>
+        </div>
+        <div class="loc-bg-pin" style="left:-60px;bottom:80px;width:280px;height:350px;">
+            <svg viewBox="0 0 100 130" fill="#0d1b4b" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><path d="M50 0C22.4 0 0 22.4 0 50c0 37.5 50 80 50 80S100 87.5 100 50C100 22.4 77.6 0 50 0z"/><circle cx="50" cy="50" r="19" fill="white" fill-opacity=".6"/></svg>
+        </div>
+        <div class="container" style="position:relative;z-index:1;">
+            <div style="text-align:center;margin-bottom:48px;">
+                <div style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:28px;">
+                    <div style="text-align:center;">
+                        <span style="display:block;font-size:2.2rem;font-weight:800;color:var(--orange);font-family:'Cinzel',serif;">{loc['card_count']}</span>
+                        <span style="color:#64748b;font-size:13px;margin-top:2px;display:block;">Areas Covered</span>
+                    </div>
+                    <div style="width:1px;height:48px;background:#e2e8f0;"></div>
+                    <div style="text-align:center;">
+                        <span style="display:block;font-size:2.2rem;font-weight:800;color:var(--orange);font-family:'Cinzel',serif;">2</span>
+                        <span style="color:#64748b;font-size:13px;margin-top:2px;display:block;">Services</span>
+                    </div>
+                    <div style="width:1px;height:48px;background:#e2e8f0;"></div>
+                    <div style="text-align:center;">
+                        <span style="display:block;font-size:1.4rem;font-weight:800;color:var(--orange);font-family:'Cinzel',serif;">Same-Day</span>
+                        <span style="color:#64748b;font-size:13px;margin-top:2px;display:block;">Available</span>
+                    </div>
+                </div>
+                <h2 style="font-size:clamp(22px,3vw,30px);font-weight:800;color:#0d1b4b;margin-bottom:8px;">{loc['card_h2']}</h2>
+                <p style="color:#64748b;font-size:15px;">{loc['card_desc']}</p>
+            </div>
+            <div class="loc-grid">
+{cards_html}
             </div>
         </div>
     </section>

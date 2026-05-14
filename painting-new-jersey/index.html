@@ -30,7 +30,15 @@
                 <li><a href="../#services" class="nav-link active">Services</a></li>
                 <li><a href="../#why-us" class="nav-link">About</a></li>
                 <li><a href="../#contact" class="nav-link">Contact</a></li>
-                <li><a href="../locations/" class="nav-link">Locations</a></li>
+                <li class="nav-dropdown">
+                <a href="../locations/" class="nav-link flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
+                <div class="nav-dropdown-menu">
+                    <a href="../new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
+                    <a href="../cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                    <div class="nav-dropdown-divider"></div>
+                    <a href="../locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+                </div>
+            </li>
             </ul>
             <div class="nav-actions">
                 <a href="tel:+15551234567" class="nav-phone"><i class="fas fa-phone"></i><span>(555) 123-4567</span></a>
@@ -50,7 +58,12 @@
             <li><a href="../#services" class="mobile-link">Services</a></li>
             <li><a href="../#why-us" class="mobile-link">About</a></li>
             <li><a href="../#contact" class="mobile-link">Contact</a></li>
-            <li><a href="../locations/" class="mobile-link">Locations</a></li>
+            <li>
+            <span class="mobile-loc-label">Locations</span>
+            <a href="../new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> New Jersey</a>
+            <a href="../cleveland-ohio/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+            <a href="../locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+        </li>
         </ul>
         <a href="tel:+15551234567" class="mobile-phone"><i class="fas fa-phone"></i>(555) 123-4567</a>
         <a href="../#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
