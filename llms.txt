@@ -2,7 +2,12 @@
 
 > Licensed and insured chimney repair, masonry, and handyman services across all 21 counties in New Jersey.
 
-The Fix Wizard is a New Jersey home repair company specializing in two core services: Chimney & Masonry repair and general Handyman Services. We serve every county in NJ — from Bergen in the north to Cape May in the south. Same-day appointments available. Free estimates. Licensed and insured.
+The Fix Wizard is a multi-location home repair company specializing in two core services: Chimney & Masonry repair and general Handyman Services. We currently serve New Jersey (all 21 counties) and the greater Cleveland, Ohio area. Same-day appointments available. Free estimates. Licensed and insured.
+
+## Location-Specific Pages (Ad Landing Pages)
+
+- [New Jersey](https://thefixwizard.com/new-jersey/) — Serves all 21 NJ counties
+- [Cleveland, Ohio](https://thefixwizard.com/cleveland-ohio/) — Serves greater Cleveland area
 
 ## Contact & Business Info
 

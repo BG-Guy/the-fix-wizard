@@ -7,6 +7,18 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://thefixwizard.com/new-jersey/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://thefixwizard.com/cleveland-ohio/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://thefixwizard.com/chimney-masonry-new-jersey/</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
