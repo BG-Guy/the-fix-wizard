@@ -1,6 +1,9 @@
+import { SITE_STATS } from './site-data.js';
+
 function animateCounter(el) {
-    const target   = parseInt(el.dataset.target, 10);
-    const duration = 1800; // ms
+    const key    = el.dataset.stat;
+    const target = key !== undefined ? (SITE_STATS[key] ?? 0) : parseInt(el.dataset.target, 10);
+    const duration = 1800;
     const fps      = 60;
     const steps    = duration / (1000 / fps);
     const step     = target / steps;

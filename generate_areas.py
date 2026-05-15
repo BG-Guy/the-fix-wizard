@@ -487,22 +487,22 @@ def build_locations_page():
                     <div class="w-full h-px bg-white/10 mb-8"></div>
                     <div class="flex items-center gap-8 flex-wrap justify-center tab:justify-start hero-stats">
                         <div class="text-left">
-                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="21">0</span></div>
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="nj_counties">0</span></div>
                             <div class="text-[12px] text-white/50 font-medium tracking-wider">NJ Counties</div>
                         </div>
                         <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
                         <div class="text-left">
-                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="20">0</span></div>
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="cle_areas">0</span></div>
                             <div class="text-[12px] text-white/50 font-medium tracking-wider">CLE Areas</div>
                         </div>
                         <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
                         <div class="text-left">
-                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="500">0</span>+</div>
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="projects">0</span>+</div>
                             <div class="text-[12px] text-white/50 font-medium tracking-wider">Jobs Done</div>
                         </div>
                         <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
                         <div class="text-left">
-                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="2">0</span></div>
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="specialties">0</span></div>
                             <div class="text-[12px] text-white/50 font-medium tracking-wider">Specialties</div>
                         </div>
                     </div>
