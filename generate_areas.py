@@ -38,7 +38,6 @@ COUNTIES = [
 ]
 
 SERVICES = [
-    {"name": "Garage Door Repair",  "slug_prefix": "garage-door-repair-in",  "icon": "fa-warehouse",           "parent": "garage-door-repair-new-jersey",  "parent_label": "Garage Door Repair in NJ"},
     {"name": "Chimney Repair",      "slug_prefix": "chimney-repair-in",      "icon": "fa-fire",                "parent": "chimney-masonry-new-jersey",     "parent_label": "Chimney & Masonry in NJ"},
     {"name": "Handyman Services",   "slug_prefix": "handyman-services-in",   "icon": "fa-screwdriver-wrench",  "parent": "handyman-services-new-jersey",   "parent_label": "Handyman Services in NJ"},
 ]
@@ -365,7 +364,6 @@ def footer_html(depth):
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="{p}garage-door-repair-new-jersey/">Garage Door Repair</a></li>
                     <li><a href="{p}chimney-masonry-new-jersey/">Chimney &amp; Masonry</a></li>
                     <li><a href="{p}handyman-services-new-jersey/">Handyman Services</a></li>
                 </ul>
