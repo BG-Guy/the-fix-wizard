@@ -423,7 +423,6 @@ def county_card(county):
 
 
 def build_locations_page():
-    cards_html = "\n".join(county_card(c) for c in COUNTIES)
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -642,25 +641,6 @@ def build_locations_page():
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- NJ COUNTY GRID -->
-    <section class="loc-section" style="position:relative;">
-        <div class="loc-bg-pin" style="right:-40px;top:40px;width:320px;height:400px;">
-            <svg viewBox="0 0 100 130" fill="#0d1b4b" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><path d="M50 0C22.4 0 0 22.4 0 50c0 37.5 50 80 50 80S100 87.5 100 50C100 22.4 77.6 0 50 0z"/><circle cx="50" cy="50" r="19" fill="white" fill-opacity=".6"/></svg>
-        </div>
-        <div class="loc-bg-pin" style="left:-60px;bottom:80px;width:280px;height:350px;">
-            <svg viewBox="0 0 100 130" fill="#0d1b4b" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><path d="M50 0C22.4 0 0 22.4 0 50c0 37.5 50 80 50 80S100 87.5 100 50C100 22.4 77.6 0 50 0z"/><circle cx="50" cy="50" r="19" fill="white" fill-opacity=".6"/></svg>
-        </div>
-        <div class="container" style="position:relative;z-index:1;">
-            <div style="text-align:center;margin-bottom:48px;">
-                <h2 style="font-size:clamp(22px,3vw,30px);font-weight:800;color:#0d1b4b;margin-bottom:8px;">New Jersey — All 21 Counties</h2>
-                <p style="color:#64748b;font-size:15px;">Select your county to see chimney repair and handyman services in your area.</p>
-            </div>
-            <div class="loc-grid">
-{cards_html}
             </div>
         </div>
     </section>
