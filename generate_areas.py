@@ -428,19 +428,22 @@ def build_locations_page():
 <html lang="en">
 <head>
 {COMMON_HEAD}
-    <meta name="description" content="The Fix Wizard serves all 21 counties across New Jersey — from Bergen to Cape May. Find licensed handyman, drywall, painting, plumbing, and more in your area.">
-    <title>Service Areas in New Jersey | The Fix Wizard — All 21 Counties</title>
+    <meta name="description" content="The Fix Wizard offers expert chimney repair, masonry, and handyman services across New Jersey (all 21 counties) and the greater Cleveland, Ohio area. Licensed & insured. Same-day available. Free estimates.">
+    <title>Service Locations — New Jersey &amp; Cleveland, Ohio | The Fix Wizard</title>
     <link rel="stylesheet" href="../css/tw.css">
     <link rel="stylesheet" href="../css/custom.css">
     <script type="application/ld+json">
     {{
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "HomeAndConstructionBusiness",
       "name": "The Fix Wizard",
-      "description": "Professional home repair services across all 21 counties in New Jersey",
-      "url": "https://thefixwizard.com",
+      "description": "Expert chimney repair, masonry, and handyman services across New Jersey and the greater Cleveland, Ohio area.",
+      "url": "https://thefixwizard.com/locations/",
       "telephone": "(555) 123-4567",
-      "areaServed": {{"@type": "State", "name": "New Jersey"}}
+      "areaServed": [
+        {{"@type": "State", "name": "New Jersey"}},
+        {{"@type": "City", "name": "Cleveland", "containedInPlace": {{"@type": "State", "name": "Ohio"}}}}
+      ]
     }}
     </script>
 </head>
@@ -448,31 +451,203 @@ def build_locations_page():
 
 {navbar_html(1, active="locations")}
 
-    <section class="sp-hero" style="padding-bottom:56px;">
-        <div class="container" style="text-align:center;">
-            <div class="sp-hero-tag"><i class="fas fa-map-marker-alt"></i> Service Areas</div>
-            <h1 class="sp-hero-title">We Serve All of <span class="text-accent">New Jersey</span></h1>
-            <p class="sp-hero-desc" style="max-width:640px;margin:0 auto 32px;">From Bergen County in the north to Cape May in the south, The Fix Wizard brings licensed, same-day home repair to every corner of the Garden State. Licensed &amp; insured. Free estimates.</p>
-            <div style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;">
-                <div style="text-align:center;">
-                    <span style="display:block;font-size:2.2rem;font-weight:800;color:var(--orange);font-family:'Cinzel',serif;">21</span>
-                    <span style="color:rgba(255,255,255,.6);font-size:13px;margin-top:2px;display:block;">Counties Served</span>
+    <!-- HERO -->
+    <section class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)] rounded-b-[56px]">
+        <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
+            <div class="grid grid-cols-1 tab:grid-cols-[1fr_420px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
+
+                <!-- LEFT -->
+                <div class="flex flex-col items-center tab:items-start text-center tab:text-left">
+                    <div class="inline-flex items-center gap-2 bg-orange/[.14] border border-orange/30 text-orange-light px-4 py-1.5 rounded-full text-[13px] font-semibold mb-7 tracking-wide">
+                        <i class="fas fa-map-marker-alt text-orange text-[11px]"></i>
+                        <span>2 Service Locations &amp; Growing</span>
+                    </div>
+                    <h1 class="font-cinzel text-[clamp(32px,5vw,64px)] font-black leading-[1.1] tracking-tight text-white mb-6">
+                        Chimney &amp; Handyman<br>
+                        <span class="text-orange">Services <span class="lightning-word">Near You</span></span>
+                    </h1>
+                    <p class="text-[18px] text-white/65 leading-[1.75] mb-6 max-w-[560px]">
+                        The Fix Wizard brings licensed chimney repair, masonry restoration, and handyman services to homeowners across <strong class="text-white/90">New Jersey</strong> and <strong class="text-white/90">Cleveland, Ohio</strong>. Same-day available. Free estimates. No obligation.
+                    </p>
+                    <div class="flex items-center gap-3 mb-8 flex-wrap justify-center tab:justify-start">
+                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
+                            <i class="fas fa-location-dot text-orange text-[12px]"></i> New Jersey — All 21 Counties
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
+                            <i class="fas fa-location-dot text-orange text-[12px]"></i> Cleveland, Ohio
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 mb-12 flex-wrap justify-center tab:justify-start hero-actions">
+                        <a href="../new-jersey/" class="btn btn-primary btn-lg">
+                            <i class="fas fa-map-marker-alt"></i> New Jersey
+                        </a>
+                        <a href="../cleveland-ohio/" class="btn btn-outline btn-lg">
+                            <i class="fas fa-map-marker-alt"></i> Cleveland, Ohio
+                        </a>
+                    </div>
+                    <div class="w-full h-px bg-white/10 mb-8"></div>
+                    <div class="flex items-center gap-8 flex-wrap justify-center tab:justify-start hero-stats">
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="21">0</span></div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">NJ Counties</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="20">0</span></div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">CLE Areas</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="500">0</span>+</div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Jobs Done</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-target="2">0</span></div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Specialties</div>
+                        </div>
+                    </div>
                 </div>
-                <div style="width:1px;height:48px;background:rgba(255,255,255,.2);"></div>
-                <div style="text-align:center;">
-                    <span style="display:block;font-size:2.2rem;font-weight:800;color:var(--orange);font-family:'Cinzel',serif;">8</span>
-                    <span style="color:rgba(255,255,255,.6);font-size:13px;margin-top:2px;display:block;">Core Services</span>
+
+                <!-- RIGHT -->
+                <div class="flex items-center justify-center tab:justify-end">
+                    <div class="w-full max-w-[520px] bg-white/[.07] backdrop-blur-xl border border-white/[.13] rounded-xl2 p-8 flex flex-col gap-6">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-[52px] h-[52px] shrink-0 bg-orange rounded-md2 flex items-center justify-center text-[22px] text-white">
+                                <i class="fas fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-[16px] font-semibold text-white leading-tight mb-1">Choose Your Location</div>
+                                <p class="text-[13px] text-white/50">Same-day service · Free estimates</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <a href="../new-jersey/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <div class="flex-1 text-left">
+                                    <div class="text-[15px] font-bold text-white leading-tight">New Jersey</div>
+                                    <div class="text-[12px] text-white/50 mt-0.5">All 21 counties · Bergen to Cape May</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-orange text-[13px] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"></i>
+                            </a>
+                            <a href="../cleveland-ohio/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <div class="flex-1 text-left">
+                                    <div class="text-[15px] font-bold text-white leading-tight">Cleveland, Ohio</div>
+                                    <div class="text-[12px] text-white/50 mt-0.5">Greater Cleveland · 20 suburbs</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-orange text-[13px] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"></i>
+                            </a>
+                        </div>
+                        <a href="../#contact" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Request a Free Quote
+                        </a>
+                        <div class="flex gap-3 pt-1 border-t border-white/[.08]">
+                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-shield-halved text-orange text-[13px]"></i><span>Licensed &amp; Insured</span></div>
+                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-clock text-orange text-[13px]"></i><span>Same Day Available</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div style="width:1px;height:48px;background:rgba(255,255,255,.2);"></div>
-                <div style="text-align:center;">
-                    <span style="display:block;font-size:1.4rem;font-weight:800;color:var(--orange);font-family:'Cinzel',serif;">Same-Day</span>
-                    <span style="color:rgba(255,255,255,.6);font-size:13px;margin-top:2px;display:block;">Available</span>
+
+            </div>
+        </div>
+
+        <!-- Sparkles -->
+        <div class="hero-sparkles absolute inset-0 pointer-events-none z-[2] overflow-hidden" aria-hidden="true">
+            <svg class="sparkle sp-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-4" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-5" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+        </div>
+        <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/30 text-[10px] font-medium tracking-[2px] uppercase z-[2]">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down text-[12px]"></i>
+        </div>
+    </section>
+
+    <!-- LOCATION SHOWCASE -->
+    <section class="py-20" style="background:#f7f8fc;background-image:radial-gradient(circle,rgba(13,27,75,.07) 1px,transparent 1px);background-size:28px 28px;">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Where We Work</span>
+                <h2 class="section-title">Two Locations, <span class="text-accent">One Standard</span></h2>
+                <p class="section-desc">Whether you need a chimney swept in Bergen County or a drywall patch in Lakewood, Ohio — the same licensed technicians, transparent pricing, and satisfaction guarantee follow you everywhere.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
+
+                <!-- NJ Card -->
+                <div class="group bg-white rounded-card border border-slate-200 overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.18)] hover:border-transparent reveal">
+                    <div class="h-3 bg-gradient-to-r from-orange-dark via-orange to-orange-light"></div>
+                    <div class="p-8 flex flex-col gap-5 flex-1">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
+                                <i class="fas fa-location-dot text-orange text-[24px]"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-[22px] font-bold text-navy-900 leading-tight">New Jersey</h2>
+                                <p class="text-[13px] text-slate-500 mt-0.5">All 21 Counties · Statewide Coverage</p>
+                            </div>
+                        </div>
+                        <p class="text-[15px] text-slate-600 leading-relaxed">From the brownstones of <strong class="text-navy-900">Hudson County</strong> to the Victorian shore homes of <strong class="text-navy-900">Cape May</strong>, New Jersey's diverse housing stock demands skilled, licensed repair specialists. The Fix Wizard serves every NJ county — chimney sweeping and tuckpointing in <strong class="text-navy-900">Bergen, Morris, and Essex</strong>; handyman services throughout <strong class="text-navy-900">Monmouth, Ocean, and Middlesex</strong>. Same-day dispatching statewide.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] bg-orange/[.08] text-orange font-semibold px-3 py-1 rounded-full">Chimney Repair NJ</span>
+                            <span class="text-[12px] bg-orange/[.08] text-orange font-semibold px-3 py-1 rounded-full">Handyman NJ</span>
+                            <span class="text-[12px] bg-orange/[.08] text-orange font-semibold px-3 py-1 rounded-full">Tuckpointing NJ</span>
+                            <span class="text-[12px] bg-orange/[.08] text-orange font-semibold px-3 py-1 rounded-full">All 21 Counties</span>
+                        </div>
+                        <ul class="flex flex-col gap-2 text-[14px] text-slate-600">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-orange text-[10px]"></i> Bergen, Essex, Middlesex, Monmouth, Morris</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-orange text-[10px]"></i> Hudson, Union, Ocean, Somerset, Passaic</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-orange text-[10px]"></i> Camden, Burlington, Mercer, Atlantic + 7 more</li>
+                        </ul>
+                        <a href="../new-jersey/" class="inline-flex items-center gap-2 text-[14px] font-bold text-orange hover:text-orange-dark transition-colors mt-auto">
+                            View New Jersey Services <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Cleveland Card -->
+                <div class="group bg-white rounded-card border border-slate-200 overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.18)] hover:border-transparent reveal">
+                    <div class="h-3 bg-gradient-to-r from-orange-dark via-orange to-orange-light"></div>
+                    <div class="p-8 flex flex-col gap-5 flex-1">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
+                                <i class="fas fa-location-dot text-orange text-[24px]"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-[22px] font-bold text-navy-900 leading-tight">Cleveland, Ohio</h2>
+                                <p class="text-[13px] text-slate-500 mt-0.5">Greater Cleveland · 20 Suburbs Covered</p>
+                            </div>
+                        </div>
+                        <p class="text-[15px] text-slate-600 leading-relaxed">Cleveland's harsh lake-effect winters and century-old housing stock create relentless demand for expert chimney and home repair. The Fix Wizard serves the greater Cleveland area — chimney repair and masonry in <strong class="text-navy-900">Lakewood, Cleveland Heights, and Shaker Heights</strong>; handyman services in <strong class="text-navy-900">Parma, Strongsville, Westlake, and Beachwood</strong>. Freeze-thaw specialists on every job.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] bg-orange/[.08] text-orange font-semibold px-3 py-1 rounded-full">Chimney Repair Cleveland</span>
+                            <span class="text-[12px] bg-orange/[.08] text-orange font-semibold px-3 py-1 rounded-full">Handyman Cleveland</span>
+                            <span class="text-[12px] bg-orange/[.08] text-orange font-semibold px-3 py-1 rounded-full">Tuckpointing Ohio</span>
+                            <span class="text-[12px] bg-orange/[.08] text-orange font-semibold px-3 py-1 rounded-full">Greater Cleveland</span>
+                        </div>
+                        <ul class="flex flex-col gap-2 text-[14px] text-slate-600">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-orange text-[10px]"></i> Cleveland, Lakewood, Cleveland Heights, Parma</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-orange text-[10px]"></i> Strongsville, Westlake, Beachwood, Solon</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-orange text-[10px]"></i> Shaker Heights, Rocky River, Mentor + 9 more</li>
+                        </ul>
+                        <a href="../cleveland-ohio/" class="inline-flex items-center gap-2 text-[14px] font-bold text-orange hover:text-orange-dark transition-colors mt-auto">
+                            View Cleveland Services <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section class="loc-section">
+    <!-- NJ COUNTY GRID -->
+    <section class="loc-section" style="position:relative;">
         <div class="loc-bg-pin" style="right:-40px;top:40px;width:320px;height:400px;">
             <svg viewBox="0 0 100 130" fill="#0d1b4b" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><path d="M50 0C22.4 0 0 22.4 0 50c0 37.5 50 80 50 80S100 87.5 100 50C100 22.4 77.6 0 50 0z"/><circle cx="50" cy="50" r="19" fill="white" fill-opacity=".6"/></svg>
         </div>
@@ -481,8 +656,8 @@ def build_locations_page():
         </div>
         <div class="container" style="position:relative;z-index:1;">
             <div style="text-align:center;margin-bottom:48px;">
-                <h2 style="font-size:clamp(22px,3vw,30px);font-weight:800;color:#0d1b4b;margin-bottom:8px;">Choose Your County</h2>
-                <p style="color:#64748b;font-size:15px;">Select a county below to see all available services in your area</p>
+                <h2 style="font-size:clamp(22px,3vw,30px);font-weight:800;color:#0d1b4b;margin-bottom:8px;">New Jersey — All 21 Counties</h2>
+                <p style="color:#64748b;font-size:15px;">Select your county to see chimney repair and handyman services in your area.</p>
             </div>
             <div class="loc-grid">
 {cards_html}
@@ -493,12 +668,12 @@ def build_locations_page():
     <section class="cta-banner">
         <div class="container cta-inner reveal">
             <div class="cta-text">
-                <h2>Need a Handyman Anywhere in New Jersey?</h2>
-                <p>Free estimates across all 21 NJ counties. Licensed &amp; insured. Same-day available.</p>
+                <h2>Chimney Repair or Handyman Services — Wherever You Are</h2>
+                <p>Free estimates in New Jersey &amp; Cleveland. Licensed &amp; insured. Same-day available.</p>
             </div>
             <div class="cta-btns">
                 <a href="tel:+15551234567" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
-                <a href="../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Send Message</a>
+                <a href="../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Free Quote</a>
             </div>
         </div>
     </section>
