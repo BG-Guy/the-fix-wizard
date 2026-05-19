@@ -17,21 +17,123 @@
     <link rel="stylesheet" href="../css/tw.css">
     <link rel="preload" href="../css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../css/custom.css"></noscript>
-    <meta name="description" content="Expert chimney repair and masonry services — sweeping, tuckpointing, crown repair, liner installation, flashing, and more. Serving New Jersey and Cleveland, Ohio. Licensed & insured. Free estimates.">
+    <meta name="description" content="Expert chimney repair and masonry services — inspections, sweeping, tuckpointing, crown repair, liner installation, caps, and more. Serving New Jersey and Cleveland, Ohio.">
     <title>Chimney Repair &amp; Masonry Services | The Fix Wizard</title>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Chimney Repair and Masonry",
-      "provider": {"@type": "LocalBusiness", "name": "The Fix Wizard", "telephone": "(555) 123-4567"},
-      "areaServed": [{"@type":"State","name":"New Jersey"},{"@type":"City","name":"Cleveland","containedInPlace":{"@type":"State","name":"Ohio"}}],
-      "description": "Expert chimney repair and masonry services including sweeping, tuckpointing, crown repair, liner installation, and waterproofing."
-    }
-    </script>
+
+<style>
+@keyframes bubble-float {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-6px); }
+}
+.svc-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 2px solid #e8edf5;
+  border-radius: 100px;
+  padding: 10px 18px 10px 13px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1e2d5a;
+  cursor: default;
+  user-select: none;
+  animation: bubble-float var(--dur,3.8s) ease-in-out var(--delay,0s) infinite;
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1),
+              opacity .2s ease,
+              border-color .15s ease,
+              box-shadow .15s ease,
+              background .15s ease;
+  will-change: transform, opacity;
+}
+.svc-bubble:hover {
+  border-color: #FF6B35;
+  background: #fff7f4;
+  box-shadow: 0 8px 24px rgba(255,107,53,.18);
+  animation-play-state: paused;
+  transform: translateY(-4px) scale(1.05) !important;
+}
+.svc-bubble.b-hide {
+  transform: scale(0) !important;
+  opacity: 0 !important;
+  pointer-events: none;
+  animation: none !important;
+}
+.svc-bubble .b-icon {
+  font-size: 11px;
+  color: #FF6B35;
+  flex-shrink: 0;
+}
+.svc-category { transition: opacity .2s ease; }
+.svc-category.c-hide { display: none; }
+.bubbles-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.cat-hdr {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+.cat-hdr-icon {
+  width: 30px; height: 30px;
+  background: rgba(255,107,53,.1);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.cat-hdr-icon i { color: #FF6B35; font-size: 12px; }
+.cat-hdr-label {
+  font-size: 11px; font-weight: 800;
+  color: #0d1b4b; text-transform: uppercase;
+  letter-spacing: .1em; white-space: nowrap;
+}
+.cat-hdr-line { flex: 1; height: 1px; background: #eef1f7; }
+.srch-wrap {
+  position: relative;
+  display: flex; align-items: center;
+}
+.srch-icon {
+  position: absolute; left: 17px;
+  color: #94a3b8; font-size: 15px; pointer-events: none;
+}
+.srch-input {
+  width: 100%;
+  padding: 15px 50px 15px 46px;
+  border: 2px solid #e2e8f0;
+  border-radius: 18px;
+  font-size: 15px; font-weight: 500;
+  color: #0d1b4b; font-family: Inter, sans-serif;
+  outline: none; background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+.srch-input:focus {
+  border-color: #FF6B35;
+  box-shadow: 0 0 0 4px rgba(255,107,53,.1);
+}
+.srch-input::placeholder { color: #94a3b8; }
+.srch-clear {
+  position: absolute; right: 16px;
+  width: 26px; height: 26px;
+  background: #f1f5f9; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #64748b; font-size: 11px; cursor: pointer;
+  opacity: 0; pointer-events: none;
+  transition: opacity .15s, background .15s;
+}
+.srch-clear.show { opacity: 1; pointer-events: all; }
+.srch-clear:hover { background: #FF6B35; color: #fff; }
+.srch-hint {
+  text-align: center; font-size: 13px; color: #94a3b8;
+  margin-top: 10px; min-height: 18px;
+}
+.srch-none {
+  text-align: center; font-size: 15px; color: #64748b;
+  padding: 40px 0; display: none;
+}
+.srch-none button {
+  color: #FF6B35; font-weight: 600;
+  background: none; border: none; cursor: pointer; margin-left: 4px;
+}
+</style>
 </head>
 <body>
-
     <nav id="navbar" class="navbar">
         <div class="container nav-container">
             <a href="../" class="logo"><img src="../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img" width="199" height="110"></a>
@@ -79,13 +181,9 @@
         <a href="../#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
     </div>
     <div class="mobile-overlay" id="mobileOverlay"></div>
-
-    <!-- HERO -->
     <section class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)] rounded-b-[56px]">
         <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
             <div class="grid grid-cols-1 tab:grid-cols-[1fr_420px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
-
-                <!-- LEFT -->
                 <div class="flex flex-col items-center tab:items-start text-center tab:text-left">
                     <div class="inline-flex items-center gap-2 bg-orange/[.14] border border-orange/30 text-orange-light px-4 py-1.5 rounded-full text-[13px] font-semibold mb-7 tracking-wide">
                         <i class="fas fa-fire text-orange text-[11px]"></i>
@@ -93,29 +191,15 @@
                     </div>
                     <h1 class="font-cinzel text-[clamp(32px,5vw,64px)] font-black leading-[1.1] tracking-tight text-white mb-6">
                         Expert Chimney Repair<br>
-                        <span class="text-orange">&amp; <span class="lightning-word">Masonry Services</span></span>
+                        <span class="text-orange">&amp; <span class='lightning-word'>Masonry Services</span></span>
                     </h1>
-                    <p class="text-[18px] text-white/65 leading-[1.75] mb-6 max-w-[560px]">
-                        From annual chimney sweeping and tuckpointing to full liner installation and masonry restoration — licensed specialists covering every repair your chimney needs, done right the first time.
-                    </p>
+                    <p class="text-[18px] text-white/65 leading-[1.75] mb-6 max-w-[560px]">From annual chimney sweeping and tuckpointing to full liner installation and masonry restoration — licensed specialists covering every repair your chimney needs.</p>
                     <div class="flex items-center gap-3 mb-8 flex-wrap justify-center tab:justify-start">
-                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
-                            <i class="fas fa-broom text-orange text-[12px]"></i> Sweeping &amp; Inspection
-                        </div>
-                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
-                            <i class="fas fa-trowel-bricks text-orange text-[12px]"></i> Tuckpointing
-                        </div>
-                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
-                            <i class="fas fa-pipe text-orange text-[12px]"></i> Liner Install
-                        </div>
+                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80"><i class="fas fa-broom text-orange text-[12px]"></i> Sweeping &amp; Inspection</div><div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80"><i class="fas fa-trowel-bricks text-orange text-[12px]"></i> Tuckpointing</div><div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80"><i class="fas fa-pipe text-orange text-[12px]"></i> Liner Install</div>
                     </div>
                     <div class="flex items-center gap-3 mb-12 flex-wrap justify-center tab:justify-start hero-actions">
-                        <a href="../new-jersey/" class="btn btn-primary btn-lg">
-                            <i class="fas fa-map-marker-alt"></i> New Jersey
-                        </a>
-                        <a href="../cleveland-ohio/" class="btn btn-outline btn-lg">
-                            <i class="fas fa-map-marker-alt"></i> Cleveland, Ohio
-                        </a>
+                        <a href="../new-jersey/" class="btn btn-primary btn-lg"><i class="fas fa-map-marker-alt"></i> New Jersey</a>
+                        <a href="../cleveland-ohio/" class="btn btn-outline btn-lg"><i class="fas fa-map-marker-alt"></i> Cleveland, Ohio</a>
                     </div>
                     <div class="w-full h-px bg-white/10 mb-8"></div>
                     <div class="flex items-center gap-8 flex-wrap justify-center tab:justify-start hero-stats">
@@ -140,8 +224,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- RIGHT -->
                 <div class="flex items-center justify-center tab:justify-end">
                     <div class="w-full max-w-[520px] bg-white/[.07] backdrop-blur-xl border border-white/[.13] rounded-xl2 p-8 flex flex-col gap-6">
                         <div class="flex items-center gap-3.5">
@@ -155,9 +237,7 @@
                         </div>
                         <div class="flex flex-col gap-3">
                             <a href="../new-jersey/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110">
-                                    <i class="fas fa-location-dot"></i>
-                                </div>
+                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110"><i class="fas fa-location-dot"></i></div>
                                 <div class="flex-1 text-left">
                                     <div class="text-[15px] font-bold text-white leading-tight">New Jersey</div>
                                     <div class="text-[12px] text-white/50 mt-0.5">All 21 counties · Bergen to Cape May</div>
@@ -165,9 +245,7 @@
                                 <i class="fas fa-arrow-right text-orange text-[13px] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"></i>
                             </a>
                             <a href="../cleveland-ohio/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110">
-                                    <i class="fas fa-location-dot"></i>
-                                </div>
+                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110"><i class="fas fa-location-dot"></i></div>
                                 <div class="flex-1 text-left">
                                     <div class="text-[15px] font-bold text-white leading-tight">Cleveland, Ohio</div>
                                     <div class="text-[12px] text-white/50 mt-0.5">Greater Cleveland · 20 suburbs</div>
@@ -175,16 +253,13 @@
                                 <i class="fas fa-arrow-right text-orange text-[13px] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"></i>
                             </a>
                         </div>
-                        <a href="../#contact" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i> Request a Free Quote
-                        </a>
+                        <a href="../#contact" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Request a Free Quote</a>
                         <div class="flex gap-3 pt-1 border-t border-white/[.08]">
                             <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-shield-halved text-orange text-[13px]"></i><span>Licensed &amp; Insured</span></div>
                             <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-clock text-orange text-[13px]"></i><span>Same Day Available</span></div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="hero-sparkles absolute inset-0 pointer-events-none z-[2] overflow-hidden" aria-hidden="true">
@@ -200,110 +275,117 @@
         </div>
     </section>
 
-    <!-- SERVICES GRID -->
-    <section class="py-20" style="background:#f7f8fc;background-image:radial-gradient(circle,rgba(13,27,75,.07) 1px,transparent 1px);background-size:28px 28px;">
+    <!-- BUBBLE SERVICES -->
+    <section class="py-20 bg-white">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">What We Cover</span>
-                <h2 class="section-title">Complete Chimney &amp; <span class="text-accent">Masonry Services</span></h2>
-                <p class="section-desc">Every chimney repair and masonry service your home needs — performed by licensed, insured technicians with same-day availability.</p>
+                <h2 class="section-title">Complete Chimney &amp; <span class='text-accent'>Masonry Services</span></h2>
+                <p class="section-desc">All 13 services we offer — search to find yours instantly.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1060px] mx-auto">
 
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-broom text-orange text-[18px]"></i>
+            <div class="max-w-[580px] mx-auto mb-12 reveal">
+                <div class="srch-wrap">
+                    <i class="fas fa-search srch-icon"></i>
+                    <input id="srch" type="text" class="srch-input" placeholder="Search services…" autocomplete="off" spellcheck="false">
+                    <div id="srch-clr" class="srch-clear" role="button" aria-label="Clear search">
+                        <i class="fas fa-times"></i>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Chimney Sweeping & Cleaning</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Annual sweeping removes creosote buildup — the #1 cause of chimney fires. We use rotary brushes and HEPA vacuums from top to bottom, leaving no mess.</p>
                 </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-trowel-bricks text-orange text-[18px]"></i>
+                <p id="srch-hint" class="srch-hint"></p>
+            </div>
+
+            <div id="svc-container" class="flex flex-col gap-10 max-w-[960px] mx-auto">
+
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-magnifying-glass"></i></div>
+                    <span class="cat-hdr-label">Inspections &amp; Sweep Services</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="level 1 inspection and standard sweep" style="--dur:3.6s;--delay:0s">
+                        <i class="fas fa-magnifying-glass b-icon"></i><span>Level 1 Inspection &amp; Standard Sweep</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Tuckpointing & Mortar Repointing</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Crumbling mortar joints let water into the masonry. We grind out deteriorated mortar and pack new mortar to the correct depth to stop water infiltration.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-hat-hard text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="level 2 inspection real estate   camera scan" style="--dur:4.1s;--delay:0.4s">
+                        <i class="fas fa-camera b-icon"></i><span>Level 2 Inspection (Real Estate / Camera Scan)</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Chimney Crown Repair & Sealing</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">The crown sheds water away from the flue opening. Cracked crowns allow water to enter and accelerate deterioration — we repair or fully replace them.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-circle-dot text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="heavy creosote rotary cleaning" style="--dur:3.9s;--delay:0.8s">
+                        <i class="fas fa-broom b-icon"></i><span>Heavy Creosote Rotary Cleaning</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Chimney Cap Installation</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">A stainless steel cap keeps rain, animals, and debris out while letting exhaust escape. We measure and install the correctly sized cap with stainless screws.</p>
                 </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-droplet-slash text-orange text-[18px]"></i>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-circle-dot"></i></div>
+                    <span class="cat-hdr-label">Caps, Covers &amp; Maintenance</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="single-flue stainless steel cap installation" style="--dur:4.4s;--delay:1.2s">
+                        <i class="fas fa-circle-dot b-icon"></i><span>Single-Flue Stainless Steel Cap Installation</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Chimney Flashing Repair</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Failed flashing at the roof–chimney junction is the most common source of attic water damage. We install new step and counterflashing and seal correctly.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-fire-flame-curved text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="multi-flue   custom top-mount cap installation" style="--dur:3.7s;--delay:0.2s">
+                        <i class="fas fa-layer-group b-icon"></i><span>Multi-Flue / Custom Top-Mount Cap Installation</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Firebox Repair</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Cracked or spalled firebrick allows combustion gases to reach framing. We re-mortar loose joints with refractory mortar and replace damaged brick.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-pipe text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="outside mount chase cover replacement" style="--dur:4.2s;--delay:0.6s">
+                        <i class="fas fa-square b-icon"></i><span>Outside Mount Chase Cover Replacement</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Chimney Liner Installation</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">A properly sized liner is required by code and ensures combustion gases exhaust safely. We install stainless steel liner systems for all fuel types.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-shield-halved text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="chimney water repellent application" style="--dur:3.8s;--delay:1.0s">
+                        <i class="fas fa-droplet-slash b-icon"></i><span>Chimney Water Repellent Application</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Chimney Waterproofing</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">We apply penetrating, vapor-permeable masonry waterproofer to the exterior — blocking water entry while allowing moisture to escape from inside.</p>
                 </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-wind text-orange text-[18px]"></i>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-trowel-bricks"></i></div>
+                    <span class="cat-hdr-label">Masonry &amp; Crown Repairs</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="crown repair elastomeric coating" style="--dur:4.5s;--delay:1.4s">
+                        <i class="fas fa-helmet-safety b-icon"></i><span>Crown Repair (Elastomeric Coating)</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Chimney Draft Repair</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Smoke backing into the room signals a draft problem — blockage, undersized flue, or negative pressure. We diagnose and correct the root cause.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-toggle-on text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="full chimney crown rebuild" style="--dur:3.6s;--delay:0s">
+                        <i class="fas fa-hat-hard b-icon"></i><span>Full Chimney Crown Rebuild</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Fireplace Damper Repair</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">A stuck damper wastes energy year-round. We repair throat dampers or install top-mount dampers that seal the flue when not in use.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-layer-group text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="minor tuckpointing and mortar repair" style="--dur:4.1s;--delay:0.4s">
+                        <i class="fas fa-trowel-bricks b-icon"></i><span>Minor Tuckpointing &amp; Mortar Repair</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Brick & Mortar Restoration</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Spalling brick and deteriorated mortar are common in older housing stock. We clean, tuckpoint, and stabilize aging masonry to stop further weathering.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-magnifying-glass text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="firebox re-bricking   refractory panel swap" style="--dur:3.9s;--delay:0.8s">
+                        <i class="fas fa-fire-flame-curved b-icon"></i><span>Firebox Re-bricking / Refractory Panel Swap</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Chimney Inspection</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">A Level 1 inspection covers all accessible interior and exterior surfaces. We check for obstructions, deterioration, and code compliance, and provide a written report.</p>
                 </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-pipe"></i></div>
+                    <span class="cat-hdr-label">Components &amp; Liners</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="top-damper installation lyemance lock-top" style="--dur:4.4s;--delay:1.2s">
+                        <i class="fas fa-toggle-on b-icon"></i><span>Top-Damper Installation (Lyemance/Lock-Top)</span>
+                    </div>
+                    <div class="svc-bubble" data-s="stainless steel flue liner installation" style="--dur:3.7s;--delay:0.2s">
+                        <i class="fas fa-pipe b-icon"></i><span>Stainless Steel Flue Liner Installation</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="srch-none" class="srch-none">
+                No services match your search.
+                <button id="srch-none-clr">Clear search</button>
             </div>
         </div>
     </section>
 
-    <!-- LOCATION CTA -->
     <section class="py-16 bg-white">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Our Locations</span>
-                <h2 class="section-title">Chimney Services in <span class="text-accent">Your Area</span></h2>
+                <h2 class="section-title">Chimney Services in <span class='text-accent'>Your Area</span></h2>
                 <p class="section-desc">Choose your location for local pricing, same-day availability, and area-specific service details.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[760px] mx-auto reveal">
@@ -330,8 +412,6 @@
             </div>
         </div>
     </section>
-
-    <!-- FAQ -->
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header reveal">
@@ -341,45 +421,28 @@
             </div>
             <div class="faq-accordion">
                 <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How often should I have my chimney swept?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true"><p>Most chimney safety organizations recommend annual sweeping and inspection before each heating season. Homes that burn wood regularly may need sweeping twice a year. Gas appliances still require annual inspection even without heavy creosote buildup.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>How often should I have my chimney swept?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Most chimney safety organizations recommend annual sweeping and inspection before each heating season. Homes that burn wood regularly may need sweeping twice per year. Gas appliances still require annual inspection even without heavy creosote buildup.</p></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How much does chimney repair cost?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true"><p>Chimney sweeping typically costs $150–$300. Tuckpointing ranges from $500–$3,000 depending on extent. Crown repair runs $200–$800. Liner installation starts at $1,500. We provide free itemized estimates with no obligation.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>What is tuckpointing and do I need it?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Tuckpointing is grinding out deteriorated mortar joints and packing in fresh mortar. If you see gaps, crumbling, or missing mortar between bricks, tuckpointing is overdue. Left untreated, water infiltration causes far costlier structural damage.</p></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What is tuckpointing and do I need it?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true"><p>Tuckpointing is the process of grinding out deteriorated mortar joints and packing in fresh mortar. If you can see gaps, crumbling, or missing mortar between your chimney bricks, tuckpointing is overdue. Left untreated, water infiltration causes much costlier structural damage.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>What is a chimney liner and why does it matter?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>A chimney liner contains combustion gases and directs them safely out of the flue. An improperly sized or deteriorated liner can allow carbon monoxide and heat to reach combustible framing. Liner installation is code-required for most fuel-burning appliances.</p></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Do you service both wood-burning and gas fireplaces?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true"><p>Yes. We service all chimney and fireplace types — wood-burning fireplaces, gas inserts, oil appliances, and pellet stoves. The specific services differ by fuel type, but we handle all of them.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Do you service both wood-burning and gas fireplaces?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Yes. We service all chimney and fireplace types — wood-burning, gas inserts, oil appliances, and pellet stoves. The specific services differ by fuel type but we handle all of them.</p></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What areas do you serve for chimney repair?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true"><p>We serve all 21 counties in New Jersey and the greater Cleveland, Ohio area including Lakewood, Parma, Strongsville, Westlake, Beachwood, and 15+ more suburbs. Select your location below for area-specific service details.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>What areas do you serve for chimney repair?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>We serve all 21 counties in New Jersey and the greater Cleveland, Ohio area — Lakewood, Parma, Strongsville, Westlake, Beachwood, Shaker Heights, and 14 more suburbs.</p></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- CTA -->
     <section class="cta-banner">
         <div class="container cta-inner reveal">
             <div class="cta-text">
@@ -392,7 +455,6 @@
             </div>
         </div>
     </section>
-
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -436,7 +498,42 @@
             </div>
         </div>
     </footer>
-
     <script type="module" src="../js/service-page.js"></script>
+
+<script>
+(function() {
+  var inp    = document.getElementById('srch');
+  var clr    = document.getElementById('srch-clr');
+  var hint   = document.getElementById('srch-hint');
+  var none   = document.getElementById('srch-none');
+  var bubbles = document.querySelectorAll('.svc-bubble');
+  var cats   = document.querySelectorAll('.svc-category');
+
+  function run(q) {
+    q = q.toLowerCase().trim();
+    var shown = 0;
+    bubbles.forEach(function(b) {
+      var match = !q || b.dataset.s.includes(q);
+      if (match) { b.classList.remove('b-hide'); shown++; }
+      else        { b.classList.add('b-hide'); }
+    });
+    cats.forEach(function(c) {
+      var any = Array.from(c.querySelectorAll('.svc-bubble')).some(function(b) {
+        return !b.classList.contains('b-hide');
+      });
+      c.classList.toggle('c-hide', !any);
+    });
+    clr.classList.toggle('show', q.length > 0);
+    hint.textContent = q ? (shown + ' service' + (shown !== 1 ? 's' : '') + ' found') : '';
+    none.style.display = (q && shown === 0) ? 'block' : 'none';
+  }
+
+  inp.addEventListener('input', function() { run(inp.value); });
+  clr.addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+  document.getElementById('srch-none-clr').addEventListener('click', function() {
+    inp.value = ''; run(''); inp.focus();
+  });
+})();
+</script>
 </body>
 </html>

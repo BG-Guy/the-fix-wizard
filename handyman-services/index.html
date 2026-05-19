@@ -17,21 +17,123 @@
     <link rel="stylesheet" href="../css/tw.css">
     <link rel="preload" href="../css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../css/custom.css"></noscript>
-    <meta name="description" content="Expert handyman services — drywall repair, painting, plumbing, electrical, door repair, furniture assembly, TV mounting, and more. Serving New Jersey and Cleveland, Ohio. Licensed & insured. Free estimates.">
+    <meta name="description" content="Expert handyman services — drywall repair, painting, plumbing, electrical, door repair, furniture assembly, TV mounting, and more. Serving New Jersey and Cleveland, Ohio.">
     <title>Handyman Services | The Fix Wizard</title>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Handyman Services",
-      "provider": {"@type": "LocalBusiness", "name": "The Fix Wizard", "telephone": "(555) 123-4567"},
-      "areaServed": [{"@type":"State","name":"New Jersey"},{"@type":"City","name":"Cleveland","containedInPlace":{"@type":"State","name":"Ohio"}}],
-      "description": "Expert handyman services including drywall repair, painting, plumbing, electrical, door repair, furniture assembly, and TV mounting."
-    }
-    </script>
+
+<style>
+@keyframes bubble-float {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-6px); }
+}
+.svc-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 2px solid #e8edf5;
+  border-radius: 100px;
+  padding: 10px 18px 10px 13px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1e2d5a;
+  cursor: default;
+  user-select: none;
+  animation: bubble-float var(--dur,3.8s) ease-in-out var(--delay,0s) infinite;
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1),
+              opacity .2s ease,
+              border-color .15s ease,
+              box-shadow .15s ease,
+              background .15s ease;
+  will-change: transform, opacity;
+}
+.svc-bubble:hover {
+  border-color: #FF6B35;
+  background: #fff7f4;
+  box-shadow: 0 8px 24px rgba(255,107,53,.18);
+  animation-play-state: paused;
+  transform: translateY(-4px) scale(1.05) !important;
+}
+.svc-bubble.b-hide {
+  transform: scale(0) !important;
+  opacity: 0 !important;
+  pointer-events: none;
+  animation: none !important;
+}
+.svc-bubble .b-icon {
+  font-size: 11px;
+  color: #FF6B35;
+  flex-shrink: 0;
+}
+.svc-category { transition: opacity .2s ease; }
+.svc-category.c-hide { display: none; }
+.bubbles-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.cat-hdr {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+.cat-hdr-icon {
+  width: 30px; height: 30px;
+  background: rgba(255,107,53,.1);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.cat-hdr-icon i { color: #FF6B35; font-size: 12px; }
+.cat-hdr-label {
+  font-size: 11px; font-weight: 800;
+  color: #0d1b4b; text-transform: uppercase;
+  letter-spacing: .1em; white-space: nowrap;
+}
+.cat-hdr-line { flex: 1; height: 1px; background: #eef1f7; }
+.srch-wrap {
+  position: relative;
+  display: flex; align-items: center;
+}
+.srch-icon {
+  position: absolute; left: 17px;
+  color: #94a3b8; font-size: 15px; pointer-events: none;
+}
+.srch-input {
+  width: 100%;
+  padding: 15px 50px 15px 46px;
+  border: 2px solid #e2e8f0;
+  border-radius: 18px;
+  font-size: 15px; font-weight: 500;
+  color: #0d1b4b; font-family: Inter, sans-serif;
+  outline: none; background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+.srch-input:focus {
+  border-color: #FF6B35;
+  box-shadow: 0 0 0 4px rgba(255,107,53,.1);
+}
+.srch-input::placeholder { color: #94a3b8; }
+.srch-clear {
+  position: absolute; right: 16px;
+  width: 26px; height: 26px;
+  background: #f1f5f9; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #64748b; font-size: 11px; cursor: pointer;
+  opacity: 0; pointer-events: none;
+  transition: opacity .15s, background .15s;
+}
+.srch-clear.show { opacity: 1; pointer-events: all; }
+.srch-clear:hover { background: #FF6B35; color: #fff; }
+.srch-hint {
+  text-align: center; font-size: 13px; color: #94a3b8;
+  margin-top: 10px; min-height: 18px;
+}
+.srch-none {
+  text-align: center; font-size: 15px; color: #64748b;
+  padding: 40px 0; display: none;
+}
+.srch-none button {
+  color: #FF6B35; font-weight: 600;
+  background: none; border: none; cursor: pointer; margin-left: 4px;
+}
+</style>
 </head>
 <body>
-
     <nav id="navbar" class="navbar">
         <div class="container nav-container">
             <a href="../" class="logo"><img src="../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img" width="199" height="110"></a>
@@ -79,13 +181,9 @@
         <a href="../#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
     </div>
     <div class="mobile-overlay" id="mobileOverlay"></div>
-
-    <!-- HERO -->
     <section class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)] rounded-b-[56px]">
         <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
             <div class="grid grid-cols-1 tab:grid-cols-[1fr_420px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
-
-                <!-- LEFT -->
                 <div class="flex flex-col items-center tab:items-start text-center tab:text-left">
                     <div class="inline-flex items-center gap-2 bg-orange/[.14] border border-orange/30 text-orange-light px-4 py-1.5 rounded-full text-[13px] font-semibold mb-7 tracking-wide">
                         <i class="fas fa-screwdriver-wrench text-orange text-[11px]"></i>
@@ -93,29 +191,15 @@
                     </div>
                     <h1 class="font-cinzel text-[clamp(32px,5vw,64px)] font-black leading-[1.1] tracking-tight text-white mb-6">
                         Expert Handyman<br>
-                        <span class="text-orange">Services <span class="lightning-word">Near You</span></span>
+                        <span class="text-orange">Services <span class='lightning-word'>Near You</span></span>
                     </h1>
-                    <p class="text-[18px] text-white/65 leading-[1.75] mb-6 max-w-[560px]">
-                        From drywall patching and painting to light plumbing, electrical, doors, and furniture assembly — one call covers your entire repair list. Licensed, insured, and same-day available.
-                    </p>
+                    <p class="text-[18px] text-white/65 leading-[1.75] mb-6 max-w-[560px]">From drywall patching and painting to light plumbing, electrical, doors, and furniture assembly — one call covers your entire repair list. Licensed, insured, same-day available.</p>
                     <div class="flex items-center gap-3 mb-8 flex-wrap justify-center tab:justify-start">
-                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
-                            <i class="fas fa-fill-drip text-orange text-[12px]"></i> Drywall &amp; Painting
-                        </div>
-                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
-                            <i class="fas fa-faucet text-orange text-[12px]"></i> Plumbing &amp; Electrical
-                        </div>
-                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
-                            <i class="fas fa-couch text-orange text-[12px]"></i> Assembly &amp; Mounting
-                        </div>
+                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80"><i class="fas fa-fill-drip text-orange text-[12px]"></i> Drywall &amp; Painting</div><div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80"><i class="fas fa-faucet text-orange text-[12px]"></i> Plumbing &amp; Electrical</div><div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80"><i class="fas fa-couch text-orange text-[12px]"></i> Assembly &amp; Mounting</div>
                     </div>
                     <div class="flex items-center gap-3 mb-12 flex-wrap justify-center tab:justify-start hero-actions">
-                        <a href="../new-jersey/" class="btn btn-primary btn-lg">
-                            <i class="fas fa-map-marker-alt"></i> New Jersey
-                        </a>
-                        <a href="../cleveland-ohio/" class="btn btn-outline btn-lg">
-                            <i class="fas fa-map-marker-alt"></i> Cleveland, Ohio
-                        </a>
+                        <a href="../new-jersey/" class="btn btn-primary btn-lg"><i class="fas fa-map-marker-alt"></i> New Jersey</a>
+                        <a href="../cleveland-ohio/" class="btn btn-outline btn-lg"><i class="fas fa-map-marker-alt"></i> Cleveland, Ohio</a>
                     </div>
                     <div class="w-full h-px bg-white/10 mb-8"></div>
                     <div class="flex items-center gap-8 flex-wrap justify-center tab:justify-start hero-stats">
@@ -140,8 +224,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- RIGHT -->
                 <div class="flex items-center justify-center tab:justify-end">
                     <div class="w-full max-w-[520px] bg-white/[.07] backdrop-blur-xl border border-white/[.13] rounded-xl2 p-8 flex flex-col gap-6">
                         <div class="flex items-center gap-3.5">
@@ -155,9 +237,7 @@
                         </div>
                         <div class="flex flex-col gap-3">
                             <a href="../new-jersey/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110">
-                                    <i class="fas fa-location-dot"></i>
-                                </div>
+                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110"><i class="fas fa-location-dot"></i></div>
                                 <div class="flex-1 text-left">
                                     <div class="text-[15px] font-bold text-white leading-tight">New Jersey</div>
                                     <div class="text-[12px] text-white/50 mt-0.5">All 21 counties · Bergen to Cape May</div>
@@ -165,9 +245,7 @@
                                 <i class="fas fa-arrow-right text-orange text-[13px] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"></i>
                             </a>
                             <a href="../cleveland-ohio/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110">
-                                    <i class="fas fa-location-dot"></i>
-                                </div>
+                                <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110"><i class="fas fa-location-dot"></i></div>
                                 <div class="flex-1 text-left">
                                     <div class="text-[15px] font-bold text-white leading-tight">Cleveland, Ohio</div>
                                     <div class="text-[12px] text-white/50 mt-0.5">Greater Cleveland · 20 suburbs</div>
@@ -175,16 +253,13 @@
                                 <i class="fas fa-arrow-right text-orange text-[13px] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"></i>
                             </a>
                         </div>
-                        <a href="../#contact" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i> Request a Free Quote
-                        </a>
+                        <a href="../#contact" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Request a Free Quote</a>
                         <div class="flex gap-3 pt-1 border-t border-white/[.08]">
                             <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-shield-halved text-orange text-[13px]"></i><span>Licensed &amp; Insured</span></div>
                             <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-clock text-orange text-[13px]"></i><span>Same Day Available</span></div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="hero-sparkles absolute inset-0 pointer-events-none z-[2] overflow-hidden" aria-hidden="true">
@@ -200,110 +275,147 @@
         </div>
     </section>
 
-    <!-- SERVICES GRID -->
-    <section class="py-20" style="background:#f7f8fc;background-image:radial-gradient(circle,rgba(13,27,75,.07) 1px,transparent 1px);background-size:28px 28px;">
+    <!-- BUBBLE SERVICES -->
+    <section class="py-20 bg-white">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">What We Cover</span>
-                <h2 class="section-title">Complete <span class="text-accent">Handyman Services</span></h2>
-                <p class="section-desc">Every repair and home maintenance task handled by licensed, insured technicians — single visit, transparent pricing, satisfaction guaranteed.</p>
+                <h2 class="section-title">Complete <span class='text-accent'>Handyman Services</span></h2>
+                <p class="section-desc">All 20 services we offer — search to find yours instantly.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1060px] mx-auto">
 
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-fill-drip text-orange text-[18px]"></i>
+            <div class="max-w-[580px] mx-auto mb-12 reveal">
+                <div class="srch-wrap">
+                    <i class="fas fa-search srch-icon"></i>
+                    <input id="srch" type="text" class="srch-input" placeholder="Search services…" autocomplete="off" spellcheck="false">
+                    <div id="srch-clr" class="srch-clear" role="button" aria-label="Clear search">
+                        <i class="fas fa-times"></i>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Drywall Repair &amp; Patching</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Holes, cracks, water damage, and texture matching handled invisibly — we blend the repair with your existing wall so you'd never know anything happened.</p>
                 </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-paint-roller text-orange text-[18px]"></i>
+                <p id="srch-hint" class="srch-hint"></p>
+            </div>
+
+            <div id="svc-container" class="flex flex-col gap-10 max-w-[960px] mx-auto">
+
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-tv"></i></div>
+                    <span class="cat-hdr-label">Mounting &amp; Hanging</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="tv wall mounting" style="--dur:3.6s;--delay:0s">
+                        <i class="fas fa-tv b-icon"></i><span>TV Wall Mounting</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Interior &amp; Exterior Painting</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Proper prep first: patching, sanding, priming, and taping before a single drop of paint. Low-VOC paints, two full coats, clean results every time.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-door-open text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="heavy mirror   large artwork hanging" style="--dur:4.1s;--delay:0.4s">
+                        <i class="fas fa-image b-icon"></i><span>Heavy Mirror / Large Artwork Hanging</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Door Repair &amp; Installation</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Sticking doors, broken hinges, damaged frames, squeaking hardware — we adjust, repair, or replace interior and exterior doors cleanly.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-couch text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="blinds   shades   curtain rod installation" style="--dur:3.9s;--delay:0.8s">
+                        <i class="fas fa-window-restore b-icon"></i><span>Blinds / Shades / Curtain Rod Installation</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Furniture Assembly</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">IKEA, Wayfair, and Amazon flat-pack assembled correctly — beds, desks, wardrobes, shelving, TV stands, and dining sets of any size.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-tv text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="floating shelves installation" style="--dur:4.4s;--delay:1.2s">
+                        <i class="fas fa-layer-group b-icon"></i><span>Floating Shelves Installation</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">TV Mounting &amp; Installation</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">We mount TVs on drywall, concrete, tile, and brick. Studs located, mount leveled, cables routed in-wall when requested.</p>
                 </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-bolt text-orange text-[18px]"></i>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-faucet"></i></div>
+                    <span class="cat-hdr-label">Minor Plumbing &amp; Bath</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="kitchen or bathroom faucet replacement" style="--dur:3.7s;--delay:0.2s">
+                        <i class="fas fa-faucet b-icon"></i><span>Kitchen or Bathroom Faucet Replacement</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Light Electrical Repairs</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Dead outlets, flickering lights, switches, ceiling fans, and light fixtures replaced safely — all code-compliant work done right.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-faucet text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="garbage disposal replacement" style="--dur:4.2s;--delay:0.6s">
+                        <i class="fas fa-trash-can b-icon"></i><span>Garbage Disposal Replacement</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Light Plumbing Repairs</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Dripping faucets, running toilets, slow drains, and under-sink leaks diagnosed and fixed on the same visit.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-shelves text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="toilet reset   flange repair   inner components swap" style="--dur:3.8s;--delay:1.0s">
+                        <i class="fas fa-toilet b-icon"></i><span>Toilet Reset / Flange Repair / Inner Components Swap</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Shelf &amp; Storage Installation</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Floating shelves and wall-mounted storage anchored to studs, genuinely level and rated for the load.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-wind text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="bathroom exhaust fan replacement" style="--dur:4.5s;--delay:1.4s">
+                        <i class="fas fa-fan b-icon"></i><span>Bathroom Exhaust Fan Replacement</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Weatherstripping &amp; Door Seals</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">We replace door weatherstripping, bottom seals, and threshold gaskets to stop drafts and reduce heating and cooling costs.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-droplet text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="shower head and grab bar installation" style="--dur:3.6s;--delay:0s">
+                        <i class="fas fa-shower b-icon"></i><span>Shower Head &amp; Grab Bar Installation</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Caulking &amp; Sealing</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Failed caulk around tubs, sinks, windows, and exterior trim removed completely and replaced with fresh, cleanly tooled lines.</p>
                 </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-border-all text-orange text-[18px]"></i>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-bolt"></i></div>
+                    <span class="cat-hdr-label">Minor Electrical &amp; Fixtures</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="ceiling fan installation" style="--dur:4.1s;--delay:0.4s">
+                        <i class="fas fa-fan b-icon"></i><span>Ceiling Fan Installation</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Tile Repair &amp; Grout</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Cracked or loose tiles replaced, deteriorated grout re-done, tub and shower transitions re-caulked for a clean waterproof surface.</p>
-                </div>
-                <div class="group bg-white rounded-card border border-slate-200 p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,27,75,.14)] hover:border-orange/30 reveal">
-                    <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
-                        <i class="fas fa-clipboard-list text-orange text-[18px]"></i>
+                    <div class="svc-bubble" data-s="standard light fixture   chandelier swap" style="--dur:3.9s;--delay:0.8s">
+                        <i class="fas fa-lightbulb b-icon"></i><span>Standard Light Fixture / Chandelier Swap</span>
                     </div>
-                    <h3 class="text-[16px] font-bold text-navy-900">Handyman Home Inspection</h3>
-                    <p class="text-[13px] text-slate-500 leading-relaxed">Room-by-room walkthrough identifying deferred maintenance items — prioritized by urgency with honest cost estimates so you can plan ahead.</p>
+                    <div class="svc-bubble" data-s="outlet   switch upgrades" style="--dur:4.4s;--delay:1.2s">
+                        <i class="fas fa-plug b-icon"></i><span>Outlet / Switch Upgrades</span>
+                    </div>
+                    <div class="svc-bubble" data-s="video doorbell   smart lock installation" style="--dur:3.7s;--delay:0.2s">
+                        <i class="fas fa-bell b-icon"></i><span>Video Doorbell / Smart Lock Installation</span>
+                    </div>
                 </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-fill-drip"></i></div>
+                    <span class="cat-hdr-label">Carpentry, Drywall &amp; Trim</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="drywall patching" style="--dur:4.2s;--delay:0.6s">
+                        <i class="fas fa-fill-drip b-icon"></i><span>Drywall Patching</span>
+                    </div>
+                    <div class="svc-bubble" data-s="baseboard   shoe molding installation" style="--dur:3.8s;--delay:1.0s">
+                        <i class="fas fa-ruler-horizontal b-icon"></i><span>Baseboard / Shoe Molding Installation</span>
+                    </div>
+                    <div class="svc-bubble" data-s="cabinet hinge and hardware upgrade" style="--dur:4.5s;--delay:1.4s">
+                        <i class="fas fa-screwdriver-wrench b-icon"></i><span>Cabinet Hinge &amp; Hardware Upgrade</span>
+                    </div>
+                    <div class="svc-bubble" data-s="pet door installation" style="--dur:3.6s;--delay:0s">
+                        <i class="fas fa-dog b-icon"></i><span>Pet Door Installation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-couch"></i></div>
+                    <span class="cat-hdr-label">Assembly &amp; Miscellaneous</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="flat-pack furniture assembly" style="--dur:4.1s;--delay:0.4s">
+                        <i class="fas fa-couch b-icon"></i><span>Flat-Pack Furniture Assembly</span>
+                    </div>
+                    <div class="svc-bubble" data-s="attic ladder replacement" style="--dur:3.9s;--delay:0.8s">
+                        <i class="fas fa-stairs b-icon"></i><span>Attic Ladder Replacement</span>
+                    </div>
+                    <div class="svc-bubble" data-s="mailbox and post installation" style="--dur:4.4s;--delay:1.2s">
+                        <i class="fas fa-inbox b-icon"></i><span>Mailbox &amp; Post Installation</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="srch-none" class="srch-none">
+                No services match your search.
+                <button id="srch-none-clr">Clear search</button>
             </div>
         </div>
     </section>
 
-    <!-- LOCATION CTA -->
     <section class="py-16 bg-white">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Our Locations</span>
-                <h2 class="section-title">Handyman Services in <span class="text-accent">Your Area</span></h2>
+                <h2 class="section-title">Handyman Services in <span class='text-accent'>Your Area</span></h2>
                 <p class="section-desc">Choose your location for local pricing, same-day availability, and area-specific service details.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[760px] mx-auto reveal">
@@ -330,8 +442,6 @@
             </div>
         </div>
     </section>
-
-    <!-- FAQ -->
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header reveal">
@@ -341,45 +451,28 @@
             </div>
             <div class="faq-accordion">
                 <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What handyman services do you offer?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true"><p>We handle a wide range of home repairs: drywall patching and texture matching, interior and exterior painting, door repair and installation, furniture assembly, TV mounting, light electrical (outlets, switches, fans, fixtures), light plumbing (faucets, toilets, drains, disposals), weatherstripping, caulking, tile repair, and general home maintenance.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>What handyman services do you offer?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Drywall patching and texture matching, interior and exterior painting, door repair and installation, furniture assembly, TV mounting, light electrical (outlets, switches, fans, fixtures), light plumbing (faucets, toilets, drains, disposals), weatherstripping, caulking, tile repair, and general home maintenance.</p></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Can you do multiple jobs in one visit?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true"><p>Absolutely. Combining multiple tasks in one visit is actually the most efficient way to use our time and yours. Common combinations include drywall patching + paint touch-ups, outlet replacement + fan installation, and furniture assembly + TV mounting — all in a single appointment.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Can you do multiple jobs in one visit?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Absolutely — combining multiple tasks is the most efficient way to use our time and yours. Common combinations include drywall patching + paint touch-ups, outlet replacement + fan installation, and furniture assembly + TV mounting, all in a single appointment.</p></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How much does handyman service cost?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true"><p>Most handyman jobs run $150–$500 depending on complexity and time. Furniture assembly typically runs $75–$200 per piece. TV mounting is $100–$200. Drywall patch and texture match averages $150–$350. We provide free estimates before any work begins.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>How much does handyman service cost?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Most jobs run $150–$500 depending on complexity. Furniture assembly typically runs $75–$200 per piece. TV mounting is $100–$200. Drywall patch and texture match averages $150–$350. We provide free estimates before any work begins.</p></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Are your handymen licensed and insured?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true"><p>Yes. All technicians are background-checked, and The Fix Wizard carries full liability insurance on every job in both New Jersey and Ohio. You're protected on every visit.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>Are your handymen licensed and insured?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Yes. All technicians are background-checked, and The Fix Wizard carries full liability insurance on every job in both New Jersey and Ohio.</p></div>
                 </div>
                 <div class="faq-item reveal">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What areas do you serve for handyman services?</span>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true"><p>We serve all 21 counties in New Jersey and the greater Cleveland, Ohio area — including Lakewood, Parma, Strongsville, Westlake, Beachwood, Shaker Heights, and 14+ more suburbs. Select your location below for area-specific details.</p></div>
+                    <button class="faq-question" aria-expanded="false"><span>What areas do you serve for handyman services?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>All 21 counties in New Jersey and the greater Cleveland, Ohio area — including Lakewood, Parma, Strongsville, Westlake, Beachwood, Shaker Heights, and 14 more suburbs.</p></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- CTA -->
     <section class="cta-banner">
         <div class="container cta-inner reveal">
             <div class="cta-text">
@@ -392,7 +485,6 @@
             </div>
         </div>
     </section>
-
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -436,7 +528,42 @@
             </div>
         </div>
     </footer>
-
     <script type="module" src="../js/service-page.js"></script>
+
+<script>
+(function() {
+  var inp    = document.getElementById('srch');
+  var clr    = document.getElementById('srch-clr');
+  var hint   = document.getElementById('srch-hint');
+  var none   = document.getElementById('srch-none');
+  var bubbles = document.querySelectorAll('.svc-bubble');
+  var cats   = document.querySelectorAll('.svc-category');
+
+  function run(q) {
+    q = q.toLowerCase().trim();
+    var shown = 0;
+    bubbles.forEach(function(b) {
+      var match = !q || b.dataset.s.includes(q);
+      if (match) { b.classList.remove('b-hide'); shown++; }
+      else        { b.classList.add('b-hide'); }
+    });
+    cats.forEach(function(c) {
+      var any = Array.from(c.querySelectorAll('.svc-bubble')).some(function(b) {
+        return !b.classList.contains('b-hide');
+      });
+      c.classList.toggle('c-hide', !any);
+    });
+    clr.classList.toggle('show', q.length > 0);
+    hint.textContent = q ? (shown + ' service' + (shown !== 1 ? 's' : '') + ' found') : '';
+    none.style.display = (q && shown === 0) ? 'block' : 'none';
+  }
+
+  inp.addEventListener('input', function() { run(inp.value); });
+  clr.addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+  document.getElementById('srch-none-clr').addEventListener('click', function() {
+    inp.value = ''; run(''); inp.focus();
+  });
+})();
+</script>
 </body>
 </html>
