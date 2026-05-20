@@ -44,6 +44,72 @@
     <link rel="stylesheet" href="../css/tw.css">
     <link rel="preload" href="../css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../css/custom.css"></noscript>
+
+<style id="bubble-styles">
+@keyframes bubble-float {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-6px); }
+}
+.svc-bubble {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; border: 2px solid #e8edf5; border-radius: 100px;
+  padding: 10px 18px 10px 13px; font-size: 13.5px; font-weight: 500;
+  color: #1e2d5a; cursor: default; user-select: none;
+  animation: bubble-float var(--dur,3.8s) ease-in-out var(--delay,0s) infinite;
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1),
+              opacity .2s ease, border-color .15s ease,
+              box-shadow .15s ease, background .15s ease;
+  will-change: transform, opacity;
+}
+.svc-bubble:hover {
+  border-color: #FF6B35; background: #fff7f4;
+  box-shadow: 0 8px 24px rgba(255,107,53,.18);
+  animation-play-state: paused;
+  transform: translateY(-4px) scale(1.05) !important;
+}
+.svc-bubble.b-hide {
+  transform: scale(0) !important; opacity: 0 !important;
+  pointer-events: none; animation: none !important;
+}
+.svc-bubble .b-icon { font-size: 11px; color: #FF6B35; flex-shrink: 0; }
+.svc-category.c-hide { display: none; }
+.bubbles-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.cat-hdr { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.cat-hdr-icon {
+  width: 30px; height: 30px; background: rgba(255,107,53,.1);
+  border-radius: 9px; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0;
+}
+.cat-hdr-icon i { color: #FF6B35; font-size: 12px; }
+.cat-hdr-label {
+  font-size: 11px; font-weight: 800; color: #0d1b4b;
+  text-transform: uppercase; letter-spacing: .1em; white-space: nowrap;
+}
+.cat-hdr-line { flex: 1; height: 1px; background: #eef1f7; }
+.srch-wrap { position: relative; display: flex; align-items: center; }
+.srch-icon { position: absolute; left: 17px; color: #94a3b8; font-size: 15px; pointer-events: none; }
+.srch-input {
+  width: 100%; padding: 15px 50px 15px 46px;
+  border: 2px solid #e2e8f0; border-radius: 18px;
+  font-size: 15px; font-weight: 500; color: #0d1b4b;
+  font-family: Inter, sans-serif; outline: none; background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+.srch-input:focus { border-color: #FF6B35; box-shadow: 0 0 0 4px rgba(255,107,53,.1); }
+.srch-input::placeholder { color: #94a3b8; }
+.srch-clear {
+  position: absolute; right: 16px; width: 26px; height: 26px;
+  background: #f1f5f9; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #64748b; font-size: 11px; cursor: pointer;
+  opacity: 0; pointer-events: none; transition: opacity .15s, background .15s;
+}
+.srch-clear.show { opacity: 1; pointer-events: all; }
+.srch-clear:hover { background: #FF6B35; color: #fff; }
+.srch-hint { text-align: center; font-size: 13px; color: #94a3b8; margin-top: 10px; min-height: 18px; }
+.srch-none { text-align: center; font-size: 15px; color: #64748b; padding: 40px 0; display: none; }
+.srch-none button { color: #FF6B35; font-weight: 600; background: none; border: none; cursor: pointer; margin-left: 4px; }
+</style>
 </head>
 <body>
 
@@ -105,7 +171,7 @@
             <div class="sp-hero-inner">
                 <div class="sp-hero-left">
                     <div class="sp-icon-wrap"><i class="fas fa-fire-flame-curved"></i></div>
-                    <h1 class="sp-title"><span class="text-accent">Chimney &amp; Masonry</span><br>Across New Jersey</h1>
+                    <h1 class="sp-title">Chimney &amp; Masonry <span class="text-accent">Services in New Jersey</span></h1>
                     <p class="sp-subtitle">New Jersey winters are brutal on chimneys and masonry. We repair, rebuild, and waterproof — before the damage becomes a fire hazard or structural failure.</p>
                     <div class="sp-actions">
                         <a href="tel:+15551234567" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Call Now</a>
@@ -140,48 +206,77 @@
     <section class="sp-work-section services">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">Chimney &amp; Masonry</span>
-                <h2 class="section-title">Every Job We <span class="text-accent">Handle</span></h2>
-                <p class="section-desc">NJ's freeze-thaw cycles are the harshest test of any masonry. We repair what NJ winters break — across Morris, Bergen, Essex, Monmouth and every county.</p>
+                <span class="section-tag">Services</span>
+                <h2 class="section-title">Every Service We <span class="text-accent">Offer in New Jersey</span></h2>
+                <p class="section-desc">All 13 services — search to find yours instantly. Same-day available, free estimates.</p>
             </div>
-            <div class="sp-work-grid">
-                <div class="sp-work-item reveal">
-                    <div class="sp-work-icon"><i class="fas fa-hammer"></i></div>
-                    <div><h4>Tuckpointing</h4><p>Failing mortar joints ground out and replaced — the most important preventive maintenance for any NJ chimney or brick structure.</p></div>
+
+            <div class="max-w-[580px] mx-auto mb-12 reveal">
+                <div class="srch-wrap">
+                    <i class="fas fa-search srch-icon"></i>
+                    <input id="srch" type="text" class="srch-input" placeholder="Search services…" autocomplete="off" spellcheck="false">
+                    <div id="srch-clr" class="srch-clear" role="button" aria-label="Clear search"><i class="fas fa-times"></i></div>
                 </div>
-                <div class="sp-work-item reveal">
-                    <div class="sp-work-icon"><i class="fas fa-hat-hard"></i></div>
-                    <div><h4>Chimney Crown Repair</h4><p>Cracked or crumbling crowns repaired or replaced — the crown is your chimney's first line of defense against NJ rainfall and freeze-thaw damage.</p></div>
+                <p id="srch-hint" class="srch-hint"></p>
+            </div>
+
+            <div class="flex flex-col gap-10 max-w-[960px] mx-auto">
+
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-magnifying-glass"></i></div>
+                    <span class="cat-hdr-label">Inspections &amp; Sweep Services</span>
+                    <div class="cat-hdr-line"></div>
                 </div>
-                <div class="sp-work-item reveal">
-                    <div class="sp-work-icon"><i class="fas fa-border-all"></i></div>
-                    <div><h4>Spalling Brick Repair</h4><p>Flaking, cracked, and spalling bricks replaced with matched materials — restoring structural integrity and appearance.</p></div>
-                </div>
-                <div class="sp-work-item reveal">
-                    <div class="sp-work-icon"><i class="fas fa-droplet-slash"></i></div>
-                    <div><h4>Flashing &amp; Waterproofing</h4><p>Failed flashing at the roofline repaired or replaced, and masonry sealed with penetrating waterproofer to block NJ moisture intrusion.</p></div>
-                </div>
-                <div class="sp-work-item reveal">
-                    <div class="sp-work-icon"><i class="fas fa-chess-rook"></i></div>
-                    <div><h4>Chimney Cap Install</h4><p>Stainless steel chimney caps installed to keep rain, snow, birds, and debris out of the flue — extending the life of your entire chimney system.</p></div>
-                </div>
-                <div class="sp-work-item reveal">
-                    <div class="sp-work-icon"><i class="fas fa-building"></i></div>
-                    <div><h4>Full Chimney Rebuild</h4><p>When repairs aren't enough, we rebuild from the roofline up — matching original brick and mortar color for a seamless result.</p></div>
-                </div>
-                <div class="sp-work-item reveal">
-                    <div class="sp-work-icon"><i class="fas fa-bricks"></i></div>
-                    <div><h4>Exterior Masonry</h4><p>Retaining walls, steps, patios, and exterior brick features repaired and restored throughout New Jersey properties.</p></div>
-                </div>
-                <div class="sp-work-item reveal">
-                    <div class="sp-work-icon"><i class="fas fa-shield"></i></div>
-                    <div><h4>Efflorescence &amp; Sealing</h4><p>White mineral staining treated at the source and masonry sealed to prevent recurrence — a common issue in NJ's wet climate.</p></div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="level 1 inspection and standard sweep" style="--dur:3.6s;--delay:0s"><i class="fas fa-magnifying-glass b-icon"></i><span>Level 1 Inspection &amp; Standard Sweep</span></div>
+                    <div class="svc-bubble" data-s="level 2 inspection real estate   camera scan" style="--dur:4.1s;--delay:0.4s"><i class="fas fa-camera b-icon"></i><span>Level 2 Inspection (Real Estate / Camera Scan)</span></div>
+                    <div class="svc-bubble" data-s="heavy creosote rotary cleaning" style="--dur:3.9s;--delay:0.8s"><i class="fas fa-broom b-icon"></i><span>Heavy Creosote Rotary Cleaning</span></div>
                 </div>
             </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-circle-dot"></i></div>
+                    <span class="cat-hdr-label">Caps, Covers &amp; Maintenance</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="single-flue stainless steel cap installation" style="--dur:4.4s;--delay:1.2s"><i class="fas fa-circle-dot b-icon"></i><span>Single-Flue Stainless Steel Cap Installation</span></div>
+                    <div class="svc-bubble" data-s="multi-flue   custom top-mount cap installation" style="--dur:3.7s;--delay:0.2s"><i class="fas fa-layer-group b-icon"></i><span>Multi-Flue / Custom Top-Mount Cap Installation</span></div>
+                    <div class="svc-bubble" data-s="outside mount chase cover replacement" style="--dur:4.2s;--delay:0.6s"><i class="fas fa-square b-icon"></i><span>Outside Mount Chase Cover Replacement</span></div>
+                    <div class="svc-bubble" data-s="chimney water repellent application" style="--dur:3.8s;--delay:1.0s"><i class="fas fa-droplet-slash b-icon"></i><span>Chimney Water Repellent Application</span></div>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-trowel-bricks"></i></div>
+                    <span class="cat-hdr-label">Masonry &amp; Crown Repairs</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="crown repair elastomeric coating" style="--dur:4.5s;--delay:1.4s"><i class="fas fa-helmet-safety b-icon"></i><span>Crown Repair (Elastomeric Coating)</span></div>
+                    <div class="svc-bubble" data-s="full chimney crown rebuild" style="--dur:3.6s;--delay:0s"><i class="fas fa-hat-hard b-icon"></i><span>Full Chimney Crown Rebuild</span></div>
+                    <div class="svc-bubble" data-s="minor tuckpointing and mortar repair" style="--dur:4.1s;--delay:0.4s"><i class="fas fa-trowel-bricks b-icon"></i><span>Minor Tuckpointing &amp; Mortar Repair</span></div>
+                    <div class="svc-bubble" data-s="firebox re-bricking   refractory panel swap" style="--dur:3.9s;--delay:0.8s"><i class="fas fa-fire-flame-curved b-icon"></i><span>Firebox Re-bricking / Refractory Panel Swap</span></div>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-pipe"></i></div>
+                    <span class="cat-hdr-label">Components &amp; Liners</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <div class="svc-bubble" data-s="top-damper installation lyemance lock-top" style="--dur:4.4s;--delay:1.2s"><i class="fas fa-toggle-on b-icon"></i><span>Top-Damper Installation (Lyemance/Lock-Top)</span></div>
+                    <div class="svc-bubble" data-s="stainless steel flue liner installation" style="--dur:3.7s;--delay:0.2s"><i class="fas fa-pipe b-icon"></i><span>Stainless Steel Flue Liner Installation</span></div>
+                </div>
+            </div>
+            </div>
+            <div id="srch-none" class="srch-none">No services match your search.<button id="srch-none-clr">Clear search</button></div>
         </div>
     </section>
 
-    <section class="sp-process-section">
+        <section class="sp-process-section">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">How It Works</span>
@@ -343,5 +438,36 @@
     </footer>
 
     <script type="module" src="../js/service-page.js"></script>
+
+<script id="bubble-search">
+(function() {
+  var inp  = document.getElementById('srch');
+  var clr  = document.getElementById('srch-clr');
+  var hint = document.getElementById('srch-hint');
+  var none = document.getElementById('srch-none');
+  var bubbles = document.querySelectorAll('.svc-bubble');
+  var cats    = document.querySelectorAll('.svc-category');
+  if (!inp) return;
+  function run(q) {
+    q = q.toLowerCase().trim();
+    var shown = 0;
+    bubbles.forEach(function(b) {
+      var match = !q || b.dataset.s.includes(q);
+      b.classList.toggle('b-hide', !match);
+      if (match) shown++;
+    });
+    cats.forEach(function(c) {
+      var any = Array.from(c.querySelectorAll('.svc-bubble')).some(function(b) { return !b.classList.contains('b-hide'); });
+      c.classList.toggle('c-hide', !any);
+    });
+    clr.classList.toggle('show', q.length > 0);
+    hint.textContent = q ? (shown + ' service' + (shown !== 1 ? 's' : '') + ' found') : '';
+    none.style.display = (q && shown === 0) ? 'block' : 'none';
+  }
+  inp.addEventListener('input', function() { run(inp.value); });
+  clr.addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+  document.getElementById('srch-none-clr').addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+})();
+</script>
 </body>
 </html>
