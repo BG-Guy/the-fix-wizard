@@ -18,7 +18,7 @@ console.log(`✓ index.html assembled (${order.length} partials)`);
 
 // 2. Compile Tailwind
 try {
-  execSync('./node_modules/.bin/tailwind -i css/input.css -o css/tw.css --minify', { stdio: 'inherit' });
+  execSync('./node_modules/.bin/tailwind -i css/input.css -o css/tw.css', { stdio: 'inherit' });
   console.log('✓ css/tw.css compiled');
 } catch (e) {
   process.exit(1);

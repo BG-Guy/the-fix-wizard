@@ -979,3 +979,79 @@
     .area-sidebar  { position: static; }
   }
 }
+
+/* =============================================================
+   Explicit utility overrides — these must survive CSS minification.
+   Tailwind's --minify merges duplicate declarations and drops these
+   arbitrary-value utility rules unless they are defined explicitly.
+   ============================================================= */
+@layer utilities {
+  /* Font sizes */
+  .text-\[10px\]  { font-size: 10px; }
+  .text-\[11px\]  { font-size: 11px; }
+  .text-\[12px\]  { font-size: 12px; }
+  .text-\[13px\]  { font-size: 13px; }
+  .text-\[14px\]  { font-size: 14px; }
+  .text-\[15px\]  { font-size: 15px; }
+  .text-\[16px\]  { font-size: 16px; }
+  .text-\[17px\]  { font-size: 17px; }
+  .text-\[18px\]  { font-size: 18px; }
+  .text-\[20px\]  { font-size: 20px; }
+  .text-\[22px\]  { font-size: 22px; }
+  .text-\[24px\]  { font-size: 24px; }
+  .text-\[28px\]  { font-size: 28px; }
+  .text-\[32px\]  { font-size: 32px; }
+  .text-\[clamp\(24px\,3\.6vw\,40px\)\] { font-size: clamp(24px, 3.6vw, 40px); }
+  .text-\[clamp\(32px\,5vw\,64px\)\]    { font-size: clamp(32px, 5vw, 64px); }
+
+  /* White / black opacity modifiers for dark sections */
+  .text-white\/50  { color: rgba(255,255,255,.5);  }
+  .text-white\/65  { color: rgba(255,255,255,.65); }
+  .text-white\/80  { color: rgba(255,255,255,.80); }
+  .text-white\/90  { color: rgba(255,255,255,.90); }
+  .text-white\/55  { color: rgba(255,255,255,.55); }
+  .text-white\/45  { color: rgba(255,255,255,.45); }
+  .text-white\/40  { color: rgba(255,255,255,.40); }
+  .bg-white\/\[\.07\]  { background-color: rgba(255,255,255,.07); }
+  .bg-white\/\[\.1\]   { background-color: rgba(255,255,255,.10); }
+  .bg-white\/\[\.13\]  { background-color: rgba(255,255,255,.13); }
+  .border-white\/\[\.1\]  { border-color: rgba(255,255,255,.10); }
+  .border-white\/\[\.13\] { border-color: rgba(255,255,255,.13); }
+  .border-white\/30    { border-color: rgba(255,255,255,.30); }
+
+  /* Orange opacity variants */
+  .bg-orange\/\[\.14\]  { background-color: rgba(255,107,53,.14); }
+  .bg-orange\/\[\.15\]  { background-color: rgba(255,107,53,.15); }
+  .border-orange\/30   { border-color: rgba(255,107,53,.30); }
+  .border-orange\/40   { border-color: rgba(255,107,53,.40); }
+
+  /* Gaps */
+  .gap-\[18px\] { gap: 18px; }
+  .gap-\[22px\] { gap: 22px; }
+  .gap-\[5px\]  { gap: 5px;  }
+  .gap-\[9px\]  { gap: 9px;  }
+
+  /* Leading */
+  .leading-\[1\.1\]  { line-height: 1.1;  }
+  .leading-\[1\.75\] { line-height: 1.75; }
+  .leading-\[1\.78\] { line-height: 1.78; }
+  .leading-\[1\.7\]  { line-height: 1.7;  }
+  .leading-\[1\.85\] { line-height: 1.85; }
+
+  /* Tracking */
+  .tracking-\[2px\]  { letter-spacing: 2px;  }
+
+  /* Widths / heights (common arbitrary values) */
+  .w-\[52px\]  { width:  52px; }
+  .h-\[52px\]  { height: 52px; }
+  .w-\[38px\]  { width:  38px; }
+  .h-\[38px\]  { height: 38px; }
+  .max-w-\[520px\]  { max-width: 520px; }
+  .max-w-\[560px\]  { max-width: 560px; }
+  .max-w-\[580px\]  { max-width: 580px; }
+  .max-w-\[760px\]  { max-width: 760px; }
+  .max-w-\[1000px\] { max-width: 1000px; }
+
+  /* Grid columns */
+  .grid-cols-\[1fr_420px\] { grid-template-columns: 1fr 420px; }
+}

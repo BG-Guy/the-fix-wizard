@@ -9,6 +9,7 @@ module.exports = {
     './new-jersey/**/*.html',
     './cleveland-ohio/**/*.html',
   ],
+  safelist: [],
   theme: {
     extend: {
       colors: {
