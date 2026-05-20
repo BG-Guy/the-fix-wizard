@@ -2,6 +2,10 @@
 """Generates /chimney-services/ and /handyman-services/ generic hub pages."""
 
 import os, base64
+from services_data import (
+    CHIMNEY_CATS as SD_CHIMNEY_CATS, HANDYMAN_CATS as SD_HANDYMAN_CATS,
+    CHIMNEY_SERVICES_FULL, HANDYMAN_SERVICES_FULL, build_service_lookup
+)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -160,7 +164,8 @@ BUBBLE_CSS = """
   font-size: 13.5px;
   font-weight: 500;
   color: #1e2d5a;
-  cursor: default;
+  cursor: pointer;
+  text-decoration: none;
   user-select: none;
   animation: bubble-float var(--dur,3.8s) ease-in-out var(--delay,0s) infinite;
   transition: transform .28s cubic-bezier(.34,1.56,.64,1),
@@ -296,106 +301,23 @@ BUBBLE_JS = """
 </script>"""
 
 
-# ── Service data ──────────────────────────────────────────────────────────────
+# ── Service data (built from services_data.py) ───────────────────────────────
 
-CHIMNEY_CATS = [
-    {
-        "cat": "Inspections &amp; Sweep Services",
-        "icon": "fa-magnifying-glass",
-        "items": [
-            ("fa-magnifying-glass",  "Level 1 Inspection &amp; Standard Sweep"),
-            ("fa-camera",            "Level 2 Inspection (Real Estate / Camera Scan)"),
-            ("fa-broom",             "Heavy Creosote Rotary Cleaning"),
-        ],
-    },
-    {
-        "cat": "Caps, Covers &amp; Maintenance",
-        "icon": "fa-circle-dot",
-        "items": [
-            ("fa-circle-dot",        "Single-Flue Stainless Steel Cap Installation"),
-            ("fa-layer-group",       "Multi-Flue / Custom Top-Mount Cap Installation"),
-            ("fa-square",            "Outside Mount Chase Cover Replacement"),
-            ("fa-droplet-slash",     "Chimney Water Repellent Application"),
-        ],
-    },
-    {
-        "cat": "Masonry &amp; Crown Repairs",
-        "icon": "fa-trowel-bricks",
-        "items": [
-            ("fa-helmet-safety",     "Crown Repair (Elastomeric Coating)"),
-            ("fa-hat-hard",          "Full Chimney Crown Rebuild"),
-            ("fa-trowel-bricks",     "Minor Tuckpointing &amp; Mortar Repair"),
-            ("fa-fire-flame-curved", "Firebox Re-bricking / Refractory Panel Swap"),
-        ],
-    },
-    {
-        "cat": "Components &amp; Liners",
-        "icon": "fa-pipe",
-        "items": [
-            ("fa-toggle-on",         "Top-Damper Installation (Lyemance/Lock-Top)"),
-            ("fa-pipe",              "Stainless Steel Flue Liner Installation"),
-        ],
-    },
-]
+def _build_cats(sd_cats, svc_full):
+    lookup = build_service_lookup(svc_full)
+    result = []
+    for cat_name, cat_icon, slugs in sd_cats:
+        items = [(lookup[s][0], lookup[s][1], s) for s in slugs if s in lookup]
+        result.append({"cat": cat_name, "icon": cat_icon, "items": items})
+    return result
 
-HANDYMAN_CATS = [
-    {
-        "cat": "Mounting &amp; Hanging",
-        "icon": "fa-tv",
-        "items": [
-            ("fa-tv",                "TV Wall Mounting"),
-            ("fa-image",             "Heavy Mirror / Large Artwork Hanging"),
-            ("fa-window-restore",    "Blinds / Shades / Curtain Rod Installation"),
-            ("fa-layer-group",       "Floating Shelves Installation"),
-        ],
-    },
-    {
-        "cat": "Minor Plumbing &amp; Bath",
-        "icon": "fa-faucet",
-        "items": [
-            ("fa-faucet",            "Kitchen or Bathroom Faucet Replacement"),
-            ("fa-trash-can",         "Garbage Disposal Replacement"),
-            ("fa-toilet",            "Toilet Reset / Flange Repair / Inner Components Swap"),
-            ("fa-fan",               "Bathroom Exhaust Fan Replacement"),
-            ("fa-shower",            "Shower Head &amp; Grab Bar Installation"),
-        ],
-    },
-    {
-        "cat": "Minor Electrical &amp; Fixtures",
-        "icon": "fa-bolt",
-        "items": [
-            ("fa-fan",               "Ceiling Fan Installation"),
-            ("fa-lightbulb",         "Standard Light Fixture / Chandelier Swap"),
-            ("fa-plug",              "Outlet / Switch Upgrades"),
-            ("fa-bell",              "Video Doorbell / Smart Lock Installation"),
-        ],
-    },
-    {
-        "cat": "Carpentry, Drywall &amp; Trim",
-        "icon": "fa-fill-drip",
-        "items": [
-            ("fa-fill-drip",         "Drywall Patching"),
-            ("fa-ruler-horizontal",  "Baseboard / Shoe Molding Installation"),
-            ("fa-screwdriver-wrench","Cabinet Hinge &amp; Hardware Upgrade"),
-            ("fa-dog",               "Pet Door Installation"),
-        ],
-    },
-    {
-        "cat": "Assembly &amp; Miscellaneous",
-        "icon": "fa-couch",
-        "items": [
-            ("fa-couch",             "Flat-Pack Furniture Assembly"),
-            ("fa-stairs",            "Attic Ladder Replacement"),
-            ("fa-inbox",             "Mailbox &amp; Post Installation"),
-        ],
-    },
-]
+CHIMNEY_CATS  = _build_cats(SD_CHIMNEY_CATS,  CHIMNEY_SERVICES_FULL)
+HANDYMAN_CATS = _build_cats(SD_HANDYMAN_CATS, HANDYMAN_SERVICES_FULL)
 
 
 # ── Bubble section builder ────────────────────────────────────────────────────
 
-def bubble_section(cats, section_title, section_tag):
-    # Float durations/delays staggered per bubble so they move independently
+def bubble_section(cats, section_title, section_tag, loc_slug="new-jersey"):
     DURATIONS = [3.6, 4.1, 3.9, 4.4, 3.7, 4.2, 3.8, 4.5]
     DELAYS    = [0, 0.4, 0.8, 1.2, 0.2, 0.6, 1.0, 1.4]
 
@@ -403,15 +325,17 @@ def bubble_section(cats, section_title, section_tag):
     cats_html = ""
     for cat in cats:
         bubbles_html = ""
-        for icon, name in cat["items"]:
+        for item in cat["items"]:
+            icon, name = item[0], item[1]
+            slug = item[2] if len(item) > 2 else None
             dur   = DURATIONS[idx % len(DURATIONS)]
             delay = DELAYS[idx % len(DELAYS)]
-            # search key: strip html entities and lowercase
             s_key = name.lower().replace("&amp;", "and").replace("/", " ").replace("(", "").replace(")", "")
+            href  = f'../{slug}-in-{loc_slug}/' if slug else '#'
             bubbles_html += f"""
-                    <div class="svc-bubble" data-s="{s_key}" style="--dur:{dur}s;--delay:{delay}s">
+                    <a class="svc-bubble" href="{href}" data-s="{s_key}" style="--dur:{dur}s;--delay:{delay}s">
                         <i class="fas {icon} b-icon"></i><span>{name}</span>
-                    </div>"""
+                    </a>"""
             idx += 1
         cats_html += f"""
             <div class="svc-category">
