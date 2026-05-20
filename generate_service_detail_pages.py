@@ -120,22 +120,22 @@ def blog_sections_html(slug, name, loc_name):
 
     return f"""
         <div class="blog-section">
-            <span class="blog-section-title">Why Would I Need This?</span>
+            <span class="blog-section-title">Why Homeowners Schedule {name} in {loc_name}</span>
             <p class="blog-body-p" style="margin-top:14px">{c["why_need"]}</p>
         </div>
 
         <div class="blog-section">
-            <span class="blog-section-title">How Will It Benefit Me?</span>
+            <span class="blog-section-title">What a Professional {name} Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">{c["benefits"]}</p>
         </div>
 
         <div class="blog-section">
-            <span class="blog-section-title">How Long Will It Last?</span>
+            <span class="blog-section-title">Longevity and Expected Lifespan</span>
             <p class="blog-body-p" style="margin-top:14px">{c["longevity"]}</p>
         </div>
 
         <div class="blog-section">
-            <span class="blog-section-title" style="border-left-color:#1e3480">What Happens If I Don't Address This?</span>
+            <span class="blog-section-title" style="border-left-color:#1e3480">What Happens When {name} Goes Unaddressed</span>
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">{c["consequences"]}</p>
             </div>
