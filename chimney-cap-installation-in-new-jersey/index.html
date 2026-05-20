@@ -7,19 +7,131 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta name="description" content="Single-Flue Stainless Steel Cap in New Jersey. A properly sized stainless steel cap keeps rain, animals, and debris out while allowing exhaust to escape. Licensed &amp; insured. Same-day available. Free estimates.">
     <title>Single-Flue Stainless Steel Cap in New Jersey | The Fix Wizard</title>
-    <style>:root{--nav-h:150px}*,*::before,*::after{box-sizing:border-box}body{font-family:Inter,sans-serif;color:#3a4560;background:#fff;line-height:1.65;overflow-x:hidden}body.no-scroll{overflow:hidden}a{text-decoration:none;color:inherit}.reveal{opacity:0;transform:translateY(28px)}.sp-hero,.hero{background-color:#091236;color:#fff}.mobile-menu{position:fixed;top:0;left:-100%;z-index:101;width:min(320px,88vw);height:100vh;background:#0d1b4b}.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;opacity:0;visibility:hidden}.faq-answer{max-height:0;overflow:hidden}#navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)}@media(max-width:768px){:root{--nav-h:96px}}
-.blog-section-title{font-size:20px;font-weight:800;color:#091236;padding-left:14px;border-left:3px solid var(--orange,#e85c1e);line-height:1.3;margin:0}
-.blog-lead{font-size:18px;color:#3a4560;line-height:1.85;font-weight:450}
-.blog-p{font-size:16px;color:#566070;line-height:1.9}
-.step-line{position:absolute;left:15px;top:32px;bottom:0;width:2px;background:linear-gradient(to bottom,#e2e8f0,transparent)}
-.tag-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(232,92,30,.1);color:var(--orange,#e85c1e);padding:4px 12px;border-radius:99px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.meta-sep{color:#cbd5e1;margin:0 4px}
+    <style>
+:root{--nav-h:150px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;color:#3a4560;background:#fff;line-height:1.65;overflow-x:hidden}
+body.no-scroll{overflow:hidden}
+a{text-decoration:none;color:inherit}
+.reveal{opacity:0;transform:translateY(28px)}
+.sp-hero,.hero{background-color:#091236;color:#fff}
+.mobile-menu{position:fixed;top:0;left:-100%;z-index:101;width:min(320px,88vw);height:100vh;background:#0d1b4b}
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;opacity:0;visibility:hidden}
+.faq-answer{max-height:0;overflow:hidden}
+#navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)}
+@media(max-width:768px){:root{--nav-h:96px}}
+
+/* ── Layout ── */
+.blog-page-wrap{background:#fff;padding:60px 0 80px}
+.blog-layout{display:flex;flex-direction:column;gap:48px;max-width:1100px;margin:0 auto;padding:0 24px}
+@media(min-width:1024px){.blog-layout{flex-direction:row;gap:64px;align-items:flex-start}}
+
+/* ── Article column ── */
+.blog-article{flex:1;min-width:0}
+
+/* ── Sticky sidebar ── */
+.blog-sidebar{width:100%;flex-shrink:0}
+@media(min-width:1024px){.blog-sidebar{width:300px;position:sticky;top:calc(var(--nav-h,96px) + 24px)}}
+
+/* ── Hero meta bar ── */
+.hero-meta-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.hero-meta-sep{color:rgba(255,255,255,.2);font-size:14px;line-height:1}
+.hero-meta-chip{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,.5)}
+.hero-meta-chip i{font-size:11px;color:#FF6B35}
+.tag-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,107,53,.12);color:#FF6B35;padding:5px 12px;border-radius:99px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+
+/* ── Blog typography ── */
+.blog-lead{font-size:18px;color:#3a4560;line-height:1.85;font-weight:500;margin-bottom:20px}
+.blog-body-p{font-size:16px;color:#5a6478;line-height:1.9;margin-bottom:20px}
+
+/* ── Section heading ── */
+.blog-section-title{font-size:20px;font-weight:800;color:#091236;padding-left:14px;border-left:3px solid #FF6B35;line-height:1.3;margin:0 0 20px 0;display:block}
+
+/* ── Blog section wrapper ── */
+.blog-section{margin-bottom:44px}
+
+/* ── Signs callout ── */
+.signs-box{background:#fffbeb;border-left:3px solid #FF6B35;border-radius:0 16px 16px 0;padding:4px 24px 4px 24px}
+.signs-list{list-style:none;padding:0;margin:0}
+.signs-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #fde68a;font-size:15px;color:#374151;line-height:1.55}
+.signs-item:last-child{border-bottom:none;padding-bottom:4px}
+.signs-item i{flex-shrink:0;color:#FF6B35;font-size:11px;margin-top:5px}
+
+/* ── Process timeline ── */
+.steps-list{list-style:none;padding:0;margin:0}
+.step-row{position:relative;display:flex;gap:20px;padding-bottom:32px}
+.step-row:last-child{padding-bottom:0}
+.step-connector{position:absolute;left:15px;top:32px;bottom:0;width:2px;background:linear-gradient(to bottom,#e2e8f0,transparent)}
+.step-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#091236;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;margin-top:2px}
+.step-content{flex:1;min-width:0;padding-top:2px}
+.step-title{font-size:15px;font-weight:700;color:#091236;margin-bottom:5px}
+.step-desc{font-size:14px;color:#5a6478;line-height:1.7}
+
+/* ── Benefits ── */
+.benefits-list{list-style:none;padding:0;margin:0;border:1px solid #e8ecf0;border-radius:16px;padding:0 24px}
+.benefit-row{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid #f1f5f9}
+.benefit-row:last-child{border-bottom:none}
+.benefit-icon-wrap{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:rgba(255,107,53,.1);display:flex;align-items:center;justify-content:center}
+.benefit-icon-wrap i{color:#FF6B35;font-size:13px}
+.benefit-title{font-size:15px;font-weight:700;color:#091236;margin-bottom:4px}
+.benefit-desc{font-size:14px;color:#5a6478;line-height:1.65}
+
+/* ── Pricing box ── */
+.price-box{position:relative;overflow:hidden;background:#091236;border-radius:16px;padding:28px 32px;color:#fff}
+.price-label{display:inline-flex;align-items:center;gap:6px;background:rgba(255,107,53,.2);color:#f97e4a;padding:5px 13px;border-radius:99px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px}
+.price-text{font-size:15px;color:rgba(255,255,255,.72);line-height:1.8}
+.price-watermark{position:absolute;right:16px;bottom:4px;color:rgba(255,255,255,.04);font-size:110px;font-weight:900;line-height:1;pointer-events:none;user-select:none;font-family:'Inter',sans-serif}
+
+/* ── Related services ── */
+.related-section{padding-top:32px;border-top:1px solid #f0f2f7;margin-top:8px}
+.related-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:600px){.related-grid{grid-template-columns:1fr 1fr}}
+.related-card{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #e4e9f2;border-radius:16px;padding:16px;text-decoration:none;transition:all .2s ease}
+.related-card:hover{border-color:#FF6B35;box-shadow:0 4px 20px rgba(13,27,75,.1);transform:translateY(-1px)}
+.related-icon{flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(255,107,53,.07);display:flex;align-items:center;justify-content:center;transition:background .2s}
+.related-card:hover .related-icon{background:rgba(255,107,53,.14)}
+.related-icon i{color:#FF6B35;font-size:14px}
+.related-body{flex:1;min-width:0}
+.related-name{font-size:14px;font-weight:600;color:#091236;transition:color .2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.related-card:hover .related-name{color:#FF6B35}
+.related-loc{font-size:12px;color:#94a3b8;margin-top:2px}
+.related-arrow{color:#d1d8e8;font-size:11px;flex-shrink:0;transition:all .2s}
+.related-card:hover .related-arrow{color:#FF6B35;transform:translateX(2px)}
+
+/* ── Sidebar: booking card ── */
+.sb-book{background:#091236;border-radius:18px;padding:24px;margin-bottom:16px;color:#fff}
+.sb-book-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.32);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}
+.sb-book-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.3}
+.sb-book-sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:20px;line-height:1.55}
+.sb-book-btns{display:flex;flex-direction:column;gap:10px}
+.sb-book-footer{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)}
+.sb-book-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.38)}
+.sb-book-badge i{color:#FF6B35;font-size:11px}
+
+/* ── Sidebar: includes card ── */
+.sb-card{background:#fff;border:1px solid #e4e9f2;border-radius:18px;padding:24px;margin-bottom:16px;display:block;transition:border-color .2s}
+.sb-card:hover{border-color:#FF6B35}
+.sb-card-header{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.sb-card-icon{width:32px;height:32px;border-radius:8px;background:rgba(255,107,53,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sb-card-icon i{color:#FF6B35;font-size:13px}
+.sb-card-title{font-size:15px;font-weight:700;color:#091236}
+
+/* ── Includes checklist ── */
 .includes-check{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid #f1f5f9;font-size:14px;color:#3a4560}
 .includes-check:last-child{border-bottom:none}
-.sidebar-card{background:#fff;border:1px solid #e8ecf3;border-radius:18px;padding:24px;margin-bottom:16px}
-.sidebar-book{background:#091236;border-radius:18px;padding:24px;margin-bottom:16px;color:#fff}
-@media(min-width:1024px){.article-sidebar{position:sticky;top:calc(var(--nav-h,96px) + 24px)}}
-</style>
+.includes-check i{color:#FF6B35;font-size:11px;margin-top:3px;flex-shrink:0}
+
+/* ── Sidebar: nav link cards ── */
+.sb-nav-link{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #e4e9f2;border-radius:16px;padding:16px;margin-bottom:12px;text-decoration:none;transition:border-color .2s}
+.sb-nav-link:hover{border-color:#FF6B35}
+.sb-nav-icon{width:36px;height:36px;border-radius:10px;background:rgba(255,107,53,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sb-nav-icon.grey{background:#f1f4f9}
+.sb-nav-icon i{color:#FF6B35;font-size:13px}
+.sb-nav-body{flex:1;min-width:0}
+.sb-nav-title{font-size:13px;font-weight:600;color:#091236;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-nav-sub{font-size:12px;color:#94a3b8;margin-top:2px}
+
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -52,7 +164,7 @@
                 <li><a href="../#why-us" class="nav-link">About</a></li>
                 <li><a href="../#contact" class="nav-link">Contact</a></li>
                 <li class="nav-dropdown">
-                    <a href="../locations/" class="nav-link flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
+                    <a href="../locations/" class="nav-link" style="display:flex;align-items:center;gap:6px">Locations <i class="fas fa-chevron-down" style="font-size:10px;opacity:.5;margin-top:1px"></i></a>
                     <div class="nav-dropdown-menu">
                         <a href="../new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
                         <a href="../cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
@@ -92,24 +204,24 @@
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <!-- ===== ARTICLE HERO ===== -->
-    <section class="sp-hero" style="padding-bottom:0">
+    <section class="sp-hero" style="padding-bottom:0;border-radius:0">
         <div class="container">
             <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="../">Home</a><i class="fas fa-chevron-right"></i>
                 <a href="../chimney-masonry-new-jersey/">Chimney Services in New Jersey</a><i class="fas fa-chevron-right"></i>
                 <span>Single-Flue Stainless Steel Cap</span>
             </nav>
-            <div class="max-w-[780px] py-10 md:py-14">
-                <div class="flex items-center gap-3 mb-5 flex-wrap">
+            <div style="max-width:780px;padding:36px 0 52px">
+                <div class="hero-meta-bar">
                     <span class="tag-pill"><i class="fas fa-circle-dot"></i> Caps, Covers &amp; Maintenance</span>
-                    <span class="meta-sep">·</span>
-                    <span class="flex items-center gap-1.5 text-[13px] text-white/50"><i class="fas fa-location-dot text-orange text-[11px]"></i>New Jersey</span>
-                    <span class="meta-sep">·</span>
-                    <span class="flex items-center gap-1.5 text-[13px] text-white/50"><i class="fas fa-clock text-[11px]"></i> 5 min read</span>
+                    <span class="hero-meta-sep">·</span>
+                    <span class="hero-meta-chip"><i class="fas fa-location-dot"></i>New Jersey</span>
+                    <span class="hero-meta-sep">·</span>
+                    <span class="hero-meta-chip"><i class="fas fa-clock"></i> 5 min read</span>
                 </div>
-                <h1 class="sp-title" style="margin-bottom:16px">Single-Flue Stainless Steel Cap <span class="text-accent">in New Jersey</span></h1>
+                <h1 class="sp-title" style="margin-bottom:14px">Single-Flue Stainless Steel Cap <span class="text-accent">in New Jersey</span></h1>
                 <p class="sp-subtitle" style="margin-bottom:28px">A properly sized stainless steel cap keeps rain, animals, and debris out while allowing exhaust to escape. Serving all 21 counties — Bergen to Cape May. Licensed &amp; insured. Same-day available.</p>
-                <div class="flex items-center gap-3 flex-wrap">
+                <div class="sp-actions">
                     <a href="tel:+15551234567" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Call Now</a>
                     <a href="../#contact" class="btn btn-outline btn-lg"><i class="fas fa-paper-plane"></i> Free Estimate</a>
                 </div>
@@ -117,125 +229,115 @@
         </div>
     </section>
 
-    <!-- ===== BLOG ARTICLE BODY ===== -->
-    <div class="bg-white py-14">
-        <div class="container">
-            <div class="max-w-[1100px] mx-auto flex flex-col lg:flex-row gap-12 items-start">
+    <!-- ===== ARTICLE BODY ===== -->
+    <div class="blog-page-wrap">
+        <div class="blog-layout">
 
-                <!-- ARTICLE CONTENT -->
-                <article class="flex-1 min-w-0">
-                    
-            <!-- INTRO -->
-            <div class="mb-10">
-                <p class="blog-lead mb-5">An uncapped chimney flue is an open invitation — for rain, snow, animals, and debris. Every rainstorm sends water directly into the flue, saturating the masonry and accelerating freeze-thaw deterioration. Birds, squirrels, and raccoons find open flues irresistible nesting sites. A properly fitted stainless steel chimney cap solves all of these problems at once.</p><p class="blog-p mb-5">Chimney caps are among the best investments in chimney longevity. A $200–$300 cap can prevent thousands in water damage repairs, animal removal costs, and liner deterioration over its lifetime. Stainless steel caps are virtually maintenance-free and carry lifetime warranties.</p>
+            <!-- MAIN ARTICLE -->
+            <article class="blog-article">
+                
+        <div class="blog-section">
+            <p class="blog-lead">An uncapped chimney flue is an open invitation — for rain, snow, animals, and debris. Every rainstorm sends water directly into the flue, saturating the masonry and accelerating freeze-thaw deterioration. Birds, squirrels, and raccoons find open flues irresistible nesting sites. A properly fitted stainless steel chimney cap solves all of these problems at once.</p>
+<p class="blog-body-p">Chimney caps are among the best investments in chimney longevity. A $200–$300 cap can prevent thousands in water damage repairs, animal removal costs, and liner deterioration over its lifetime. Stainless steel caps are virtually maintenance-free and carry lifetime warranties.</p>
+
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Signs You Need Single-Flue Stainless Steel Cap</span>
+            <div class="signs-box">
+                <ul class="signs-list"><li class="signs-item"><i class="fas fa-chevron-right"></i><span>Water appears in the firebox or smoke shelf after rain</span></li>
+<li class="signs-item"><i class="fas fa-chevron-right"></i><span>You hear scratching or rustling sounds inside the chimney</span></li>
+<li class="signs-item"><i class="fas fa-chevron-right"></i><span>You find leaves, twigs, or debris on the smoke shelf</span></li>
+</ul>
             </div>
+        </div>
 
-            <!-- SIGNS -->
-            <div class="mb-10">
-                <h2 class="blog-section-title">Signs You Need Single-Flue Stainless Steel Cap</h2>
-                <div class="mt-4 bg-amber-50 border-l-[3px] border-orange rounded-r-2xl px-6 py-4">
-                    <ul class="list-none p-0 m-0 divide-y divide-amber-100">
-                        <li class="flex items-start gap-3 text-[15px] text-slate-700 leading-snug py-2"><i class="fas fa-chevron-right text-orange text-[11px] mt-[5px] shrink-0"></i><span>Water appears in the firebox or smoke shelf after rain</span></li><li class="flex items-start gap-3 text-[15px] text-slate-700 leading-snug py-2"><i class="fas fa-chevron-right text-orange text-[11px] mt-[5px] shrink-0"></i><span>You hear scratching or rustling sounds inside the chimney</span></li><li class="flex items-start gap-3 text-[15px] text-slate-700 leading-snug py-2"><i class="fas fa-chevron-right text-orange text-[11px] mt-[5px] shrink-0"></i><span>You find leaves, twigs, or debris on the smoke shelf</span></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="blog-section">
+            <span class="blog-section-title">How It Works</span>
+            <ul class="steps-list" style="margin-top:20px"><li class="step-row"><div class="step-connector"></div><div class="step-num">1</div><div class="step-content"><p class="step-title">Flue measurement</p><p class="step-desc">We measure the exterior flue tile dimensions precisely — an improperly sized cap either falls in or fails to seal the opening.</p></div></li>
+<li class="step-row"><div class="step-connector"></div><div class="step-num">2</div><div class="step-content"><p class="step-title">Cap selection</p><p class="step-desc">We select a stainless steel cap with mesh sides to keep animals out while allowing exhaust to exit freely.</p></div></li>
+<li class="step-row"><div class="step-connector"></div><div class="step-num">3</div><div class="step-content"><p class="step-title">Secure installation</p><p class="step-desc">The cap is fastened with stainless steel screws or a compression-fit band, depending on flue tile type.</p></div></li>
+<li class="step-row"><div class="step-num">4</div><div class="step-content"><p class="step-title">Draft and fit verification</p><p class="step-desc">We confirm the cap does not restrict draft and is correctly aligned over the flue opening.</p></div></li>
+</ul>
+        </div>
 
-            <!-- PROCESS -->
-            <div class="mb-10">
-                <h2 class="blog-section-title">How It Works</h2>
-                <div class="mt-6 pl-1">
-                    <div class="relative flex gap-5 pb-8 last:pb-0"><div class="step-line"></div><div class="shrink-0 w-[30px] h-[30px] rounded-full bg-navy-900 text-white text-[12px] font-bold flex items-center justify-center z-10 mt-0.5">1</div><div><p class="font-bold text-navy-900 text-[15px] mb-1 mt-0.5">Flue measurement</p><p class="blog-p text-[14px] leading-relaxed">We measure the exterior flue tile dimensions precisely — an improperly sized cap either falls in or fails to seal the opening.</p></div></div><div class="relative flex gap-5 pb-8 last:pb-0"><div class="step-line"></div><div class="shrink-0 w-[30px] h-[30px] rounded-full bg-navy-900 text-white text-[12px] font-bold flex items-center justify-center z-10 mt-0.5">2</div><div><p class="font-bold text-navy-900 text-[15px] mb-1 mt-0.5">Cap selection</p><p class="blog-p text-[14px] leading-relaxed">We select a stainless steel cap with mesh sides to keep animals out while allowing exhaust to exit freely.</p></div></div><div class="relative flex gap-5 pb-8 last:pb-0"><div class="step-line"></div><div class="shrink-0 w-[30px] h-[30px] rounded-full bg-navy-900 text-white text-[12px] font-bold flex items-center justify-center z-10 mt-0.5">3</div><div><p class="font-bold text-navy-900 text-[15px] mb-1 mt-0.5">Secure installation</p><p class="blog-p text-[14px] leading-relaxed">The cap is fastened with stainless steel screws or a compression-fit band, depending on flue tile type.</p></div></div><div class="relative flex gap-5 pb-8 last:pb-0"><div class="shrink-0 w-[30px] h-[30px] rounded-full bg-navy-900 text-white text-[12px] font-bold flex items-center justify-center z-10 mt-0.5">4</div><div><p class="font-bold text-navy-900 text-[15px] mb-1 mt-0.5">Draft and fit verification</p><p class="blog-p text-[14px] leading-relaxed">We confirm the cap does not restrict draft and is correctly aligned over the flue opening.</p></div></div>
-                </div>
-            </div>
+        <div class="blog-section">
+            <span class="blog-section-title">Benefits of Professional Single-Flue Stainless Steel Cap in New Jersey</span>
+            <ul class="benefits-list"><li class="benefit-row"><div class="benefit-icon-wrap"><i class="fas fa-check"></i></div><div><p class="benefit-title">Water exclusion</p><p class="benefit-desc">A properly fitted cap prevents direct rainfall from entering the flue — the leading cause of liner corrosion, mortar deterioration, and masonry damage.</p></div></li>
+<li class="benefit-row"><div class="benefit-icon-wrap"><i class="fas fa-check"></i></div><div><p class="benefit-title">Animal exclusion</p><p class="benefit-desc">Stainless mesh sides block birds, bats, squirrels, and raccoons from entering the flue and nesting.</p></div></li>
+<li class="benefit-row"><div class="benefit-icon-wrap"><i class="fas fa-check"></i></div><div><p class="benefit-title">Debris and ember protection</p><p class="benefit-desc">Caps also catch embers traveling up the flue, reducing ember-related roof fire risk in wildfire-adjacent areas.</p></div></li>
+</ul>
+        </div>
 
-            <!-- BENEFITS -->
-            <div class="mb-10">
-                <h2 class="blog-section-title">Benefits of Professional Single-Flue Stainless Steel Cap in New Jersey</h2>
-                <div class="mt-4 border border-slate-200 rounded-2xl px-6">
-                    <div class="flex items-start gap-4 py-5 border-b border-slate-100 last:border-0"><div class="shrink-0 w-9 h-9 rounded-xl bg-orange/[.1] flex items-center justify-center"><i class="fas fa-check text-orange text-[13px]"></i></div><div><p class="font-bold text-navy-900 text-[15px] mb-1">Water exclusion</p><p class="blog-p text-[14px]">A properly fitted cap prevents direct rainfall from entering the flue — the leading cause of liner corrosion, mortar deterioration, and masonry damage.</p></div></div><div class="flex items-start gap-4 py-5 border-b border-slate-100 last:border-0"><div class="shrink-0 w-9 h-9 rounded-xl bg-orange/[.1] flex items-center justify-center"><i class="fas fa-check text-orange text-[13px]"></i></div><div><p class="font-bold text-navy-900 text-[15px] mb-1">Animal exclusion</p><p class="blog-p text-[14px]">Stainless mesh sides block birds, bats, squirrels, and raccoons from entering the flue and nesting.</p></div></div><div class="flex items-start gap-4 py-5 border-b border-slate-100 last:border-0"><div class="shrink-0 w-9 h-9 rounded-xl bg-orange/[.1] flex items-center justify-center"><i class="fas fa-check text-orange text-[13px]"></i></div><div><p class="font-bold text-navy-900 text-[15px] mb-1">Debris and ember protection</p><p class="blog-p text-[14px]">Caps also catch embers traveling up the flue, reducing ember-related roof fire risk in wildfire-adjacent areas.</p></div></div>
-                </div>
-            </div>
+        <div class="price-box">
+            <div class="price-label"><i class="fas fa-tag"></i> Pricing &amp; Estimates</div>
+            <p class="price-text">Single-flue stainless steel cap installation typically costs $150–$350 depending on flue size and accessibility. Custom-sized caps for non-standard flues run $250–$500.</p>
+            <a href="../#contact" class="btn btn-primary" style="margin-top:20px;display:inline-flex">
+                <i class="fas fa-paper-plane"></i> Get a Free Estimate
+            </a>
+            <div class="price-watermark">$</div>
+        </div>
 
-            <!-- PRICING -->
-            <div class="mb-10 relative overflow-hidden rounded-2xl bg-navy-900 p-7 text-white">
-                <div class="relative z-10">
-                    <div class="tag-pill mb-3" style="background:rgba(232,92,30,.2);color:#f97e4a">
-                        <i class="fas fa-tag"></i> Pricing &amp; Estimates
+                <div class="related-section">
+                    <span class="blog-section-title" style="margin-bottom:20px">More Caps, Covers &amp; Maintenance Services in New Jersey</span>
+                    <div class="related-grid">
+                        <a href="../custom-chimney-cap-installation-in-new-jersey/" class="related-card"><div class="related-icon"><i class="fas fa-layer-group"></i></div><div class="related-body"><div class="related-name">Multi-Flue / Custom Top-Mount Cap</div><div class="related-loc">New Jersey</div></div><i class="fas fa-arrow-right related-arrow"></i></a>
+<a href="../chase-cover-replacement-in-new-jersey/" class="related-card"><div class="related-icon"><i class="fas fa-square"></i></div><div class="related-body"><div class="related-name">Chase Cover Replacement</div><div class="related-loc">New Jersey</div></div><i class="fas fa-arrow-right related-arrow"></i></a>
+<a href="../chimney-waterproofing-in-new-jersey/" class="related-card"><div class="related-icon"><i class="fas fa-droplet-slash"></i></div><div class="related-body"><div class="related-name">Chimney Water Repellent Application</div><div class="related-loc">New Jersey</div></div><i class="fas fa-arrow-right related-arrow"></i></a>
+<a href="../chimney-flashing-repair-in-new-jersey/" class="related-card"><div class="related-icon"><i class="fas fa-wrench"></i></div><div class="related-body"><div class="related-name">Flashing Repair &amp; Installation</div><div class="related-loc">New Jersey</div></div><i class="fas fa-arrow-right related-arrow"></i></a>
                     </div>
-                    <p class="text-[15px] text-white/70 leading-relaxed">Single-flue stainless steel cap installation typically costs $150–$350 depending on flue size and accessibility. Custom-sized caps for non-standard flues run $250–$500.</p>
-                    <a href="../#contact" class="inline-flex items-center gap-2 mt-5 btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Get a Free Estimate
-                    </a>
                 </div>
-                <div class="absolute right-5 bottom-2 text-white/[.04] text-[110px] font-black leading-none select-none pointer-events-none">$</div>
-            </div>
+            </article>
 
-                    <!-- RELATED SERVICES -->
-                    <div class="mt-4 pt-8 border-t border-slate-100">
-                        <h2 class="blog-section-title mb-5">More Caps, Covers &amp; Maintenance Services in New Jersey</h2>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <a href="../custom-chimney-cap-installation-in-new-jersey/" class="flex items-center gap-3 bg-white border border-slate-200 rounded-2xl p-4 hover:border-orange hover:shadow-md transition-all group"><div class="w-10 h-10 rounded-xl bg-orange/[.08] flex items-center justify-center shrink-0 group-hover:bg-orange/[.15] transition-colors"><i class="fas fa-layer-group text-orange text-[14px]"></i></div><div class="flex-1 min-w-0"><div class="text-[14px] font-semibold text-navy-900 group-hover:text-orange transition-colors truncate">Multi-Flue / Custom Top-Mount Cap</div><div class="text-[12px] text-slate-400 mt-0.5">New Jersey</div></div><i class="fas fa-arrow-right text-slate-300 text-[11px] group-hover:text-orange group-hover:translate-x-0.5 transition-all"></i></a>
-<a href="../chase-cover-replacement-in-new-jersey/" class="flex items-center gap-3 bg-white border border-slate-200 rounded-2xl p-4 hover:border-orange hover:shadow-md transition-all group"><div class="w-10 h-10 rounded-xl bg-orange/[.08] flex items-center justify-center shrink-0 group-hover:bg-orange/[.15] transition-colors"><i class="fas fa-square text-orange text-[14px]"></i></div><div class="flex-1 min-w-0"><div class="text-[14px] font-semibold text-navy-900 group-hover:text-orange transition-colors truncate">Chase Cover Replacement</div><div class="text-[12px] text-slate-400 mt-0.5">New Jersey</div></div><i class="fas fa-arrow-right text-slate-300 text-[11px] group-hover:text-orange group-hover:translate-x-0.5 transition-all"></i></a>
-<a href="../chimney-waterproofing-in-new-jersey/" class="flex items-center gap-3 bg-white border border-slate-200 rounded-2xl p-4 hover:border-orange hover:shadow-md transition-all group"><div class="w-10 h-10 rounded-xl bg-orange/[.08] flex items-center justify-center shrink-0 group-hover:bg-orange/[.15] transition-colors"><i class="fas fa-droplet-slash text-orange text-[14px]"></i></div><div class="flex-1 min-w-0"><div class="text-[14px] font-semibold text-navy-900 group-hover:text-orange transition-colors truncate">Chimney Water Repellent Application</div><div class="text-[12px] text-slate-400 mt-0.5">New Jersey</div></div><i class="fas fa-arrow-right text-slate-300 text-[11px] group-hover:text-orange group-hover:translate-x-0.5 transition-all"></i></a>
-<a href="../chimney-flashing-repair-in-new-jersey/" class="flex items-center gap-3 bg-white border border-slate-200 rounded-2xl p-4 hover:border-orange hover:shadow-md transition-all group"><div class="w-10 h-10 rounded-xl bg-orange/[.08] flex items-center justify-center shrink-0 group-hover:bg-orange/[.15] transition-colors"><i class="fas fa-wrench text-orange text-[14px]"></i></div><div class="flex-1 min-w-0"><div class="text-[14px] font-semibold text-navy-900 group-hover:text-orange transition-colors truncate">Flashing Repair &amp; Installation</div><div class="text-[12px] text-slate-400 mt-0.5">New Jersey</div></div><i class="fas fa-arrow-right text-slate-300 text-[11px] group-hover:text-orange group-hover:translate-x-0.5 transition-all"></i></a>
-                        </div>
-                    </div>
-                </article>
+            <!-- SIDEBAR -->
+            <aside class="blog-sidebar">
 
-                <!-- STICKY SIDEBAR -->
-                <aside class="article-sidebar w-full lg:w-[300px] shrink-0">
-
-                    <!-- BOOK NOW CARD -->
-                    <div class="sidebar-book">
-                        <div class="text-[11px] font-bold text-white/40 uppercase tracking-widest mb-3">Free Estimate</div>
-                        <div class="text-[18px] font-bold text-white mb-1">Book Single-Flue Stainless Steel Cap</div>
-                        <p class="text-[13px] text-white/50 mb-5">No obligation · Response within 2 hours</p>
-                        <a href="tel:+15551234567" class="btn btn-primary btn-full mb-3"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                <!-- Book -->
+                <div class="sb-book">
+                    <p class="sb-book-label">Free Estimate</p>
+                    <p class="sb-book-title">Book Single-Flue Stainless Steel Cap</p>
+                    <p class="sb-book-sub">No obligation · Response within 2 hours</p>
+                    <div class="sb-book-btns">
+                        <a href="tel:+15551234567" class="btn btn-primary btn-full"><i class="fas fa-phone"></i> (555) 123-4567</a>
                         <a href="../#contact" class="btn btn-outline-white btn-full"><i class="fas fa-paper-plane"></i> Send a Message</a>
-                        <div class="flex items-center gap-4 mt-5 pt-4 border-t border-white/[.08]">
-                            <div class="flex items-center gap-1.5 text-[12px] text-white/40"><i class="fas fa-shield-halved text-orange text-[11px]"></i> Licensed &amp; Insured</div>
-                            <div class="flex items-center gap-1.5 text-[12px] text-white/40"><i class="fas fa-clock text-orange text-[11px]"></i> Same Day</div>
-                        </div>
                     </div>
-
-                    <!-- WHAT'S INCLUDED CARD -->
-                    <div class="sidebar-card">
-                        <div class="flex items-center gap-2.5 mb-4">
-                            <div class="w-8 h-8 rounded-lg bg-orange/[.1] flex items-center justify-center shrink-0">
-                                <i class="fas fa-list-check text-orange text-[13px]"></i>
-                            </div>
-                            <div class="text-[15px] font-bold text-navy-900">What's Included</div>
-                        </div>
-                        <div class="includes-check"><i class="fas fa-check text-orange text-[11px] mt-[3px] shrink-0"></i><span>Flue measurement and sizing</span></div>
-<div class="includes-check"><i class="fas fa-check text-orange text-[11px] mt-[3px] shrink-0"></i><span>Stainless steel cap installation</span></div>
-<div class="includes-check"><i class="fas fa-check text-orange text-[11px] mt-[3px] shrink-0"></i><span>Stainless screw fastening</span></div>
-<div class="includes-check"><i class="fas fa-check text-orange text-[11px] mt-[3px] shrink-0"></i><span>Fit and draft verification</span></div>
-                        <a href="../#contact" class="btn btn-primary btn-full mt-4"><i class="fas fa-calendar-alt"></i> Book This Service</a>
+                    <div class="sb-book-footer">
+                        <span class="sb-book-badge"><i class="fas fa-shield-halved"></i> Licensed &amp; Insured</span>
+                        <span class="sb-book-badge"><i class="fas fa-clock"></i> Same Day</span>
                     </div>
+                </div>
 
-                    <!-- NAV LINKS -->
-                    <a href="../chimney-masonry-new-jersey/" class="sidebar-card flex items-center gap-3 hover:border-orange transition-colors" style="margin-bottom:12px">
-                        <div class="w-9 h-9 rounded-xl bg-orange/[.1] flex items-center justify-center shrink-0">
-                            <i class="fas fa-circle-dot text-orange text-[13px]"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <div class="font-semibold text-navy-900 text-[13px] truncate">Chimney Services in New Jersey</div>
-                            <div class="text-[12px] text-slate-400 mt-0.5">See all services →</div>
-                        </div>
-                    </a>
-                    <a href="../new-jersey/" class="sidebar-card flex items-center gap-3 hover:border-orange transition-colors">
-                        <div class="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center shrink-0">
-                            <i class="fas fa-location-dot text-orange text-[13px]"></i>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <div class="font-semibold text-navy-900 text-[13px] truncate">New Jersey Services</div>
-                            <div class="text-[12px] text-slate-400 mt-0.5">All services in your area →</div>
-                        </div>
-                    </a>
+                <!-- Includes -->
+                <div class="sb-card">
+                    <div class="sb-card-header">
+                        <div class="sb-card-icon"><i class="fas fa-list-check"></i></div>
+                        <span class="sb-card-title">What's Included</span>
+                    </div>
+                    <div class="includes-check"><i class="fas fa-check"></i><span>Flue measurement and sizing</span></div>
+<div class="includes-check"><i class="fas fa-check"></i><span>Stainless steel cap installation</span></div>
+<div class="includes-check"><i class="fas fa-check"></i><span>Stainless screw fastening</span></div>
+<div class="includes-check"><i class="fas fa-check"></i><span>Fit and draft verification</span></div>
+                    <a href="../#contact" class="btn btn-primary btn-full" style="margin-top:16px"><i class="fas fa-calendar-alt"></i> Book This Service</a>
+                </div>
 
-                </aside>
+                <!-- Nav links -->
+                <a href="../chimney-masonry-new-jersey/" class="sb-nav-link">
+                    <div class="sb-nav-icon"><i class="fas fa-circle-dot"></i></div>
+                    <div class="sb-nav-body">
+                        <div class="sb-nav-title">Chimney Services in New Jersey</div>
+                        <div class="sb-nav-sub">See all services →</div>
+                    </div>
+                </a>
+                <a href="../new-jersey/" class="sb-nav-link">
+                    <div class="sb-nav-icon grey"><i class="fas fa-location-dot"></i></div>
+                    <div class="sb-nav-body">
+                        <div class="sb-nav-title">New Jersey Services</div>
+                        <div class="sb-nav-sub">All services in your area →</div>
+                    </div>
+                </a>
 
-            </div>
+            </aside>
+
         </div>
     </div>
 
