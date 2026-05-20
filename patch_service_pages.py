@@ -36,7 +36,7 @@ BUBBLE_CSS = """
   display: inline-flex; align-items: center; gap: 8px;
   background: #fff; border: 2px solid #e8edf5; border-radius: 100px;
   padding: 10px 18px 10px 13px; font-size: 13.5px; font-weight: 500;
-  color: #1e2d5a; cursor: default; user-select: none;
+  color: #1e2d5a; cursor: pointer; user-select: none;
   animation: bubble-float var(--dur,3.8s) ease-in-out var(--delay,0s) infinite;
   transition: transform .28s cubic-bezier(.34,1.56,.64,1),
               opacity .2s ease, border-color .15s ease,
@@ -197,9 +197,10 @@ def patch_page(path, old_h1, new_h1, cats, location_name, loc_slug="new-jersey")
     if start_idx != -1 and end_idx != -1:
         html = html[:start_idx] + bubble_section_html(cats, location_name, loc_slug) + '\n    ' + html[end_idx:]
 
-    # 3. Inject BUBBLE_CSS before </head> (only if not already there)
-    if 'id="bubble-styles"' not in html:
-        html = html.replace('</head>', BUBBLE_CSS + '\n</head>', 1)
+    # 3. Inject/replace BUBBLE_CSS (always update so CSS changes propagate)
+    import re as _re
+    html = _re.sub(r'<style id="bubble-styles">.*?</style>', '', html, flags=_re.DOTALL)
+    html = html.replace('</head>', BUBBLE_CSS + '\n</head>', 1)
 
     # 4. Inject BUBBLE_JS before </body> (only if not already there)
     if 'id="bubble-search"' not in html:
