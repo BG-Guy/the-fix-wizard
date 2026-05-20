@@ -197,7 +197,7 @@ def page_html(svc, loc, svc_type, all_svcs_in_cat, cat_name):
     loc_slug   = loc["slug"]
     loc_url    = loc["url"]
     loc_area   = loc["area"]
-    hub_url    = f"../chimney-masonry-{loc_url}/" if svc_type == "chimney" else f"../handyman-services-{loc_url}/"
+    hub_url    = f"../../chimney-masonry-{loc_url}/" if svc_type == "chimney" else f"../../handyman-services-{loc_url}/"
     hub_label  = f"Chimney Services in {loc_name}" if svc_type == "chimney" else f"Handyman Services in {loc_name}"
     clean_name = name.replace("&amp;", "&").replace("&", "and")
 
@@ -208,7 +208,7 @@ def page_html(svc, loc, svc_type, all_svcs_in_cat, cat_name):
 
     related = [s for s in all_svcs_in_cat if s[2] != slug][:4]
     related_html = "\n".join(
-        f'<a href="../{s[2]}-in-{loc_slug}/" class="related-card">'
+        f'<a href="../{s[2]}/" class="related-card">'
         f'<div class="related-icon"><i class="fas {s[0]}"></i></div>'
         f'<div class="related-body"><div class="related-name">{s[1]}</div>'
         f'<div class="related-loc">{loc_name}</div></div>'
@@ -246,10 +246,10 @@ a{{text-decoration:none;color:inherit}}
     <noscript><link rel="stylesheet" href="{GFONTS}"></noscript>
     <link rel="preload" href="{FA}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{FA}"></noscript>
-    <link rel="preload" href="../css/tw.css" as="style">
-    <link rel="stylesheet" href="../css/tw.css">
-    <link rel="preload" href="../css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../css/custom.css"></noscript>
+    <link rel="preload" href="../../css/tw.css" as="style">
+    <link rel="stylesheet" href="../../css/tw.css">
+    <link rel="preload" href="../../css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../../css/custom.css"></noscript>
     <script type="application/ld+json">
     {{
       "@context": "https://schema.org",
@@ -265,25 +265,25 @@ a{{text-decoration:none;color:inherit}}
 
     <nav id="navbar" class="navbar">
         <div class="container nav-container">
-            <a href="../" class="logo"><img src="../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img" width="199" height="110"></a>
+            <a href="../../" class="logo"><img src="../../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img" width="199" height="110"></a>
             <ul class="nav-links">
-                <li><a href="../" class="nav-link">Home</a></li>
-                <li><a href="../#services" class="nav-link">Services</a></li>
-                <li><a href="../#why-us" class="nav-link">About</a></li>
-                <li><a href="../#contact" class="nav-link">Contact</a></li>
+                <li><a href="../../" class="nav-link">Home</a></li>
+                <li><a href="../../#services" class="nav-link">Services</a></li>
+                <li><a href="../../#why-us" class="nav-link">About</a></li>
+                <li><a href="../../#contact" class="nav-link">Contact</a></li>
                 <li class="nav-dropdown">
-                    <a href="../locations/" class="nav-link" style="display:flex;align-items:center;gap:6px">Locations <i class="fas fa-chevron-down" style="font-size:10px;opacity:.5;margin-top:1px"></i></a>
+                    <a href="../../locations/" class="nav-link" style="display:flex;align-items:center;gap:6px">Locations <i class="fas fa-chevron-down" style="font-size:10px;opacity:.5;margin-top:1px"></i></a>
                     <div class="nav-dropdown-menu">
-                        <a href="../new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
-                        <a href="../cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                        <a href="../../new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
+                        <a href="../../cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
                         <div class="nav-dropdown-divider"></div>
-                        <a href="../locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+                        <a href="../../locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
                     </div>
                 </li>
             </ul>
             <div class="nav-actions">
                 <a href="tel:+15551234567" class="nav-phone"><i class="fas fa-phone"></i><span>(555) 123-4567</span></a>
-                <a href="../#contact" class="btn btn-primary nav-cta">Free Quote
+                <a href="../../#contact" class="btn btn-primary nav-cta">Free Quote
                     <svg class="btn-spark bs-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
                     <svg class="btn-spark bs-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
                     <svg class="btn-spark bs-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
@@ -295,19 +295,19 @@ a{{text-decoration:none;color:inherit}}
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="mobileClose"><i class="fas fa-times"></i></button>
         <ul class="mobile-nav-links">
-            <li><a href="../" class="mobile-link">Home</a></li>
-            <li><a href="../#services" class="mobile-link">Services</a></li>
-            <li><a href="../#why-us" class="mobile-link">About</a></li>
-            <li><a href="../#contact" class="mobile-link">Contact</a></li>
+            <li><a href="../../" class="mobile-link">Home</a></li>
+            <li><a href="../../#services" class="mobile-link">Services</a></li>
+            <li><a href="../../#why-us" class="mobile-link">About</a></li>
+            <li><a href="../../#contact" class="mobile-link">Contact</a></li>
             <li>
                 <span class="mobile-loc-label">Locations</span>
-                <a href="../new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> New Jersey</a>
-                <a href="../cleveland-ohio/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
-                <a href="../locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+                <a href="../../new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> New Jersey</a>
+                <a href="../../cleveland-ohio/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                <a href="../../locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
             </li>
         </ul>
         <a href="tel:+15551234567" class="mobile-phone"><i class="fas fa-phone"></i>(555) 123-4567</a>
-        <a href="../#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
+        <a href="../../#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
     </div>
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
@@ -315,7 +315,7 @@ a{{text-decoration:none;color:inherit}}
     <section class="sp-hero" style="padding-bottom:0;border-radius:0">
         <div class="container">
             <nav class="breadcrumb" aria-label="Breadcrumb">
-                <a href="../">Home</a><i class="fas fa-chevron-right"></i>
+                <a href="../../">Home</a><i class="fas fa-chevron-right"></i>
                 <a href="{hub_url}">{hub_label}</a><i class="fas fa-chevron-right"></i>
                 <span>{clean_name}</span>
             </nav>
@@ -331,7 +331,7 @@ a{{text-decoration:none;color:inherit}}
                 <p class="sp-subtitle" style="margin-bottom:28px">{short_desc} Serving {loc_area}. Licensed &amp; insured. Same-day available.</p>
                 <div class="sp-actions">
                     <a href="tel:+15551234567" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Call Now</a>
-                    <a href="../#contact" class="btn btn-outline btn-lg"><i class="fas fa-paper-plane"></i> Free Estimate</a>
+                    <a href="../../#contact" class="btn btn-outline btn-lg"><i class="fas fa-paper-plane"></i> Free Estimate</a>
                 </div>
             </div>
         </div>
@@ -363,7 +363,7 @@ a{{text-decoration:none;color:inherit}}
                     <p class="sb-book-sub">No obligation · Response within 2 hours</p>
                     <div class="sb-book-btns">
                         <a href="tel:+15551234567" class="btn btn-primary btn-full"><i class="fas fa-phone"></i> (555) 123-4567</a>
-                        <a href="../#contact" class="btn btn-outline-white btn-full"><i class="fas fa-paper-plane"></i> Send a Message</a>
+                        <a href="../../#contact" class="btn btn-outline-white btn-full"><i class="fas fa-paper-plane"></i> Send a Message</a>
                     </div>
                     <div class="sb-book-footer">
                         <span class="sb-book-badge"><i class="fas fa-shield-halved"></i> Licensed &amp; Insured</span>
@@ -378,7 +378,7 @@ a{{text-decoration:none;color:inherit}}
                         <span class="sb-card-title">What's Included</span>
                     </div>
                     {includes_html}
-                    <a href="../#contact" class="btn btn-primary btn-full" style="margin-top:16px"><i class="fas fa-calendar-alt"></i> Book This Service</a>
+                    <a href="../../#contact" class="btn btn-primary btn-full" style="margin-top:16px"><i class="fas fa-calendar-alt"></i> Book This Service</a>
                 </div>
 
                 <!-- Nav links -->
@@ -389,7 +389,7 @@ a{{text-decoration:none;color:inherit}}
                         <div class="sb-nav-sub">See all services →</div>
                     </div>
                 </a>
-                <a href="../{loc_url}/" class="sb-nav-link">
+                <a href="../" class="sb-nav-link">
                     <div class="sb-nav-icon grey"><i class="fas fa-location-dot"></i></div>
                     <div class="sb-nav-body">
                         <div class="sb-nav-title">{loc_name} Services</div>
@@ -410,7 +410,7 @@ a{{text-decoration:none;color:inherit}}
             </div>
             <div class="cta-btns">
                 <a href="tel:+15551234567" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
-                <a href="../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Free Quote</a>
+                <a href="../../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Free Quote</a>
             </div>
         </div>
     </section>
@@ -418,7 +418,7 @@ a{{text-decoration:none;color:inherit}}
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="../" class="logo"><img src="../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img footer-logo-img" width="199" height="110"></a>
+                <a href="../../" class="logo"><img src="../../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img footer-logo-img" width="199" height="110"></a>
                 <p>The Fix Wizard handles the repairs most people dread. Quality work, honest pricing, and results that last.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -430,16 +430,16 @@ a{{text-decoration:none;color:inherit}}
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="../chimney-services/">Chimney &amp; Masonry</a></li>
-                    <li><a href="../handyman-services/">Handyman Services</a></li>
+                    <li><a href="../../chimney-services/">Chimney &amp; Masonry</a></li>
+                    <li><a href="../../handyman-services/">Handyman Services</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Service Areas</h4>
                 <ul>
-                    <li><a href="../new-jersey/">New Jersey</a></li>
-                    <li><a href="../cleveland-ohio/">Cleveland, Ohio</a></li>
-                    <li><a href="../locations/">All Locations</a></li>
+                    <li><a href="../../new-jersey/">New Jersey</a></li>
+                    <li><a href="../../cleveland-ohio/">Cleveland, Ohio</a></li>
+                    <li><a href="../../locations/">All Locations</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -459,7 +459,7 @@ a{{text-decoration:none;color:inherit}}
         </div>
     </footer>
 
-    <script type="module" src="../js/service-page.js"></script>
+    <script type="module" src="../../js/service-page.js"></script>
 </body>
 </html>"""
 
@@ -481,8 +481,7 @@ if __name__ == "__main__":
             slug = svc[2]
             cat_name, cat_svcs = get_cat_services(slug, svc_type)
             for loc in LOCATIONS:
-                page_slug = f"{slug}-in-{loc['slug']}"
-                out_dir = os.path.join(ROOT, page_slug)
+                out_dir = os.path.join(ROOT, loc['url'], slug)
                 os.makedirs(out_dir, exist_ok=True)
                 html = page_html(svc, loc, svc_type, cat_svcs, cat_name)
                 with open(os.path.join(out_dir, "index.html"), "w") as f:

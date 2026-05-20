@@ -317,7 +317,7 @@ HANDYMAN_CATS = _build_cats(SD_HANDYMAN_CATS, HANDYMAN_SERVICES_FULL)
 
 # ── Bubble section builder ────────────────────────────────────────────────────
 
-def bubble_section(cats, section_title, section_tag, loc_slug="new-jersey"):
+def bubble_section(cats, section_title, section_tag, loc_slug="new-jersey", loc_url="new-jersey"):
     DURATIONS = [3.6, 4.1, 3.9, 4.4, 3.7, 4.2, 3.8, 4.5]
     DELAYS    = [0, 0.4, 0.8, 1.2, 0.2, 0.6, 1.0, 1.4]
 
@@ -331,7 +331,7 @@ def bubble_section(cats, section_title, section_tag, loc_slug="new-jersey"):
             dur   = DURATIONS[idx % len(DURATIONS)]
             delay = DELAYS[idx % len(DELAYS)]
             s_key = name.lower().replace("&amp;", "and").replace("/", " ").replace("(", "").replace(")", "")
-            href  = f'../{slug}-in-{loc_slug}/' if slug else '#'
+            href  = f'../{loc_url}/{slug}/' if slug else '#'
             bubbles_html += f"""
                     <a class="svc-bubble" href="{href}" data-s="{s_key}" style="--dur:{dur}s;--delay:{delay}s">
                         <i class="fas {icon} b-icon"></i><span>{name}</span>

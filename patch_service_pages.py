@@ -128,7 +128,7 @@ BUBBLE_JS = """
 DURATIONS = [3.6, 4.1, 3.9, 4.4, 3.7, 4.2, 3.8, 4.5]
 DELAYS    = [0, 0.4, 0.8, 1.2, 0.2, 0.6, 1.0, 1.4]
 
-def bubble_section_html(cats, location_name, loc_slug="new-jersey"):
+def bubble_section_html(cats, location_name, loc_slug="new-jersey", loc_url="new-jersey"):
     total = sum(len(items) for _, _, items in cats)
     idx = 0
     cats_html = ""
@@ -140,7 +140,7 @@ def bubble_section_html(cats, location_name, loc_slug="new-jersey"):
             dur   = DURATIONS[idx % len(DURATIONS)]
             delay = DELAYS[idx % len(DELAYS)]
             s_key = name.lower().replace("&amp;", "and").replace("/", " ").replace("(","").replace(")","")
-            href  = f'../{slug}-in-{loc_slug}/' if slug else '#'
+            href  = f'../{loc_url}/{slug}/' if slug else '#'
             bubbles_html += f'\n                    <a class="svc-bubble" href="{href}" data-s="{s_key}" style="--dur:{dur}s;--delay:{delay}s"><i class="fas {icon} b-icon"></i><span>{name}</span></a>'
             idx += 1
         cats_html += f"""
@@ -182,7 +182,7 @@ def bubble_section_html(cats, location_name, loc_slug="new-jersey"):
 
 # ── Patch function ────────────────────────────────────────────────────────────
 
-def patch_page(path, old_h1, new_h1, cats, location_name, loc_slug="new-jersey"):
+def patch_page(path, old_h1, new_h1, cats, location_name, loc_slug="new-jersey", loc_url="new-jersey"):
     with open(path) as f:
         html = f.read()
 
@@ -195,7 +195,7 @@ def patch_page(path, old_h1, new_h1, cats, location_name, loc_slug="new-jersey")
     start_idx = html.find(start_tag)
     end_idx   = html.find(end_tag)
     if start_idx != -1 and end_idx != -1:
-        html = html[:start_idx] + bubble_section_html(cats, location_name, loc_slug) + '\n    ' + html[end_idx:]
+        html = html[:start_idx] + bubble_section_html(cats, location_name, loc_slug, loc_url) + '\n    ' + html[end_idx:]
 
     # 3. Inject/replace BUBBLE_CSS (always update so CSS changes propagate)
     import re as _re
@@ -213,8 +213,17 @@ def patch_page(path, old_h1, new_h1, cats, location_name, loc_slug="new-jersey")
 
 def make_cleveland_page(nj_path, cle_path, nj_subs):
     """Clone the NJ page and localise it for Cleveland."""
+    import re as _re
     with open(nj_path) as f:
         html = f.read()
+
+    # Rewrite service bubble hrefs from ../new-jersey/{slug}/ to ../cleveland-ohio/{slug}/
+    # Use regex to target only paths that have a slug (not the bare location link)
+    html = _re.sub(
+        r'href="\.\./new-jersey/([a-z0-9-]+)/"',
+        r'href="../cleveland-ohio/\1/"',
+        html
+    )
 
     for old, new in nj_subs:
         html = html.replace(old, new)
@@ -271,8 +280,6 @@ if __name__ == '__main__':
         # process desc
         ('Most chimney and masonry repairs are completed in one visit — before the next NJ winter makes things worse.',
          'Most chimney and masonry repairs are completed in one visit — before the next Cleveland winter makes things worse.'),
-        # fix bubble hrefs to point to cleveland pages
-        ('-in-new-jersey/"', '-in-cleveland/"'),
     ]
 
     make_cleveland_page(
@@ -295,8 +302,6 @@ if __name__ == '__main__':
          'Every Service We <span class="text-accent">Offer in Cleveland, Ohio</span>'),
         ('Most handyman jobs are completed in a single visit — anywhere in New Jersey.',
          'Most handyman jobs are completed in a single visit — anywhere in greater Cleveland, Ohio.'),
-        # fix bubble hrefs
-        ('-in-new-jersey/"', '-in-cleveland/"'),
     ]
 
     make_cleveland_page(
