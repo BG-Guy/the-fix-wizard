@@ -197,7 +197,7 @@ def page_html(svc, loc, svc_type, all_svcs_in_cat, cat_name):
     loc_slug   = loc["slug"]
     loc_url    = loc["url"]
     loc_area   = loc["area"]
-    hub_url    = f"../../chimney-masonry-{loc_url}/" if svc_type == "chimney" else f"../../handyman-services-{loc_url}/"
+    hub_url    = "../chimney/" if svc_type == "chimney" else "../handyman/"
     hub_label  = f"Chimney Services in {loc_name}" if svc_type == "chimney" else f"Handyman Services in {loc_name}"
     clean_name = name.replace("&amp;", "&").replace("&", "and")
 

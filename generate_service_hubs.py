@@ -24,25 +24,25 @@ FA     = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.
 NAVBAR = """\
     <nav id="navbar" class="navbar">
         <div class="container nav-container">
-            <a href="../" class="logo"><img src="../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img" width="199" height="110"></a>
+            <a href="../../" class="logo"><img src="../../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img" width="199" height="110"></a>
             <ul class="nav-links">
-                <li><a href="../" class="nav-link">Home</a></li>
-                <li><a href="../#services" class="nav-link">Services</a></li>
-                <li><a href="../#why-us" class="nav-link">About</a></li>
-                <li><a href="../#contact" class="nav-link">Contact</a></li>
+                <li><a href="../../" class="nav-link">Home</a></li>
+                <li><a href="../../#services" class="nav-link">Services</a></li>
+                <li><a href="../../#why-us" class="nav-link">About</a></li>
+                <li><a href="../../#contact" class="nav-link">Contact</a></li>
                 <li class="nav-dropdown">
-                    <a href="../locations/" class="nav-link flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
+                    <a href="../../locations/" class="nav-link flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
                     <div class="nav-dropdown-menu">
-                        <a href="../new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
-                        <a href="../cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                        <a href="../../new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
+                        <a href="../../cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
                         <div class="nav-dropdown-divider"></div>
-                        <a href="../locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+                        <a href="../../locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
                     </div>
                 </li>
             </ul>
             <div class="nav-actions">
                 <a href="tel:+15551234567" class="nav-phone"><i class="fas fa-phone"></i><span>(555) 123-4567</span></a>
-                <a href="../#contact" class="btn btn-primary nav-cta">Free Quote
+                <a href="../../#contact" class="btn btn-primary nav-cta">Free Quote
                     <svg class="btn-spark bs-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
                     <svg class="btn-spark bs-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
                     <svg class="btn-spark bs-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
@@ -54,19 +54,19 @@ NAVBAR = """\
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="mobileClose"><i class="fas fa-times"></i></button>
         <ul class="mobile-nav-links">
-            <li><a href="../" class="mobile-link">Home</a></li>
-            <li><a href="../#services" class="mobile-link">Services</a></li>
-            <li><a href="../#why-us" class="mobile-link">About</a></li>
-            <li><a href="../#contact" class="mobile-link">Contact</a></li>
+            <li><a href="../../" class="mobile-link">Home</a></li>
+            <li><a href="../../#services" class="mobile-link">Services</a></li>
+            <li><a href="../../#why-us" class="mobile-link">About</a></li>
+            <li><a href="../../#contact" class="mobile-link">Contact</a></li>
             <li>
                 <span class="mobile-loc-label">Locations</span>
-                <a href="../new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> New Jersey</a>
-                <a href="../cleveland-ohio/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
-                <a href="../locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+                <a href="../../new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> New Jersey</a>
+                <a href="../../cleveland-ohio/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
+                <a href="../../locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
             </li>
         </ul>
         <a href="tel:+15551234567" class="mobile-phone"><i class="fas fa-phone"></i>(555) 123-4567</a>
-        <a href="../#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
+        <a href="../../#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
     </div>
     <div class="mobile-overlay" id="mobileOverlay"></div>"""
 
@@ -74,7 +74,7 @@ FOOTER = """\
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="../" class="logo"><img src="../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img footer-logo-img" width="199" height="110"></a>
+                <a href="../../" class="logo"><img src="../../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img footer-logo-img" width="199" height="110"></a>
                 <p>The Fix Wizard handles the repairs most people dread. Quality work, honest pricing, and results that last.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -86,16 +86,16 @@ FOOTER = """\
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="../chimney-services/">Chimney &amp; Masonry</a></li>
-                    <li><a href="../handyman-services/">Handyman Services</a></li>
+                    <li><a href="../../services/chimney/">Chimney &amp; Masonry</a></li>
+                    <li><a href="../../services/handyman/">Handyman Services</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Service Areas</h4>
                 <ul>
-                    <li><a href="../new-jersey/">New Jersey</a></li>
-                    <li><a href="../cleveland-ohio/">Cleveland, Ohio</a></li>
-                    <li><a href="../locations/">All Locations</a></li>
+                    <li><a href="../../new-jersey/">New Jersey</a></li>
+                    <li><a href="../../cleveland-ohio/">Cleveland, Ohio</a></li>
+                    <li><a href="../../locations/">All Locations</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -141,10 +141,10 @@ HEAD_COMMON = f"""\
     <noscript><link rel="stylesheet" href="{GFONTS}"></noscript>
     <link rel="preload" href="{FA}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{FA}"></noscript>
-    <link rel="preload" href="../css/tw.css" as="style">
-    <link rel="stylesheet" href="../css/tw.css">
-    <link rel="preload" href="../css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../css/custom.css"></noscript>"""
+    <link rel="preload" href="../../css/tw.css" as="style">
+    <link rel="stylesheet" href="../../css/tw.css">
+    <link rel="preload" href="../../css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../../css/custom.css"></noscript>"""
 
 # Bubble CSS — plain string (no f-string) to avoid escaping {}
 BUBBLE_CSS = """
@@ -317,7 +317,7 @@ HANDYMAN_CATS = _build_cats(SD_HANDYMAN_CATS, HANDYMAN_SERVICES_FULL)
 
 # ── Bubble section builder ────────────────────────────────────────────────────
 
-def bubble_section(cats, section_title, section_tag, loc_slug="new-jersey", loc_url="new-jersey"):
+def bubble_section(cats, section_title, section_tag, loc_slug="new-jersey", loc_url="new-jersey", href_prefix="../../"):
     DURATIONS = [3.6, 4.1, 3.9, 4.4, 3.7, 4.2, 3.8, 4.5]
     DELAYS    = [0, 0.4, 0.8, 1.2, 0.2, 0.6, 1.0, 1.4]
 
@@ -331,7 +331,7 @@ def bubble_section(cats, section_title, section_tag, loc_slug="new-jersey", loc_
             dur   = DURATIONS[idx % len(DURATIONS)]
             delay = DELAYS[idx % len(DELAYS)]
             s_key = name.lower().replace("&amp;", "and").replace("/", " ").replace("(", "").replace(")", "")
-            href  = f'../{loc_url}/{slug}/' if slug else '#'
+            href  = f'{href_prefix}{loc_url}/{slug}/' if slug else '#'
             bubbles_html += f"""
                     <a class="svc-bubble" href="{href}" data-s="{s_key}" style="--dur:{dur}s;--delay:{delay}s">
                         <i class="fas {icon} b-icon"></i><span>{name}</span>
@@ -407,8 +407,8 @@ def hero_html(badge, h1_line1, h1_line2, description, pills, card_title, card_su
                         {pills_html}
                     </div>
                     <div class="flex items-center gap-3 mb-12 flex-wrap justify-center tab:justify-start hero-actions">
-                        <a href="../new-jersey/" class="btn btn-primary btn-lg"><i class="fas fa-map-marker-alt"></i> New Jersey</a>
-                        <a href="../cleveland-ohio/" class="btn btn-outline btn-lg"><i class="fas fa-map-marker-alt"></i> Cleveland, Ohio</a>
+                        <a href="../../new-jersey/" class="btn btn-primary btn-lg"><i class="fas fa-map-marker-alt"></i> New Jersey</a>
+                        <a href="../../cleveland-ohio/" class="btn btn-outline btn-lg"><i class="fas fa-map-marker-alt"></i> Cleveland, Ohio</a>
                     </div>
                     <div class="w-full h-px bg-white/10 mb-8"></div>
                     <div class="flex items-center gap-8 flex-wrap justify-center tab:justify-start hero-stats">
@@ -445,7 +445,7 @@ def hero_html(badge, h1_line1, h1_line2, description, pills, card_title, card_su
                             </div>
                         </div>
                         <div class="flex flex-col gap-3">
-                            <a href="../new-jersey/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                            <a href="../../new-jersey/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
                                 <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110"><i class="fas fa-location-dot"></i></div>
                                 <div class="flex-1 text-left">
                                     <div class="text-[15px] font-bold text-white leading-tight">New Jersey</div>
@@ -453,7 +453,7 @@ def hero_html(badge, h1_line1, h1_line2, description, pills, card_title, card_su
                                 </div>
                                 <i class="fas fa-arrow-right text-orange text-[13px] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"></i>
                             </a>
-                            <a href="../cleveland-ohio/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                            <a href="../../cleveland-ohio/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
                                 <div class="w-12 h-12 shrink-0 bg-orange rounded-lg flex items-center justify-center text-[22px] text-white transition-transform group-hover:scale-110"><i class="fas fa-location-dot"></i></div>
                                 <div class="flex-1 text-left">
                                     <div class="text-[15px] font-bold text-white leading-tight">Cleveland, Ohio</div>
@@ -462,7 +462,7 @@ def hero_html(badge, h1_line1, h1_line2, description, pills, card_title, card_su
                                 <i class="fas fa-arrow-right text-orange text-[13px] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"></i>
                             </a>
                         </div>
-                        <a href="../#contact" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Request a Free Quote</a>
+                        <a href="../../#contact" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Request a Free Quote</a>
                         <div class="flex gap-3 pt-1 border-t border-white/[.08]">
                             <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-shield-halved text-orange text-[13px]"></i><span>Licensed &amp; Insured</span></div>
                             <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-clock text-orange text-[13px]"></i><span>Same Day Available</span></div>
@@ -487,7 +487,7 @@ def loc_cta(h2, desc):
                 <p class="section-desc">{desc}</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[760px] mx-auto reveal">
-                <a href="../new-jersey/" class="group flex items-center gap-5 bg-white border-2 border-slate-200 rounded-card p-6 transition-all hover:border-orange hover:shadow-[0_8px_32px_rgba(255,107,53,.15)]">
+                <a href="../../new-jersey/" class="group flex items-center gap-5 bg-white border-2 border-slate-200 rounded-card p-6 transition-all hover:border-orange hover:shadow-[0_8px_32px_rgba(255,107,53,.15)]">
                     <div class="w-14 h-14 shrink-0 bg-orange/10 rounded-xl flex items-center justify-center group-hover:bg-orange transition-colors">
                         <i class="fas fa-location-dot text-orange group-hover:text-white text-[22px] transition-colors"></i>
                     </div>
@@ -497,7 +497,7 @@ def loc_cta(h2, desc):
                     </div>
                     <i class="fas fa-arrow-right text-slate-300 group-hover:text-orange ml-auto transition-colors"></i>
                 </a>
-                <a href="../cleveland-ohio/" class="group flex items-center gap-5 bg-white border-2 border-slate-200 rounded-card p-6 transition-all hover:border-orange hover:shadow-[0_8px_32px_rgba(255,107,53,.15)]">
+                <a href="../../cleveland-ohio/" class="group flex items-center gap-5 bg-white border-2 border-slate-200 rounded-card p-6 transition-all hover:border-orange hover:shadow-[0_8px_32px_rgba(255,107,53,.15)]">
                     <div class="w-14 h-14 shrink-0 bg-orange/10 rounded-xl flex items-center justify-center group-hover:bg-orange transition-colors">
                         <i class="fas fa-location-dot text-orange group-hover:text-white text-[22px] transition-colors"></i>
                     </div>
@@ -576,12 +576,12 @@ def chimney_page():
             </div>
             <div class="cta-btns">
                 <a href="tel:+15551234567" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
-                <a href="../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Free Quote</a>
+                <a href="../../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Free Quote</a>
             </div>
         </div>
     </section>
 {FOOTER}
-    <script type="module" src="../js/service-page.js"></script>
+    <script type="module" src="../../js/service-page.js"></script>
 {BUBBLE_JS}
 </body>
 </html>"""
@@ -649,21 +649,21 @@ def handyman_page():
             </div>
             <div class="cta-btns">
                 <a href="tel:+15551234567" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
-                <a href="../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Free Quote</a>
+                <a href="../../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Free Quote</a>
             </div>
         </div>
     </section>
 {FOOTER}
-    <script type="module" src="../js/service-page.js"></script>
+    <script type="module" src="../../js/service-page.js"></script>
 {BUBBLE_JS}
 </body>
 </html>"""
 
 
 if __name__ == "__main__":
-    for slug, fn in [("chimney-services", chimney_page), ("handyman-services", handyman_page)]:
-        out_dir = os.path.join(ROOT, slug)
+    for out_path, fn in [("services/chimney", chimney_page), ("services/handyman", handyman_page)]:
+        out_dir = os.path.join(ROOT, out_path)
         os.makedirs(out_dir, exist_ok=True)
         with open(os.path.join(out_dir, "index.html"), "w") as f:
             f.write(fn())
-        print(f"  ✓  /{slug}/index.html")
+        print(f"  ✓  /{out_path}/index.html")

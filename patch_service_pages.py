@@ -140,7 +140,7 @@ def bubble_section_html(cats, location_name, loc_slug="new-jersey", loc_url="new
             dur   = DURATIONS[idx % len(DURATIONS)]
             delay = DELAYS[idx % len(DELAYS)]
             s_key = name.lower().replace("&amp;", "and").replace("/", " ").replace("(","").replace(")","")
-            href  = f'../{loc_url}/{slug}/' if slug else '#'
+            href  = f'../{slug}/' if slug else '#'
             bubbles_html += f'\n                    <a class="svc-bubble" href="{href}" data-s="{s_key}" style="--dur:{dur}s;--delay:{delay}s"><i class="fas {icon} b-icon"></i><span>{name}</span></a>'
             idx += 1
         cats_html += f"""
@@ -240,7 +240,7 @@ if __name__ == '__main__':
 
     # --- Chimney NJ ---
     patch_page(
-        path=os.path.join(ROOT, 'chimney-masonry-new-jersey', 'index.html'),
+        path=os.path.join(ROOT, 'new-jersey', 'chimney', 'index.html'),
         old_h1='<h1 class="sp-title"><span class="text-accent">Chimney &amp; Masonry</span><br>Across New Jersey</h1>',
         new_h1='<h1 class="sp-title">Chimney &amp; Masonry <span class="text-accent">Services in New Jersey</span></h1>',
         cats=CHIMNEY_CATS,
@@ -249,7 +249,7 @@ if __name__ == '__main__':
 
     # --- Handyman NJ ---
     patch_page(
-        path=os.path.join(ROOT, 'handyman-services-new-jersey', 'index.html'),
+        path=os.path.join(ROOT, 'new-jersey', 'handyman', 'index.html'),
         old_h1='<h1 class="sp-title"><span class="text-accent">Handyman Services</span><br>Across New Jersey</h1>',
         new_h1='<h1 class="sp-title">Handyman <span class="text-accent">Services in New Jersey</span></h1>',
         cats=HANDYMAN_CATS,
@@ -283,8 +283,8 @@ if __name__ == '__main__':
     ]
 
     make_cleveland_page(
-        nj_path=os.path.join(ROOT, 'chimney-masonry-new-jersey', 'index.html'),
-        cle_path=os.path.join(ROOT, 'chimney-masonry-cleveland-ohio', 'index.html'),
+        nj_path=os.path.join(ROOT, 'new-jersey', 'chimney', 'index.html'),
+        cle_path=os.path.join(ROOT, 'cleveland-ohio', 'chimney', 'index.html'),
         nj_subs=chimney_cle_subs,
     )
 
@@ -305,8 +305,8 @@ if __name__ == '__main__':
     ]
 
     make_cleveland_page(
-        nj_path=os.path.join(ROOT, 'handyman-services-new-jersey', 'index.html'),
-        cle_path=os.path.join(ROOT, 'handyman-services-cleveland-ohio', 'index.html'),
+        nj_path=os.path.join(ROOT, 'new-jersey', 'handyman', 'index.html'),
+        cle_path=os.path.join(ROOT, 'cleveland-ohio', 'handyman', 'index.html'),
         nj_subs=handyman_cle_subs,
     )
 
