@@ -55,7 +55,7 @@
   var tip = document.createElement('div');
   tip.className = 'cs-tip';
   tip.innerHTML =
-    '<i class="fas fa-rocket cs-tip-icon"></i>' +
+    '<i class="fas fa-hat-wizard cs-tip-icon"></i>' +
     '<span class="cs-tip-text">Coming Soon</span>' +
     '<span class="cs-tip-sub">Launching shortly — stay tuned</span>' +
     '<div class="cs-tip-arrow"></div>';
