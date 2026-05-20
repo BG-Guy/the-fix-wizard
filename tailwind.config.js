@@ -3,10 +3,11 @@ module.exports = {
   content: [
     './index.html',
     './partials/**/*.html',
-    './**/*-new-jersey/**/*.html',
-    './mounting-installation-new-jersey/**/*.html',
     './locations/**/*.html',
     './seo-pages/**/*.html',
+    './services/**/*.html',
+    './new-jersey/**/*.html',
+    './cleveland-ohio/**/*.html',
   ],
   theme: {
     extend: {
