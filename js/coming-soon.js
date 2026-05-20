@@ -35,8 +35,7 @@
     '.cs-tip-arrow::after{content:"";position:absolute;top:-11px;left:-9px;',
     'border:9px solid transparent;border-top-color:#091236}',
 
-    '.cs-tip-icon{font-size:24px;color:#FF6B35;line-height:1;',
-    'animation:cs-spark 2.4s ease-in-out .42s infinite}',
+    '.cs-tip-icon{font-size:24px;color:#FF6B35;line-height:1}',
 
     '.cs-tip-text{font-family:"Cinzel",serif;font-size:20px;font-weight:900;',
     'color:#fff;letter-spacing:5px;text-transform:uppercase;line-height:1.2;',
