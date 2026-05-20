@@ -127,7 +127,12 @@ BLOG_STYLES = """
 """
 
 
-def blog_sections_html(slug, name, loc_name):
+def _first_sentence(text):
+    idx = text.find('. ')
+    return text[:idx + 1] if idx != -1 else text
+
+
+def blog_sections_html(slug, name, loc_name, includes):
     c = SERVICE_CONTENT.get(slug)
     if not c:
         return ""
@@ -135,20 +140,32 @@ def blog_sections_html(slug, name, loc_name):
     if c.get("custom_html"):
         return c["custom_html"]
 
+    includes_li = "\n".join(f'<li>{item}</li>' for item in includes)
+    warning_text = _first_sentence(c["consequences"])
+
     return f"""
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule {name} in {loc_name}</span>
-            <p class="blog-body-p" style="margin-top:14px">{c["why_need"]}</p>
+            <p class="blog-lead">{c["why_need"]}</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our {name} Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                {includes_li}
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">{warning_text} Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional {name} Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">{c["benefits"]}</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">{c["longevity"]}</p>
+            <p class="blog-body-p">{c["longevity"]}</p>
         </div>
 
         <div class="blog-section">
@@ -156,6 +173,20 @@ def blog_sections_html(slug, name, loc_name):
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">{c["consequences"]}</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 """
 
@@ -312,7 +343,7 @@ a{{text-decoration:none;color:inherit}}
 
             <!-- MAIN ARTICLE -->
             <article class="blog-article">
-                {blog_sections_html(slug, clean_name, loc_name)}
+                {blog_sections_html(slug, clean_name, loc_name, includes)}
 
                 <div class="related-section">
                     <span class="blog-section-title" style="margin-bottom:20px">More {cat_name} Services in {loc_name}</span>

@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Ceiling Fan Installation in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Ceiling fan installation is needed when adding a fan to a room that currently has only a light fixture, when replacing a fan with a failed motor, or when upgrading to a larger or quieter unit.</p>
+            <p class="blog-lead">Ceiling fan installation is needed when adding a fan to a room that currently has only a light fixture, when replacing a fan with a failed motor, or when upgrading to a larger or quieter unit.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Ceiling Fan Installation Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Fan-rated box verification or installation</li>
+<li>Wiring connection and tuck</li>
+<li>Fan assembly and blade attachment</li>
+<li>Balance test at all speeds</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">A ceiling fan must be mounted on a junction box specifically rated for fan support — not on a standard light-fixture box. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Ceiling Fan Installation Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">A ceiling fan in summer pushes air downward to create a wind-chill effect, allowing the thermostat to be raised without a comfort reduction. In winter, reversed rotation moves warm air down from the ceiling. The combination reduces HVAC runtime and energy cost year-round.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">Quality ceiling fans last 10 to 15 years. The electrical wiring and junction box installation are permanent.</p>
+            <p class="blog-body-p">Quality ceiling fans last 10 to 15 years. The electrical wiring and junction box installation are permanent.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">A ceiling fan must be mounted on a junction box specifically rated for fan support — not on a standard light-fixture box. A fan-rated box is anchored differently than a light box, because a rotating fan applies both a downward load and a lateral rotational load that a light fixture never creates. A fan installed on a standard box will gradually work the box loose from its mounting. The progression is slow — months of subtle wobble that seems minor — until the box mount fails. A fan spinning at high speed with a failing mount creates a serious physical danger to anyone in the room.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

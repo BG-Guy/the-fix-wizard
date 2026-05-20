@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Heavy Mirror / Large Artwork Hanging in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Professional hanging is needed for mirrors over 30 pounds or large framed artwork where the weight and size exceed what a standard picture hook can safely support. This includes bathroom vanity mirrors, full-length mirrors, decorative mirrors over mantles, and canvas works larger than approximately 24 by 36 inches.</p>
+            <p class="blog-lead">Professional hanging is needed for mirrors over 30 pounds or large framed artwork where the weight and size exceed what a standard picture hook can safely support. This includes bathroom vanity mirrors, full-length mirrors, decorative mirrors over mantles, and canvas works larger than approximately 24 by 36 inches.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Heavy Mirror / Large Artwork Hanging Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Weight assessment and anchor selection</li>
+<li>Wall type identification</li>
+<li>Level hanging with proper anchors</li>
+<li>Anti-tip security for large pieces</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Mirrors are particularly hazardous when they fall because they do not deform on impact — they shatter into large, sharp fragments across the floor. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Heavy Mirror / Large Artwork Hanging Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">Correct hardware selection — toggle bolts, structural anchors, or stud-mounted cleats depending on the wall and the weight — ensures the piece stays where it's placed. Professional installation includes leveling, correct hardware torque, and wall protection at the anchor points.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">A properly anchored mirror or artwork installation is permanent. The anchors chosen for the actual weight of the piece do not degrade or loosen over time under static load.</p>
+            <p class="blog-body-p">A properly anchored mirror or artwork installation is permanent. The anchors chosen for the actual weight of the piece do not degrade or loosen over time under static load.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Mirrors are particularly hazardous when they fall because they do not deform on impact — they shatter into large, sharp fragments across the floor. A 50-pound mirror hung on a drywall anchor rated for 25 pounds is not a stable installation — it is a delayed failure. The anchor pulls out gradually under the sustained weight, creating micro-movement that is invisible until the piece shifts, tilts, and falls. Wall anchors in drywall are rated for direct pull-out force, not for the combined downward and outward force that a hanging weight actually applies.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

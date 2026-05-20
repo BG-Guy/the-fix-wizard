@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,31 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Stainless Steel Flue Liner Installation in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">A flue liner installation or relining is needed when the existing clay tile liner is cracked, has gaps at the joints, or has been damaged by a chimney fire, when a gas or oil appliance is being vented through an oversized clay flue, or when a new appliance requires a specific flue diameter. Many older homes lack a liner entirely.</p>
+            <p class="blog-lead">A flue liner installation or relining is needed when the existing clay tile liner is cracked, has gaps at the joints, or has been damaged by a chimney fire, when a gas or oil appliance is being vented through an oversized clay flue, or when a new appliance requires a specific flue diameter. Many older homes lack a liner entirely.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Stainless Steel Flue Liner Installation Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Size calculation for appliance and BTUs</li>
+<li>Liner installation from top down</li>
+<li>Insulation wrap for proper draft</li>
+<li>Top plate and connector fitting</li>
+<li>Draft test and code verification</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">The flue liner is the last line of defense between combustion gases and the structural materials of your home. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Stainless Steel Flue Liner Installation Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">A stainless steel liner provides a continuous, smooth, correctly sized path for combustion gases from the appliance to the outside. It contains heat, prevents CO migration through the masonry, and is serviceable for cleaning. It also brings the chimney into compliance with current building codes.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">Stainless steel chimney liners last 20 or more years with normal use and annual maintenance. The alloy grade matters — 316L stainless is recommended for gas appliances, while 316Ti is better suited for oil and wood.</p>
+            <p class="blog-body-p">Stainless steel chimney liners last 20 or more years with normal use and annual maintenance. The alloy grade matters — 316L stainless is recommended for gas appliances, while 316Ti is better suited for oil and wood.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +257,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">The flue liner is the last line of defense between combustion gases and the structural materials of your home. A missing or compromised liner means that every time you use the fireplace or heating appliance, carbon monoxide and heat are in direct contact with brick, mortar, and the framing beyond. CO exposure through a cracked liner is cumulative — it doesn't cause immediate collapse. It causes headaches, fatigue, and cognitive symptoms that are often attributed to illness. Families have lived with low-level CO exposure from a failing liner for years before a diagnosis is made. The structural fire risk is real, but the CO exposure is the more insidious consequence of an unlined chimney.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

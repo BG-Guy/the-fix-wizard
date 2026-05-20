@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Fascia Repair in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Fascia repair is needed when the board at the roof edge is rotting, cracking, or pulling away from the rafter tails, and when gutters are detaching from the roofline because they no longer have sound material to attach to.</p>
+            <p class="blog-lead">Fascia repair is needed when the board at the roof edge is rotting, cracking, or pulling away from the rafter tails, and when gutters are detaching from the roofline because they no longer have sound material to attach to.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Fascia Repair Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Remove damaged fascia section</li>
+<li>Treat or replace underlying sheathing</li>
+<li>Install new primed fascia board</li>
+<li>Caulk and paint to match</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Gutters are attached to the fascia, not to the structure behind it. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Fascia Repair Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">Replacing damaged fascia restores the structural edge that gutters depend on for anchoring. New treated or PVC fascia also closes the moisture pathway at the roof edge that rotted wood leaves open.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">Properly painted or primed cedar fascia lasts 15 to 20 years. PVC fascia does not rot and lasts the lifetime of the home with no painting required.</p>
+            <p class="blog-body-p">Properly painted or primed cedar fascia lasts 15 to 20 years. PVC fascia does not rot and lasts the lifetime of the home with no painting required.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Gutters are attached to the fascia, not to the structure behind it. When fascia rots, the gutter attachment screws lose purchase — first pulling slightly, then spinning free. A gutter detached from the fascia during a storm drops the entire water load from that roof section directly against the foundation below. This is not a gradual event — it happens during the heaviest rain, when the gutter is at maximum load. Foundation soils that receive concentrated roof runoff over multiple seasons develop drainage problems and hydrostatic pressure conditions that lead to basement water intrusion. The fascia board itself costs a few hundred dollars to replace. The downstream consequences of leaving it deteriorated cost many times more.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

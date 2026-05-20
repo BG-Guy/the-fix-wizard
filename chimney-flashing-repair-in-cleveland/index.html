@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,31 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Flashing Repair and Installation in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Flashing repair is needed when water is entering the home at the roof-chimney junction — visible as staining on the ceiling or walls near the fireplace, or as water in the firebox after rain. Flashing can fail due to rust, improper installation, sealant breakdown, or movement from the chimney settling independently of the roof structure.</p>
+            <p class="blog-lead">Flashing repair is needed when water is entering the home at the roof-chimney junction — visible as staining on the ceiling or walls near the fireplace, or as water in the firebox after rain. Flashing can fail due to rust, improper installation, sealant breakdown, or movement from the chimney settling independently of the roof structure.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Flashing Repair and Installation Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Remove and dispose of old flashing</li>
+<li>Step flashing woven into shingles</li>
+<li>Counter flashing secured to chimney</li>
+<li>Sealant at all joints</li>
+<li>Water test verification</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">The roof-chimney intersection is where two building systems with different movement characteristics meet. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Flashing Repair and Installation Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">Properly installed counterflashing and step flashing creates a mechanical water barrier that moves with both the chimney and the roof without breaking the seal. When done correctly, it is the most durable waterproofing solution at the most leak-prone intersection on the entire roof.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">Lead or copper flashing installed correctly lasts 20 to 30 years. Aluminum flashing in a quality installation lasts 15 to 20 years. Sealant-only repairs require reapplication every 3 to 5 years.</p>
+            <p class="blog-body-p">Lead or copper flashing installed correctly lasts 20 to 30 years. Aluminum flashing in a quality installation lasts 15 to 20 years. Sealant-only repairs require reapplication every 3 to 5 years.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +257,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">The roof-chimney intersection is where two building systems with different movement characteristics meet. Water that enters at this joint doesn't stay where it lands — it follows framing, insulation, and vapor barriers until it pools somewhere lower. The visible water stain on the ceiling is the end of a path that may have started several feet away. While you're looking at one wet spot, the sheathing, insulation, and framing above are saturated. Structural rot at rafter tails and sheathing edges sets in quietly, and by the time a ceiling needs replacement, the scope of damage is already well beyond the original flashing.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

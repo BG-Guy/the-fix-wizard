@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Heavy Creosote Rotary Cleaning in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Heavy rotary cleaning is needed when a standard sweep finds Stage 2 or Stage 3 creosote buildup — the kind that forms a tar-like glaze on the flue walls rather than brushing out as powder. This happens when wood is burned at low temperatures, when green or unseasoned wood is used, or when the appliance is consistently under-fired.</p>
+            <p class="blog-lead">Heavy rotary cleaning is needed when a standard sweep finds Stage 2 or Stage 3 creosote buildup — the kind that forms a tar-like glaze on the flue walls rather than brushing out as powder. This happens when wood is burned at low temperatures, when green or unseasoned wood is used, or when the appliance is consistently under-fired.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Heavy Creosote Rotary Cleaning Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Rotary drill and brush system</li>
+<li>Stage 2/3 creosote breakdown</li>
+<li>Post-clean inspection and report</li>
+<li>HEPA vacuum containment</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Stage 3 glazed creosote is classified as the most dangerous chimney condition that exists. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Heavy Creosote Rotary Cleaning Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">Rotary cleaning physically removes the glazed deposit that standard brushes can't dislodge. After treatment, the flue is clear and the primary fuel source for a chimney fire is gone. The improvement in draft is often immediate and noticeable.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">A single rotary cleaning resolves the immediate hazard. Preventing recurrence requires burning dry, well-seasoned hardwood at adequate temperature, which produces far less creosote per cord than low-temperature smoldering fires.</p>
+            <p class="blog-body-p">A single rotary cleaning resolves the immediate hazard. Preventing recurrence requires burning dry, well-seasoned hardwood at adequate temperature, which produces far less creosote per cord than low-temperature smoldering fires.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Stage 3 glazed creosote is classified as the most dangerous chimney condition that exists. It burns at temperatures that exceed what any residential flue liner is engineered to contain. When it ignites — and it will, given the right conditions — the heat transfer into the surrounding masonry and framing happens faster than a standard chimney fire. There is no partial outcome. The liner fractures, the surrounding structure reaches ignition temperature, and the fire moves into the wall. This is not a theoretical risk; it is a well-documented failure mode that fire investigators see repeatedly.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

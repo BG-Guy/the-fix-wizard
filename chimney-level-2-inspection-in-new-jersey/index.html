@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Level 2 Inspection (Camera Scan) in New Jersey</span>
-            <p class="blog-body-p" style="margin-top:14px">A Level 2 inspection is required when a home changes ownership, after any chimney fire or seismic event, or when a Level 1 inspection reveals something that a flashlight can't fully assess. If you're buying a home with a fireplace, this inspection is the only way to know the actual condition of the flue interior — not just the parts visible from above and below.</p>
+            <p class="blog-lead">A Level 2 inspection is required when a home changes ownership, after any chimney fire or seismic event, or when a Level 1 inspection reveals something that a flashlight can't fully assess. If you're buying a home with a fireplace, this inspection is the only way to know the actual condition of the flue interior — not just the parts visible from above and below.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Level 2 Inspection (Camera Scan) Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>HD camera scan of full flue length</li>
+<li>Documentation for real estate transfer</li>
+<li>Structural integrity assessment</li>
+<li>Written report with still images</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Flue liner cracks are invisible without a camera. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Level 2 Inspection (Camera Scan) Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">The camera produces a complete visual record of the flue liner from top to bottom, identifying cracks, gaps at tile joints, spalling, and areas of deterioration that standard inspection cannot detect. For real estate transactions, the written report provides documented proof of condition for both parties and their insurers.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">The inspection report reflects the condition at the time of assessment. Subsequent use, weather events, or settling may change conditions, but a clean report at purchase gives you an accurate baseline for future comparisons.</p>
+            <p class="blog-body-p">The inspection report reflects the condition at the time of assessment. Subsequent use, weather events, or settling may change conditions, but a clean report at purchase gives you an accurate baseline for future comparisons.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Flue liner cracks are invisible without a camera. A hairline fracture in a clay tile liner is enough to allow carbon monoxide — the product of incomplete combustion — to migrate into the living space through the surrounding masonry. CO is odorless, colorless, and accumulates gradually. Most CO incidents attributed to fireplaces and heating appliances trace back to compromised flue liners that were never assessed. Buying a home without a Level 2 inspection means accepting an unknown risk with potentially serious health consequences.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

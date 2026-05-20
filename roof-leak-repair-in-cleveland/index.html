@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,31 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Roof Leak Repair in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Roof leak repair is needed at first evidence of water intrusion — a ceiling stain, dripping during rain, or visible moisture in the attic. Waiting for symptoms to become severe before investigating is among the most expensive mistakes a homeowner can make.</p>
+            <p class="blog-lead">Roof leak repair is needed at first evidence of water intrusion — a ceiling stain, dripping during rain, or visible moisture in the attic. Waiting for symptoms to become severe before investigating is among the most expensive mistakes a homeowner can make.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Roof Leak Repair Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Leak source diagnosis (interior and exterior)</li>
+<li>Flashing repair or replacement</li>
+<li>Cracked shingle or vent boot repair</li>
+<li>Sealant application</li>
+<li>Water test after repair</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Roof leaks do not stay where they start. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Roof Leak Repair Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">Identifying and repairing the entry point stops the water before it has a chance to advance further into the building envelope. Early repairs — replaced flashing, sealed pipe boot, reseated shingles — are straightforward interventions that cost a small fraction of what delayed repair costs.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">A properly repaired flashing or replaced shingle section lasts 10 to 20 years depending on materials. A comprehensive repair addressing all vulnerability points at the same visit is a more durable solution than single-source repairs.</p>
+            <p class="blog-body-p">A properly repaired flashing or replaced shingle section lasts 10 to 20 years depending on materials. A comprehensive repair addressing all vulnerability points at the same visit is a more durable solution than single-source repairs.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +257,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Roof leaks do not stay where they start. Water follows the path of least resistance through insulation, along rafters and sheathing, around vapor barriers, and pools at low points that may be several feet from the actual entry. The ceiling stain you see is not above the leak — it is above where the water ran to. Wet insulation permanently loses its R-value once it is compressed by moisture. Rafters and sheathing that are repeatedly wetted through an active season develop rot in the grain, which is invisible from below and only discovered when something soft is found during a future repair. The typical cost of a roof leak ignored for one full season is 4 to 6 times the cost of the original entry-point repair.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

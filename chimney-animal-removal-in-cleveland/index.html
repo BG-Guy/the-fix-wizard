@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,31 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Animal Removal in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Animal removal is needed when you hear scratching, chirping, or movement in the chimney, when there is an unusual odor from the fireplace when it is not in use, or when nesting material is visible in the firebox. Common species are chimney swifts, starlings, raccoons, and squirrels.</p>
+            <p class="blog-lead">Animal removal is needed when you hear scratching, chirping, or movement in the chimney, when there is an unusual odor from the fireplace when it is not in use, or when nesting material is visible in the firebox. Common species are chimney swifts, starlings, raccoons, and squirrels.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Animal Removal Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Humane animal removal</li>
+<li>Nest and debris removal</li>
+<li>Full flue sweep after removal</li>
+<li>Chimney cap installation</li>
+<li>Entry point identification</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Nesting material inside a flue is composed of dry organic matter — twigs, leaves, feathers, and debris — packed into the exact space that combustion gases must travel through. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Animal Removal Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">Professional removal addresses the animal, the nesting material and debris left behind, and the entry point — typically an uncapped flue. The combination of removal and cap installation ensures the problem doesn't recur the following season.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">Once the animal is removed and the flue is properly capped, re-entry is permanently prevented. The cap itself lasts 20 or more years.</p>
+            <p class="blog-body-p">Once the animal is removed and the flue is properly capped, re-entry is permanently prevented. The cap itself lasts 20 or more years.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +257,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Nesting material inside a flue is composed of dry organic matter — twigs, leaves, feathers, and debris — packed into the exact space that combustion gases must travel through. A single spark from the firebox is enough to ignite it. Birds that are legally protected under the Migratory Bird Treaty Act, such as chimney swifts, cannot be disturbed during nesting season, which means that if nesting is already underway when you light a fire, you have no legal option to remove them until the season ends — and no safe option to use the fireplace in the meantime. Animals that die in the flue create a complete blockage and a decomposition odor that permeates the entire house.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

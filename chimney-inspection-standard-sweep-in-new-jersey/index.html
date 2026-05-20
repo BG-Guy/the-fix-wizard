@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,31 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Level 1 Inspection and Standard Sweep in New Jersey</span>
-            <p class="blog-body-p" style="margin-top:14px">A chimney inspection is needed when you haven't had one in the past year, when you notice odors coming from the fireplace when it isn't in use, or when smoke lingers in the room during a fire. Even if you burn infrequently, a single season of use generates creosote and exposes the masonry to thermal cycling that warrants a professional review.</p>
+            <p class="blog-lead">A chimney inspection is needed when you haven't had one in the past year, when you notice odors coming from the fireplace when it isn't in use, or when smoke lingers in the room during a fire. Even if you burn infrequently, a single season of use generates creosote and exposes the masonry to thermal cycling that warrants a professional review.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Level 1 Inspection and Standard Sweep Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Full flue sweep with rotary brushes</li>
+<li>HEPA vacuum containment — no mess</li>
+<li>Visual inspection of accessible surfaces</li>
+<li>Written condition report</li>
+<li>Creosote level classification</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Creosote accumulates in layers, and each layer is more combustible than the last. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Level 1 Inspection and Standard Sweep Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">An annual inspection gives you documented assurance that the system is safe to use. The sweep removes creosote — the byproduct that accounts for the majority of chimney fires — and clears any debris or blockage that restricts draft. You leave knowing exactly what condition your chimney is in before you light another fire.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">One inspection covers you for a full burn season. The NFPA recommends annual service regardless of how often the fireplace is used, because even an unused chimney can develop blockages, animal intrusion, and moisture damage between seasons.</p>
+            <p class="blog-body-p">One inspection covers you for a full burn season. The NFPA recommends annual service regardless of how often the fireplace is used, because even an unused chimney can develop blockages, animal intrusion, and moisture damage between seasons.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +257,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Creosote accumulates in layers, and each layer is more combustible than the last. Stage 3 glazed creosote burns at temperatures exceeding 2,000°F — well above what the liner and surrounding masonry can survive. The majority of chimney fires start while the household is asleep and go undetected until heat transfers into the wall cavity. By that point, the fire is inside the structure, not inside the flue. Skipping an annual inspection doesn't eliminate the risk — it simply removes the only opportunity to find the problem before it ignites.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

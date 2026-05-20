@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Outlet / Switch Upgrades in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Outlet and switch upgrades are needed when two-prong ungrounded outlets are present in a home, when kitchen, bathroom, garage, or outdoor outlets lack GFCI protection, or when outlets and switches are worn, cracked, or no longer holding plugs securely.</p>
+            <p class="blog-lead">Outlet and switch upgrades are needed when two-prong ungrounded outlets are present in a home, when kitchen, bathroom, garage, or outdoor outlets lack GFCI protection, or when outlets and switches are worn, cracked, or no longer holding plugs securely.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Outlet / Switch Upgrades Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Diagnose outlet or switch fault</li>
+<li>Replace device with correct type</li>
+<li>GFCI protection where required by code</li>
+<li>Test for proper function</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Non-GFCI outlets in bathrooms and kitchens are the most common electrical code violation found during home inspections, and for good reason: water and electricity at the same location without ground fault protection can be fatal. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Outlet / Switch Upgrades Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">GFCI outlets protect against shock hazards in wet areas by detecting ground faults and cutting power in milliseconds. Grounded three-prong outlets allow proper use of modern appliances. New devices with tight plug retention eliminate the fire risk of arcing at a loose connection.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">Properly installed outlets and switches last 20 to 30 years. GFCI devices have test and reset buttons that confirm they are functioning at any time.</p>
+            <p class="blog-body-p">Properly installed outlets and switches last 20 to 30 years. GFCI devices have test and reset buttons that confirm they are functioning at any time.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Non-GFCI outlets in bathrooms and kitchens are the most common electrical code violation found during home inspections, and for good reason: water and electricity at the same location without ground fault protection can be fatal. The National Electrical Code has required GFCI protection in these locations since the 1970s, which means any home built or renovated after that date without it has either lost the protection or was never brought to code. The risk isn't theoretical — the ground fault that GFCI is designed to stop happens faster than any circuit breaker can respond.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

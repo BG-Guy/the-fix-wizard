@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Blinds / Shades / Curtain Rod Installation in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Professional installation is needed when inside-mount blinds require precise measurement and level mounting, when heavy drapes require rod brackets that reach into studs, or when a previous installation has left the hardware pulling away from the wall.</p>
+            <p class="blog-lead">Professional installation is needed when inside-mount blinds require precise measurement and level mounting, when heavy drapes require rod brackets that reach into studs, or when a previous installation has left the hardware pulling away from the wall.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Blinds / Shades / Curtain Rod Installation Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Level measurement and marking</li>
+<li>Inside or outside mount</li>
+<li>Correct anchors for window material</li>
+<li>Operation test and adjustment</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Curtain rod brackets are subjected to repeated lateral loading every time the drapes are opened or closed. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Blinds / Shades / Curtain Rod Installation Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">Correctly anchored curtain rod brackets positioned at the right height and extension eliminate the common problems of sagging rods, leaning brackets, and curtains that don't hang straight. Inside-mount blind installation done correctly ensures the blind operates smoothly without binding.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">Curtain rod hardware installed into studs is permanent. Blind hardware installed at the correct depth in the window frame or wall is equally durable.</p>
+            <p class="blog-body-p">Curtain rod hardware installed into studs is permanent. Blind hardware installed at the correct depth in the window frame or wall is equally durable.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Curtain rod brackets are subjected to repeated lateral loading every time the drapes are opened or closed. A bracket anchored into hollow drywall without stud backing applies that load to a hollow-wall anchor with a mechanical disadvantage that the anchor was not designed for. Over weeks of daily use, the anchor loosens, the bracket tilts, and eventually the rod falls — typically with the full weight of the drapes. The larger the span and the heavier the fabric, the more leverage is applied to each bracket, and the faster this failure progresses.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

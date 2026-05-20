@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Toilet Reset / Flange Repair / Inner Components Swap in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Toilet repair is needed when the toilet runs continuously between flushes, when the toilet rocks or shifts on the floor, when the flange is cracked or has separated from the floor, or when internal components have failed causing incomplete flushes or constant running.</p>
+            <p class="blog-lead">Toilet repair is needed when the toilet runs continuously between flushes, when the toilet rocks or shifts on the floor, when the flange is cracked or has separated from the floor, or when internal components have failed causing incomplete flushes or constant running.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Toilet Reset / Flange Repair / Inner Components Swap Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Diagnose root cause (flapper, fill valve, flange, wax ring)</li>
+<li>Replace necessary components</li>
+<li>Anchor and level toilet if reset</li>
+<li>Flush test and leak check</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">A rocking toilet is a failing wax ring in process. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Toilet Reset / Flange Repair / Inner Components Swap Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">A properly reset toilet stops the movement that progressively destroys the wax ring seal. Repaired or replaced internal components stop the water waste of a running toilet and restore reliable flushing.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">A correctly set toilet on an intact flange with a new wax ring will remain stable for 10 to 15 years before the ring needs replacement under normal use. Internal components — fill valves, flappers — last 5 to 7 years.</p>
+            <p class="blog-body-p">A correctly set toilet on an intact flange with a new wax ring will remain stable for 10 to 15 years before the ring needs replacement under normal use. Internal components — fill valves, flappers — last 5 to 7 years.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">A rocking toilet is a failing wax ring in process. Every movement — every time someone sits down — breaks the seal incrementally. Once the seal fails, every flush sends a small amount of water under the toilet flange and into the subfloor below. This water has no drainage path. It saturates the subfloor and then the joists below it. Subfloor rot beneath a bathroom is one of the most disruptive repairs in residential remodeling — it requires removing the toilet, tile, and rotted subfloor, which typically involves the framing below as well. The repair cost routinely reaches several thousand dollars. A rocking toilet costs a few hundred to repair. The window between the two is measured in months.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

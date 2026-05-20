@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Video Doorbell / Smart Lock Installation in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Smart doorbell and lock installation is needed when upgrading home security, replacing a failed wired doorbell, or when adding keyless entry for family members or service access. These are also common upgrades during home sales.</p>
+            <p class="blog-lead">Smart doorbell and lock installation is needed when upgrading home security, replacing a failed wired doorbell, or when adding keyless entry for family members or service access. These are also common upgrades during home sales.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Video Doorbell / Smart Lock Installation Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Remove old doorbell or lock</li>
+<li>Install and wire/mount new device</li>
+<li>Wi-Fi pairing and app setup</li>
+<li>Operation test and walkthrough</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Smart locks that are improperly installed create alignment stress on the deadbolt — the bolt doesn't travel freely in the strike plate because the lock body isn't exactly square in the door. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Video Doorbell / Smart Lock Installation Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">A video doorbell provides real-time and recorded visitor visibility from anywhere. A smart lock eliminates the vulnerability of physical key loss or copy while enabling time-limited codes for contractors or guests.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">Hardware quality varies significantly by brand. Well-made smart locks last 5 to 7 years before technology or battery wear prompts replacement. Wiring for a video doorbell is permanent.</p>
+            <p class="blog-body-p">Hardware quality varies significantly by brand. Well-made smart locks last 5 to 7 years before technology or battery wear prompts replacement. Wiring for a video doorbell is permanent.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Smart locks that are improperly installed create alignment stress on the deadbolt — the bolt doesn't travel freely in the strike plate because the lock body isn't exactly square in the door. The motor works against this resistance on every lock and unlock cycle. Motor failure follows within months rather than years. A smart lock with a dead motor is more difficult to override than a standard deadbolt, and it fails in an inconvenient rather than a predictable way. Video doorbells wired with the wrong transformer voltage provide insufficient or excessive power to the device, shortening its lifespan and causing performance issues that are difficult to diagnose after installation.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

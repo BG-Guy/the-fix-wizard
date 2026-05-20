@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Standard Light Fixture / Chandelier Swap in New Jersey</span>
-            <p class="blog-body-p" style="margin-top:14px">Fixture replacement is needed when a chandelier or ceiling fixture is outdated, when a fixture has failed, or when a renovation calls for a lighting style change. It is also needed when the existing wiring connections are old enough to show oxidation or the wrong wire gauge.</p>
+            <p class="blog-lead">Fixture replacement is needed when a chandelier or ceiling fixture is outdated, when a fixture has failed, or when a renovation calls for a lighting style change. It is also needed when the existing wiring connections are old enough to show oxidation or the wrong wire gauge.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Standard Light Fixture / Chandelier Swap Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Remove old fixture</li>
+<li>Verify box capacity for new weight</li>
+<li>Connect wiring correctly</li>
+<li>Fixture mount and test</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Incorrect wire connections inside a junction box create electrical resistance at the connection point. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Standard Light Fixture / Chandelier Swap Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">A professionally installed fixture has correctly made wire connections with proper wire nuts or push-in connectors rated for the load, correctly matched wire gauges, and a secured mounting that accounts for the weight of the fixture.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">Correct wiring connections last indefinitely. The fixture itself has a lifespan dependent on the quality of the product.</p>
+            <p class="blog-body-p">Correct wiring connections last indefinitely. The fixture itself has a lifespan dependent on the quality of the product.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Incorrect wire connections inside a junction box create electrical resistance at the connection point. Resistance generates heat. Heat at an electrical connection is one of the primary causes of residential electrical fires — it is the mechanism identified in the majority of fires attributed to 'faulty wiring.' The connection may function correctly for months before the heat buildup reaches a critical level. The junction box is inside a wall or ceiling cavity, and there is no external indication that the connection is degrading. This is why electrical work behind a cover plate is not a place to accept uncertainty about quality.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Kitchen or Bathroom Faucet Replacement in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Faucet replacement is needed when there is a persistent drip that cannot be corrected by tightening or replacing the cartridge, when the faucet body is visibly corroded, when water pressure has dropped due to internal mineral buildup, or when a renovation requires a style update.</p>
+            <p class="blog-lead">Faucet replacement is needed when there is a persistent drip that cannot be corrected by tightening or replacing the cartridge, when the faucet body is visibly corroded, when water pressure has dropped due to internal mineral buildup, or when a renovation requires a style update.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Kitchen or Bathroom Faucet Replacement Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Shutoff and disconnect old faucet</li>
+<li>Install new faucet body and supply lines</li>
+<li>Test for leaks at all connections</li>
+<li>Drain reassembly and test</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">The supply line connections beneath the sink are not visible during normal use, and they are precisely where DIY faucet installations most commonly fail. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Kitchen or Bathroom Faucet Replacement Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">A new faucet eliminates the water waste and mineral staining of a persistent drip, restores full pressure and flow, and resets the lifecycle of the fixture. Professional installation ensures the supply connections under the sink are made correctly — the most common point of failure in DIY faucet work.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">A quality faucet from a reputable manufacturer with standard brass cartridge components lasts 15 to 20 years under normal use conditions.</p>
+            <p class="blog-body-p">A quality faucet from a reputable manufacturer with standard brass cartridge components lasts 15 to 20 years under normal use conditions.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">The supply line connections beneath the sink are not visible during normal use, and they are precisely where DIY faucet installations most commonly fail. An overtightened compression fitting cracks under sustained water pressure. An undertightened braided supply line weeps slowly onto the cabinet floor. Both scenarios deliver water to the particleboard cabinet base and subflooring beneath without any visible indication above the sink. By the time water is noticed — typically by smell, soft flooring, or visible staining — the cabinet base has been absorbing moisture for weeks and the subfloor underneath may already be compromised.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 

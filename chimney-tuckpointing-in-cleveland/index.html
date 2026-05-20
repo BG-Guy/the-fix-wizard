@@ -54,6 +54,20 @@ a{text-decoration:none;color:inherit}
 .consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
 .consequences-box .blog-body-p{color:#3a4560}
 
+/* ── Warning callout ── */
+.warning-callout{background:#fffbeb;border-left:3px solid #d97706;border-radius:0 14px 14px 0;padding:20px 24px}
+.warning-callout__title{font-size:16px;font-weight:700;color:#92400e;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.warning-callout__title i{font-size:14px;color:#d97706}
+
+/* ── Blog list ── */
+.blog-list{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px}
+.blog-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4560;line-height:1.6}
+.blog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF6B35;flex-shrink:0;margin-top:7px}
+
+/* ── Custom CTA box ── */
+.custom-cta-box{background:#f1f5f9;border-radius:16px;padding:32px;text-align:center;margin-top:8px}
+.custom-cta-box__headline{font-size:17px;font-weight:700;color:#091236;margin:0 0 20px}
+
 
 
 /* ── Related services ── */
@@ -211,18 +225,30 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <span class="blog-section-title">Why Homeowners Schedule Tuckpointing and Mortar Repair in Cleveland, Ohio</span>
-            <p class="blog-body-p" style="margin-top:14px">Tuckpointing is needed when the mortar joints between chimney bricks have eroded to the point where they are visibly recessed, crumbling, or missing. This is a normal part of the chimney lifecycle — mortar is the sacrificial component designed to absorb weathering stress so the bricks don't have to.</p>
+            <p class="blog-lead">Tuckpointing is needed when the mortar joints between chimney bricks have eroded to the point where they are visibly recessed, crumbling, or missing. This is a normal part of the chimney lifecycle — mortar is the sacrificial component designed to absorb weathering stress so the bricks don't have to.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">What Our Tuckpointing and Mortar Repair Service Includes</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li>Angle grinder removal of deteriorated mortar</li>
+<li>Type S mortar packing and tooling</li>
+<li>Color-matched mortar</li>
+<li>Full brush-clean finish</li>
+            </ul>
+        </div>
+
+        <div class="blog-section">
+            <div class="warning-callout">
+                <h3 class="warning-callout__title"><i class="fas fa-clock-rotate-left"></i> The Cost of Delay</h3>
+                <p class="blog-body-p" style="margin:0">Mortar exists to fail before brick does. Contacting an expert early allows for targeted solutions before the damage becomes significantly more expensive to address.</p>
+            </div>
         </div>
 
         <div class="blog-section">
             <span class="blog-section-title">What a Professional Tuckpointing and Mortar Repair Delivers</span>
             <p class="blog-body-p" style="margin-top:14px">Fresh mortar restores the structural bond between bricks, closes the water infiltration pathways at every joint, and stabilizes the chimney stack against the movement and settling that occurs naturally over time. The process involves removing the deteriorated mortar and packing new mortar that is matched to the original in composition and color.</p>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Longevity and Expected Lifespan</span>
-            <p class="blog-body-p" style="margin-top:14px">Quality tuckpointing using the correct mortar type for the existing brick typically lasts 20 to 30 years. Using the wrong mortar — typically a mix that is too hard for older soft brick — causes accelerated failure and can trap moisture in the brick itself.</p>
+            <p class="blog-body-p">Quality tuckpointing using the correct mortar type for the existing brick typically lasts 20 to 30 years. Using the wrong mortar — typically a mix that is too hard for older soft brick — causes accelerated failure and can trap moisture in the brick itself.</p>
         </div>
 
         <div class="blog-section">
@@ -230,6 +256,20 @@ a{text-decoration:none;color:inherit}
             <div class="consequences-box" style="margin-top:14px">
                 <p class="blog-body-p" style="margin:0">Mortar exists to fail before brick does. When it's gone, the freeze-thaw cycle that was destroying the mortar begins destroying the brick instead. Bricks crack from the face inward, and once the face of a brick spalls off, it cannot be repointed — it must be replaced. Brick replacement is more expensive and more disruptive than tuckpointing, and the window for tuckpointing closes as soon as the bricks themselves begin to fail. In most cases, every year of deferred tuckpointing doubles the scope of the eventual repair.</p>
             </div>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">Why Choose Professional Care?</span>
+            <ul class="blog-list" style="margin-top:14px">
+                <li><strong>The Details Matter:</strong> Our specialists arrive fully equipped to deliver precise, lasting results tailored exactly to your home's needs — no guesswork, no shortcuts.</li>
+                <li><strong>We Stand Behind Our Work:</strong> Every job comes with our commitment to quality so you can rest easy knowing your home is properly protected.</li>
+                <li><strong>Licensed &amp; Insured:</strong> Full liability coverage on every visit, protecting you and your property throughout the entire process.</li>
+            </ul>
+        </div>
+
+        <div class="custom-cta-box">
+            <p class="custom-cta-box__headline">Ready to protect your home before the next season?</p>
+            <a href="../#contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Estimate</a>
         </div>
 
 
