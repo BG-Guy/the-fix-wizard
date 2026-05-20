@@ -10,7 +10,7 @@ import os, base64
 from services_data import (
     CHIMNEY_SERVICES_FULL, HANDYMAN_SERVICES_FULL,
     LOCATIONS, CHIMNEY_CATS, HANDYMAN_CATS,
-    build_service_lookup
+    build_service_lookup, SERVICE_CONTENT
 )
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -24,6 +24,79 @@ except:
 
 GFONTS = "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
 FA     = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+
+
+def blog_sections_html(slug, name, loc_name):
+    c = SERVICE_CONTENT.get(slug)
+    if not c:
+        return ""
+
+    # Intro paragraphs
+    intro_paras = "".join(
+        f'<p class="text-[16px] text-slate-600 leading-relaxed mb-4">{p.strip()}</p>'
+        for p in c["intro"].split("\n\n") if p.strip()
+    )
+
+    # Signs
+    signs_li = "".join(
+        f'<li class="flex items-start gap-3 text-[15px] text-slate-700 py-2.5 border-b border-slate-100 last:border-0">'
+        f'<i class="fas fa-circle-exclamation text-orange text-[13px] mt-1 shrink-0"></i>{s}</li>'
+        for s in c["signs"]
+    )
+
+    # Process steps
+    steps_html = "".join(
+        f'<div class="flex gap-4 mb-5">'
+        f'<div class="shrink-0 w-8 h-8 rounded-full bg-orange text-white text-[13px] font-bold flex items-center justify-center">{i+1}</div>'
+        f'<div><div class="font-semibold text-navy-900 text-[15px] mb-1">{title}</div>'
+        f'<p class="text-[14px] text-slate-600 leading-relaxed">{desc}</p></div></div>'
+        for i, (title, desc) in enumerate(c["steps"])
+    )
+
+    # Benefits
+    benefits_html = "".join(
+        f'<div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-slate-100 mb-3">'
+        f'<i class="fas fa-check-circle text-orange text-[18px] mt-0.5 shrink-0"></i>'
+        f'<div><div class="font-semibold text-navy-900 text-[15px] mb-1">{title}</div>'
+        f'<p class="text-[14px] text-slate-600">{desc}</p></div></div>'
+        for title, desc in c["benefits"]
+    )
+
+    return f"""
+                    <!-- INTRO -->
+                    <div class="mb-8">
+                        {intro_paras}
+                    </div>
+
+                    <!-- SIGNS -->
+                    <div class="mb-8 bg-orange/[.04] border border-orange/20 rounded-2xl p-6">
+                        <h3 class="text-[18px] font-bold text-navy-900 mb-4 flex items-center gap-2.5">
+                            <i class="fas fa-triangle-exclamation text-orange"></i> Signs You Need {name}
+                        </h3>
+                        <ul class="list-none p-0 m-0">
+                            {signs_li}
+                        </ul>
+                    </div>
+
+                    <!-- PROCESS -->
+                    <div class="mb-8">
+                        <h3 class="text-[18px] font-bold text-navy-900 mb-5">How It Works</h3>
+                        {steps_html}
+                    </div>
+
+                    <!-- BENEFITS -->
+                    <div class="mb-8">
+                        <h3 class="text-[18px] font-bold text-navy-900 mb-4">Benefits of Professional {name} in {loc_name}</h3>
+                        {benefits_html}
+                    </div>
+
+                    <!-- PRICING -->
+                    <div class="mb-8 bg-navy-900/[.04] border border-navy-900/10 rounded-2xl p-6">
+                        <h3 class="text-[16px] font-bold text-navy-900 mb-2 flex items-center gap-2">
+                            <i class="fas fa-tag text-orange"></i> Pricing &amp; Estimates
+                        </h3>
+                        <p class="text-[14px] text-slate-600 leading-relaxed">{c["price"]}</p>
+                    </div>"""
 
 
 def page_html(svc, loc, svc_type, all_svcs_in_cat, cat_name):
@@ -174,7 +247,7 @@ def page_html(svc, loc, svc_type, all_svcs_in_cat, cat_name):
             <div class="grid grid-cols-1 md:grid-cols-[1fr_340px] gap-12 max-w-[960px] mx-auto">
                 <div>
                     <h2 class="text-[24px] font-bold text-navy-900 mb-4">{name} in {loc_name}</h2>
-                    <p class="text-[16px] text-slate-600 leading-relaxed mb-6">{short_desc} We serve {loc_area} with licensed technicians, transparent pricing, and same-day availability.</p>
+                    {blog_sections_html(slug, clean_name, loc_name)}
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                         <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
                             <i class="fas fa-shield-halved text-orange text-[18px] mt-0.5 shrink-0"></i>
