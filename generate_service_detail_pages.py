@@ -56,31 +56,10 @@ BLOG_STYLES = """
 /* ── Blog section wrapper ── */
 .blog-section{margin-bottom:44px}
 
-/* ── Signs callout ── */
-.signs-box{background:#fffbeb;border-left:3px solid #FF6B35;border-radius:0 16px 16px 0;padding:4px 24px 4px 24px}
-.signs-list{list-style:none;padding:0;margin:0}
-.signs-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #fde68a;font-size:15px;color:#374151;line-height:1.55}
-.signs-item:last-child{border-bottom:none;padding-bottom:4px}
-.signs-item i{flex-shrink:0;color:#FF6B35;font-size:11px;margin-top:5px}
+/* ── Consequences box (subtle urgency) ── */
+.consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
+.consequences-box .blog-body-p{color:#3a4560}
 
-/* ── Process timeline ── */
-.steps-list{list-style:none;padding:0;margin:0}
-.step-row{position:relative;display:flex;gap:20px;padding-bottom:32px}
-.step-row:last-child{padding-bottom:0}
-.step-connector{position:absolute;left:15px;top:32px;bottom:0;width:2px;background:linear-gradient(to bottom,#e2e8f0,transparent)}
-.step-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#091236;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;margin-top:2px}
-.step-content{flex:1;min-width:0;padding-top:2px}
-.step-title{font-size:15px;font-weight:700;color:#091236;margin-bottom:5px}
-.step-desc{font-size:14px;color:#5a6478;line-height:1.7}
-
-/* ── Benefits ── */
-.benefits-list{list-style:none;padding:0;margin:0;border:1px solid #e8ecf0;border-radius:16px;padding:0 24px}
-.benefit-row{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid #f1f5f9}
-.benefit-row:last-child{border-bottom:none}
-.benefit-icon-wrap{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:rgba(255,107,53,.1);display:flex;align-items:center;justify-content:center}
-.benefit-icon-wrap i{color:#FF6B35;font-size:13px}
-.benefit-title{font-size:15px;font-weight:700;color:#091236;margin-bottom:4px}
-.benefit-desc{font-size:14px;color:#5a6478;line-height:1.65}
 
 
 /* ── Related services ── */
@@ -139,58 +118,28 @@ def blog_sections_html(slug, name, loc_name):
     if not c:
         return ""
 
-    paras = [p.strip() for p in c["intro"].split("\n\n") if p.strip()]
-    intro_html = ""
-    for i, p in enumerate(paras):
-        cls = "blog-lead" if i == 0 else "blog-body-p"
-        intro_html += f'<p class="{cls}">{p}</p>\n'
-
-    signs_li = "".join(
-        f'<li class="signs-item"><i class="fas fa-chevron-right"></i><span>{s}</span></li>\n'
-        for s in c["signs"]
-    )
-
-    total = len(c["steps"])
-    steps_html = ""
-    for i, (title, desc) in enumerate(c["steps"]):
-        connector = '<div class="step-connector"></div>' if i < total - 1 else ""
-        steps_html += (
-            f'<li class="step-row">{connector}'
-            f'<div class="step-num">{i+1}</div>'
-            f'<div class="step-content"><p class="step-title">{title}</p>'
-            f'<p class="step-desc">{desc}</p></div></li>\n'
-        )
-
-    benefits_html = "".join(
-        f'<li class="benefit-row">'
-        f'<div class="benefit-icon-wrap"><i class="fas fa-check"></i></div>'
-        f'<div><p class="benefit-title">{title}</p>'
-        f'<p class="benefit-desc">{desc}</p></div></li>\n'
-        for title, desc in c["benefits"]
-    )
-
     return f"""
         <div class="blog-section">
-            {intro_html}
+            <span class="blog-section-title">Why Would I Need This?</span>
+            <p class="blog-body-p" style="margin-top:14px">{c["why_need"]}</p>
         </div>
 
         <div class="blog-section">
-            <span class="blog-section-title">Signs You Need {name}</span>
-            <div class="signs-box">
-                <ul class="signs-list">{signs_li}</ul>
+            <span class="blog-section-title">How Will It Benefit Me?</span>
+            <p class="blog-body-p" style="margin-top:14px">{c["benefits"]}</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">How Long Will It Last?</span>
+            <p class="blog-body-p" style="margin-top:14px">{c["longevity"]}</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title" style="border-left-color:#1e3480">What Happens If I Don't Address This?</span>
+            <div class="consequences-box" style="margin-top:14px">
+                <p class="blog-body-p" style="margin:0">{c["consequences"]}</p>
             </div>
         </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">How It Works</span>
-            <ul class="steps-list" style="margin-top:20px">{steps_html}</ul>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Benefits of Professional {name} in {loc_name}</span>
-            <ul class="benefits-list">{benefits_html}</ul>
-        </div>
-
 """
 
 

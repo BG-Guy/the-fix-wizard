@@ -50,31 +50,10 @@ a{text-decoration:none;color:inherit}
 /* ── Blog section wrapper ── */
 .blog-section{margin-bottom:44px}
 
-/* ── Signs callout ── */
-.signs-box{background:#fffbeb;border-left:3px solid #FF6B35;border-radius:0 16px 16px 0;padding:4px 24px 4px 24px}
-.signs-list{list-style:none;padding:0;margin:0}
-.signs-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #fde68a;font-size:15px;color:#374151;line-height:1.55}
-.signs-item:last-child{border-bottom:none;padding-bottom:4px}
-.signs-item i{flex-shrink:0;color:#FF6B35;font-size:11px;margin-top:5px}
+/* ── Consequences box (subtle urgency) ── */
+.consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
+.consequences-box .blog-body-p{color:#3a4560}
 
-/* ── Process timeline ── */
-.steps-list{list-style:none;padding:0;margin:0}
-.step-row{position:relative;display:flex;gap:20px;padding-bottom:32px}
-.step-row:last-child{padding-bottom:0}
-.step-connector{position:absolute;left:15px;top:32px;bottom:0;width:2px;background:linear-gradient(to bottom,#e2e8f0,transparent)}
-.step-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#091236;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;margin-top:2px}
-.step-content{flex:1;min-width:0;padding-top:2px}
-.step-title{font-size:15px;font-weight:700;color:#091236;margin-bottom:5px}
-.step-desc{font-size:14px;color:#5a6478;line-height:1.7}
-
-/* ── Benefits ── */
-.benefits-list{list-style:none;padding:0;margin:0;border:1px solid #e8ecf0;border-radius:16px;padding:0 24px}
-.benefit-row{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid #f1f5f9}
-.benefit-row:last-child{border-bottom:none}
-.benefit-icon-wrap{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:rgba(255,107,53,.1);display:flex;align-items:center;justify-content:center}
-.benefit-icon-wrap i{color:#FF6B35;font-size:13px}
-.benefit-title{font-size:15px;font-weight:700;color:#091236;margin-bottom:4px}
-.benefit-desc{font-size:14px;color:#5a6478;line-height:1.65}
 
 
 /* ── Related services ── */
@@ -232,38 +211,26 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <p class="blog-lead">Dead outlets, switches that feel warm, and outlets that sparks when plugging in a device are not minor inconveniences — they are electrical safety issues that should be addressed promptly. Dead outlets are often caused by a tripped GFCI upstream in the circuit, but can also indicate a loose or failed device. Warm switches or outlets indicate excessive resistance in the connection, which generates heat.</p>
-<p class="blog-body-p">Beyond repairs, outlet and switch upgrades are also a maintenance and modernization opportunity. Replacing standard outlets with GFCI-protected devices in kitchens, bathrooms, and garages brings these circuits into current code compliance. Adding USB combo outlets to high-use locations eliminates adapter clutter. Replacing standard switches with smart dimmers provides energy savings and convenience.</p>
-
+            <span class="blog-section-title">Why Would I Need This?</span>
+            <p class="blog-body-p" style="margin-top:14px">Outlet and switch upgrades are needed when two-prong ungrounded outlets are present in a home, when kitchen, bathroom, garage, or outdoor outlets lack GFCI protection, or when outlets and switches are worn, cracked, or no longer holding plugs securely.</p>
         </div>
 
         <div class="blog-section">
-            <span class="blog-section-title">Signs You Need Outlet / Switch Upgrades</span>
-            <div class="signs-box">
-                <ul class="signs-list"><li class="signs-item"><i class="fas fa-chevron-right"></i><span>An outlet produces no power even though the breaker is on — often a tripped GFCI upstream</span></li>
-<li class="signs-item"><i class="fas fa-chevron-right"></i><span>A switch or outlet feels warm to the touch, even when nothing is plugged in</span></li>
-<li class="signs-item"><i class="fas fa-chevron-right"></i><span>Outlets in kitchen, bathroom, or garage are not GFCI-protected</span></li>
-</ul>
+            <span class="blog-section-title">How Will It Benefit Me?</span>
+            <p class="blog-body-p" style="margin-top:14px">GFCI outlets protect against shock hazards in wet areas by detecting ground faults and cutting power in milliseconds. Grounded three-prong outlets allow proper use of modern appliances. New devices with tight plug retention eliminate the fire risk of arcing at a loose connection.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">How Long Will It Last?</span>
+            <p class="blog-body-p" style="margin-top:14px">Properly installed outlets and switches last 20 to 30 years. GFCI devices have test and reset buttons that confirm they are functioning at any time.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title" style="border-left-color:#1e3480">What Happens If I Don't Address This?</span>
+            <div class="consequences-box" style="margin-top:14px">
+                <p class="blog-body-p" style="margin:0">Non-GFCI outlets in bathrooms and kitchens are the most common electrical code violation found during home inspections, and for good reason: water and electricity at the same location without ground fault protection can be fatal. The National Electrical Code has required GFCI protection in these locations since the 1970s, which means any home built or renovated after that date without it has either lost the protection or was never brought to code. The risk isn't theoretical — the ground fault that GFCI is designed to stop happens faster than any circuit breaker can respond.</p>
             </div>
         </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">How It Works</span>
-            <ul class="steps-list" style="margin-top:20px"><li class="step-row"><div class="step-connector"></div><div class="step-num">1</div><div class="step-content"><p class="step-title">Circuit diagnosis</p><p class="step-desc">We trace the circuit, test upstream GFCI devices, and identify whether the failure is in the device itself or at a connection.</p></div></li>
-<li class="step-row"><div class="step-connector"></div><div class="step-num">2</div><div class="step-content"><p class="step-title">Device replacement</p><p class="step-desc">The failed outlet or switch is replaced with a new device of the appropriate type and amperage rating.</p></div></li>
-<li class="step-row"><div class="step-connector"></div><div class="step-num">3</div><div class="step-content"><p class="step-title">GFCI installation where required</p><p class="step-desc">GFCI devices are installed in all NEC-required locations — kitchens, bathrooms, garages, outdoor circuits.</p></div></li>
-<li class="step-row"><div class="step-num">4</div><div class="step-content"><p class="step-title">Load test</p><p class="step-desc">All new devices are tested under load to confirm correct operation before completing the job.</p></div></li>
-</ul>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Benefits of Professional Outlet / Switch Upgrades in Cleveland, Ohio</span>
-            <ul class="benefits-list"><li class="benefit-row"><div class="benefit-icon-wrap"><i class="fas fa-check"></i></div><div><p class="benefit-title">Safety restoration</p><p class="benefit-desc">Replacing a warm or sparking outlet eliminates the fire risk from high-resistance connections before they cause damage.</p></div></li>
-<li class="benefit-row"><div class="benefit-icon-wrap"><i class="fas fa-check"></i></div><div><p class="benefit-title">GFCI code compliance</p><p class="benefit-desc">GFCI protection in wet areas is a code requirement — and provides genuine protection against electrocution in kitchen and bathroom environments.</p></div></li>
-<li class="benefit-row"><div class="benefit-icon-wrap"><i class="fas fa-check"></i></div><div><p class="benefit-title">Modern functionality</p><p class="benefit-desc">USB combo outlets and smart dimmers add convenience at a cost of $20–$50 per device — typically installed in minutes.</p></div></li>
-</ul>
-        </div>
-
 
 
                 <div class="related-section">

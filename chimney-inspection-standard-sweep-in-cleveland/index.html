@@ -50,31 +50,10 @@ a{text-decoration:none;color:inherit}
 /* ── Blog section wrapper ── */
 .blog-section{margin-bottom:44px}
 
-/* ── Signs callout ── */
-.signs-box{background:#fffbeb;border-left:3px solid #FF6B35;border-radius:0 16px 16px 0;padding:4px 24px 4px 24px}
-.signs-list{list-style:none;padding:0;margin:0}
-.signs-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #fde68a;font-size:15px;color:#374151;line-height:1.55}
-.signs-item:last-child{border-bottom:none;padding-bottom:4px}
-.signs-item i{flex-shrink:0;color:#FF6B35;font-size:11px;margin-top:5px}
+/* ── Consequences box (subtle urgency) ── */
+.consequences-box{background:#f7f8fc;border-left:3px solid #1e3480;border-radius:0 12px 12px 0;padding:20px 24px}
+.consequences-box .blog-body-p{color:#3a4560}
 
-/* ── Process timeline ── */
-.steps-list{list-style:none;padding:0;margin:0}
-.step-row{position:relative;display:flex;gap:20px;padding-bottom:32px}
-.step-row:last-child{padding-bottom:0}
-.step-connector{position:absolute;left:15px;top:32px;bottom:0;width:2px;background:linear-gradient(to bottom,#e2e8f0,transparent)}
-.step-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#091236;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;margin-top:2px}
-.step-content{flex:1;min-width:0;padding-top:2px}
-.step-title{font-size:15px;font-weight:700;color:#091236;margin-bottom:5px}
-.step-desc{font-size:14px;color:#5a6478;line-height:1.7}
-
-/* ── Benefits ── */
-.benefits-list{list-style:none;padding:0;margin:0;border:1px solid #e8ecf0;border-radius:16px;padding:0 24px}
-.benefit-row{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid #f1f5f9}
-.benefit-row:last-child{border-bottom:none}
-.benefit-icon-wrap{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:rgba(255,107,53,.1);display:flex;align-items:center;justify-content:center}
-.benefit-icon-wrap i{color:#FF6B35;font-size:13px}
-.benefit-title{font-size:15px;font-weight:700;color:#091236;margin-bottom:4px}
-.benefit-desc{font-size:14px;color:#5a6478;line-height:1.65}
 
 
 /* ── Related services ── */
@@ -232,38 +211,26 @@ a{text-decoration:none;color:inherit}
             <article class="blog-article">
                 
         <div class="blog-section">
-            <p class="blog-lead">An annual chimney inspection and sweep is the single most important maintenance task for any home with a fireplace or wood-burning appliance. Creosote — the tarry byproduct of combustion — builds up inside the flue every time you burn wood. At Stage 3, glazed creosote is highly flammable and the direct cause of most chimney fires. A professional Level 1 inspection catches structural problems, blockages, and deterioration before they become emergencies.</p>
-<p class="blog-body-p">The National Fire Protection Association (NFPA 211) recommends that chimneys be inspected at least once per year. In colder climates like New Jersey and Cleveland, where fireplaces see heavy winter use and freeze-thaw cycles stress masonry, annual service is essential — not optional.</p>
-
+            <span class="blog-section-title">Why Would I Need This?</span>
+            <p class="blog-body-p" style="margin-top:14px">A chimney inspection is needed when you haven't had one in the past year, when you notice odors coming from the fireplace when it isn't in use, or when smoke lingers in the room during a fire. Even if you burn infrequently, a single season of use generates creosote and exposes the masonry to thermal cycling that warrants a professional review.</p>
         </div>
 
         <div class="blog-section">
-            <span class="blog-section-title">Signs You Need Level 1 Inspection and Standard Sweep</span>
-            <div class="signs-box">
-                <ul class="signs-list"><li class="signs-item"><i class="fas fa-chevron-right"></i><span>You haven't had an inspection in over a year</span></li>
-<li class="signs-item"><i class="fas fa-chevron-right"></i><span>You notice a strong smoky or acrid odor from the fireplace when not in use</span></li>
-<li class="signs-item"><i class="fas fa-chevron-right"></i><span>Smoke backs into the room instead of drawing up the flue</span></li>
-</ul>
+            <span class="blog-section-title">How Will It Benefit Me?</span>
+            <p class="blog-body-p" style="margin-top:14px">An annual inspection gives you documented assurance that the system is safe to use. The sweep removes creosote — the byproduct that accounts for the majority of chimney fires — and clears any debris or blockage that restricts draft. You leave knowing exactly what condition your chimney is in before you light another fire.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title">How Long Will It Last?</span>
+            <p class="blog-body-p" style="margin-top:14px">One inspection covers you for a full burn season. The NFPA recommends annual service regardless of how often the fireplace is used, because even an unused chimney can develop blockages, animal intrusion, and moisture damage between seasons.</p>
+        </div>
+
+        <div class="blog-section">
+            <span class="blog-section-title" style="border-left-color:#1e3480">What Happens If I Don't Address This?</span>
+            <div class="consequences-box" style="margin-top:14px">
+                <p class="blog-body-p" style="margin:0">Creosote accumulates in layers, and each layer is more combustible than the last. Stage 3 glazed creosote burns at temperatures exceeding 2,000°F — well above what the liner and surrounding masonry can survive. The majority of chimney fires start while the household is asleep and go undetected until heat transfers into the wall cavity. By that point, the fire is inside the structure, not inside the flue. Skipping an annual inspection doesn't eliminate the risk — it simply removes the only opportunity to find the problem before it ignites.</p>
             </div>
         </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">How It Works</span>
-            <ul class="steps-list" style="margin-top:20px"><li class="step-row"><div class="step-connector"></div><div class="step-num">1</div><div class="step-content"><p class="step-title">Visual exterior inspection</p><p class="step-desc">We check the crown, cap, flashing, and exposed masonry for cracks, spalling, or deterioration.</p></div></li>
-<li class="step-row"><div class="step-connector"></div><div class="step-num">2</div><div class="step-content"><p class="step-title">Flue brush sweep</p><p class="step-desc">Rotary brushes clear creosote from flue walls top to bottom while a HEPA vacuum captures every particle — your home stays clean.</p></div></li>
-<li class="step-row"><div class="step-connector"></div><div class="step-num">3</div><div class="step-content"><p class="step-title">Firebox and smoke shelf inspection</p><p class="step-desc">We inspect the firebox, damper, and smoke shelf for cracks, blockages, and debris.</p></div></li>
-<li class="step-row"><div class="step-num">4</div><div class="step-content"><p class="step-title">Written report</p><p class="step-desc">You receive a condition report noting creosote classification, any deficiencies found, and recommended next steps.</p></div></li>
-</ul>
-        </div>
-
-        <div class="blog-section">
-            <span class="blog-section-title">Benefits of Professional Level 1 Inspection and Standard Sweep in Cleveland, Ohio</span>
-            <ul class="benefits-list"><li class="benefit-row"><div class="benefit-icon-wrap"><i class="fas fa-check"></i></div><div><p class="benefit-title">Fire prevention</p><p class="benefit-desc">Creosote is the #1 cause of chimney fires. Regular sweeping removes the fuel source before it can ignite.</p></div></li>
-<li class="benefit-row"><div class="benefit-icon-wrap"><i class="fas fa-check"></i></div><div><p class="benefit-title">Early problem detection</p><p class="benefit-desc">Small cracks in the crown or liner caught during inspection cost a fraction of what they cost after a winter of water infiltration.</p></div></li>
-<li class="benefit-row"><div class="benefit-icon-wrap"><i class="fas fa-check"></i></div><div><p class="benefit-title">Code compliance</p><p class="benefit-desc">NFPA 211 and most homeowner insurance policies require annual chimney inspection. Our written report documents compliance.</p></div></li>
-</ul>
-        </div>
-
 
 
                 <div class="related-section">

@@ -247,957 +247,327 @@ def build_service_lookup(service_list):
 
 
 # ── Blog content per service slug ─────────────────────────────────────────────
-# Each entry: intro (str), signs (list), steps (list), benefits (list of (title,desc)), price (str)
+# Each entry: why_need, benefits, longevity, consequences
 
 SERVICE_CONTENT = {
 
-# ─── CHIMNEY ──────────────────────────────────────────────────────────────────
+# ─── CHIMNEY ─────────────────────────────────────────────────────────────────
 
 "chimney-inspection-standard-sweep": {
-    "intro": "An annual chimney inspection and sweep is the single most important maintenance task for any home with a fireplace or wood-burning appliance. Creosote — the tarry byproduct of combustion — builds up inside the flue every time you burn wood. At Stage 3, glazed creosote is highly flammable and the direct cause of most chimney fires. A professional Level 1 inspection catches structural problems, blockages, and deterioration before they become emergencies.\n\nThe National Fire Protection Association (NFPA 211) recommends that chimneys be inspected at least once per year. In colder climates like New Jersey and Cleveland, where fireplaces see heavy winter use and freeze-thaw cycles stress masonry, annual service is essential — not optional.",
-    "signs": [
-        "You haven't had an inspection in over a year",
-        "You notice a strong smoky or acrid odor from the fireplace when not in use",
-        "Smoke backs into the room instead of drawing up the flue",
-    ],
-    "steps": [
-        ("Visual exterior inspection", "We check the crown, cap, flashing, and exposed masonry for cracks, spalling, or deterioration."),
-        ("Flue brush sweep", "Rotary brushes clear creosote from flue walls top to bottom while a HEPA vacuum captures every particle — your home stays clean."),
-        ("Firebox and smoke shelf inspection", "We inspect the firebox, damper, and smoke shelf for cracks, blockages, and debris."),
-        ("Written report", "You receive a condition report noting creosote classification, any deficiencies found, and recommended next steps."),
-    ],
-    "benefits": [
-        ("Fire prevention", "Creosote is the #1 cause of chimney fires. Regular sweeping removes the fuel source before it can ignite."),
-        ("Early problem detection", "Small cracks in the crown or liner caught during inspection cost a fraction of what they cost after a winter of water infiltration."),
-        ("Code compliance", "NFPA 211 and most homeowner insurance policies require annual chimney inspection. Our written report documents compliance."),
-    ],
-    "price": "A standard Level 1 inspection and sweep typically costs $150–$300 depending on flue height and creosote level. Heavy Stage 2 or 3 buildup requiring rotary cleaning is priced separately.",
+    "why_need": "A chimney inspection is needed when you haven't had one in the past year, when you notice odors coming from the fireplace when it isn't in use, or when smoke lingers in the room during a fire. Even if you burn infrequently, a single season of use generates creosote and exposes the masonry to thermal cycling that warrants a professional review.",
+    "benefits": "An annual inspection gives you documented assurance that the system is safe to use. The sweep removes creosote — the byproduct that accounts for the majority of chimney fires — and clears any debris or blockage that restricts draft. You leave knowing exactly what condition your chimney is in before you light another fire.",
+    "longevity": "One inspection covers you for a full burn season. The NFPA recommends annual service regardless of how often the fireplace is used, because even an unused chimney can develop blockages, animal intrusion, and moisture damage between seasons.",
+    "consequences": "Creosote accumulates in layers, and each layer is more combustible than the last. Stage 3 glazed creosote burns at temperatures exceeding 2,000°F — well above what the liner and surrounding masonry can survive. The majority of chimney fires start while the household is asleep and go undetected until heat transfers into the wall cavity. By that point, the fire is inside the structure, not inside the flue. Skipping an annual inspection doesn't eliminate the risk — it simply removes the only opportunity to find the problem before it ignites.",
 },
 
 "chimney-level-2-inspection": {
-    "intro": "A Level 2 chimney inspection uses a video camera to scan every inch of the flue interior — including areas completely inaccessible to visual inspection. It is required by the NFPA whenever a property changes ownership, following any chimney fire or significant event, or when a Level 1 inspection reveals potential structural issues.\n\nFor real estate transactions specifically, a Level 2 inspection provides documented proof of chimney condition for buyers, sellers, and their insurance companies. The camera reveals cracks in flue tile, gaps at joints, and deterioration hidden deep in the flue that no amount of flashlight inspection could find.",
-    "signs": [
-        "You are buying or selling a home with a fireplace",
-        "You recently had a chimney fire, lightning strike, or seismic event",
-        "A Level 1 inspection found indications of potential liner damage",
-    ],
-    "steps": [
-        ("Camera equipment setup", "We lower a high-definition inspection camera from the chimney top, transmitting live footage to a monitor at the firebox."),
-        ("Full-length flue scan", "Every joint, tile section, and transition is captured on video and reviewed in real time."),
-        ("Damage documentation", "Any cracks, gaps, offsets, or deterioration are photographed and timestamped in the report."),
-        ("Written report with images", "You receive a full written report with still images — suitable for real estate disclosure, insurance claims, or repair planning."),
-    ],
-    "benefits": [
-        ("Complete flue visibility", "Camera inspection finds hidden cracks and gaps that are invisible to standard visual inspection but allow combustion gases to escape into framing."),
-        ("Real estate documentation", "A Level 2 report satisfies the documentation requirements for property transfer and provides legal protection for both parties."),
-        ("Accurate repair scoping", "Knowing exactly what is damaged — and where — eliminates guesswork and prevents over- or under-scoping liner and repair work."),
-    ],
-    "price": "Level 2 inspections typically run $250–$500. This includes the camera scan, written report, and still images. The cost is almost always recouped in repair savings or negotiating leverage during real estate transactions.",
+    "why_need": "A Level 2 inspection is required when a home changes ownership, after any chimney fire or seismic event, or when a Level 1 inspection reveals something that a flashlight can't fully assess. If you're buying a home with a fireplace, this inspection is the only way to know the actual condition of the flue interior — not just the parts visible from above and below.",
+    "benefits": "The camera produces a complete visual record of the flue liner from top to bottom, identifying cracks, gaps at tile joints, spalling, and areas of deterioration that standard inspection cannot detect. For real estate transactions, the written report provides documented proof of condition for both parties and their insurers.",
+    "longevity": "The inspection report reflects the condition at the time of assessment. Subsequent use, weather events, or settling may change conditions, but a clean report at purchase gives you an accurate baseline for future comparisons.",
+    "consequences": "Flue liner cracks are invisible without a camera. A hairline fracture in a clay tile liner is enough to allow carbon monoxide — the product of incomplete combustion — to migrate into the living space through the surrounding masonry. CO is odorless, colorless, and accumulates gradually. Most CO incidents attributed to fireplaces and heating appliances trace back to compromised flue liners that were never assessed. Buying a home without a Level 2 inspection means accepting an unknown risk with potentially serious health consequences.",
 },
 
 "creosote-rotary-cleaning": {
-    "intro": "Standard chimney brushes remove Stage 1 creosote — the powdery, flaky buildup from normal use. But Stage 2 (tar-like, crunchy) and Stage 3 (glazed, shiny) creosote cannot be removed with brushes alone. These dense deposits cling to flue walls and require mechanical rotary cleaning systems that physically grind and break down the buildup.\n\nIgnoring heavy creosote is not an option. Stage 3 glazed creosote is extremely flammable and burns at temperatures that can crack flue tiles, warp metal liners, and ignite adjacent wood framing. A chimney fire can reach 2,000°F — well beyond what most chimneys are designed to withstand.",
-    "signs": [
-        "Your last inspection classified creosote at Stage 2 or Stage 3",
-        "You burn green or unseasoned wood regularly",
-        "You notice a strong, acrid smell from the fireplace even when it is not in use",
-    ],
-    "steps": [
-        ("Creosote classification", "We inspect and classify the buildup level before selecting the appropriate cleaning method."),
-        ("Rotary drill system", "Mechanical rotary heads are lowered into the flue and spin against the deposits, breaking them free from the liner walls."),
-        ("Vacuum containment", "A high-powered HEPA vacuum keeps all dislodged material contained — nothing enters your living space."),
-        ("Post-clean inspection", "After cleaning, we inspect the liner for any damage revealed beneath the buildup and document the final condition."),
-    ],
-    "benefits": [
-        ("Fire hazard elimination", "Removing Stage 2 and 3 creosote eliminates the primary fuel source for chimney fires — the most important safety step you can take."),
-        ("Improved draft", "Heavy creosote restricts the flue opening, reducing draft and causing smoke to back up into the home. Cleaning restores proper airflow."),
-        ("Liner preservation", "Acidic creosote accelerates corrosion of metal liners and deterioration of clay tiles. Removing it early extends liner life significantly."),
-    ],
-    "price": "Heavy creosote rotary cleaning typically costs $250–$500 above a standard sweep, depending on the degree of buildup and flue length. Chemical treatments for Stage 3 may add $100–$200.",
+    "why_need": "Heavy rotary cleaning is needed when a standard sweep finds Stage 2 or Stage 3 creosote buildup — the kind that forms a tar-like glaze on the flue walls rather than brushing out as powder. This happens when wood is burned at low temperatures, when green or unseasoned wood is used, or when the appliance is consistently under-fired.",
+    "benefits": "Rotary cleaning physically removes the glazed deposit that standard brushes can't dislodge. After treatment, the flue is clear and the primary fuel source for a chimney fire is gone. The improvement in draft is often immediate and noticeable.",
+    "longevity": "A single rotary cleaning resolves the immediate hazard. Preventing recurrence requires burning dry, well-seasoned hardwood at adequate temperature, which produces far less creosote per cord than low-temperature smoldering fires.",
+    "consequences": "Stage 3 glazed creosote is classified as the most dangerous chimney condition that exists. It burns at temperatures that exceed what any residential flue liner is engineered to contain. When it ignites — and it will, given the right conditions — the heat transfer into the surrounding masonry and framing happens faster than a standard chimney fire. There is no partial outcome. The liner fractures, the surrounding structure reaches ignition temperature, and the fire moves into the wall. This is not a theoretical risk; it is a well-documented failure mode that fire investigators see repeatedly.",
 },
 
 "chimney-cap-installation": {
-    "intro": "An uncapped chimney flue is an open invitation — for rain, snow, animals, and debris. Every rainstorm sends water directly into the flue, saturating the masonry and accelerating freeze-thaw deterioration. Birds, squirrels, and raccoons find open flues irresistible nesting sites. A properly fitted stainless steel chimney cap solves all of these problems at once.\n\nChimney caps are among the best investments in chimney longevity. A $200–$300 cap can prevent thousands in water damage repairs, animal removal costs, and liner deterioration over its lifetime. Stainless steel caps are virtually maintenance-free and carry lifetime warranties.",
-    "signs": [
-        "Water appears in the firebox or smoke shelf after rain",
-        "You hear scratching or rustling sounds inside the chimney",
-        "You find leaves, twigs, or debris on the smoke shelf",
-    ],
-    "steps": [
-        ("Flue measurement", "We measure the exterior flue tile dimensions precisely — an improperly sized cap either falls in or fails to seal the opening."),
-        ("Cap selection", "We select a stainless steel cap with mesh sides to keep animals out while allowing exhaust to exit freely."),
-        ("Secure installation", "The cap is fastened with stainless steel screws or a compression-fit band, depending on flue tile type."),
-        ("Draft and fit verification", "We confirm the cap does not restrict draft and is correctly aligned over the flue opening."),
-    ],
-    "benefits": [
-        ("Water exclusion", "A properly fitted cap prevents direct rainfall from entering the flue — the leading cause of liner corrosion, mortar deterioration, and masonry damage."),
-        ("Animal exclusion", "Stainless mesh sides block birds, bats, squirrels, and raccoons from entering the flue and nesting."),
-        ("Debris and ember protection", "Caps also catch embers traveling up the flue, reducing ember-related roof fire risk in wildfire-adjacent areas."),
-    ],
-    "price": "Single-flue stainless steel cap installation typically costs $150–$350 depending on flue size and accessibility. Custom-sized caps for non-standard flues run $250–$500.",
+    "why_need": "A chimney cap is needed when the flue has no cover at all, when the existing cap is rusted through or structurally compromised, or after any repair work that requires removing the old cap. An uncapped flue is exposed to rain, debris, and wildlife year-round.",
+    "benefits": "A correctly fitted stainless steel cap prevents rain from entering the flue, blocks animals and birds from nesting inside, and keeps leaves and debris out of the firebox. The mesh sides also act as a spark arrester, preventing burning embers from landing on the roof.",
+    "longevity": "Quality stainless steel caps are rated for 20 or more years without corrosion under normal conditions. Unlike galvanized caps, they do not rust and do not require periodic replacement.",
+    "consequences": "An open flue collects rain with every storm. That water sits at the base of the firebox, saturates the smoke shelf, rusts the damper plate, and migrates into the surrounding masonry joints. One nesting season from a bird or raccoon can fill the flue with dry organic material — the exact fuel needed to convert a normal chimney fire into an uncontrolled one. The cap is one of the least expensive components in the system, and its absence accelerates deterioration across every other component.",
 },
 
 "custom-chimney-cap-installation": {
-    "intro": "Chimneys with multiple flues — or those using a prefabricated factory-built system — require a different approach than a standard single-flue cap. A top-mount cap covers the entire chimney top, protecting every flue opening simultaneously and providing a clean, uniform appearance from the roofline.\n\nCustom top-mount caps are fabricated to fit the exact dimensions of your chimney's crown, ensuring no gaps between the cap base and the masonry surface. This eliminates the water infiltration points that individual single-flue caps leave exposed on multi-flue chimneys.",
-    "signs": [
-        "Your chimney has two or more flue openings",
-        "You have a prefabricated factory-built chimney system with a metal chase",
-        "Water enters the chimney despite having individual flue caps installed",
-    ],
-    "steps": [
-        ("Crown measurement", "We measure the full chimney crown dimensions to fabricate or select the correctly sized top-mount cap."),
-        ("Cap selection or fabrication", "Standard top-mount caps are available for common sizes; non-standard chimneys require custom fabrication."),
-        ("Crown surface preparation", "Any loose mortar or debris on the crown surface is cleared to ensure full contact and seal."),
-        ("Installation and sealing", "The cap is fastened at multiple points and the perimeter is sealed with an appropriate masonry sealant."),
-    ],
-    "benefits": [
-        ("Complete top protection", "A single top-mount cap protects every flue opening, every gap in the crown, and the mortar wash in one installation."),
-        ("Water diversion", "The sloped cap surface sheds water away from the crown and chimney top, significantly reducing moisture absorption."),
-        ("Unified appearance", "Top-mount caps give multi-flue chimneys a clean, intentional look rather than a collection of mismatched individual caps."),
-    ],
-    "price": "Custom top-mount cap installation typically costs $350–$700 depending on chimney dimensions and whether the cap requires custom fabrication.",
+    "why_need": "A custom or multi-flue cap is needed when a prefab single-flue cap won't fit the chimney top due to an irregular shape, multiple flue openings, or a decorative chimney that requires a fitted cover. These situations are common in older homes and in chimneys serving multiple fireplaces or a fireplace combined with a furnace flue.",
+    "benefits": "A single fitted cap protects every flue simultaneously, eliminating the gaps and misalignments that occur when multiple individual caps are used. The custom fit ensures proper water shedding and closes every opening with a consistent seal.",
+    "longevity": "A properly fabricated stainless steel custom cap lasts 15 to 25 years and requires no maintenance beyond an occasional visual check after major storms.",
+    "consequences": "Every uncapped flue on a chimney top is a separate point of water and wildlife entry. In a multi-flue system, neglecting even one opening allows damage to progress in that portion of the chimney while the others remain protected. Water penetration through an unprotected flue travels down the shared masonry structure, affecting all flues as the moisture works outward through the mortar joints.",
 },
 
 "chase-cover-replacement": {
-    "intro": "Prefabricated factory-built chimney systems — common in homes built after 1980 — use a metal chase (an enclosure around the flue pipe) instead of traditional masonry. These chases rely on a flat metal chase cover to protect the interior from weather. The problem: most factory-installed chase covers are galvanized steel, and in the wet climates of New Jersey and northeastern Ohio, they rust through within 10–15 years.\n\nA rusting chase cover is immediately visible as rust-colored stains streaking down the white or painted chase enclosure. More critically, a deteriorated cover allows water to pool inside the chase, accelerating corrosion of the flue pipe and damaging the chimney interior.",
-    "signs": [
-        "Orange or brown rust stains streaking down the sides of your chimney chase",
-        "Water dripping inside the fireplace or visible water inside the chase enclosure",
-        "The existing cover is visibly buckled, rusted, or has holes",
-    ],
-    "steps": [
-        ("Old cover removal", "We safely remove the deteriorated cover and dispose of it — exposing the full chase top for inspection."),
-        ("Chase top inspection", "We inspect the flue pipe, any visible interior surfaces, and the chase framing for water damage."),
-        ("New cover installation", "A new stainless steel or aluminum cover is fitted precisely to the chase dimensions with a positive slope for water runoff."),
-        ("Perimeter sealing", "All edges are sealed with a weatherproof sealant to prevent any water infiltration at the seam."),
-    ],
-    "benefits": [
-        ("Rust prevention", "Stainless steel chase covers will not rust — ever. One replacement eliminates the 10–15 year replacement cycle of galvanized steel."),
-        ("Interior protection", "A properly fitted cover keeps rain, snow, and ice out of the chase interior, preventing pipe corrosion and frame rot."),
-        ("Curb appeal restoration", "Rust stains on chase enclosures are visible from the street. A new cover stops the staining immediately."),
-    ],
-    "price": "Chase cover replacement typically costs $200–$500 depending on chase dimensions and material selected. Stainless steel covers cost more upfront but eliminate future replacement.",
+    "why_need": "A chase cover replacement is needed on prefabricated chimney systems when the factory-installed galvanized cover shows visible rust, holes, or deformation. These covers typically begin to fail within 5 to 10 years because galvanized steel is not designed for continuous outdoor exposure in climates with freeze-thaw cycles.",
+    "benefits": "A stainless steel replacement cover completely waterproofs the top of the chimney chase, eliminating the primary source of water entry into the prefabricated system. It also stops the rust staining that commonly appears on siding below a deteriorating galvanized cover.",
+    "longevity": "Stainless steel chase covers last 20 or more years without corrosion — typically outlasting the chimney system they protect.",
+    "consequences": "When a chase cover rusts through, every rainfall delivers water directly into the chase cavity. The wood framing that supports the prefabricated flue sections is not treated for moisture exposure. It begins to absorb water and rot while hidden inside the chase. By the time ceiling staining or wall dampness appears inside the home, the structural members inside the chase have often been degrading for an entire season. What would have been a $300 cover replacement becomes a structural repair involving disassembly of the chase cladding.",
 },
 
 "chimney-waterproofing": {
-    "intro": "Brick and mortar are porous — they absorb water. On an unprotected chimney, every rain event saturates the masonry and every freeze-thaw cycle (common in both New Jersey and Cleveland) forces that absorbed water to expand inside the brick, spalling the face and crumbling the mortar. Over years, this is the mechanism that destroys chimneys from the outside in.\n\nPenetrating chimney waterproofer — different from ordinary paint or sealer — soaks into the masonry and bonds with the mineral structure, blocking liquid water while remaining vapor-permeable. This means moisture trapped inside the masonry can still escape as vapor, preventing the efflorescence and trapped-moisture damage that paint causes.",
-    "signs": [
-        "White chalky stains (efflorescence) on chimney brick — a sign that water is moving through the masonry",
-        "Brick faces that are crumbling, flaking, or pitting (freeze-thaw spalling)",
-        "Mortar joints that look eroded or set back from the brick face",
-    ],
-    "steps": [
-        ("Surface preparation", "The chimney is dry-brushed and any loose material removed. Application on a damp surface or before rain is avoided."),
-        ("Repair first", "Any significant cracks, failed mortar, or damaged crown are addressed before waterproofing — sealing over damage locks moisture in."),
-        ("Waterproofer application", "A penetrating, vapor-permeable masonry waterproofer is applied by brush or sprayer to full saturation — two coats minimum."),
-        ("Cure time", "The product requires 24–48 hours to fully cure before rain exposure. We schedule accordingly."),
-    ],
-    "benefits": [
-        ("Freeze-thaw protection", "By blocking liquid water absorption, waterproofing prevents the freeze-thaw cycle that is the leading cause of brick spalling and mortar deterioration."),
-        ("Efflorescence prevention", "No water movement through the masonry means no mineral salt deposits forming on the brick surface."),
-        ("Investment protection", "Waterproofing applied after tuckpointing or crown repair protects the new mortar and extends the life of that repair significantly."),
-    ],
-    "price": "Chimney waterproofing typically costs $150–$350 depending on chimney size. It is most cost-effective when combined with tuckpointing or other masonry repair, as mobilization costs are shared.",
+    "why_need": "Chimney waterproofing is recommended after any masonry repair and on any chimney showing signs of water absorption — efflorescence staining, spalling brick faces, or damp interior walls near the fireplace. Brick and mortar are naturally porous and absorb water unless treated.",
+    "benefits": "A vapor-permeable water repellent penetrates the masonry and prevents liquid water absorption while still allowing moisture vapor inside the brick to escape outward. This stops the freeze-thaw damage cycle without trapping moisture in the wall.",
+    "longevity": "A professional-grade masonry water repellent application lasts 5 to 10 years depending on exposure. Reapplication after that period maintains continuous protection.",
+    "consequences": "Untreated chimney masonry acts like a sponge during rain events. In winter, the absorbed water expands as it freezes and mechanically fractures the brick face from the inside — a process called spalling. Each spalled face exposes fresh, unweathered masonry that absorbs even more water in the next storm cycle. The deterioration compounds each year. What starts as surface scaling eventually reaches the structural core of the chimney, at which point individual brick replacement is no longer sufficient and sections of the stack need to be rebuilt.",
 },
 
 "chimney-flashing-repair": {
-    "intro": "Step flashing and counter flashing form the water seal at the junction between your chimney and roof — the most vulnerable water entry point on any home with a chimney. When this flashing fails, water runs directly into the gap between the chimney and the roof decking, travels down rafters, and appears as ceiling stains inside the home — often far from the chimney itself.\n\nFlashing failure is almost always the cause when homeowners report a 'chimney leak' after inspection shows no crown, cap, or mortar problems. Failed caulk, lifting counter flashing, or corroded step flashing are the most common culprits, and all are fully repairable without roof replacement.",
-    "signs": [
-        "Water stains on the ceiling inside the home in the vicinity of the chimney",
-        "Visible rust staining or lifted edges on the flashing at the roof-chimney junction",
-        "Daylight or gaps visible between the flashing and the chimney masonry",
-    ],
-    "steps": [
-        ("Leak source diagnosis", "We distinguish flashing failure from crown, cap, or mortar leaks through a systematic inspection — the repair approach depends on the source."),
-        ("Old flashing removal", "Deteriorated step flashing is removed from between shingle courses and old counter flashing is stripped from the chimney."),
-        ("Step flashing installation", "New galvanized or aluminum step flashing is woven between shingle courses along both sides of the chimney."),
-        ("Counter flashing and sealant", "New counter flashing is secured into the chimney mortar joints and sealed with an appropriate roofing-grade caulk at all edges."),
-    ],
-    "benefits": [
-        ("Leak elimination", "Correctly installed step and counter flashing is the only reliable long-term solution for chimney-adjacent water intrusion — caulk-only 'repairs' fail within 2–3 years."),
-        ("Structural protection", "Stopping water infiltration at the flashing prevents ongoing deterioration of roof decking, rafters, and ceiling materials."),
-        ("Insurance documentation", "A written report of the flashing repair and the leak source provides documentation for homeowner insurance claims if interior damage is present."),
-    ],
-    "price": "Chimney flashing repair typically costs $350–$900 depending on chimney size, roof pitch, and how much of the flashing system needs replacement.",
+    "why_need": "Flashing repair is needed when water is entering the home at the roof-chimney junction — visible as staining on the ceiling or walls near the fireplace, or as water in the firebox after rain. Flashing can fail due to rust, improper installation, sealant breakdown, or movement from the chimney settling independently of the roof structure.",
+    "benefits": "Properly installed counterflashing and step flashing creates a mechanical water barrier that moves with both the chimney and the roof without breaking the seal. When done correctly, it is the most durable waterproofing solution at the most leak-prone intersection on the entire roof.",
+    "longevity": "Lead or copper flashing installed correctly lasts 20 to 30 years. Aluminum flashing in a quality installation lasts 15 to 20 years. Sealant-only repairs require reapplication every 3 to 5 years.",
+    "consequences": "The roof-chimney intersection is where two building systems with different movement characteristics meet. Water that enters at this joint doesn't stay where it lands — it follows framing, insulation, and vapor barriers until it pools somewhere lower. The visible water stain on the ceiling is the end of a path that may have started several feet away. While you're looking at one wet spot, the sheathing, insulation, and framing above are saturated. Structural rot at rafter tails and sheathing edges sets in quietly, and by the time a ceiling needs replacement, the scope of damage is already well beyond the original flashing.",
 },
 
 "chimney-leak-repair": {
-    "intro": "Chimney leaks are among the most misdiagnosed home repair problems. Water appearing in the firebox or on the ceiling near a chimney can originate from a failed crown, deteriorated flashing, a missing or damaged cap, cracked mortar joints, a cracked liner, or condensation — and each source requires a completely different repair. Treating the symptom without finding the source results in repeat leaks.\n\nOur leak diagnosis process is systematic and thorough. We work from the top of the chimney down, ruling out each potential source before recommending repairs. In many cases, a single afternoon of investigation reveals a straightforward fix that a previous contractor missed.",
-    "signs": [
-        "Water appears in the firebox, particularly after rain",
-        "You see ceiling stains or peeling paint near the chimney in upper floors or attic",
-        "A musty or moldy odor comes from the fireplace",
-    ],
-    "steps": [
-        ("Top-down inspection", "We start at the cap and crown, then check flashing, mortar joints, and finally the liner — ruling out sources systematically."),
-        ("Moisture testing if needed", "We use a garden hose test or moisture meter to isolate the specific entry point when the source is not visually obvious."),
-        ("Root-cause repair", "We repair the actual source — whether that is a new crown, flashing work, tuckpointing, or cap installation."),
-        ("Follow-up verification", "After repair, we verify the fix with a water test and confirm no secondary sources remain."),
-    ],
-    "benefits": [
-        ("Permanent resolution", "Finding and fixing the actual source — not just caulking over symptoms — produces a repair that lasts rather than one that fails after the next rainstorm."),
-        ("Damage prevention", "Water inside a chimney accelerates liner corrosion, masonry deterioration, and in worst cases, structural damage to adjacent framing."),
-        ("Clear documentation", "Our written diagnosis report is valuable for insurance claims, future buyers, and understanding what your chimney actually needs."),
-    ],
-    "price": "Leak diagnosis starts at $150–$250 for inspection and report, applied toward repair costs. Total repair cost depends on source: cap installation ($150–$350), flashing ($350–$900), tuckpointing ($400–$2,000+).",
+    "why_need": "A chimney leak repair is needed when there is active water intrusion through the chimney — whether at the crown, through the masonry, at the flashing, or through a missing cap. The symptom is usually water in the firebox, staining on the breast wall, or damp plaster near the chimney, but the source is almost never where the symptom appears.",
+    "benefits": "A proper leak diagnosis identifies all contributing sources rather than treating only the visible symptom. Repairing the actual entry point stops the water and allows the surrounding materials to dry out and stabilize.",
+    "longevity": "A comprehensive repair addressing crown, flashing, masonry, and waterproofing together typically provides 10 to 15 years of protection before any component requires attention.",
+    "consequences": "Water inside a chimney has nowhere to drain. It saturates brick, breaks down mortar, rusts cast iron and steel components, and migrates outward into wall cavities and framing. Masonry that stays wet through winter undergoes repeated freeze-thaw cycling that accelerates deterioration at a rate that dry masonry never experiences. Each week a leak continues, the moisture front advances further into adjacent materials. The cost of repair grows not linearly but exponentially — the first month may affect only the firebox, but by the second season, the surrounding framing and drywall are involved.",
 },
 
 "chimney-animal-removal": {
-    "intro": "An uncapped chimney is the most attractive nesting site in your neighborhood for raccoons, squirrels, birds, and bats. Chimney swifts, in particular, are federally protected migratory birds that nest exclusively in chimneys — and once nesting begins in spring, the flue cannot legally be disturbed until the birds migrate in fall.\n\nApart from the noise and odor, nesting animals create real fire hazards. Nests built from twigs, leaves, and debris in the smoke shelf and lower flue are highly flammable. Animal carcasses in the flue can cause dangerous carbon monoxide backup. The solution is humane removal, thorough cleaning, and immediate cap installation to prevent any return.",
-    "signs": [
-        "Scratching, chirping, or rustling sounds from inside the chimney, especially at dawn and dusk",
-        "Strong ammonia or decay odor coming from the fireplace",
-        "Twigs, leaves, or debris visible on the smoke shelf when you open the damper",
-    ],
-    "steps": [
-        ("Species identification", "We identify what type of animal is present before attempting removal — protected species require different protocols than unprotected ones."),
-        ("Humane removal", "Animals are removed using appropriate methods for the species and situation, without harm."),
-        ("Full flue sweep", "After removal, we conduct a complete sweep to clear nesting material, debris, and any carcasses from the entire flue."),
-        ("Cap installation", "We install a stainless steel cap immediately after cleaning to permanently prevent re-entry."),
-    ],
-    "benefits": [
-        ("Fire hazard elimination", "Nesting material in the flue is a serious fire risk. Complete removal of all debris eliminates this hazard before the heating season."),
-        ("Carbon monoxide prevention", "Decomposing animal remains and nest material can cause dangerous CO backup into the home — removal eliminates this risk."),
-        ("Permanent exclusion", "Cap installation after removal is the only way to guarantee animals cannot return — without it, you will have the same problem next season."),
-    ],
-    "price": "Chimney animal removal typically costs $200–$450 depending on species and the extent of nest material. Cap installation is additional at $150–$350 and is strongly recommended as part of the same service call.",
+    "why_need": "Animal removal is needed when you hear scratching, chirping, or movement in the chimney, when there is an unusual odor from the fireplace when it is not in use, or when nesting material is visible in the firebox. Common species are chimney swifts, starlings, raccoons, and squirrels.",
+    "benefits": "Professional removal addresses the animal, the nesting material and debris left behind, and the entry point — typically an uncapped flue. The combination of removal and cap installation ensures the problem doesn't recur the following season.",
+    "longevity": "Once the animal is removed and the flue is properly capped, re-entry is permanently prevented. The cap itself lasts 20 or more years.",
+    "consequences": "Nesting material inside a flue is composed of dry organic matter — twigs, leaves, feathers, and debris — packed into the exact space that combustion gases must travel through. A single spark from the firebox is enough to ignite it. Birds that are legally protected under the Migratory Bird Treaty Act, such as chimney swifts, cannot be disturbed during nesting season, which means that if nesting is already underway when you light a fire, you have no legal option to remove them until the season ends — and no safe option to use the fireplace in the meantime. Animals that die in the flue create a complete blockage and a decomposition odor that permeates the entire house.",
 },
 
 "chimney-crown-repair": {
-    "intro": "The chimney crown is the concrete or mortar cap that covers the top of the chimney, sloping away from the flue liner to direct water off the chimney top. When the crown cracks — as it does on almost every chimney over 15–20 years due to thermal expansion and freeze-thaw stress — water enters directly into the masonry below the cap line.\n\nElastomeric crown repair is the industry-preferred method for cracks up to about a quarter inch wide. A flexible elastomeric compound is forced into cracks and spread over the entire crown surface, creating a watertight, flexible membrane that moves with the masonry rather than cracking again at the repair points.",
-    "signs": [
-        "Visible cracks running across the crown surface, particularly radiating from the flue liner",
-        "Spalling or flaking at the crown edges where it overhangs the chimney",
-        "Water appears in the firebox after rain even though the cap is in place",
-    ],
-    "steps": [
-        ("Crack assessment", "We measure crack width and depth to determine whether elastomeric repair or full crown rebuild is appropriate."),
-        ("Surface cleaning", "Loose material is removed and the crown is thoroughly dried before any compound is applied."),
-        ("Crack filling", "Cracks are filled with flexible elastomeric sealant, forced fully into the crack depth."),
-        ("Full crown coat", "The entire crown surface — including the area around the flue liner — is coated with elastomeric compound for complete waterproofing."),
-    ],
-    "benefits": [
-        ("Flexible waterproofing", "Unlike rigid mortar patches that crack again at the repair point, elastomeric compound flexes with thermal movement — repairs that hold through multiple freeze-thaw cycles."),
-        ("Masonry protection", "A sealed crown stops the primary water entry point that drives deterioration in the masonry courses below."),
-        ("Cost-effective repair", "Crown repair at the crack stage costs a fraction of a full crown rebuild — catching it early is the most cost-effective chimney maintenance step."),
-    ],
-    "price": "Chimney crown repair typically costs $200–$500 depending on crown size and the extent of cracking. Full crown rebuilds are necessary when damage is too extensive for elastomeric repair.",
+    "why_need": "Crown repair is needed when the chimney crown — the concrete cap that seals the top of the masonry around the flue tile — shows hairline cracks, surface scaling, or early breakdown. This is the most common chimney repair needed after the first ten years on most masonry chimneys.",
+    "benefits": "An elastomeric coating bridges hairline cracks, restores water resistance to the crown surface, and extends the serviceable life of the crown without requiring a full rebuild. It is applied in a single visit and cures quickly.",
+    "longevity": "A quality elastomeric crown coating lasts 5 to 10 years and can be reapplied when it begins to show wear. It is a fraction of the cost of a crown rebuild and provides genuine structural protection when the underlying concrete is still sound.",
+    "consequences": "Cracks in the chimney crown are the beginning of a documented failure sequence. Water enters the crack, freezes, expands, and widens the crack over winter. The process repeats each season. A crack that is 1/16 of an inch in October is often 1/4 inch by spring. Within two to three winters, the crown breaks into sections and pieces begin falling into the flue and onto the roof. At that point, a coating is no longer sufficient — a full rebuild is required at two to three times the cost of a timely repair.",
 },
 
 "chimney-crown-rebuild": {
-    "intro": "When a chimney crown is severely deteriorated — missing sections, crumbling at the edges, or broken down to the brick course below — elastomeric coating is no longer sufficient. A full crown rebuild removes all deteriorated material and pours a new properly designed concrete crown from scratch.\n\nA properly built chimney crown has two features most original crowns lack: an overhang beyond the chimney face with a drip edge to direct water away from the masonry below, and sufficient thickness (at least 2 inches at the thinnest point) to resist cracking. Many original crowns are thin, poorly formed, and bond directly to the flue liner — all design failures that cause premature cracking.",
-    "signs": [
-        "The crown has multiple large cracks or sections that are completely missing",
-        "The crown surface is crumbling and material falls off when touched",
-        "The crown is bonded directly to the flue liner with no expansion joint",
-    ],
-    "steps": [
-        ("Demo and removal", "All deteriorated crown material is removed down to the top course of chimney brick. Material is bagged and removed from the roof."),
-        ("Flue liner preparation", "The area around the flue liner is prepped and a bond breaker applied where the new crown will meet the liner — allowing independent movement."),
-        ("Form and pour", "A form is built to create the proper overhanging profile, and concrete mixed to the correct water-cement ratio is poured and screeded."),
-        ("Final seal", "After curing, the finished crown receives an elastomeric coat for additional waterproofing and surface protection."),
-    ],
-    "benefits": [
-        ("Correct design", "A rebuilt crown has the proper overhang, drip edge, slope, and thickness that most original crowns lack — designed to last 20+ years rather than 10."),
-        ("Flue liner protection", "The new crown seals the vulnerable area around the flue liner opening that is the primary entry point for water and debris."),
-        ("Fresh 20-year baseline", "A new crown resets the maintenance clock on the most exposed and weather-vulnerable component of the chimney system."),
-    ],
-    "price": "Full chimney crown rebuilds typically cost $500–$1,200 depending on chimney size, roof accessibility, and crown dimensions. The investment prevents far more expensive masonry repairs below.",
+    "why_need": "A full crown rebuild is needed when the existing crown is crumbling, missing sections, or has deteriorated beyond what elastomeric coating can address. This is typically the case in chimneys that have gone without maintenance for many years or where a previous crown was improperly installed — too thin, without a proper overhang, or without a drip edge.",
+    "benefits": "A properly constructed crown — with the correct thickness, overhang, drip edge, and slope — sheds water completely away from the masonry below. It is the single most important protective element at the top of a masonry chimney.",
+    "longevity": "A well-built chimney crown using proper concrete mix and dimensions lasts 15 to 25 years. Combined with a waterproof coating at installation, it can last significantly longer.",
+    "consequences": "A chimney without a functioning crown is an open masonry cavity pointed at the sky. Every rain event drives water into the flue, the surrounding brick, and the mortar joints below the crown level. The brick directly below the crown is the first to show spalling and deterioration because it receives the most concentrated water exposure. As the crown material falls away, the falling debris can damage the flue liner below. The deterioration moves downward through the entire chimney stack, and by the time the crown is rebuilt, portions of the upper courses of brick typically require rebuilding as well.",
 },
 
 "chimney-tuckpointing": {
-    "intro": "Mortar is the weak link in any masonry structure. Brick and stone are essentially indestructible over human timescales — the mortar between them is not. In the wet climates of New Jersey and northeastern Ohio, mortar joints absorb water, and each freeze-thaw cycle erodes the mortar face and opens joints wider. Left untreated, deteriorated joints allow water to penetrate the chimney interior, saturating the surrounding brickwork and eventually causing the bricks themselves to crack and spall.\n\nTuckpointing — the process of grinding out deteriorated mortar and packing in fresh mortar — is the most important preventive maintenance you can perform on a brick chimney. Done at the right time, it costs $500–$2,000. Ignored for another decade, the same chimney may require a partial or full rebuild at $3,000–$10,000.",
-    "signs": [
-        "Mortar joints that appear recessed, eroded, or set back from the brick face",
-        "Visible gaps or holes in the mortar between bricks",
-        "White efflorescence staining on the brick surface indicating water is moving through the joints",
-    ],
-    "steps": [
-        ("Joint depth assessment", "Deteriorated mortar must be ground out to at least 3/4 inch to ensure the new mortar has enough depth to bond properly."),
-        ("Angle grinder removal", "We use a 4-inch angle grinder with a mortar-raking blade to remove deteriorated material cleanly without damaging brick faces."),
-        ("Mortar matching", "We assess the existing mortar color, texture, and joint profile to mix a matching Type S mortar."),
-        ("Packing and tooling", "New mortar is packed firmly into the joint in layers, then tooled to match the original profile — typically concave, V-shaped, or weathered."),
-    ],
-    "benefits": [
-        ("Water exclusion", "Tight mortar joints are the primary defense against water infiltration in a masonry chimney — repointing restores this protection."),
-        ("Structural integrity", "Open joints allow the bricks to shift and spall as water freezes inside them. Repointing stabilizes the masonry and stops brick loss."),
-        ("Investment protection", "Tuckpointing at the right time costs a fraction of the masonry repair or rebuild required if joints are ignored until bricks fail."),
-    ],
-    "price": "Chimney tuckpointing typically costs $500–$2,500 depending on chimney size, height, accessibility, and the extent of joint deterioration. Free estimates are provided before any work begins.",
+    "why_need": "Tuckpointing is needed when the mortar joints between chimney bricks have eroded to the point where they are visibly recessed, crumbling, or missing. This is a normal part of the chimney lifecycle — mortar is the sacrificial component designed to absorb weathering stress so the bricks don't have to.",
+    "benefits": "Fresh mortar restores the structural bond between bricks, closes the water infiltration pathways at every joint, and stabilizes the chimney stack against the movement and settling that occurs naturally over time. The process involves removing the deteriorated mortar and packing new mortar that is matched to the original in composition and color.",
+    "longevity": "Quality tuckpointing using the correct mortar type for the existing brick typically lasts 20 to 30 years. Using the wrong mortar — typically a mix that is too hard for older soft brick — causes accelerated failure and can trap moisture in the brick itself.",
+    "consequences": "Mortar exists to fail before brick does. When it's gone, the freeze-thaw cycle that was destroying the mortar begins destroying the brick instead. Bricks crack from the face inward, and once the face of a brick spalls off, it cannot be repointed — it must be replaced. Brick replacement is more expensive and more disruptive than tuckpointing, and the window for tuckpointing closes as soon as the bricks themselves begin to fail. In most cases, every year of deferred tuckpointing doubles the scope of the eventual repair.",
 },
 
 "firebox-rebricking": {
-    "intro": "The firebox is the combustion chamber where fires burn, and every surface inside it must be able to withstand repeated thermal cycling to 1,000°F or more. Firebrick and refractory mortar — the materials that line a firebox — are engineered specifically for this environment. Standard brick and standard mortar are not.\n\nWhen firebrick cracks or spalls, it creates gaps that allow combustion gases and excessive heat to contact the surrounding framing and masonry. This is both a fire safety issue and a carbon monoxide risk. Cracked refractory panels in zero-clearance prefabricated fireplaces present the same hazard. Either way, the fireplace should not be used until the damaged material is replaced.",
-    "signs": [
-        "Cracks running through firebrick, particularly on the back wall of the firebox",
-        "Firebrick faces that are spalling, crumbling, or falling out",
-        "Refractory panels (in prefab fireplaces) that are cracked or broken",
-    ],
-    "steps": [
-        ("Damage assessment", "We determine whether the damage is limited to the firebox or extends to the smoke chamber and lower flue — critical for scoping the full repair."),
-        ("Brick and panel removal", "Damaged firebrick or refractory panels are carefully removed to avoid disturbing the surrounding structure."),
-        ("Refractory installation", "New firebrick is set using refractory mortar rated for continuous firebox temperatures — standard mortar cannot be substituted."),
-        ("Cure and safety check", "After installation, the mortar requires curing time before first use. We document completion for insurance or warranty purposes."),
-    ],
-    "benefits": [
-        ("Fire safety restoration", "Intact firebrick prevents combustion heat from reaching adjacent wood framing — the primary purpose of the firebox lining."),
-        ("Carbon monoxide protection", "Sealed firebox walls prevent combustion gases from escaping into wall cavities and entering living spaces."),
-        ("Fireplace usability", "A repaired firebox restores full, safe use of your fireplace — damaged fireboxes should not be used until repairs are complete."),
-    ],
-    "price": "Firebox rebricking or refractory panel replacement typically costs $400–$1,500 depending on the extent of damage and whether it involves brick or prefab panels.",
+    "why_need": "Firebox rebricking or refractory panel replacement is needed when the interior lining of the firebox — the firebricks or panels that directly face the fire — shows cracking, spalling, or sections that have broken away. This lining is rated for sustained high heat; the surrounding masonry is not.",
+    "benefits": "Replacing damaged firebricks or refractory panels restores the thermal barrier between the fire and the structural masonry. After repair, the firebox can be used safely at full capacity without concern about heat transfer to adjacent materials.",
+    "longevity": "Properly installed firebrick or refractory panels last 15 to 20 years or more under normal residential use. The lifespan shortens with very frequent burning or use of materials that burn hotter than the firebox is rated for.",
+    "consequences": "A cracked or missing firebrick is a gap in the thermal containment system. Heat that should stay within the firebox begins transferring into the surrounding masonry with each fire. This is not a theoretical concern — it is a physical reality that occurs at every fire built in front of a compromised firebox. The surrounding masonry heats beyond design limits, and the framing members nearby begin experiencing thermal exposure they were never designed for. Insurance carriers and fire investigators consistently identify compromised fireboxes as a contributing factor in structure fires that originate at the fireplace.",
 },
 
 "firebox-rebuild": {
-    "intro": "A full firebox rebuild is necessary when damage is too extensive for patching — multiple structural cracks, missing bricks, a collapsed back wall, or a firebox that was never correctly constructed. Unlike rebricking, which replaces individual damaged components, a rebuild involves removing the entire firebox lining and reconstructing it from scratch to correct dimensions and specifications.\n\nFirebox geometry matters more than most homeowners realize. Correct firebox depth, back wall slope, and smoke shelf dimensions are required for proper draft. A poorly dimensioned firebox causes chronic smoke problems that no amount of cap, damper, or liner work can fix. A rebuild is the opportunity to correct those problems permanently.",
-    "signs": [
-        "Multiple structural cracks running through the firebox walls or floor",
-        "The firebox has chronic smoke problems that persist despite other repairs",
-        "Sections of the back or side walls have collapsed or are structurally unstable",
-    ],
-    "steps": [
-        ("Full demo", "All existing firebrick, mortar, and refractory material is demolished and removed from the firebox and smoke shelf area."),
-        ("Dimension verification", "We verify correct firebox dimensions (width, height, depth, back wall angle) before reconstruction begins."),
-        ("Refractory rebuild", "New firebrick is installed in courses using refractory mortar, with the back wall angled correctly to direct combustion gases toward the smoke shelf."),
-        ("Smoke shelf and chamber inspection", "After firebox completion, we inspect the smoke shelf and smoke chamber above for any conditions that would affect draft."),
-    ],
-    "benefits": [
-        ("Structural integrity", "A completely rebuilt firebox has no legacy cracks, failed mortar, or compromised structure — it performs like new."),
-        ("Correct draft geometry", "Rebuilding to correct dimensions resolves chronic smoke problems caused by an improperly proportioned original firebox."),
-        ("Decades of safe operation", "A correctly built firebrick firebox with refractory mortar has a service life of 20–40 years before significant repair is needed."),
-    ],
-    "price": "Full firebox rebuilds typically cost $1,000–$3,500 depending on firebox size, accessibility, and whether the smoke chamber and lower flue require concurrent work.",
+    "why_need": "A complete firebox rebuild is needed when the firebrick lining is in widespread failure, when the firebox geometry has been altered or is unsafe, or when previous repairs have been done incorrectly with incompatible materials. This is typically found in older fireplaces that have had years of deferred maintenance.",
+    "benefits": "A rebuilt firebox is constructed to current standards with correctly specified refractory materials throughout. When complete, it functions as a new fireplace interior — properly proportioned for draft, fully heat-resistant, and safe for daily use.",
+    "longevity": "A properly constructed masonry firebox using the correct materials lasts 20 to 30 years or more before any significant maintenance is needed.",
+    "consequences": "An unsafe firebox doesn't announce itself. It fails gradually through dozens of fires as heat migrates through compromised brick and mortar into the cavity behind the firebox wall. The framing members in that cavity — typically part of the floor structure above or the wall assembly beside the chimney — accumulate heat exposure over an entire season. By the time a problem is visible, the structural members nearby have already experienced heat stress that affects their long-term integrity. The fire risk is real, but it builds quietly over time rather than presenting as an obvious immediate danger.",
 },
 
 "smoke-chamber-parge": {
-    "intro": "The smoke chamber is the funnel-shaped space between the top of the firebox and the bottom of the flue liner. Its job is to compress combustion gases and accelerate them into the flue for efficient venting. The problem: most smoke chambers in older homes were built using 'corbeled' brick — stair-stepped courses that create a rough, irregular interior surface full of gaps and ledges.\n\nThese gaps allow combustion gases to contact adjacent framing through the masonry wall, and the irregular surface promotes turbulence that reduces draft efficiency. Parging — applying a smooth refractory coating over the corbeled surface — seals every gap, creates a smooth aerodynamic interior, and dramatically improves both safety and draft performance.",
-    "signs": [
-        "Smoke consistently backs into the room even with a clear flue and functioning damper",
-        "A previous inspection noted rough or 'corbeled' smoke chamber construction",
-        "The home was built before 1980 and has never had a smoke chamber inspection",
-    ],
-    "steps": [
-        ("Access preparation", "We access the smoke chamber through the fireplace opening and set up dust containment to protect the living space."),
-        ("Surface assessment", "The full interior of the smoke chamber is inspected for gaps, cracks, and the extent of corbeling."),
-        ("Parge coat application", "A refractory parge coat is applied by trowel or brush over the entire smoke chamber interior, filling all voids and creating a smooth surface."),
-        ("Cure and use", "The parge coat requires a heat cure — typically a small fire 24 hours after application before full normal use."),
-    ],
-    "benefits": [
-        ("Improved draft", "A smooth smoke chamber reduces turbulence and allows gases to accelerate up the flue more efficiently — often resolving chronic smoke backup."),
-        ("Safety sealing", "Every gap in the corbeled masonry is filled, preventing combustion gases from contacting combustible framing materials in the chimney wall."),
-        ("Code compliance", "Many jurisdictions require sealed smoke chambers for wood-burning appliances — parging satisfies this requirement."),
-    ],
-    "price": "Smoke chamber parging typically costs $250–$600 depending on smoke chamber size and accessibility. It is most cost-effective when combined with other firebox or liner work.",
+    "why_need": "Smoke chamber parging is needed when the smoke chamber — the inverted funnel above the firebox that channels gases toward the flue — has a rough, corbeled surface that disrupts draft or shows cracks and deterioration in the existing parge coat. Most older masonry chimneys were built with rough corbeled brick here rather than a smooth parged surface.",
+    "benefits": "A smooth refractory parge coat improves the aerodynamics of the smoke chamber, creating a cleaner path for combustion gases to exit. The result is noticeably better draft, less smoke spillage into the room on cold startup, and significantly reduced creosote accumulation in the pockets of the corbeling.",
+    "longevity": "A properly applied refractory parge coat lasts 20 or more years. It is one of the most durable repairs in the chimney system.",
+    "consequences": "The smoke chamber is one of the most common ignition points in a chimney fire, and it is completely invisible during a standard sweep. Rough corbeled brick surfaces trap creosote in every recess, and those recesses are precisely the areas that brushes cannot fully reach. Creosote that accumulates in the smoke chamber ignites at lower temperatures than flue creosote because it is in direct contact with the hottest combustion gases. A cracked smoke chamber also allows carbon monoxide to migrate into the masonry surrounding it — a slow, silent exposure that is difficult to attribute to any single cause.",
 },
 
 "chimney-damper-installation": {
-    "intro": "The traditional throat damper — a metal plate at the base of the flue just above the firebox — is one of the least effective energy-saving devices in a home. When closed, most throat dampers still leak substantial amounts of conditioned air up the flue due to warping from heat cycles and poor sealing design. A top-mount damper eliminates this problem by sealing the flue at the top of the chimney with a rubber gasket seal rated to be airtight.\n\nTop-mount dampers like the Lyemance and Lock-Top also double as chimney caps, providing rain and animal exclusion simultaneously. Homeowners who switch from throat to top-mount dampers typically report noticeable reductions in heating costs and the elimination of cold drafts from the fireplace.",
-    "signs": [
-        "You feel cold air coming down the chimney even when the throat damper is closed",
-        "Your throat damper is warped, broken, or missing",
-        "Heating bills are unusually high in rooms adjacent to the fireplace",
-    ],
-    "steps": [
-        ("Old damper assessment", "We evaluate the existing throat damper condition and determine whether removal is required or if it can remain in the open position."),
-        ("Flue measurement", "The flue tile opening at the chimney top is measured for the correct top-mount damper size."),
-        ("Damper installation", "The top-mount damper is secured to the flue tile with the correct method for the tile type."),
-        ("Cable routing", "The control cable is routed down the flue to the firebox and a mounting clip installed at the fireplace opening for easy operation."),
-    ],
-    "benefits": [
-        ("Airtight seal", "A top-mount damper with rubber gasket seals the flue completely when closed — no air movement, no drafts, no heat loss."),
-        ("Dual function", "Top-mount dampers serve as chimney caps simultaneously, eliminating the need for a separate cap installation."),
-        ("Energy savings", "Eliminating the cold-air path down the flue can reduce heating costs noticeably in homes where the fireplace was previously a significant heat loss point."),
-    ],
-    "price": "Top-mount damper installation typically costs $250–$500 including the damper unit and installation labor. This often replaces a separate cap purchase as well.",
+    "why_need": "A top-sealing damper is needed when the chimney has no damper, when the existing throat damper is rusted shut or corroded beyond function, or when you want to eliminate the significant energy loss that occurs through an open flue when the fireplace is not in use.",
+    "benefits": "A top-mounted damper seals the flue at the top of the chimney when the fireplace is not in use, eliminating the convective heat loss that occurs through an open throat. It also acts as a rain cap and keeps animals out. When the fireplace is in use, the damper opens fully with a cable pull, providing unrestricted draft.",
+    "longevity": "Quality stainless steel top-sealing dampers last 15 to 20 years or more. The silicone gasket seal may need occasional replacement after a decade of use, but the body of the damper remains functional indefinitely.",
+    "consequences": "An open throat damper — or a chimney with no damper — is a direct connection between the interior of your home and the outside air. In winter, the temperature differential drives cold air down through the flue and into the room, even with a conventional damper closed, because throat dampers seal poorly by design. Year-round, the open column of air draws conditioned air upward. Energy audits consistently identify open fireplace flues as one of the top sources of heat and cooling loss in homes that have them. Humid outdoor air flowing into the flue also accelerates mortar deterioration inside the chimney, compounding the maintenance cost over time.",
 },
 
 "chimney-liner-installation": {
-    "intro": "A chimney liner — the clay tile, cast-in-place, or stainless steel tube running the length of the flue — contains combustion gases, protects the surrounding masonry from corrosive byproducts, and ensures gases are vented at the correct temperature to prevent condensation buildup. It is not optional: NFPA 211 and most local building codes require a properly sized and intact liner for any fuel-burning appliance.\n\nStainless steel flexible liners are the most commonly installed type for retrofits. They are sized precisely for the appliance's BTU output and fuel type, wrapped in insulation to maintain flue gas temperature, and connected to a top plate and appliance connector at each end. A correctly installed liner typically carries a lifetime warranty.",
-    "signs": [
-        "Your home has an older chimney with clay tile liner that has never been inspected or a Level 2 inspection revealed cracked tiles",
-        "You are installing a new wood stove, gas insert, or oil furnace that requires a specific liner size",
-        "A previous inspection found liner damage, significant offset, or code non-compliance",
-    ],
-    "steps": [
-        ("Appliance and BTU assessment", "Liner diameter is calculated based on the appliance type, fuel, and BTU output — undersized liners cause back-drafting; oversized liners cause condensation."),
-        ("Liner insertion", "The flexible stainless steel liner is lowered from the chimney top while a connector at the bottom guides it into the appliance connection point."),
-        ("Insulation wrap", "An insulation blanket is wrapped around the liner inside the flue to maintain flue gas temperature and prevent condensation in cold exterior chimneys."),
-        ("Top plate and connection", "A stainless steel top plate is fitted around the liner at the chimney crown, and the bottom connection is made to the appliance or fireplace opening."),
-    ],
-    "benefits": [
-        ("Code compliance", "A new liner brings the chimney into current NFPA 211 compliance — required for permit work on appliances and for homeowner insurance in many cases."),
-        ("Combustion gas containment", "A correctly sized liner keeps combustion gases — including carbon monoxide — contained within the flue and out of the surrounding masonry and framing."),
-        ("Appliance efficiency", "Correct liner sizing optimizes draft for the specific appliance, improving combustion efficiency and reducing fuel consumption."),
-    ],
-    "price": "Stainless steel liner installation typically costs $1,800–$4,500 depending on flue length, liner diameter, and whether a clay liner removal is required. Liner systems carry lifetime warranties from major manufacturers.",
+    "why_need": "A flue liner installation or relining is needed when the existing clay tile liner is cracked, has gaps at the joints, or has been damaged by a chimney fire, when a gas or oil appliance is being vented through an oversized clay flue, or when a new appliance requires a specific flue diameter. Many older homes lack a liner entirely.",
+    "benefits": "A stainless steel liner provides a continuous, smooth, correctly sized path for combustion gases from the appliance to the outside. It contains heat, prevents CO migration through the masonry, and is serviceable for cleaning. It also brings the chimney into compliance with current building codes.",
+    "longevity": "Stainless steel chimney liners last 20 or more years with normal use and annual maintenance. The alloy grade matters — 316L stainless is recommended for gas appliances, while 316Ti is better suited for oil and wood.",
+    "consequences": "The flue liner is the last line of defense between combustion gases and the structural materials of your home. A missing or compromised liner means that every time you use the fireplace or heating appliance, carbon monoxide and heat are in direct contact with brick, mortar, and the framing beyond. CO exposure through a cracked liner is cumulative — it doesn't cause immediate collapse. It causes headaches, fatigue, and cognitive symptoms that are often attributed to illness. Families have lived with low-level CO exposure from a failing liner for years before a diagnosis is made. The structural fire risk is real, but the CO exposure is the more insidious consequence of an unlined chimney.",
 },
 
-# ─── HANDYMAN ─────────────────────────────────────────────────────────────────
+# ─── HANDYMAN ────────────────────────────────────────────────────────────────
 
 "tv-wall-mounting": {
-    "intro": "A wall-mounted television transforms a room — it frees up floor space, improves viewing angles, eliminates the TV stand, and creates a clean, intentional look. But a TV mounted incorrectly is a safety hazard: a 65-inch OLED can weigh 80 pounds, and a mount that misses studs or uses inadequate anchors will eventually fail — often catastrophically.\n\nProfessional TV mounting ensures studs are correctly located (not guessed), the mount is rated for the TV weight and size, the screen is level to within a fraction of a degree, and cables are managed cleanly. On concrete, tile, or brick walls, the process requires entirely different hardware than drywall — hardware most homeowners don't have and can't source easily.",
-    "signs": [
-        "Your TV is on a stand that takes up floor space or creates a tripping hazard",
-        "You want cables hidden inside the wall for a clean, built-in look",
-        "The wall material is concrete, brick, or tile — requiring specialized anchors",
-    ],
-    "steps": [
-        ("Wall assessment", "We determine wall type, locate all studs or structural points, and identify any obstructions (electrical, plumbing) before drilling."),
-        ("Mount installation", "The mount bracket is secured into studs or masonry with fasteners rated for the TV weight plus a safety factor."),
-        ("TV hanging and leveling", "The TV is mounted on the bracket and leveled to within 1/8 inch using a digital level."),
-        ("Cable management", "Cables are routed through an in-wall cable management system or concealed in a surface raceway for a clean finish."),
-    ],
-    "benefits": [
-        ("Safety", "A correctly anchored mount cannot pull free from the wall under normal use — protecting children, pets, and the TV itself from a fall."),
-        ("Optimal viewing", "Mounting at the correct height and angle for your seating position eliminates neck strain and glare that floor-standing TVs often cause."),
-        ("Room aesthetics", "A cleanly mounted TV with hidden cables looks like an architectural feature rather than an afterthought."),
-    ],
-    "price": "TV wall mounting typically costs $100–$250 depending on wall type, cable management scope, and TV size. Concrete or tile walls require specialty hardware and run toward the higher end.",
+    "why_need": "TV wall mounting is needed when you want to move a TV from a stand to the wall, when you're setting up a new room or renovation, or when a previous mount was installed incorrectly and needs to be redone. Most living rooms and bedrooms benefit from mounting height and angle adjustment that a stand cannot provide.",
+    "benefits": "A properly mounted TV is positioned at the correct viewing height for the room, secured into structural framing that can safely support the weight and moment arm of the display, and finished with concealed cabling that eliminate the visual clutter of a stand setup.",
+    "longevity": "A mount installed into wall studs is a permanent installation that will outlast multiple TV replacements. The weight capacity of a quality mount rated for stud mounting is essentially unlimited relative to residential display sizes.",
+    "consequences": "Consumer TV mounts sold at retail are marketed as DIY-friendly, and many installations appear secure immediately after installation. The problem is that a TV mounted on hollow-wall anchors — rather than into studs — is subjected to constant lever-force from the weight and reach of the arm. Anchors that hold on day one begin to work loose under sustained load and vibration. A 65-inch television weighs 70 to 100 pounds and falls without warning when the anchor lets go. The result is a destroyed display at minimum, and a serious injury risk to anyone in the room.",
 },
 
 "mirror-artwork-hanging": {
-    "intro": "A large mirror or oversized artwork can anchor a room and transform a blank wall into a design statement — but hanging a piece that weighs 40, 60, or 100 pounds requires more than a standard picture hook. Heavy items need to land on studs, use rated mounting hardware, and in many cases require two-point or French cleat systems that distribute weight correctly across the wall.\n\nThe consequences of improper hanging range from a hole in the drywall to a shattered mirror or damaged artwork — and in worst cases, injury. Professional hanging ensures the right anchor for the right weight on the right wall, every time.",
-    "signs": [
-        "The piece weighs more than 20 pounds or is larger than 24 inches in any dimension",
-        "Your wall is plaster, tile, concrete, or brick — materials that require specialty anchors",
-        "You want a two-point hang to keep the piece level over time",
-    ],
-    "steps": [
-        ("Weight and dimension assessment", "We weigh the piece (or estimate from manufacturer specs) and assess the hanging hardware already attached."),
-        ("Wall type identification", "We determine whether the mounting point is over a stud, in drywall, plaster, masonry, or tile — each requires a different fastener."),
-        ("Anchor selection and installation", "Appropriate anchors rated for the piece weight plus a safety factor are installed — toggle bolts, screw anchors, masonry fasteners, or stud screws as required."),
-        ("Level hang and anti-tip", "The piece is hung level and, for mirrors and very large artwork, a security wire or bumper is added to prevent shifting."),
-    ],
-    "benefits": [
-        ("Weight-appropriate support", "Hardware selected for the actual weight of the piece — not just what was already on the wall — ensures the hang is safe for years."),
-        ("Wall protection", "Correct anchors for the wall type prevent the tearing and blowout that oversized loads cause when standard picture hooks are used."),
-        ("Perfect level", "A digital level ensures the piece hangs perfectly straight, not 'close enough' — the difference is immediately visible in a large mirror."),
-    ],
-    "price": "Heavy mirror and artwork hanging typically costs $75–$200 depending on piece size, wall type, and number of mounting points required.",
+    "why_need": "Professional hanging is needed for mirrors over 30 pounds or large framed artwork where the weight and size exceed what a standard picture hook can safely support. This includes bathroom vanity mirrors, full-length mirrors, decorative mirrors over mantles, and canvas works larger than approximately 24 by 36 inches.",
+    "benefits": "Correct hardware selection — toggle bolts, structural anchors, or stud-mounted cleats depending on the wall and the weight — ensures the piece stays where it's placed. Professional installation includes leveling, correct hardware torque, and wall protection at the anchor points.",
+    "longevity": "A properly anchored mirror or artwork installation is permanent. The anchors chosen for the actual weight of the piece do not degrade or loosen over time under static load.",
+    "consequences": "Mirrors are particularly hazardous when they fall because they do not deform on impact — they shatter into large, sharp fragments across the floor. A 50-pound mirror hung on a drywall anchor rated for 25 pounds is not a stable installation — it is a delayed failure. The anchor pulls out gradually under the sustained weight, creating micro-movement that is invisible until the piece shifts, tilts, and falls. Wall anchors in drywall are rated for direct pull-out force, not for the combined downward and outward force that a hanging weight actually applies.",
 },
 
 "picture-mirror-hanging": {
-    "intro": "Hanging pictures sounds simple — and for a single small frame it is. But a gallery wall with 8 frames, a set of matched prints that need precise spacing, or a standard mirror hung in a bathroom with tile walls quickly becomes a project that benefits from professional execution. Getting spacing, alignment, and anchor selection right the first time prevents the repeated patching and rehanging that a DIY approach often produces.\n\nWe handle everything from single-frame hanging to full gallery wall layout — measuring spacing, marking anchor points, installing appropriate hardware, and hanging every piece level and at the correct height for the room.",
-    "signs": [
-        "You are hanging a gallery wall with multiple frames that need precise spacing",
-        "The wall is tile, plaster, or concrete — materials where drilling without the right technique causes damage",
-        "Previous hanging attempts left the wall looking patchy from multiple anchor holes",
-    ],
-    "steps": [
-        ("Layout planning", "For gallery walls, we lay pieces out on the floor first and measure the arrangement before marking a single anchor point."),
-        ("Height and spacing marking", "Anchor points are marked on the wall using a level and measuring tape — not eye measurement."),
-        ("Anchor installation", "Appropriate anchors are installed for each piece weight and wall type."),
-        ("Hang and final level", "Each piece is hung and checked with a level. Bumper pads are added to the bottom corners to keep frames from shifting."),
-    ],
-    "benefits": [
-        ("Gallery wall precision", "Consistent spacing and perfect alignment turn a collection of frames into a designed installation rather than a random arrangement."),
-        ("Minimal wall damage", "Correct anchor placement means one hole per anchor point — no exploratory drilling, no patchwork from missed attempts."),
-        ("Lasting level", "Bumper pads and correctly tensioned wire prevent frames from tilting over time, even in high-traffic areas."),
-    ],
-    "price": "Single-frame hanging starts at $50–$75. Gallery walls of 4+ pieces typically run $125–$250 depending on count and complexity.",
+    "why_need": "Professional picture hanging is needed for gallery walls, for pieces going into plaster walls where drilling technique matters, or when you want precise leveling and placement without putting unnecessary holes in the wall. It's also the right call when the stud layout doesn't cooperate with the desired placement.",
+    "benefits": "The right combination of hardware for the wall type — stud, hollow drywall, plaster, or masonry — means the piece is secure without overengineering or leaving a trail of failed attempts in the wall. Precise leveling on the first attempt avoids the gradual adjustment marks that accumulate with DIY hanging.",
+    "longevity": "Correct hardware for the wall type and weight holds indefinitely. Standard picture hooks in stud locations will never need replacement.",
+    "consequences": "The most common hanging failure happens gradually. A drywall anchor that was undersized for the weight doesn't pull out on day one — it pulls out slightly with every small vibration, every time a door closes nearby, every thermal expansion cycle. After weeks or months, the anchor is loose and the piece falls. Plaster walls have an additional failure mode: incorrect drilling technique causes the plaster substrate to crack and delaminate around the anchor, which then pulls out the surrounding plaster when it eventually fails.",
 },
 
 "blinds-curtain-rod-installation": {
-    "intro": "Blinds and shades look straightforward to install — until you discover that the inside-mount brackets don't align with the window frame thickness, the curtain rod is too heavy for the wall anchors that come in the box, or the wall above your window is plaster that shatters rather than grips standard anchors.\n\nProfessional installation handles all of this correctly the first time: inside-mount brackets adjusted for exact frame depth, outside-mount hardware anchored at the correct height and width, and curtain rods supported at the right intervals to prevent sagging under the weight of heavy drapery.",
-    "signs": [
-        "Your window frame is an unusual depth that makes inside-mount installation tricky",
-        "You have heavy blackout curtains or drapery panels that require robust rod support",
-        "Previous blinds installation left the brackets crooked or the blinds sitting unevenly in the frame",
-    ],
-    "steps": [
-        ("Mount type determination", "We confirm inside vs. outside mount, measure the window recess depth, and select the appropriate bracket for the specific blind or shade type."),
-        ("Anchor point marking", "Bracket positions are marked with a level — not by eye — to ensure the blind or rod hangs perfectly horizontal."),
-        ("Anchor installation", "Appropriate fasteners are installed for the wall type: studs for heavy rods, rated drywall anchors for standard loads."),
-        ("Bracket and hardware mounting", "Brackets are installed and blinds or rods mounted, leveled, and tested for smooth operation."),
-    ],
-    "benefits": [
-        ("Correct inside-mount depth", "Blinds installed at the correct depth in the window recess hang flush and operate without rubbing against the frame."),
-        ("Sag-free curtain rods", "Heavy drapery requires support at the correct intervals — longer rods need a center bracket that most DIY installs omit."),
-        ("Consistent appearance across multiple windows", "Professional installation ensures all windows in a room hang at the same height for a cohesive look."),
-    ],
-    "price": "Blind and curtain rod installation typically runs $75–$175 per window depending on hardware type and wall material.",
+    "why_need": "Professional installation is needed when inside-mount blinds require precise measurement and level mounting, when heavy drapes require rod brackets that reach into studs, or when a previous installation has left the hardware pulling away from the wall.",
+    "benefits": "Correctly anchored curtain rod brackets positioned at the right height and extension eliminate the common problems of sagging rods, leaning brackets, and curtains that don't hang straight. Inside-mount blind installation done correctly ensures the blind operates smoothly without binding.",
+    "longevity": "Curtain rod hardware installed into studs is permanent. Blind hardware installed at the correct depth in the window frame or wall is equally durable.",
+    "consequences": "Curtain rod brackets are subjected to repeated lateral loading every time the drapes are opened or closed. A bracket anchored into hollow drywall without stud backing applies that load to a hollow-wall anchor with a mechanical disadvantage that the anchor was not designed for. Over weeks of daily use, the anchor loosens, the bracket tilts, and eventually the rod falls — typically with the full weight of the drapes. The larger the span and the heavier the fabric, the more leverage is applied to each bracket, and the faster this failure progresses.",
 },
 
 "floating-shelves-installation": {
-    "intro": "Floating shelves look minimal and clean — no visible brackets, just a shelf appearing to hover against the wall. Achieving this look correctly requires hitting studs with concealed bracket hardware, or using heavy-duty drywall anchors when studs are not at the right spacing. The weight the shelves need to support must be matched to the anchor type and spacing.\n\nThe common failure mode for DIY floating shelves is anchors that work for the first few months but gradually pull out of drywall under sustained load — especially if books, plants, or kitchenware are placed on them. We install floating shelves with hardware rated for the actual intended load, every time.",
-    "signs": [
-        "You want to add storage or display space without visible hardware or brackets",
-        "The shelf will hold more than 20 pounds (books, plants, kitchen items, décor)",
-        "Previous floating shelf attempts have resulted in pulled-out anchors or sagging",
-    ],
-    "steps": [
-        ("Stud location", "We use a reliable stud finder and confirm locations by probing before marking — drywall anchors are used only when studs are not at the required spacing."),
-        ("Level marking", "Shelf height and level are marked on the wall with a spirit level — multiple shelves are marked simultaneously for consistency."),
-        ("Bracket installation", "Concealed L-brackets or keyhole brackets are secured into studs or with rated wall anchors at the correct spacing for the shelf length."),
-        ("Shelf mounting and load test", "The shelf is set on the brackets, secured if required, and a light load test performed before leaving."),
-    ],
-    "benefits": [
-        ("Safe load capacity", "Brackets installed into studs or with appropriate anchors hold the actual weight placed on shelves — not just the shelf itself."),
-        ("Perfect horizontal", "A digital level ensures shelves are straight to the eye — slightly off-level shelves are immediately noticeable."),
-        ("Finished look", "Correctly spaced and aligned floating shelves look intentional and designed, not improvised."),
-    ],
-    "price": "Floating shelf installation typically costs $75–$200 per shelf depending on length, wall type, and bracket system. Multiple shelves in the same visit are more cost-effective.",
+    "why_need": "Floating shelf installation is needed when you want a clean, bracket-free look that requires hidden structural mounting, or when a previous installation has shelves that are visibly sagging or have pulled away from the wall. The appeal of floating shelves is entirely dependent on secure, invisible anchoring.",
+    "benefits": "Properly mounted floating shelves anchored into studs or with high-capacity toggle systems can support significant weight without visible hardware. The result is shelving that looks architectural rather than added-on.",
+    "longevity": "Floating shelves anchored into studs are a permanent installation. The mounting hardware carries the load indefinitely as long as the weight placed on the shelf stays within the design capacity.",
+    "consequences": "Floating shelves loaded with books, plants, or decorative items are subjected to a sustained downward and outward moment force that is much harder on anchors than a simple hanging weight. A shelf anchored in drywall without stud support will fail — the question is when. The failure is typically sudden rather than gradual because the anchor doesn't bend; it either holds or it pulls through. A shelf loaded with ceramic objects, glass, or books causes significant damage to whatever is below when it falls.",
 },
 
 "faucet-replacement": {
-    "intro": "A dripping kitchen or bathroom faucet wastes more water than most homeowners realize — a faucet dripping once per second loses over 3,000 gallons per year. But beyond waste, an aging faucet with low pressure, discoloration, or a broken handle simply degrades the daily experience of the most-used fixtures in your home. Replacement is often more cost-effective than repair on faucets older than 10–15 years.\n\nFaucet replacement sounds simple but involves several potential complications: corroded supply line nuts that require specialty tools to remove, mismatched hole configurations between old and new fixtures, and stop valves that have not been turned in decades and no longer close fully.",
-    "signs": [
-        "The faucet drips persistently and cartridge replacement has not resolved it",
-        "Water pressure is poor even though other fixtures in the home are normal",
-        "The faucet is discolored, corroded, or has a broken handle or sprayer",
-    ],
-    "steps": [
-        ("Shut-off and disconnect", "The supply valves under the sink are closed, supply lines drained, and the old faucet disconnected and removed."),
-        ("Deck preparation", "The sink deck is cleaned of old putty and sealant residue to provide a clean surface for the new faucet."),
-        ("New faucet installation", "The new faucet body, supply lines, and drain assembly are installed according to the manufacturer's instructions for the sink configuration."),
-        ("Leak test", "With supply water restored, all connections are checked under pressure and the faucet operation tested for proper temperature and pressure."),
-    ],
-    "benefits": [
-        ("Water savings", "Replacing a dripping faucet eliminates the 3,000+ gallon per year waste — a measurable reduction in water bills."),
-        ("Stop valve reliability", "We test supply shut-off valves during replacement and replace any that no longer close fully — providing insurance against future leaks."),
-        ("Modern functionality", "New faucets deliver better water efficiency, pressure, and features (pull-down sprayers, touchless operation) at a reasonable cost."),
-    ],
-    "price": "Faucet replacement typically costs $100–$300 in labor, not including the fixture itself. Supply line replacement and stop valve service may add $50–$100.",
+    "why_need": "Faucet replacement is needed when there is a persistent drip that cannot be corrected by tightening or replacing the cartridge, when the faucet body is visibly corroded, when water pressure has dropped due to internal mineral buildup, or when a renovation requires a style update.",
+    "benefits": "A new faucet eliminates the water waste and mineral staining of a persistent drip, restores full pressure and flow, and resets the lifecycle of the fixture. Professional installation ensures the supply connections under the sink are made correctly — the most common point of failure in DIY faucet work.",
+    "longevity": "A quality faucet from a reputable manufacturer with standard brass cartridge components lasts 15 to 20 years under normal use conditions.",
+    "consequences": "The supply line connections beneath the sink are not visible during normal use, and they are precisely where DIY faucet installations most commonly fail. An overtightened compression fitting cracks under sustained water pressure. An undertightened braided supply line weeps slowly onto the cabinet floor. Both scenarios deliver water to the particleboard cabinet base and subflooring beneath without any visible indication above the sink. By the time water is noticed — typically by smell, soft flooring, or visible staining — the cabinet base has been absorbing moisture for weeks and the subfloor underneath may already be compromised.",
 },
 
 "garbage-disposal-replacement": {
-    "intro": "Garbage disposals have a typical service life of 8–12 years. The warning signs of a failing unit — persistent humming without spinning, frequent jams requiring manual reset, unusual grinding sounds, or leaks from the unit body — indicate that internal components have worn beyond the point of reliable repair. At that point, replacement is almost always more cost-effective than servicing.\n\nDisposal replacement is straightforward in theory but involves a sequence of steps — disconnecting drain plumbing, un-mounting the old unit, wiring the new unit, re-mounting, and reconnecting the drain — where a mistake at any step results in leaks or electrical issues.",
-    "signs": [
-        "The disposal hums when switched on but the grinding plate does not spin",
-        "You reset the unit frequently and it still does not operate reliably",
-        "The disposal is leaking from the bottom or sides of the unit body",
-    ],
-    "steps": [
-        ("Power disconnection", "The disposal circuit is switched off at the breaker before any disconnection work begins."),
-        ("Drain and mount removal", "Drain plumbing is disconnected and the old unit is untwisted from the sink mounting ring."),
-        ("New unit wiring and mounting", "The new disposal is wired using the existing electrical connections, mounted to the sink ring, and the drain connection made."),
-        ("Test run", "Power is restored, water is run, and the disposal is tested for correct operation, proper drain flow, and no leaks at any connection."),
-    ],
-    "benefits": [
-        ("Reliable operation", "A new disposal eliminates the frustration of frequent jams, resets, and partial failures that signal the end of a unit's service life."),
-        ("Leak prevention", "Leaks from a failing disposal body drip onto cabinet shelving and over time cause significant water damage — replacement stops this."),
-        ("Noise reduction", "Modern disposals are significantly quieter than units from 10+ years ago — replacement is a noticeable quality-of-life improvement."),
-    ],
-    "price": "Garbage disposal replacement typically costs $150–$300 in labor, not including the new unit. Basic units start around $100; premium quiet models run $250–$400.",
+    "why_need": "Disposal replacement is needed when the unit hums but won't spin after a reset, when it leaks from the body or mounting collar, when it produces a persistent burning smell, or when it is simply at the end of its service life after 10 or more years.",
+    "benefits": "A new disposal eliminates the odor and backup risk of a failed unit, restores normal sink drainage, and resets the lifecycle of one of the most frequently used kitchen appliances. Professional installation ensures the mounting collar is sealed correctly and the electrical connection meets code.",
+    "longevity": "A quality disposal lasts 8 to 12 years with normal residential use. Commercial-grade units last longer but are rarely necessary in a home.",
+    "consequences": "A disposal that is leaking from the mounting collar or body is draining water onto the cabinet floor with every use of the sink — not just when the disposal runs, but continuously as drain water passes through the unit. Particleboard cabinet boxes begin to absorb moisture within days of repeated exposure. The base of the cabinet swells, delaminates, and eventually collapses. By the time the problem is visible — a soft or sunken cabinet floor — the damage has typically spread to the adjacent cabinet sections and the subfloor underneath. Replacing the disposal costs a fraction of replacing the cabinet base and subfloor repair.",
 },
 
 "toilet-repair": {
-    "intro": "A running toilet is one of the most wasteful plumbing conditions in a home — a continuously running fill valve can waste 200 gallons or more per day, showing up silently on your water bill for months before being noticed. A rocking toilet is a different problem with more serious consequences: a broken or deteriorated wax ring seal allows sewer gas to enter the home and, over time, allows water to seep under the floor at every flush.\n\nMost toilet problems — running, rocking, slow fill, weak flush — are resolved by replacing the internal components (flapper, fill valve, flush valve, wax ring) rather than the toilet itself. We diagnose the specific failure and repair it on the first visit in almost every case.",
-    "signs": [
-        "The toilet runs continuously or intermittently — you hear water flowing when the toilet hasn't been recently flushed",
-        "The toilet rocks or shifts when you sit on it",
-        "Water appears on the floor around the base of the toilet",
-    ],
-    "steps": [
-        ("Diagnosis", "We identify the specific failure: running fill valve, bad flapper, worn flush valve, broken flange, or failed wax ring — each has a different repair."),
-        ("Component replacement", "The failed component is replaced: flapper, fill valve, and flush valve are inexpensive parts; wax ring replacement requires removing and re-setting the toilet."),
-        ("Bolt and flange check", "For rocking toilets, we inspect the closet flange for damage and replace both the wax ring and flange bolts."),
-        ("Flush test and leak check", "With water restored, the toilet is flushed multiple times and all connections inspected for leaks."),
-    ],
-    "benefits": [
-        ("Water bill reduction", "Fixing a running toilet can reduce monthly water bills by $30–$70 or more — the repair often pays for itself within the first billing cycle."),
-        ("Subfloor protection", "A leaking wax ring allows water under the floor at every flush. Catching and repairing it early prevents subfloor rot and tile damage."),
-        ("Sewer gas elimination", "A failed wax ring is a direct path for sewer gas into the home. Re-seating the toilet restores the gas barrier."),
-    ],
-    "price": "Toilet internal component replacement typically costs $100–$250 in labor. Toilet reset with new wax ring costs $150–$300. New toilet supply and installation adds $200–$400.",
+    "why_need": "Toilet repair is needed when the toilet runs continuously between flushes, when the toilet rocks or shifts on the floor, when the flange is cracked or has separated from the floor, or when internal components have failed causing incomplete flushes or constant running.",
+    "benefits": "A properly reset toilet stops the movement that progressively destroys the wax ring seal. Repaired or replaced internal components stop the water waste of a running toilet and restore reliable flushing.",
+    "longevity": "A correctly set toilet on an intact flange with a new wax ring will remain stable for 10 to 15 years before the ring needs replacement under normal use. Internal components — fill valves, flappers — last 5 to 7 years.",
+    "consequences": "A rocking toilet is a failing wax ring in process. Every movement — every time someone sits down — breaks the seal incrementally. Once the seal fails, every flush sends a small amount of water under the toilet flange and into the subfloor below. This water has no drainage path. It saturates the subfloor and then the joists below it. Subfloor rot beneath a bathroom is one of the most disruptive repairs in residential remodeling — it requires removing the toilet, tile, and rotted subfloor, which typically involves the framing below as well. The repair cost routinely reaches several thousand dollars. A rocking toilet costs a few hundred to repair. The window between the two is measured in months.",
 },
 
 "bathroom-exhaust-fan": {
-    "intro": "A bathroom exhaust fan that doesn't work — or works so poorly that steam still coats every surface — is a direct cause of bathroom mold. Without adequate ventilation, humid air from showers and baths condenses on walls, ceilings, and in wall cavities, creating the warm, damp environment mold needs to grow. In bathrooms without windows, a working exhaust fan isn't optional — it's the only ventilation the room has.\n\nFan replacement is also one of the highest-impact bathroom upgrades available. Modern exhaust fans are dramatically quieter than fans from 10–15 years ago, and many include integrated LED lighting, humidity sensors, or Bluetooth speakers — functional upgrades that cost very little over basic models.",
-    "signs": [
-        "Steam and condensation remain on mirrors and walls for 30+ minutes after a shower",
-        "Mold or mildew appears regularly on bathroom ceilings or grout lines",
-        "The fan is loud, rattling, or operates noticeably slower than it used to",
-    ],
-    "steps": [
-        ("Existing fan removal", "The old fan grille and housing are removed. We check the duct connection to the exterior vent."),
-        ("Duct inspection", "The duct run from fan to exterior is checked for blockages, disconnection, or improper termination — a common cause of inadequate ventilation even with a new fan."),
-        ("New fan installation", "The new fan housing is secured in the ceiling opening, wiring is connected, and the duct is attached securely."),
-        ("Operation test", "The fan is switched on and airflow confirmed. The toilet paper test (tissue held at grille) confirms adequate suction."),
-    ],
-    "benefits": [
-        ("Mold prevention", "Adequate air exchange after showers keeps humidity below the threshold for mold growth — the primary function of bathroom ventilation."),
-        ("Noise reduction", "Modern fans rated at 0.3–1.0 sones are nearly silent compared to older 4.0 sone models — a noticeable improvement in bathroom comfort."),
-        ("Energy efficiency", "New DC motor fans use 50–70% less electricity than older AC motor models while moving significantly more air."),
-    ],
-    "price": "Bathroom exhaust fan replacement typically costs $150–$350 in labor, not including the fan unit. Basic replacement fans start around $30; combination fan/light units run $75–$200.",
+    "why_need": "Fan replacement is needed when the existing unit is no longer moving sufficient air — measured as audible performance decline — when the motor fails, or when the unit is over 10 years old and well below current airflow and noise standards.",
+    "benefits": "A properly sized and functioning exhaust fan removes steam and humidity from the bathroom during and after showering, protecting the ceiling, walls, and wall cavities from the moisture accumulation that leads to mold growth.",
+    "longevity": "Quality exhaust fans last 10 to 15 years under normal use. Energy Star models are significantly quieter and more efficient than older units and often represent a meaningful improvement in bathroom comfort.",
+    "consequences": "A bathroom without effective ventilation is a mold incubator. Steam from showers condenses on the ceiling and wall surfaces and then migrates through drywall paper into the wall cavity. Mold begins growing in wall cavities within 24 to 48 hours of sustained moisture exposure — not days or weeks. The surface mold you see on grout or painted drywall is the exterior symptom of a problem that has been progressing inside the wall for much longer. By the time visible mold appears on the ceiling or upper wall, the cavity behind it typically requires complete drywall removal and remediation to address properly.",
 },
 
 "shower-head-grab-bar": {
-    "intro": "A shower head upgrade is one of the quickest, lowest-cost improvements to the daily experience in any bathroom. Replacing a 15-year-old 2.5 GPM shower head with a modern 1.8 GPM model with better pressure distribution costs under $50 in parts and half an hour in labor — but significantly improves every shower for years.\n\nGrab bar installation is a safety essential for bathrooms used by older adults, anyone recovering from surgery, or any household where a wet tile floor represents a fall risk. A correctly anchored grab bar — bolted into studs or installed with appropriate toggle anchors behind tile — can support 250+ pounds of force. An incorrectly anchored bar pulls free from the wall in an emergency.",
-    "signs": [
-        "Shower pressure is weak or the spray pattern is irregular despite adequate water pressure at other fixtures",
-        "An older adult, recovering patient, or anyone with mobility limitations uses the shower",
-        "The existing shower head is more than 10 years old or shows visible mineral buildup",
-    ],
-    "steps": [
-        ("Shower head removal", "The old shower head is removed using proper tools to avoid damaging the shower arm — overtightening is a common DIY error."),
-        ("Thread cleaning and sealing", "The shower arm threads are cleaned and fresh plumber's tape applied before the new head is installed."),
-        ("Grab bar location marking", "Stud locations or appropriate anchor points behind tile are identified using a stud finder."),
-        ("Grab bar installation", "The bar is bolted into studs or installed with appropriate toggle anchors rated for the required load, and tested with firm lateral pressure."),
-    ],
-    "benefits": [
-        ("Fall prevention", "A correctly anchored grab bar provides a reliable support point that can prevent a fall on wet tile — the leading cause of home injury for adults over 65."),
-        ("Better shower experience", "A new shower head delivers better coverage and pressure at lower water flow than older models."),
-        ("ADA-ready bathroom", "Grab bar installation makes a bathroom more accessible for aging-in-place and increases home appeal for buyers with accessibility needs."),
-    ],
-    "price": "Shower head replacement costs $75–$150 in labor. Grab bar installation runs $100–$250 per bar depending on wall construction and bar length.",
+    "why_need": "Grab bar installation is needed for anyone with balance concerns, elderly household members, or for general safety in a wet shower environment. Shower head replacement is needed when the existing head has poor pressure, mineral buildup, or an outdated design.",
+    "benefits": "A grab bar anchored into tile and the structural framing behind it provides reliable support that can arrest a fall. A quality shower head upgrade improves water pressure, coverage, and often reduces water consumption with modern flow-restriction designs.",
+    "longevity": "A properly anchored grab bar is a permanent installation. The stainless steel or chrome fixture itself will not corrode or degrade. Shower heads last 5 to 10 years before mineral buildup affects performance.",
+    "consequences": "A grab bar that is anchored only into tile — without reaching the structural framing behind the wall — has no reliable load capacity. The tile can crack and the anchor can pull through under bodyweight load, which is precisely the moment a grab bar is being used. A bar that fails during a fall does not prevent the fall — it causes it. For tile anchors, the failure mode is the tile spalling away from the backing, which means the anchor pulls out of the wall along with a section of tile. The timing of this failure is unpredictable because the anchor appears solid until the load exceeds its actual capacity in a single moment.",
 },
 
 "tub-caulking": {
-    "intro": "The caulk line around your bathtub or shower pan is a critical waterproof seal — the only barrier between the water that splashes against it every day and the subfloor, studs, and drywall behind the tile. When caulk fails — it turns black with mold, peels, cracks, or pulls away from the surface — water infiltrates immediately, and the damage begins invisibly inside the wall.\n\nReplacing tub caulk is not simply applying a new bead over old caulk. The old caulk must be completely removed first — all of it. Applying over existing caulk creates a cosmetically improved but structurally compromised seal that will fail again in 6–12 months. Professional caulking means full removal, surface preparation, and a clean, tooled bead applied with the right product for the application.",
-    "signs": [
-        "The caulk line is black with mold or mildew that doesn't clean off",
-        "Caulk is peeling, cracking, or pulling away from the tub or tile surface",
-        "The caulk line has gaps or has completely separated at any point around the tub",
-    ],
-    "steps": [
-        ("Old caulk removal", "Every trace of old caulk is removed using a caulk removal tool and utility knife — a step that cannot be skipped."),
-        ("Surface cleaning and drying", "The joint is cleaned with an appropriate cleaner and allowed to dry completely before new caulk is applied — moisture causes adhesion failure."),
-        ("Caulk application", "A flexible silicone or siliconized latex caulk appropriate for tub and tile is applied in a continuous bead along the full joint."),
-        ("Tooling and cure", "The bead is tooled to a smooth concave profile and left to cure per manufacturer requirements — typically 24 hours before water exposure."),
-    ],
-    "benefits": [
-        ("Waterproof seal restoration", "New caulk completely applied and properly tooled seals the joint against water infiltration that would otherwise damage subfloor and framing."),
-        ("Mold elimination", "Removing and replacing black caulk eliminates the existing mold colony and provides a fresh surface that resists regrowth with correct ventilation."),
-        ("Extended tile and tub life", "Water infiltration behind tile causes grout failure, tile delamination, and eventually subfloor damage — a $100 recaulk prevents thousands in tile replacement."),
-    ],
-    "price": "Tub and shower caulking typically costs $100–$250 depending on the length of caulk lines and accessibility. Shower surrounds with multiple surfaces run toward the higher end.",
+    "why_need": "Tub caulking replacement is needed when the existing caulk is cracked, discolored with mold, pulling away from the surface, or when there are visible gaps at the tub-tile junction. Caulk at this joint is a maintenance item — it has a defined service life and needs periodic replacement.",
+    "benefits": "Fresh silicone caulk creates a continuous flexible seal at the tub-tile junction that moves with both surfaces as they expand, contract, and flex under use. The new seal prevents all water migration into the cavity behind the tile.",
+    "longevity": "Quality 100% silicone caulk applied to a clean, dry surface lasts 5 to 7 years before it begins to crack or separate. Latex or siliconized latex caulk lasts significantly less, particularly in a continuously wet environment.",
+    "consequences": "The gap behind failed caulk at the tub surround is where water migrates during every shower. It doesn't pool visibly — it travels by capillary action into the small space between the tile and the tub surface, and from there into the wallboard behind the tile. Standard drywall behind tile that is repeatedly wetted loses structural integrity within weeks. The wallboard softens, the tile adhesive bond degrades, and tiles begin to loosen from the wall. By the time a tile actually comes off the wall or a soft spot appears behind it, the wallboard behind the entire surround is typically unsalvageable, and the repair escalates from a one-hour caulk replacement to a full tile surround removal and reinstall.",
 },
 
 "ceiling-fan-installation": {
-    "intro": "Ceiling fans make a measurable difference in room comfort — and energy bills. In summer, the downdraft creates a wind chill effect that makes a room feel 4–6 degrees cooler, allowing thermostat setback. In winter, the reverse direction pushes warm air that has risen to the ceiling back down to living level. In rooms used regularly, a ceiling fan pays for itself in reduced HVAC costs within a single season.\n\nThe critical installation requirement that many homeowners are unaware of: ceiling fans must be mounted on a fan-rated electrical box. Standard light fixture boxes are not designed for the lateral and rotational forces a fan exerts, and mounting a fan on one is a code violation — and a safety hazard that has caused numerous ceiling collapses.",
-    "signs": [
-        "A room runs consistently hot in summer or cold in winter despite normal HVAC",
-        "You are replacing an existing fan that wobbles, is noisy, or has a failing motor",
-        "You want to add a fan to a room that currently only has a light fixture",
-    ],
-    "steps": [
-        ("Box verification", "We confirm whether a fan-rated box is present. Standard light fixture boxes must be replaced before fan installation — we handle this as part of the service."),
-        ("Fan assembly", "Fan components are assembled per manufacturer instructions before installation — assembling on the floor is safer and more precise than assembling overhead."),
-        ("Wiring and mounting", "The fan is connected to the existing wiring, mounted to the fan-rated box, and balanced."),
-        ("Balance and speed test", "The fan is run at all speeds in both directions — any wobble is corrected using the included blade balancing kit."),
-    ],
-    "benefits": [
-        ("Energy cost reduction", "A ceiling fan used in conjunction with your thermostat can reduce cooling costs by 4–8% per room — measurable savings over a full season."),
-        ("Year-round use", "Ceiling fans in reverse (clockwise at low speed) redistribute warm air from the ceiling in winter, reducing the load on your heating system."),
-        ("Safe, code-compliant installation", "Mounting on a fan-rated box ensures the fan will not pull free from the ceiling over time — the most important safety requirement."),
-    ],
-    "price": "Ceiling fan installation typically costs $150–$300 in labor, including fan-rated box upgrade if required. Fans themselves range from $50 for basic models to $300+ for premium silent motors.",
+    "why_need": "Ceiling fan installation is needed when adding a fan to a room that currently has only a light fixture, when replacing a fan with a failed motor, or when upgrading to a larger or quieter unit.",
+    "benefits": "A ceiling fan in summer pushes air downward to create a wind-chill effect, allowing the thermostat to be raised without a comfort reduction. In winter, reversed rotation moves warm air down from the ceiling. The combination reduces HVAC runtime and energy cost year-round.",
+    "longevity": "Quality ceiling fans last 10 to 15 years. The electrical wiring and junction box installation are permanent.",
+    "consequences": "A ceiling fan must be mounted on a junction box specifically rated for fan support — not on a standard light-fixture box. A fan-rated box is anchored differently than a light box, because a rotating fan applies both a downward load and a lateral rotational load that a light fixture never creates. A fan installed on a standard box will gradually work the box loose from its mounting. The progression is slow — months of subtle wobble that seems minor — until the box mount fails. A fan spinning at high speed with a failing mount creates a serious physical danger to anyone in the room.",
 },
 
 "light-fixture-installation": {
-    "intro": "Replacing a dated light fixture is one of the highest-return cosmetic upgrades in any room. A new flush mount in a bedroom, a statement pendant over a kitchen island, or a chandelier in a dining room immediately changes the feel of the space — and modern LED-compatible fixtures use a fraction of the energy of the incandescent-era fixtures they replace.\n\nFixture installation involves more than just swapping one for another. Heavy chandeliers require a rated brace or fan-rated box — standard boxes are rated for 50 pounds; many chandeliers exceed this. Wiring configurations vary between single-switch, three-way, and dimmer setups, and miswiring results in flickering, buzzing, or a fixture that doesn't operate correctly.",
-    "signs": [
-        "The current fixture is visually outdated or no longer suits the room's style",
-        "You are installing a chandelier or semi-flush fixture heavier than the standard 50-pound box rating",
-        "You want to add a dimmer switch as part of the fixture upgrade",
-    ],
-    "steps": [
-        ("Power off and box assessment", "The circuit is switched off at the breaker and the existing junction box inspected for its weight rating."),
-        ("Box upgrade if needed", "Fixtures over 50 pounds require a fan-rated box or adjustable brace — we install this before mounting any heavy fixture."),
-        ("Wiring connection", "Wires are connected in the correct configuration for the switch setup — single pole, three-way, or dimmer-compatible wiring."),
-        ("Fixture mounting and test", "The fixture is mounted, any bulbs installed, and the circuit restored. The fixture is tested on all switch positions."),
-    ],
-    "benefits": [
-        ("Immediate visual impact", "A new fixture is one of the fastest and most cost-effective ways to update a room's appearance without renovation."),
-        ("Energy reduction", "LED-compatible fixtures paired with LED bulbs use 75% less electricity than incandescent equivalents — visible on every electric bill."),
-        ("Safe, weight-appropriate installation", "Correctly rated mounting hardware ensures chandeliers and heavy fixtures remain safely anchored for their full service life."),
-    ],
-    "price": "Light fixture installation typically costs $100–$250 in labor. Heavy chandeliers requiring a brace installation add $75–$125. The fixture itself is customer-supplied or sourced per preference.",
+    "why_need": "Fixture replacement is needed when a chandelier or ceiling fixture is outdated, when a fixture has failed, or when a renovation calls for a lighting style change. It is also needed when the existing wiring connections are old enough to show oxidation or the wrong wire gauge.",
+    "benefits": "A professionally installed fixture has correctly made wire connections with proper wire nuts or push-in connectors rated for the load, correctly matched wire gauges, and a secured mounting that accounts for the weight of the fixture.",
+    "longevity": "Correct wiring connections last indefinitely. The fixture itself has a lifespan dependent on the quality of the product.",
+    "consequences": "Incorrect wire connections inside a junction box create electrical resistance at the connection point. Resistance generates heat. Heat at an electrical connection is one of the primary causes of residential electrical fires — it is the mechanism identified in the majority of fires attributed to 'faulty wiring.' The connection may function correctly for months before the heat buildup reaches a critical level. The junction box is inside a wall or ceiling cavity, and there is no external indication that the connection is degrading. This is why electrical work behind a cover plate is not a place to accept uncertainty about quality.",
 },
 
 "outlet-switch-upgrades": {
-    "intro": "Dead outlets, switches that feel warm, and outlets that sparks when plugging in a device are not minor inconveniences — they are electrical safety issues that should be addressed promptly. Dead outlets are often caused by a tripped GFCI upstream in the circuit, but can also indicate a loose or failed device. Warm switches or outlets indicate excessive resistance in the connection, which generates heat.\n\nBeyond repairs, outlet and switch upgrades are also a maintenance and modernization opportunity. Replacing standard outlets with GFCI-protected devices in kitchens, bathrooms, and garages brings these circuits into current code compliance. Adding USB combo outlets to high-use locations eliminates adapter clutter. Replacing standard switches with smart dimmers provides energy savings and convenience.",
-    "signs": [
-        "An outlet produces no power even though the breaker is on — often a tripped GFCI upstream",
-        "A switch or outlet feels warm to the touch, even when nothing is plugged in",
-        "Outlets in kitchen, bathroom, or garage are not GFCI-protected",
-    ],
-    "steps": [
-        ("Circuit diagnosis", "We trace the circuit, test upstream GFCI devices, and identify whether the failure is in the device itself or at a connection."),
-        ("Device replacement", "The failed outlet or switch is replaced with a new device of the appropriate type and amperage rating."),
-        ("GFCI installation where required", "GFCI devices are installed in all NEC-required locations — kitchens, bathrooms, garages, outdoor circuits."),
-        ("Load test", "All new devices are tested under load to confirm correct operation before completing the job."),
-    ],
-    "benefits": [
-        ("Safety restoration", "Replacing a warm or sparking outlet eliminates the fire risk from high-resistance connections before they cause damage."),
-        ("GFCI code compliance", "GFCI protection in wet areas is a code requirement — and provides genuine protection against electrocution in kitchen and bathroom environments."),
-        ("Modern functionality", "USB combo outlets and smart dimmers add convenience at a cost of $20–$50 per device — typically installed in minutes."),
-    ],
-    "price": "Standard outlet or switch replacement typically costs $100–$175 per device including labor. GFCI installation runs $125–$200. Multiple devices in the same visit share the trip cost.",
+    "why_need": "Outlet and switch upgrades are needed when two-prong ungrounded outlets are present in a home, when kitchen, bathroom, garage, or outdoor outlets lack GFCI protection, or when outlets and switches are worn, cracked, or no longer holding plugs securely.",
+    "benefits": "GFCI outlets protect against shock hazards in wet areas by detecting ground faults and cutting power in milliseconds. Grounded three-prong outlets allow proper use of modern appliances. New devices with tight plug retention eliminate the fire risk of arcing at a loose connection.",
+    "longevity": "Properly installed outlets and switches last 20 to 30 years. GFCI devices have test and reset buttons that confirm they are functioning at any time.",
+    "consequences": "Non-GFCI outlets in bathrooms and kitchens are the most common electrical code violation found during home inspections, and for good reason: water and electricity at the same location without ground fault protection can be fatal. The National Electrical Code has required GFCI protection in these locations since the 1970s, which means any home built or renovated after that date without it has either lost the protection or was never brought to code. The risk isn't theoretical — the ground fault that GFCI is designed to stop happens faster than any circuit breaker can respond.",
 },
 
 "video-doorbell-smart-lock": {
-    "intro": "Video doorbells and smart locks have moved from luxury to mainstream home security in the last five years. Seeing and speaking with visitors when you're not home, monitoring package delivery, and locking or unlocking your door remotely from a phone are all practical, daily-use features — not novelties. The challenge is installation: hardwired video doorbells require verifying the existing transformer voltage and wiring; smart locks require precise alignment of the latch, strike, and deadbolt for reliable operation.\n\nImproperly installed smart devices result in connectivity issues, poor video quality from doorbells mounted at the wrong height and angle, and locks that don't fully extend or retract reliably. Professional installation ensures the device works correctly from day one and is set up on your network.",
-    "signs": [
-        "You want to see visitors and delivery drivers when away from home",
-        "Your existing deadbolt is manual and you want keypad or app-controlled access",
-        "Your home's current doorbell wiring is older and you are unsure of its compatibility",
-    ],
-    "steps": [
-        ("Compatibility check", "For video doorbells, we verify the existing doorbell transformer voltage (8–24V required) and wiring condition."),
-        ("Device mounting", "The doorbell is mounted at the correct height (approximately 48 inches) for optimal face detection, with a wedge angle kit if the mounting surface is angled."),
-        ("Smart lock installation", "The existing deadbolt is removed and the new smart lock installed with precise door edge and strike alignment."),
-        ("Wi-Fi pairing and app setup", "Both devices are connected to your Wi-Fi network, paired to the companion app, and tested for complete functionality."),
-    ],
-    "benefits": [
-        ("Remote visibility and access", "Seeing and speaking with anyone at your door from anywhere in the world — and unlocking for trusted visitors — is the primary daily value of these devices."),
-        ("Package security", "Video footage of delivery interactions reduces package theft and provides documentation for claims."),
-        ("Keyless entry convenience", "Smart locks eliminate the need to carry or hide spare keys — access codes for house cleaners, dog walkers, or guests are set and revoked remotely."),
-    ],
-    "price": "Video doorbell installation typically costs $100–$200. Smart lock installation runs $100–$200. Combined installation in one visit is more cost-effective than separate trips.",
+    "why_need": "Smart doorbell and lock installation is needed when upgrading home security, replacing a failed wired doorbell, or when adding keyless entry for family members or service access. These are also common upgrades during home sales.",
+    "benefits": "A video doorbell provides real-time and recorded visitor visibility from anywhere. A smart lock eliminates the vulnerability of physical key loss or copy while enabling time-limited codes for contractors or guests.",
+    "longevity": "Hardware quality varies significantly by brand. Well-made smart locks last 5 to 7 years before technology or battery wear prompts replacement. Wiring for a video doorbell is permanent.",
+    "consequences": "Smart locks that are improperly installed create alignment stress on the deadbolt — the bolt doesn't travel freely in the strike plate because the lock body isn't exactly square in the door. The motor works against this resistance on every lock and unlock cycle. Motor failure follows within months rather than years. A smart lock with a dead motor is more difficult to override than a standard deadbolt, and it fails in an inconvenient rather than a predictable way. Video doorbells wired with the wrong transformer voltage provide insufficient or excessive power to the device, shortening its lifespan and causing performance issues that are difficult to diagnose after installation.",
 },
 
 "drywall-patching": {
-    "intro": "Drywall damage is inevitable in any lived-in home — doorknobs punch through walls, anchors pull out and leave craters, water stains leave softened sections, and renovation work leaves gaps where old fixtures lived. What separates a professional patch from a DIY attempt is not the patch itself — it's the texture match. A correctly patched hole with mismatched texture is immediately visible, while a correctly patched and matched repair is completely invisible.\n\nTexture matching requires assessing the existing texture type (orange peel, knockdown, skip trowel, smooth Level 5), recreating it with the right technique and equipment, and testing the match before applying it to the repair area. This is the step most homeowners skip — and the reason most DIY patches are still visible after painting.",
-    "signs": [
-        "Holes from doorknobs, removed hardware, or accidental damage anywhere on walls or ceilings",
-        "Water damage from a past leak that left soft, stained, or sagging drywall",
-        "Seams and nail pops that have cracked through the surface of finished walls",
-    ],
-    "steps": [
-        ("Damage assessment", "We determine the right repair method — setting-type compound for deep holes, standard compound for surface repairs, California patch or backer board for larger holes."),
-        ("Patch installation", "The appropriate patch method is used based on hole size: mesh patch for small holes, California patch or blocking for medium holes, full backer board for large sections."),
-        ("Texture match", "We assess the existing texture type and apply the appropriate technique — spray, trowel, or brush — testing on a scrap piece before touching the wall."),
-        ("Prime and ready for paint", "The patched area is primed with drywall primer — painting without priming causes texture flashing that makes the repair visible even through paint."),
-    ],
-    "benefits": [
-        ("Invisible repair", "A correctly patched and texture-matched repair is completely invisible after painting — the only acceptable result."),
-        ("Structural restoration", "Soft, water-damaged drywall removed and replaced with new material restores the wall's structural contribution to the room and eliminates any mold substrate."),
-        ("Paint-ready finish", "We leave the patch primed and ready for paint — you need only apply finish coats in your wall color."),
-    ],
-    "price": "Drywall patching typically costs $100–$350 per area depending on hole size, number of patches, and texture complexity. Water damage repairs with mold treatment run toward the higher end.",
+    "why_need": "Drywall patching is needed after anchor removal, doorknob impacts, pipe access, or any opening cut in the wall surface. It is also needed before painting when nail pops or joint tape failures become visible.",
+    "benefits": "A properly patched repair is indistinguishable from the surrounding surface after finish work. The patch is backed and taped for structural integrity, not just filled cosmetically.",
+    "longevity": "A correctly backed and taped drywall patch is permanent. It will not crack or telegraph through paint over time, unlike a patch that was filled with compound alone without backing.",
+    "consequences": "An unpatched hole in drywall, particularly near pipes, electrical, or exterior walls, is an open pathway for air, moisture, and insects into the wall cavity. In exterior-adjacent walls, an opening allows warm, humid interior air to reach the cold cavity surface, where it condenses year-round. This is the mechanism behind wall cavity mold that develops without any visible water source. Small holes around pipe penetrations are also where mice and insects enter most commonly — they follow the air movement through the gap.",
 },
 
 "baseboard-molding-installation": {
-    "intro": "Baseboards are the visual foundation of a room — they complete the transition between wall and floor and tie together the overall finish quality of the space. Missing sections after renovation, damaged boards from water or impact, or upgrading from builder-grade flat stock to a more substantial profile all create the need for baseboard work.\n\nBaseboard installation requires correct coping at inside corners (not mitering) for a gap-free result that holds up as the house settles, clean mitered outside corners, and secure attachment to the wall framing. The difference between professional and amateur baseboard work is visible from across the room — gaps at corners, boards that bow away from the wall, and caulk lines that try to hide the gaps.",
-    "signs": [
-        "Baseboards are missing in sections after renovation or floor installation",
-        "Corners have visible gaps from settlement or improper original installation",
-        "You are upgrading from flat builder-grade stock to a more detailed profile",
-    ],
-    "steps": [
-        ("Measurement and material selection", "We measure the room perimeter, calculate material quantities, and confirm the profile matches existing boards or the customer's selection."),
-        ("Cut and fit", "Inside corners are coped — not mitered — for a tight fit that accommodates settlement. Outside corners are mitered at 45 degrees."),
-        ("Attachment", "Boards are nailed to the wall plate at stud locations with finish nails, countersunk for filling."),
-        ("Fill, caulk, and ready for paint", "Nail holes are filled, the top edge of the baseboard is caulked to the wall, and the bottom is caulked to the floor for a finished appearance."),
-    ],
-    "benefits": [
-        ("Finished appearance", "Properly installed baseboards with tight corners and clean caulk lines are the final step that makes a renovation look complete rather than unfinished."),
-        ("Gap prevention", "Coped inside corners hold tight over time as the house settles — mitered corners open up, coped corners close."),
-        ("Seamless material match", "We match existing profiles in adjacent rooms so new baseboard is indistinguishable from original work after painting."),
-    ],
-    "price": "Baseboard installation typically costs $150–$400 per room depending on room size, corner count, and profile complexity. Material cost is additional.",
+    "why_need": "Baseboard installation or replacement is needed after flooring installation, when baseboards have been damaged by moisture or impact, or when a renovation requires style-matching with new trim throughout. Many flooring installations require baseboard to be removed and reinstalled as part of the work.",
+    "benefits": "Baseboard covers the expansion gap at the floor edge required by most floating floor systems, protects the wall base from furniture and vacuum impact, and provides a finished transition between two surfaces that are never perfectly aligned.",
+    "longevity": "Properly installed painted or primed MDF and solid wood baseboard lasts the life of the home. The fastener schedule and caulk detail at the top edge determine whether it separates over time.",
+    "consequences": "The expansion gap at the edge of a floating floor is not optional — it allows the flooring to expand and contract with humidity changes without buckling. A gap at the floor-wall junction that is not covered by baseboard is also an air pathway and moisture entry point. Engineered wood and laminate flooring near open edges absorbs moisture from drafts and spills along the exposed end grain, which causes swelling and edge lift over time. In bathrooms, ungapped flooring that is not protected by baseboard also lacks the moisture barrier at the wall joint that prevents floor-level water from migrating under the flooring.",
 },
 
 "cabinet-hardware-upgrade": {
-    "intro": "Cabinet hardware — hinges, pulls, and handles — is one of the most cost-effective cosmetic upgrades available for a kitchen or bathroom. Replacing basic chrome pulls with brushed nickel bar pulls, or swapping standard hinges for soft-close versions, instantly updates the feel of cabinets that may otherwise be in perfectly good condition.\n\nSoft-close hinge installation requires removing existing hinges, selecting the correct soft-close model for the cabinet door thickness and overlay, and adjusting the six-way (height, depth, side-to-side) adjustment on each hinge so every door closes perfectly flat and at the correct gap. Done correctly, it takes 20–30 minutes per door. Done in a hurry, misaligned doors and uneven gaps undermine the entire effect.",
-    "signs": [
-        "Cabinet doors slam rather than close softly — a constant noise and wear issue",
-        "Existing pulls and handles are dated, corroded, or mismatched",
-        "Cabinet doors are slightly misaligned and the existing hinges don't have adjustment capability",
-    ],
-    "steps": [
-        ("Hardware selection and hole measurement", "Existing pull hole spacing (center-to-center) is measured to confirm replacement compatibility, or template marks are made for new holes."),
-        ("Old hardware removal", "Existing hinges and pulls are removed. Screw holes that need to be relocated are filled."),
-        ("Soft-close hinge installation", "New soft-close hinges are installed at the correct cup depth and overlay setting, then adjusted in all six planes for perfect door alignment."),
-        ("Pull installation", "New pulls are installed with a jig for consistent alignment across all doors and drawers."),
-    ],
-    "benefits": [
-        ("Soft-close functionality", "Soft-close hinges eliminate cabinet door slamming — protecting the cabinet box, reducing noise, and extending hinge life."),
-        ("Fresh aesthetic", "New hardware is the fastest way to refresh dated kitchen or bathroom cabinetry without the cost of replacement."),
-        ("Precise alignment", "Adjustable soft-close hinges allow fine-tuning of door position to achieve perfectly even gaps and a flat, consistent appearance."),
-    ],
-    "price": "Cabinet hardware upgrades typically cost $100–$300 in labor depending on cabinet count. Soft-close hinge upgrades run $10–$25 per hinge in parts.",
+    "why_need": "Cabinet hardware replacement is needed when hinges are failing and causing doors to sag, when drawer slides are worn and binding, or when an overall kitchen or bathroom refresh requires updating pulls and knobs without a full cabinet replacement.",
+    "benefits": "Soft-close hinges eliminate door slamming, reduce wear on the face frame, and provide a precisely controlled closing motion. Correctly matched replacement hardware restores smooth operation to every door and drawer in the kitchen.",
+    "longevity": "Quality European-style soft-close hinges last 20 years or more under normal residential use. Standard pulls and knobs are indefinitely durable if properly installed.",
+    "consequences": "A sagging cabinet door applies a constant downward and outward force to the mounting screws and the face frame section they are in. Over time, this force works the screws loose and begins pulling the face frame away from the cabinet box. Once the face frame is compromised, a simple hinge replacement requires repair work on the frame before the new hardware can be properly anchored. Ignoring a sagging door doesn't preserve the status quo — it progressively enlarges the repair scope until the cabinet itself is structurally involved.",
 },
 
 "cabinet-repair-replacement": {
-    "intro": "Cabinets take more daily wear than almost any other fixture in the home — doors open and close hundreds of times per year, drawers are loaded and yanked, and the interior is exposed to humidity, cleaning products, and impact. Over time, hinges fail, drawer slides crack, doors warp, and cabinet boxes sustain damage from water or impact that compromises both appearance and function.\n\nMany homeowners assume damaged cabinets require full replacement — an expensive and disruptive project. In most cases, targeted repair is far more cost-effective: replacing a failed drawer slide, repairing a damaged panel, re-hanging a warped door, or refacing cabinet faces with new veneer or paint. We assess the actual condition and recommend the most cost-effective path.",
-    "signs": [
-        "Drawers that stick, won't close fully, or have fallen off the slides entirely",
-        "Cabinet doors that are warped, cracked, or no longer hang straight",
-        "Visible water damage on the cabinet box near the sink or dishwasher",
-    ],
-    "steps": [
-        ("Assessment", "We inspect each cabinet for structural integrity, hardware condition, and cosmetic damage — distinguishing what is repairable from what requires replacement."),
-        ("Hardware replacement", "Failed drawer slides, hinges, and door bumpers are replaced with correct-size replacements."),
-        ("Panel repair or replacement", "Damaged cabinet box panels are repaired with filler and refinishing, or replaced if structural integrity is compromised."),
-        ("Door and drawer alignment", "After repair, all doors and drawers are adjusted for proper operation and even appearance."),
-    ],
-    "benefits": [
-        ("Cost vs. replacement", "Targeted cabinet repair typically costs 10–30% of full replacement while restoring full functionality and appearance."),
-        ("Extended cabinet life", "Addressing hardware failures and water damage early prevents the progressive deterioration that eventually forces replacement."),
-        ("Matching existing style", "Repair preserves the existing cabinet style — relevant in older homes where current stock doesn't match original millwork."),
-    ],
-    "price": "Cabinet repair typically costs $150–$500 per affected area depending on the extent of damage and parts required. Full cabinet replacement is quoted separately based on scope.",
+    "why_need": "Cabinet repair is needed when boxes have water damage, when face frames have separated, when drawers are failing, or when a section of cabinetry needs to be replaced or modified as part of a kitchen renovation. It is also needed after any under-sink leak that has been left long enough to damage the cabinet base.",
+    "benefits": "Targeted cabinet repair restores function without requiring a full kitchen replacement. A properly repaired or rebuilt cabinet section matches the existing cabinetry in style and operation, and where replacement is needed, custom-matched doors and drawer fronts can maintain a consistent appearance.",
+    "longevity": "Quality cabinet repair done on sound structural elements lasts the remaining life of the kitchen. Water-damaged sections that are fully replaced with properly sealed materials will not recur as long as the moisture source has been eliminated.",
+    "consequences": "Water-damaged particleboard cabinet boxes do not stabilize when they dry out — they remain structurally compromised once they have swollen. The delaminated material provides no resistance to moisture reabsorption, which means a second exposure causes damage faster than the first. More significantly, the subfloor beneath a leaking base cabinet absorbs the same moisture as the cabinet above it, and subfloor damage from under-sink leaks is a leading cause of unexpected kitchen renovation costs that are only discovered during teardown.",
 },
 
 "pet-door-installation": {
-    "intro": "A pet door gives cats and dogs the freedom to move between indoors and outdoors on their own schedule, reducing the demand on owners to constantly manage access and eliminating the accident risk when no one is home to let them out. Modern pet doors with magnetic or electronic locking mechanisms also prevent wildlife from using the same entrance.\n\nInstallation location matters: exterior doors are the most common installation point, but pet doors can also be cut into walls, siding, or sliding glass door panels. Each surface requires a different approach — wood doors are straightforward, but metal doors, fiberglass, and masonry require specialty tools and techniques that are not appropriate for a DIY approach.",
-    "signs": [
-        "Your pet requires constant trips to the door to be let in and out",
-        "You want to provide outdoor access during the day while you are at work",
-        "Your existing pet door is damaged, has a broken flap, or is the wrong size for a new or larger pet",
-    ],
-    "steps": [
-        ("Size and location selection", "We confirm the correct door size for the pet's height and weight, and identify the best installation location for the door and outside terrain."),
-        ("Template marking", "The cut template is marked precisely on the door, wall, or panel, centered and at the correct height for the pet."),
-        ("Cutting", "The opening is cut using appropriate tools for the material — jigsaw for wood doors, oscillating tool or reciprocating saw for walls, and specialty blades for fiberglass."),
-        ("Frame installation and weatherstripping", "The pet door frame is installed, secured, and sealed at all edges to maintain the door's weathertightness."),
-    ],
-    "benefits": [
-        ("Pet independence", "Freedom to come and go eliminates accidents, reduces anxiety in pets that need outdoor stimulation, and removes the constant interruption of managing access."),
-        ("Security features", "Magnetic and microchip-activated pet doors allow only your pet to enter — preventing neighborhood animals from using the door."),
-        ("Weathertight installation", "A correctly sealed pet door installation maintains the insulation value of the original door or wall with no air or water infiltration."),
-    ],
-    "price": "Pet door installation typically costs $150–$300 depending on door or wall material. Wall installation through multiple layers runs toward the higher end. The door unit itself is customer-supplied or sourced per preference.",
+    "why_need": "Pet door installation is needed when a pet requires independent outdoor access, when a dog door in a screen or glass door has failed, or when a new door requires a correctly fitted unit. The installation type — in-door, in-wall, or sliding panel — depends on the door type and home configuration.",
+    "benefits": "A correctly installed and sealed pet door allows pet access without creating a significant thermal penalty. Modern units with double-flap designs and magnetic seals reduce air infiltration compared to older single-flap units.",
+    "longevity": "Quality pet doors last 5 to 10 years before the flap material or seals degrade under UV and repeated use. The cut in the door or wall is permanent.",
+    "consequences": "A pet door cut and installed without proper framing around the opening compromises the insulating properties of the door at the cut edge. Solid-core and insulated exterior doors have internal construction — foam core, fire-rating layers, or structural rails — that is interrupted by the cut. Improper finishing at the edge allows moisture to enter the door core, which degrades the door from the inside over time. A door ruined by improper pet door installation is not repairable — it must be replaced entirely.",
 },
 
 "furniture-assembly": {
-    "intro": "Flat-pack furniture from IKEA, Wayfair, Amazon, and other retailers accounts for hundreds of millions of pieces assembled per year — and an enormous number of them are assembled incorrectly. Misaligned cam locks, reversed panels, missed dowels, and overtightened fasteners create furniture that wobbles, drawers that bind, and beds that squeak — or in worst cases, furniture that fails structurally.\n\nProfessional assembly gets it right the first time: instructions followed in sequence, hardware sorted and identified before starting, panels assembled in the correct orientation, and cam locks tightened to the right torque. The result is furniture that operates smoothly and safely for its full intended service life.",
-    "signs": [
-        "Large or complex multi-box furniture has just been delivered",
-        "Previous self-assembly attempts have resulted in misaligned doors, stuck drawers, or wobbly frames",
-        "The furniture requires wall anchoring with an anti-tip bracket — a safety requirement for wardrobes, bookcases, and dressers",
-    ],
-    "steps": [
-        ("Inventory and sort", "All parts and hardware are inventoried against the parts list before assembly begins — missing parts are identified before you are midway through the build."),
-        ("Sequential assembly", "Instructions are followed in the specified sequence to prevent the common mistake of discovering a reversed panel after 40 steps have been completed."),
-        ("Hardware torque", "Cam locks and bolts are tightened to the correct torque — hand-tight plus a quarter turn — not over-tightened, which strips threads and splits panels."),
-        ("Anti-tip anchoring", "Wardrobes, dressers, and bookcases are anchored to the wall stud with the included anti-tip strap as a mandatory safety step."),
-    ],
-    "benefits": [
-        ("Correct assembly first time", "Professional assembly avoids the reverse-engineering required when panels go in backward — the most common and time-consuming flat-pack mistake."),
-        ("Safe anti-tip anchoring", "Wardrobes and tall furniture tipping is a leading cause of child injury. Anti-tip brackets installed into studs prevent this."),
-        ("Time savings", "A bedroom set that takes an average DIY assembler 6–8 hours takes a professional 2–3 hours. Your day stays intact."),
-    ],
-    "price": "Furniture assembly typically costs $75–$200 per piece depending on complexity. Bedroom sets and full-wall storage systems requiring multiple boxes are quoted based on item count.",
+    "why_need": "Professional furniture assembly is needed for large flat-pack pieces such as wardrobes, bed frames, and desks where the instruction quality is poor, the piece is heavy enough to require a second person, or where a previous DIY attempt resulted in parts assembled in the wrong order that cannot be corrected without full disassembly.",
+    "benefits": "Properly assembled furniture has every cam lock, dowel, and fastener at correct engagement, ensuring the structural integrity the manufacturer designed into the piece. The result is furniture that doesn't rock, lean, or squeak during use.",
+    "longevity": "Well-assembled flat-pack furniture performs to the manufacturer's rated lifespan. Poorly assembled pieces, particularly those with cam locks not fully tightened, begin to degrade within weeks as the joints shift under use.",
+    "consequences": "Flat-pack furniture assembled out of sequence or with hardware not fully engaged cannot be easily corrected after the piece is loaded. The particleboard around a cam lock that was only partially tightened begins to crack as the joint shifts under load, and once the material around the cam lock is damaged, there is no way to re-secure it at the original location. More seriously, a wardrobe or bookcase that isn't square and fully joined at every joint is a tip hazard. The Consumer Product Safety Commission has identified furniture tip-over as a leading cause of injury deaths in children under 6.",
 },
 
 "attic-ladder-replacement": {
-    "intro": "An attic ladder that wobbles, sticks, or fails to fully extend is more than an inconvenience — it's a fall hazard. Attic ladders carry a duty rating (typically 225–375 pounds) that accounts for the person plus whatever they're carrying. A ladder with cracked rails, broken spring mechanisms, or a deteriorated hinge assembly can fail under load.\n\nReplacement also provides an energy-efficiency opportunity. Original attic ladders in homes built before 2000 are almost always uninsulated — a direct air path between conditioned living space and the unconditioned attic. Modern replacement ladders include foam-sealed hatches and insulated covers that dramatically reduce heat loss through this often-ignored air pathway.",
-    "signs": [
-        "The ladder wobbles sideways when in use or the steps flex under normal body weight",
-        "The spring mechanism has broken or weakened so the ladder no longer stays closed or opens smoothly",
-        "You can feel cold air coming down through the attic hatch in winter",
-    ],
-    "steps": [
-        ("Old ladder removal", "The existing ladder and hatch frame are removed. We inspect the rough opening for any rot, damage, or framing that needs attention."),
-        ("Rough opening adjustment", "If the new ladder requires a different rough opening size, we trim or frame as needed."),
-        ("New ladder installation", "The new ladder is set into the opening, shimmed level and plumb, and fastened to the surrounding framing."),
-        ("Insulation gasket and testing", "The hatch is sealed with the foam gasket supplied with the unit and tested through multiple open-close cycles."),
-    ],
-    "benefits": [
-        ("Structural safety", "A new ladder rated to current standards provides a safe, non-wobbling path to the attic under the full rated load."),
-        ("Energy savings", "An insulated, foam-gasketed attic hatch dramatically reduces air infiltration through one of the home's largest uninsulated air bypasses."),
-        ("Smooth operation", "New spring mechanisms open and retract the ladder fully and smoothly — eliminating the wrestling match that old worn springs require."),
-    ],
-    "price": "Attic ladder replacement typically costs $250–$500 in labor. The ladder unit itself typically runs $150–$350 for a quality aluminum model.",
+    "why_need": "Attic ladder replacement is needed when the existing ladder has a broken or weakened spring mechanism that prevents it from staying closed or extending fully, when the rails or steps show cracking or structural damage, or when the ladder wobbles laterally under load — any of which indicate the load rating can no longer be trusted.",
+    "benefits": "A new properly rated ladder provides safe, stable access to the attic at the full rated load. Modern insulated hatch covers also eliminate the air infiltration that original uninsulated units allow, which is one of the largest single sources of heat loss in a home with an attic.",
+    "longevity": "Quality replacement attic ladders last 20 or more years under normal residential use. The insulated hatch cover maintains its thermal performance for the life of the unit.",
+    "consequences": "An attic ladder that wobbles, has a cracked rail, or has a failing spring mechanism is not a minor inconvenience — it is a structural failure in process. Attic ladders are typically extended with items already in hand on the way up, which means a fall happens from full extension at a moment when balance is already compromised. The drop from attic ceiling height to the floor below is 9 to 10 feet in most homes. A ladder that appears functional under light load can fail at rated load without warning, because the failure mode is typically a structural crack that holds until a specific load threshold is exceeded. The energy cost of an uninsulated hatch is a separate but continuous consequence — studies estimate that an uninsulated attic access opening costs several hundred dollars annually in heating and cooling.",
 },
 
 "mailbox-post-installation": {
-    "intro": "A leaning mailbox post is a slow-motion project that most homeowners notice for years before doing anything about it. The causes are almost always the same: a post set without sufficient concrete footing that has loosened over years of wind loading, or a wood post that has rotted at the ground line. Neither problem resolves itself, and a mailbox that doesn't meet USPS height specifications (41–45 inches to the mailbox floor) can result in mail service disruption.\n\nNew mailbox and post installation is also a curb appeal upgrade. A properly set post with the mailbox at the correct height, plumb and aligned with the property line, makes an immediate positive impression. We handle everything from hole digging to concrete pouring to final alignment.",
-    "signs": [
-        "The post is leaning and does not return to plumb when pushed",
-        "The existing wood post is visibly rotted at ground level",
-        "The mailbox itself is damaged, rusted, or too small for current package volume",
-    ],
-    "steps": [
-        ("Old post removal", "The existing post and any remaining concrete footing are removed and the hole cleared."),
-        ("New hole and footing", "A new hole 24 inches deep is dug, the post set plumb at the correct height, and concrete poured and tamped around the base."),
-        ("Cure time", "The concrete is allowed to cure for 24 hours before the post is put under load — we brace the post during this time."),
-        ("Mailbox mounting", "The mailbox is mounted at the correct height (41–45 inches to floor) and aligned with the road."),
-    ],
-    "benefits": [
-        ("Permanent stability", "A concrete-footed post does not lean — it holds its position against wind loading and vehicle turbulence for 10+ years."),
-        ("USPS compliance", "Correct height and setback ensures uninterrupted mail delivery — carriers are not required to deliver to non-compliant installations."),
-        ("Curb appeal", "A plumb, clean mailbox installation is a small but visible improvement to the front of any home."),
-    ],
-    "price": "Mailbox and post installation typically costs $150–$350 depending on access, post type, and whether the mailbox is customer-supplied or sourced.",
+    "why_need": "Mailbox post installation is needed when the existing post is rotted, cracked, or leaning beyond adjustment, when storm or vehicle damage has destroyed the post, or when postal service delivery standards require a new installation at the correct height and setback from the road.",
+    "benefits": "A properly set post — at the correct depth below the frost line — remains plumb through freeze-thaw cycles that will heave an improperly set post every winter. Correct height and setback ensures mail carrier access without complaint.",
+    "longevity": "A pressure-treated lumber post set to the correct depth below the frost line lasts 15 to 20 years. Aluminum and steel posts last significantly longer.",
+    "consequences": "A post not set below the frost line is subject to frost heaving — the upward movement of soil as groundwater expands during freezing. Each winter cycle pushes the post slightly higher and more out of plumb. After two or three winters, a post installed at 12 inches may be nearly vertical, and by year five it is typically leaning 20 to 30 degrees. The leaning post then pulls the remaining intact section out of the soil with each season's heave cycle. A mailbox that has been reported to the postal service as inaccessible can result in held mail delivery, which is a more immediate consequence than the eventual structural failure.",
 },
 
 "roof-leak-repair": {
-    "intro": "A roof leak is one of the most urgent home repair situations because every additional rain event extends the damage deeper into the structure. Water that enters at the roof travels along rafters, saturates insulation, and eventually appears on ceilings — often far from the actual entry point. The ceiling stain you see may be 6 feet from the actual leak source.\n\nMost roof leaks originate not from the field of the shingles but from failure at specific weak points: flashing around chimneys, skylights, and vents; deteriorated pipe boot collars; or lifted shingles at edges and ridges. These are targeted repairs — not roof replacements — and addressing them promptly prevents the far more expensive damage that follows from delayed repair.",
-    "signs": [
-        "Water stains appear on ceilings or walls, particularly after rain",
-        "Daylight is visible through the attic roof deck",
-        "Shingles are missing, curled, or visibly cracked near the roof edge or around any roof penetration",
-    ],
-    "steps": [
-        ("Interior and exterior inspection", "We trace the path from the ceiling stain to the roof to identify the actual entry point — stains migrate, so the visible damage point is not always directly above the source."),
-        ("Source identification", "Common sources — flashing, pipe boots, ridge caps, or individual damaged shingles — are inspected and the specific failure point identified."),
-        ("Targeted repair", "Flashing is re-sealed or replaced; pipe boot collars are replaced; damaged shingles are swapped out individually."),
-        ("Water test", "A water test with a garden hose confirms the repair has eliminated the entry point before we leave."),
-    ],
-    "benefits": [
-        ("Damage containment", "Fixing a roof leak promptly stops water infiltration that would otherwise continue saturating insulation, rotting sheathing, and spreading ceiling damage."),
-        ("Targeted cost", "Repairing the specific failure point — rather than replacing the entire roof — costs a fraction of a full replacement while providing a complete fix."),
-        ("Documented repair", "A written description of the repair location and method is valuable for insurance purposes and future reference."),
-    ],
-    "price": "Roof leak repair typically costs $200–$600 depending on the access difficulty, repair scope, and whether flashing replacement is required. Emergency same-day service is available.",
+    "why_need": "Roof leak repair is needed at first evidence of water intrusion — a ceiling stain, dripping during rain, or visible moisture in the attic. Waiting for symptoms to become severe before investigating is among the most expensive mistakes a homeowner can make.",
+    "benefits": "Identifying and repairing the entry point stops the water before it has a chance to advance further into the building envelope. Early repairs — replaced flashing, sealed pipe boot, reseated shingles — are straightforward interventions that cost a small fraction of what delayed repair costs.",
+    "longevity": "A properly repaired flashing or replaced shingle section lasts 10 to 20 years depending on materials. A comprehensive repair addressing all vulnerability points at the same visit is a more durable solution than single-source repairs.",
+    "consequences": "Roof leaks do not stay where they start. Water follows the path of least resistance through insulation, along rafters and sheathing, around vapor barriers, and pools at low points that may be several feet from the actual entry. The ceiling stain you see is not above the leak — it is above where the water ran to. Wet insulation permanently loses its R-value once it is compressed by moisture. Rafters and sheathing that are repeatedly wetted through an active season develop rot in the grain, which is invisible from below and only discovered when something soft is found during a future repair. The typical cost of a roof leak ignored for one full season is 4 to 6 times the cost of the original entry-point repair.",
 },
 
 "fascia-repair": {
-    "intro": "Fascia boards run along the lower edge of the roof, capping the rafter tails and providing the mounting surface for gutters. They are exposed to more moisture than almost any other exterior wood component — gutters overflow onto them, ice dams push against them, and they sit in the shadow of the roof overhang where they stay damp long after rain.\n\nRotted fascia boards are not just cosmetic — they compromise the attachment point for gutters, which can then pull away from the house, and in advanced cases can allow water and pests to access the rafter bay. Repair or replacement at the first sign of softness prevents significantly more expensive structural repairs later.",
-    "signs": [
-        "The fascia board feels soft when pressed — a sign of active rot",
-        "Paint is peeling from the fascia in patches, particularly near gutter hangers",
-        "Gutters are pulling away from the house or sitting at an angle",
-    ],
-    "steps": [
-        ("Scope assessment", "We determine the extent of rot — whether it affects only the fascia board or has spread to the sub-fascia or rafter tails."),
-        ("Gutter removal", "Gutters in the affected section are carefully removed and set aside for re-mounting after repair."),
-        ("Damaged board removal and replacement", "The rotted section is cut out, any underlying damage is treated or repaired, and new primed fascia board is cut, fitted, and fastened."),
-        ("Caulk, prime, and paint", "All seams and nail holes are caulked, and the new board is primed and painted to match the existing fascia."),
-    ],
-    "benefits": [
-        ("Gutter support restoration", "New fascia provides a solid attachment point for gutters — preventing the sagging and separation that allows water to fall directly against the foundation."),
-        ("Pest exclusion", "A solid, intact fascia board closes off the gap that rotted wood creates between the roof and the exterior — an access point for wasps, carpenter bees, and squirrels."),
-        ("Early intervention savings", "Replacing a $200 fascia board today prevents the $1,500–$3,000 rafter tail and roof deck repair that active rot eventually creates."),
-    ],
-    "price": "Fascia repair typically costs $150–$450 per section depending on length and whether sub-fascia or rafter repair is also needed. Paint matching is included.",
+    "why_need": "Fascia repair is needed when the board at the roof edge is rotting, cracking, or pulling away from the rafter tails, and when gutters are detaching from the roofline because they no longer have sound material to attach to.",
+    "benefits": "Replacing damaged fascia restores the structural edge that gutters depend on for anchoring. New treated or PVC fascia also closes the moisture pathway at the roof edge that rotted wood leaves open.",
+    "longevity": "Properly painted or primed cedar fascia lasts 15 to 20 years. PVC fascia does not rot and lasts the lifetime of the home with no painting required.",
+    "consequences": "Gutters are attached to the fascia, not to the structure behind it. When fascia rots, the gutter attachment screws lose purchase — first pulling slightly, then spinning free. A gutter detached from the fascia during a storm drops the entire water load from that roof section directly against the foundation below. This is not a gradual event — it happens during the heaviest rain, when the gutter is at maximum load. Foundation soils that receive concentrated roof runoff over multiple seasons develop drainage problems and hydrostatic pressure conditions that lead to basement water intrusion. The fascia board itself costs a few hundred dollars to replace. The downstream consequences of leaving it deteriorated cost many times more.",
 },
 
 "gutter-repair-cleaning": {
-    "intro": "Gutters have one job: carry rainwater from the roof edge to downspouts and away from the foundation. When they fail at this job — because they are clogged with debris, have sagged out of pitch, or have open seams — the consequences are predictable and expensive: foundation water infiltration, basement flooding, wood rot at the fascia and soffits, and in cold climates, ice dams.\n\nAnnual gutter cleaning is the single most cost-effective home maintenance task. A gutter cleaning that costs $150–$300 prevents the foundation drainage problems that cost thousands to remediate. Gutter repairs — re-pitching sagging sections, resealing open joints, replacing damaged hangers — restore function and extend gutter life significantly.",
-    "signs": [
-        "Water pours over the front of gutters during rain rather than flowing to downspouts",
-        "Gutters are visibly sagging in sections, creating a low point where debris accumulates",
-        "Foundation areas are consistently damp after rain even without visible ground saturation",
-    ],
-    "steps": [
-        ("Full gutter cleaning", "All debris is removed from every gutter run — debris bags are used, not blowing material onto the roof or landscape."),
-        ("Downspout clearing", "Downspouts are flushed with water to confirm they are clear from top to bottom."),
-        ("Pitch correction", "Sections that have sagged out of proper pitch (1/4 inch per 10 feet toward downspout) are re-hung at the correct angle."),
-        ("Seam resealing", "Open or leaking seams and joints are cleaned and resealed with gutter sealant from the inside."),
-    ],
-    "benefits": [
-        ("Foundation protection", "Functioning gutters direct roof runoff away from the foundation — the primary defense against basement moisture and foundation movement."),
-        ("Wood rot prevention", "Overflowing gutters saturate fascia boards and soffits, causing rot that progressively damages roof edge structure. Clean, flowing gutters prevent this."),
-        ("Ice dam reduction", "In cold climates, debris-clogged gutters contribute to ice dam formation by trapping standing water that freezes at the roof edge."),
-    ],
-    "price": "Gutter cleaning typically costs $150–$350 depending on linear footage and debris volume. Gutter repair (re-pitching, seam sealing) adds $100–$250 depending on the extent of work needed.",
+    "why_need": "Gutter cleaning and repair is needed each fall after leaves have fallen and before the freeze season, and again in spring to clear winter debris. Repair is needed when seams are leaking, when sections have sagged and lost their slope, or when hangers have pulled away from the fascia.",
+    "benefits": "Clean, properly sloped gutters move water away from the home efficiently and deposit it at a downspout location away from the foundation. Repaired seams and rehung sections eliminate the overflow and drip points that deposit water directly against the foundation or along the siding.",
+    "longevity": "A thorough cleaning holds through a season in most climates. Sealed gutter seams last 5 to 10 years. Rehung sections are permanent repairs.",
+    "consequences": "Gutters have one job: intercept roof runoff and carry it to a designated discharge point away from the foundation. When they are blocked or detached, every significant rain event delivers the entire roof runoff volume — typically thousands of gallons per storm on a standard home — against the foundation perimeter. Foundation walls are designed to resist water table pressure from below, not sustained saturation from surface runoff above. Over years of improper drainage, the soil against the foundation becomes saturated, hydrostatic pressure builds, and water finds its way through any crack or joint in the foundation wall. The foundation crack that becomes visible in year five is a consequence of drainage that was inadequate in years one through four.",
 },
 
 "fence-repair-installation": {
-    "intro": "A fence defines property lines, provides privacy, contains pets and children, and contributes significantly to the visual character of a property. Posts that lean, panels that sag, and gates that won't latch are not just cosmetic problems — they undermine the fence's functional purpose and, left unrepaired, progressively worsen as water and frost continue to work on loose footings.\n\nMost fence failures originate at the post: wood posts rot at the ground line, and even treated lumber has a finite service life in direct soil contact. Post replacement with concrete footings is more labor-intensive than simply tamping a new post back in, but it produces a repair that lasts 15–20 years rather than 2–3.",
-    "signs": [
-        "Posts are visibly leaning and do not return to plumb under hand pressure",
-        "Panel boards have cracked, warped, or pulled free from rails",
-        "The gate no longer latches or drags on the ground",
-    ],
-    "steps": [
-        ("Post assessment", "Each leaning or damaged post is assessed for rot depth. Posts rotted at grade are replaced; posts with surface rot but sound cores can be repaired."),
-        ("Post reset or replacement", "Rotted posts are removed along with old concrete, and new posts are set in fresh concrete footings at the correct depth (1/3 of post height in ground)."),
-        ("Panel and rail repair", "Damaged panels, rails, and pickets are replaced with matching material — pressure-treated where it contacts the ground, cedar or matching species for above-grade sections."),
-        ("Gate adjustment", "Gate hardware is adjusted or replaced for correct operation — proper latch engagement and zero drag on the ground."),
-    ],
-    "benefits": [
-        ("Post stability", "Concrete-footed posts hold plumb against frost heave, wind loading, and lateral pressure — the most common cause of fence failure is inadequately footed posts."),
-        ("Pet and child containment", "A fence with gaps, loose panels, or non-latching gates doesn't contain pets or children — repair restores the fence's core function."),
-        ("Extended fence life", "Addressing post and rail failures early extends the remaining fence life significantly, deferring the cost of full replacement."),
-    ],
-    "price": "Fence repair typically costs $200–$600 per section depending on post count, material, and extent of damage. New fence installation is quoted based on linear footage, style, and material.",
+    "why_need": "Fence repair is needed when posts are leaning, when panels have rotted or warped, when fasteners have corroded and rails have separated, or when storm damage has knocked sections out of alignment. Deterioration is usually gradual and easy to dismiss until the fence is no longer functional.",
+    "benefits": "Repaired or replaced posts restore the structural base for every panel attached to them. New treated lumber at the post level, properly set below the frost line, stabilizes the entire fence line.",
+    "longevity": "Pressure-treated 4x4 posts set in concrete below the frost line last 15 to 20 years or more. Cedar fence boards last 10 to 15 years before significant decay.",
+    "consequences": "A leaning fence post doesn't just look bad — it applies a continuous side-load to the rails and fasteners connecting it to the adjacent panels. As the post leans further, it pulls the fence line out of alignment and strips the fasteners on both adjacent sections. What starts as one failing post typically becomes three or four within two seasons as the load transfers outward. Repairing one post costs a fraction of replacing a fence section. More practically, a fence that no longer contains a yard is no longer a fence — it is a liability for pet containment and property delineation that compounds the cost of every week it goes unaddressed.",
 },
 
 }  # end SERVICE_CONTENT
