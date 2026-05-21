@@ -6,8 +6,12 @@
     '65%{transform:scale(1.07) translateY(-6px);opacity:1}',
     '82%{transform:scale(.96) translateY(0)}100%{transform:scale(1) translateY(0);opacity:1}}',
 
+    '@keyframes cs-glow{0%,100%{box-shadow:0 0 28px rgba(255,107,53,.55),0 10px 40px rgba(6,13,46,.55)}',
+    '50%{box-shadow:0 0 52px rgba(255,107,53,1),0 16px 56px rgba(6,13,46,.7)}}',
+
     '@keyframes cs-shimmer{0%{left:-80%}55%,100%{left:130%}}',
 
+    /* Lightning flicker on the COMING SOON text — 1.6s loop */
     '@keyframes cs-flicker{',
     '0%,74%,100%{color:#FF6B35;text-shadow:0 0 8px rgba(255,107,53,.95),0 0 22px rgba(255,107,53,.65),0 0 48px rgba(255,107,53,.35);opacity:1}',
     '75%{opacity:.7;color:#FF6B35;text-shadow:0 0 3px rgba(255,107,53,.4)}',
@@ -20,9 +24,10 @@
     'position:fixed;z-index:999999;pointer-events:none;display:none;',
     'flex-direction:column;align-items:center;gap:5px;',
     'background:linear-gradient(135deg,#060d2e 0%,#091236 50%,#152468 100%);',
-    'border:none;border-radius:20px;',
+    'border:2px solid #FF6B35;border-radius:20px;',
     'padding:20px 36px 18px;min-width:240px;text-align:center;overflow:hidden;',
-    'box-shadow:0 8px 32px rgba(6,13,46,.7)}',
+    'animation:cs-pop .42s cubic-bezier(.18,.9,.32,1.28) both,',
+    'cs-glow 2.4s ease-in-out .42s infinite}',
 
     '.cs-tip::before{content:"";position:absolute;top:0;left:-80%;width:40%;height:100%;',
     'background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);',
@@ -42,6 +47,7 @@
     '.cs-tip-sub{font-size:11px;color:rgba(255,255,255,.4);',
     'letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-top:2px}',
 
+    /* Dim every intercepted element on hover so the tip stands out */
     '.cs-active-el{opacity:.72!important;cursor:not-allowed!important;',
     'filter:saturate(.8)!important}',
   ].join('');
@@ -73,7 +79,7 @@
     var rect = el.getBoundingClientRect();
     var W = 264;
     var x = rect.left + rect.width / 2 - W / 2;
-    var aboveY = rect.top - 128;
+    var aboveY = rect.top - 128; /* above the element */
     var belowY = rect.bottom + 14;
     var useBelow = aboveY < 10;
 
@@ -83,11 +89,13 @@
     tip.style.top   = (useBelow ? belowY : aboveY) + 'px';
     tip.style.width = W + 'px';
 
+    /* flip arrow when showing below */
     var arrow = tip.querySelector('.cs-tip-arrow');
     if (useBelow) {
       arrow.style.cssText = 'position:absolute;top:-12px;bottom:auto;left:50%;' +
         'transform:translateX(-50%);border:10px solid transparent;' +
         'border-bottom-color:#FF6B35;border-top:none';
+      arrow.style.setProperty('--after-border', 'border-bottom-color:#091236;border-top:none');
     } else {
       arrow.style.cssText = '';
     }
@@ -101,8 +109,11 @@
     place(el);
     tip.style.display = 'flex';
     tip.style.animation = 'none';
-    void tip.offsetWidth; /* reflow to restart animation */
-    tip.style.animation = 'cs-pop .42s cubic-bezier(.18,.9,.32,1.28) both';
+    void tip.offsetWidth; /* reflow to restart */
+    tip.style.animation =
+      'cs-pop .42s cubic-bezier(.18,.9,.32,1.28) both,' +
+      'cs-glow 2.4s ease-in-out .42s infinite,' +
+      'cs-breathe 2.4s ease-in-out .42s infinite';
   }
 
   function hide() {
