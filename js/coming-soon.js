@@ -24,10 +24,10 @@
     'position:fixed;z-index:999999;pointer-events:none;display:none;',
     'flex-direction:column;align-items:center;gap:5px;',
     'background:linear-gradient(135deg,#060d2e 0%,#091236 50%,#152468 100%);',
-    'border:2px solid #FF6B35;border-radius:20px;',
+    'border:none;border-radius:20px;',
     'padding:20px 36px 18px;min-width:240px;text-align:center;overflow:hidden;',
-    'animation:cs-pop .42s cubic-bezier(.18,.9,.32,1.28) both,',
-    'cs-glow 2.4s ease-in-out .42s infinite}',
+    'box-shadow:0 8px 32px rgba(6,13,46,.7);',
+    'animation:cs-pop .42s cubic-bezier(.18,.9,.32,1.28) both}',
 
     '.cs-tip::before{content:"";position:absolute;top:0;left:-80%;width:40%;height:100%;',
     'background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);',
