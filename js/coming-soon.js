@@ -100,10 +100,7 @@
     tip.style.display = 'flex';
     tip.style.animation = 'none';
     void tip.offsetWidth; /* reflow to restart */
-    tip.style.animation =
-      'cs-pop .42s cubic-bezier(.18,.9,.32,1.28) both,' +
-      'cs-glow 2.4s ease-in-out .42s infinite,' +
-      'cs-breathe 2.4s ease-in-out .42s infinite';
+    tip.style.animation = 'cs-pop .42s cubic-bezier(.18,.9,.32,1.28) both';
   }
 
   function hide() {
