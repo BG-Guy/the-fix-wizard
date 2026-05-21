@@ -6,6 +6,14 @@
     '65%{transform:scale(1.07) translateY(-6px);opacity:1}',
     '82%{transform:scale(.96) translateY(0)}100%{transform:scale(1) translateY(0);opacity:1}}',
 
+    '@keyframes cs-flicker{',
+    '0%,74%,100%{color:#FF6B35;text-shadow:0 0 8px rgba(255,107,53,.95),0 0 22px rgba(255,107,53,.65),0 0 48px rgba(255,107,53,.35);opacity:1}',
+    '75%{opacity:.7;color:#FF6B35;text-shadow:0 0 3px rgba(255,107,53,.4)}',
+    '76%{color:#ffe066;text-shadow:0 0 14px rgba(255,220,100,1),0 0 36px rgba(255,107,53,.9),0 0 70px rgba(255,107,53,.5);opacity:1}',
+    '77%{opacity:.75;color:#FF6B35;text-shadow:0 0 4px rgba(255,107,53,.4)}',
+    '78%{color:#ffbc55;text-shadow:0 0 10px rgba(255,200,80,.95),0 0 28px rgba(255,107,53,.7),0 0 55px rgba(255,107,53,.4);opacity:1}',
+    '}',
+
     '.cs-tip{',
     'position:fixed;z-index:999999;pointer-events:none;display:none;',
     'flex-direction:column;align-items:center;gap:5px;',
@@ -23,7 +31,8 @@
     '.cs-tip-icon{font-size:24px;color:#FF6B35;line-height:1}',
 
     '.cs-tip-text{font-family:"Cinzel",serif;font-size:20px;font-weight:900;',
-    'color:#FF6B35;letter-spacing:5px;text-transform:uppercase;line-height:1.2}',
+    'color:#FF6B35;letter-spacing:5px;text-transform:uppercase;line-height:1.2;',
+    'animation:cs-flicker 1.6s ease-in-out .42s infinite}',
 
     '.cs-tip-sub{font-size:11px;color:rgba(255,255,255,.4);',
     'letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-top:2px}',
