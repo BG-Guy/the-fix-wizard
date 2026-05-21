@@ -103,10 +103,11 @@
     el.classList.add('cs-active-el');
     place(el);
 
-    /* Toggle class off → force reflow → toggle on: animation restarts cleanly */
-    tip.classList.remove('cs-show');
-    void tip.offsetWidth;
-    tip.classList.add('cs-show');
+    /* Only animate in if not already visible — prevents animation restart
+       every time the mouse moves between child elements of the same button */
+    if (!tip.classList.contains('cs-show')) {
+      tip.classList.add('cs-show');
+    }
   }
 
   function hide() {
