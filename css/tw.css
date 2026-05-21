@@ -2594,8 +2594,9 @@ section {
   box-shadow: 0 8px 40px rgba(13,27,75,.09);
   border: 1px solid rgba(13,27,75,.07);
   padding: 24px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  /* header | handyman content | divider | chimney content | bottom divider | buttons */
+  grid-template-rows: auto 1fr auto 1fr auto auto;
   gap: 14px;
   transition: box-shadow .25s ease, transform .25s ease;
   position: relative;
