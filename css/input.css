@@ -854,6 +854,8 @@
     flex-direction: column;
     gap: 14px;
     transition: box-shadow .25s ease, transform .25s ease;
+    position: relative;
+    cursor: pointer;
   }
   .loc-card:hover {
     box-shadow: 0 20px 60px rgba(13,27,75,.17);
@@ -893,6 +895,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    position: relative;
+    z-index: 1;
   }
   .loc-svc-btn i { color: var(--orange); font-size: 10px; flex-shrink: 0; transition: color .2s ease; }
   .loc-svc-btn:hover { background: var(--blue-dark); color: #fff; border-color: var(--blue-dark); }

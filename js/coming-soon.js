@@ -9,12 +9,16 @@
     '@keyframes cs-glow{0%,100%{box-shadow:0 0 28px rgba(255,107,53,.55),0 10px 40px rgba(6,13,46,.55)}',
     '50%{box-shadow:0 0 52px rgba(255,107,53,1),0 16px 56px rgba(6,13,46,.7)}}',
 
-    '@keyframes cs-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}',
-
     '@keyframes cs-shimmer{0%{left:-80%}55%,100%{left:130%}}',
 
-    '@keyframes cs-spark{0%,100%{opacity:0;transform:scale(.5) rotate(0deg)}',
-    '40%,60%{opacity:.9;transform:scale(1) rotate(22deg)}}',
+    /* Lightning flicker on the COMING SOON text — 1.6s loop */
+    '@keyframes cs-flicker{',
+    '0%,74%,100%{color:#FF6B35;text-shadow:0 0 8px rgba(255,107,53,.95),0 0 22px rgba(255,107,53,.65),0 0 48px rgba(255,107,53,.35);opacity:1}',
+    '75%{opacity:.7;color:#FF6B35;text-shadow:0 0 3px rgba(255,107,53,.4)}',
+    '76%{color:#ffe066;text-shadow:0 0 14px rgba(255,220,100,1),0 0 36px rgba(255,107,53,.9),0 0 70px rgba(255,107,53,.5);opacity:1}',
+    '77%{opacity:.75;color:#FF6B35;text-shadow:0 0 4px rgba(255,107,53,.4)}',
+    '78%{color:#ffbc55;text-shadow:0 0 10px rgba(255,200,80,.95),0 0 28px rgba(255,107,53,.7),0 0 55px rgba(255,107,53,.4);opacity:1}',
+    '}',
 
     '.cs-tip{',
     'position:fixed;z-index:999999;pointer-events:none;display:none;',
@@ -23,8 +27,7 @@
     'border:2px solid #FF6B35;border-radius:20px;',
     'padding:20px 36px 18px;min-width:240px;text-align:center;overflow:hidden;',
     'animation:cs-pop .42s cubic-bezier(.18,.9,.32,1.28) both,',
-    'cs-glow 2.4s ease-in-out .42s infinite,',
-    'cs-breathe 2.4s ease-in-out .42s infinite}',
+    'cs-glow 2.4s ease-in-out .42s infinite}',
 
     '.cs-tip::before{content:"";position:absolute;top:0;left:-80%;width:40%;height:100%;',
     'background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);',
@@ -38,8 +41,8 @@
     '.cs-tip-icon{font-size:24px;color:#FF6B35;line-height:1}',
 
     '.cs-tip-text{font-family:"Cinzel",serif;font-size:20px;font-weight:900;',
-    'color:#fff;letter-spacing:5px;text-transform:uppercase;line-height:1.2;',
-    'text-shadow:0 0 18px rgba(255,107,53,.6)}',
+    'color:#FF6B35;letter-spacing:5px;text-transform:uppercase;line-height:1.2;',
+    'animation:cs-flicker 1.6s ease-in-out .42s infinite}',
 
     '.cs-tip-sub{font-size:11px;color:rgba(255,255,255,.4);',
     'letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-top:2px}',

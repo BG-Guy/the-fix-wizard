@@ -12,4 +12,13 @@ initScrollReveal();
 initFAQ();
 initCounters();
 
+// Make entire loc-card clickable — navigates to first service link unless a button was clicked
+document.querySelectorAll('.loc-card').forEach(card => {
+    card.addEventListener('click', e => {
+        if (e.target.closest('.loc-svc-btn')) return;
+        const first = card.querySelector('.loc-svc-btn');
+        if (first) window.location.href = first.href;
+    });
+});
+
 document.getElementById('year').textContent = new Date().getFullYear();

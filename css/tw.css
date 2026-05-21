@@ -2598,6 +2598,8 @@ section {
   flex-direction: column;
   gap: 14px;
   transition: box-shadow .25s ease, transform .25s ease;
+  position: relative;
+  cursor: pointer;
 }
 
 .loc-card:hover {
@@ -2673,6 +2675,8 @@ section {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  position: relative;
+  z-index: 1;
 }
 
 .loc-svc-btn i {
