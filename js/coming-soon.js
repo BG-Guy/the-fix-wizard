@@ -61,7 +61,7 @@
 
   /* ── Selectors ─────────────────────────────────────────────────────────── */
   var SEL = [
-    'a.btn', 'button.btn',
+    'button.btn',
     'a[href^="tel:"]', 'a[href^="mailto:"]',
     'a[href="#contact"]', 'a[href*="#contact"]',
     '.nav-cta', '.sticky-cta', '.mobile-cta',
