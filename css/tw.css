@@ -3271,6 +3271,10 @@ section {
   width: 1px;
 }
 
+.min-w-0 {
+  min-width: 0px;
+}
+
 .max-w-\[1000px\] {
   max-width: 1000px;
 }
@@ -3285,10 +3289,6 @@ section {
 
 .max-w-\[580px\] {
   max-width: 580px;
-}
-
-.max-w-\[760px\] {
-  max-width: 760px;
 }
 
 .max-w-\[820px\] {
@@ -3360,6 +3360,10 @@ section {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -3480,6 +3484,12 @@ section {
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rounded-card {
@@ -3660,6 +3670,10 @@ section {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .p-4 {
@@ -3996,6 +4010,10 @@ section {
   color: rgb(255 255 255 / 0.3);
 }
 
+.text-white\/40 {
+  color: rgb(255 255 255 / 0.4);
+}
+
 .text-white\/50 {
   color: rgb(255 255 255 / 0.5);
 }
@@ -4197,6 +4215,10 @@ section {
   color: rgba(255,255,255,.55);
 }
 
+.text-white\/40  {
+  color: rgba(255,255,255,.40);
+}
+
 .bg-white\/\[\.07\]  {
   background-color: rgba(255,255,255,.07);
 }
@@ -4289,10 +4311,6 @@ section {
 
 .max-w-\[580px\]  {
   max-width: 580px;
-}
-
-.max-w-\[760px\]  {
-  max-width: 760px;
 }
 
 .max-w-\[1000px\] {
@@ -4577,6 +4595,10 @@ section {
 @media (min-width: 1024px) {
   .lg\:col-span-1 {
     grid-column: span 1 / span 1;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-\[1fr_2fr\] {
