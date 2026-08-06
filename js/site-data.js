@@ -5,5 +5,4 @@ export const SITE_STATS = {
   satisfaction: 98,
   specialties:  2,
   nj_counties:  21,
-  cle_areas:    20,
 };
