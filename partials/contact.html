@@ -12,15 +12,15 @@
                 <div class="flex flex-col gap-[22px] reveal">
                     <div class="flex gap-3.5 items-start">
                         <div class="w-[46px] h-[46px] shrink-0 bg-navy-900 rounded-lg flex items-center justify-center text-[17px] text-orange"><i class="fas fa-phone"></i></div>
-                        <div><h3 class="text-[12px] font-bold text-slate-500 uppercase tracking-[1px] mb-1">Call Us</h3><a href="tel:+15551234567" class="text-[15px] text-navy-900 font-medium hover:text-orange transition-colors">(555) 123-4567</a></div>
+                        <div><h3 class="text-[12px] font-bold text-slate-500 uppercase tracking-[1px] mb-1">Call Us</h3><a href="tel:+15513504951" class="text-[15px] text-navy-900 font-medium hover:text-orange transition-colors">(551) 350-4951</a></div>
                     </div>
                     <div class="flex gap-3.5 items-start">
                         <div class="w-[46px] h-[46px] shrink-0 bg-navy-900 rounded-lg flex items-center justify-center text-[17px] text-orange"><i class="fas fa-envelope"></i></div>
-                        <div><h3 class="text-[12px] font-bold text-slate-500 uppercase tracking-[1px] mb-1">Email Us</h3><a href="mailto:hello@handypro.com" class="text-[15px] text-navy-900 font-medium hover:text-orange transition-colors">hello@handypro.com</a></div>
+                        <div><h3 class="text-[12px] font-bold text-slate-500 uppercase tracking-[1px] mb-1">Email Us</h3><a href="mailto:office@thefixwizard.com" class="text-[15px] text-navy-900 font-medium hover:text-orange transition-colors">office@thefixwizard.com</a></div>
                     </div>
                     <div class="flex gap-3.5 items-start">
                         <div class="w-[46px] h-[46px] shrink-0 bg-navy-900 rounded-lg flex items-center justify-center text-[17px] text-orange"><i class="fas fa-location-dot"></i></div>
-                        <div><h3 class="text-[12px] font-bold text-slate-500 uppercase tracking-[1px] mb-1">Service Area</h3><p class="text-[15px] text-navy-900 font-medium">All of New Jersey — North, Central &amp; South NJ</p></div>
+                        <div><h3 class="text-[12px] font-bold text-slate-500 uppercase tracking-[1px] mb-1">Service Area</h3><p class="text-[15px] text-navy-900 font-medium">Jersey City · Newark · Hoboken · Hackensack · Bridgewater · Morristown</p></div>
                     </div>
                     <div class="flex gap-3.5 items-start">
                         <div class="w-[46px] h-[46px] shrink-0 bg-navy-900 rounded-lg flex items-center justify-center text-[17px] text-orange"><i class="fas fa-clock"></i></div>
@@ -69,3 +69,14 @@
             </div>
         </div>
     </section>
+    <script>
+    (function(){
+        var svc = new URLSearchParams(window.location.search).get('service');
+        if (!svc) return;
+        var sel = document.getElementById('service');
+        if (!sel) return;
+        for (var i = 0; i < sel.options.length; i++) {
+            if (sel.options[i].text === svc) { sel.selectedIndex = i; break; }
+        }
+    })();
+    </script>

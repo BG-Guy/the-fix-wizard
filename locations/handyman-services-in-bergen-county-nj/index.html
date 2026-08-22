@@ -21,6 +21,12 @@
       "areaServed": {"@type": "AdministrativeArea", "name": "Bergen County, New Jersey"},
       "description": "Expert handyman services in Bergen County, NJ. Licensed & insured technicians serving Hackensack, Paramus, Fort Lee, Englewood and surrounding areas. Free estimate — same-day available."
     }</script>
+    <style>
+    .svc-panel{display:none}.svc-panel.open{display:block}
+    .svc-toggle.active{border-color:#FF6B35!important;box-shadow:0 4px 20px rgba(255,107,53,.15)}
+    .svc-toggle.active .toggle-icon{transform:rotate(180deg)}
+    .svc-toggle .toggle-icon{transition:transform .25s ease}
+    </style>
 </head>
 <body>
 
@@ -47,7 +53,7 @@
                 </li>
             </ul>
             <div class="nav-actions">
-                <a href="tel:+15551234567" class="nav-phone"><i class="fas fa-phone"></i><span>(555) 123-4567</span></a>
+                <a href="tel:+15513504951" class="nav-phone"><i class="fas fa-phone"></i><span>(551) 350-4951</span></a>
                 <a href="../../#contact" class="btn btn-primary nav-cta">Free Quote
                     <svg class="btn-spark bs-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
                     <svg class="btn-spark bs-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
@@ -70,7 +76,7 @@
                 <a href="../../locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
             </li>
         </ul>
-        <a href="tel:+15551234567" class="mobile-phone"><i class="fas fa-phone"></i>(555) 123-4567</a>
+        <a href="tel:+15513504951" class="mobile-phone"><i class="fas fa-phone"></i>(551) 350-4951</a>
         <a href="../../#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
     </div>
     <div class="mobile-overlay" id="mobileOverlay"></div>
@@ -98,8 +104,284 @@
                 <span class="area-hero-pill"><i class="fas fa-shield-halved"></i> Licensed &amp; Insured</span>
             </div>
             <div class="area-hero-ctas">
-                <a href="tel:+15551234567" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                <a href="tel:+15513504951" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> (551) 350-4951</a>
                 <a href="../../#contact" class="btn btn-outline-white">Get Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE OVERVIEW -->
+    <section style="padding:40px 0 64px;background:#f7f8fc;">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[860px] mx-auto mb-6">
+                <button class="svc-toggle bg-white rounded-card border-2 border-slate-200 p-6 flex items-center gap-4 text-left transition-all hover:border-orange hover:shadow-[0_4px_20px_rgba(255,107,53,.12)] w-full cursor-pointer" data-open data-target="handyman-services">
+                    <div class="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
+                        <i class="fas fa-screwdriver-wrench text-orange text-[18px]"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="text-[17px] font-bold text-navy-900">Handyman Services</div>
+                        <div class="text-[13px] text-slate-500 mt-0.5">Drywall, painting, TV mounting &amp; more</div>
+                    </div>
+                    <i class="fas fa-chevron-down text-slate-400 text-[13px] toggle-icon"></i>
+                </button>
+                <button class="svc-toggle bg-white rounded-card border-2 border-slate-200 p-6 flex items-center gap-4 text-left transition-all hover:border-orange hover:shadow-[0_4px_20px_rgba(255,107,53,.12)] w-full cursor-pointer" data-target="chimney-services">
+                    <div class="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center shrink-0">
+                        <i class="fas fa-fire text-orange text-[18px]"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="text-[17px] font-bold text-navy-900">Chimney Repair</div>
+                        <div class="text-[13px] text-slate-500 mt-0.5">Sweeping, tuckpointing, liner install &amp; more</div>
+                    </div>
+                    <i class="fas fa-chevron-down text-slate-400 text-[13px] toggle-icon"></i>
+                </button>
+            </div>
+            <div id="handyman-services" class="svc-panel max-w-[1100px] mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-2">
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-square text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Drywall Repair</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Walls &amp; Ceilings</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Patching, crack repair, and texture matching for holes, water damage, and daily wear. Invisible repairs — no visible seams.</p>
+                            <a href="/new-jersey/drywall-repair/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-paint-roller text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Interior Painting</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Walls &amp; Trim</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Low-VOC interior painting with full surface prep, priming, and two-coat finish for lasting, even coverage throughout your home.</p>
+                            <a href="/new-jersey/painting/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-couch text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Furniture Assembly</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">IKEA &amp; More</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Flat-pack furniture from IKEA, Wayfair, and Amazon assembled correctly — beds, desks, wardrobes, shelving, and TV stands.</p>
+                            <a href="/new-jersey/furniture-assembly/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-tv text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">TV Mounting</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Any Wall Type</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">TVs mounted level on drywall, concrete, brick, and tile. Stud-finding, correct anchors, and cable routing included.</p>
+                            <a href="/new-jersey/tv-wall-mounting/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-warehouse text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Garage Door Repair</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Springs &amp; Openers</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Spring replacement, opener repair, track realignment, and panel fixes to restore smooth, safe operation.</p>
+                            <a href="/new-jersey/door-repair/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-toilet text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Toilet Repair</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Flushing &amp; Seals</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Running toilets, faulty flappers, leaking bases, and broken fill valves fixed same-day. No more wasted water or floor damage.</p>
+                            <a href="/new-jersey/toilet-repair/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-faucet text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Light Plumbing</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Faucets &amp; Fixtures</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Dripping faucets, slow drains, and under-sink leaks repaired on the same visit. Quality parts, clean workmanship.</p>
+                            <a href="/new-jersey/plumbing-repair/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-bolt text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Light Electrical</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Outlets &amp; Switches</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Dead outlets, flickering lights, and ceiling fan or light fixture replacements — all code-compliant, done safely.</p>
+                            <a href="/new-jersey/electrical-repair/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="chimney-services" class="svc-panel max-w-[1100px] mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-2">
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-broom text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Chimney Sweeping</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Annual Cleaning</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">HEPA-vacuum creosote removal from flue top to bottom. Reduces chimney fire risk and improves draft. NFI-certified inspection included.</p>
+                            <a href="/new-jersey/chimney-inspection-standard-sweep/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-hammer text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Tuckpointing</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Mortar Repair</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Deteriorated mortar joints ground out and repacked to stop water infiltration and extend chimney life by decades.</p>
+                            <a href="/new-jersey/chimney-tuckpointing/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-crown text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Crown Repair</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Top Sealing</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Cracked crowns repaired with elastomeric sealant or rebuilt to prevent water entering the masonry from above.</p>
+                            <a href="/new-jersey/chimney-crown-repair/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-fire text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Cap Installation</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Weather Shield</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Stainless steel caps installed to block rain, animals, and debris from entering the flue opening — last a lifetime.</p>
+                            <a href="/new-jersey/chimney-cap-installation/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-grip-lines-vertical text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Liner Installation</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Full Flue System</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Stainless steel liner systems for safe combustion gas exhaust on oil, gas, and wood-burning appliances. Code-required in NJ.</p>
+                            <a href="/new-jersey/chimney-liner-installation/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-droplet text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Waterproofing</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Masonry Protection</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Penetrating waterproofer applied to block moisture entry while allowing the masonry to breathe — prevents freeze-thaw spalling.</p>
+                            <a href="/new-jersey/chimney-waterproofing/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-wrench text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Flashing Repair</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Roof-Chimney Seal</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Step and counterflashing replaced and sealed to stop water infiltration at the roof-chimney junction — the most common source of attic leaks.</p>
+                            <a href="/new-jersey/chimney-flashing-repair/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 transition-transform duration-500 group-hover:scale-105" style="aspect-ratio:16/9;">
+                            <i class="fas fa-image text-slate-300 text-[32px]"></i>
+                        </div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-fire-flame-curved text-orange text-[15px]"></i></div>
+                                <h3 class="text-[18px] font-bold text-navy-900">Firebox Repair</h3>
+                            </div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Combustion Chamber</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Cracked firebrick and failed refractory mortar replaced to restore a safe, code-compliant firebox. Essential before the next burn season.</p>
+                            <a href="/new-jersey/firebox-rebricking/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -166,7 +448,7 @@
                     <div class="area-cta-box">
                         <h3>Get a Free Estimate</h3>
                         <p>Available same-day across Bergen County. Licensed &amp; insured. No obligation.</p>
-                        <a href="tel:+15551234567" class="btn btn-primary"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                        <a href="tel:+15513504951" class="btn btn-primary"><i class="fas fa-phone"></i> (551) 350-4951</a>
                         <a href="../../#contact" class="btn btn-outline-white">Send a Message</a>
                     </div>
 
@@ -207,7 +489,7 @@
                 <p>Free estimates across all of Bergen County. Licensed &amp; insured. Same-day available.</p>
             </div>
             <div class="cta-btns">
-                <a href="tel:+15551234567" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="tel:+15513504951" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
                 <a href="../../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Quote</a>
             </div>
         </div>
@@ -244,8 +526,8 @@
             <div class="footer-col">
                 <h4>Contact</h4>
                 <ul class="footer-contact">
-                    <li><i class="fas fa-phone"></i><a href="tel:+15551234567">(555) 123-4567</a></li>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:hello@handypro.com">hello@handypro.com</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+15513504951">(551) 350-4951</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:office@thefixwizard.com">office@thefixwizard.com</a></li>
                     <li><i class="fas fa-clock"></i><span>Mon–Sat: 7am – 7pm</span></li>
                 </ul>
             </div>
@@ -259,6 +541,19 @@
     </footer>
 
     <script type="module" src="../../js/service-page.js"></script>
-    <script defer src="../../js/coming-soon.js"></script>
+    <script>
+    (function(){
+        document.querySelectorAll('.svc-toggle').forEach(function(btn){
+            btn.addEventListener('click',function(){
+                var id=this.dataset.target,panel=document.getElementById(id),open=panel.classList.contains('open');
+                document.querySelectorAll('.svc-panel').forEach(function(p){p.classList.remove('open');});
+                document.querySelectorAll('.svc-toggle').forEach(function(b){b.classList.remove('active');});
+                if(!open){panel.classList.add('open');this.classList.add('active');}
+            });
+        });
+        var def=document.querySelector('.svc-toggle[data-open]');
+        if(def)def.click();
+    })();
+    </script>
 </body>
 </html>

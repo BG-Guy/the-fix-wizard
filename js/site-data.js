@@ -4,5 +4,5 @@ export const SITE_STATS = {
   years:        10,
   satisfaction: 98,
   specialties:  2,
-  nj_counties:  21,
+  nj_counties:  5,
 };
