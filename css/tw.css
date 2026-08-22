@@ -3813,6 +3813,11 @@ section {
   padding-bottom: 1.5rem;
 }
 
+.py-\[14px\] {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
 .py-\[22px\] {
   padding-top: 22px;
   padding-bottom: 22px;
@@ -4445,6 +4450,10 @@ section {
   border-color: rgb(255 107 53 / 0.4);
 }
 
+.hover\:border-orange\/60:hover {
+  border-color: rgb(255 107 53 / 0.6);
+}
+
 .hover\:border-transparent:hover {
   border-color: transparent;
 }
@@ -4500,6 +4509,12 @@ section {
 .hover\:shadow-\[0_20px_60px_rgba\(13\2c 27\2c 75\2c \.22\)\]:hover {
   --tw-shadow: 0 20px 60px rgba(13,27,75,.22);
   --tw-shadow-colored: 0 20px 60px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:shadow-\[0_4px_14px_rgba\(255\2c 107\2c 53\2c \.1\)\]:hover {
+  --tw-shadow: 0 4px 14px rgba(255,107,53,.1);
+  --tw-shadow-colored: 0 4px 14px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
