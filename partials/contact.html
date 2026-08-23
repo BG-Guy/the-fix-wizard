@@ -47,7 +47,7 @@
 
                     <!-- ── Service Picker ── -->
                     <div class="flex flex-col gap-2 mb-[18px]">
-                        <label class="text-[13px] font-semibold text-navy-900">Service Needed</label>
+                        <label class="text-[13px] font-semibold text-navy-900">Services Needed</label>
                         <input type="hidden" id="service" name="service" value="">
 
                         <!-- Search bar -->
@@ -94,24 +94,35 @@
                                 <i class="fas fa-search" style="display:block;font-size:20px;color:#e2e8f0;margin-bottom:8px"></i>
                                 <span style="font-size:13px;color:#94a3b8">No results for "<span id="svcNoResultsTerm" style="color:#FF6B35;font-weight:600"></span>"</span>
                             </div>
+                            <!-- Done bar (search) -->
+                            <div id="svcSearchDone" style="display:none;padding:8px 10px;border-top:1px solid #e8edf5;background:#f8f9fb">
+                                <button type="button" id="svcSearchDoneBtn" style="width:100%;padding:9px;background:#FF6B35;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;letter-spacing:.02em">
+                                    Done — confirm selection
+                                </button>
+                            </div>
                         </div>
 
                         <!-- Niche-browse panel -->
                         <div id="svcPanel" style="display:none;border:2px solid rgba(255,107,53,.28);border-radius:12px;overflow:hidden">
-                            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:#f8f9fb;border-bottom:1px solid #e8edf5">
-                                <button type="button" id="svcBack" style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#64748b;background:none;border:none;cursor:pointer;padding:0;transition:color .15s" onmouseover="this.style.color='#FF6B35'" onmouseout="this.style.color='#64748b'">
+                            <div style="display:flex;align-items:center;gap:8px;padding:9px 14px;background:#f8f9fb;border-bottom:1px solid #e8edf5">
+                                <button type="button" id="svcBack" style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#64748b;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;transition:color .15s" onmouseover="this.style.color='#FF6B35'" onmouseout="this.style.color='#64748b'">
                                     <i class="fas fa-arrow-left" style="font-size:10px"></i> Back
                                 </button>
-                                <span id="svcNicheLabel" style="font-size:11px;font-weight:700;color:#0d1b4b;text-transform:uppercase;letter-spacing:.08em"></span>
+                                <span id="svcNicheLabel" style="flex:1;text-align:center;font-size:11px;font-weight:700;color:#0d1b4b;text-transform:uppercase;letter-spacing:.08em"></span>
+                                <button type="button" id="svcBrowseDone" style="display:none;font-size:12px;font-weight:700;color:#fff;background:#FF6B35;border:none;border-radius:6px;cursor:pointer;padding:5px 12px;font-family:inherit;flex-shrink:0;white-space:nowrap"></button>
                             </div>
                             <div id="svcChips" style="padding:10px;max-height:210px;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:5px"></div>
                         </div>
 
-                        <!-- Selected service row -->
-                        <div id="svcSelectedRow" style="display:none;align-items:center;gap:10px;padding:11px 14px;border:2px solid rgba(255,107,53,.35);border-radius:10px;background:rgba(255,107,53,.05)">
-                            <i class="fas fa-check-circle" style="color:#FF6B35;font-size:16px;flex-shrink:0"></i>
-                            <span id="svcSelectedName" style="font-size:13px;font-weight:600;color:#0d1b4b;flex:1;min-width:0;word-break:break-word"></span>
-                            <button type="button" id="svcChangeSel" style="font-size:11px;font-weight:700;color:#FF6B35;background:none;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:.06em;flex-shrink:0;padding:0" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">Change</button>
+                        <!-- Summary row (shown after confirming) -->
+                        <div id="svcSelectedRow" style="display:none;flex-direction:column;gap:9px;padding:12px 14px;border:2px solid rgba(255,107,53,.35);border-radius:10px;background:rgba(255,107,53,.04)">
+                            <div style="display:flex;align-items:center;gap:8px">
+                                <i class="fas fa-check-circle" style="color:#FF6B35;font-size:15px;flex-shrink:0"></i>
+                                <span id="svcSummaryCount" style="font-size:13px;font-weight:700;color:#0d1b4b;flex:1"></span>
+                                <button type="button" id="svcClearAll" style="font-size:11px;font-weight:600;color:#94a3b8;background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;flex-shrink:0" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#94a3b8'">Clear all</button>
+                                <button type="button" id="svcEditSel" style="font-size:11px;font-weight:700;color:#FF6B35;background:none;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:.06em;padding:0;margin-left:2px;flex-shrink:0" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">+ Add more</button>
+                            </div>
+                            <div id="svcSummaryPills" style="display:flex;flex-wrap:wrap;gap:5px"></div>
                         </div>
                     </div>
                     <!-- ── /Service Picker ── -->
@@ -153,20 +164,136 @@
         };
 
         /* ── DOM refs ── */
-        var hidden       = document.getElementById('service');
-        var searchInput  = document.getElementById('svcSearch');
-        var searchClrBtn = document.getElementById('svcSearchClr');
-        var searchPanel  = document.getElementById('svcSearchPanel');
-        var resultsGrid  = document.getElementById('svcResultsGrid');
-        var noResultsEl  = document.getElementById('svcNoResults');
-        var noResTerm    = document.getElementById('svcNoResultsTerm');
-        var svcNiches    = document.getElementById('svcNiches');
-        var browsePanel  = document.getElementById('svcPanel');
-        var chipsWrap    = document.getElementById('svcChips');
-        var nicheLabel   = document.getElementById('svcNicheLabel');
-        var selectedRow  = document.getElementById('svcSelectedRow');
-        var selectedName = document.getElementById('svcSelectedName');
-        var activeNiche  = null;
+        var hidden        = document.getElementById('service');
+        var searchInput   = document.getElementById('svcSearch');
+        var searchClrBtn  = document.getElementById('svcSearchClr');
+        var searchPanel   = document.getElementById('svcSearchPanel');
+        var resultsGrid   = document.getElementById('svcResultsGrid');
+        var noResultsEl   = document.getElementById('svcNoResults');
+        var noResTerm     = document.getElementById('svcNoResultsTerm');
+        var searchDone    = document.getElementById('svcSearchDone');
+        var svcNiches     = document.getElementById('svcNiches');
+        var browsePanel   = document.getElementById('svcPanel');
+        var chipsWrap     = document.getElementById('svcChips');
+        var nicheLabel    = document.getElementById('svcNicheLabel');
+        var browseDoneBtn = document.getElementById('svcBrowseDone');
+        var selectedRow   = document.getElementById('svcSelectedRow');
+        var summaryCount  = document.getElementById('svcSummaryCount');
+        var summaryPills  = document.getElementById('svcSummaryPills');
+
+        var selected    = [];   /* array of service names */
+        var activeNiche = null;
+
+        /* ── Sync hidden field ── */
+        function syncHidden() { hidden.value = selected.join(', '); }
+
+        /* ── Done button label ── */
+        function updateDoneBtn() {
+            var n = selected.length;
+            var label = n ? 'Done (' + n + ' selected)' : 'Done';
+            browseDoneBtn.textContent  = label;
+            browseDoneBtn.style.display = n ? 'inline-block' : 'none';
+            searchDone.style.display    = n ? 'block' : 'none';
+        }
+
+        /* ── Toggle a service on/off ── */
+        function toggleService(name) {
+            var idx = selected.indexOf(name);
+            if(idx > -1) selected.splice(idx, 1);
+            else selected.push(name);
+            syncHidden();
+            updateDoneBtn();
+        }
+
+        /* ── Chip visual state ── */
+        function setChipOn(btn) {
+            btn.style.borderColor = '#FF6B35';
+            btn.style.background  = 'rgba(255,107,53,.1)';
+            btn.style.color       = '#FF6B35';
+            btn.style.fontWeight  = '700';
+            if(!btn.querySelector('.svc-chk')) {
+                var i = document.createElement('i');
+                i.className = 'fas fa-check svc-chk';
+                i.style.cssText = 'font-size:9px;flex-shrink:0;margin-left:auto;padding-left:4px';
+                btn.appendChild(i);
+            }
+        }
+        function setChipOff(btn) {
+            btn.style.borderColor = '#e2e8f0';
+            btn.style.background  = '#fff';
+            btn.style.color       = '#3a4560';
+            btn.style.fontWeight  = '500';
+            var c = btn.querySelector('.svc-chk');
+            if(c) c.remove();
+        }
+
+        /* ── Apply selection — close panels, show summary ── */
+        function applySelection() {
+            if(!selected.length) { fullReset(); return; }
+            browsePanel.style.display  = 'none';
+            searchPanel.style.display  = 'none';
+            svcNiches.style.display    = 'none';
+            searchInput.value          = '';
+            searchClrBtn.style.display = 'none';
+            resetNicheStyles();
+            activeNiche = null;
+            renderSummary();
+        }
+
+        /* ── Render the pill summary row ── */
+        function renderSummary() {
+            var n = selected.length;
+            summaryCount.textContent = n === 1 ? '1 service selected' : n + ' services selected';
+            summaryPills.innerHTML = '';
+            selected.forEach(function(name){
+                var pill = document.createElement('span');
+                pill.style.cssText = 'display:inline-flex;align-items:center;gap:4px;padding:4px 8px 4px 10px;background:rgba(255,107,53,.08);border:1.5px solid rgba(255,107,53,.3);border-radius:20px;font-size:11px;font-weight:600;color:#FF6B35;font-family:inherit;max-width:100%';
+                var txt = document.createElement('span');
+                txt.style.cssText = 'overflow:hidden;text-overflow:ellipsis;white-space:nowrap';
+                txt.textContent = name;
+                var rm = document.createElement('button');
+                rm.type = 'button';
+                rm.title = 'Remove';
+                rm.innerHTML = '<i class="fas fa-times" style="font-size:8px"></i>';
+                rm.style.cssText = 'display:flex;align-items:center;justify-content:center;width:15px;height:15px;background:rgba(255,107,53,.18);border:none;border-radius:50%;cursor:pointer;color:#FF6B35;flex-shrink:0;padding:0;line-height:1';
+                rm.addEventListener('click', function(){ removeService(name); });
+                pill.appendChild(txt);
+                pill.appendChild(rm);
+                summaryPills.appendChild(pill);
+            });
+            selectedRow.style.display = 'flex';
+        }
+
+        /* ── Remove one service from summary ── */
+        function removeService(name) {
+            var idx = selected.indexOf(name);
+            if(idx > -1) selected.splice(idx, 1);
+            syncHidden();
+            if(!selected.length) { fullReset(); return; }
+            renderSummary();
+        }
+
+        /* ── Full reset ── */
+        function fullReset() {
+            selected = [];
+            syncHidden();
+            searchInput.value          = '';
+            searchClrBtn.style.display = 'none';
+            searchPanel.style.display  = 'none';
+            browsePanel.style.display  = 'none';
+            selectedRow.style.display  = 'none';
+            svcNiches.style.display    = '';
+            resetNicheStyles();
+            activeNiche = null;
+            updateDoneBtn();
+        }
+
+        function resetNicheStyles() {
+            document.querySelectorAll('.svc-niche-btn').forEach(function(b){
+                b.style.borderColor = ''; b.style.background = '';
+                b.querySelector('.svc-chev').style.transform = 'rotate(0deg)';
+            });
+        }
 
         /* ── Highlight matching text ── */
         function hl(text, q) {
@@ -178,62 +305,82 @@
                 + text.slice(i+q.length);
         }
 
-        /* ── Unified selection ── */
-        function selectService(name) {
-            hidden.value        = name;
-            selectedName.textContent = name;
-            selectedRow.style.display = 'flex';
-            searchInput.value   = '';
-            searchClrBtn.style.display = 'none';
-            searchPanel.style.display  = 'none';
-            browsePanel.style.display  = 'none';
-            svcNiches.style.display    = 'none';
-            resetNicheStyles();
-            activeNiche = null;
-        }
-
-        /* ── Full reset ── */
-        function fullReset() {
-            hidden.value = '';
-            searchInput.value = '';
-            searchClrBtn.style.display = 'none';
-            searchPanel.style.display  = 'none';
-            browsePanel.style.display  = 'none';
-            selectedRow.style.display  = 'none';
-            svcNiches.style.display    = '';
-            resetNicheStyles();
-            activeNiche = null;
-        }
-
-        function resetNicheStyles() {
-            document.querySelectorAll('.svc-niche-btn').forEach(function(b){
-                b.style.borderColor = ''; b.style.background = '';
-                b.querySelector('.svc-chev').style.transform = 'rotate(0deg)';
+        /* ── Build browse chips (reflects current selection) ── */
+        function buildBrowseChips(niche) {
+            chipsWrap.innerHTML = '';
+            SVCS[niche].forEach(function(name){
+                var on  = selected.indexOf(name) > -1;
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.style.cssText = 'display:flex;align-items:center;width:100%;padding:8px 11px;border:1.5px solid ' + (on?'#FF6B35':'#e2e8f0') + ';border-radius:8px;font-size:12px;font-weight:' + (on?'700':'500') + ';font-family:inherit;color:' + (on?'#FF6B35':'#3a4560') + ';background:' + (on?'rgba(255,107,53,.1)':'#fff') + ';text-align:left;cursor:pointer;transition:all .13s;line-height:1.35';
+                btn.appendChild(document.createTextNode(name));
+                if(on) {
+                    var chk = document.createElement('i');
+                    chk.className = 'fas fa-check svc-chk';
+                    chk.style.cssText = 'font-size:9px;flex-shrink:0;margin-left:auto;padding-left:4px';
+                    btn.appendChild(chk);
+                }
+                btn.addEventListener('mouseenter', function(){
+                    if(selected.indexOf(name) < 0){ btn.style.borderColor='#FF6B35'; btn.style.background='rgba(255,107,53,.06)'; btn.style.color='#FF6B35'; }
+                });
+                btn.addEventListener('mouseleave', function(){
+                    if(selected.indexOf(name) < 0){ btn.style.borderColor='#e2e8f0'; btn.style.background='#fff'; btn.style.color='#3a4560'; }
+                });
+                btn.addEventListener('click', function(){
+                    toggleService(name);
+                    if(selected.indexOf(name) > -1) setChipOn(btn); else setChipOff(btn);
+                });
+                chipsWrap.appendChild(btn);
             });
         }
 
-        /* ── Search chip builder ── */
+        /* ── Build a search result chip ── */
         function makeSearchChip(name, niche, query) {
+            var on  = selected.indexOf(name) > -1;
             var btn = document.createElement('button');
             btn.type = 'button';
-            btn.style.cssText = 'display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:8px 10px;border:1.5px solid #e2e8f0;border-radius:8px;font-family:inherit;background:#fff;text-align:left;cursor:pointer;transition:border-color .13s,background .13s';
+            btn.style.cssText = 'display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:8px 10px;border:1.5px solid ' + (on?'#FF6B35':'#e2e8f0') + ';border-radius:8px;font-family:inherit;background:' + (on?'rgba(255,107,53,.08)':'#fff') + ';text-align:left;cursor:pointer;transition:all .13s;position:relative';
 
             var badge = document.createElement('span');
             badge.textContent = niche === 'handyman' ? 'Handyman' : 'Chimney';
             badge.style.cssText = 'font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:1px 5px;border-radius:4px;line-height:1.6;' +
-                (niche === 'handyman'
-                    ? 'background:rgba(59,130,246,.1);color:#3b82f6'
-                    : 'background:rgba(255,107,53,.1);color:#FF6B35');
+                (niche === 'handyman' ? 'background:rgba(59,130,246,.1);color:#3b82f6' : 'background:rgba(255,107,53,.1);color:#FF6B35');
 
             var nameEl = document.createElement('span');
-            nameEl.style.cssText = 'font-size:12px;font-weight:500;color:#3a4560;line-height:1.35';
+            nameEl.style.cssText = 'font-size:12px;font-weight:' + (on?'700':'500') + ';color:' + (on?'#FF6B35':'#3a4560') + ';line-height:1.35';
             nameEl.innerHTML = hl(name, query);
 
             btn.appendChild(badge);
             btn.appendChild(nameEl);
-            btn.addEventListener('mouseenter', function(){ btn.style.borderColor='#FF6B35'; btn.style.background='rgba(255,107,53,.05)'; });
-            btn.addEventListener('mouseleave', function(){ btn.style.borderColor='#e2e8f0'; btn.style.background='#fff'; });
-            btn.addEventListener('click', function(){ selectService(name); });
+
+            if(on) {
+                var chk = document.createElement('i');
+                chk.className = 'fas fa-check svc-schk';
+                chk.style.cssText = 'position:absolute;right:9px;top:9px;font-size:9px;color:#FF6B35';
+                btn.appendChild(chk);
+            }
+
+            btn.addEventListener('mouseenter', function(){
+                if(selected.indexOf(name) < 0){ btn.style.borderColor='#FF6B35'; btn.style.background='rgba(255,107,53,.05)'; }
+            });
+            btn.addEventListener('mouseleave', function(){
+                if(selected.indexOf(name) < 0){ btn.style.borderColor='#e2e8f0'; btn.style.background='#fff'; }
+            });
+            btn.addEventListener('click', function(){
+                toggleService(name);
+                var nowOn = selected.indexOf(name) > -1;
+                btn.style.borderColor = nowOn ? '#FF6B35' : '#e2e8f0';
+                btn.style.background  = nowOn ? 'rgba(255,107,53,.08)' : '#fff';
+                nameEl.style.fontWeight = nowOn ? '700' : '500';
+                nameEl.style.color      = nowOn ? '#FF6B35' : '#3a4560';
+                var ex = btn.querySelector('.svc-schk');
+                if(nowOn && !ex) {
+                    var c = document.createElement('i');
+                    c.className = 'fas fa-check svc-schk';
+                    c.style.cssText = 'position:absolute;right:9px;top:9px;font-size:9px;color:#FF6B35';
+                    btn.appendChild(c);
+                } else if(!nowOn && ex) { ex.remove(); }
+            });
             return btn;
         }
 
@@ -241,9 +388,9 @@
         function runSearch(raw) {
             var q = raw.trim();
             if(!q) {
-                searchPanel.style.display = 'none';
-                svcNiches.style.display   = browsePanel.style.display === 'none' ? '' : 'none'; /* restore only if not browsing */
+                searchPanel.style.display  = 'none';
                 searchClrBtn.style.display = 'none';
+                if(browsePanel.style.display === 'none') svcNiches.style.display = '';
                 return;
             }
             searchClrBtn.style.display = 'flex';
@@ -262,26 +409,11 @@
                     }
                 });
             });
-
-            searchPanel.style.display      = 'block';
-            resultsGrid.style.display      = count ? 'grid' : 'none';
-            noResultsEl.style.display      = count ? 'none' : 'block';
-            noResTerm.textContent          = q;
-        }
-
-        /* ── Browse-niche chip builder ── */
-        function buildBrowseChips(niche) {
-            chipsWrap.innerHTML = '';
-            SVCS[niche].forEach(function(name){
-                var btn = document.createElement('button');
-                btn.type = 'button';
-                btn.textContent = name;
-                btn.style.cssText = 'display:flex;align-items:center;width:100%;padding:8px 11px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:12px;font-weight:500;font-family:inherit;color:#3a4560;background:#fff;text-align:left;cursor:pointer;transition:all .13s;line-height:1.35';
-                btn.addEventListener('mouseenter', function(){ btn.style.borderColor='#FF6B35'; btn.style.background='rgba(255,107,53,.06)'; btn.style.color='#FF6B35'; });
-                btn.addEventListener('mouseleave', function(){ btn.style.borderColor='#e2e8f0'; btn.style.background='#fff'; btn.style.color='#3a4560'; });
-                btn.addEventListener('click', function(){ selectService(name); });
-                chipsWrap.appendChild(btn);
-            });
+            searchPanel.style.display = 'block';
+            resultsGrid.style.display = count ? 'grid' : 'none';
+            noResultsEl.style.display = count ? 'none'  : 'block';
+            noResTerm.textContent     = q;
+            updateDoneBtn();
         }
 
         /* ── Open niche browse ── */
@@ -297,6 +429,7 @@
             nicheLabel.textContent = niche === 'handyman' ? 'Handyman Services' : 'Chimney Services';
             buildBrowseChips(niche);
             browsePanel.style.display = 'block';
+            updateDoneBtn();
         }
 
         /* ── Niche button clicks ── */
@@ -310,16 +443,28 @@
             });
         });
 
-        /* ── Back button ── */
+        /* ── Back ── */
         document.getElementById('svcBack').addEventListener('click', function(){
             browsePanel.style.display = 'none';
             resetNicheStyles(); activeNiche = null;
+            if(!selected.length) svcNiches.style.display = '';
         });
 
-        /* ── Change button ── */
-        document.getElementById('svcChangeSel').addEventListener('click', fullReset);
+        /* ── Done buttons ── */
+        browseDoneBtn.addEventListener('click', applySelection);
+        document.getElementById('svcSearchDoneBtn').addEventListener('click', applySelection);
 
-        /* ── Search input events ── */
+        /* ── "+ Add more" — reopen picker ── */
+        document.getElementById('svcEditSel').addEventListener('click', function(){
+            selectedRow.style.display = 'none';
+            svcNiches.style.display   = '';
+            if(activeNiche) openNiche(activeNiche);
+        });
+
+        /* ── Clear all ── */
+        document.getElementById('svcClearAll').addEventListener('click', fullReset);
+
+        /* ── Search events ── */
         searchInput.addEventListener('input', function(){ runSearch(this.value); });
         searchInput.addEventListener('focus', function(){
             this.style.borderColor = '#FF6B35';
@@ -342,11 +487,12 @@
             var chimneyKw = ['chimney','masonry','tuckpoint','crown','firebox','flashing','waterproof','liner','sweep','creosote','smoke','cap','damper','animal','chase'];
             var niche = chimneyKw.some(function(k){ return pl.indexOf(k) > -1; }) ? 'chimney' : 'handyman';
             openNiche(niche);
-            var best = null;
             SVCS[niche].forEach(function(name){
-                if(!best && (name.toLowerCase().indexOf(pl) > -1 || pl.indexOf(name.toLowerCase()) > -1)) best = name;
+                if(!selected.length && (name.toLowerCase().indexOf(pl) > -1 || pl.indexOf(name.toLowerCase()) > -1)){
+                    toggleService(name);
+                }
             });
-            if(best) selectService(best); else { /* just leave niche open */ }
+            if(selected.length) applySelection();
         }
     })();
     </script>

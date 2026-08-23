@@ -701,6 +701,21 @@ section {
 
 /* ── Buttons ────────────────────────────────────────────── */
 
+.\!btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 12px 24px !important;
+  border-radius: var(--r-sm) !important;
+  font-family: var(--font) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  border: 2px solid transparent !important;
+  transition: var(--ease) !important;
+  white-space: nowrap !important;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -2361,6 +2376,11 @@ section {
   .blog-body h3      {
     font-size: 16px;
   }
+
+  .cta-btns .\!btn     {
+    width: 100% !important;
+    justify-content: center !important;
+  }
 }
 
 .nav-dropdown {
@@ -2581,6 +2601,11 @@ section {
   .area-hero-ctas .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .area-hero-ctas .\!btn {
+    width: 100% !important;
+    justify-content: center !important;
   }
 }
 
@@ -2827,8 +2852,18 @@ section {
   margin-bottom: 10px;
 }
 
+.area-cta-box .\!btn {
+  width: 100% !important;
+  justify-content: center !important;
+  margin-bottom: 10px !important;
+}
+
 .area-cta-box .btn:last-child {
   margin-bottom: 0;
+}
+
+.area-cta-box .\!btn:last-child {
+  margin-bottom: 0 !important;
 }
 
 .area-services-box {
