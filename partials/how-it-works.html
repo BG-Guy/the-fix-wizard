@@ -61,9 +61,10 @@
     }
 
     /* ── Navbar override while How It Works is in view ── */
-    #navbar.hiw-nav-active {
-        transition: background 0.6s ease, box-shadow 0.55s ease !important;
-        box-shadow: 0 4px 28px rgba(0,0,0,0.5) !important;
+    #navbar.hiw-nav-active,
+    #navbar.hiw-nav-active.scrolled {
+        background: transparent !important;
+        box-shadow: none !important;
     }
 
     /* ── Step badge — absolute, anchored to text col top-left ── */
@@ -567,26 +568,17 @@
             dots.push(dot);
         });
 
-        /* Apply step accent color to badge + eyebrow, and section bg to navbar */
-        function applyColor(color, bg) {
+        /* Apply step accent color to badge and eyebrow */
+        function applyColor(color) {
             badgeEl.style.background = color;
             if (eyebrowEl) eyebrowEl.style.color = color;
-            if (navbarEl && navbarEl.classList.contains('hiw-nav-active')) {
-                navbarEl.style.background = bg;
-            }
         }
 
-        /* IntersectionObserver — match navbar bg to section while in view */
+        /* IntersectionObserver — strip navbar bg while section is in view */
         var sectionObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (!navbarEl) return;
-                if (entry.isIntersecting) {
-                    navbarEl.classList.add('hiw-nav-active');
-                    navbarEl.style.background = steps[current].bg;
-                } else {
-                    navbarEl.classList.remove('hiw-nav-active');
-                    navbarEl.style.background = '';
-                }
+                navbarEl.classList.toggle('hiw-nav-active', entry.isIntersecting);
             });
         }, { threshold: 0.05 });
         sectionObs.observe(document.getElementById('how-it-works'));
@@ -597,7 +589,7 @@
             headingEl.innerHTML = s.heading.replace(/\n/g, '<br>');
             descEl.textContent  = s.desc;
             badgeEl.textContent = s.num;
-            applyColor(s.iconColor, s.bg);
+            applyColor(s.iconColor);
             requestAnimationFrame(function () {
                 headingEl.classList.add('visible');
                 descEl.classList.add('visible');
@@ -641,7 +633,7 @@
                 headingEl.innerHTML = next.heading.replace(/\n/g, '<br>');
                 descEl.textContent  = next.desc;
                 badgeEl.textContent = next.num;
-                applyColor(next.iconColor, next.bg);
+                applyColor(next.iconColor);
 
                 slides[idx].classList.add('active');
                 current = idx;
