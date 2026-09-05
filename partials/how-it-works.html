@@ -283,6 +283,10 @@
     .hiw-msg-card {
         width: 100%;
         max-width: 300px;
+        min-height: 210px; /* same reserved height as .hiw-invoice-card so switching steps never resizes the card */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background: rgba(255,255,255,0.07);
         border: 1px solid rgba(255,255,255,0.14);
         border-radius: 20px;
@@ -321,6 +325,10 @@
     .hiw-invoice-card {
         width: 100%;
         max-width: 280px;
+        min-height: 210px; /* same reserved height as .hiw-msg-card so switching steps never resizes the card */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background: linear-gradient(165deg, #fdfdfd 0%, #f0efe9 100%);
         border-radius: 14px;
         padding: 16px 18px;
@@ -435,29 +443,33 @@
         .hiw-layout {
             flex: 1;
             min-height: 0;
-            flex-direction: column-reverse;
-            gap: 16px;
+            flex-direction: column;
+            gap: 14px;
             padding: 12px 20px 0;
             align-items: center;
             justify-content: center;
-        }
-        .hiw-text-col {
-            flex: none;
-            width: 100%;
-            max-width: 480px;
-            align-items: center;
             text-align: center;
-            padding-top: 0;
-            gap: 12px;
+            max-width: 480px;
+            margin: 0 auto;
         }
-        .hiw-step-badge { position: static; align-self: center; width: 44px; height: 44px; font-size: 18px; }
-        .hiw-heading-text { font-size: clamp(24px, 6vw, 34px); }
-        .hiw-desc { max-width: 100%; font-size: 15px; }
+        /* Flatten the text column so the badge can be reordered above the visual,
+           independently of the heading/description — same DOM, no JS involved. */
+        .hiw-text-col { display: contents; }
+        .hiw-step-badge { position: static; align-self: center; width: 44px; height: 44px; font-size: 18px; order: 1; }
         .hiw-phone-col {
             width: 100%;
             max-width: 300px;
             min-height: 0;
             flex: 0 1 auto;
+            order: 2;
+        }
+        .hiw-heading-mask { order: 3; width: 100%; }
+        .hiw-heading-text { font-size: clamp(24px, 6vw, 34px); }
+        .hiw-desc {
+            max-width: 100%;
+            font-size: 15px;
+            order: 4;
+            min-height: 140px; /* reserves space for the longest step description so switching steps never reflows the layout */
         }
         .hiw-slide { position: relative; inset: auto; justify-content: center; }
         .hiw-slide:not(.active) { display: none; }
