@@ -127,7 +127,11 @@
     .hiw-heading-text.visible  { transform: translateY(0); }
     .hiw-heading-text.exiting  { transform: translateY(-110%); }
 
-    /* Description fade */
+    /* Description mask + slide-up reveal (matches heading) */
+    .hiw-desc-mask {
+        overflow: hidden;
+        padding-bottom: 3px;
+    }
     .hiw-desc {
         font-family: Inter, sans-serif;
         font-size: 17px;
@@ -135,14 +139,12 @@
         line-height: 1.75;
         margin: 0;
         max-width: 420px;
-        opacity: 0;
-        transform: translateY(14px);
-        transition: opacity 0.5s ease 0.12s, transform 0.5s ease 0.12s;
+        display: block;
+        transform: translateY(110%);
+        transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
     }
-    .hiw-desc.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    .hiw-desc.visible  { transform: translateY(0); }
+    .hiw-desc.exiting  { transform: translateY(-110%); }
 
     /* Phone column */
     .hiw-phone-col {
@@ -615,7 +617,7 @@
 
     @media (prefers-reduced-motion: reduce) {
         .hiw-iphone, .hiw-step-bubble { animation: none; }
-        .hiw-heading-text, .hiw-desc, .hiw-bg { transition: none; }
+        .hiw-heading-text, .hiw-desc, .hiw-bg { transition: none; transform: none; }
     }
     </style>
 
@@ -633,7 +635,9 @@
                     <div class="hiw-heading-mask">
                         <span class="hiw-heading-text" id="hiwHeading"></span>
                     </div>
-                    <p class="hiw-desc" id="hiwDesc"></p>
+                    <div class="hiw-desc-mask">
+                        <p class="hiw-desc" id="hiwDesc"></p>
+                    </div>
                 </div>
                 <div class="hiw-phone-col" id="hiwPhoneCol"></div>
                 <span class="hiw-step-badge" id="hiwStepBadge">01</span>
@@ -931,6 +935,7 @@
             headingEl.classList.remove('visible');
             headingEl.classList.add('exiting');
             descEl.classList.remove('visible');
+            descEl.classList.add('exiting');
 
             /* 2 — Background crossfade */
             if (bgActive === 'a') {
@@ -953,6 +958,9 @@
                 headingEl.classList.remove('exiting');
                 headingEl.style.transition = 'none';
                 headingEl.style.transform  = 'translateY(110%)';
+                descEl.classList.remove('exiting');
+                descEl.style.transition = 'none';
+                descEl.style.transform  = 'translateY(110%)';
 
                 headingEl.innerHTML = next.heading.replace(/\n/g, '<br>');
                 descEl.textContent  = next.desc;
@@ -968,6 +976,8 @@
                         headingEl.style.transition = '';
                         headingEl.style.transform  = '';
                         headingEl.classList.add('visible');
+                        descEl.style.transition = '';
+                        descEl.style.transform  = '';
                         descEl.classList.add('visible');
                         busy = false;
                     });
