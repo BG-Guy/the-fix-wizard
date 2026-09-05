@@ -13,9 +13,6 @@
         padding-bottom: 108px; /* reserve space for pinned nav */
         scroll-snap-align: start;
     }
-    @media (max-width: 900px) {
-        #how-it-works { min-height: auto; }
-    }
     #how-it-works::after {
         content: '';
         position: absolute;
@@ -274,6 +271,98 @@
         z-index: 10;
     }
 
+    /* ── Mobile step visuals (replace iPhone mockup below 900px) ── */
+    .hiw-mobile-visual {
+        display: none;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Text-message pop-up card */
+    .hiw-msg-card {
+        width: 100%;
+        max-width: 300px;
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 20px;
+        padding: 16px;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+        animation: iphoneFloat 5s ease-in-out infinite;
+    }
+    .hiw-msg-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .hiw-msg-avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        flex-shrink: 0;
+        color: #fff;
+    }
+    .hiw-msg-meta { display: flex; flex-direction: column; text-align: left; }
+    .hiw-msg-name { font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; color: #fff; }
+    .hiw-msg-time { font-family: Inter, sans-serif; font-size: 11px; color: rgba(255,255,255,0.4); }
+    .hiw-msg-bubble {
+        background: rgba(255,255,255,0.08);
+        border-radius: 14px;
+        padding: 12px 14px;
+        font-family: Inter, sans-serif;
+        font-size: 14px;
+        line-height: 1.55;
+        color: rgba(255,255,255,0.85);
+        text-align: left;
+    }
+
+    /* Invoice image card */
+    .hiw-invoice-card {
+        width: 100%;
+        max-width: 280px;
+        background: linear-gradient(165deg, #fdfdfd 0%, #f0efe9 100%);
+        border-radius: 14px;
+        padding: 16px 18px;
+        box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+        color: #241a12;
+        text-align: left;
+        animation: iphoneFloat 5s ease-in-out infinite;
+    }
+    .hiw-invoice-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px;
+        border-bottom: 1px dashed rgba(0,0,0,0.15);
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    .hiw-invoice-brand { font-family: 'Titan One', cursive; font-size: 13px; line-height: 1.3; }
+    .hiw-invoice-num { font-family: Inter, sans-serif; font-size: 10px; color: rgba(0,0,0,0.5); margin-top: 2px; }
+    .hiw-invoice-badge {
+        font-family: Inter, sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        padding: 3px 8px;
+        border-radius: 20px;
+        color: #fff;
+        white-space: nowrap;
+    }
+    .hiw-invoice-rows { display: flex; flex-direction: column; gap: 6px; font-family: Inter, sans-serif; font-size: 12px; }
+    .hiw-invoice-row { display: flex; justify-content: space-between; gap: 12px; color: rgba(0,0,0,0.65); }
+    .hiw-invoice-total {
+        display: flex;
+        justify-content: space-between;
+        font-family: Inter, sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        border-top: 1px dashed rgba(0,0,0,0.15);
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+
     /* Screen gradients */
     .hiw-screen-1 { background: linear-gradient(160deg, #1c1850 0%, #080718 100%); }
     .hiw-screen-2 { background: linear-gradient(160deg, #082a3c 0%, #030f18 100%); }
@@ -333,14 +422,24 @@
     .hiw-dot.active { width: 24px; background: #FF6B35; }
     .hiw-dot:hover:not(.active) { background: rgba(255,255,255,0.4); }
 
-    /* ── Mobile ── */
+    /* ── Mobile: locked to the screen's full height & width, no phone mockup ── */
     @media (max-width: 900px) {
-        #how-it-works { padding-bottom: 100px; min-height: auto; }
+        #how-it-works {
+            width: 100vw;
+            height: 100svh;
+            min-height: 100svh;
+            padding-bottom: 82px; /* reserve space for the pinned nav row so it never overlaps content */
+        }
+        .hiw-inner { height: 100%; }
+        .hiw-top { height: auto; padding: 20px 20px 0; flex-shrink: 0; }
         .hiw-layout {
+            flex: 1;
+            min-height: 0;
             flex-direction: column-reverse;
-            gap: 28px;
-            padding: 24px 24px 0;
+            gap: 16px;
+            padding: 12px 20px 0;
             align-items: center;
+            justify-content: center;
         }
         .hiw-text-col {
             flex: none;
@@ -348,21 +447,26 @@
             max-width: 480px;
             align-items: center;
             text-align: center;
+            padding-top: 0;
+            gap: 12px;
         }
-        .hiw-top { height: auto; padding: 36px 24px 0; }
-        .hiw-text-col { padding-top: 0; }
-        .hiw-step-badge { position: static; align-self: center; }
-        .hiw-desc { max-width: 100%; }
+        .hiw-step-badge { position: static; align-self: center; width: 44px; height: 44px; font-size: 18px; }
+        .hiw-heading-text { font-size: clamp(24px, 6vw, 34px); }
+        .hiw-desc { max-width: 100%; font-size: 15px; }
         .hiw-phone-col {
             width: 100%;
             max-width: 300px;
-            min-height: 440px;
+            min-height: 0;
+            flex: 0 1 auto;
         }
-        .hiw-slide { justify-content: center; }
-        .hiw-iphone { width: 210px; height: 428px; }
-        .hiw-iphone::before { width: 92px; height: 26px; top: 12px; border-radius: 13px; }
-        .hiw-step-bubble { width: 52px; height: 52px; font-size: 20px; }
-        .hiw-nav { padding: 16px 24px 28px; }
+        .hiw-slide { position: relative; inset: auto; justify-content: center; }
+        .hiw-slide:not(.active) { display: none; }
+
+        /* Hide the iPhone mockup on mobile — swap in the step's visual card */
+        .hiw-phone-wrap { display: none; }
+        .hiw-mobile-visual { display: flex; }
+
+        .hiw-nav { padding: 12px 24px 20px; flex-shrink: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -411,6 +515,7 @@
                 heading: 'One Call or Text\nGets You Booked.',
                 desc: 'Text or call — we pick up fast, skip the phone tag, and get you booked the same day.',
                 bg: 'linear-gradient(160deg,#160f40 0%,#050311 100%)',
+                mobileVisual: { type: 'text', msg: 'Hey! This is The Fix Wizard 👋 Got you booked for today — see you soon!' },
                 screenIcons: [
                     { i:'fa-comments',     t:'18%', l:'12%', r:'-12deg', s:'34px', o:.18 },
                     { i:'fa-message',      t:'56%', l:'62%', r:'18deg',  s:'26px', o:.14 },
@@ -424,6 +529,7 @@
                 heading: 'Pick Your Time,\nWe Send the Link.',
                 desc: 'We text you a booking link with real availability. Tap the window that works — morning, afternoon, or evening. No back-and-forth.',
                 bg: 'linear-gradient(160deg,#072030 0%,#020c12 100%)',
+                mobileVisual: { type: 'text', msg: "Here's your booking link: fixwizard.co/book — pick any time that works 📅" },
                 screenIcons: [
                     { i:'fa-calendar-check',  t:'16%', l:'14%', r:'-8deg',  s:'32px', o:.17 },
                     { i:'fa-clock',           t:'52%', l:'66%', r:'20deg',  s:'26px', o:.13 },
@@ -437,6 +543,7 @@
                 heading: 'Reschedule or Cancel\nAnytime. No Stress.',
                 desc: 'Reschedule or cancel through the same link in your text — zero phone calls, zero fees, zero guilt.',
                 bg: 'linear-gradient(160deg,#1a0840 0%,#08031a 100%)',
+                mobileVisual: { type: 'text', msg: 'Need to move your appointment? Just tap the link below, no calls needed ✅' },
                 screenIcons: [
                     { i:'fa-arrows-rotate', t:'18%', l:'12%', r:'-15deg', s:'32px', o:.18 },
                     { i:'fa-rotate-left',   t:'56%', l:'64%', r:'22deg',  s:'26px', o:.14 },
@@ -450,6 +557,7 @@
                 heading: 'A Reminder Lands\nthe Night Before.',
                 desc: 'A heads-up text lands the evening before your appointment. No surprise mornings, no missed slots.',
                 bg: 'linear-gradient(160deg,#071428 0%,#020608 100%)',
+                mobileVisual: { type: 'text', msg: "Reminder: we'll see you tomorrow between 9–11 AM. See you then! 🔔" },
                 screenIcons: [
                     { i:'fa-bell',     t:'18%', l:'12%', r:'-10deg', s:'34px', o:.18 },
                     { i:'fa-moon',     t:'54%', l:'64%', r:'20deg',  s:'28px', o:.14 },
@@ -463,6 +571,7 @@
                 heading: "We Text When We're\n30 Minutes Away.",
                 desc: 'When we hit the road, a real 30-minute arrival alert goes to your phone. No guessing, no staring out the window.',
                 bg: 'linear-gradient(160deg,#071a0c 0%,#020805 100%)',
+                mobileVisual: { type: 'text', msg: "On our way! We'll be there in about 30 minutes 🚐📍" },
                 screenIcons: [
                     { i:'fa-location-dot', t:'16%', l:'14%', r:'-8deg',  s:'34px', o:.18 },
                     { i:'fa-car',          t:'52%', l:'64%', r:'18deg',  s:'28px', o:.15 },
@@ -476,6 +585,9 @@
                 heading: 'Pay However\nWorks Best for You.',
                 desc: 'Apple Pay, Zelle, cash, or check — your call. A secure payment link comes straight to your phone. Done in a tap.',
                 bg: 'linear-gradient(160deg,#0a1a08 0%,#030804 100%)',
+                mobileVisual: { type: 'invoice', badge: 'PAYMENT LINK', badgeColor: '#4ade80',
+                    rows: [['Service call', '$0.00'], ['Payment methods', 'Apple Pay · Zelle · Card']],
+                    total: ['Amount due', '$185.00'] },
                 screenIcons: [
                     { i:'fa-credit-card',   t:'18%', l:'12%', r:'-12deg', s:'30px', o:.17 },
                     { i:'fa-wallet',        t:'54%', l:'66%', r:'22deg',  s:'26px', o:.14 },
@@ -489,6 +601,9 @@
                 heading: 'Invoice, Photos &\n3-Month Warranty.',
                 desc: 'Your invoice arrives by text and email — before-and-after photos, a full breakdown of the work, and all our company info. Backed by a 3-month workmanship warranty.',
                 bg: 'linear-gradient(160deg,#251200 0%,#090400 100%)',
+                mobileVisual: { type: 'invoice', badge: '3-MO WARRANTY', badgeColor: '#fb923c',
+                    rows: [['Labor & materials', '$140.00'], ['Before/after photos', 'Attached'], ['Warranty', '3 months']],
+                    total: ['Total paid', '$185.00'] },
                 screenIcons: [
                     { i:'fa-camera',        t:'18%', l:'12%', r:'-10deg', s:'32px', o:.17 },
                     { i:'fa-file-invoice',  t:'54%', l:'64%', r:'20deg',  s:'26px', o:.14 },
@@ -502,6 +617,7 @@
                 heading: 'Happy? Leave Us\na 5-Star Review.',
                 desc: 'Love the result? One quick review helps your neighbors find someone they can actually trust. It\'s the good-guy move.',
                 bg: 'linear-gradient(160deg,#221800 0%,#080600 100%)',
+                mobileVisual: { type: 'text', msg: 'Thanks for choosing us! Mind leaving a quick 5★ review? 🙏' },
                 screenIcons: [
                     { i:'fa-star',      t:'18%', l:'12%', r:'-8deg',  s:'34px', o:.18 },
                     { i:'fa-trophy',    t:'52%', l:'64%', r:'18deg',  s:'28px', o:.15 },
@@ -541,6 +657,41 @@
                     ');font-size:' + d.s + ';opacity:' + d.o + '"></i>';
             }).join('');
 
+            /* Mobile-only visual: a text-message pop-up or an invoice image, per step */
+            var mv = step.mobileVisual;
+            var mobileVisualHTML = '';
+            if (mv && mv.type === 'text') {
+                mobileVisualHTML =
+                    '<div class="hiw-msg-card">' +
+                        '<div class="hiw-msg-head">' +
+                            '<div class="hiw-msg-avatar" style="background:' + step.iconColor + '30;color:' + step.iconColor + '">' +
+                                '<i class="fas ' + step.icon + '"></i>' +
+                            '</div>' +
+                            '<div class="hiw-msg-meta">' +
+                                '<span class="hiw-msg-name">The Fix Wizard</span>' +
+                                '<span class="hiw-msg-time">now</span>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="hiw-msg-bubble">' + mv.msg + '</div>' +
+                    '</div>';
+            } else if (mv && mv.type === 'invoice') {
+                var rowsHTML = mv.rows.map(function (r) {
+                    return '<div class="hiw-invoice-row"><span>' + r[0] + '</span><span>' + r[1] + '</span></div>';
+                }).join('');
+                mobileVisualHTML =
+                    '<div class="hiw-invoice-card">' +
+                        '<div class="hiw-invoice-head">' +
+                            '<div>' +
+                                '<div class="hiw-invoice-brand">The Fix Wizard</div>' +
+                                '<div class="hiw-invoice-num">Invoice #' + (1000 + idx * 37) + '</div>' +
+                            '</div>' +
+                            '<span class="hiw-invoice-badge" style="background:' + mv.badgeColor + '">' + mv.badge + '</span>' +
+                        '</div>' +
+                        '<div class="hiw-invoice-rows">' + rowsHTML + '</div>' +
+                        '<div class="hiw-invoice-total"><span>' + mv.total[0] + '</span><span>' + mv.total[1] + '</span></div>' +
+                    '</div>';
+            }
+
             slide.innerHTML =
                 '<div class="hiw-phone-wrap">' +
                     '<div class="hiw-step-bubble" style="color:' + step.iconColor +
@@ -552,7 +703,8 @@
                         '<div class="hiw-iphone-screen hiw-screen-' + (idx + 1) + '">' + decoHTML + '</div>' +
                         '<div class="hiw-iphone-glare"></div>' +
                     '</div>' +
-                '</div>';
+                '</div>' +
+                '<div class="hiw-mobile-visual">' + mobileVisualHTML + '</div>';
 
             phoneCol.appendChild(slide);
             slides.push(slide);
