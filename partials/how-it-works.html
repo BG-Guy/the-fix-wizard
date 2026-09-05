@@ -581,7 +581,7 @@
                 if (!navbarEl) return;
                 navbarEl.classList.toggle('hiw-nav-active', entry.isIntersecting);
             });
-        }, { threshold: 0.05 });
+        }, { threshold: 0.6 });
         sectionObs.observe(document.getElementById('how-it-works'));
 
         /* Init first slide text */
