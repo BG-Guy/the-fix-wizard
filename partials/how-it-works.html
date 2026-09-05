@@ -57,6 +57,14 @@
         font-weight: 700;
         letter-spacing: 0.06em;
         color: #ffffff;
+        transition: color 0.6s ease;
+    }
+
+    /* ── Navbar override while How It Works is in view ── */
+    #navbar.hiw-nav-active {
+        background: #0a1628 !important;
+        border-bottom: 2px solid transparent;
+        transition: background 0.55s ease, border-bottom-color 0.6s ease, box-shadow 0.55s ease !important;
     }
 
     /* ── Step badge — absolute, anchored to text col top-left ── */
@@ -512,6 +520,8 @@
         var dotsWrap  = document.getElementById('hiwDots');
         var prevBtn   = document.getElementById('hiwPrev');
         var nextBtn   = document.getElementById('hiwNext');
+        var eyebrowEl = document.querySelector('#how-it-works .hiw-eyebrow');
+        var navbarEl  = document.getElementById('navbar');
 
         var current    = 0;
         var bgActive   = 'a';
@@ -558,13 +568,37 @@
             dots.push(dot);
         });
 
+        /* Apply step accent color to badge, eyebrow, and navbar */
+        function applyColor(color) {
+            badgeEl.style.background = color;
+            if (eyebrowEl) eyebrowEl.style.color = color;
+            if (navbarEl && navbarEl.classList.contains('hiw-nav-active')) {
+                navbarEl.style.borderBottomColor = color;
+            }
+        }
+
+        /* IntersectionObserver — activate navbar tint while section is visible */
+        var sectionObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!navbarEl) return;
+                if (entry.isIntersecting) {
+                    navbarEl.classList.add('hiw-nav-active');
+                    navbarEl.style.borderBottomColor = steps[current].iconColor;
+                } else {
+                    navbarEl.classList.remove('hiw-nav-active');
+                    navbarEl.style.borderBottomColor = '';
+                }
+            });
+        }, { threshold: 0.05 });
+        sectionObs.observe(document.getElementById('how-it-works'));
+
         /* Init first slide text */
         function initFirst() {
             var s = steps[0];
-            headingEl.innerHTML       = s.heading.replace(/\n/g, '<br>');
-            descEl.textContent        = s.desc;
-            badgeEl.textContent       = s.num;
-            badgeEl.style.background  = s.iconColor;
+            headingEl.innerHTML = s.heading.replace(/\n/g, '<br>');
+            descEl.textContent  = s.desc;
+            badgeEl.textContent = s.num;
+            applyColor(s.iconColor);
             requestAnimationFrame(function () {
                 headingEl.classList.add('visible');
                 descEl.classList.add('visible');
@@ -605,10 +639,10 @@
                 headingEl.style.transition = 'none';
                 headingEl.style.transform  = 'translateY(110%)';
 
-                headingEl.innerHTML      = next.heading.replace(/\n/g, '<br>');
-                descEl.textContent       = next.desc;
-                badgeEl.textContent      = next.num;
-                badgeEl.style.background = next.iconColor;
+                headingEl.innerHTML = next.heading.replace(/\n/g, '<br>');
+                descEl.textContent  = next.desc;
+                badgeEl.textContent = next.num;
+                applyColor(next.iconColor);
 
                 slides[idx].classList.add('active');
                 current = idx;
