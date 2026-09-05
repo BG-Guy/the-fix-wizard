@@ -420,75 +420,279 @@
     <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
 
     <style>
-    /* ── Section shell ── */
     #how-it-works {
-        background: #04091b;
         position: relative;
         overflow: hidden;
-        padding: 96px 0 80px;
+        min-height: max(720px, 92svh);
+        display: flex;
+        flex-direction: column;
     }
-    #how-it-works::before {
+    @media (max-width: 900px) {
+        #how-it-works { min-height: auto; }
+    }
+    #how-it-works::after {
         content: '';
         position: absolute;
         inset: 0;
-        background-image: radial-gradient(circle at 20% 50%, rgba(255,107,53,.06) 0%, transparent 50%),
-                          radial-gradient(circle at 80% 20%, rgba(13,27,75,.5) 0%, transparent 50%);
+        background: radial-gradient(ellipse at 0% 100%, rgba(255,107,53,.07) 0%, transparent 55%);
         pointer-events: none;
+        z-index: 1;
     }
 
-    /* ── Section header ── */
-    .hiw-header {
-        text-align: center;
-        max-width: 560px;
-        margin: 0 auto 56px;
-        padding: 0 24px;
+    /* ── Background crossfade ── */
+    .hiw-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        transition: opacity 0.75s ease;
+    }
+
+    /* ── Inner shell ── */
+    .hiw-inner {
         position: relative;
+        z-index: 2;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hiw-top {
+        text-align: center;
+        padding: 52px 24px 0;
     }
     .hiw-eyebrow {
-        display: inline-block;
         font-family: Inter, sans-serif;
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 3px;
         text-transform: uppercase;
         color: #FF6B35;
-        margin-bottom: 16px;
     }
-    .hiw-title {
-        font-family: 'Cinzel', serif;
-        font-size: clamp(28px, 4vw, 44px);
+
+    /* ── Two-column layout ── */
+    .hiw-layout {
+        flex: 1;
+        display: flex;
+        align-items: stretch;
+        gap: 72px;
+        padding: 36px 80px 0;
+        max-width: 1280px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Text column */
+    .hiw-text-col {
+        flex: 0 0 44%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .hiw-step-label {
+        font-family: Inter, sans-serif;
+        font-size: 10px;
         font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #FF6B35;
+        background: rgba(255,107,53,0.1);
+        border: 1px solid rgba(255,107,53,0.2);
+        border-radius: 20px;
+        padding: 5px 14px;
+        display: inline-block;
+        align-self: flex-start;
+        transition: color 0.4s ease;
+    }
+
+    /* Heading mask + slide-up reveal */
+    .hiw-heading-mask {
+        overflow: hidden;
+        padding-bottom: 6px;
+    }
+    .hiw-heading-text {
+        font-family: 'Titan One', cursive;
+        font-size: clamp(34px, 4vw, 56px);
+        font-weight: 400;
         color: #fff;
-        line-height: 1.15;
-        margin: 0 0 16px;
+        line-height: 1.1;
+        display: block;
+        transform: translateY(110%);
+        transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
         text-wrap: balance;
     }
-    .hiw-title .hiw-accent { color: #FF6B35; }
-    .hiw-subtitle {
+    .hiw-heading-text.visible  { transform: translateY(0); }
+    .hiw-heading-text.exiting  { transform: translateY(-110%); }
+
+    /* Description fade */
+    .hiw-desc {
         font-family: Inter, sans-serif;
-        font-size: 16px;
-        color: rgba(255,255,255,0.55);
-        line-height: 1.7;
+        font-size: 17px;
+        color: rgba(255,255,255,0.6);
+        line-height: 1.75;
         margin: 0;
+        max-width: 420px;
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 0.5s ease 0.12s, transform 0.5s ease 0.12s;
+    }
+    .hiw-desc.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    /* ── Carousel wrapper ── */
-    .hiw-carousel-wrap {
+    /* Phone column */
+    .hiw-phone-col {
+        flex: 1;
         position: relative;
-        max-width: 700px;
-        margin: 0 auto;
     }
 
-    /* Arrow buttons */
-    .hiw-nav-btn {
+    /* Each slide is absolute and overlaps */
+    .hiw-slide {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        width: 48px;
-        height: 48px;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+    }
+    .hiw-slide.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Phone wrap — relative for floating bubble */
+    .hiw-phone-wrap {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Floating icon bubble (outside phone) */
+    .hiw-step-bubble {
+        position: absolute;
+        top: -20px;
+        right: -24px;
+        width: 64px;
+        height: 64px;
         border-radius: 50%;
-        border: 1px solid rgba(255,255,255,0.1);
+        border: 1.5px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        z-index: 30;
+        backdrop-filter: blur(12px);
+        animation: iphoneFloat 5s 2.5s ease-in-out infinite;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    }
+
+    /* iPhone frame */
+    .hiw-iphone {
+        width: 256px;
+        height: 520px;
+        background: linear-gradient(160deg, #2c2c2e 0%, #1c1c1e 100%);
+        border-radius: 50px;
+        position: relative;
+        box-shadow:
+            0 0 0 1.5px rgba(255,255,255,0.12),
+            0 0 0 9px #1c1c1e,
+            0 0 0 10.5px rgba(255,255,255,0.06),
+            0 40px 80px rgba(0,0,0,0.7),
+            0 0 60px rgba(255,107,53,0.07);
+        animation: iphoneFloat 5s ease-in-out infinite;
+    }
+    @keyframes iphoneFloat {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-10px); }
+    }
+    .hiw-iphone::before {
+        content: '';
+        position: absolute;
+        top: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 112px;
+        height: 32px;
+        background: #000;
+        border-radius: 16px;
+        z-index: 20;
+    }
+    .hiw-iphone::after {
+        content: '';
+        position: absolute;
+        right: -3.5px;
+        top: 100px;
+        width: 3.5px;
+        height: 66px;
+        background: linear-gradient(180deg, #3a3a3c, #4a4a4e 40%, #3a3a3c);
+        border-radius: 0 3px 3px 0;
+    }
+    .hiw-iphone-btns {
+        position: absolute;
+        left: -3.5px;
+        top: 72px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 5;
+    }
+    .hiw-iphone-btns span {
+        display: block;
+        width: 3.5px;
+        background: linear-gradient(180deg, #3a3a3c, #4a4a4e 40%, #3a3a3c);
+        border-radius: 3px 0 0 3px;
+    }
+    .hiw-iphone-btns span:nth-child(1) { height: 28px; }
+    .hiw-iphone-btns span:nth-child(2) { height: 58px; }
+    .hiw-iphone-btns span:nth-child(3) { height: 58px; }
+    .hiw-iphone-screen {
+        position: absolute;
+        inset: 8px;
+        border-radius: 42px;
+        overflow: hidden;
+    }
+    .hiw-deco {
+        position: absolute;
+        color: #fff;
+        pointer-events: none;
+        user-select: none;
+    }
+    .hiw-iphone-glare {
+        position: absolute;
+        inset: 8px;
+        border-radius: 42px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 40%);
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    /* Screen gradients */
+    .hiw-screen-1 { background: linear-gradient(160deg, #1c1850 0%, #080718 100%); }
+    .hiw-screen-2 { background: linear-gradient(160deg, #082a3c 0%, #030f18 100%); }
+    .hiw-screen-3 { background: linear-gradient(160deg, #200a44 0%, #09031a 100%); }
+    .hiw-screen-4 { background: linear-gradient(160deg, #0c1a3a 0%, #04081c 100%); }
+    .hiw-screen-5 { background: linear-gradient(160deg, #0a2014 0%, #030a06 100%); }
+    .hiw-screen-6 { background: linear-gradient(160deg, #0c2010 0%, #040a04 100%); }
+    .hiw-screen-7 { background: linear-gradient(160deg, #2c1600 0%, #0c0500 100%); }
+    .hiw-screen-8 { background: linear-gradient(160deg, #261e00 0%, #0a0800 100%); }
+
+    /* ── Nav ── */
+    .hiw-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 36px 24px 52px;
+    }
+    .hiw-nav-btn {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.12);
         background: rgba(255,255,255,0.05);
         color: rgba(255,255,255,0.7);
         font-size: 14px;
@@ -504,224 +708,8 @@
         border-color: rgba(255,107,53,0.4);
         color: #FF6B35;
     }
-    .hiw-nav-btn:disabled { opacity: 0.25; cursor: default; }
-    .hiw-nav-btn.hiw-prev { left: -68px; }
-    .hiw-nav-btn.hiw-next { right: -68px; }
-    @media (max-width: 860px) {
-        .hiw-nav-btn.hiw-prev { left: 8px; }
-        .hiw-nav-btn.hiw-next { right: 8px; }
-    }
-
-    /* Track */
-    .hiw-track {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        scroll-behavior: smooth;
-    }
-    .hiw-track::-webkit-scrollbar { display: none; }
-
-    /* Slide */
-    .hiw-slide {
-        flex: 0 0 100%;
-        scroll-snap-align: center;
-        padding: 0 24px;
-        box-sizing: border-box;
-    }
-
-    /* Card */
-    .hiw-card {
-        background: linear-gradient(160deg, #0c1b38 0%, #081327 100%);
-        border: 1px solid rgba(255,255,255,0.07);
-        border-radius: 28px;
-        padding: 40px 36px 36px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,107,53,0.04);
-    }
-    @media (max-width: 480px) {
-        .hiw-card { padding: 32px 20px 28px; }
-    }
-
-    /* Step badge + icon row */
-    .hiw-card-top {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        align-self: flex-start;
-        width: 100%;
-    }
-    .hiw-step-num {
-        font-family: Inter, sans-serif;
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        color: #FF6B35;
-        background: rgba(255,107,53,0.1);
-        border: 1px solid rgba(255,107,53,0.2);
-        border-radius: 20px;
-        padding: 4px 12px;
-    }
-    .hiw-card-icon {
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
-        background: rgba(255,107,53,0.12);
-        border: 1px solid rgba(255,107,53,0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #FF6B35;
-        font-size: 15px;
-        margin-left: auto;
-    }
-
-    .hiw-step-title {
-        font-family: 'Titan One', cursive;
-        font-size: clamp(22px, 3vw, 28px);
-        font-weight: 700;
-        color: #fff;
-        text-align: center;
-        margin: 0;
-        line-height: 1.2;
-        text-wrap: balance;
-    }
-
-    /* ── iPhone Frame ── */
-    .hiw-iphone {
-        width: 224px;
-        height: 456px;
-        background: linear-gradient(160deg, #2c2c2e 0%, #1c1c1e 100%);
-        border-radius: 48px;
-        position: relative;
-        box-shadow:
-            0 0 0 1.5px rgba(255,255,255,0.12),
-            0 0 0 9px #1c1c1e,
-            0 0 0 10.5px rgba(255,255,255,0.06),
-            0 36px 72px rgba(0,0,0,0.65),
-            0 0 48px rgba(255,107,53,0.07);
-        flex-shrink: 0;
-        animation: iphoneFloat 5s ease-in-out infinite;
-    }
-    @keyframes iphoneFloat {
-        0%, 100% { transform: translateY(0px); }
-        50%       { transform: translateY(-8px); }
-    }
-    /* Dynamic Island */
-    .hiw-iphone::before {
-        content: '';
-        position: absolute;
-        top: 13px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 106px;
-        height: 30px;
-        background: #000;
-        border-radius: 15px;
-        z-index: 20;
-    }
-    /* Power button */
-    .hiw-iphone::after {
-        content: '';
-        position: absolute;
-        right: -3.5px;
-        top: 96px;
-        width: 3.5px;
-        height: 62px;
-        background: linear-gradient(180deg, #3a3a3c, #4a4a4e 40%, #3a3a3c);
-        border-radius: 0 3px 3px 0;
-    }
-    /* Volume buttons (silent + up + down on left side) */
-    .hiw-iphone-btns {
-        position: absolute;
-        left: -3.5px;
-        top: 68px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .hiw-iphone-btns span {
-        display: block;
-        width: 3.5px;
-        background: linear-gradient(180deg, #3a3a3c, #4a4a4e 40%, #3a3a3c);
-        border-radius: 3px 0 0 3px;
-    }
-    .hiw-iphone-btns span:nth-child(1) { height: 26px; }
-    .hiw-iphone-btns span:nth-child(2) { height: 54px; }
-    .hiw-iphone-btns span:nth-child(3) { height: 54px; }
-    /* Screen */
-    .hiw-iphone-screen {
-        position: absolute;
-        inset: 8px;
-        border-radius: 40px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-    }
-    .hiw-iphone-screen-icon {
-        font-size: 44px;
-        opacity: 0.9;
-    }
-    .hiw-iphone-screen-label {
-        font-family: Inter, sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: rgba(255,255,255,0.5);
-    }
-    /* Subtle glass shimmer on phone body */
-    .hiw-iphone-glare {
-        position: absolute;
-        inset: 8px;
-        border-radius: 40px;
-        background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 45%);
-        pointer-events: none;
-        z-index: 5;
-    }
-
-    /* Screen gradients per step */
-    .hiw-screen-1 { background: linear-gradient(160deg, #1a1f50 0%, #0c1030 100%); }
-    .hiw-screen-2 { background: linear-gradient(160deg, #0e2e3c 0%, #06181f 100%); }
-    .hiw-screen-3 { background: linear-gradient(160deg, #201048 0%, #100828 100%); }
-    .hiw-screen-4 { background: linear-gradient(160deg, #0d1f3e 0%, #060f20 100%); }
-    .hiw-screen-5 { background: linear-gradient(160deg, #0d2a1e 0%, #061510 100%); }
-    .hiw-screen-6 { background: linear-gradient(160deg, #0f2a1c 0%, #06150e 100%); }
-    .hiw-screen-7 { background: linear-gradient(160deg, #271a08 0%, #120d04 100%); }
-    .hiw-screen-8 { background: linear-gradient(160deg, #271f04 0%, #130f02 100%); }
-
-    /* Step description */
-    .hiw-step-desc {
-        font-family: Inter, sans-serif;
-        font-size: 15px;
-        color: rgba(255,255,255,0.55);
-        line-height: 1.75;
-        text-align: center;
-        margin: 0;
-        max-width: 400px;
-    }
-
-    /* ── Progress & dots ── */
-    .hiw-progress {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        margin-top: 32px;
-        padding: 0 24px;
-    }
-    .hiw-dots {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-    }
+    .hiw-nav-btn:disabled { opacity: 0.2; cursor: default; }
+    .hiw-dots { display: flex; gap: 8px; align-items: center; }
     .hiw-dot {
         width: 6px;
         height: 6px;
@@ -731,11 +719,9 @@
         transition: all 0.3s;
         border: none;
         padding: 0;
+        flex-shrink: 0;
     }
-    .hiw-dot.active {
-        width: 24px;
-        background: #FF6B35;
-    }
+    .hiw-dot.active { width: 24px; background: #FF6B35; }
     .hiw-dot:hover:not(.active) { background: rgba(255,255,255,0.4); }
     .hiw-counter {
         font-family: Inter, sans-serif;
@@ -744,277 +730,326 @@
         letter-spacing: 1.5px;
         text-transform: uppercase;
         color: rgba(255,255,255,0.3);
+        min-width: 80px;
+        text-align: center;
     }
 
-    /* ── Reduced motion ── */
+    /* ── Mobile ── */
+    @media (max-width: 900px) {
+        .hiw-layout {
+            flex-direction: column-reverse;
+            gap: 28px;
+            padding: 24px 24px 0;
+            align-items: center;
+        }
+        .hiw-text-col {
+            flex: none;
+            width: 100%;
+            max-width: 480px;
+            align-items: center;
+            text-align: center;
+        }
+        .hiw-step-label { align-self: center; }
+        .hiw-desc { max-width: 100%; }
+        .hiw-phone-col {
+            width: 100%;
+            max-width: 300px;
+            min-height: 440px;
+        }
+        .hiw-iphone { width: 210px; height: 428px; }
+        .hiw-iphone::before { width: 92px; height: 26px; top: 12px; border-radius: 13px; }
+        .hiw-step-bubble { width: 52px; height: 52px; font-size: 20px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-        .hiw-iphone { animation: none; }
+        .hiw-iphone, .hiw-step-bubble { animation: none; }
+        .hiw-heading-text, .hiw-desc, .hiw-bg { transition: none; }
     }
     </style>
 
     <section id="how-it-works">
-        <!-- Header -->
-        <div class="hiw-header reveal">
-            <span class="hiw-eyebrow">The Fix Wizard Way</span>
-            <h2 class="hiw-title">From Call to <span class="hiw-accent">Done</span></h2>
-            <p class="hiw-subtitle">8 steps. Zero confusion. Every part of the job handled so you don't have to think about it.</p>
-        </div>
+        <div class="hiw-bg" id="hiwBgA" style="opacity:1;background:linear-gradient(160deg,#160f40 0%,#050311 100%)"></div>
+        <div class="hiw-bg" id="hiwBgB" style="opacity:0"></div>
 
-        <!-- Carousel -->
-        <div class="hiw-carousel-wrap">
-            <button class="hiw-nav-btn hiw-prev" id="hiwPrev" aria-label="Previous step" disabled>
-                <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="hiw-track" id="hiwTrack" tabindex="0" role="region" aria-label="Booking steps carousel">
-
-                <!-- Step 1 -->
-                <div class="hiw-slide" role="group" aria-label="Step 1 of 8">
-                    <div class="hiw-card">
-                        <div class="hiw-card-top">
-                            <span class="hiw-step-num">STEP 01</span>
-                            <div class="hiw-card-icon"><i class="fas fa-phone"></i></div>
-                        </div>
-                        <h3 class="hiw-step-title">Call or Text the Wizard</h3>
-                        <div class="hiw-iphone">
-                            <div class="hiw-iphone-btns">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="hiw-iphone-screen hiw-screen-1">
-                                <i class="hiw-iphone-screen-icon fas fa-comments" style="color:#FF6B35"></i>
-                                <span class="hiw-iphone-screen-label">Mockup coming soon</span>
-                            </div>
-                            <div class="hiw-iphone-glare"></div>
-                        </div>
-                        <p class="hiw-step-desc">Pick up the phone or shoot us a text. Tell us what's broken — we respond fast and get you on the books the same day.</p>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="hiw-slide" role="group" aria-label="Step 2 of 8">
-                    <div class="hiw-card">
-                        <div class="hiw-card-top">
-                            <span class="hiw-step-num">STEP 02</span>
-                            <div class="hiw-card-icon"><i class="fas fa-calendar-check"></i></div>
-                        </div>
-                        <h3 class="hiw-step-title">Grab Your Time Slot</h3>
-                        <div class="hiw-iphone">
-                            <div class="hiw-iphone-btns">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="hiw-iphone-screen hiw-screen-2">
-                                <i class="hiw-iphone-screen-icon fas fa-calendar-check" style="color:#38bdf8"></i>
-                                <span class="hiw-iphone-screen-label">Mockup coming soon</span>
-                            </div>
-                            <div class="hiw-iphone-glare"></div>
-                        </div>
-                        <p class="hiw-step-desc">We text you a real-time booking link. Pick the window that works — morning, afternoon, or evening. No back-and-forth.</p>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="hiw-slide" role="group" aria-label="Step 3 of 8">
-                    <div class="hiw-card">
-                        <div class="hiw-card-top">
-                            <span class="hiw-step-num">STEP 03</span>
-                            <div class="hiw-card-icon"><i class="fas fa-arrows-rotate"></i></div>
-                        </div>
-                        <h3 class="hiw-step-title">Change or Cancel Anytime</h3>
-                        <div class="hiw-iphone">
-                            <div class="hiw-iphone-btns">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="hiw-iphone-screen hiw-screen-3">
-                                <i class="hiw-iphone-screen-icon fas fa-arrows-rotate" style="color:#a78bfa"></i>
-                                <span class="hiw-iphone-screen-label">Mockup coming soon</span>
-                            </div>
-                            <div class="hiw-iphone-glare"></div>
-                        </div>
-                        <p class="hiw-step-desc">Life changes. Reschedule or cancel through the same link in your text — no phone calls needed, no fees, no friction.</p>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="hiw-slide" role="group" aria-label="Step 4 of 8">
-                    <div class="hiw-card">
-                        <div class="hiw-card-top">
-                            <span class="hiw-step-num">STEP 04</span>
-                            <div class="hiw-card-icon"><i class="fas fa-bell"></i></div>
-                        </div>
-                        <h3 class="hiw-step-title">Day-Before Reminder</h3>
-                        <div class="hiw-iphone">
-                            <div class="hiw-iphone-btns">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="hiw-iphone-screen hiw-screen-4">
-                                <i class="hiw-iphone-screen-icon fas fa-bell" style="color:#fbbf24"></i>
-                                <span class="hiw-iphone-screen-label">Mockup coming soon</span>
-                            </div>
-                            <div class="hiw-iphone-glare"></div>
-                        </div>
-                        <p class="hiw-step-desc">The evening before your appointment, a friendly heads-up text arrives. No surprise mornings, no missed slots.</p>
-                    </div>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="hiw-slide" role="group" aria-label="Step 5 of 8">
-                    <div class="hiw-card">
-                        <div class="hiw-card-top">
-                            <span class="hiw-step-num">STEP 05</span>
-                            <div class="hiw-card-icon"><i class="fas fa-location-dot"></i></div>
-                        </div>
-                        <h3 class="hiw-step-title">We're 30 Minutes Away</h3>
-                        <div class="hiw-iphone">
-                            <div class="hiw-iphone-btns">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="hiw-iphone-screen hiw-screen-5">
-                                <i class="hiw-iphone-screen-icon fas fa-location-dot" style="color:#34d399"></i>
-                                <span class="hiw-iphone-screen-label">Mockup coming soon</span>
-                            </div>
-                            <div class="hiw-iphone-glare"></div>
-                        </div>
-                        <p class="hiw-step-desc">When we hit the road, a 30-minute arrival alert goes to your phone. No sitting around waiting for a knock at the door.</p>
-                    </div>
-                </div>
-
-                <!-- Step 6 -->
-                <div class="hiw-slide" role="group" aria-label="Step 6 of 8">
-                    <div class="hiw-card">
-                        <div class="hiw-card-top">
-                            <span class="hiw-step-num">STEP 06</span>
-                            <div class="hiw-card-icon"><i class="fas fa-credit-card"></i></div>
-                        </div>
-                        <h3 class="hiw-step-title">Pay Your Way</h3>
-                        <div class="hiw-iphone">
-                            <div class="hiw-iphone-btns">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="hiw-iphone-screen hiw-screen-6">
-                                <i class="hiw-iphone-screen-icon fas fa-credit-card" style="color:#4ade80"></i>
-                                <span class="hiw-iphone-screen-label">Mockup coming soon</span>
-                            </div>
-                            <div class="hiw-iphone-glare"></div>
-                        </div>
-                        <p class="hiw-step-desc">Apple Pay, Zelle, cash, or check — you pick. A secure payment link comes straight to your phone. Done in a tap.</p>
-                    </div>
-                </div>
-
-                <!-- Step 7 -->
-                <div class="hiw-slide" role="group" aria-label="Step 7 of 8">
-                    <div class="hiw-card">
-                        <div class="hiw-card-top">
-                            <span class="hiw-step-num">STEP 07</span>
-                            <div class="hiw-card-icon"><i class="fas fa-file-invoice"></i></div>
-                        </div>
-                        <h3 class="hiw-step-title">Invoice + 3-Month Warranty</h3>
-                        <div class="hiw-iphone">
-                            <div class="hiw-iphone-btns">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="hiw-iphone-screen hiw-screen-7">
-                                <i class="hiw-iphone-screen-icon fas fa-file-invoice" style="color:#fb923c"></i>
-                                <span class="hiw-iphone-screen-label">Mockup coming soon</span>
-                            </div>
-                            <div class="hiw-iphone-glare"></div>
-                        </div>
-                        <p class="hiw-step-desc">Your detailed receipt is texted and emailed immediately. Every job is backed by our 3-month workmanship guarantee.</p>
-                    </div>
-                </div>
-
-                <!-- Step 8 -->
-                <div class="hiw-slide" role="group" aria-label="Step 8 of 8">
-                    <div class="hiw-card">
-                        <div class="hiw-card-top">
-                            <span class="hiw-step-num">STEP 08</span>
-                            <div class="hiw-card-icon"><i class="fas fa-star"></i></div>
-                        </div>
-                        <h3 class="hiw-step-title">Drop Us 5 Stars</h3>
-                        <div class="hiw-iphone">
-                            <div class="hiw-iphone-btns">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="hiw-iphone-screen hiw-screen-8">
-                                <i class="hiw-iphone-screen-icon fas fa-star" style="color:#fbbf24"></i>
-                                <span class="hiw-iphone-screen-label">Mockup coming soon</span>
-                            </div>
-                            <div class="hiw-iphone-glare"></div>
-                        </div>
-                        <p class="hiw-step-desc">Love the result? A 5-star review takes 30 seconds and helps your neighbors find someone they can actually trust.</p>
-                    </div>
-                </div>
-
-            </div><!-- /hiw-track -->
-
-            <button class="hiw-nav-btn hiw-next" id="hiwNext" aria-label="Next step">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div><!-- /hiw-carousel-wrap -->
-
-        <!-- Progress -->
-        <div class="hiw-progress">
-            <div class="hiw-dots" id="hiwDots" role="tablist" aria-label="Go to step">
-                <button class="hiw-dot active" role="tab" aria-label="Step 1" aria-selected="true"></button>
-                <button class="hiw-dot" role="tab" aria-label="Step 2" aria-selected="false"></button>
-                <button class="hiw-dot" role="tab" aria-label="Step 3" aria-selected="false"></button>
-                <button class="hiw-dot" role="tab" aria-label="Step 4" aria-selected="false"></button>
-                <button class="hiw-dot" role="tab" aria-label="Step 5" aria-selected="false"></button>
-                <button class="hiw-dot" role="tab" aria-label="Step 6" aria-selected="false"></button>
-                <button class="hiw-dot" role="tab" aria-label="Step 7" aria-selected="false"></button>
-                <button class="hiw-dot" role="tab" aria-label="Step 8" aria-selected="false"></button>
+        <div class="hiw-inner">
+            <div class="hiw-top reveal">
+                <span class="hiw-eyebrow">The Fix Wizard Way</span>
             </div>
-            <div class="hiw-counter" id="hiwCounter" aria-live="polite">Step 1 of 8</div>
+
+            <div class="hiw-layout">
+                <div class="hiw-text-col">
+                    <span class="hiw-step-label" id="hiwStepLabel">STEP 01</span>
+                    <div class="hiw-heading-mask">
+                        <span class="hiw-heading-text" id="hiwHeading"></span>
+                    </div>
+                    <p class="hiw-desc" id="hiwDesc"></p>
+                </div>
+                <div class="hiw-phone-col" id="hiwPhoneCol"></div>
+            </div>
+
+            <div class="hiw-nav">
+                <button class="hiw-nav-btn" id="hiwPrev" aria-label="Previous step" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="hiw-dots" id="hiwDots" role="tablist"></div>
+                <span class="hiw-counter" id="hiwCounter">Step 1 of 8</span>
+                <button class="hiw-nav-btn" id="hiwNext" aria-label="Next step">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
         </div>
     </section>
 
     <script>
     (function () {
-        const track   = document.getElementById('hiwTrack');
-        const dots    = Array.from(document.querySelectorAll('.hiw-dot'));
-        const counter = document.getElementById('hiwCounter');
-        const prev    = document.getElementById('hiwPrev');
-        const next    = document.getElementById('hiwNext');
-        const total   = dots.length;
-        let current   = 0;
+        var steps = [
+            {
+                num: '01', icon: 'fa-phone', iconColor: '#FF6B35',
+                heading: 'Skip the\nHold Music.',
+                desc: 'Text or call — we pick up fast, skip the phone tag, and get you booked the same day.',
+                bg: 'linear-gradient(160deg,#160f40 0%,#050311 100%)',
+                screenIcons: [
+                    { i:'fa-comments',     t:'18%', l:'12%', r:'-12deg', s:'34px', o:.18 },
+                    { i:'fa-message',      t:'56%', l:'62%', r:'18deg',  s:'26px', o:.14 },
+                    { i:'fa-thumbs-up',    t:'74%', l:'18%', r:'8deg',   s:'28px', o:.15 },
+                    { i:'fa-phone-volume', t:'32%', l:'70%', r:'-22deg', s:'22px', o:.12 },
+                    { i:'fa-reply',        t:'84%', l:'58%', r:'14deg',  s:'20px', o:.13 },
+                ]
+            },
+            {
+                num: '02', icon: 'fa-calendar-check', iconColor: '#38bdf8',
+                heading: 'Pick a Time.\nNot a Headache.',
+                desc: 'We text you a booking link with real availability. Tap the window that works — morning, afternoon, or evening. No back-and-forth.',
+                bg: 'linear-gradient(160deg,#072030 0%,#020c12 100%)',
+                screenIcons: [
+                    { i:'fa-calendar-check',  t:'16%', l:'14%', r:'-8deg',  s:'32px', o:.17 },
+                    { i:'fa-clock',           t:'52%', l:'66%', r:'20deg',  s:'26px', o:.13 },
+                    { i:'fa-calendar-days',   t:'72%', l:'16%', r:'5deg',   s:'28px', o:.15 },
+                    { i:'fa-check-circle',    t:'30%', l:'68%', r:'-18deg', s:'22px', o:.12 },
+                    { i:'fa-hourglass-half',  t:'82%', l:'60%', r:'12deg',  s:'20px', o:.14 },
+                ]
+            },
+            {
+                num: '03', icon: 'fa-arrows-rotate', iconColor: '#a78bfa',
+                heading: 'Plans Change.\nSo Does Your Booking.',
+                desc: 'Reschedule or cancel through the same link in your text — zero phone calls, zero fees, zero guilt.',
+                bg: 'linear-gradient(160deg,#1a0840 0%,#08031a 100%)',
+                screenIcons: [
+                    { i:'fa-arrows-rotate', t:'18%', l:'12%', r:'-15deg', s:'32px', o:.18 },
+                    { i:'fa-rotate-left',   t:'56%', l:'64%', r:'22deg',  s:'26px', o:.14 },
+                    { i:'fa-pencil',        t:'74%', l:'18%', r:'10deg',  s:'24px', o:.13 },
+                    { i:'fa-calendar',      t:'32%', l:'70%', r:'-20deg', s:'22px', o:.12 },
+                    { i:'fa-check',         t:'86%', l:'58%', r:'8deg',   s:'20px', o:.15 },
+                ]
+            },
+            {
+                num: '04', icon: 'fa-bell', iconColor: '#fbbf24',
+                heading: "We'll Knock\nTomorrow. Promise.",
+                desc: 'A heads-up text lands the evening before your appointment. No surprise mornings, no missed slots.',
+                bg: 'linear-gradient(160deg,#071428 0%,#020608 100%)',
+                screenIcons: [
+                    { i:'fa-bell',     t:'18%', l:'12%', r:'-10deg', s:'34px', o:.18 },
+                    { i:'fa-moon',     t:'54%', l:'64%', r:'20deg',  s:'28px', o:.14 },
+                    { i:'fa-envelope', t:'74%', l:'16%', r:'8deg',   s:'26px', o:.15 },
+                    { i:'fa-clock',    t:'30%', l:'68%', r:'-18deg', s:'22px', o:.12 },
+                    { i:'fa-star',     t:'84%', l:'60%', r:'12deg',  s:'20px', o:.13 },
+                ]
+            },
+            {
+                num: '05', icon: 'fa-location-dot', iconColor: '#34d399',
+                heading: '"Sometime Today"\nIsn\'t Good Enough.',
+                desc: 'When we hit the road, a real 30-minute arrival alert goes to your phone. No guessing, no staring out the window.',
+                bg: 'linear-gradient(160deg,#071a0c 0%,#020805 100%)',
+                screenIcons: [
+                    { i:'fa-location-dot', t:'16%', l:'14%', r:'-8deg',  s:'34px', o:.18 },
+                    { i:'fa-car',          t:'52%', l:'64%', r:'18deg',  s:'28px', o:.15 },
+                    { i:'fa-road',         t:'72%', l:'16%', r:'6deg',   s:'26px', o:.14 },
+                    { i:'fa-map-pin',      t:'30%', l:'70%', r:'-20deg', s:'22px', o:.12 },
+                    { i:'fa-route',        t:'84%', l:'58%', r:'12deg',  s:'20px', o:.13 },
+                ]
+            },
+            {
+                num: '06', icon: 'fa-credit-card', iconColor: '#4ade80',
+                heading: 'Pay How You Want.\nNot How We Want.',
+                desc: 'Apple Pay, Zelle, cash, or check — your call. A secure payment link comes straight to your phone. Done in a tap.',
+                bg: 'linear-gradient(160deg,#0a1a08 0%,#030804 100%)',
+                screenIcons: [
+                    { i:'fa-credit-card',   t:'18%', l:'12%', r:'-12deg', s:'30px', o:.17 },
+                    { i:'fa-wallet',        t:'54%', l:'66%', r:'22deg',  s:'26px', o:.14 },
+                    { i:'fa-dollar-sign',   t:'74%', l:'16%', r:'8deg',   s:'28px', o:.15 },
+                    { i:'fa-lock',          t:'32%', l:'68%', r:'-18deg', s:'22px', o:.12 },
+                    { i:'fa-shield-halved', t:'84%', l:'60%', r:'10deg',  s:'20px', o:.13 },
+                ]
+            },
+            {
+                num: '07', icon: 'fa-file-invoice', iconColor: '#fb923c',
+                heading: 'Proof It\'s Done Right.\nIn Writing.',
+                desc: 'Your invoice arrives by text and email — before-and-after photos, a full breakdown of the work, and all our company info. Backed by a 3-month workmanship warranty.',
+                bg: 'linear-gradient(160deg,#251200 0%,#090400 100%)',
+                screenIcons: [
+                    { i:'fa-camera',        t:'18%', l:'12%', r:'-10deg', s:'32px', o:.17 },
+                    { i:'fa-file-invoice',  t:'54%', l:'64%', r:'20deg',  s:'26px', o:.14 },
+                    { i:'fa-image',         t:'72%', l:'16%', r:'8deg',   s:'28px', o:.15 },
+                    { i:'fa-receipt',       t:'30%', l:'70%', r:'-18deg', s:'22px', o:.12 },
+                    { i:'fa-shield-halved', t:'84%', l:'58%', r:'12deg',  s:'20px', o:.13 },
+                ]
+            },
+            {
+                num: '08', icon: 'fa-star', iconColor: '#fbbf24',
+                heading: '30 Seconds.\n5 Stars. Infinite Karma.',
+                desc: 'Love the result? One quick review helps your neighbors find someone they can actually trust. It\'s the good-guy move.',
+                bg: 'linear-gradient(160deg,#221800 0%,#080600 100%)',
+                screenIcons: [
+                    { i:'fa-star',      t:'18%', l:'12%', r:'-8deg',  s:'34px', o:.18 },
+                    { i:'fa-trophy',    t:'52%', l:'64%', r:'18deg',  s:'28px', o:.15 },
+                    { i:'fa-heart',     t:'72%', l:'16%', r:'10deg',  s:'26px', o:.14 },
+                    { i:'fa-thumbs-up', t:'32%', l:'70%', r:'-20deg', s:'22px', o:.12 },
+                    { i:'fa-medal',     t:'84%', l:'58%', r:'12deg',  s:'20px', o:.13 },
+                ]
+            }
+        ];
 
-        function goTo(idx) {
-            idx = Math.max(0, Math.min(total - 1, idx));
-            track.scrollTo({ left: idx * track.clientWidth, behavior: 'smooth' });
-            current = idx;
+        var bgA       = document.getElementById('hiwBgA');
+        var bgB       = document.getElementById('hiwBgB');
+        var labelEl   = document.getElementById('hiwStepLabel');
+        var headingEl = document.getElementById('hiwHeading');
+        var descEl    = document.getElementById('hiwDesc');
+        var phoneCol  = document.getElementById('hiwPhoneCol');
+        var dotsWrap  = document.getElementById('hiwDots');
+        var counterEl = document.getElementById('hiwCounter');
+        var prevBtn   = document.getElementById('hiwPrev');
+        var nextBtn   = document.getElementById('hiwNext');
+
+        var current    = 0;
+        var bgActive   = 'a';
+        var busy       = false;
+        var slides     = [];
+        var dots       = [];
+
+        /* Build slides */
+        steps.forEach(function (step, idx) {
+            var slide = document.createElement('div');
+            slide.className = 'hiw-slide' + (idx === 0 ? ' active' : '');
+
+            var decoHTML = step.screenIcons.map(function (d) {
+                return '<i class="hiw-deco fas ' + d.i + '" style="top:' + d.t +
+                    ';left:' + d.l + ';transform:rotate(' + d.r +
+                    ');font-size:' + d.s + ';opacity:' + d.o + '"></i>';
+            }).join('');
+
+            slide.innerHTML =
+                '<div class="hiw-phone-wrap">' +
+                    '<div class="hiw-step-bubble" style="color:' + step.iconColor +
+                        ';border-color:' + step.iconColor + '60;background:' + step.iconColor + '18">' +
+                        '<i class="fas ' + step.icon + '"></i>' +
+                    '</div>' +
+                    '<div class="hiw-iphone">' +
+                        '<div class="hiw-iphone-btns"><span></span><span></span><span></span></div>' +
+                        '<div class="hiw-iphone-screen hiw-screen-' + (idx + 1) + '">' + decoHTML + '</div>' +
+                        '<div class="hiw-iphone-glare"></div>' +
+                    '</div>' +
+                '</div>';
+
+            phoneCol.appendChild(slide);
+            slides.push(slide);
+        });
+
+        /* Build dots */
+        steps.forEach(function (_, idx) {
+            var dot = document.createElement('button');
+            dot.className = 'hiw-dot' + (idx === 0 ? ' active' : '');
+            dot.setAttribute('role', 'tab');
+            dot.setAttribute('aria-label', 'Step ' + (idx + 1));
+            dot.addEventListener('click', function () { goTo(idx); });
+            dotsWrap.appendChild(dot);
+            dots.push(dot);
+        });
+
+        /* Init first slide text */
+        function initFirst() {
+            var s = steps[0];
+            headingEl.innerHTML = s.heading.replace(/\n/g, '<br>');
+            descEl.textContent  = s.desc;
+            labelEl.textContent = 'STEP ' + s.num;
+            requestAnimationFrame(function () {
+                headingEl.classList.add('visible');
+                descEl.classList.add('visible');
+            });
             sync();
         }
 
-        function sync() {
-            dots.forEach((d, i) => {
-                d.classList.toggle('active', i === current);
-                d.setAttribute('aria-selected', i === current);
-            });
-            counter.textContent = 'Step ' + (current + 1) + ' of ' + total;
-            prev.disabled = current === 0;
-            next.disabled = current === total - 1;
+        function goTo(idx) {
+            if (idx === current || busy) return;
+            busy = true;
+
+            var next = steps[idx];
+
+            /* 1 — Text exit */
+            headingEl.classList.remove('visible');
+            headingEl.classList.add('exiting');
+            descEl.classList.remove('visible');
+
+            /* 2 — Background crossfade */
+            if (bgActive === 'a') {
+                bgB.style.background = next.bg;
+                bgB.style.opacity = '1';
+                bgA.style.opacity = '0';
+                bgActive = 'b';
+            } else {
+                bgA.style.background = next.bg;
+                bgA.style.opacity = '1';
+                bgB.style.opacity = '0';
+                bgActive = 'a';
+            }
+
+            /* 3 — Phone crossfade */
+            slides[current].classList.remove('active');
+
+            /* 4 — After exit animation, swap content and enter */
+            setTimeout(function () {
+                headingEl.classList.remove('exiting');
+                headingEl.style.transition = 'none';
+                headingEl.style.transform  = 'translateY(110%)';
+
+                headingEl.innerHTML = next.heading.replace(/\n/g, '<br>');
+                descEl.textContent  = next.desc;
+                labelEl.textContent = 'STEP ' + next.num;
+
+                slides[idx].classList.add('active');
+                current = idx;
+                sync();
+
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        headingEl.style.transition = '';
+                        headingEl.style.transform  = '';
+                        headingEl.classList.add('visible');
+                        descEl.classList.add('visible');
+                        busy = false;
+                    });
+                });
+            }, 340);
         }
 
-        prev.addEventListener('click', () => goTo(current - 1));
-        next.addEventListener('click', () => goTo(current + 1));
-        dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
-
-        // Sync dots on user swipe / scroll
-        let rafId;
-        track.addEventListener('scroll', () => {
-            cancelAnimationFrame(rafId);
-            rafId = requestAnimationFrame(() => {
-                const idx = Math.round(track.scrollLeft / track.clientWidth);
-                if (idx !== current) { current = idx; sync(); }
+        function sync() {
+            dots.forEach(function (d, i) {
+                d.classList.toggle('active', i === current);
+                d.setAttribute('aria-selected', String(i === current));
             });
-        }, { passive: true });
+            counterEl.textContent = 'Step ' + (current + 1) + ' of ' + steps.length;
+            prevBtn.disabled = current === 0;
+            nextBtn.disabled = current === steps.length - 1;
+        }
 
-        // Keyboard navigation when track is focused
-        track.addEventListener('keydown', e => {
-            if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
-            if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+        prevBtn.addEventListener('click', function () { goTo(current - 1); });
+        nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+        document.getElementById('how-it-works').addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowLeft')  goTo(current - 1);
+            if (e.key === 'ArrowRight') goTo(current + 1);
         });
 
-        sync();
+        initFirst();
     })();
     </script>
 
