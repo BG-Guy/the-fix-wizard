@@ -491,11 +491,11 @@
             padding-bottom: 0;
         }
 
-        /* Grid: [eyebrow row 1] [badge row 2] [visual row 3 — 1fr] [text row 4] + nav absolute at bottom */
+        /* Grid: [eyebrow row 1] [badge row 2] [text row 3] [visual row 4 — 1fr] + nav absolute at bottom */
         .hiw-inner {
             height: 100%;
             display: grid;
-            grid-template-rows: auto auto 1fr auto;
+            grid-template-rows: auto auto auto 1fr;
             row-gap: 12px;
             padding-bottom: 76px; /* clears the absolute .hiw-nav */
             overflow: hidden;
@@ -524,18 +524,9 @@
             align-self: center;
         }
 
-        /* Row 3 — visual fills all remaining space (1fr) */
-        .hiw-phone-col {
-            grid-row: 3;
-            width: 100%;
-            min-height: 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Row 4 — heading + description */
+        /* Row 3 — heading + description */
         .hiw-text-col {
-            grid-row: 4;
+            grid-row: 3;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -543,6 +534,15 @@
             padding: 0 24px;
             text-align: center;
             width: 100%;
+        }
+
+        /* Row 4 — visual fills all remaining space (1fr) */
+        .hiw-phone-col {
+            grid-row: 4;
+            width: 100%;
+            min-height: 0;
+            position: relative;
+            overflow: hidden;
         }
 
         .hiw-heading-text { font-size: clamp(20px, 5.5vw, 30px); }
