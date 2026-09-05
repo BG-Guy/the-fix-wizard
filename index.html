@@ -875,8 +875,8 @@
         .hiw-phone-col {
             width: 100%;
             max-width: 300px;
-            min-height: 0;
-            flex: 0 1 auto;
+            min-height: 230px; /* fixed box the slides crossfade inside — same technique as the heading/description swap, so the container never resizes between steps */
+            flex: 0 0 auto;
             order: 2;
         }
         .hiw-heading-mask { order: 3; width: 100%; }
@@ -887,8 +887,9 @@
             order: 4;
             min-height: 140px; /* reserves space for the longest step description so switching steps never reflows the layout */
         }
-        .hiw-slide { position: relative; inset: auto; justify-content: center; }
-        .hiw-slide:not(.active) { display: none; }
+        /* Slides stay absolutely stacked (same as desktop) and crossfade via opacity —
+           nothing is ever removed from the DOM/layout, so the fixed-height column above never resizes. */
+        .hiw-slide { justify-content: center; }
 
         /* Hide the iPhone mockup on mobile — swap in the step's visual card */
         .hiw-phone-wrap { display: none; }
