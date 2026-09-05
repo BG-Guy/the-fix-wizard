@@ -8,6 +8,10 @@ module.exports = {
     './services/**/*.html',
     './new-jersey/**/*.html',
     './cleveland-ohio/**/*.html',
+    './*-repair/**/*.html',
+    './chimney-services-*/**/*.html',
+    './handyman-services-*/**/*.html',
+    './generate-locations.js',
   ],
   safelist: [],
   theme: {
