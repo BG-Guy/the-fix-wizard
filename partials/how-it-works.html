@@ -482,7 +482,7 @@
     .hiw-dot.active { width: 24px; background: #FF6B35; }
     .hiw-dot:hover:not(.active) { background: rgba(255,255,255,0.4); }
 
-    /* ── Phone (≤ 767px) — step visuals, no iPhone mockup ── */
+    /* ── Phone (≤ 767px) — CSS grid layout, step visuals, no iPhone mockup ── */
     @media (max-width: 767px) {
         #how-it-works {
             width: 100vw;
@@ -490,67 +490,88 @@
             min-height: 100svh;
             padding-bottom: 0;
         }
-        .hiw-inner { height: 100%; }
 
-        /* Eyebrow clears the navbar using the --nav-h token */
+        /* Grid: [eyebrow row 1] [badge row 2] [visual row 3 — 1fr] [text row 4] + nav absolute at bottom */
+        .hiw-inner {
+            height: 100%;
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            row-gap: 12px;
+            padding-bottom: 76px; /* clears the absolute .hiw-nav */
+            overflow: hidden;
+        }
+
+        /* Row 1 — eyebrow, clears the fixed navbar */
         .hiw-top {
+            grid-row: 1;
             height: auto;
-            flex-shrink: 0;
-            padding: calc(var(--nav-h, 96px) + 6px) 20px 8px;
+            padding: calc(var(--nav-h, 96px) + 2px) 24px 0;
         }
 
+        /* hiw-layout becomes invisible to layout — its children join hiw-inner's grid */
         .hiw-layout {
-            position: static; /* badge in-flow on mobile */
-            flex: 1;
-            min-height: 0;
-            flex-direction: column;
-            gap: 12px;
-            padding: 0 20px 80px; /* 80px clears the absolute nav */
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            max-width: 440px;
-            margin: 0 auto;
-            box-sizing: border-box;
+            display: contents;
         }
 
-        /* Badge: in-flow, centered, first */
+        /* Row 2 — badge, just below eyebrow */
         .hiw-step-badge {
+            grid-row: 2;
             position: static;
-            order: 1;
             width: 44px;
             height: 44px;
             font-size: 18px;
+            justify-self: center;
+            align-self: center;
         }
 
-        /* Visual: second */
+        /* Row 3 — visual fills all remaining space (1fr) */
         .hiw-phone-col {
+            grid-row: 3;
             width: 100%;
-            max-width: 300px;
-            min-height: 220px;
-            flex: 0 0 auto;
-            order: 2;
+            min-height: 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Text (heading + desc): third */
+        /* Row 4 — heading + description */
         .hiw-text-col {
+            grid-row: 4;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 8px;
+            padding: 0 24px;
+            text-align: center;
             width: 100%;
-            padding-top: 0;
-            order: 3;
-            flex: 0 0 auto;
         }
 
-        .hiw-heading-text { font-size: clamp(22px, 6vw, 32px); }
-        .hiw-desc { max-width: 100%; font-size: 14px; line-height: 1.6; min-height: 0; }
+        .hiw-heading-text { font-size: clamp(20px, 5.5vw, 30px); }
+        .hiw-desc { max-width: 100%; font-size: 13px; line-height: 1.55; min-height: 0; }
 
-        .hiw-slide { justify-content: center; }
+        /* Slides (still absolute inside phone-col) — center the mobile visual */
+        .hiw-slide { justify-content: center; align-items: center; }
         .hiw-phone-wrap { display: none; }
-        .hiw-mobile-visual { display: flex; }
-        .hiw-nav { padding: 10px 24px 14px; }
+        .hiw-mobile-visual {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        /* Compact message card so it fits within the 1fr visual row */
+        .hiw-msg-statusbar { padding: 7px 14px 2px; font-size: 11px; }
+        .hiw-msg-head { padding: 3px 14px 7px; gap: 3px; }
+        .hiw-msg-avatar { width: 28px; height: 28px; font-size: 12px; }
+        .hiw-msg-body { padding: 8px 12px 10px; gap: 6px; }
+        .hiw-msg-bubble { font-size: 12px; padding: 7px 11px; }
+        .hiw-msg-link { padding: 5px 8px; }
+        .hiw-msg-link-thumb { width: 28px; height: 28px; font-size: 12px; }
+        .hiw-msg-timestamp { font-size: 9px; }
+        .hiw-invoice-card { padding: 12px 14px; min-height: 0; }
+
+        .hiw-nav { padding: 12px 24px 16px; }
     }
 
     /* ── Tablet / iPad mini and up (768px–1023px) — show iPhone mockup ── */
@@ -876,11 +897,12 @@
             if (eyebrowEl) eyebrowEl.style.color = color;
         }
 
-        /* IntersectionObserver — strip navbar bg while section is in view */
+        /* IntersectionObserver — strip navbar bg + hide sticky CTA while section is in view */
         var sectionObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (!navbarEl) return;
                 navbarEl.classList.toggle('hiw-nav-active', entry.isIntersecting);
+                document.body.classList.toggle('hiw-section-active', entry.isIntersecting);
             });
         }, { threshold: 0.6 });
         sectionObs.observe(document.getElementById('how-it-works'));

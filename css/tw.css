@@ -2966,6 +2966,10 @@ section {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .inset-0 {
   inset: 0px;
 }
@@ -3139,6 +3143,10 @@ section {
   display: grid;
 }
 
+.contents {
+  display: contents;
+}
+
 .hidden {
   display: none;
 }
@@ -3227,8 +3235,8 @@ section {
   height: 100vh;
 }
 
-.max-h-\[110px\] {
-  max-height: 110px;
+.max-h-\[58px\] {
+  max-height: 58px;
 }
 
 .min-h-screen {
@@ -4626,6 +4634,10 @@ section {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:max-h-\[110px\] {
+    max-height: 110px;
   }
 
   .md\:grid-cols-2 {

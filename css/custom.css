@@ -176,6 +176,15 @@ html { scroll-snap-type: y proximity; }
     #magicText { font-size:20px; }
 }
 
+/* Hide Book Now CTA when How It Works section is active */
+body.hiw-section-active .sticky-cta,
+body.hiw-section-active .sticky-cta.shown {
+    opacity: 0 !important;
+    transform: scale(0) !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+}
+
 /* ---- Service page hero background ---- */
 .sp-hero {
     background-color: var(--blue-darkest);
