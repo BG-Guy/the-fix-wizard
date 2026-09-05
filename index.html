@@ -112,7 +112,7 @@
         <div class="max-w-site mx-auto px-6 flex items-center h-full gap-8 nav-container">
 
             <a href="#home" class="flex items-center shrink-0 logo">
-                <img src="assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="h-auto max-h-[110px] w-auto object-contain rounded-lg logo-img" width="199" height="110">
+                <img src="assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="h-auto max-h-[58px] md:max-h-[110px] w-auto object-contain rounded-lg logo-img" width="199" height="110">
             </a>
 
             <ul class="hidden md:flex items-center gap-0.5 mx-auto nav-links">
@@ -481,11 +481,11 @@
         box-shadow: none !important;
     }
 
-    /* ── Step badge — absolute, anchored to text col top-left ── */
+    /* ── Step badge — absolute inside .hiw-layout on desktop ── */
     .hiw-step-badge {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 24px;  /* matches .hiw-layout top padding */
+        left: 80px; /* matches .hiw-layout left padding */
         width: 54px;
         height: 54px;
         border-radius: 50%;
@@ -496,10 +496,12 @@
         font-size: 22px;
         color: #fff;
         transition: background-color 0.6s ease;
+        z-index: 3;
     }
 
     /* ── Two-column layout ── */
     .hiw-layout {
+        position: relative; /* badge is absolute inside here on desktop */
         flex: 1;
         display: flex;
         align-items: stretch;
@@ -518,7 +520,6 @@
         flex-direction: column;
         justify-content: center;
         gap: 20px;
-        position: relative;
         padding-top: 78px; /* clear space for the absolute badge */
     }
 
@@ -897,67 +898,114 @@
     .hiw-dot.active { width: 24px; background: #FF6B35; }
     .hiw-dot:hover:not(.active) { background: rgba(255,255,255,0.4); }
 
-    /* ── Mobile: locked to the screen's full height & width, no phone mockup ── */
-    @media (max-width: 900px) {
+    /* ── Phone (≤ 767px) — step visuals, no iPhone mockup ── */
+    @media (max-width: 767px) {
         #how-it-works {
             width: 100vw;
             height: 100svh;
             min-height: 100svh;
-            /* Cancels the desktop-only padding-bottom (108px) declared on this same
-               selector above, plus the global `section{padding:...}` responsive
-               rule's bottom side — both were eating into .hiw-inner's height,
-               which pulled the absolutely-positioned .hiw-nav up off the true
-               bottom of the screen. Top padding is left untouched (unchanged and
-               already correct). */
             padding-bottom: 0;
         }
-        /* .hiw-inner spans the FULL section height so the absolutely-positioned
-           .hiw-nav (bottom: 0, below) sits flush against the true bottom of the
-           screen — the nav-clearance padding lives on .hiw-layout instead, so it
-           only shrinks the content column, not the nav's own positioning box. */
         .hiw-inner { height: 100%; }
-        .hiw-top { height: auto; padding: 20px 20px 0; flex-shrink: 0; }
+
+        /* Eyebrow clears the navbar using the --nav-h token */
+        .hiw-top {
+            height: auto;
+            flex-shrink: 0;
+            padding: calc(var(--nav-h, 96px) + 6px) 20px 8px;
+        }
+
         .hiw-layout {
+            position: static; /* badge in-flow on mobile */
             flex: 1;
             min-height: 0;
             flex-direction: column;
-            gap: 14px;
-            padding: 12px 20px 82px;
+            gap: 12px;
+            padding: 0 20px 80px; /* 80px clears the absolute nav */
             align-items: center;
             justify-content: center;
             text-align: center;
-            max-width: 480px;
+            max-width: 440px;
             margin: 0 auto;
             box-sizing: border-box;
         }
-        /* Flatten the text column so the badge can be reordered above the visual,
-           independently of the heading/description — same DOM, no JS involved. */
-        .hiw-text-col { display: contents; }
-        .hiw-step-badge { position: static; align-self: center; width: 44px; height: 44px; font-size: 18px; order: 1; }
+
+        /* Badge: in-flow, centered, first */
+        .hiw-step-badge {
+            position: static;
+            order: 1;
+            width: 44px;
+            height: 44px;
+            font-size: 18px;
+        }
+
+        /* Visual: second */
         .hiw-phone-col {
             width: 100%;
             max-width: 300px;
-            min-height: 230px; /* fixed box the slides crossfade inside — same technique as the heading/description swap, so the container never resizes between steps */
+            min-height: 220px;
             flex: 0 0 auto;
             order: 2;
         }
-        .hiw-heading-mask { order: 3; width: 100%; }
-        .hiw-heading-text { font-size: clamp(24px, 6vw, 34px); }
-        .hiw-desc {
-            max-width: 100%;
-            font-size: 15px;
-            order: 4;
-            min-height: 140px; /* reserves space for the longest step description so switching steps never reflows the layout */
-        }
-        /* Slides stay absolutely stacked (same as desktop) and crossfade via opacity —
-           nothing is ever removed from the DOM/layout, so the fixed-height column above never resizes. */
-        .hiw-slide { justify-content: center; }
 
-        /* Hide the iPhone mockup on mobile — swap in the step's visual card */
+        /* Text (heading + desc): third */
+        .hiw-text-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            padding-top: 0;
+            order: 3;
+            flex: 0 0 auto;
+        }
+
+        .hiw-heading-text { font-size: clamp(22px, 6vw, 32px); }
+        .hiw-desc { max-width: 100%; font-size: 14px; line-height: 1.6; min-height: 0; }
+
+        .hiw-slide { justify-content: center; }
         .hiw-phone-wrap { display: none; }
         .hiw-mobile-visual { display: flex; }
+        .hiw-nav { padding: 10px 24px 14px; }
+    }
 
-        .hiw-nav { padding: 12px 24px 20px; flex-shrink: 0; }
+    /* ── Tablet / iPad mini and up (768px–1023px) — show iPhone mockup ── */
+    @media (min-width: 768px) and (max-width: 1023px) {
+        #how-it-works { padding-bottom: 88px; }
+
+        /* Eyebrow clears navbar on tablet too */
+        .hiw-top {
+            height: auto;
+            padding: calc(var(--nav-h, 96px) + 4px) 24px 0;
+        }
+
+        .hiw-layout {
+            gap: 36px;
+            padding: 16px 24px 0 48px;
+        }
+
+        /* Badge re-anchored to tablet layout padding */
+        .hiw-step-badge {
+            top: 16px;
+            left: 48px;
+            width: 46px;
+            height: 46px;
+            font-size: 19px;
+        }
+
+        .hiw-text-col { flex: 0 0 42%; padding-top: 70px; }
+        .hiw-phone-col { min-height: 420px; }
+
+        /* Scaled-down iPhone for tablet */
+        .hiw-iphone { width: 200px; height: 408px; border-radius: 40px; }
+        .hiw-iphone::before { width: 88px; height: 26px; top: 12px; border-radius: 13px; }
+        .hiw-iphone-screen { inset: 7px; border-radius: 34px; }
+        .hiw-iphone-glare { inset: 7px; border-radius: 34px; }
+        .hiw-step-bubble { width: 52px; height: 52px; font-size: 20px; }
+
+        /* iPhone on, mobile card off */
+        .hiw-phone-wrap { display: block; }
+        .hiw-mobile-visual { display: none; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -977,13 +1025,13 @@
 
             <div class="hiw-layout">
                 <div class="hiw-text-col">
-                    <span class="hiw-step-badge" id="hiwStepBadge">01</span>
                     <div class="hiw-heading-mask">
                         <span class="hiw-heading-text" id="hiwHeading"></span>
                     </div>
                     <p class="hiw-desc" id="hiwDesc"></p>
                 </div>
                 <div class="hiw-phone-col" id="hiwPhoneCol"></div>
+                <span class="hiw-step-badge" id="hiwStepBadge">01</span>
             </div>
 
             <div class="hiw-nav">
