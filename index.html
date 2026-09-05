@@ -457,16 +457,31 @@
         flex-direction: column;
     }
 
-    .hiw-top {
-        text-align: center;
-        padding: 52px 24px 0;
+    /* ── Badge row (number + eyebrow, top of text col) ── */
+    .hiw-badge-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    .hiw-step-badge {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-family: 'Titan One', cursive;
+        font-size: 22px;
+        color: #fff;
+        transition: background-color 0.6s ease;
     }
     .hiw-eyebrow {
         font-family: 'Cinzel', serif;
-        font-size: clamp(26px, 3vw, 44px);
+        font-size: clamp(18px, 2vw, 28px);
         font-weight: 700;
         letter-spacing: 0.06em;
-        color: #ffffff;
+        color: rgba(255,255,255,0.85);
     }
 
     /* ── Two-column layout ── */
@@ -475,7 +490,7 @@
         display: flex;
         align-items: stretch;
         gap: 72px;
-        padding: 36px 24px 0 80px;
+        padding: 60px 24px 0 80px;
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
@@ -491,21 +506,6 @@
         gap: 20px;
     }
 
-    .hiw-step-label {
-        font-family: Inter, sans-serif;
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: #FF6B35;
-        background: rgba(255,107,53,0.1);
-        border: 1px solid rgba(255,107,53,0.2);
-        border-radius: 20px;
-        padding: 5px 14px;
-        display: inline-block;
-        align-self: flex-start;
-        transition: color 0.4s ease;
-    }
 
     /* Heading mask + slide-up reveal */
     .hiw-heading-mask {
@@ -729,16 +729,6 @@
     }
     .hiw-dot.active { width: 24px; background: #FF6B35; }
     .hiw-dot:hover:not(.active) { background: rgba(255,255,255,0.4); }
-    .hiw-counter {
-        font-family: Inter, sans-serif;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: rgba(255,255,255,0.3);
-        min-width: 80px;
-        text-align: center;
-    }
 
     /* ── Mobile ── */
     @media (max-width: 900px) {
@@ -756,7 +746,7 @@
             align-items: center;
             text-align: center;
         }
-        .hiw-step-label { align-self: center; }
+        .hiw-badge-row { justify-content: center; }
         .hiw-desc { max-width: 100%; }
         .hiw-phone-col {
             width: 100%;
@@ -781,13 +771,12 @@
         <div class="hiw-bg" id="hiwBgB" style="opacity:0"></div>
 
         <div class="hiw-inner">
-            <div class="hiw-top reveal">
-                <span class="hiw-eyebrow">The Fix Wizard Way</span>
-            </div>
-
             <div class="hiw-layout">
                 <div class="hiw-text-col">
-                    <span class="hiw-step-label" id="hiwStepLabel">STEP 01</span>
+                    <div class="hiw-badge-row">
+                        <span class="hiw-step-badge" id="hiwStepBadge">01</span>
+                        <span class="hiw-eyebrow">The Fix Wizard Way</span>
+                    </div>
                     <div class="hiw-heading-mask">
                         <span class="hiw-heading-text" id="hiwHeading"></span>
                     </div>
@@ -801,7 +790,6 @@
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <div class="hiw-dots" id="hiwDots" role="tablist"></div>
-                <span class="hiw-counter" id="hiwCounter">Step 1 of 8</span>
                 <button class="hiw-nav-btn" id="hiwNext" aria-label="Next step">
                     <i class="fas fa-chevron-right"></i>
                 </button>
@@ -920,12 +908,11 @@
 
         var bgA       = document.getElementById('hiwBgA');
         var bgB       = document.getElementById('hiwBgB');
-        var labelEl   = document.getElementById('hiwStepLabel');
+        var badgeEl   = document.getElementById('hiwStepBadge');
         var headingEl = document.getElementById('hiwHeading');
         var descEl    = document.getElementById('hiwDesc');
         var phoneCol  = document.getElementById('hiwPhoneCol');
         var dotsWrap  = document.getElementById('hiwDots');
-        var counterEl = document.getElementById('hiwCounter');
         var prevBtn   = document.getElementById('hiwPrev');
         var nextBtn   = document.getElementById('hiwNext');
 
@@ -977,9 +964,10 @@
         /* Init first slide text */
         function initFirst() {
             var s = steps[0];
-            headingEl.innerHTML = s.heading.replace(/\n/g, '<br>');
-            descEl.textContent  = s.desc;
-            labelEl.textContent = 'STEP ' + s.num;
+            headingEl.innerHTML       = s.heading.replace(/\n/g, '<br>');
+            descEl.textContent        = s.desc;
+            badgeEl.textContent       = s.num;
+            badgeEl.style.background  = s.iconColor;
             requestAnimationFrame(function () {
                 headingEl.classList.add('visible');
                 descEl.classList.add('visible');
@@ -1020,9 +1008,10 @@
                 headingEl.style.transition = 'none';
                 headingEl.style.transform  = 'translateY(110%)';
 
-                headingEl.innerHTML = next.heading.replace(/\n/g, '<br>');
-                descEl.textContent  = next.desc;
-                labelEl.textContent = 'STEP ' + next.num;
+                headingEl.innerHTML      = next.heading.replace(/\n/g, '<br>');
+                descEl.textContent       = next.desc;
+                badgeEl.textContent      = next.num;
+                badgeEl.style.background = next.iconColor;
 
                 slides[idx].classList.add('active');
                 current = idx;
@@ -1045,7 +1034,6 @@
                 d.classList.toggle('active', i === current);
                 d.setAttribute('aria-selected', String(i === current));
             });
-            counterEl.textContent = 'Step ' + (current + 1) + ' of ' + steps.length;
             prevBtn.disabled = current === 0;
             nextBtn.disabled = current === steps.length - 1;
         }
