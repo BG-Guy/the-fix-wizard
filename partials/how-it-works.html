@@ -279,53 +279,104 @@
         justify-content: center;
     }
 
-    /* Text-message pop-up card */
+    /* Text-message pop-up card — styled like a real iMessage screenshot */
     .hiw-msg-card {
         width: 100%;
-        max-width: 300px;
-        min-height: 210px; /* same reserved height as .hiw-invoice-card so switching steps never resizes the card */
+        max-width: 280px;
+        background: linear-gradient(180deg, #0e0e10 0%, #000 100%);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 26px;
+        overflow: hidden;
+        box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+        animation: iphoneFloat 5s ease-in-out infinite;
+        font-family: Inter, -apple-system, sans-serif;
+    }
+    .hiw-msg-statusbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 18px 2px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #fff;
+    }
+    .hiw-msg-statusbar-icons { display: flex; align-items: center; gap: 5px; font-size: 10px; color: #fff; }
+    .hiw-msg-head {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        background: rgba(255,255,255,0.07);
-        border: 1px solid rgba(255,255,255,0.14);
-        border-radius: 20px;
-        padding: 16px;
-        backdrop-filter: blur(16px);
-        box-shadow: 0 20px 45px rgba(0,0,0,0.4);
-        animation: iphoneFloat 5s ease-in-out infinite;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 16px 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .hiw-msg-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
     .hiw-msg-avatar {
-        width: 34px;
-        height: 34px;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 15px;
+        font-size: 14px;
         flex-shrink: 0;
         color: #fff;
     }
-    .hiw-msg-meta { display: flex; flex-direction: column; text-align: left; }
-    .hiw-msg-name { font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; color: #fff; }
-    .hiw-msg-time { font-family: Inter, sans-serif; font-size: 11px; color: rgba(255,255,255,0.4); }
+    .hiw-msg-name { font-size: 11px; font-weight: 600; color: #fff; letter-spacing: 0.01em; }
+    .hiw-msg-sub { font-size: 9px; color: rgba(255,255,255,0.35); }
+    .hiw-msg-body { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px 14px; }
+    .hiw-msg-bubble-row { display: flex; justify-content: flex-start; }
     .hiw-msg-bubble {
-        background: rgba(255,255,255,0.08);
-        border-radius: 14px;
-        padding: 12px 14px;
-        font-family: Inter, sans-serif;
-        font-size: 14px;
-        line-height: 1.55;
-        color: rgba(255,255,255,0.85);
+        position: relative;
+        background: #29292d;
+        border-radius: 17px;
+        border-bottom-left-radius: 5px;
+        padding: 9px 13px;
+        font-size: 13px;
+        line-height: 1.45;
+        color: #f2f2f4;
+        text-align: left;
+        max-width: 88%;
+    }
+    .hiw-msg-link {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        background: #1c1c1f;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 15px;
+        padding: 7px 10px;
+        max-width: 88%;
         text-align: left;
     }
+    .hiw-msg-link-thumb {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        flex-shrink: 0;
+        color: #fff;
+    }
+    .hiw-msg-link-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+    .hiw-msg-link-title {
+        font-size: 11.5px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .hiw-msg-link-domain { font-size: 10px; color: rgba(255,255,255,0.4); }
+    .hiw-msg-timestamp { text-align: center; font-size: 10px; color: rgba(255,255,255,0.3); }
 
     /* Invoice image card */
     .hiw-invoice-card {
         width: 100%;
         max-width: 280px;
-        min-height: 210px; /* same reserved height as .hiw-msg-card so switching steps never resizes the card */
+        min-height: 210px; /* the fixed-height .hiw-phone-col below reserves the actual layout space, this just keeps the card itself a consistent size */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -528,7 +579,8 @@
                 heading: 'One Call or Text\nGets You Booked.',
                 desc: 'Text or call — we pick up fast, skip the phone tag, and get you booked the same day.',
                 bg: 'linear-gradient(160deg,#160f40 0%,#050311 100%)',
-                mobileVisual: { type: 'text', msg: 'Hey! This is The Fix Wizard 👋 Got you booked for today — see you soon!' },
+                mobileVisual: { type: 'text', msg: "Hey! This is The Fix Wizard 👋 You're all set — see you soon!",
+                    link: { icon: 'fa-calendar-check', title: 'Tue, Sep 8 · 9:00–11:00 AM', domain: 'Added to your calendar' } },
                 screenIcons: [
                     { i:'fa-comments',     t:'18%', l:'12%', r:'-12deg', s:'34px', o:.18 },
                     { i:'fa-message',      t:'56%', l:'62%', r:'18deg',  s:'26px', o:.14 },
@@ -542,7 +594,8 @@
                 heading: 'Pick Your Time,\nWe Send the Link.',
                 desc: 'We text you a booking link with real availability. Tap the window that works — morning, afternoon, or evening. No back-and-forth.',
                 bg: 'linear-gradient(160deg,#072030 0%,#020c12 100%)',
-                mobileVisual: { type: 'text', msg: "Here's your booking link: fixwizard.co/book — pick any time that works 📅" },
+                mobileVisual: { type: 'text', msg: "Here's your booking link — pick whatever time works 👇",
+                    link: { icon: 'fa-calendar-days', title: 'Pick Appointment Time', domain: 'fixwizard.co/book/8841' } },
                 screenIcons: [
                     { i:'fa-calendar-check',  t:'16%', l:'14%', r:'-8deg',  s:'32px', o:.17 },
                     { i:'fa-clock',           t:'52%', l:'66%', r:'20deg',  s:'26px', o:.13 },
@@ -556,7 +609,8 @@
                 heading: 'Reschedule or Cancel\nAnytime. No Stress.',
                 desc: 'Reschedule or cancel through the same link in your text — zero phone calls, zero fees, zero guilt.',
                 bg: 'linear-gradient(160deg,#1a0840 0%,#08031a 100%)',
-                mobileVisual: { type: 'text', msg: 'Need to move your appointment? Just tap the link below, no calls needed ✅' },
+                mobileVisual: { type: 'text', msg: 'Need to move your appointment? Just tap below, no calls needed ✅',
+                    link: { icon: 'fa-arrows-rotate', title: 'Manage Appointment', domain: 'fixwizard.co/manage/8841' } },
                 screenIcons: [
                     { i:'fa-arrows-rotate', t:'18%', l:'12%', r:'-15deg', s:'32px', o:.18 },
                     { i:'fa-rotate-left',   t:'56%', l:'64%', r:'22deg',  s:'26px', o:.14 },
@@ -570,7 +624,8 @@
                 heading: 'A Reminder Lands\nthe Night Before.',
                 desc: 'A heads-up text lands the evening before your appointment. No surprise mornings, no missed slots.',
                 bg: 'linear-gradient(160deg,#071428 0%,#020608 100%)',
-                mobileVisual: { type: 'text', msg: "Reminder: we'll see you tomorrow between 9–11 AM. See you then! 🔔" },
+                mobileVisual: { type: 'text', msg: "Reminder: we'll see you tomorrow! 🔔",
+                    link: { icon: 'fa-bell', title: 'Tue, Sep 8 · 9:00–11:00 AM', domain: 'Your appointment tomorrow' } },
                 screenIcons: [
                     { i:'fa-bell',     t:'18%', l:'12%', r:'-10deg', s:'34px', o:.18 },
                     { i:'fa-moon',     t:'54%', l:'64%', r:'20deg',  s:'28px', o:.14 },
@@ -584,7 +639,8 @@
                 heading: "We Text When We're\n30 Minutes Away.",
                 desc: 'When we hit the road, a real 30-minute arrival alert goes to your phone. No guessing, no staring out the window.',
                 bg: 'linear-gradient(160deg,#071a0c 0%,#020805 100%)',
-                mobileVisual: { type: 'text', msg: "On our way! We'll be there in about 30 minutes 🚐📍" },
+                mobileVisual: { type: 'text', msg: 'On our way! 🚐',
+                    link: { icon: 'fa-location-dot', title: 'Arriving by 9:05 AM', domain: 'Live ETA · fixwizard.co/track' } },
                 screenIcons: [
                     { i:'fa-location-dot', t:'16%', l:'14%', r:'-8deg',  s:'34px', o:.18 },
                     { i:'fa-car',          t:'52%', l:'64%', r:'18deg',  s:'28px', o:.15 },
@@ -630,7 +686,8 @@
                 heading: 'Happy? Leave Us\na 5-Star Review.',
                 desc: 'Love the result? One quick review helps your neighbors find someone they can actually trust. It\'s the good-guy move.',
                 bg: 'linear-gradient(160deg,#221800 0%,#080600 100%)',
-                mobileVisual: { type: 'text', msg: 'Thanks for choosing us! Mind leaving a quick 5★ review? 🙏' },
+                mobileVisual: { type: 'text', msg: 'Thanks for choosing us! Mind leaving a quick review? 🙏',
+                    link: { icon: 'fa-star', title: 'Rate The Fix Wizard ★★★★★', domain: 'g.page/thefixwizard/review' } },
                 screenIcons: [
                     { i:'fa-star',      t:'18%', l:'12%', r:'-8deg',  s:'34px', o:.18 },
                     { i:'fa-trophy',    t:'52%', l:'64%', r:'18deg',  s:'28px', o:.15 },
@@ -674,18 +731,38 @@
             var mv = step.mobileVisual;
             var mobileVisualHTML = '';
             if (mv && mv.type === 'text') {
+                var linkHTML = mv.link ?
+                    '<div class="hiw-msg-bubble-row">' +
+                        '<div class="hiw-msg-link">' +
+                            '<div class="hiw-msg-link-thumb" style="background:' + step.iconColor + '30;color:' + step.iconColor + '">' +
+                                '<i class="fas ' + mv.link.icon + '"></i>' +
+                            '</div>' +
+                            '<div class="hiw-msg-link-text">' +
+                                '<div class="hiw-msg-link-title">' + mv.link.title + '</div>' +
+                                '<div class="hiw-msg-link-domain">' + mv.link.domain + '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' : '';
                 mobileVisualHTML =
                     '<div class="hiw-msg-card">' +
+                        '<div class="hiw-msg-statusbar">' +
+                            '<span>9:41</span>' +
+                            '<span class="hiw-msg-statusbar-icons">' +
+                                '<i class="fas fa-signal"></i><i class="fas fa-wifi"></i><i class="fas fa-battery-full"></i>' +
+                            '</span>' +
+                        '</div>' +
                         '<div class="hiw-msg-head">' +
                             '<div class="hiw-msg-avatar" style="background:' + step.iconColor + '30;color:' + step.iconColor + '">' +
                                 '<i class="fas ' + step.icon + '"></i>' +
                             '</div>' +
-                            '<div class="hiw-msg-meta">' +
-                                '<span class="hiw-msg-name">The Fix Wizard</span>' +
-                                '<span class="hiw-msg-time">now</span>' +
-                            '</div>' +
+                            '<span class="hiw-msg-name">The Fix Wizard</span>' +
+                            '<span class="hiw-msg-sub">Text Message</span>' +
                         '</div>' +
-                        '<div class="hiw-msg-bubble">' + mv.msg + '</div>' +
+                        '<div class="hiw-msg-body">' +
+                            '<div class="hiw-msg-bubble-row"><div class="hiw-msg-bubble">' + mv.msg + '</div></div>' +
+                            linkHTML +
+                            '<div class="hiw-msg-timestamp">9:41 AM</div>' +
+                        '</div>' +
                     '</div>';
             } else if (mv && mv.type === 'invoice') {
                 var rowsHTML = mv.rows.map(function (r) {
