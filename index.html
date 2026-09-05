@@ -903,8 +903,18 @@
             width: 100vw;
             height: 100svh;
             min-height: 100svh;
-            padding-bottom: 82px; /* reserve space for the pinned nav row so it never overlaps content */
+            /* Cancels the desktop-only padding-bottom (108px) declared on this same
+               selector above, plus the global `section{padding:...}` responsive
+               rule's bottom side — both were eating into .hiw-inner's height,
+               which pulled the absolutely-positioned .hiw-nav up off the true
+               bottom of the screen. Top padding is left untouched (unchanged and
+               already correct). */
+            padding-bottom: 0;
         }
+        /* .hiw-inner spans the FULL section height so the absolutely-positioned
+           .hiw-nav (bottom: 0, below) sits flush against the true bottom of the
+           screen — the nav-clearance padding lives on .hiw-layout instead, so it
+           only shrinks the content column, not the nav's own positioning box. */
         .hiw-inner { height: 100%; }
         .hiw-top { height: auto; padding: 20px 20px 0; flex-shrink: 0; }
         .hiw-layout {
@@ -912,12 +922,13 @@
             min-height: 0;
             flex-direction: column;
             gap: 14px;
-            padding: 12px 20px 0;
+            padding: 12px 20px 82px;
             align-items: center;
             justify-content: center;
             text-align: center;
             max-width: 480px;
             margin: 0 auto;
+            box-sizing: border-box;
         }
         /* Flatten the text column so the badge can be reordered above the visual,
            independently of the heading/description — same DOM, no JS involved. */
