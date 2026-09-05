@@ -41,12 +41,25 @@
         flex-direction: column;
     }
 
-    /* ── Badge row (number + eyebrow, top of text col) ── */
-    .hiw-badge-row {
+    /* ── Section title bar (top center, fixed height) ── */
+    .hiw-top {
+        text-align: center;
+        padding: 48px 24px 0;
+        height: 96px; /* fixed so layout below never shifts */
         display: flex;
         align-items: center;
-        gap: 16px;
+        justify-content: center;
+        flex-shrink: 0;
     }
+    .hiw-eyebrow {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(22px, 2.5vw, 36px);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: #ffffff;
+    }
+
+    /* ── Step badge (top-left of text col) ── */
     .hiw-step-badge {
         width: 54px;
         height: 54px;
@@ -54,18 +67,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        align-self: flex-start;
         flex-shrink: 0;
         font-family: 'Titan One', cursive;
         font-size: 22px;
         color: #fff;
         transition: background-color 0.6s ease;
-    }
-    .hiw-eyebrow {
-        font-family: 'Cinzel', serif;
-        font-size: clamp(18px, 2vw, 28px);
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        color: rgba(255,255,255,0.85);
     }
 
     /* ── Two-column layout ── */
@@ -74,7 +81,7 @@
         display: flex;
         align-items: stretch;
         gap: 72px;
-        padding: 60px 24px 0 80px;
+        padding: 24px 24px 0 80px;
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
@@ -330,7 +337,8 @@
             align-items: center;
             text-align: center;
         }
-        .hiw-badge-row { justify-content: center; }
+        .hiw-step-badge { align-self: center; }
+        .hiw-top { height: auto; padding: 36px 24px 0; }
         .hiw-desc { max-width: 100%; }
         .hiw-phone-col {
             width: 100%;
@@ -355,12 +363,13 @@
         <div class="hiw-bg" id="hiwBgB" style="opacity:0"></div>
 
         <div class="hiw-inner">
+            <div class="hiw-top reveal">
+                <span class="hiw-eyebrow">The Fix Wizard Way</span>
+            </div>
+
             <div class="hiw-layout">
                 <div class="hiw-text-col">
-                    <div class="hiw-badge-row">
-                        <span class="hiw-step-badge" id="hiwStepBadge">01</span>
-                        <span class="hiw-eyebrow">The Fix Wizard Way</span>
-                    </div>
+                    <span class="hiw-step-badge" id="hiwStepBadge">01</span>
                     <div class="hiw-heading-mask">
                         <span class="hiw-heading-text" id="hiwHeading"></span>
                     </div>
