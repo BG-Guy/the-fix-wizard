@@ -427,6 +427,7 @@
         display: flex;
         flex-direction: column;
         padding-bottom: 108px; /* reserve space for pinned nav */
+        scroll-snap-align: start;
     }
     @media (max-width: 900px) {
         #how-it-works { min-height: auto; }
@@ -1088,83 +1089,6 @@
     })();
     </script>
 
-    <script>
-    /* ── Magnetic scroll snap for How It Works ── */
-    (function () {
-        /* Skip on touch-only devices — snap would fight swipe inertia */
-        if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
-
-        var section   = document.getElementById('how-it-works');
-        var locked    = false;   /* scroll is currently held at section top */
-        var settling  = false;   /* smooth-scroll to section is in flight */
-        var escaped   = false;   /* user has already fought past downward */
-        var lockDelta = 0;       /* accumulated wheel delta while locked */
-        var FORCE     = 600;     /* deltaY needed to break free */
-        var scrollDir = 'down';
-        var lastY     = window.scrollY;
-
-        /* Track scroll direction so we only snap on the way DOWN */
-        window.addEventListener('scroll', function () {
-            scrollDir = window.scrollY > lastY ? 'down' : 'up';
-            lastY = window.scrollY;
-        }, { passive: true });
-
-        function sectionTop() {
-            return Math.round(section.getBoundingClientRect().top + window.scrollY);
-        }
-
-        function snap() {
-            if (locked || settling) return;
-            var target = sectionTop();
-            if (Math.abs(window.scrollY - target) < 6) {
-                /* already there — just lock */
-                locked = true; lockDelta = 0;
-                return;
-            }
-            settling = true;
-            window.scrollTo({ top: target, behavior: 'smooth' });
-            setTimeout(function () { settling = false; locked = true; lockDelta = 0; }, 750);
-        }
-
-        function release() { locked = false; lockDelta = 0; }
-
-        /* Snap when section enters from above while scrolling down */
-        var obs = new IntersectionObserver(function (entries) {
-            var e = entries[0];
-            if (e.isIntersecting && scrollDir === 'down' && !escaped) {
-                snap();
-            }
-            if (!e.isIntersecting && window.scrollY < sectionTop()) {
-                /* Fully above the section again — reset so next approach snaps */
-                escaped = false;
-                release();
-            }
-        }, { threshold: 0.08 });
-        obs.observe(section);
-
-        /* Resist the wheel while locked */
-        window.addEventListener('wheel', function (e) {
-            if (!locked) return;
-
-            if (e.deltaY <= 0) {
-                /* Scrolling up — release immediately, no resistance */
-                release();
-                return;
-            }
-
-            /* Scrolling down — hold and accumulate */
-            e.preventDefault();
-            lockDelta += e.deltaY;
-
-            if (lockDelta >= FORCE) {
-                escaped = true;
-                release();
-                /* Nudge past the snap point so the browser takes over */
-                window.scrollBy({ top: 120, behavior: 'smooth' });
-            }
-        }, { passive: false });
-    })();
-    </script>
 
     <!-- ===== FAQ ===== -->
     <section id="faq" class="py-24 bg-navy-900">
