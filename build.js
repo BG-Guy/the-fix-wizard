@@ -7,7 +7,7 @@ const OUTPUT   = path.join(__dirname, 'index.html');
 
 const order = [
   'head', 'loader', 'navbar', 'hero', 'why-us',
-  'services', 'faq', 'cta-banner', 'contact', 'footer', 'sticky-cta',
+  'services', 'how-it-works', 'faq', 'cta-banner', 'contact', 'footer', 'sticky-cta',
 ];
 
 // 1. Assemble index.html from partials
