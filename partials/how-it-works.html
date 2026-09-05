@@ -59,16 +59,17 @@
         color: #ffffff;
     }
 
-    /* ── Step badge (top-left of text col) ── */
+    /* ── Step badge — absolute, anchored to text col top-left ── */
     .hiw-step-badge {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 54px;
         height: 54px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        align-self: flex-start;
-        flex-shrink: 0;
         font-family: 'Titan One', cursive;
         font-size: 22px;
         color: #fff;
@@ -95,6 +96,8 @@
         flex-direction: column;
         justify-content: center;
         gap: 20px;
+        position: relative;
+        padding-top: 78px; /* clear space for the absolute badge */
     }
 
 
@@ -337,8 +340,9 @@
             align-items: center;
             text-align: center;
         }
-        .hiw-step-badge { align-self: center; }
         .hiw-top { height: auto; padding: 36px 24px 0; }
+        .hiw-text-col { padding-top: 0; }
+        .hiw-step-badge { position: static; align-self: center; }
         .hiw-desc { max-width: 100%; }
         .hiw-phone-col {
             width: 100%;
