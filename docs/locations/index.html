@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Locations | The Fix Wizard</title>
+  <meta name="description" content="The Fix Wizard serves Cherry Hill, Philadelphia, Moorestown, Haddonfield, Mount Laurel, Marlton, Voorhees, Princeton, Trenton, Wayne, King of Prussia, West Chester, Wilmington, and Atlantic City. Same-day handyman and chimney services.">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="/css/tw.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <style>
+    :root{--nav-h:150px}
+    *,*::before,*::after{box-sizing:border-box}
+    body{font-family:Inter,sans-serif;color:#3a4560;background:#fff;line-height:1.65;overflow-x:hidden}
+    body.no-scroll{overflow:hidden}
+    a{text-decoration:none;color:inherit}
+    .hero{background-color:#091236;color:#fff}
+    .mobile-menu{position:fixed;top:0;left:-100%;z-index:101;width:min(320px,88vw);height:100vh;background:#0d1b4b}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;opacity:0;visibility:hidden}
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)}
+    @media(max-width:768px){:root{--nav-h:96px}}
+
+    .loc-card{
+      display:flex;flex-direction:column;gap:12px;
+      background:#fff;border:1px solid #e2e8f0;border-radius:12px;
+      padding:24px;transition:all .3s ease;position:relative;overflow:hidden;
+    }
+    .loc-card::after{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,#d95f2b,#FF6B35,#ff9a6c);
+      transform:scaleX(0);transition:transform .4s ease;transform-origin:left;
+    }
+    .loc-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(13,27,75,.18);border-color:transparent}
+    .loc-card:hover::after{transform:scaleX(1)}
+    .loc-icon{width:40px;height:40px;background:rgba(255,107,53,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#FF6B35;font-size:16px;flex-shrink:0}
+    .loc-name{font-size:20px;font-weight:700;color:#091236;font-family:Cinzel,serif}
+    .loc-meta{font-size:12px;font-weight:600;color:rgba(255,107,53,.7);text-transform:uppercase;letter-spacing:.06em}
+    .loc-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+    .loc-link{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:13px;font-weight:600;color:#FF6B35;
+      padding:6px 14px;border-radius:6px;background:rgba(255,107,53,.08);
+      transition:background .2s,color .2s;
+    }
+    .loc-link:hover{background:rgba(255,107,53,.15);color:#d95f2b}
+    .section-title{font-family:Cinzel,serif;font-size:clamp(28px,5vw,42px);font-weight:900;color:#091236;line-height:1.2}
+    .text-accent{color:#FF6B35}
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ─────────────────────────────────────────────────────────── -->
+<nav id="navbar" class="bg-navy-950 shadow-nav">
+  <div class="container h-full flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center gap-3 shrink-0">
+      <img src="/assets/logo.svg" alt="The Fix Wizard" class="h-12 w-auto" onerror="this.style.display='none'">
+      <span class="font-cinzel font-bold text-white text-lg hidden sm:block">The Fix Wizard</span>
+    </a>
+    <div class="hidden md:flex items-center gap-1">
+      <a href="/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a>
+      <a href="/cherry-hill-repair/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Cherry Hill</a>
+      <a href="/services/handyman/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Handyman</a>
+      <a href="/services/chimney/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Chimney</a>
+    </div>
+    <a href="tel:5513504951" class="btn-cta hidden md:inline-flex items-center gap-2 bg-orange hover:bg-orange-dark text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors">
+      <i class="fas fa-phone-alt text-xs"></i>(551) 350-4951
+    </a>
+    <button id="mobile-toggle" class="md:hidden text-white p-2" aria-label="Menu">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────────────────────── -->
+<section class="hero pt-[var(--nav-h)]">
+  <div class="container py-16 text-center">
+    <p class="text-orange font-semibold text-sm uppercase tracking-widest mb-4">South Jersey & Surrounding Areas</p>
+    <h1 class="section-title text-white mb-4">All <span class="text-accent">Service Locations</span></h1>
+    <p class="text-white/70 text-lg max-w-2xl mx-auto">
+      The Fix Wizard covers a 70-mile radius from Cherry Hill, NJ — serving homes across South Jersey, Philadelphia, Delaware, and southeastern Pennsylvania. Same-day handyman and chimney services available.
+    </p>
+  </div>
+</section>
+
+<!-- ── LOCATIONS GRID ─────────────────────────────────────────────────── -->
+<section class="py-20 bg-slate-50">
+  <div class="container">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1100px] mx-auto">
+
+      <!-- Cherry Hill -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">NJ · Camden County · Home Base</p>
+            <h2 class="loc-name">Cherry Hill</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/cherry-hill-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-cherry-hill/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-cherry-hill/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Philadelphia -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-city"></i></div>
+          <div>
+            <p class="loc-meta">PA · Philadelphia County</p>
+            <h2 class="loc-name">Philadelphia</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/philadelphia-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-philadelphia/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-philadelphia/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Haddonfield -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">NJ · Camden County</p>
+            <h2 class="loc-name">Haddonfield</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/haddonfield-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-haddonfield/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-haddonfield/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Voorhees -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">NJ · Camden County</p>
+            <h2 class="loc-name">Voorhees</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/voorhees-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-voorhees/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-voorhees/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Moorestown -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">NJ · Burlington County</p>
+            <h2 class="loc-name">Moorestown</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/moorestown-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-moorestown/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-moorestown/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Mount Laurel -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">NJ · Burlington County</p>
+            <h2 class="loc-name">Mount Laurel</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/mount-laurel-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-mount-laurel/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-mount-laurel/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Marlton -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">NJ · Burlington County</p>
+            <h2 class="loc-name">Marlton</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/marlton-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-marlton/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-marlton/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Princeton -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">NJ · Mercer County</p>
+            <h2 class="loc-name">Princeton</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/princeton-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-princeton/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-princeton/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Trenton -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">NJ · Mercer County</p>
+            <h2 class="loc-name">Trenton</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/trenton-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-trenton/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-trenton/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Atlantic City -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">NJ · Atlantic County</p>
+            <h2 class="loc-name">Atlantic City</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/atlantic-city-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-atlantic-city/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-atlantic-city/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- West Chester -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">PA · Chester County</p>
+            <h2 class="loc-name">West Chester</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/west-chester-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-west-chester/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-west-chester/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Wayne -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">PA · Delaware County</p>
+            <h2 class="loc-name">Wayne</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/wayne-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-wayne/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-wayne/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- King of Prussia -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">PA · Montgomery County</p>
+            <h2 class="loc-name">King of Prussia</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/king-of-prussia-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-king-of-prussia/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-king-of-prussia/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+      <!-- Wilmington -->
+      <div class="loc-card">
+        <div class="flex items-start gap-3">
+          <div class="loc-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="loc-meta">DE · New Castle County</p>
+            <h2 class="loc-name">Wilmington</h2>
+          </div>
+        </div>
+        <div class="loc-links">
+          <a href="/wilmington-repair/" class="loc-link"><i class="fas fa-wrench"></i>All Services</a>
+          <a href="/handyman-services-near-wilmington/" class="loc-link">Handyman</a>
+          <a href="/chimney-services-near-wilmington/" class="loc-link">Chimney</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────────────── -->
+<section class="py-16 bg-navy-950 text-center">
+  <div class="container">
+    <h2 class="font-cinzel font-bold text-white text-3xl mb-4">Don't See Your City?</h2>
+    <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto">We serve a 70-mile radius from Cherry Hill. If you're in the area, there's a good chance we cover you — just call.</p>
+    <a href="tel:5513504951" class="inline-flex items-center gap-3 bg-orange hover:bg-orange-dark text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors">
+      <i class="fas fa-phone-alt"></i>(551) 350-4951
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+<footer class="bg-navy-950 border-t border-white/10 py-12">
+  <div class="container">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div>
+        <p class="font-cinzel font-bold text-white text-xl mb-2">The Fix Wizard</p>
+        <p class="text-white/50 text-sm">Licensed &amp; Insured · South Jersey &amp; Surrounding Areas</p>
+        <a href="tel:5513504951" class="text-orange font-semibold text-sm mt-2 inline-block">(551) 350-4951</a>
+      </div>
+      <div class="flex gap-12">
+        <div>
+          <h4 class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-3">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="/services/handyman/" class="text-white/40 text-sm hover:text-orange transition-colors">Handyman</a></li>
+            <li><a href="/services/chimney/" class="text-white/40 text-sm hover:text-orange transition-colors">Chimney</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-3">Locations</h4>
+          <ul class="space-y-2">
+            <li><a href="/cherry-hill-repair/" class="text-white/40 text-sm hover:text-orange transition-colors">Cherry Hill</a></li>
+            <li><a href="/philadelphia-repair/" class="text-white/40 text-sm hover:text-orange transition-colors">Philadelphia</a></li>
+            <li><a href="/locations/" class="text-white/40 text-sm hover:text-orange transition-colors">All Locations</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="text-white/30 text-xs text-center mt-10">&copy; 2025 The Fix Wizard. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
