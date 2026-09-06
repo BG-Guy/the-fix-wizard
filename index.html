@@ -614,7 +614,6 @@
         font-size: 26px;
         z-index: 30;
         backdrop-filter: blur(12px);
-        animation: iphoneFloat 5s 2.5s ease-in-out infinite;
         box-shadow: 0 8px 28px rgba(0,0,0,0.35);
     }
 
@@ -631,11 +630,6 @@
             0 0 0 10.5px rgba(255,255,255,0.06),
             0 40px 80px rgba(0,0,0,0.7),
             0 0 60px rgba(255,107,53,0.07);
-        animation: iphoneFloat 5s ease-in-out infinite;
-    }
-    @keyframes iphoneFloat {
-        0%, 100% { transform: translateY(0px); }
-        50%       { transform: translateY(-10px); }
     }
     .hiw-iphone::before {
         content: '';
@@ -715,7 +709,6 @@
         border-radius: 26px;
         overflow: hidden;
         box-shadow: 0 20px 45px rgba(0,0,0,0.5);
-        animation: iphoneFloat 5s ease-in-out infinite;
         font-family: Inter, -apple-system, sans-serif;
     }
     .hiw-msg-statusbar {
@@ -813,7 +806,6 @@
         box-shadow: 0 20px 45px rgba(0,0,0,0.45);
         color: #241a12;
         text-align: left;
-        animation: iphoneFloat 5s ease-in-out infinite;
     }
     .hiw-invoice-head {
         display: flex;
@@ -1047,7 +1039,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-        .hiw-iphone, .hiw-step-bubble { animation: none; }
         .hiw-heading-text, .hiw-desc, .hiw-bg { transition: none; transform: none; }
     }
     </style>
