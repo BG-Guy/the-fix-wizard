@@ -437,7 +437,9 @@ function detailPage(loc, svc, type) {
   const svcParam   = type === 'chimney' ? 'Chimney+%26+Masonry' : 'Handyman+Services';
 
   const title    = `${svc.name} Near ${loc.city}, ${loc.state} | The Fix Wizard`;
-  const metaDesc = `Professional ${svc.name.toLowerCase()} near ${cityState}. ${svc.desc.slice(0, 100)} Licensed & insured. Free estimates. Same-day available.`;
+  const metaDesc = content.meta_desc
+    ? content.meta_desc.replace('{city}', loc.city).replace('{state}', loc.state).replace('{cityState}', cityState)
+    : `Professional ${svc.name.toLowerCase()} near ${cityState}. ${svc.desc.slice(0, 100)} Licensed & insured. Free estimates. Same-day available.`;
 
   const includesList = svc.includes.map(item =>
     `<li class="flex items-start gap-3 py-2.5 border-b border-white/[.08] last:border-0">
