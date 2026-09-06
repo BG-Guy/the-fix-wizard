@@ -982,7 +982,7 @@
         }
 
         .hiw-text-col {
-            order: 4;
+            order: 5;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1030,13 +1030,15 @@
         .hiw-msg-timestamp { font-size: 9px; }
         .hiw-invoice-card { padding: 12px 14px; min-height: 0; }
 
-        /* Nav flows normally right after the content — no position:absolute, so there is no
-           "bottom of what" question and nothing for a resizing viewport to knock loose.
-           Extra 30px of bottom padding clears Safari's own bottom URL bar, which otherwise
-           sits right on top of the arrows. */
+        /* Dots sit right under the visual now (order: 4, between the swipe hint and the
+           heading) instead of at the end of the block — they're no longer the last thing
+           on screen, so they don't need the old Safari-URL-bar bottom clearance; the arrow
+           buttons inside are hidden on mobile anyway (see .hiw-nav-btn above). */
         .hiw-nav {
+            order: 4;
             position: static;
-            padding: 4px 24px 62px;
+            width: 100%;
+            padding: 0;
         }
     }
 
@@ -1104,17 +1106,16 @@
                 </div>
                 <div class="hiw-phone-col" id="hiwPhoneCol"></div>
                 <p class="hiw-swipe-hint"><i class="fas fa-arrows-left-right"></i> Swipe to see more</p>
+                <div class="hiw-nav">
+                    <button class="hiw-nav-btn" id="hiwPrev" aria-label="Previous step" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="hiw-dots" id="hiwDots" role="tablist"></div>
+                    <button class="hiw-nav-btn" id="hiwNext" aria-label="Next step">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
                 <span class="hiw-step-badge" id="hiwStepBadge">01</span>
-            </div>
-
-            <div class="hiw-nav">
-                <button class="hiw-nav-btn" id="hiwPrev" aria-label="Previous step" disabled>
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="hiw-dots" id="hiwDots" role="tablist"></div>
-                <button class="hiw-nav-btn" id="hiwNext" aria-label="Next step">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
     </section>
