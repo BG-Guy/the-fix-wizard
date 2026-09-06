@@ -1,0 +1,161 @@
+/* =========================================================
+   Responsive Breakpoints
+   1024px  tablet landscape
+    900px  tablet portrait
+    768px  mobile — nav collapses
+    480px  small mobile
+   ========================================================= */
+
+/* ==========================================================
+   1024px — tablet landscape
+   ========================================================== */
+@media (max-width: 1024px) {
+
+    /* Why Us: tighter gap, keep 2-col */
+    .why-us-inner { gap: 48px; }
+
+    /* Contact: shrink form column slightly */
+    .contact-grid { grid-template-columns: 1fr 1.5fr; gap: 40px; }
+
+    /* Footer: 3 equal columns, brand spans all */
+    .footer-grid   { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .footer-brand  { grid-column: 1 / -1; }
+}
+
+/* ==========================================================
+   900px — tablet portrait
+   ========================================================== */
+@media (max-width: 900px) {
+
+    /* Hero: stack columns */
+    .hero-container { grid-template-columns: 1fr; gap: 36px; }
+    .hero-right     { justify-content: center; }
+    .hero-card      { max-width: 540px; width: 100%; }
+    .hero-subtitle  { max-width: 100%; }
+
+    /* Why Us: stack columns, center bubble */
+    .why-us-inner      { grid-template-columns: 1fr; gap: 40px; }
+    .magic-bubble-area { padding: 0; justify-content: center; }
+
+    /* Contact: single column */
+    .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ==========================================================
+   768px — mobile (hamburger menu active)
+   ========================================================== */
+@media (max-width: 768px) {
+
+    /* ---- Tokens ---- */
+    :root { --nav-h: 96px; }
+    section { padding: 64px 0; }
+
+    /* ---- Navbar ---- */
+    .nav-links, .nav-actions  { display: none; }
+    .nav-container            { position: relative; }
+    .hamburger                { display: flex; order: -1; margin-left: 0; }
+    /* Scope absolute centering to nav only — not footer logo */
+    .nav-container .logo      { position: absolute; left: 50%; transform: translateX(-50%); }
+
+    /* ---- Hero ---- */
+    .hero-container    { padding-top: 20px; padding-bottom: 36px; }
+    .hero-left         { align-items: center; text-align: center; }
+    .hero-actions      { justify-content: center; margin-bottom: 24px; gap: 10px; }
+    .hero-actions .btn { padding: 10px 18px; font-size: 13px; gap: 6px; }
+    .stat-divider      { display: none; }
+    .hero-stats        { justify-content: center; gap: 18px; }
+    .hero-card-badges  { flex-wrap: wrap; justify-content: center; }
+
+    /* ---- Section headers ---- */
+    .section-header { margin-bottom: 40px; }
+
+    /* ---- Services: single column ---- */
+    .services-grid      { grid-template-columns: 1fr; gap: 16px; }
+    .service-card-img   { height: 220px; }
+    .service-card-inner { padding: 20px 22px 24px; gap: 10px; }
+    .service-card-inner h3 { font-size: 17px; }
+    .service-card-inner p  { font-size: 14px; line-height: 1.65; }
+    .service-link { font-size: 14px; }
+
+    /* ---- Why Us ---- */
+    .magic-bubble  { width: 280px; height: 280px; padding: 36px; }
+    #magicText     { font-size: 24px; }
+
+    /* ---- FAQ ---- */
+    .faq { padding: 64px 0; }
+    .faq-question {
+        grid-template-columns: 36px 1fr 30px;
+        font-size: 14px; padding: 18px 14px; gap: 12px;
+    }
+    .faq-answer p {
+        padding: 0 14px 20px 62px;   /* left = 14px margin + 36px counter + 12px gap */
+        font-size: 14px;
+    }
+
+    /* ---- CTA Banner ---- */
+    .cta-banner { padding: 52px 0; }
+    .cta-inner  { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+    .cta-btns   { justify-content: center; flex-wrap: wrap; }
+
+    /* ---- Contact ---- */
+    .form-row     { grid-template-columns: 1fr; }
+    .contact-form { padding: 24px 20px; }
+
+    /* ---- Footer ---- */
+    .footer { padding-top: 48px; }
+    .footer .logo-img,
+    .footer .footer-logo-img { height: 60px; }
+    /* 3 equal columns: brand spans full row, 3 cols fit perfectly on row 2 */
+    .footer-grid  { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .footer-brand {
+        grid-column: 1 / -1;
+        display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    .footer-brand .social-links { justify-content: center; }
+    .footer-bottom-inner { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+}
+
+/* ==========================================================
+   480px — small mobile
+   ========================================================== */
+@media (max-width: 480px) {
+
+    section    { padding: 48px 0; }
+    .container { padding: 0 16px; }
+
+    /* ---- Hero ---- */
+    .hero-title     { letter-spacing: -0.5px; }
+    .hero-container { padding-top: 16px; padding-bottom: 32px; }
+    .hero-actions   { gap: 8px; margin-bottom: 20px; }
+    .hero-stats     { gap: 10px; }
+    .hero-card      { padding: 16px; }
+    /* Keep 2-col grid — 8 items = 4 rows, readable */
+    .hero-card-services { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+    /* Services already single-column from 768px — just tighten gap */
+    .services-grid { gap: 12px; }
+
+    /* ---- Why Us ---- */
+    .magic-bubble { width: 220px; height: 220px; padding: 28px; }
+    #magicText    { font-size: 20px; }
+
+    /* ---- FAQ ---- */
+    .faq { padding: 48px 0; }
+    .faq-question {
+        grid-template-columns: 30px 1fr 28px;
+        font-size: 13px; padding: 16px 12px; gap: 10px;
+    }
+    .faq-answer p {
+        padding: 0 12px 18px 52px;  /* 12px + 30px + 10px */
+        font-size: 13px;
+    }
+
+    /* ---- CTA ---- */
+    .cta-banner { padding: 40px 0; }
+    .cta-btns   { flex-direction: column; width: 100%; }
+    .cta-btns .btn { width: 100%; justify-content: center; }
+
+    /* ---- Footer: single column ---- */
+    .footer-grid  { grid-template-columns: 1fr; gap: 28px; }
+    .footer-brand { grid-column: auto; }
+}

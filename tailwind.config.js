@@ -1,21 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './index.html',
     './partials/**/*.html',
-    './locations/**/*.html',
-    './seo-pages/**/*.html',
     './services/**/*.html',
-    './new-jersey/**/*.html',
-    './cleveland-ohio/**/*.html',
-    './*-repair/**/*.html',
-    './chimney-services-*/**/*.html',
-    './handyman-services-*/**/*.html',
+    './seo-pages/**/*.html',
     './generate-locations.js',
     './generate-service-pages.js',
-    './handyman-services-near-*/**/*.html',
-    './chimney-services-near-*/**/*.html',
-    './*-near-*/**/*.html',
+    './docs/**/*.html',
   ],
   safelist: [],
   theme: {

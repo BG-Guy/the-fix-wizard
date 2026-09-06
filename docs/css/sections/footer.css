@@ -1,0 +1,65 @@
+/* =========================================================
+   Footer Section
+   ========================================================= */
+
+.footer {
+    background:var(--blue-darkest); color:rgba(255,255,255,.65); padding-top:80px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M20 16L21.5 18.5L24 20L21.5 21.5L20 24L18.5 21.5L16 20L18.5 18.5Z' fill='rgba(255,255,255,.03)'/%3E%3Cpath d='M62 54L63 57L66 58L63 59L62 62L61 59L58 58L61 57Z' fill='rgba(255,255,255,.025)'/%3E%3C/svg%3E");
+    background-size:80px 80px;
+}
+
+/* Logo sizing inside footer */
+.footer .logo-img       { height:108px; width:auto; }
+.footer .footer-logo-img { height:108px; }
+
+.footer-grid {
+    display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; padding-bottom:60px;
+}
+
+.footer-brand p {
+    font-size:15px; line-height:1.7; color:rgba(255,255,255,.55);
+    margin:18px 0 22px;
+}
+
+.social-links { display:flex; gap:10px; }
+.social-links a {
+    width:38px; height:38px;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+    border-radius:var(--r-sm);
+    display:flex; align-items:center; justify-content:center;
+    color:rgba(255,255,255,.55); font-size:15px; transition:var(--ease);
+}
+.social-links a:hover {
+    background:var(--orange); border-color:var(--orange);
+    color:var(--white); transform:translateY(-3px);
+}
+
+.footer-col h4 {
+    font-size:14px; font-weight:700; color:var(--white);
+    margin-bottom:18px; letter-spacing:.4px;
+}
+.footer-col ul { display:flex; flex-direction:column; gap:9px; }
+.footer-col ul li a {
+    font-size:14px; color:rgba(255,255,255,.5); transition:var(--ease);
+}
+.footer-col ul li a:hover { color:var(--orange); transform:translateX(4px); }
+
+.footer-contact li {
+    display:flex; align-items:center; gap:10px;
+    font-size:14px; color:rgba(255,255,255,.5);
+}
+.footer-contact li i { color:var(--orange); width:16px; flex-shrink:0; }
+.footer-contact li a { color:rgba(255,255,255,.5); }
+.footer-contact li a:hover { color:var(--orange); }
+
+.footer-bottom {
+    border-top:1px solid transparent;
+    background:
+        linear-gradient(var(--blue-darkest), var(--blue-darkest)) padding-box,
+        linear-gradient(90deg, transparent, rgba(255,107,53,.35), transparent) border-box;
+    padding:22px 0;
+}
+.footer-bottom-inner {
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;
+}
+.footer-bottom p { font-size:13px; color:rgba(255,255,255,.35); }

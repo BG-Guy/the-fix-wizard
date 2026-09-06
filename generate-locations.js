@@ -167,9 +167,12 @@ function navbar(loc, serviceParam = '') {
                     <a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
                     <div class="nav-dropdown-menu">
                         <a href="/cherry-hill-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cherry Hill</a>
-                        <a href="/philadelphia-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Philadelphia</a>
+                        <a href="/haddonfield-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Haddonfield</a>
+                        <a href="/voorhees-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Voorhees</a>
+                        <a href="/marlton-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Marlton</a>
                         <a href="/moorestown-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Moorestown</a>
-                        <a href="/princeton-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Princeton</a>
+                        <a href="/mount-laurel-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Mount Laurel</a>
+                        <a href="/philadelphia-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Philadelphia</a>
                         <a href="/west-chester-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> West Chester</a>
                         <a href="/wilmington-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Wilmington</a>
                         <div class="nav-dropdown-divider"></div>
@@ -207,12 +210,15 @@ function navbar(loc, serviceParam = '') {
             <li><a href="${contactHref}" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
             <li>
                 <span class="mobile-loc-label">South Jersey &amp; Delaware Valley</span>
-                <a href="/cherry-hill-repair/"  class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cherry Hill</a>
-                <a href="/philadelphia-repair/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Philadelphia</a>
-                <a href="/moorestown-repair/"   class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Moorestown</a>
-                <a href="/princeton-repair/"    class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Princeton</a>
-                <a href="/west-chester-repair/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> West Chester</a>
-                <a href="/wilmington-repair/"   class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Wilmington</a>
+                <a href="/cherry-hill-repair/"      class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cherry Hill</a>
+                <a href="/haddonfield-repair/"      class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Haddonfield</a>
+                <a href="/voorhees-repair/"         class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Voorhees</a>
+                <a href="/marlton-repair/"          class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Marlton</a>
+                <a href="/moorestown-repair/"       class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Moorestown</a>
+                <a href="/mount-laurel-repair/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Mount Laurel</a>
+                <a href="/philadelphia-repair/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Philadelphia</a>
+                <a href="/west-chester-repair/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> West Chester</a>
+                <a href="/wilmington-repair/"       class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Wilmington</a>
                 <a href="/locations/" class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
             </li>
         </ul>
@@ -251,9 +257,10 @@ function footer() {
                     <h4 class="text-[14px] font-bold text-white mb-[18px] tracking-wide">Service Areas</h4>
                     <ul class="flex flex-col gap-[9px]">
                         <li><a href="/cherry-hill-repair/"      class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Cherry Hill, NJ</a></li>
-                        <li><a href="/philadelphia-repair/"     class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Philadelphia, PA</a></li>
+                        <li><a href="/haddonfield-repair/"      class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Haddonfield, NJ</a></li>
                         <li><a href="/moorestown-repair/"       class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Moorestown, NJ</a></li>
-                        <li><a href="/princeton-repair/"        class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Princeton, NJ</a></li>
+                        <li><a href="/mount-laurel-repair/"     class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Mount Laurel, NJ</a></li>
+                        <li><a href="/philadelphia-repair/"     class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Philadelphia, PA</a></li>
                         <li><a href="/west-chester-repair/"     class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">West Chester, PA</a></li>
                         <li><a href="/wilmington-repair/"       class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.5)">Wilmington, DE</a></li>
                         <li><a href="/locations/" class="text-[14px] transition-all hover:text-orange hover:translate-x-1" style="color:rgba(255,255,255,.35)">All Locations &rarr;</a></li>
@@ -727,21 +734,15 @@ ${footer()}
 
 // ── Runner ────────────────────────────────────────────────────────────────────
 
-function generate() {
+function generate(outDir = ROOT) {
   let count = 0;
   for (const loc of LOCATIONS) {
-    const dirs = [
-      { dir: `${loc.slug}-repair`,              html: hubPage(loc) },
-      { dir: `chimney-services-${loc.slug}`,    html: chimneyPage(loc) },
-      { dir: `handyman-services-${loc.slug}`,   html: handymanPage(loc) },
-    ];
-    for (const { dir, html } of dirs) {
-      fs.mkdirSync(path.join(ROOT, dir), { recursive: true });
-      fs.writeFileSync(path.join(ROOT, dir, 'index.html'), html, 'utf8');
-      count++;
-    }
+    const dir = `${loc.slug}-repair`;
+    fs.mkdirSync(path.join(outDir, dir), { recursive: true });
+    fs.writeFileSync(path.join(outDir, dir, 'index.html'), hubPage(loc), 'utf8');
+    count++;
   }
-  console.log(`✓ ${count} location pages generated (${LOCATIONS.length} cities × 3 page types)`);
+  console.log(`✓ ${count} city hub pages generated`);
 }
 
 module.exports = { generate };

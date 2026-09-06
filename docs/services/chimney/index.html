@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>:root{--nav-h:150px}*,*::before,*::after{box-sizing:border-box}body{font-family:Inter,sans-serif;color:#3a4560;background:#fff;line-height:1.65;overflow-x:hidden}body.no-scroll{overflow:hidden}a{text-decoration:none;color:inherit}.reveal{opacity:0;transform:translateY(28px)}.hero{background-color:#091236;color:#fff}.mobile-menu{position:fixed;top:0;left:-100%;z-index:101;width:min(320px,88vw);height:100vh;background:#0d1b4b}.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;opacity:0;visibility:hidden}.faq-answer{max-height:0;overflow:hidden}#navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h)}@media(max-width:768px){:root{--nav-h:96px}}</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../../css/tw.css">
+    <link rel="stylesheet" href="../../css/custom.css">
+    <meta name="description" content="Expert chimney repair and masonry services — inspections, sweeping, tuckpointing, crown repair, liner installation, caps, and more. Serving all of New Jersey.">
+    <title>Chimney Repair &amp; Masonry Services | The Fix Wizard</title>
+
+<style>
+@keyframes bubble-float {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-6px); }
+}
+.svc-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 2px solid #e8edf5;
+  border-radius: 100px;
+  padding: 10px 18px 10px 13px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1e2d5a;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  animation: bubble-float var(--dur,3.8s) ease-in-out var(--delay,0s) infinite;
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1),
+              opacity .2s ease,
+              border-color .15s ease,
+              box-shadow .15s ease,
+              background .15s ease;
+  will-change: transform, opacity;
+}
+.svc-bubble:hover {
+  border-color: #FF6B35;
+  background: #fff7f4;
+  box-shadow: 0 8px 24px rgba(255,107,53,.18);
+  animation-play-state: paused;
+  transform: translateY(-4px) scale(1.05) !important;
+}
+.svc-bubble.b-hide {
+  transform: scale(0) !important;
+  opacity: 0 !important;
+  pointer-events: none;
+  animation: none !important;
+}
+.svc-bubble .b-icon {
+  font-size: 11px;
+  color: #FF6B35;
+  flex-shrink: 0;
+}
+.svc-category { transition: opacity .2s ease; }
+.svc-category.c-hide { display: none; }
+.bubbles-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.cat-hdr {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+.cat-hdr-icon {
+  width: 30px; height: 30px;
+  background: rgba(255,107,53,.1);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.cat-hdr-icon i { color: #FF6B35; font-size: 12px; }
+.cat-hdr-label {
+  font-size: 11px; font-weight: 800;
+  color: #0d1b4b; text-transform: uppercase;
+  letter-spacing: .1em; white-space: nowrap;
+}
+.cat-hdr-line { flex: 1; height: 1px; background: #eef1f7; }
+.srch-wrap {
+  position: relative;
+  display: flex; align-items: center;
+}
+.srch-icon {
+  position: absolute; left: 17px;
+  color: #94a3b8; font-size: 15px; pointer-events: none;
+}
+.srch-input {
+  width: 100%;
+  padding: 15px 50px 15px 46px;
+  border: 2px solid #e2e8f0;
+  border-radius: 18px;
+  font-size: 15px; font-weight: 500;
+  color: #0d1b4b; font-family: Inter, sans-serif;
+  outline: none; background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+.srch-input:focus {
+  border-color: #FF6B35;
+  box-shadow: 0 0 0 4px rgba(255,107,53,.1);
+}
+.srch-input::placeholder { color: #94a3b8; }
+.srch-clear {
+  position: absolute; right: 16px;
+  width: 26px; height: 26px;
+  background: #f1f5f9; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #64748b; font-size: 11px; cursor: pointer;
+  opacity: 0; pointer-events: none;
+  transition: opacity .15s, background .15s;
+}
+.srch-clear.show { opacity: 1; pointer-events: all; }
+.srch-clear:hover { background: #FF6B35; color: #fff; }
+.srch-hint {
+  text-align: center; font-size: 13px; color: #94a3b8;
+  margin-top: 10px; min-height: 18px;
+}
+.srch-none {
+  text-align: center; font-size: 15px; color: #64748b;
+  padding: 40px 0; display: none;
+}
+.srch-none button {
+  color: #FF6B35; font-weight: 600;
+  background: none; border: none; cursor: pointer; margin-left: 4px;
+}
+</style>
+</head>
+<body>
+    <nav id="navbar" class="navbar">
+        <div class="container nav-container">
+            <a href="../../" class="logo"><img src="../../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img" width="199" height="110"></a>
+            <ul class="nav-links">
+                <li><a href="../../" class="nav-link">Home</a></li>
+                <li><a href="../../#services" class="nav-link">Services</a></li>
+                <li><a href="../../#why-us" class="nav-link">About</a></li>
+                <li><a href="../../?service=Chimney+%26+Masonry#contact" class="nav-link">Contact</a></li>
+                <li class="nav-dropdown">
+                    <a href="../../locations/" class="nav-link flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/cherry-hill-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cherry Hill</a>
+                        <a href="/philadelphia-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Philadelphia</a>
+                        <a href="/moorestown-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Moorestown</a>
+                        <a href="/princeton-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Princeton</a>
+                        <a href="/west-chester-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> West Chester</a>
+                        <a href="/wilmington-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Wilmington</a>
+                        <div class="nav-dropdown-divider"></div>
+                        <a href="../../locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+15513504951" class="nav-phone"><i class="fas fa-phone"></i><span>(551) 350-4951</span></a>
+                <a href="../../?service=Chimney+%26+Masonry#contact" class="btn btn-primary nav-cta">Free Quote
+                    <svg class="btn-spark bs-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+                    <svg class="btn-spark bs-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+                    <svg class="btn-spark bs-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+                </a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        <ul class="mobile-nav-links">
+            <li><a href="../../" class="mobile-link">Home</a></li>
+            <li><a href="../../#services" class="mobile-link">Services</a></li>
+            <li><a href="../../#why-us" class="mobile-link">About</a></li>
+            <li><a href="../../?service=Chimney+%26+Masonry#contact" class="mobile-link">Contact</a></li>
+            <li>
+                <span class="mobile-loc-label">South Jersey &amp; Delaware Valley</span>
+                <a href="/cherry-hill-repair/"  class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cherry Hill</a>
+                <a href="/philadelphia-repair/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Philadelphia</a>
+                <a href="/moorestown-repair/"   class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Moorestown</a>
+                <a href="/princeton-repair/"    class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Princeton</a>
+                <a href="/west-chester-repair/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> West Chester</a>
+                <a href="/wilmington-repair/"   class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Wilmington</a>
+                <a href="/locations/"           class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+            </li>
+        </ul>
+        <a href="tel:+15513504951" class="mobile-phone"><i class="fas fa-phone"></i>(551) 350-4951</a>
+        <a href="../../?service=Chimney+%26+Masonry#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <section class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)] rounded-b-[56px]">
+        <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
+            <div class="grid grid-cols-1 tab:grid-cols-[1fr_420px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
+                <div class="flex flex-col items-center tab:items-start text-center tab:text-left">
+                    <div class="inline-flex items-center gap-2 bg-orange/[.14] border border-orange/30 text-orange-light px-4 py-1.5 rounded-full text-[13px] font-semibold mb-7 tracking-wide">
+                        <i class="fas fa-fire text-orange text-[11px]"></i>
+                        <span>Chimney &amp; Masonry Specialists</span>
+                    </div>
+                    <h1 class="font-cinzel text-[clamp(32px,5vw,64px)] font-black leading-[1.1] tracking-tight text-white mb-6">
+                        Expert Chimney Repair<br>
+                        <span class="text-orange">&amp; <span class='lightning-word'>Masonry Services</span></span>
+                    </h1>
+                    <p class="text-[18px] text-white/65 leading-[1.75] mb-6 max-w-[560px]">From annual chimney sweeping and tuckpointing to full liner installation and masonry restoration — licensed specialists covering every repair your chimney needs.</p>
+                    <div class="flex items-center gap-3 mb-8 flex-wrap justify-center tab:justify-start">
+                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80"><i class="fas fa-broom text-orange text-[12px]"></i> Sweeping &amp; Inspection</div><div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80"><i class="fas fa-trowel-bricks text-orange text-[12px]"></i> Tuckpointing</div><div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80"><i class="fas fa-pipe text-orange text-[12px]"></i> Liner Install</div>
+                    </div>
+                    <div class="flex items-center gap-3 mb-12 flex-wrap justify-center tab:justify-start hero-actions">
+                        <a href="tel:+15513504951" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Call Now</a>
+                        <a href="../../?service=Chimney+%26+Masonry#contact" class="btn btn-outline btn-lg"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
+                    </div>
+                    <div class="w-full h-px bg-white/10 mb-8"></div>
+                    <div class="flex items-center gap-8 flex-wrap justify-center tab:justify-start hero-stats">
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="projects">0</span>+</div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Jobs Done</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="years">0</span>+</div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Years Exp</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="satisfaction">0</span>%</div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Satisfaction</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
+                        <div class="text-left">
+                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="specialties">0</span></div>
+                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Locations</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center tab:justify-end">
+                    <div class="w-full max-w-[520px] bg-white/[.07] backdrop-blur-xl border border-white/[.13] rounded-xl2 p-8 flex flex-col gap-6">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-[52px] h-[52px] shrink-0 bg-orange rounded-md2 flex items-center justify-center text-[22px] text-white">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div>
+                                <div class="text-[16px] font-semibold text-white leading-tight mb-1">Chimney Services Near You</div>
+                                <p class="text-[13px] text-white/50">Select your location to get started</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="/chimney-services-near-cherry-hill/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
+                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Cherry Hill</div><div class="text-[11px] text-white/40">Camden County, NJ</div></div>
+                            </a>
+                            <a href="/chimney-services-near-philadelphia/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
+                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Philadelphia</div><div class="text-[11px] text-white/40">Philadelphia County, PA</div></div>
+                            </a>
+                            <a href="/chimney-services-near-moorestown/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
+                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Moorestown</div><div class="text-[11px] text-white/40">Burlington County, NJ</div></div>
+                            </a>
+                            <a href="/chimney-services-near-princeton/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
+                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Princeton</div><div class="text-[11px] text-white/40">Mercer County, NJ</div></div>
+                            </a>
+                            <a href="/chimney-services-near-west-chester/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
+                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">West Chester</div><div class="text-[11px] text-white/40">Chester County, PA</div></div>
+                            </a>
+                            <a href="/chimney-services-near-wilmington/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
+                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
+                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Wilmington</div><div class="text-[11px] text-white/40">New Castle County, DE</div></div>
+                            </a>
+                        </div>
+                        <a href="../../?service=Chimney+%26+Masonry#contact" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Request a Free Quote</a>
+                        <div class="flex gap-3 pt-1 border-t border-white/[.08]">
+                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-shield-halved text-orange text-[13px]"></i><span>Licensed &amp; Insured</span></div>
+                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-clock text-orange text-[13px]"></i><span>Same Day Available</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-sparkles absolute inset-0 pointer-events-none z-[2] overflow-hidden" aria-hidden="true">
+            <svg class="sparkle sp-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-4" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+            <svg class="sparkle sp-5" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+        </div>
+        <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/30 text-[10px] font-medium tracking-[2px] uppercase z-[2]">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down text-[12px]"></i>
+        </div>
+    </section>
+
+    <!-- BUBBLE SERVICES -->
+    <section class="py-20 bg-white">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">What We Cover</span>
+                <h2 class="section-title">Complete Chimney &amp; <span class='text-accent'>Masonry Services</span></h2>
+                <p class="section-desc">All 18 services we offer — search to find yours instantly.</p>
+            </div>
+
+            <div class="max-w-[580px] mx-auto mb-12 reveal">
+                <div class="srch-wrap">
+                    <i class="fas fa-search srch-icon"></i>
+                    <input id="srch" type="text" class="srch-input" placeholder="Search services…" autocomplete="off" spellcheck="false">
+                    <div id="srch-clr" class="srch-clear" role="button" aria-label="Clear search">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <p id="srch-hint" class="srch-hint"></p>
+            </div>
+
+            <div id="svc-container" class="flex flex-col gap-10 max-w-[960px] mx-auto">
+
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-magnifying-glass"></i></div>
+                    <span class="cat-hdr-label">Inspections &amp; Sweep Services</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/chimney-inspection-standard-sweep/" data-s="level 1 inspection and standard sweep" style="--dur:3.6s;--delay:0s">
+                        <i class="fas fa-magnifying-glass b-icon"></i><span>Level 1 Inspection &amp; Standard Sweep</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-level-2-inspection/" data-s="level 2 inspection camera scan" style="--dur:4.1s;--delay:0.4s">
+                        <i class="fas fa-camera b-icon"></i><span>Level 2 Inspection (Camera Scan)</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/creosote-rotary-cleaning/" data-s="heavy creosote rotary cleaning" style="--dur:3.9s;--delay:0.8s">
+                        <i class="fas fa-broom b-icon"></i><span>Heavy Creosote Rotary Cleaning</span>
+                    </a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-circle-dot"></i></div>
+                    <span class="cat-hdr-label">Caps, Covers &amp; Maintenance</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/chimney-cap-installation/" data-s="single-flue stainless steel cap" style="--dur:4.4s;--delay:1.2s">
+                        <i class="fas fa-circle-dot b-icon"></i><span>Single-Flue Stainless Steel Cap</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/custom-chimney-cap-installation/" data-s="multi-flue   custom top-mount cap" style="--dur:3.7s;--delay:0.2s">
+                        <i class="fas fa-layer-group b-icon"></i><span>Multi-Flue / Custom Top-Mount Cap</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/chase-cover-replacement/" data-s="chase cover replacement" style="--dur:4.2s;--delay:0.6s">
+                        <i class="fas fa-square b-icon"></i><span>Chase Cover Replacement</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-waterproofing/" data-s="chimney water repellent application" style="--dur:3.8s;--delay:1.0s">
+                        <i class="fas fa-droplet-slash b-icon"></i><span>Chimney Water Repellent Application</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-flashing-repair/" data-s="flashing repair and installation" style="--dur:4.5s;--delay:1.4s">
+                        <i class="fas fa-wrench b-icon"></i><span>Flashing Repair &amp; Installation</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-leak-repair/" data-s="chimney leak repair" style="--dur:3.6s;--delay:0s">
+                        <i class="fas fa-droplet b-icon"></i><span>Chimney Leak Repair</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-animal-removal/" data-s="animal removal" style="--dur:4.1s;--delay:0.4s">
+                        <i class="fas fa-paw b-icon"></i><span>Animal Removal</span>
+                    </a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-trowel-bricks"></i></div>
+                    <span class="cat-hdr-label">Masonry &amp; Crown Repairs</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/chimney-crown-repair/" data-s="crown repair elastomeric coating" style="--dur:3.9s;--delay:0.8s">
+                        <i class="fas fa-helmet-safety b-icon"></i><span>Crown Repair (Elastomeric Coating)</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-crown-rebuild/" data-s="full chimney crown rebuild" style="--dur:4.4s;--delay:1.2s">
+                        <i class="fas fa-hat-hard b-icon"></i><span>Full Chimney Crown Rebuild</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-tuckpointing/" data-s="tuckpointing and mortar repair" style="--dur:3.7s;--delay:0.2s">
+                        <i class="fas fa-trowel-bricks b-icon"></i><span>Tuckpointing &amp; Mortar Repair</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/firebox-rebricking/" data-s="firebox re-bricking   refractory panel swap" style="--dur:4.2s;--delay:0.6s">
+                        <i class="fas fa-fire-flame-curved b-icon"></i><span>Firebox Re-bricking / Refractory Panel Swap</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/firebox-rebuild/" data-s="firebox rebuild" style="--dur:3.8s;--delay:1.0s">
+                        <i class="fas fa-fire b-icon"></i><span>Firebox Rebuild</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/smoke-chamber-parge/" data-s="smoke chamber parge" style="--dur:4.5s;--delay:1.4s">
+                        <i class="fas fa-cloud b-icon"></i><span>Smoke Chamber Parge</span>
+                    </a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-pipe"></i></div>
+                    <span class="cat-hdr-label">Components &amp; Liners</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/chimney-damper-installation/" data-s="top-damper installation" style="--dur:3.6s;--delay:0s">
+                        <i class="fas fa-toggle-on b-icon"></i><span>Top-Damper Installation</span>
+                    </a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-liner-installation/" data-s="stainless steel flue liner installation" style="--dur:4.1s;--delay:0.4s">
+                        <i class="fas fa-pipe b-icon"></i><span>Stainless Steel Flue Liner Installation</span>
+                    </a>
+                </div>
+            </div>
+            </div>
+
+            <div id="srch-none" class="srch-none">
+                No services match your search.
+                <button id="srch-none-clr">Clear search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Our Locations</span>
+                <h2 class="section-title">Chimney Services in <span class='text-accent'>Your Area</span></h2>
+                <p class="section-desc">Choose your location for local pricing, same-day availability, and area-specific service details.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+                <a href="/chimney-services-near-cherry-hill/" class="group flex items-center gap-5 bg-white border-2 border-slate-200 rounded-card p-6 transition-all hover:border-orange hover:shadow-[0_8px_32px_rgba(255,107,53,.15)]">
+                    <div class="w-14 h-14 shrink-0 bg-orange/10 rounded-xl flex items-center justify-center group-hover:bg-orange transition-colors">
+                        <i class="fas fa-location-dot text-orange group-hover:text-white text-[22px] transition-colors"></i>
+                    </div>
+                    <div>
+                        <div class="text-[18px] font-bold text-navy-900 mb-1">Cherry Hill</div>
+                        <div class="text-[13px] text-slate-500">Camden County, NJ · Same-day</div>
+                    </div>
+                    <i class="fas fa-arrow-right text-slate-300 group-hover:text-orange ml-auto transition-colors"></i>
+                </a>
+                <a href="/chimney-services-near-philadelphia/" class="group flex items-center gap-5 bg-white border-2 border-slate-200 rounded-card p-6 transition-all hover:border-orange hover:shadow-[0_8px_32px_rgba(255,107,53,.15)]">
+                    <div class="w-14 h-14 shrink-0 bg-orange/10 rounded-xl flex items-center justify-center group-hover:bg-orange transition-colors">
+                        <i class="fas fa-location-dot text-orange group-hover:text-white text-[22px] transition-colors"></i>
+                    </div>
+                    <div>
+                        <div class="text-[18px] font-bold text-navy-900 mb-1">Philadelphia</div>
+                        <div class="text-[13px] text-slate-500">Philadelphia County, PA · Same-day</div>
+                    </div>
+                    <i class="fas fa-arrow-right text-slate-300 group-hover:text-orange ml-auto transition-colors"></i>
+                </a>
+                <a href="/chimney-services-near-moorestown/" class="group flex items-center gap-5 bg-white border-2 border-slate-200 rounded-card p-6 transition-all hover:border-orange hover:shadow-[0_8px_32px_rgba(255,107,53,.15)]">
+                    <div class="w-14 h-14 shrink-0 bg-orange/10 rounded-xl flex items-center justify-center group-hover:bg-orange transition-colors">
+                        <i class="fas fa-location-dot text-orange group-hover:text-white text-[22px] transition-colors"></i>
+                    </div>
+                    <div>
+                        <div class="text-[18px] font-bold text-navy-900 mb-1">Moorestown</div>
+                        <div class="text-[13px] text-slate-500">Burlington County, NJ · Same-day</div>
+                    </div>
+                    <i class="fas fa-arrow-right text-slate-300 group-hover:text-orange ml-auto transition-colors"></i>
+                </a>
+                <a href="/chimney-services-near-princeton/" class="group flex items-center gap-5 bg-white border-2 border-slate-200 rounded-card p-6 transition-all hover:border-orange hover:shadow-[0_8px_32px_rgba(255,107,53,.15)]">
+                    <div class="w-14 h-14 shrink-0 bg-orange/10 rounded-xl flex items-center justify-center group-hover:bg-orange transition-colors">
+                        <i class="fas fa-location-dot text-orange group-hover:text-white text-[22px] transition-colors"></i>
+                    </div>
+                    <div>
+                        <div class="text-[18px] font-bold text-navy-900 mb-1">Princeton</div>
+                        <div class="text-[13px] text-slate-500">Mercer County, NJ · Same-day</div>
+                    </div>
+                    <i class="fas fa-arrow-right text-slate-300 group-hover:text-orange ml-auto transition-colors"></i>
+                </a>
+                <a href="/chimney-services-near-west-chester/" class="group flex items-center gap-5 bg-white border-2 border-slate-200 rounded-card p-6 transition-all hover:border-orange hover:shadow-[0_8px_32px_rgba(255,107,53,.15)]">
+                    <div class="w-14 h-14 shrink-0 bg-orange/10 rounded-xl flex items-center justify-center group-hover:bg-orange transition-colors">
+                        <i class="fas fa-location-dot text-orange group-hover:text-white text-[22px] transition-colors"></i>
+                    </div>
+                    <div>
+                        <div class="text-[18px] font-bold text-navy-900 mb-1">West Chester</div>
+                        <div class="text-[13px] text-slate-500">Chester County, PA · Same-day</div>
+                    </div>
+                    <i class="fas fa-arrow-right text-slate-300 group-hover:text-orange ml-auto transition-colors"></i>
+                </a>
+                <a href="/chimney-services-near-wilmington/" class="group flex items-center gap-5 bg-white border-2 border-slate-200 rounded-card p-6 transition-all hover:border-orange hover:shadow-[0_8px_32px_rgba(255,107,53,.15)]">
+                    <div class="w-14 h-14 shrink-0 bg-orange/10 rounded-xl flex items-center justify-center group-hover:bg-orange transition-colors">
+                        <i class="fas fa-location-dot text-orange group-hover:text-white text-[22px] transition-colors"></i>
+                    </div>
+                    <div>
+                        <div class="text-[18px] font-bold text-navy-900 mb-1">Wilmington</div>
+                        <div class="text-[13px] text-slate-500">New Castle County, DE · Same-day</div>
+                    </div>
+                    <i class="fas fa-arrow-right text-slate-300 group-hover:text-orange ml-auto transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Q&amp;A</span>
+                <h2 class="section-title">Chimney Service <span class="text-accent">Questions</span></h2>
+                <p class="section-desc">Common questions homeowners ask before booking chimney repair or masonry services.</p>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>How often should I have my chimney swept?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Most chimney safety organizations recommend annual sweeping and inspection before each heating season. Homes that burn wood regularly may need sweeping twice per year. Gas appliances still require annual inspection even without heavy creosote buildup.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>What is tuckpointing and do I need it?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Tuckpointing is grinding out deteriorated mortar joints and packing in fresh mortar. If you see gaps, crumbling, or missing mortar between bricks, tuckpointing is overdue. Left untreated, water infiltration causes far costlier structural damage.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>What is a chimney liner and why does it matter?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>A chimney liner contains combustion gases and directs them safely out of the flue. An improperly sized or deteriorated liner can allow carbon monoxide and heat to reach combustible framing. Liner installation is code-required for most fuel-burning appliances.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>Do you service both wood-burning and gas fireplaces?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Yes. We service all chimney and fireplace types — wood-burning, gas inserts, oil appliances, and pellet stoves. The specific services differ by fuel type but we handle all of them.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>What areas do you serve for chimney repair?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>We serve Cherry Hill, Philadelphia, Moorestown, Princeton, West Chester, Wilmington, and surrounding communities within a 70-mile radius of Cherry Hill, NJ — across Camden, Burlington, Mercer, Chester, and New Castle counties.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-banner">
+        <div class="container cta-inner reveal">
+            <div class="cta-text">
+                <h2>Ready to Book Chimney Service?</h2>
+                <p>Free estimates · Licensed &amp; insured · Same-day available across all of New Jersey</p>
+            </div>
+            <div class="cta-btns">
+                <a href="tel:+15513504951" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="../../?service=Chimney+%26+Masonry#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="../../" class="logo"><img src="../../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img footer-logo-img" width="199" height="110"></a>
+                <p>The Fix Wizard handles the repairs most people dread. Quality work, honest pricing, and results that last.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="../../services/chimney/">Chimney &amp; Masonry</a></li>
+                    <li><a href="../../services/handyman/">Handyman Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Service Areas</h4>
+                <ul>
+                    <li><a href="../../new-jersey/">New Jersey</a></li>
+                    <li><a href="../../locations/">All Locations</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-phone"></i><a href="tel:+15513504951">(551) 350-4951</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:office@thefixwizard.com">office@thefixwizard.com</a></li>
+                    <li><i class="fas fa-clock"></i><span>Mon–Sat: 7am – 7pm</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; <span id="year"></span> The Fix Wizard. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart" style="color:var(--orange)"></i> for homeowners everywhere</p>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="../../js/service-page.js"></script>
+
+<script>
+(function() {
+  var inp    = document.getElementById('srch');
+  var clr    = document.getElementById('srch-clr');
+  var hint   = document.getElementById('srch-hint');
+  var none   = document.getElementById('srch-none');
+  var bubbles = document.querySelectorAll('.svc-bubble');
+  var cats   = document.querySelectorAll('.svc-category');
+
+  function run(q) {
+    q = q.toLowerCase().trim();
+    var shown = 0;
+    bubbles.forEach(function(b) {
+      var match = !q || b.dataset.s.includes(q);
+      if (match) { b.classList.remove('b-hide'); shown++; }
+      else        { b.classList.add('b-hide'); }
+    });
+    cats.forEach(function(c) {
+      var any = Array.from(c.querySelectorAll('.svc-bubble')).some(function(b) {
+        return !b.classList.contains('b-hide');
+      });
+      c.classList.toggle('c-hide', !any);
+    });
+    clr.classList.toggle('show', q.length > 0);
+    hint.textContent = q ? (shown + ' service' + (shown !== 1 ? 's' : '') + ' found') : '';
+    none.style.display = (q && shown === 0) ? 'block' : 'none';
+  }
+
+  inp.addEventListener('input', function() { run(inp.value); });
+  clr.addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+  document.getElementById('srch-none-clr').addEventListener('click', function() {
+    inp.value = ''; run(''); inp.focus();
+  });
+})();
+</script>
+</body>
+</html>

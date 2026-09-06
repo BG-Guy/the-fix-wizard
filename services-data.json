@@ -201,9 +201,9 @@
     },
     {
       "icon": "fa-toggle-on",
-      "name": "Top-Damper Installation",
+      "name": "Chimney Damper Installation",
       "slug": "chimney-damper-installation",
-      "desc": "Top-mount dampers seal the flue at the chimney top — far more energy-efficient than throat dampers and doubles as a rain cap.",
+      "desc": "Top-mount chimney dampers seal the flue at the chimney top — far more energy-efficient than throat dampers, and doubles as a rain and animal cap.",
       "includes": [
         "Remove old throat damper if applicable",
         "Top-mount damper sizing and installation",
@@ -767,10 +767,14 @@
       "consequences": "The smoke chamber is one of the most common ignition points in a chimney fire, and it is completely invisible during a standard sweep. Rough corbeled brick surfaces trap creosote in every recess, and those recesses are precisely the areas that brushes cannot fully reach. Creosote that accumulates in the smoke chamber ignites at lower temperatures than flue creosote because it is in direct contact with the hottest combustion gases. A cracked smoke chamber also allows carbon monoxide to migrate into the masonry surrounding it — a slow, silent exposure that is difficult to attribute to any single cause."
     },
     "chimney-damper-installation": {
-      "why_need": "A top-sealing damper is needed when the chimney has no damper, when the existing throat damper is rusted shut or corroded beyond function, or when you want to eliminate the significant energy loss that occurs through an open flue when the fireplace is not in use.",
-      "benefits": "A top-mounted damper seals the flue at the top of the chimney when the fireplace is not in use, eliminating the convective heat loss that occurs through an open throat. It also acts as a rain cap and keeps animals out. When the fireplace is in use, the damper opens fully with a cable pull, providing unrestricted draft.",
-      "longevity": "Quality stainless steel top-sealing dampers last 15 to 20 years or more. The silicone gasket seal may need occasional replacement after a decade of use, but the body of the damper remains functional indefinitely.",
-      "consequences": "An open throat damper — or a chimney with no damper — is a direct connection between the interior of your home and the outside air. In winter, the temperature differential drives cold air down through the flue and into the room, even with a conventional damper closed, because throat dampers seal poorly by design. Year-round, the open column of air draws conditioned air upward. Energy audits consistently identify open fireplace flues as one of the top sources of heat and cooling loss in homes that have them. Humid outdoor air flowing into the flue also accelerates mortar deterioration inside the chimney, compounding the maintenance cost over time."
+      "h2_why_need": "Is Your Fireplace Damper Bleeding Heat This Winter?",
+      "why_need": "Most older homes in the region rely on cast-iron throat dampers that warp, rust, and eventually stop sealing. When a throat damper fails — or was never replaced — your flue becomes an open column drafting conditioned air out of the house around the clock. Energy auditors consistently rank open fireplace flues among the top five heat-loss sources in older homes. A top-sealing chimney damper eliminates that loss entirely, and costs a fraction of what you'd spend on extra heating bills over even one winter.",
+      "h2_benefits": "How a Top-Mount Chimney Damper Is Installed",
+      "benefits": "We remove the old throat damper if one is present, size a stainless steel top-sealing damper to your flue tile, and mount it at the chimney crown. A pull cable runs down the firebox wall so you open the damper by hand before lighting a fire and close it completely when the fireplace is cold. The silicone-gasketed lid seals far tighter than any cast-iron throat damper can — and because it sits at the top of the flue, it also doubles as a rain cap and keeps animals out, eliminating the need for a separate chimney cap.",
+      "h2_longevity": "Built to Last Through South Jersey Seasons",
+      "longevity": "Quality stainless steel top-sealing dampers hold up through 15 to 20 years of freeze-thaw cycles and coastal humidity — conditions that destroy cast-iron throat dampers in a fraction of that time. The silicone perimeter gasket may need replacing after 10 or so years of heavy use, but the stainless body is essentially maintenance-free once installed.",
+      "h2_consequences": "Every Heating Season You Wait Costs You More",
+      "consequences": "An open or failed chimney damper turns your fireplace into a direct duct between your living room and the outside. Even a closed throat damper passes significant air because cast iron warps over time and never creates an airtight seal. The result: cold air pours down the flue on winter nights, humid air drives condensation into the masonry, and your HVAC system works harder year-round. Home energy audits routinely attribute 10–30% of a home's total heat loss to an unsealed fireplace flue. The longer you wait, the more moisture cycling deteriorates your mortar joints — turning a straightforward chimney cap and damper replacement into a far more expensive relining job."
     },
     "chimney-liner-installation": {
       "why_need": "A flue liner installation or relining is needed when the existing clay tile liner is cracked, has gaps at the joints, or has been damaged by a chimney fire, when a gas or oil appliance is being vented through an oversized clay flue, or when a new appliance requires a specific flue diameter. Many older homes lack a liner entirely.",

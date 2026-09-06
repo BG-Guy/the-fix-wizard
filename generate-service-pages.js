@@ -54,9 +54,12 @@ function navbar(loc, serviceParam = '') {
                     <a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
                     <div class="nav-dropdown-menu">
                         <a href="/cherry-hill-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cherry Hill</a>
-                        <a href="/philadelphia-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Philadelphia</a>
+                        <a href="/haddonfield-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Haddonfield</a>
+                        <a href="/voorhees-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Voorhees</a>
+                        <a href="/marlton-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Marlton</a>
                         <a href="/moorestown-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Moorestown</a>
-                        <a href="/princeton-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Princeton</a>
+                        <a href="/mount-laurel-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Mount Laurel</a>
+                        <a href="/philadelphia-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Philadelphia</a>
                         <a href="/west-chester-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> West Chester</a>
                         <a href="/wilmington-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Wilmington</a>
                         <div class="nav-dropdown-divider"></div>
@@ -110,9 +113,10 @@ function footer() {
                     <h4 class="text-[14px] font-bold text-white mb-[18px] tracking-wide">Service Areas</h4>
                     <ul class="flex flex-col gap-[9px]">
                         <li><a href="/cherry-hill-repair/"  class="text-[14px] transition-all hover:text-orange" style="color:rgba(255,255,255,.5)">Cherry Hill, NJ</a></li>
-                        <li><a href="/philadelphia-repair/" class="text-[14px] transition-all hover:text-orange" style="color:rgba(255,255,255,.5)">Philadelphia, PA</a></li>
+                        <li><a href="/haddonfield-repair/"  class="text-[14px] transition-all hover:text-orange" style="color:rgba(255,255,255,.5)">Haddonfield, NJ</a></li>
                         <li><a href="/moorestown-repair/"   class="text-[14px] transition-all hover:text-orange" style="color:rgba(255,255,255,.5)">Moorestown, NJ</a></li>
-                        <li><a href="/princeton-repair/"    class="text-[14px] transition-all hover:text-orange" style="color:rgba(255,255,255,.5)">Princeton, NJ</a></li>
+                        <li><a href="/mount-laurel-repair/" class="text-[14px] transition-all hover:text-orange" style="color:rgba(255,255,255,.5)">Mount Laurel, NJ</a></li>
+                        <li><a href="/philadelphia-repair/" class="text-[14px] transition-all hover:text-orange" style="color:rgba(255,255,255,.5)">Philadelphia, PA</a></li>
                         <li><a href="/west-chester-repair/" class="text-[14px] transition-all hover:text-orange" style="color:rgba(255,255,255,.5)">West Chester, PA</a></li>
                         <li><a href="/wilmington-repair/"   class="text-[14px] transition-all hover:text-orange" style="color:rgba(255,255,255,.5)">Wilmington, DE</a></li>
                         <li><a href="/locations/" class="text-[14px] transition-all hover:text-orange" style="color:rgba(255,255,255,.35)">All Locations &rarr;</a></li>
@@ -454,27 +458,27 @@ function detailPage(loc, svc, type) {
                     <div>
                         <h2 class="text-[22px] font-bold text-navy-900 mb-4 flex items-center gap-3">
                             <span class="w-8 h-8 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-circle-question text-orange text-[14px]"></i></span>
-                            Why You Need It in ${loc.city}
+                            ${content.h2_why_need || `Why You Need It in ${loc.city}`}
                         </h2>
                         <p class="text-slate-600 leading-relaxed text-[15px]">${content.why_need}</p>
                     </div>
                     <div>
                         <h2 class="text-[22px] font-bold text-navy-900 mb-4 flex items-center gap-3">
                             <span class="w-8 h-8 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-star text-orange text-[14px]"></i></span>
-                            What to Expect
+                            ${content.h2_benefits || 'What to Expect'}
                         </h2>
                         <p class="text-slate-600 leading-relaxed text-[15px]">${content.benefits}</p>
                     </div>
                     <div>
                         <h2 class="text-[22px] font-bold text-navy-900 mb-4 flex items-center gap-3">
                             <span class="w-8 h-8 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-calendar-check text-orange text-[14px]"></i></span>
-                            How Long Does It Last?
+                            ${content.h2_longevity || 'How Long Does It Last?'}
                         </h2>
                         <p class="text-slate-600 leading-relaxed text-[15px]">${content.longevity}</p>
                     </div>
                     <div class="rounded-xl p-6 border-l-4 border-orange" style="background:#fff8f5">
                         <h2 class="text-[20px] font-bold text-navy-900 mb-3 flex items-center gap-3">
-                            <i class="fas fa-triangle-exclamation text-orange"></i> The Cost of Waiting
+                            <i class="fas fa-triangle-exclamation text-orange"></i> ${content.h2_consequences || 'The Cost of Waiting'}
                         </h2>
                         <p class="text-slate-600 leading-relaxed text-[15px]">${content.consequences}</p>
                     </div>
@@ -622,20 +626,18 @@ ${footer()}
 
 // ── Generator ─────────────────────────────────────────────────────────────────
 
-function generate() {
+function generate(outDir = ROOT) {
   let count = 0;
   for (const loc of LOCATIONS) {
     for (const type of ['handyman', 'chimney']) {
-      // Hub page
-      const hubDir = path.join(ROOT, `${type}-services-near-${loc.slug}`);
+      const hubDir = path.join(outDir, `${type}-services-near-${loc.slug}`);
       fs.mkdirSync(hubDir, { recursive: true });
       fs.writeFileSync(path.join(hubDir, 'index.html'), hubPage(loc, type), 'utf8');
       count++;
 
-      // Service detail pages
       const services = DATA[type];
       for (const svc of services) {
-        const detailDir = path.join(ROOT, `${svc.slug}-near-${loc.slug}`);
+        const detailDir = path.join(outDir, `${svc.slug}-near-${loc.slug}`);
         fs.mkdirSync(detailDir, { recursive: true });
         fs.writeFileSync(path.join(detailDir, 'index.html'), detailPage(loc, svc, type), 'utf8');
         count++;

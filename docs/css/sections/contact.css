@@ -1,0 +1,60 @@
+/* =========================================================
+   Contact Section
+   ========================================================= */
+
+.contact {
+    background-color:var(--off-white);
+    background-image:radial-gradient(circle, rgba(13,27,75,.06) 1px, transparent 1px);
+    background-size:28px 28px;
+}
+
+.contact-grid {
+    display:grid; grid-template-columns:1fr 2fr; gap:56px;
+}
+
+.contact-info { display:flex; flex-direction:column; gap:22px; }
+
+.ci-item  { display:flex; gap:14px; align-items:flex-start; }
+.ci-icon  {
+    width:46px; height:46px; flex-shrink:0;
+    background:var(--blue-dark); border-radius:var(--r-sm);
+    display:flex; align-items:center; justify-content:center;
+    font-size:17px; color:var(--orange);
+}
+.ci-item h3 {
+    font-size:12px; font-weight:700; color:var(--text-muted);
+    text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;
+}
+.ci-item a, .ci-item p { font-size:15px; color:var(--text-dark); font-weight:500; }
+.ci-item a:hover { color:var(--orange); }
+
+/* Form */
+.contact-form {
+    background:var(--white); padding:40px;
+    border-radius:var(--r-lg); box-shadow:var(--shadow-md);
+}
+
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.form-group { display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }
+.form-group:last-of-type { margin-bottom:0; }
+
+.form-group label { font-size:13px; font-weight:600; color:var(--text-dark); }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding:12px 15px;
+    border:2px solid var(--gray-light);
+    border-radius:var(--r-sm);
+    font-family:var(--font); font-size:15px; color:var(--text-body);
+    background:var(--white); outline:none; resize:vertical;
+    transition:var(--ease);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color:var(--gray); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color:var(--orange);
+    box-shadow:0 0 0 4px rgba(255,107,53,.1);
+}

@@ -1,0 +1,243 @@
+/* =========================================================
+   Hero Section
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: var(--nav-h);
+    border-radius: 0 0 56px 56px;
+    background-color: var(--blue-darkest);
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M20 16L21.5 18.5L24 20L21.5 21.5L20 24L18.5 21.5L16 20L18.5 18.5Z' fill='rgba(255,255,255,.07)'/%3E%3Cpath d='M60 56L61.5 58.5L64 60L61.5 61.5L60 64L58.5 61.5L56 60L58.5 58.5Z' fill='rgba(255,255,255,.05)'/%3E%3Ccircle cx='72' cy='8' r='1.5' fill='rgba(255,255,255,.05)'/%3E%3Ccircle cx='8' cy='72' r='1.5' fill='rgba(255,255,255,.04)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 65% 75% at 95% -5%, rgba(255,107,53,.32) 0%, rgba(255,107,53,.08) 45%, transparent 70%),
+        radial-gradient(ellipse 45% 40% at -5% 100%, rgba(255,140,66,.16) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 70% at 50% 60%, transparent 40%, rgba(6,13,46,.55) 100%),
+        linear-gradient(148deg, #060d2e 0%, var(--blue-dark) 52%, var(--blue-mid) 100%);
+    background-size:
+        80px 80px,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%;
+}
+
+/* Grain noise overlay for tactile depth */
+.hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    padding-top: 48px;
+    padding-bottom: 80px;
+    width: 100%;
+}
+
+/* Left column */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Right column card */
+.hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hero-card {
+    width: 100%;
+    background: rgba(255,255,255,.07);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: var(--r-xl);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.hero-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.hero-card-icon {
+    width: 52px; height: 52px; flex-shrink: 0;
+    background: var(--orange);
+    border-radius: var(--r-md);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; color: var(--white);
+}
+.hero-card-header h2 {
+    font-size: 16px; font-weight: 600; color: var(--white);
+    line-height: 1.2; margin-bottom: 3px; letter-spacing: .2px;
+}
+.hero-card-header p {
+    font-size: 13px; color: rgba(255,255,255,.5);
+}
+
+.hero-card-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.hcs-item {
+    display: flex; align-items: center; gap: 9px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: var(--r-sm);
+    padding: 10px 12px;
+    font-size: 13px; font-weight: 500; color: rgba(255,255,255,.8);
+    transition: var(--ease);
+}
+.hcs-item:hover {
+    background: rgba(255,107,53,.15);
+    border-color: rgba(255,107,53,.3);
+    color: var(--white);
+}
+.hcs-item i { color: var(--orange); font-size: 13px; width: 14px; flex-shrink: 0; }
+
+.hero-card-badges {
+    display: flex;
+    gap: 12px;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+.hcb-item {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 12px; font-weight: 600; color: rgba(255,255,255,.55);
+}
+.hcb-item i { color: var(--orange); font-size: 13px; }
+
+.hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,107,53,.14); border: 1px solid rgba(255,107,53,.28);
+    color: var(--orange-light); padding: 7px 16px; border-radius: 100px;
+    font-size: 13px; font-weight: 600; margin-bottom: 28px;
+    letter-spacing: .3px;
+}
+.hero-badge i { color: var(--orange); font-size: 11px; }
+
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -.5px;
+    color: var(--white);
+    margin-bottom: 24px;
+}
+.text-accent { color: var(--orange); }
+
+.hero-subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,.65);
+    line-height: 1.75;
+    margin-bottom: 40px;
+    max-width: 560px;
+}
+
+.hero-actions {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 48px; flex-wrap: wrap;
+}
+
+.hero-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.1);
+    margin-bottom: 32px;
+}
+
+.hero-stats {
+    display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+}
+.hero-stat { text-align: left; }
+.stat-num {
+    font-size: 28px; font-weight: 900; color: var(--orange);
+    line-height: 1; margin-bottom: 5px;
+}
+.stat-lbl  { font-size: 12px; color: rgba(255,255,255,.5); font-weight: 500; letter-spacing: .5px; }
+.stat-divider { width: 1px; height: 40px; background: rgba(255,255,255,.12); }
+
+.scroll-hint {
+    position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 7px;
+    color: rgba(255,255,255,.3); font-size: 10px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+}
+.scroll-hint i { font-size: 12px; }
+
+/* "Fix Wizard's" lightning flicker */
+.lightning-word {
+    position: relative;
+    color: var(--orange);
+    text-shadow:
+        0 0 8px  rgba(255,107,53,.95),
+        0 0 22px rgba(255,107,53,.65),
+        0 0 48px rgba(255,107,53,.35);
+    animation: lightningFlicker 4s ease-in-out infinite;
+}
+
+@keyframes lightningFlicker {
+    0%,89%,100% {
+        text-shadow:
+            0 0 8px  rgba(255,107,53,.95),
+            0 0 22px rgba(255,107,53,.65),
+            0 0 48px rgba(255,107,53,.35);
+        opacity: 1;
+    }
+    90% { opacity:.75; text-shadow: 0 0 3px rgba(255,107,53,.5); }
+    91% {
+        text-shadow:
+            0 0 14px rgba(255,220,100,1),
+            0 0 36px rgba(255,107,53,.9),
+            0 0 70px rgba(255,107,53,.5);
+        opacity: 1;
+    }
+    92% { opacity:.8; text-shadow: 0 0 4px rgba(255,107,53,.5); }
+    93% {
+        text-shadow:
+            0 0 10px rgba(255,200,80,.95),
+            0 0 28px rgba(255,107,53,.7),
+            0 0 55px rgba(255,107,53,.4);
+        opacity: 1;
+    }
+}
+
+/* Floating sparkle decorations */
+.hero-sparkles {
+    position: absolute; inset: 0;
+    pointer-events: none; z-index: 2; overflow: hidden;
+}
+.sparkle {
+    position: absolute;
+    color: var(--orange);
+    animation: spkTwinkle 4s ease-in-out infinite;
+}
+.sp-1 { width: 30px; top: 14%; right:  7%; animation-delay:  0s;   }
+.sp-2 { width: 16px; top: 32%; left:   5%; animation-delay:  1.2s; }
+.sp-3 { width: 12px; top: 62%; right: 16%; animation-delay:  2.5s; }
+.sp-4 { width: 22px; top: 20%; right: 32%; animation-delay:  0.6s; }
+.sp-5 { width: 10px; top: 75%; left:  14%; animation-delay:  1.8s; }
+
+@keyframes spkTwinkle {
+    0%, 100% { opacity: 0;    transform: scale(.7) rotate(0deg);  }
+    40%, 60% { opacity: .65;  transform: scale(1)  rotate(22deg); }
+}

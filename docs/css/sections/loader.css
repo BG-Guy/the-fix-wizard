@@ -1,0 +1,108 @@
+/* =========================================================
+   Loader — Spirit Level Animation
+   ========================================================= */
+
+.loader {
+    position:fixed; inset:0;
+    background: radial-gradient(ellipse at center, #0e1f3d 0%, var(--blue-dark) 70%);
+    display:flex; align-items:center; justify-content:center;
+    z-index:9999;
+    transition:opacity .45s ease, visibility .45s ease;
+}
+.loader.out { opacity:0; visibility:hidden; }
+
+.loader-inner {
+    display:flex; flex-direction:column; align-items:center; gap:14px;
+    animation: ldrFadeIn .5s cubic-bezier(.2,.9,.1,1) both;
+    position:relative;
+}
+
+@keyframes ldrFadeIn {
+    from { opacity:0; transform:translateY(16px); }
+    to   { opacity:1; transform:translateY(0); }
+}
+
+.loader-logo-img {
+    height: 144px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 2px;
+    filter: drop-shadow(0 4px 16px rgba(255,107,53,.18));
+}
+
+.loader-brand {
+    display:flex; flex-direction:column; align-items:center; gap:5px;
+    text-align:center;
+}
+.ldr-name {
+    font-size:26px; font-weight:800;
+    color:var(--white); letter-spacing:-.4px; line-height:1;
+}
+.ldr-sub {
+    font-size:11px; font-weight:700;
+    color:var(--orange); letter-spacing:3.5px;
+}
+
+/* Spirit level bar */
+.level-bar {
+    margin-top: 4px;
+    padding: 4px 6px;
+    background: rgba(255,255,255,.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.07);
+    box-shadow: 0 4px 20px rgba(0,0,0,.35), inset 0 1px 3px rgba(0,0,0,.4);
+}
+
+.level-bar-track {
+    width: 200px; height: 20px;
+    background: linear-gradient(180deg, rgba(0,0,0,.3) 0%, rgba(255,255,255,.02) 50%, rgba(0,0,0,.2) 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.35);
+    position: relative; overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,.5), inset 0 -1px 2px rgba(255,255,255,.04);
+}
+.level-bar-track::after {
+    content:'';
+    position:absolute; top:0; left:0; right:0; height:40%;
+    background: linear-gradient(180deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,0) 100%);
+    border-radius: 10px 10px 0 0;
+    pointer-events:none;
+}
+
+.level-bar-tick {
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:1.5px; height:12px;
+    background: rgba(255,255,255,.5);
+    box-shadow: 0 0 3px rgba(255,255,255,.2);
+    z-index:2;
+}
+.lbt-l { left:calc(50% - 7px); }
+.lbt-r { left:calc(50% + 7px); }
+
+.level-bar-bubble {
+    position:absolute;
+    width:16px; height:16px;
+    top:50%; margin-top:-8px;
+    border-radius:50%;
+    background: radial-gradient(circle at 38% 35%, #ff9a6c 0%, var(--orange) 45%, var(--orange-dark) 100%);
+    box-shadow:
+        0 0 10px rgba(255,107,53,.55),
+        0 2px 6px rgba(0,0,0,.3),
+        inset 0 1px 2px rgba(255,255,255,.35);
+    z-index:3;
+    animation: lvrSlideBounce 1.6s cubic-bezier(.2,.8,.2,1) .25s both;
+}
+
+@keyframes lvrSlideBounce {
+    0%   { left:152px; }
+    45%  { left:84px; }
+    72%  { left:96px; }
+    100% { left:92px; }
+}
+
+.loader-tagline {
+    font-size:10px; font-weight:600;
+    letter-spacing:3.5px; text-transform:uppercase;
+    color:rgba(255,255,255,.4);
+}
