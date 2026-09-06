@@ -501,16 +501,18 @@
         /* Eyebrow, clears the fixed navbar */
         .hiw-top {
             height: auto;
-            padding: calc(var(--nav-h, 96px) + 20px) 24px 0;
+            padding: calc(var(--nav-h, 96px) + 8px) 24px 0;
         }
 
-        /* Badge → visual → heading/description, stacked in normal flow */
+        /* Badge → visual → heading/description, stacked in normal flow.
+           Small top padding keeps the badge close under the eyebrow instead of
+           floating in a big gap, and lifts the whole block up a bit overall. */
         .hiw-layout {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 16px;
-            padding: 20px 24px 40px;
+            padding: 6px 24px 40px;
             max-width: 480px;
             margin: 0 auto;
             width: 100%;
@@ -570,10 +572,12 @@
         .hiw-invoice-card { padding: 12px 14px; min-height: 0; }
 
         /* Nav flows normally right after the content — no position:absolute, so there is no
-           "bottom of what" question and nothing for a resizing viewport to knock loose. */
+           "bottom of what" question and nothing for a resizing viewport to knock loose.
+           Extra 30px of bottom padding clears Safari's own bottom URL bar, which otherwise
+           sits right on top of the arrows. */
         .hiw-nav {
             position: static;
-            padding: 4px 24px 32px;
+            padding: 4px 24px 62px;
         }
     }
 
