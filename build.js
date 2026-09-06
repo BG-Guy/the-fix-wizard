@@ -1,7 +1,8 @@
 const fs   = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-const { generate: generateLocations } = require('./generate-locations');
+const { generate: generateLocations }     = require('./generate-locations');
+const { generate: generateServicePages }  = require('./generate-service-pages');
 
 const PARTIALS = path.join(__dirname, 'partials');
 const OUTPUT   = path.join(__dirname, 'index.html');
@@ -20,7 +21,10 @@ console.log(`✓ index.html assembled (${order.length} partials)`);
 // 2. Generate location pages
 generateLocations();
 
-// 3. Compile Tailwind
+// 3. Generate service hub + detail pages
+generateServicePages();
+
+// 4. Compile Tailwind
 try {
   execSync('./node_modules/.bin/tailwind -i css/input.css -o css/tw.css', { stdio: 'inherit' });
   console.log('✓ css/tw.css compiled');

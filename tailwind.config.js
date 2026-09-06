@@ -12,6 +12,10 @@ module.exports = {
     './chimney-services-*/**/*.html',
     './handyman-services-*/**/*.html',
     './generate-locations.js',
+    './generate-service-pages.js',
+    './handyman-services-near-*/**/*.html',
+    './chimney-services-near-*/**/*.html',
+    './*-near-*/**/*.html',
   ],
   safelist: [],
   theme: {
