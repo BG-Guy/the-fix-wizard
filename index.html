@@ -1008,8 +1008,6 @@
             scroll-snap-align: center;
         }
         .hiw-phone-wrap { display: none; }
-        /* Arrows removed in favor of swiping — dots (still clickable) remain as the indicator. */
-        .hiw-nav-btn { display: none; }
         .hiw-mobile-visual {
             display: flex;
             width: 100%;
@@ -1030,15 +1028,22 @@
         .hiw-msg-timestamp { font-size: 9px; }
         .hiw-invoice-card { padding: 12px 14px; min-height: 0; }
 
-        /* Dots sit right under the visual now (order: 4, between the swipe hint and the
-           heading) instead of at the end of the block — they're no longer the last thing
-           on screen, so they don't need the old Safari-URL-bar bottom clearance; the arrow
-           buttons inside are hidden on mobile anyway (see .hiw-nav-btn above). */
+        /* Dots (and the prev/next arrows) sit right under the visual now (order: 4, between
+           the swipe hint and the heading) instead of at the end of the block — they're no
+           longer the last thing on screen, so they don't need the old Safari-URL-bar bottom
+           clearance. */
         .hiw-nav {
             order: 4;
             position: static;
             width: 100%;
             padding: 0;
+            gap: 14px;
+        }
+        .hiw-nav-btn {
+            width: 38px;
+            height: 38px;
+            font-size: 12px;
+            flex-shrink: 0;
         }
     }
 
