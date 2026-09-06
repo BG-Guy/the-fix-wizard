@@ -614,7 +614,6 @@
         font-size: 26px;
         z-index: 30;
         backdrop-filter: blur(12px);
-        animation: iphoneFloat 5s 2.5s ease-in-out infinite;
         box-shadow: 0 8px 28px rgba(0,0,0,0.35);
     }
 
@@ -631,11 +630,6 @@
             0 0 0 10.5px rgba(255,255,255,0.06),
             0 40px 80px rgba(0,0,0,0.7),
             0 0 60px rgba(255,107,53,0.07);
-        animation: iphoneFloat 5s ease-in-out infinite;
-    }
-    @keyframes iphoneFloat {
-        0%, 100% { transform: translateY(0px); }
-        50%       { transform: translateY(-10px); }
     }
     .hiw-iphone::before {
         content: '';
@@ -715,7 +709,6 @@
         border-radius: 26px;
         overflow: hidden;
         box-shadow: 0 20px 45px rgba(0,0,0,0.5);
-        animation: iphoneFloat 5s ease-in-out infinite;
         font-family: Inter, -apple-system, sans-serif;
     }
     .hiw-msg-statusbar {
@@ -813,7 +806,6 @@
         box-shadow: 0 20px 45px rgba(0,0,0,0.45);
         color: #241a12;
         text-align: left;
-        animation: iphoneFloat 5s ease-in-out infinite;
     }
     .hiw-invoice-head {
         display: flex;
@@ -912,8 +904,15 @@
     @media (max-width: 767px) {
         #how-it-works {
             width: 100vw;
-            height: 100svh;
-            min-height: 100svh;
+            /* var(--hiw-vh) is a JS-measured, debounced window.innerHeight (px) set below.
+               100svh is guaranteed stable only at rest — mid-scroll, while Safari's toolbar
+               is actively collapsing/expanding, some WebKit versions re-run layout against
+               the in-between viewport size instead of jumping straight to the settled
+               small-viewport value, which visibly jostles anything sized/pinned against it
+               (the nav row's bottom:0, the 1fr visual row). Pinning to a value we only update
+               once scrolling/resizing has quieted down avoids that. */
+            height: var(--hiw-vh, 100svh);
+            min-height: var(--hiw-vh, 100svh);
             padding-bottom: 0;
         }
 
@@ -1040,7 +1039,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-        .hiw-iphone, .hiw-step-bubble { animation: none; }
         .hiw-heading-text, .hiw-desc, .hiw-bg { transition: none; transform: none; }
     }
     </style>
@@ -1081,6 +1079,20 @@
 
     <script>
     (function () {
+        /* Pin #how-it-works's mobile height to a settled window.innerHeight reading
+           (--hiw-vh) instead of trusting 100svh to stay put while Safari's toolbar is
+           actively animating. Set immediately on load, then only ever updated again
+           after resize events have been quiet for 200ms — never mid-animation. */
+        var vhResizeTimer = null;
+        function setHiwVh() {
+            document.documentElement.style.setProperty('--hiw-vh', window.innerHeight + 'px');
+        }
+        setHiwVh();
+        window.addEventListener('resize', function () {
+            clearTimeout(vhResizeTimer);
+            vhResizeTimer = setTimeout(setHiwVh, 200);
+        });
+
         var steps = [
             {
                 num: '01', icon: 'fa-phone', iconColor: '#FF6B35',
