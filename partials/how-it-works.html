@@ -488,8 +488,15 @@
     @media (max-width: 767px) {
         #how-it-works {
             width: 100vw;
-            height: 100svh;
-            min-height: 100svh;
+            /* var(--hiw-vh) is a JS-measured, debounced window.innerHeight (px) set below.
+               100svh is guaranteed stable only at rest — mid-scroll, while Safari's toolbar
+               is actively collapsing/expanding, some WebKit versions re-run layout against
+               the in-between viewport size instead of jumping straight to the settled
+               small-viewport value, which visibly jostles anything sized/pinned against it
+               (the nav row's bottom:0, the 1fr visual row). Pinning to a value we only update
+               once scrolling/resizing has quieted down avoids that. */
+            height: var(--hiw-vh, 100svh);
+            min-height: var(--hiw-vh, 100svh);
             padding-bottom: 0;
         }
 
@@ -657,6 +664,20 @@
 
     <script>
     (function () {
+        /* Pin #how-it-works's mobile height to a settled window.innerHeight reading
+           (--hiw-vh) instead of trusting 100svh to stay put while Safari's toolbar is
+           actively animating. Set immediately on load, then only ever updated again
+           after resize events have been quiet for 200ms — never mid-animation. */
+        var vhResizeTimer = null;
+        function setHiwVh() {
+            document.documentElement.style.setProperty('--hiw-vh', window.innerHeight + 'px');
+        }
+        setHiwVh();
+        window.addEventListener('resize', function () {
+            clearTimeout(vhResizeTimer);
+            vhResizeTimer = setTimeout(setHiwVh, 200);
+        });
+
         var steps = [
             {
                 num: '01', icon: 'fa-phone', iconColor: '#FF6B35',
