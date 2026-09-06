@@ -925,16 +925,18 @@
         /* Eyebrow, clears the fixed navbar */
         .hiw-top {
             height: auto;
-            padding: calc(var(--nav-h, 96px) + 20px) 24px 0;
+            padding: calc(var(--nav-h, 96px) + 8px) 24px 0;
         }
 
-        /* Badge → visual → heading/description, stacked in normal flow */
+        /* Badge → visual → heading/description, stacked in normal flow.
+           Small top padding keeps the badge close under the eyebrow instead of
+           floating in a big gap, and lifts the whole block up a bit overall. */
         .hiw-layout {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 16px;
-            padding: 20px 24px 40px;
+            padding: 6px 24px 40px;
             max-width: 480px;
             margin: 0 auto;
             width: 100%;
@@ -948,12 +950,21 @@
             font-size: 18px;
         }
 
+        /* Swipeable instead of arrow-driven: each slide is a full-width flex item that
+           snaps into place, and native touch scrolling replaces the prev/next buttons. */
         .hiw-phone-col {
             order: 2;
             width: 100%;
             min-height: 230px; /* comfortably fits the tallest card — a plain pixel value, not tied to the viewport */
             position: relative;
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
+        .hiw-phone-col::-webkit-scrollbar { display: none; }
 
         .hiw-text-col {
             order: 3;
@@ -968,11 +979,22 @@
         .hiw-heading-text { font-size: clamp(20px, 5.5vw, 30px); }
         .hiw-desc { max-width: 100%; font-size: 13px; line-height: 1.55; }
 
-        /* Slides stay absolutely stacked inside .hiw-phone-col (a normal-flow, fixed-min-height
-           box) purely so the step visuals can crossfade — this has nothing to do with the
-           viewport, it's the same self-contained technique the heading/description use. */
-        .hiw-slide { justify-content: center; align-items: center; }
+        /* Each slide is a full-width, always-visible flex item (not the absolute-stacked
+           crossfade used on desktop) — .hiw-phone-col's native horizontal scroll/snap is
+           what moves between them, so there's nothing here to fade. */
+        .hiw-slide {
+            position: relative;
+            inset: auto;
+            flex: 0 0 100%;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            pointer-events: auto;
+            scroll-snap-align: center;
+        }
         .hiw-phone-wrap { display: none; }
+        /* Arrows removed in favor of swiping — dots (still clickable) remain as the indicator. */
+        .hiw-nav-btn { display: none; }
         .hiw-mobile-visual {
             display: flex;
             width: 100%;
@@ -994,10 +1016,12 @@
         .hiw-invoice-card { padding: 12px 14px; min-height: 0; }
 
         /* Nav flows normally right after the content — no position:absolute, so there is no
-           "bottom of what" question and nothing for a resizing viewport to knock loose. */
+           "bottom of what" question and nothing for a resizing viewport to knock loose.
+           Extra 30px of bottom padding clears Safari's own bottom URL bar, which otherwise
+           sits right on top of the arrows. */
         .hiw-nav {
             position: static;
-            padding: 4px 24px 32px;
+            padding: 4px 24px 62px;
         }
     }
 
@@ -1359,9 +1383,21 @@
             sync();
         }
 
+        function isMobile() {
+            return window.matchMedia('(max-width: 767px)').matches;
+        }
+
         function goTo(idx) {
             if (idx === current || busy) return;
             busy = true;
+
+            /* On mobile the visual is a native horizontal scroller, not a JS crossfade —
+               a dot click (or a keyboard arrow) needs to scroll it into place. A user swipe
+               has usually already gotten there via scroll-snap; this is then a harmless
+               no-op (same position), not a fight with the gesture. */
+            if (isMobile() && phoneCol) {
+                phoneCol.scrollTo({ left: idx * phoneCol.clientWidth, behavior: 'smooth' });
+            }
 
             var next = steps[idx];
 
@@ -1430,6 +1466,21 @@
 
         prevBtn.addEventListener('click', function () { goTo(current - 1); });
         nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+        /* Mobile: swiping the visual is the primary way to move between steps now.
+           Debounced so it commits once the snap settles, not on every scroll tick. */
+        var phoneScrollTimer = null;
+        phoneCol.addEventListener('scroll', function () {
+            if (!isMobile()) return;
+            clearTimeout(phoneScrollTimer);
+            phoneScrollTimer = setTimeout(function () {
+                var w = phoneCol.clientWidth;
+                if (!w) return;
+                var idx = Math.round(phoneCol.scrollLeft / w);
+                idx = Math.max(0, Math.min(steps.length - 1, idx));
+                goTo(idx);
+            }, 120);
+        });
 
         document.getElementById('how-it-works').addEventListener('keydown', function (e) {
             if (e.key === 'ArrowLeft')  goTo(current - 1);
