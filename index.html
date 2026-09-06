@@ -900,80 +900,77 @@
     .hiw-dot.active { width: 24px; background: #FF6B35; }
     .hiw-dot:hover:not(.active) { background: rgba(255,255,255,0.4); }
 
-    /* ── Phone (≤ 767px) — CSS grid layout, step visuals, no iPhone mockup ── */
+    /* ── Phone (≤ 767px) ──
+       Deliberately NOT locked to the viewport height (100svh/100dvh) and nothing here is
+       position:absolute/fixed against it. Every previous mobile bug in this section traced
+       back to that: Safari's dynamic toolbar changes the visual viewport height mid-scroll,
+       and anything sized or pinned against it (a 100svh section, a grid's 1fr row, a
+       position:absolute nav bar) visibly jostled as a result — patching the symptom each
+       time (debouncing, measuring a "settled" height) never fully closed it out. Letting the
+       section size itself normally from its content, with the nav flowing in normal
+       document order right after the visual instead of pinned to a computed bottom edge,
+       removes the dependency on viewport height entirely — there is nothing here for the
+       toolbar's animation to disturb. */
     @media (max-width: 767px) {
         #how-it-works {
-            width: 100vw;
-            /* var(--hiw-vh) is a JS-measured, debounced window.innerHeight (px) set below.
-               100svh is guaranteed stable only at rest — mid-scroll, while Safari's toolbar
-               is actively collapsing/expanding, some WebKit versions re-run layout against
-               the in-between viewport size instead of jumping straight to the settled
-               small-viewport value, which visibly jostles anything sized/pinned against it
-               (the nav row's bottom:0, the 1fr visual row). Pinning to a value we only update
-               once scrolling/resizing has quieted down avoids that. */
-            height: var(--hiw-vh, 100svh);
-            min-height: var(--hiw-vh, 100svh);
+            width: 100%;
             padding-bottom: 0;
         }
 
-        /* Grid: [eyebrow row 1] [badge row 2] [text row 3] [visual row 4 — 1fr] + nav absolute at bottom */
         .hiw-inner {
-            height: 100%;
-            display: grid;
-            grid-template-rows: auto auto auto 1fr;
-            row-gap: 12px;
-            padding-bottom: 76px; /* clears the absolute .hiw-nav */
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Row 1 — eyebrow, clears the fixed navbar */
+        /* Eyebrow, clears the fixed navbar */
         .hiw-top {
-            grid-row: 1;
             height: auto;
-            padding: calc(var(--nav-h, 96px) + 2px) 24px 0;
+            padding: calc(var(--nav-h, 96px) + 20px) 24px 0;
         }
 
-        /* hiw-layout becomes invisible to layout — its children join hiw-inner's grid */
+        /* Badge → visual → heading/description, stacked in normal flow */
         .hiw-layout {
-            display: contents;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px 40px;
+            max-width: 480px;
+            margin: 0 auto;
+            width: 100%;
         }
 
-        /* Row 2 — badge, just below eyebrow */
         .hiw-step-badge {
-            grid-row: 2;
             position: static;
+            order: 1;
             width: 44px;
             height: 44px;
             font-size: 18px;
-            justify-self: center;
-            align-self: center;
         }
 
-        /* Row 3 — heading + description */
+        .hiw-phone-col {
+            order: 2;
+            width: 100%;
+            min-height: 230px; /* comfortably fits the tallest card — a plain pixel value, not tied to the viewport */
+            position: relative;
+        }
+
         .hiw-text-col {
-            grid-row: 3;
+            order: 3;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 8px;
-            padding: 0 24px;
             text-align: center;
             width: 100%;
         }
 
-        /* Row 4 — visual fills all remaining space (1fr) */
-        .hiw-phone-col {
-            grid-row: 4;
-            width: 100%;
-            min-height: 0;
-            position: relative;
-            overflow: hidden;
-        }
-
         .hiw-heading-text { font-size: clamp(20px, 5.5vw, 30px); }
-        .hiw-desc { max-width: 100%; font-size: 13px; line-height: 1.55; min-height: 0; }
+        .hiw-desc { max-width: 100%; font-size: 13px; line-height: 1.55; }
 
-        /* Slides (still absolute inside phone-col) — center the mobile visual */
+        /* Slides stay absolutely stacked inside .hiw-phone-col (a normal-flow, fixed-min-height
+           box) purely so the step visuals can crossfade — this has nothing to do with the
+           viewport, it's the same self-contained technique the heading/description use. */
         .hiw-slide { justify-content: center; align-items: center; }
         .hiw-phone-wrap { display: none; }
         .hiw-mobile-visual {
@@ -985,7 +982,7 @@
             padding: 0 20px;
         }
 
-        /* Compact message card so it fits within the 1fr visual row */
+        /* Compact message/invoice cards for the narrower column */
         .hiw-msg-statusbar { padding: 7px 14px 2px; font-size: 11px; }
         .hiw-msg-head { padding: 3px 14px 7px; gap: 3px; }
         .hiw-msg-avatar { width: 28px; height: 28px; font-size: 12px; }
@@ -996,7 +993,12 @@
         .hiw-msg-timestamp { font-size: 9px; }
         .hiw-invoice-card { padding: 12px 14px; min-height: 0; }
 
-        .hiw-nav { padding: 12px 24px 16px; }
+        /* Nav flows normally right after the content — no position:absolute, so there is no
+           "bottom of what" question and nothing for a resizing viewport to knock loose. */
+        .hiw-nav {
+            position: static;
+            padding: 4px 24px 32px;
+        }
     }
 
     /* ── Tablet / iPad mini and up (768px–1023px) — show iPhone mockup ── */
@@ -1079,20 +1081,6 @@
 
     <script>
     (function () {
-        /* Pin #how-it-works's mobile height to a settled window.innerHeight reading
-           (--hiw-vh) instead of trusting 100svh to stay put while Safari's toolbar is
-           actively animating. Set immediately on load, then only ever updated again
-           after resize events have been quiet for 200ms — never mid-animation. */
-        var vhResizeTimer = null;
-        function setHiwVh() {
-            document.documentElement.style.setProperty('--hiw-vh', window.innerHeight + 'px');
-        }
-        setHiwVh();
-        window.addEventListener('resize', function () {
-            clearTimeout(vhResizeTimer);
-            vhResizeTimer = setTimeout(setHiwVh, 200);
-        });
-
         var steps = [
             {
                 num: '01', icon: 'fa-phone', iconColor: '#FF6B35',
