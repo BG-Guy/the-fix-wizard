@@ -455,34 +455,35 @@ function detailPage(loc, svc, type) {
                     </li>`
   ).join('\n                        ');
 
+  const r = s => s ? s.replace(/\{cityState\}/g, cityState).replace(/\{city\}/g, loc.city).replace(/\{state\}/g, loc.state) : s;
   const contentHtml = content ? `
                 <div class="space-y-10">
                     <div>
                         <h2 class="text-[22px] font-bold text-navy-900 mb-4 flex items-center gap-3">
                             <span class="w-8 h-8 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-circle-question text-orange text-[14px]"></i></span>
-                            ${content.h2_why_need || `Why You Need It in ${loc.city}`}
+                            ${r(content.h2_why_need) || `Why You Need It in ${loc.city}`}
                         </h2>
-                        <p class="text-slate-600 leading-relaxed text-[15px]">${content.why_need}</p>
+                        <p class="text-slate-600 leading-relaxed text-[15px]">${r(content.why_need)}</p>
                     </div>
                     <div>
                         <h2 class="text-[22px] font-bold text-navy-900 mb-4 flex items-center gap-3">
                             <span class="w-8 h-8 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-star text-orange text-[14px]"></i></span>
-                            ${content.h2_benefits || 'What to Expect'}
+                            ${r(content.h2_benefits) || 'What to Expect'}
                         </h2>
-                        <p class="text-slate-600 leading-relaxed text-[15px]">${content.benefits}</p>
+                        <p class="text-slate-600 leading-relaxed text-[15px]">${r(content.benefits)}</p>
                     </div>
                     <div>
                         <h2 class="text-[22px] font-bold text-navy-900 mb-4 flex items-center gap-3">
                             <span class="w-8 h-8 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-calendar-check text-orange text-[14px]"></i></span>
-                            ${content.h2_longevity || 'How Long Does It Last?'}
+                            ${r(content.h2_longevity) || 'How Long Does It Last?'}
                         </h2>
-                        <p class="text-slate-600 leading-relaxed text-[15px]">${content.longevity}</p>
+                        <p class="text-slate-600 leading-relaxed text-[15px]">${r(content.longevity)}</p>
                     </div>
                     <div class="rounded-xl p-6 border-l-4 border-orange" style="background:#fff8f5">
                         <h2 class="text-[20px] font-bold text-navy-900 mb-3 flex items-center gap-3">
-                            <i class="fas fa-triangle-exclamation text-orange"></i> ${content.h2_consequences || 'The Cost of Waiting'}
+                            <i class="fas fa-triangle-exclamation text-orange"></i> ${r(content.h2_consequences) || 'The Cost of Waiting'}
                         </h2>
-                        <p class="text-slate-600 leading-relaxed text-[15px]">${content.consequences}</p>
+                        <p class="text-slate-600 leading-relaxed text-[15px]">${r(content.consequences)}</p>
                     </div>
                 </div>` : `
                 <p class="text-slate-600 leading-relaxed text-[15px]">${svc.desc}</p>`;
