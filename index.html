@@ -577,6 +577,9 @@
         min-height: 560px; /* prevents collapse — slides are all absolute */
     }
 
+    /* Swipe hint — mobile-only, shown below the visual */
+    .hiw-swipe-hint { display: none; }
+
     /* Each slide is absolute and overlaps */
     .hiw-slide {
         position: absolute;
@@ -966,8 +969,20 @@
         }
         .hiw-phone-col::-webkit-scrollbar { display: none; }
 
-        .hiw-text-col {
+        .hiw-swipe-hint {
             order: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin: -6px 0 0;
+            font-family: Inter, sans-serif;
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .hiw-text-col {
+            order: 4;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1088,6 +1103,7 @@
                     </div>
                 </div>
                 <div class="hiw-phone-col" id="hiwPhoneCol"></div>
+                <p class="hiw-swipe-hint"><i class="fas fa-arrows-left-right"></i> Swipe to see more</p>
                 <span class="hiw-step-badge" id="hiwStepBadge">01</span>
             </div>
 
