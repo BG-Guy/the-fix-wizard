@@ -1327,10 +1327,10 @@
 
         /* IntersectionObserver — strip navbar bg + hide sticky CTA while section is in view.
            Debounced: on mobile the browser's address bar shows/hides during scroll, which
-           changes the visual viewport height (and this section's own 100svh height) mid-scroll
-           and can flip the 0.6 ratio threshold several times in a fraction of a second. Applying
-           every flip immediately made the navbar/CTA visibly strobe; only committing the state
-           once it holds for a moment fixes that without adding noticeable lag. */
+           changes the visual viewport height mid-scroll and can flip the 0.6 ratio threshold
+           several times in a fraction of a second. Applying every flip immediately made the
+           navbar/CTA visibly strobe; only committing the state once it holds for a moment
+           fixes that without adding noticeable lag. */
         var navToggleTimer = null;
         var sectionObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
