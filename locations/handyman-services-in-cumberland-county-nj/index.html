@@ -13,14 +13,91 @@
     <title>Handyman Services in Cumberland County, NJ | The Fix Wizard</title>
     <link rel="stylesheet" href="../../css/tw.css">
     <link rel="stylesheet" href="../../css/custom.css">
-    <script type="application/ld+json">{
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Handyman Services",
-      "provider": {"@type": "LocalBusiness", "name": "The Fix Wizard"},
-      "areaServed": {"@type": "AdministrativeArea", "name": "Cumberland County, New Jersey"},
-      "description": "Expert handyman services in Cumberland County, NJ. Licensed & insured technicians serving Vineland, Bridgeton, Millville, Commercial Twp and surrounding areas. Free estimate — same-day available."
-    }</script>
+    <script type="application/ld+json">[
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Handyman Services",
+        "provider": {"@type": "LocalBusiness", "name": "The Fix Wizard"},
+        "areaServed": {"@type": "AdministrativeArea", "name": "Cumberland County, New Jersey"},
+        "description": "Expert handyman services in Cumberland County, NJ. Licensed & insured technicians serving Vineland, Bridgeton, Millville, Commercial Twp and surrounding areas. Free estimate — same-day available."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What handyman services do you offer in Cumberland County?", "acceptedAnswer": {"@type": "Answer", "text": "Drywall patching, painting, door repair, furniture assembly, TV mounting, light electrical and plumbing, and general home maintenance — one call covers your whole repair list."}},
+          {"@type": "Question", "name": "Can you handle multiple jobs in one visit?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — combining tasks like drywall patching with paint touch-ups, or outlet replacement with fan installation, is the most efficient way to use one appointment."}},
+          {"@type": "Question", "name": "What towns in Cumberland County do you serve for handyman services?", "acceptedAnswer": {"@type": "Answer", "text": "We serve every town, township, and borough across Cumberland County, including Vineland, Bridgeton, Millville, Commercial Twp. If you're unsure whether we cover your specific area, call us — we almost certainly do."}}
+        ]
+      }
+    ]</script>
+
+<style id="bubble-styles">
+@keyframes bubble-float {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-6px); }
+}
+.svc-bubble {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; border: 2px solid #e8edf5; border-radius: 100px;
+  padding: 10px 18px 10px 13px; font-size: 13.5px; font-weight: 500;
+  color: #1e2d5a; cursor: pointer; user-select: none;
+  animation: bubble-float var(--dur,3.8s) ease-in-out var(--delay,0s) infinite;
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1),
+              opacity .2s ease, border-color .15s ease,
+              box-shadow .15s ease, background .15s ease;
+  will-change: transform, opacity;
+}
+.svc-bubble:hover {
+  border-color: #FF6B35; background: #fff7f4;
+  box-shadow: 0 8px 24px rgba(255,107,53,.18);
+  animation-play-state: paused;
+  transform: translateY(-4px) scale(1.05) !important;
+}
+.svc-bubble.b-hide {
+  transform: scale(0) !important; opacity: 0 !important;
+  pointer-events: none; animation: none !important;
+}
+.svc-bubble .b-icon { font-size: 11px; color: #FF6B35; flex-shrink: 0; }
+.svc-category.c-hide { display: none; }
+.bubbles-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.cat-hdr { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.cat-hdr-icon {
+  width: 30px; height: 30px; background: rgba(255,107,53,.1);
+  border-radius: 9px; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0;
+}
+.cat-hdr-icon i { color: #FF6B35; font-size: 12px; }
+.cat-hdr-label {
+  font-size: 11px; font-weight: 800; color: #0d1b4b;
+  text-transform: uppercase; letter-spacing: .1em; white-space: nowrap;
+}
+.cat-hdr-line { flex: 1; height: 1px; background: #eef1f7; }
+.srch-wrap { position: relative; display: flex; align-items: center; }
+.srch-icon { position: absolute; left: 17px; color: #94a3b8; font-size: 15px; pointer-events: none; }
+.srch-input {
+  width: 100%; padding: 15px 50px 15px 46px;
+  border: 2px solid #e2e8f0; border-radius: 18px;
+  font-size: 15px; font-weight: 500; color: #0d1b4b;
+  font-family: Inter, sans-serif; outline: none; background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+.srch-input:focus { border-color: #FF6B35; box-shadow: 0 0 0 4px rgba(255,107,53,.1); }
+.srch-input::placeholder { color: #94a3b8; }
+.srch-clear {
+  position: absolute; right: 16px; width: 26px; height: 26px;
+  background: #f1f5f9; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #64748b; font-size: 11px; cursor: pointer;
+  opacity: 0; pointer-events: none; transition: opacity .15s, background .15s;
+}
+.srch-clear.show { opacity: 1; pointer-events: all; }
+.srch-clear:hover { background: #FF6B35; color: #fff; }
+.srch-hint { text-align: center; font-size: 13px; color: #94a3b8; margin-top: 10px; min-height: 18px; }
+.srch-none { text-align: center; font-size: 15px; color: #64748b; padding: 40px 0; display: none; }
+.srch-none button { color: #FF6B35; font-weight: 600; background: none; border: none; cursor: pointer; margin-left: 4px; }
+</style>
 </head>
 <body>
 
@@ -35,12 +112,8 @@
                 <li class="nav-dropdown">
                     <a href="../../locations/" class="nav-link flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
                     <div class="nav-dropdown-menu">
-                        <a href="/locations/handyman-services-in-hudson-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Jersey City</a>
-                        <a href="/locations/handyman-services-in-essex-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Newark</a>
-                        <a href="/locations/handyman-services-in-hudson-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Hoboken</a>
-                        <a href="/locations/handyman-services-in-bergen-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Hackensack</a>
-                        <a href="/locations/handyman-services-in-somerset-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Bridgewater</a>
-                        <a href="/locations/handyman-services-in-morris-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Morristown</a>
+                        <a href="../../new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
+                        <a href="../../cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
                         <div class="nav-dropdown-divider"></div>
                         <a href="../../locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
                     </div>
@@ -66,7 +139,8 @@
             <li><a href="../../#contact" class="mobile-link">Contact</a></li>
             <li>
                 <span class="mobile-loc-label">Locations</span>
-                <a href="../../new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> North New Jersey &mdash; Jersey City</a>
+                <a href="../../new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> New Jersey</a>
+                <a href="../../cleveland-ohio/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
                 <a href="../../locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
             </li>
         </ul>
@@ -104,6 +178,109 @@
         </div>
     </section>
 
+    <section class="sp-work-section services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Services</span>
+                <h2 class="section-title">Every Service We <span class="text-accent">Offer in Cumberland County</span></h2>
+                <p class="section-desc">All 27 services — search to find yours instantly. Same-day available, free estimates.</p>
+            </div>
+
+            <div class="max-w-[580px] mx-auto mb-12 reveal">
+                <div class="srch-wrap">
+                    <i class="fas fa-search srch-icon"></i>
+                    <input id="srch" type="text" class="srch-input" placeholder="Search services…" autocomplete="off" spellcheck="false">
+                    <div id="srch-clr" class="srch-clear" role="button" aria-label="Clear search"><i class="fas fa-times"></i></div>
+                </div>
+                <p id="srch-hint" class="srch-hint"></p>
+            </div>
+
+            <div class="flex flex-col gap-10 max-w-[960px] mx-auto">
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-tv"></i></div>
+                    <span class="cat-hdr-label">Mounting &amp; Hanging</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/tv-wall-mounting/" data-s="tv wall mounting" style="--dur:3.6s;--delay:0s"><i class="fas fa-tv b-icon"></i><span>TV Wall Mounting</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/mirror-artwork-hanging/" data-s="heavy mirror   large artwork hanging" style="--dur:4.1s;--delay:0.4s"><i class="fas fa-image b-icon"></i><span>Heavy Mirror / Large Artwork Hanging</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/picture-mirror-hanging/" data-s="picture and mirror hanging" style="--dur:3.9s;--delay:0.8s"><i class="fas fa-image b-icon"></i><span>Picture &amp; Mirror Hanging</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/blinds-curtain-rod-installation/" data-s="blinds   shades   curtain rod installation" style="--dur:4.4s;--delay:1.2s"><i class="fas fa-window-restore b-icon"></i><span>Blinds / Shades / Curtain Rod Installation</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/floating-shelves-installation/" data-s="floating shelves installation" style="--dur:3.7s;--delay:0.2s"><i class="fas fa-layer-group b-icon"></i><span>Floating Shelves Installation</span></a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-faucet"></i></div>
+                    <span class="cat-hdr-label">Minor Plumbing &amp; Bath</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/faucet-replacement/" data-s="kitchen or bathroom faucet replacement" style="--dur:4.2s;--delay:0.6s"><i class="fas fa-faucet b-icon"></i><span>Kitchen or Bathroom Faucet Replacement</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/garbage-disposal-replacement/" data-s="garbage disposal replacement" style="--dur:3.8s;--delay:1.0s"><i class="fas fa-trash-can b-icon"></i><span>Garbage Disposal Replacement</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/toilet-repair/" data-s="toilet reset   flange repair   inner components swap" style="--dur:4.5s;--delay:1.4s"><i class="fas fa-toilet b-icon"></i><span>Toilet Reset / Flange Repair / Inner Components Swap</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/bathroom-exhaust-fan/" data-s="bathroom exhaust fan replacement" style="--dur:3.6s;--delay:0s"><i class="fas fa-fan b-icon"></i><span>Bathroom Exhaust Fan Replacement</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/shower-head-grab-bar/" data-s="shower head and grab bar installation" style="--dur:4.1s;--delay:0.4s"><i class="fas fa-shower b-icon"></i><span>Shower Head &amp; Grab Bar Installation</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/tub-caulking/" data-s="tub caulking" style="--dur:3.9s;--delay:0.8s"><i class="fas fa-droplet b-icon"></i><span>Tub Caulking</span></a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-bolt"></i></div>
+                    <span class="cat-hdr-label">Minor Electrical &amp; Fixtures</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/ceiling-fan-installation/" data-s="ceiling fan installation" style="--dur:4.4s;--delay:1.2s"><i class="fas fa-fan b-icon"></i><span>Ceiling Fan Installation</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/light-fixture-installation/" data-s="standard light fixture   chandelier swap" style="--dur:3.7s;--delay:0.2s"><i class="fas fa-lightbulb b-icon"></i><span>Standard Light Fixture / Chandelier Swap</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/outlet-switch-upgrades/" data-s="outlet   switch upgrades" style="--dur:4.2s;--delay:0.6s"><i class="fas fa-plug b-icon"></i><span>Outlet / Switch Upgrades</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/video-doorbell-smart-lock/" data-s="video doorbell   smart lock installation" style="--dur:3.8s;--delay:1.0s"><i class="fas fa-bell b-icon"></i><span>Video Doorbell / Smart Lock Installation</span></a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-fill-drip"></i></div>
+                    <span class="cat-hdr-label">Carpentry, Drywall &amp; Trim</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/drywall-patching/" data-s="drywall patching" style="--dur:4.5s;--delay:1.4s"><i class="fas fa-fill-drip b-icon"></i><span>Drywall Patching</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/baseboard-molding-installation/" data-s="baseboard   shoe molding installation" style="--dur:3.6s;--delay:0s"><i class="fas fa-ruler-horizontal b-icon"></i><span>Baseboard / Shoe Molding Installation</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/cabinet-hardware-upgrade/" data-s="cabinet hinge and hardware upgrade" style="--dur:4.1s;--delay:0.4s"><i class="fas fa-screwdriver-wrench b-icon"></i><span>Cabinet Hinge &amp; Hardware Upgrade</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/cabinet-repair-replacement/" data-s="cabinet repair and replacement" style="--dur:3.9s;--delay:0.8s"><i class="fas fa-screwdriver-wrench b-icon"></i><span>Cabinet Repair &amp; Replacement</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/pet-door-installation/" data-s="pet door installation" style="--dur:4.4s;--delay:1.2s"><i class="fas fa-dog b-icon"></i><span>Pet Door Installation</span></a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-couch"></i></div>
+                    <span class="cat-hdr-label">Assembly &amp; Miscellaneous</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/furniture-assembly/" data-s="flat-pack furniture assembly" style="--dur:3.7s;--delay:0.2s"><i class="fas fa-couch b-icon"></i><span>Flat-Pack Furniture Assembly</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/attic-ladder-replacement/" data-s="attic ladder replacement" style="--dur:4.2s;--delay:0.6s"><i class="fas fa-stairs b-icon"></i><span>Attic Ladder Replacement</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/mailbox-post-installation/" data-s="mailbox and post installation" style="--dur:3.8s;--delay:1.0s"><i class="fas fa-inbox b-icon"></i><span>Mailbox &amp; Post Installation</span></a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-house-chimney-crack"></i></div>
+                    <span class="cat-hdr-label">Exterior &amp; Roofing</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/roof-leak-repair/" data-s="roof leak repair" style="--dur:4.5s;--delay:1.4s"><i class="fas fa-house-chimney-crack b-icon"></i><span>Roof Leak Repair</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/fascia-repair/" data-s="fascia repair" style="--dur:3.6s;--delay:0s"><i class="fas fa-border-top-left b-icon"></i><span>Fascia Repair</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/gutter-repair-cleaning/" data-s="gutter repair and cleaning" style="--dur:4.1s;--delay:0.4s"><i class="fas fa-tint-slash b-icon"></i><span>Gutter Repair &amp; Cleaning</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/fence-repair-installation/" data-s="fence repair and installation" style="--dur:3.9s;--delay:0.8s"><i class="fas fa-border-all b-icon"></i><span>Fence Repair &amp; Installation</span></a>
+                </div>
+            </div>
+            </div>
+            <div id="srch-none" class="srch-none">No services match your search.<button id="srch-none-clr">Clear search</button></div>
+        </div>
+    </section>
     <section class="area-content">
         <div class="container">
             <div class="area-layout">
@@ -200,6 +377,30 @@
         </div>
     </section>
 
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Q&amp;A</span>
+                <h2 class="section-title">Handyman Services <span class="text-accent">Questions</span></h2>
+                <p class="section-desc">What Cumberland County homeowners ask most before booking handyman services.</p>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>What handyman services do you offer in Cumberland County?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Drywall patching, painting, door repair, furniture assembly, TV mounting, light electrical and plumbing, and general home maintenance — one call covers your whole repair list.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>Can you handle multiple jobs in one visit?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Yes — combining tasks like drywall patching with paint touch-ups, or outlet replacement with fan installation, is the most efficient way to use one appointment.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>What towns in Cumberland County do you serve for handyman services?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>We serve every town, township, and borough across Cumberland County, including Vineland, Bridgeton, Millville, Commercial Twp. If you're unsure whether we cover your specific area, call us — we almost certainly do.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-banner">
         <div class="container cta-inner reveal">
             <div class="cta-text">
@@ -228,8 +429,8 @@
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="../../new-jersey/chimney/">Chimney &amp; Masonry</a></li>
-                    <li><a href="../../new-jersey/handyman/">Handyman Services</a></li>
+                    <li><a href="../../chimney-masonry-new-jersey/">Chimney &amp; Masonry</a></li>
+                    <li><a href="../../handyman-services-new-jersey/">Handyman Services</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -245,7 +446,7 @@
                 <h4>Contact</h4>
                 <ul class="footer-contact">
                     <li><i class="fas fa-phone"></i><a href="tel:+15513504951">(551) 350-4951</a></li>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:office@thefixwizard.com">office@thefixwizard.com</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:hello@handypro.com">hello@handypro.com</a></li>
                     <li><i class="fas fa-clock"></i><span>Mon–Sat: 7am – 7pm</span></li>
                 </ul>
             </div>
@@ -259,5 +460,36 @@
     </footer>
 
     <script type="module" src="../../js/service-page.js"></script>
+
+<script id="bubble-search">
+(function() {
+  var inp  = document.getElementById('srch');
+  var clr  = document.getElementById('srch-clr');
+  var hint = document.getElementById('srch-hint');
+  var none = document.getElementById('srch-none');
+  var bubbles = document.querySelectorAll('.svc-bubble');
+  var cats    = document.querySelectorAll('.svc-category');
+  if (!inp) return;
+  function run(q) {
+    q = q.toLowerCase().trim();
+    var shown = 0;
+    bubbles.forEach(function(b) {
+      var match = !q || b.dataset.s.includes(q);
+      b.classList.toggle('b-hide', !match);
+      if (match) shown++;
+    });
+    cats.forEach(function(c) {
+      var any = Array.from(c.querySelectorAll('.svc-bubble')).some(function(b) { return !b.classList.contains('b-hide'); });
+      c.classList.toggle('c-hide', !any);
+    });
+    clr.classList.toggle('show', q.length > 0);
+    hint.textContent = q ? (shown + ' service' + (shown !== 1 ? 's' : '') + ' found') : '';
+    none.style.display = (q && shown === 0) ? 'block' : 'none';
+  }
+  inp.addEventListener('input', function() { run(inp.value); });
+  clr.addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+  document.getElementById('srch-none-clr').addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+})();
+</script>
 </body>
 </html>

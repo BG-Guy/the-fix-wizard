@@ -13,14 +13,91 @@
     <title>Chimney Repair in Monmouth County, NJ | The Fix Wizard</title>
     <link rel="stylesheet" href="../../css/tw.css">
     <link rel="stylesheet" href="../../css/custom.css">
-    <script type="application/ld+json">{
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Chimney Repair",
-      "provider": {"@type": "LocalBusiness", "name": "The Fix Wizard"},
-      "areaServed": {"@type": "AdministrativeArea", "name": "Monmouth County, New Jersey"},
-      "description": "Expert chimney repair in Monmouth County, NJ. Licensed & insured technicians serving Red Bank, Freehold, Asbury Park, Middletown and surrounding areas. Free estimate — same-day available."
-    }</script>
+    <script type="application/ld+json">[
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Chimney Repair",
+        "provider": {"@type": "LocalBusiness", "name": "The Fix Wizard"},
+        "areaServed": {"@type": "AdministrativeArea", "name": "Monmouth County, New Jersey"},
+        "description": "Expert chimney repair in Monmouth County, NJ. Licensed & insured technicians serving Red Bank, Freehold, Asbury Park, Middletown and surrounding areas. Free estimate — same-day available."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "How often should I have my chimney swept in Monmouth County?", "acceptedAnswer": {"@type": "Answer", "text": "Most chimney safety organizations recommend annual sweeping and inspection before each heating season. Homes that burn wood regularly may need sweeping twice a year, and even gas appliances need an annual check."}},
+          {"@type": "Question", "name": "What is tuckpointing and do I need it?", "acceptedAnswer": {"@type": "Answer", "text": "Tuckpointing is grinding out deteriorated mortar joints and packing in fresh mortar. If you see gaps, crumbling, or missing mortar between bricks — common in Monmouth County's older homes — tuckpointing is overdue."}},
+          {"@type": "Question", "name": "What towns in Monmouth County do you serve for chimney repair?", "acceptedAnswer": {"@type": "Answer", "text": "We serve every town, township, and borough across Monmouth County, including Red Bank, Freehold, Asbury Park, Middletown. If you're unsure whether we cover your specific area, call us — we almost certainly do."}}
+        ]
+      }
+    ]</script>
+
+<style id="bubble-styles">
+@keyframes bubble-float {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-6px); }
+}
+.svc-bubble {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; border: 2px solid #e8edf5; border-radius: 100px;
+  padding: 10px 18px 10px 13px; font-size: 13.5px; font-weight: 500;
+  color: #1e2d5a; cursor: pointer; user-select: none;
+  animation: bubble-float var(--dur,3.8s) ease-in-out var(--delay,0s) infinite;
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1),
+              opacity .2s ease, border-color .15s ease,
+              box-shadow .15s ease, background .15s ease;
+  will-change: transform, opacity;
+}
+.svc-bubble:hover {
+  border-color: #FF6B35; background: #fff7f4;
+  box-shadow: 0 8px 24px rgba(255,107,53,.18);
+  animation-play-state: paused;
+  transform: translateY(-4px) scale(1.05) !important;
+}
+.svc-bubble.b-hide {
+  transform: scale(0) !important; opacity: 0 !important;
+  pointer-events: none; animation: none !important;
+}
+.svc-bubble .b-icon { font-size: 11px; color: #FF6B35; flex-shrink: 0; }
+.svc-category.c-hide { display: none; }
+.bubbles-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.cat-hdr { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.cat-hdr-icon {
+  width: 30px; height: 30px; background: rgba(255,107,53,.1);
+  border-radius: 9px; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0;
+}
+.cat-hdr-icon i { color: #FF6B35; font-size: 12px; }
+.cat-hdr-label {
+  font-size: 11px; font-weight: 800; color: #0d1b4b;
+  text-transform: uppercase; letter-spacing: .1em; white-space: nowrap;
+}
+.cat-hdr-line { flex: 1; height: 1px; background: #eef1f7; }
+.srch-wrap { position: relative; display: flex; align-items: center; }
+.srch-icon { position: absolute; left: 17px; color: #94a3b8; font-size: 15px; pointer-events: none; }
+.srch-input {
+  width: 100%; padding: 15px 50px 15px 46px;
+  border: 2px solid #e2e8f0; border-radius: 18px;
+  font-size: 15px; font-weight: 500; color: #0d1b4b;
+  font-family: Inter, sans-serif; outline: none; background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+.srch-input:focus { border-color: #FF6B35; box-shadow: 0 0 0 4px rgba(255,107,53,.1); }
+.srch-input::placeholder { color: #94a3b8; }
+.srch-clear {
+  position: absolute; right: 16px; width: 26px; height: 26px;
+  background: #f1f5f9; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #64748b; font-size: 11px; cursor: pointer;
+  opacity: 0; pointer-events: none; transition: opacity .15s, background .15s;
+}
+.srch-clear.show { opacity: 1; pointer-events: all; }
+.srch-clear:hover { background: #FF6B35; color: #fff; }
+.srch-hint { text-align: center; font-size: 13px; color: #94a3b8; margin-top: 10px; min-height: 18px; }
+.srch-none { text-align: center; font-size: 15px; color: #64748b; padding: 40px 0; display: none; }
+.srch-none button { color: #FF6B35; font-weight: 600; background: none; border: none; cursor: pointer; margin-left: 4px; }
+</style>
 </head>
 <body>
 
@@ -35,12 +112,8 @@
                 <li class="nav-dropdown">
                     <a href="../../locations/" class="nav-link flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
                     <div class="nav-dropdown-menu">
-                        <a href="/locations/handyman-services-in-hudson-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Jersey City</a>
-                        <a href="/locations/handyman-services-in-essex-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Newark</a>
-                        <a href="/locations/handyman-services-in-hudson-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Hoboken</a>
-                        <a href="/locations/handyman-services-in-bergen-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Hackensack</a>
-                        <a href="/locations/handyman-services-in-somerset-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Bridgewater</a>
-                        <a href="/locations/handyman-services-in-morris-county-nj/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Morristown</a>
+                        <a href="../../new-jersey/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> New Jersey</a>
+                        <a href="../../cleveland-ohio/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
                         <div class="nav-dropdown-divider"></div>
                         <a href="../../locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
                     </div>
@@ -66,7 +139,8 @@
             <li><a href="../../#contact" class="mobile-link">Contact</a></li>
             <li>
                 <span class="mobile-loc-label">Locations</span>
-                <a href="../../new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> North New Jersey &mdash; Jersey City</a>
+                <a href="../../new-jersey/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> New Jersey</a>
+                <a href="../../cleveland-ohio/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cleveland, Ohio</a>
                 <a href="../../locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
             </li>
         </ul>
@@ -104,6 +178,82 @@
         </div>
     </section>
 
+    <section class="sp-work-section services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Services</span>
+                <h2 class="section-title">Every Service We <span class="text-accent">Offer in Monmouth County</span></h2>
+                <p class="section-desc">All 18 services — search to find yours instantly. Same-day available, free estimates.</p>
+            </div>
+
+            <div class="max-w-[580px] mx-auto mb-12 reveal">
+                <div class="srch-wrap">
+                    <i class="fas fa-search srch-icon"></i>
+                    <input id="srch" type="text" class="srch-input" placeholder="Search services…" autocomplete="off" spellcheck="false">
+                    <div id="srch-clr" class="srch-clear" role="button" aria-label="Clear search"><i class="fas fa-times"></i></div>
+                </div>
+                <p id="srch-hint" class="srch-hint"></p>
+            </div>
+
+            <div class="flex flex-col gap-10 max-w-[960px] mx-auto">
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-magnifying-glass"></i></div>
+                    <span class="cat-hdr-label">Inspections &amp; Sweep Services</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/chimney-inspection-standard-sweep/" data-s="level 1 inspection and standard sweep" style="--dur:3.6s;--delay:0s"><i class="fas fa-magnifying-glass b-icon"></i><span>Level 1 Inspection &amp; Standard Sweep</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-level-2-inspection/" data-s="level 2 inspection camera scan" style="--dur:4.1s;--delay:0.4s"><i class="fas fa-camera b-icon"></i><span>Level 2 Inspection (Camera Scan)</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/creosote-rotary-cleaning/" data-s="heavy creosote rotary cleaning" style="--dur:3.9s;--delay:0.8s"><i class="fas fa-broom b-icon"></i><span>Heavy Creosote Rotary Cleaning</span></a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-circle-dot"></i></div>
+                    <span class="cat-hdr-label">Caps, Covers &amp; Maintenance</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/chimney-cap-installation/" data-s="single-flue stainless steel cap" style="--dur:4.4s;--delay:1.2s"><i class="fas fa-circle-dot b-icon"></i><span>Single-Flue Stainless Steel Cap</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/custom-chimney-cap-installation/" data-s="multi-flue   custom top-mount cap" style="--dur:3.7s;--delay:0.2s"><i class="fas fa-layer-group b-icon"></i><span>Multi-Flue / Custom Top-Mount Cap</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/chase-cover-replacement/" data-s="chase cover replacement" style="--dur:4.2s;--delay:0.6s"><i class="fas fa-square b-icon"></i><span>Chase Cover Replacement</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-waterproofing/" data-s="chimney water repellent application" style="--dur:3.8s;--delay:1.0s"><i class="fas fa-droplet-slash b-icon"></i><span>Chimney Water Repellent Application</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-flashing-repair/" data-s="flashing repair and installation" style="--dur:4.5s;--delay:1.4s"><i class="fas fa-wrench b-icon"></i><span>Flashing Repair &amp; Installation</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-leak-repair/" data-s="chimney leak repair" style="--dur:3.6s;--delay:0s"><i class="fas fa-droplet b-icon"></i><span>Chimney Leak Repair</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-animal-removal/" data-s="animal removal" style="--dur:4.1s;--delay:0.4s"><i class="fas fa-paw b-icon"></i><span>Animal Removal</span></a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-trowel-bricks"></i></div>
+                    <span class="cat-hdr-label">Masonry &amp; Crown Repairs</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/chimney-crown-repair/" data-s="crown repair elastomeric coating" style="--dur:3.9s;--delay:0.8s"><i class="fas fa-helmet-safety b-icon"></i><span>Crown Repair (Elastomeric Coating)</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-crown-rebuild/" data-s="full chimney crown rebuild" style="--dur:4.4s;--delay:1.2s"><i class="fas fa-hat-hard b-icon"></i><span>Full Chimney Crown Rebuild</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-tuckpointing/" data-s="tuckpointing and mortar repair" style="--dur:3.7s;--delay:0.2s"><i class="fas fa-trowel-bricks b-icon"></i><span>Tuckpointing &amp; Mortar Repair</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/firebox-rebricking/" data-s="firebox re-bricking   refractory panel swap" style="--dur:4.2s;--delay:0.6s"><i class="fas fa-fire-flame-curved b-icon"></i><span>Firebox Re-bricking / Refractory Panel Swap</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/firebox-rebuild/" data-s="firebox rebuild" style="--dur:3.8s;--delay:1.0s"><i class="fas fa-fire b-icon"></i><span>Firebox Rebuild</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/smoke-chamber-parge/" data-s="smoke chamber parge" style="--dur:4.5s;--delay:1.4s"><i class="fas fa-cloud b-icon"></i><span>Smoke Chamber Parge</span></a>
+                </div>
+            </div>
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas fa-pipe"></i></div>
+                    <span class="cat-hdr-label">Components &amp; Liners</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">
+                    <a class="svc-bubble" href="../../new-jersey/chimney-damper-installation/" data-s="top-damper installation" style="--dur:3.6s;--delay:0s"><i class="fas fa-toggle-on b-icon"></i><span>Top-Damper Installation</span></a>
+                    <a class="svc-bubble" href="../../new-jersey/chimney-liner-installation/" data-s="stainless steel flue liner installation" style="--dur:4.1s;--delay:0.4s"><i class="fas fa-pipe b-icon"></i><span>Stainless Steel Flue Liner Installation</span></a>
+                </div>
+            </div>
+            </div>
+            <div id="srch-none" class="srch-none">No services match your search.<button id="srch-none-clr">Clear search</button></div>
+        </div>
+    </section>
     <section class="area-content">
         <div class="container">
             <div class="area-layout">
@@ -200,6 +350,30 @@
         </div>
     </section>
 
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Q&amp;A</span>
+                <h2 class="section-title">Chimney Repair <span class="text-accent">Questions</span></h2>
+                <p class="section-desc">What Monmouth County homeowners ask most before booking chimney repair.</p>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>How often should I have my chimney swept in Monmouth County?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Most chimney safety organizations recommend annual sweeping and inspection before each heating season. Homes that burn wood regularly may need sweeping twice a year, and even gas appliances need an annual check.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>What is tuckpointing and do I need it?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>Tuckpointing is grinding out deteriorated mortar joints and packing in fresh mortar. If you see gaps, crumbling, or missing mortar between bricks — common in Monmouth County's older homes — tuckpointing is overdue.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>What towns in Monmouth County do you serve for chimney repair?</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>We serve every town, township, and borough across Monmouth County, including Red Bank, Freehold, Asbury Park, Middletown. If you're unsure whether we cover your specific area, call us — we almost certainly do.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-banner">
         <div class="container cta-inner reveal">
             <div class="cta-text">
@@ -228,8 +402,8 @@
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="../../new-jersey/chimney/">Chimney &amp; Masonry</a></li>
-                    <li><a href="../../new-jersey/handyman/">Handyman Services</a></li>
+                    <li><a href="../../chimney-masonry-new-jersey/">Chimney &amp; Masonry</a></li>
+                    <li><a href="../../handyman-services-new-jersey/">Handyman Services</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -245,7 +419,7 @@
                 <h4>Contact</h4>
                 <ul class="footer-contact">
                     <li><i class="fas fa-phone"></i><a href="tel:+15513504951">(551) 350-4951</a></li>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:office@thefixwizard.com">office@thefixwizard.com</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:hello@handypro.com">hello@handypro.com</a></li>
                     <li><i class="fas fa-clock"></i><span>Mon–Sat: 7am – 7pm</span></li>
                 </ul>
             </div>
@@ -259,5 +433,36 @@
     </footer>
 
     <script type="module" src="../../js/service-page.js"></script>
+
+<script id="bubble-search">
+(function() {
+  var inp  = document.getElementById('srch');
+  var clr  = document.getElementById('srch-clr');
+  var hint = document.getElementById('srch-hint');
+  var none = document.getElementById('srch-none');
+  var bubbles = document.querySelectorAll('.svc-bubble');
+  var cats    = document.querySelectorAll('.svc-category');
+  if (!inp) return;
+  function run(q) {
+    q = q.toLowerCase().trim();
+    var shown = 0;
+    bubbles.forEach(function(b) {
+      var match = !q || b.dataset.s.includes(q);
+      b.classList.toggle('b-hide', !match);
+      if (match) shown++;
+    });
+    cats.forEach(function(c) {
+      var any = Array.from(c.querySelectorAll('.svc-bubble')).some(function(b) { return !b.classList.contains('b-hide'); });
+      c.classList.toggle('c-hide', !any);
+    });
+    clr.classList.toggle('show', q.length > 0);
+    hint.textContent = q ? (shown + ' service' + (shown !== 1 ? 's' : '') + ' found') : '';
+    none.style.display = (q && shown === 0) ? 'block' : 'none';
+  }
+  inp.addEventListener('input', function() { run(inp.value); });
+  clr.addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+  document.getElementById('srch-none-clr').addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+})();
+</script>
 </body>
 </html>

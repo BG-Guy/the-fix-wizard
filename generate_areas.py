@@ -8,6 +8,10 @@ Generates:
 """
 
 import os
+from services_data import (
+    CHIMNEY_CATS as SD_CHIMNEY_CATS, HANDYMAN_CATS as SD_HANDYMAN_CATS,
+    CHIMNEY_SERVICES_FULL, HANDYMAN_SERVICES_FULL, build_service_lookup,
+)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -38,8 +42,8 @@ COUNTIES = [
 ]
 
 SERVICES = [
-    {"name": "Chimney Repair",      "slug_prefix": "chimney-repair-in",      "icon": "fa-fire",                "parent": "chimney-masonry-new-jersey",     "parent_label": "Chimney & Masonry in NJ"},
-    {"name": "Handyman Services",   "slug_prefix": "handyman-services-in",   "icon": "fa-screwdriver-wrench",  "parent": "handyman-services-new-jersey",   "parent_label": "Handyman Services in NJ"},
+    {"name": "Chimney Repair",      "slug_prefix": "chimney-repair-in",      "icon": "fa-fire",                "parent": "new-jersey/chimney",   "parent_label": "Chimney & Masonry in NJ",  "cats_key": "chimney"},
+    {"name": "Handyman Services",   "slug_prefix": "handyman-services-in",   "icon": "fa-screwdriver-wrench",  "parent": "new-jersey/handyman",  "parent_label": "Handyman Services in NJ",  "cats_key": "handyman"},
 ]
 
 # Sub-services: (heading_suffix, body_text_template)
@@ -280,6 +284,174 @@ PIN_SVG = '<svg viewBox="0 0 24 30" fill="none" aria-hidden="true"><path d="M12 
 GFONTS = "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
 FA     = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
+# ─── Service bubble grid (same widget as /new-jersey/<service>/ hub pages) ──────
+# Reuses services_data.py so the county-page service list always matches the
+# state-level hub and every bubble links to that service's existing, already-
+# SEO-optimized /new-jersey/<slug>/ page — no per-county leaf pages to maintain.
+
+def _build_cats(sd_cats, svc_full):
+    lookup = build_service_lookup(svc_full)
+    return [(cat_name, cat_icon, [(lookup[s][0], lookup[s][1], s) for s in slugs if s in lookup])
+            for cat_name, cat_icon, slugs in sd_cats]
+
+CHIMNEY_CATS_BUILT  = _build_cats(SD_CHIMNEY_CATS,  CHIMNEY_SERVICES_FULL)
+HANDYMAN_CATS_BUILT = _build_cats(SD_HANDYMAN_CATS, HANDYMAN_SERVICES_FULL)
+CATS_BY_KEY = {"chimney": CHIMNEY_CATS_BUILT, "handyman": HANDYMAN_CATS_BUILT}
+
+BUBBLE_CSS = """
+<style id="bubble-styles">
+@keyframes bubble-float {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-6px); }
+}
+.svc-bubble {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; border: 2px solid #e8edf5; border-radius: 100px;
+  padding: 10px 18px 10px 13px; font-size: 13.5px; font-weight: 500;
+  color: #1e2d5a; cursor: pointer; user-select: none;
+  animation: bubble-float var(--dur,3.8s) ease-in-out var(--delay,0s) infinite;
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1),
+              opacity .2s ease, border-color .15s ease,
+              box-shadow .15s ease, background .15s ease;
+  will-change: transform, opacity;
+}
+.svc-bubble:hover {
+  border-color: #FF6B35; background: #fff7f4;
+  box-shadow: 0 8px 24px rgba(255,107,53,.18);
+  animation-play-state: paused;
+  transform: translateY(-4px) scale(1.05) !important;
+}
+.svc-bubble.b-hide {
+  transform: scale(0) !important; opacity: 0 !important;
+  pointer-events: none; animation: none !important;
+}
+.svc-bubble .b-icon { font-size: 11px; color: #FF6B35; flex-shrink: 0; }
+.svc-category.c-hide { display: none; }
+.bubbles-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.cat-hdr { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.cat-hdr-icon {
+  width: 30px; height: 30px; background: rgba(255,107,53,.1);
+  border-radius: 9px; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0;
+}
+.cat-hdr-icon i { color: #FF6B35; font-size: 12px; }
+.cat-hdr-label {
+  font-size: 11px; font-weight: 800; color: #0d1b4b;
+  text-transform: uppercase; letter-spacing: .1em; white-space: nowrap;
+}
+.cat-hdr-line { flex: 1; height: 1px; background: #eef1f7; }
+.srch-wrap { position: relative; display: flex; align-items: center; }
+.srch-icon { position: absolute; left: 17px; color: #94a3b8; font-size: 15px; pointer-events: none; }
+.srch-input {
+  width: 100%; padding: 15px 50px 15px 46px;
+  border: 2px solid #e2e8f0; border-radius: 18px;
+  font-size: 15px; font-weight: 500; color: #0d1b4b;
+  font-family: Inter, sans-serif; outline: none; background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+.srch-input:focus { border-color: #FF6B35; box-shadow: 0 0 0 4px rgba(255,107,53,.1); }
+.srch-input::placeholder { color: #94a3b8; }
+.srch-clear {
+  position: absolute; right: 16px; width: 26px; height: 26px;
+  background: #f1f5f9; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #64748b; font-size: 11px; cursor: pointer;
+  opacity: 0; pointer-events: none; transition: opacity .15s, background .15s;
+}
+.srch-clear.show { opacity: 1; pointer-events: all; }
+.srch-clear:hover { background: #FF6B35; color: #fff; }
+.srch-hint { text-align: center; font-size: 13px; color: #94a3b8; margin-top: 10px; min-height: 18px; }
+.srch-none { text-align: center; font-size: 15px; color: #64748b; padding: 40px 0; display: none; }
+.srch-none button { color: #FF6B35; font-weight: 600; background: none; border: none; cursor: pointer; margin-left: 4px; }
+</style>"""
+
+BUBBLE_JS = """
+<script id="bubble-search">
+(function() {
+  var inp  = document.getElementById('srch');
+  var clr  = document.getElementById('srch-clr');
+  var hint = document.getElementById('srch-hint');
+  var none = document.getElementById('srch-none');
+  var bubbles = document.querySelectorAll('.svc-bubble');
+  var cats    = document.querySelectorAll('.svc-category');
+  if (!inp) return;
+  function run(q) {
+    q = q.toLowerCase().trim();
+    var shown = 0;
+    bubbles.forEach(function(b) {
+      var match = !q || b.dataset.s.includes(q);
+      b.classList.toggle('b-hide', !match);
+      if (match) shown++;
+    });
+    cats.forEach(function(c) {
+      var any = Array.from(c.querySelectorAll('.svc-bubble')).some(function(b) { return !b.classList.contains('b-hide'); });
+      c.classList.toggle('c-hide', !any);
+    });
+    clr.classList.toggle('show', q.length > 0);
+    hint.textContent = q ? (shown + ' service' + (shown !== 1 ? 's' : '') + ' found') : '';
+    none.style.display = (q && shown === 0) ? 'block' : 'none';
+  }
+  inp.addEventListener('input', function() { run(inp.value); });
+  clr.addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+  document.getElementById('srch-none-clr').addEventListener('click', function() { inp.value = ''; run(''); inp.focus(); });
+})();
+</script>"""
+
+BUBBLE_DURATIONS = [3.6, 4.1, 3.9, 4.4, 3.7, 4.2, 3.8, 4.5]
+BUBBLE_DELAYS    = [0, 0.4, 0.8, 1.2, 0.2, 0.6, 1.0, 1.4]
+
+def bubble_grid_html(cats, location_name, loc_url="new-jersey", href_prefix="../../"):
+    """Searchable service bubble grid, same widget as /new-jersey/<service>/, but
+    linking back up to those state-level pages instead of duplicating them."""
+    total = sum(len(items) for _, _, items in cats)
+    idx = 0
+    cats_html = ""
+    for cat_name, cat_icon, items in cats:
+        bubbles_html = ""
+        for icon, name, slug in items:
+            dur   = BUBBLE_DURATIONS[idx % len(BUBBLE_DURATIONS)]
+            delay = BUBBLE_DELAYS[idx % len(BUBBLE_DELAYS)]
+            s_key = name.lower().replace("&amp;", "and").replace("/", " ").replace("(", "").replace(")", "")
+            href  = f'{href_prefix}{loc_url}/{slug}/'
+            bubbles_html += f"""
+                    <a class="svc-bubble" href="{href}" data-s="{s_key}" style="--dur:{dur}s;--delay:{delay}s"><i class="fas {icon} b-icon"></i><span>{name}</span></a>"""
+            idx += 1
+        cats_html += f"""
+            <div class="svc-category">
+                <div class="cat-hdr">
+                    <div class="cat-hdr-icon"><i class="fas {cat_icon}"></i></div>
+                    <span class="cat-hdr-label">{cat_name}</span>
+                    <div class="cat-hdr-line"></div>
+                </div>
+                <div class="bubbles-row">{bubbles_html}
+                </div>
+            </div>"""
+
+    return f"""
+    <section class="sp-work-section services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Services</span>
+                <h2 class="section-title">Every Service We <span class="text-accent">Offer in {location_name}</span></h2>
+                <p class="section-desc">All {total} services — search to find yours instantly. Same-day available, free estimates.</p>
+            </div>
+
+            <div class="max-w-[580px] mx-auto mb-12 reveal">
+                <div class="srch-wrap">
+                    <i class="fas fa-search srch-icon"></i>
+                    <input id="srch" type="text" class="srch-input" placeholder="Search services…" autocomplete="off" spellcheck="false">
+                    <div id="srch-clr" class="srch-clear" role="button" aria-label="Clear search"><i class="fas fa-times"></i></div>
+                </div>
+                <p id="srch-hint" class="srch-hint"></p>
+            </div>
+
+            <div class="flex flex-col gap-10 max-w-[960px] mx-auto">{cats_html}
+            </div>
+            <div id="srch-none" class="srch-none">No services match your search.<button id="srch-none-clr">Clear search</button></div>
+        </div>
+    </section>"""
+
+
 COMMON_HEAD = f"""\
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -316,7 +488,7 @@ def navbar_html(depth, active=""):
                 </li>
             </ul>
             <div class="nav-actions">
-                <a href="tel:+15551234567" class="nav-phone"><i class="fas fa-phone"></i><span>(555) 123-4567</span></a>
+                <a href="tel:+15513504951" class="nav-phone"><i class="fas fa-phone"></i><span>(551) 350-4951</span></a>
                 <a href="{prefix}#contact" class="btn btn-primary nav-cta">Free Quote
                     <svg class="btn-spark bs-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
                     <svg class="btn-spark bs-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
@@ -340,7 +512,7 @@ def navbar_html(depth, active=""):
                 <a href="{prefix}locations/"      class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
             </li>
         </ul>
-        <a href="tel:+15551234567" class="mobile-phone"><i class="fas fa-phone"></i>(555) 123-4567</a>
+        <a href="tel:+15513504951" class="mobile-phone"><i class="fas fa-phone"></i>(551) 350-4951</a>
         <a href="{prefix}#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
     </div>
     <div class="mobile-overlay" id="mobileOverlay"></div>"""
@@ -380,7 +552,7 @@ def footer_html(depth):
             <div class="footer-col">
                 <h4>Contact</h4>
                 <ul class="footer-contact">
-                    <li><i class="fas fa-phone"></i><a href="tel:+15551234567">(555) 123-4567</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+15513504951">(551) 350-4951</a></li>
                     <li><i class="fas fa-envelope"></i><a href="mailto:hello@handypro.com">hello@handypro.com</a></li>
                     <li><i class="fas fa-clock"></i><span>Mon–Sat: 7am – 7pm</span></li>
                 </ul>
@@ -436,7 +608,7 @@ def build_locations_page():
       "name": "The Fix Wizard",
       "description": "Expert chimney repair, masonry, and handyman services across New Jersey and the greater Cleveland, Ohio area.",
       "url": "https://thefixwizard.com/locations/",
-      "telephone": "(555) 123-4567",
+      "telephone": "(551) 350-4951",
       "areaServed": [
         {{"@type": "State", "name": "New Jersey"}},
         {{"@type": "City", "name": "Cleveland", "containedInPlace": {{"@type": "State", "name": "Ohio"}}}}
@@ -650,7 +822,7 @@ def build_locations_page():
                 <p>Free estimates in New Jersey &amp; Cleveland. Licensed &amp; insured. Same-day available.</p>
             </div>
             <div class="cta-btns">
-                <a href="tel:+15551234567" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="tel:+15513504951" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
                 <a href="../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Free Quote</a>
             </div>
         </div>
@@ -684,6 +856,26 @@ def sub_service_sections(svc_name, county_name):
     return "\n\n".join(blocks)
 
 
+def area_faqs(cats_key, cn, towns):
+    if cats_key == "chimney":
+        return [
+            (f"How often should I have my chimney swept in {cn}?",
+             "Most chimney safety organizations recommend annual sweeping and inspection before each heating season. Homes that burn wood regularly may need sweeping twice a year, and even gas appliances need an annual check."),
+            ("What is tuckpointing and do I need it?",
+             f"Tuckpointing is grinding out deteriorated mortar joints and packing in fresh mortar. If you see gaps, crumbling, or missing mortar between bricks — common in {cn}'s older homes — tuckpointing is overdue."),
+            (f"What towns in {cn} do you serve for chimney repair?",
+             f"We serve every town, township, and borough across {cn}, including {towns}. If you're unsure whether we cover your specific area, call us — we almost certainly do."),
+        ]
+    return [
+        (f"What handyman services do you offer in {cn}?",
+         "Drywall patching, painting, door repair, furniture assembly, TV mounting, light electrical and plumbing, and general home maintenance — one call covers your whole repair list."),
+        ("Can you handle multiple jobs in one visit?",
+         "Yes — combining tasks like drywall patching with paint touch-ups, or outlet replacement with fan installation, is the most efficient way to use one appointment."),
+        (f"What towns in {cn} do you serve for handyman services?",
+         f"We serve every town, township, and borough across {cn}, including {towns}. If you're unsure whether we cover your specific area, call us — we almost certainly do."),
+    ]
+
+
 def area_page_html(svc, county):
     sn = svc["name"]
     cn = county["name"]
@@ -691,15 +883,35 @@ def area_page_html(svc, county):
     towns = county["towns"]
     parent_url = f'../../{svc["parent"]}/'
     parent_label = svc["parent_label"]
+    cats = CATS_BY_KEY[svc["cats_key"]]
     meta_desc = f'Expert {sn.lower()} in {cn}, NJ. Licensed & insured technicians serving {towns} and surrounding areas. Free estimate — same-day available.'
-    schema = f"""{{
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "{sn}",
-      "provider": {{"@type": "LocalBusiness", "name": "The Fix Wizard"}},
-      "areaServed": {{"@type": "AdministrativeArea", "name": "{cn}, New Jersey"}},
-      "description": "{meta_desc}"
-    }}"""
+    faqs = area_faqs(svc["cats_key"], cn, towns)
+    faq_schema_items = ",\n".join(
+        f'''          {{"@type": "Question", "name": "{q}", "acceptedAnswer": {{"@type": "Answer", "text": "{a}"}}}}'''
+        for q, a in faqs
+    )
+    schema = f"""[
+      {{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "{sn}",
+        "provider": {{"@type": "LocalBusiness", "name": "The Fix Wizard"}},
+        "areaServed": {{"@type": "AdministrativeArea", "name": "{cn}, New Jersey"}},
+        "description": "{meta_desc}"
+      }},
+      {{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+{faq_schema_items}
+        ]
+      }}
+    ]"""
+    faqs_html = "".join(f"""
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false"><span>{q}</span><i class="fas fa-plus"></i></button>
+                    <div class="faq-answer" aria-hidden="true"><p>{a}</p></div>
+                </div>""" for q, a in faqs)
     other_svcs = "\n".join(
         f'                        <a href="../{s["slug_prefix"]}-{slug}/"><i class="fas {s["icon"]}"></i> {s["name"]}</a>'
         for s in SERVICES if s["name"] != sn
@@ -715,6 +927,7 @@ def area_page_html(svc, county):
     <link rel="stylesheet" href="../../css/tw.css">
     <link rel="stylesheet" href="../../css/custom.css">
     <script type="application/ld+json">{schema}</script>
+{BUBBLE_CSS}
 </head>
 <body>
 
@@ -743,12 +956,12 @@ def area_page_html(svc, county):
                 <span class="area-hero-pill"><i class="fas fa-shield-halved"></i> Licensed &amp; Insured</span>
             </div>
             <div class="area-hero-ctas">
-                <a href="tel:+15551234567" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                <a href="tel:+15513504951" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> (551) 350-4951</a>
                 <a href="../../#contact" class="btn btn-outline-white">Get Free Quote</a>
             </div>
         </div>
     </section>
-
+{bubble_grid_html(cats, cn, loc_url="new-jersey", href_prefix="../../")}
     <section class="area-content">
         <div class="container">
             <div class="area-layout">
@@ -777,7 +990,7 @@ def area_page_html(svc, county):
                     <div class="area-cta-box">
                         <h3>Get a Free Estimate</h3>
                         <p>Available same-day across {cn}. Licensed &amp; insured. No obligation.</p>
-                        <a href="tel:+15551234567" class="btn btn-primary"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                        <a href="tel:+15513504951" class="btn btn-primary"><i class="fas fa-phone"></i> (551) 350-4951</a>
                         <a href="../../#contact" class="btn btn-outline-white">Send a Message</a>
                     </div>
 
@@ -811,6 +1024,18 @@ def area_page_html(svc, county):
         </div>
     </section>
 
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Q&amp;A</span>
+                <h2 class="section-title">{sn} <span class="text-accent">Questions</span></h2>
+                <p class="section-desc">What {cn} homeowners ask most before booking {sn.lower()}.</p>
+            </div>
+            <div class="faq-accordion">{faqs_html}
+            </div>
+        </div>
+    </section>
+
     <section class="cta-banner">
         <div class="container cta-inner reveal">
             <div class="cta-text">
@@ -818,7 +1043,7 @@ def area_page_html(svc, county):
                 <p>Free estimates across all of {cn}. Licensed &amp; insured. Same-day available.</p>
             </div>
             <div class="cta-btns">
-                <a href="tel:+15551234567" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="tel:+15513504951" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
                 <a href="../../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Quote</a>
             </div>
         </div>
@@ -827,6 +1052,7 @@ def area_page_html(svc, county):
 {footer_html(2)}
 
     <script type="module" src="../../js/service-page.js"></script>
+{BUBBLE_JS}
 </body>
 </html>"""
 
@@ -985,7 +1211,7 @@ def cleveland_area_page_html(svc, suburb):
                 <span class="area-hero-pill"><i class="fas fa-shield-halved"></i> Licensed &amp; Insured</span>
             </div>
             <div class="area-hero-ctas">
-                <a href="tel:+15551234567" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                <a href="tel:+15513504951" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> (551) 350-4951</a>
                 <a href="../../#contact" class="btn btn-outline-white">Get Free Quote</a>
             </div>
         </div>
@@ -1011,14 +1237,14 @@ def cleveland_area_page_html(svc, suburb):
                     </ul>
 
                     <h2>Service Areas Near {cn}</h2>
-                    <p>We serve {cn} and the surrounding communities throughout the greater Cleveland area. Call us at (555) 123-4567 to confirm same-day availability in your neighborhood.</p>
+                    <p>We serve {cn} and the surrounding communities throughout the greater Cleveland area. Call us at (551) 350-4951 to confirm same-day availability in your neighborhood.</p>
                 </div>
 
                 <aside class="area-sidebar">
                     <div class="area-cta-box">
                         <h3>Get a Free Estimate</h3>
                         <p>Available same-day in {cn}, Ohio. Licensed &amp; insured. No obligation.</p>
-                        <a href="tel:+15551234567" class="btn btn-primary"><i class="fas fa-phone"></i> (555) 123-4567</a>
+                        <a href="tel:+15513504951" class="btn btn-primary"><i class="fas fa-phone"></i> (551) 350-4951</a>
                         <a href="../../#contact" class="btn btn-outline-white">Send a Message</a>
                     </div>
                     <div class="area-trust-box">
@@ -1056,7 +1282,7 @@ def cleveland_area_page_html(svc, suburb):
                 <p>Free estimates across the greater Cleveland area. Licensed &amp; insured. Same-day available.</p>
             </div>
             <div class="cta-btns">
-                <a href="tel:+15551234567" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="tel:+15513504951" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
                 <a href="../../#contact" class="btn btn-outline-white btn-lg"><i class="fas fa-envelope"></i> Get a Quote</a>
             </div>
         </div>
