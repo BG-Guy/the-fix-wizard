@@ -493,12 +493,14 @@
     @media (max-width: 767px) {
         #how-it-works {
             width: 100%;
+            min-height: 0; /* size to content, not the viewport — see note above */
             padding-bottom: 0;
         }
 
         .hiw-inner {
             display: flex;
             flex-direction: column;
+            flex: none;
         }
 
         /* Eyebrow, clears the fixed navbar */
@@ -514,8 +516,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            flex: none;
             gap: 16px;
-            padding: 6px 24px 40px;
+            padding: 6px 24px 72px; /* extra bottom clearance for Safari's collapsed URL bar */
             max-width: 480px;
             margin: 0 auto;
             width: 100%;
@@ -562,6 +565,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: flex-start; /* override desktop's vertical centering */
+            flex: none; /* override desktop's 44%-of-height basis — take natural content height */
+            padding-top: 0; /* override desktop's space-for-absolute-badge padding */
             gap: 8px;
             text-align: center;
             width: 100%;
