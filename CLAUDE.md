@@ -4,7 +4,7 @@
 
 - **Name:** The Fix Wizard
 - **Phone:** (551) 350-4951
-- **Email:** thefixwizard@gmail.com
+- **Email:** office@thefixwizard.com
 - **Website:** https://thefixwizard.com
 - **Hours:** Mon–Sat 7am–7pm
 - **Trust signals (always include):** Licensed & insured · Same-day available · Free estimates
