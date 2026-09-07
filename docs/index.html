@@ -442,6 +442,7 @@
         position: relative;
         overflow: hidden;
         min-height: 100svh;
+        background: #050311; /* fallback so crossfade never flashes through to white */
         display: flex;
         flex-direction: column;
         padding-bottom: 108px; /* reserve space for pinned nav */
@@ -1109,7 +1110,7 @@
 
     <section id="how-it-works">
         <div class="hiw-bg" id="hiwBgA" style="opacity:1;background:linear-gradient(160deg,#160f40 0%,#050311 100%)"></div>
-        <div class="hiw-bg" id="hiwBgB" style="opacity:0"></div>
+        <div class="hiw-bg" id="hiwBgB" style="opacity:0;background:linear-gradient(160deg,#160f40 0%,#050311 100%)"></div>
 
         <div class="hiw-inner">
             <div class="hiw-top reveal">
