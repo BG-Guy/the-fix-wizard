@@ -85,7 +85,7 @@ function navbar(loc, serviceParam = '') {
         <ul class="flex flex-col gap-0.5 mb-5 mobile-nav-links">
             <li><a href="/" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Home</a></li>
             <li><a href="/#services" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Services</a></li>
-            <li><a href="/${loc.slug}-repair/" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Locations</a></li>
+            <li><a href="/locations/" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Locations</a></li>
             <li><a href="${contactHref}" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
         </ul>
         <a href="tel:+15513504951" class="mobile-phone flex items-center gap-2.5 text-white/65 text-sm mb-3.5 px-3.5"><i class="fas fa-phone text-orange"></i>(551) 350-4951</a>
@@ -437,8 +437,8 @@ function detailPage(loc, svc, type) {
   const svcParam   = type === 'chimney' ? 'Chimney+%26+Masonry' : 'Handyman+Services';
 
   const title    = `${svc.name} Near ${loc.city}, ${loc.state} | The Fix Wizard`;
-  const metaDesc = content.meta_desc
-    ? content.meta_desc.replace('{city}', loc.city).replace('{state}', loc.state).replace('{cityState}', cityState)
+  const metaDesc = (content && content.meta_desc)
+    ? content.meta_desc.replace(/\{cityState\}/g, cityState).replace(/\{city\}/g, loc.city).replace(/\{state\}/g, loc.state)
     : `Professional ${svc.name.toLowerCase()} near ${cityState}. ${svc.desc.slice(0, 100)} Licensed & insured. Free estimates. Same-day available.`;
 
   const includesList = svc.includes.map(item =>
@@ -455,7 +455,7 @@ function detailPage(loc, svc, type) {
                     </li>`
   ).join('\n                        ');
 
-  const r = s => s ? s.replace(/\{cityState\}/g, cityState).replace(/\{city\}/g, loc.city).replace(/\{state\}/g, loc.state) : s;
+  const r = s => (s && typeof s === 'string') ? s.replace(/\{cityState\}/g, cityState).replace(/\{city\}/g, loc.city).replace(/\{state\}/g, loc.state) : '';
   const contentHtml = content ? `
                 <div class="space-y-10">
                     <div>

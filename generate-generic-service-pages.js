@@ -22,7 +22,7 @@ const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com">
 
 function navbar(serviceParam) {
   const contactHref = serviceParam ? `/?service=${serviceParam}#contact` : '/#contact';
-  return `    <nav id="navbar" class="navbar fixed top-0 left-0 right:0 z-[100]">
+  return `    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-[100]">
         <div class="max-w-site mx-auto px-6 flex items-center h-full gap-8 nav-container">
             <a href="/" class="flex items-center shrink-0 logo">
                 <img src="/assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="h-auto max-h-[58px] md:max-h-[110px] w-auto object-contain rounded-lg logo-img" width="199" height="110">
@@ -345,20 +345,26 @@ ${footer()}
 </html>`;
 }
 
-let count = 0;
+function generate(outDir = DOCS) {
+  let count = 0;
 
-for (const svc of DATA.chimney) {
-  const dir = path.join(DOCS, svc.slug);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), genericPage(svc, 'chimney'));
-  count++;
+  for (const svc of DATA.chimney) {
+    const dir = path.join(outDir, svc.slug);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), genericPage(svc, 'chimney'));
+    count++;
+  }
+
+  for (const svc of DATA.handyman) {
+    const dir = path.join(outDir, svc.slug);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), genericPage(svc, 'handyman'));
+    count++;
+  }
+
+  console.log(`✓ ${count} generic service pages`);
 }
 
-for (const svc of DATA.handyman) {
-  const dir = path.join(DOCS, svc.slug);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), genericPage(svc, 'handyman'));
-  count++;
-}
+if (require.main === module) generate();
 
-console.log(`Generated ${count} generic service pages.`);
+module.exports = { generate };

@@ -2,8 +2,10 @@
 const fs   = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-const { generate: generateLocations }    = require('./generate-locations');
-const { generate: generateServicePages } = require('./generate-service-pages');
+const { generate: generateLocations }        = require('./generate-locations');
+const { generate: generateServicePages }     = require('./generate-service-pages');
+const { generate: generateGenericPages }     = require('./generate-generic-service-pages');
+const { generate: generateSitemap }          = require('./generate-sitemap');
 
 const ROOT    = __dirname;
 const DOCS    = path.join(ROOT, 'docs');
@@ -34,7 +36,7 @@ copyDir(path.join(ROOT, 'css'),      path.join(DOCS, 'css'));
 copyDir(path.join(ROOT, 'services'), path.join(DOCS, 'services'));
 
 const staticFiles = [
-  'CNAME', 'robots.txt', 'sitemap.xml', 'llms.txt',
+  'CNAME', 'robots.txt', 'llms.txt',
   'favicon.ico', 'favicon.png', 'favicon.webp',
   'favicon-32.png', 'apple-touch-icon.png',
 ];
@@ -53,6 +55,8 @@ console.log(`✓ docs/index.html assembled (${order.length} partials)`);
 // Generated pages → docs/
 generateLocations(DOCS);
 generateServicePages(DOCS);
+generateGenericPages(DOCS);
+generateSitemap(DOCS);
 
 // Tailwind → docs/css/tw.css
 try {

@@ -309,7 +309,7 @@ function schema(loc, type, description) {
 
 function hubPage(loc) {
   const cityState = `${loc.city}, ${loc.state}`;
-  const title = `Chimney &amp; Handyman Services in ${loc.city}, ${loc.state} | The Fix Wizard`;
+  const title = `Chimney & Handyman Services in ${loc.city}, ${loc.state} | The Fix Wizard`;
   const metaDesc = `Licensed chimney repair and handyman services in ${cityState}. Same-day available. Free estimates. The Fix Wizard — ${loc.county}'s trusted home repair team.`;
 
   return `<!DOCTYPE html>
@@ -319,6 +319,7 @@ function hubPage(loc) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     ${FAVICON}
     <meta name="description" content="${metaDesc}">
+    <link rel="canonical" href="https://thefixwizard.com/${loc.slug}-repair/">
     <title>${title}</title>
     <script type="application/ld+json">${schema(loc, 'hub', metaDesc)}<\/script>
     ${HEAD_STYLES}

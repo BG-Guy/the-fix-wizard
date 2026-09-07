@@ -25,13 +25,17 @@
           "opens": "07:00",
           "closes": "19:00"
         },
-        "areaServed": {"@type": "State", "name": "New Jersey"},
+        "areaServed": [
+          {"@type": "State", "name": "New Jersey"},
+          {"@type": "State", "name": "Pennsylvania"},
+          {"@type": "State", "name": "Delaware"}
+        ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Home Repair Services",
           "itemListElement": [
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Chimney Repair & Masonry", "url": "https://thefixwizard.com/new-jersey/chimney/"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Handyman Services", "url": "https://thefixwizard.com/new-jersey/handyman/"}}
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Chimney Repair & Masonry", "url": "https://thefixwizard.com/services/chimney/"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Handyman Services", "url": "https://thefixwizard.com/services/handyman/"}}
           ]
         },
         "sameAs": []
