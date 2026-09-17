@@ -1,4 +1,7 @@
 'use strict';
+// generate-locations.js — builds one hub page per city (e.g. docs/cherry-hill-repair/),
+// each listing every service available in that city. Called from build.js;
+// content/copy comes from services-data.json, layout changes go here.
 const fs   = require('fs');
 const path = require('path');
 const ROOT = __dirname;
@@ -499,7 +502,7 @@ ${navbar(loc)}
 
 ${footer()}
 
-    <script type="module" src="/js/service-page.js"><\/script>
+    <script type="module" src="/generated-pages/service-page.js"><\/script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();<\/script>
 </body>
 </html>`;
@@ -613,7 +616,7 @@ ${navbar(loc, 'Chimney+%26+Masonry')}
 
 ${footer()}
 
-    <script type="module" src="/js/service-page.js"><\/script>
+    <script type="module" src="/generated-pages/service-page.js"><\/script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();<\/script>
 </body>
 </html>`;
@@ -727,7 +730,7 @@ ${navbar(loc, 'Handyman+Services')}
 
 ${footer()}
 
-    <script type="module" src="/js/service-page.js"><\/script>
+    <script type="module" src="/generated-pages/service-page.js"><\/script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();<\/script>
 </body>
 </html>`;

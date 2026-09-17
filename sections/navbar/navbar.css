@@ -1,0 +1,33 @@
+/* =========================================================
+   navbar.css — top navigation bar: scroll state, link
+   underline, CTA button shimmer/sparkle, hamburger icon, and
+   the slide-out mobile menu. Behavior lives in navbar.js and
+   mobile-menu.js in this same folder.
+   ========================================================= */
+
+.navbar { height:var(--nav-h); transition:all .55s cubic-bezier(.4,0,.2,1); }
+.navbar.scrolled { background:#0d1b4b; box-shadow:0 4px 20px rgba(13,27,75,.3); }
+
+/* ---- Nav link underline, grows on hover/active ---- */
+.nav-link { position:relative; }
+.nav-link::after { content:''; position:absolute; bottom:4px; left:50%; width:0; height:2px; background:#FF6B35; border-radius:2px; transform:translateX(-50%); transition:width .3s ease; }
+.nav-link:hover::after, .nav-link.active::after { width:55%; }
+
+/* ---- "Free Quote" CTA button: shimmer sweep + sparkle stars ---- */
+.nav-cta::before { content:''; position:absolute; top:-50%; left:-75%; width:40%; height:200%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent); transform:skewX(-12deg); animation:ctaShimmer 3.2s ease-in-out infinite; pointer-events:none; }
+@keyframes ctaShimmer { 0%{left:-75%} 55%,100%{left:125%} }
+.btn-spark { position:absolute; color:rgba(255,255,255,.85); pointer-events:none; animation:btnSparkle 2.6s ease-in-out infinite; }
+.bs-1 { width:8px;  top:-4px;    right:7px;  animation-delay:0s;   }
+.bs-2 { width:6px;  bottom:-3px; left:9px;   animation-delay:1s;   }
+.bs-3 { width:7px;  top:4px;     left:4px;   animation-delay:1.8s; }
+@keyframes btnSparkle { 0%,100%{opacity:0;transform:scale(.55) rotate(0deg)} 40%,60%{opacity:.9;transform:scale(1) rotate(22deg)} }
+
+/* ---- Hamburger icon open state (JS toggles .open) ---- */
+.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+/* ---- Mobile menu — JS toggles .open / .show ---- */
+.mobile-menu { left:-100%; transition:left .42s cubic-bezier(.4,0,.2,1); }
+.mobile-menu.open { left:0; }
+.mobile-overlay.show { opacity:1; visibility:visible; }

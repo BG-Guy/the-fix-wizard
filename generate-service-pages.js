@@ -1,4 +1,8 @@
 'use strict';
+// generate-service-pages.js — builds each service's hub page and every
+// per-city detail page (e.g. docs/ceiling-fan-installation-near-cherry-hill/).
+// Called from build.js; content/copy comes from services-data.json, layout
+// changes go here.
 const fs   = require('fs');
 const path = require('path');
 const ROOT = __dirname;
@@ -382,7 +386,7 @@ ${navbar(loc, svcParam)}
 
 ${footer()}
 
-    <script type="module" src="/js/service-page.js"><\/script>
+    <script type="module" src="/generated-pages/service-page.js"><\/script>
     <script>
         (function(){
             const inp   = document.getElementById('svc-search');
@@ -538,6 +542,7 @@ ${navbar(loc, svcParam)}
 
                 <!-- Hero sidebar: includes list -->
                 <div class="w-full max-w-[360px] mx-auto tab:mx-0 bg-white/[.07] backdrop-blur-xl border border-white/[.13] rounded-xl2 p-7">
+                    ${svc.img ? `<img src="${svc.img}" alt="${svc.name} near ${loc.city}, ${loc.state} — The Fix Wizard" class="w-full h-[160px] object-cover rounded-lg mb-5" width="360" height="160" loading="lazy">` : ''}
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-10 h-10 bg-orange/20 rounded-lg flex items-center justify-center shrink-0">
                             <i class="fas ${svc.icon} text-orange text-[16px]"></i>
@@ -621,7 +626,7 @@ ${navbar(loc, svcParam)}
 
 ${footer()}
 
-    <script type="module" src="/js/service-page.js"><\/script>
+    <script type="module" src="/generated-pages/service-page.js"><\/script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();<\/script>
 </body>
 </html>`;

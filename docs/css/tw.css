@@ -1908,6 +1908,18 @@ section {
   margin-bottom: 0;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -1970,6 +1982,10 @@ section {
 
 .left-\[-75\%\] {
   left: -75%;
+}
+
+.left-\[-90px\] {
+  left: -90px;
 }
 
 .right-0 {
@@ -2125,6 +2141,10 @@ section {
   margin-top: 2.5rem;
 }
 
+.mt-14 {
+  margin-top: 3.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -2169,6 +2189,10 @@ section {
   display: none;
 }
 
+.aspect-\[4\/5\] {
+  aspect-ratio: 4/5;
+}
+
 .h-0\.5 {
   height: 0.125rem;
 }
@@ -2199,6 +2223,10 @@ section {
 
 .h-9 {
   height: 2.25rem;
+}
+
+.h-\[160px\] {
+  height: 160px;
 }
 
 .h-\[200\%\] {
@@ -3980,6 +4008,11 @@ section {
     padding: 2.5rem;
   }
 
+  .md\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
   .md\:pb-12 {
     padding-bottom: 3rem;
   }
@@ -3990,6 +4023,10 @@ section {
 
   .md\:text-left {
     text-align: left;
+  }
+
+  .md\:text-\[26px\] {
+    font-size: 26px;
   }
 }
 

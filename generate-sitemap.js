@@ -1,4 +1,6 @@
 'use strict';
+// generate-sitemap.js — writes docs/sitemap.xml listing every generated
+// URL, for search engines. Called last in build.js, after all pages exist.
 const fs   = require('fs');
 const path = require('path');
 

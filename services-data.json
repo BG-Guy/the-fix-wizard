@@ -2,6 +2,7 @@
   "chimney": [
     {
       "icon": "fa-magnifying-glass",
+      "img": "/assets/images/service-card-thumbnails/chimney-sweep.webp",
       "name": "Level 1 Inspection & Standard Sweep",
       "slug": "chimney-inspection-standard-sweep",
       "desc": "NFPA-recommended annual sweep and visual inspection — creosote removed, obstructions cleared, written condition report included. Book before fireplace season fills up.",
@@ -51,6 +52,7 @@
     },
     {
       "icon": "fa-layer-group",
+      "img": "/assets/images/service-card-thumbnails/chimney-custom-cap.webp",
       "name": "Multi-Flue / Custom Top-Mount Cap",
       "slug": "custom-chimney-cap-installation",
       "desc": "Single fitted cap covering the entire chimney top — all flue openings sealed in one piece. Custom-fabricated to your exact dimensions in stainless steel.",
@@ -87,6 +89,7 @@
     },
     {
       "icon": "fa-wrench",
+      "img": "/assets/images/service-card-thumbnails/chimney-flashing-repair.webp",
       "name": "Flashing Repair & Installation",
       "slug": "chimney-flashing-repair",
       "desc": "Failed step and counter flashing repaired or replaced — the most common source of roof leaks near the chimney, fixed at the joint, not patched over.",
@@ -126,6 +129,7 @@
     },
     {
       "icon": "fa-helmet-safety",
+      "img": "/assets/images/service-card-thumbnails/chimney-crown-repair.webp",
       "name": "Crown Repair (Elastomeric Coating)",
       "slug": "chimney-crown-repair",
       "desc": "Cracked and pitted chimney crowns coated with flexible elastomeric sealant — stops water entry and extends crown life without a full rebuild.",
@@ -138,6 +142,7 @@
     },
     {
       "icon": "fa-hat-hard",
+      "img": "/assets/images/service-card-thumbnails/Gemini_Generated_Image_i4h3i6i4h3i6i4h3.webp",
       "name": "Full Chimney Crown Rebuild",
       "slug": "chimney-crown-rebuild",
       "desc": "Deteriorated chimney crown demolished and replaced with a properly proportioned concrete crown — correct overhang, slope, and drip edge to shed water completely.",
@@ -163,6 +168,7 @@
     },
     {
       "icon": "fa-fire-flame-curved",
+      "img": "/assets/images/service-card-thumbnails/firebox-repair.webp",
       "name": "Firebox Re-bricking / Refractory Panel Swap",
       "slug": "firebox-rebricking",
       "desc": "Cracked firebrick and failed refractory panels replaced with materials rated for sustained firebox temperatures — restores the thermal barrier between fire and framing.",
@@ -213,6 +219,7 @@
     },
     {
       "icon": "fa-pipe",
+      "img": "/assets/images/service-card-thumbnails/chimney-liner-installation.webp",
       "name": "Stainless Steel Flue Liner Installation",
       "slug": "chimney-liner-installation",
       "desc": "Stainless steel liner installed through the existing flue — correct diameter for your appliance, full-length continuous path from appliance to cap. Code-compliant.",
@@ -228,6 +235,7 @@
   "handyman": [
     {
       "icon": "fa-tv",
+      "img": "/assets/images/service-card-thumbnails/tv-mounting.webp",
       "name": "TV Wall Mounting",
       "slug": "tv-wall-mounting",
       "desc": "TV mounted into studs on any wall type — drywall, brick, concrete, tile. Level-checked, VESA-matched, cables concealed in-wall on request. Same-day available.",
@@ -289,6 +297,7 @@
     },
     {
       "icon": "fa-faucet",
+      "img": "/assets/images/service-card-thumbnails/faucet-repair.webp",
       "name": "Kitchen or Bathroom Faucet Replacement",
       "slug": "faucet-replacement",
       "desc": "Old faucet removed, new fixture installed correctly — supply lines connected, shutoff valves tested, no drips guaranteed.",
@@ -387,6 +396,7 @@
     },
     {
       "icon": "fa-plug",
+      "img": "/assets/images/service-card-thumbnails/electrical-installation.webp",
       "name": "Outlet / Switch Upgrades",
       "slug": "outlet-switch-upgrades",
       "desc": "Dead outlets diagnosed and replaced, GFCI protection installed where required, USB combo outlets added, and two-prong outlets upgraded to grounded. Code-current.",
@@ -411,6 +421,7 @@
     },
     {
       "icon": "fa-fill-drip",
+      "img": "/assets/images/service-card-thumbnails/drywall-repair-thumbnail.webp",
       "name": "Drywall Patching",
       "slug": "drywall-patching",
       "desc": "Holes, dings, and water damage patched and texture-matched so the repair is invisible — not just filled. Any size, any texture.",
@@ -474,6 +485,7 @@
     },
     {
       "icon": "fa-couch",
+      "img": "/assets/images/service-card-thumbnails/furniture-assembly.webp",
       "name": "Flat-Pack Furniture Assembly",
       "slug": "furniture-assembly",
       "desc": "IKEA, Wayfair, Amazon, and any flat-pack assembled correctly — beds, wardrobes, desks, shelving, dining sets. Hardware matched, instructions followed, same-day.",

@@ -1,0 +1,13 @@
+/* =========================================================
+   faq.css — FAQ accordion open/close state. JS (faq.js in
+   this same folder) toggles the ".open" class per item.
+   ========================================================= */
+
+.faq-answer { max-height:0; overflow:hidden; transition:max-height .38s ease; }
+.faq-item.open { background:rgba(255,255,255,.05); }
+.faq-item.open .faq-question { color:#ffffff; }
+.faq-item.open .faq-question i { transform:rotate(45deg); background:#FF6B35; color:#fff; border-color:#FF6B35; }
+
+/* Numbered question index (01, 02, ...) */
+.faq-question { counter-increment:faq-counter; }
+.faq-question::before { content:counter(faq-counter,decimal-leading-zero); font-size:12px; font-weight:700; letter-spacing:1px; color:#FF6B35; }

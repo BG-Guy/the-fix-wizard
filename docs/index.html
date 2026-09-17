@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- ===== HEAD: meta tags, fonts, CSS links (assembled into the <html> wrapper by build.js) ===== -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,6 +123,7 @@
             <ul class="hidden md:flex items-center gap-0.5 mx-auto nav-links">
                 <li><a href="#home"     class="nav-link active text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a></li>
                 <li><a href="#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
+                <li><a href="#gallery"  class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Gallery</a></li>
                 <li><a href="#why-us"   class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">About</a></li>
                 <li><a href="#contact"  class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
                 <li class="nav-dropdown">
@@ -171,6 +173,7 @@
         <ul class="flex flex-col gap-0.5 mb-5 mobile-nav-links">
             <li><a href="#home"     class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Home</a></li>
             <li><a href="#services" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Services</a></li>
+            <li><a href="#gallery"  class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Gallery</a></li>
             <li><a href="#why-us"   class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">About</a></li>
             <li><a href="#contact"  class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
             <li>
@@ -428,6 +431,101 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY PREVIEW / OUR WORK ===== -->
+    <section id="gallery" class="relative overflow-hidden bg-white min-h-screen w-full flex flex-col justify-center py-20 md:py-24">
+        <div class="absolute top-[-90px] left-[-90px] w-[320px] h-[320px] bg-orange opacity-[.035] pointer-events-none" style="clip-path:polygon(50% 0%,55% 45%,100% 50%,55% 55%,50% 100%,45% 55%,0% 50%,45% 45%)"></div>
+
+        <div class="max-w-site mx-auto px-6 w-full">
+            <div class="section-header reveal">
+                <span class="section-tag">Real Jobs, Real Results</span>
+                <h2 class="section-title">See The <span class="text-orange">Magic</span> We Bring To Every Job</h2>
+                <p class="section-desc">Tap a photo to watch the transformation. Every job on this wall carries the same promise: done right, or we come back and make it right — free.</p>
+            </div>
+
+            <!-- Trust showcase: big animated headline carousel — each promise
+                 burns to embers, the next slides up from below. Infinite, 2s/phrase.
+                 Canvas is decorative; the sr-only span carries the live text. -->
+            <div class="trust-showcase reveal">
+                <canvas id="trustCanvas" class="trust-canvas" aria-hidden="true"></canvas>
+                <span id="trustSrText" class="sr-only" aria-live="polite">100% Satisfaction Guaranteed</span>
+                <noscript>
+                    <p class="text-center text-[15px] font-semibold text-navy-900">100% Satisfaction Guaranteed &middot; 3-Month Workmanship Warranty &middot; Licensed &amp; Insured</p>
+                </noscript>
+            </div>
+
+            <!-- Before/After cards: 1-col mobile, 3-col desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Card 1 -->
+                <div class="reveal-card relative aspect-[4/5] rounded-card overflow-hidden shadow-card bg-navy-900 reveal">
+                    <div class="reveal-img reveal-img--before">
+                        <img src="assets/images/Before-After/drywall-before.webp" alt="Before: cracked bathroom ceiling drywall" loading="lazy" width="600" height="750">
+                    </div>
+                    <div class="reveal-img-wrap">
+                        <div class="reveal-img reveal-img--after">
+                            <img src="assets/images/Before-After/drywall-after.webp" alt="After: repaired and repainted bathroom ceiling drywall" loading="lazy" width="600" height="750">
+                        </div>
+                    </div>
+                    <span class="reveal-shimmer" aria-hidden="true"></span>
+                    <span class="reveal-tag reveal-tag--before">Before</span>
+                    <span class="reveal-tag reveal-tag--after">After</span>
+                    <button type="button" class="reveal-toggle" aria-label="Reveal the after photo for this drywall crack repair">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                        <span class="reveal-toggle-text">Reveal The Fix</span>
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="reveal-card relative aspect-[4/5] rounded-card overflow-hidden shadow-card bg-navy-900 reveal">
+                    <div class="reveal-img reveal-img--before">
+                        <img src="assets/images/Before-After/cabinet-before.webp" alt="Before: cluttered, leaking under-sink plumbing inside a kitchen cabinet" loading="lazy" width="600" height="750">
+                    </div>
+                    <div class="reveal-img-wrap">
+                        <div class="reveal-img reveal-img--after">
+                            <img src="assets/images/Before-After/cabinet-after.webp" alt="After: clean, professionally installed under-sink water filtration system" loading="lazy" width="600" height="750">
+                        </div>
+                    </div>
+                    <span class="reveal-shimmer" aria-hidden="true"></span>
+                    <span class="reveal-tag reveal-tag--before">Before</span>
+                    <span class="reveal-tag reveal-tag--after">After</span>
+                    <button type="button" class="reveal-toggle" aria-label="Reveal the after photo for this under-sink plumbing cleanup">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                        <span class="reveal-toggle-text">Reveal The Fix</span>
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="reveal-card relative aspect-[4/5] rounded-card overflow-hidden shadow-card bg-navy-900 reveal">
+                    <div class="reveal-img reveal-img--before">
+                        <img src="assets/images/Before-After/faucet-before.webp" alt="Before: old, worn bathroom faucet" loading="lazy" width="600" height="750">
+                    </div>
+                    <div class="reveal-img-wrap">
+                        <div class="reveal-img reveal-img--after">
+                            <img src="assets/images/Before-After/faucet-after.webp" alt="After: new bathroom faucet installed and leak-free" loading="lazy" width="600" height="750">
+                        </div>
+                    </div>
+                    <span class="reveal-shimmer" aria-hidden="true"></span>
+                    <span class="reveal-tag reveal-tag--before">Before</span>
+                    <span class="reveal-tag reveal-tag--after">After</span>
+                    <button type="button" class="reveal-toggle" aria-label="Reveal the after photo for this faucet replacement">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                        <span class="reveal-toggle-text">Reveal The Fix</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Closing CTA -->
+            <div class="flex flex-col items-center gap-4 mt-14 text-center reveal">
+                <h3 class="font-cinzel text-[22px] md:text-[26px] font-bold text-navy-900">Your Project Could Be Next</h3>
+                <p class="text-slate-500 text-[15px] max-w-[480px]">Free estimate, no obligation. If you're not 100% satisfied, we come back and fix it — on us.</p>
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    <i class="fas fa-paper-plane"></i> Get My Free Quote
+                </a>
             </div>
         </div>
     </section>
@@ -2132,7 +2230,7 @@
         <svg class="sticky-cta__spark scs-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
     </a>
 
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="shared/main.js"></script>
 
 </body>
 </html>
