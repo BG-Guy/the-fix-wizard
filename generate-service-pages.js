@@ -52,7 +52,6 @@ function navbar(loc, serviceParam = '') {
             <ul class="hidden md:flex items-center gap-0.5 mx-auto nav-links">
                 <li><a href="/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a></li>
                 <li><a href="/#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
-                <li><a href="/#why-us" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">About</a></li>
                 <li><a href="${contactHref}" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
                 <li class="nav-dropdown">
                     <a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
@@ -184,8 +183,8 @@ function hubPage(loc, type) {
   const otherIcon   = type === 'chimney' ? 'fa-screwdriver-wrench' : 'fa-fire';
   const otherSlug   = `${otherType}-services-near-${loc.slug}`;
 
-  const title    = `${typeLabel} Services Near ${loc.city}, ${loc.state} | The Fix Wizard`;
-  const metaDesc = `Licensed ${typeLabel.toLowerCase()} services near ${cityState} — ${services.length} services available. Same-day scheduling, free estimates. The Fix Wizard — ${loc.county}'s trusted home repair team.`;
+  const title    = `${typeLabel} Services Near ${loc.city}, ${loc.state} | Fix Wizard`;
+  const metaDesc = `Licensed ${typeLabel.toLowerCase()} services near ${cityState} — ${services.length} services available. Same-day scheduling, free estimates. Fix Wizard — ${loc.county}'s trusted home repair team.`;
 
   // Pill browser sections
   const pillsHtml = cats.map(cat => {
@@ -440,10 +439,11 @@ function detailPage(loc, svc, type) {
   const typeIcon   = type === 'chimney' ? 'fa-fire' : 'fa-screwdriver-wrench';
   const svcParam   = type === 'chimney' ? 'Chimney+%26+Masonry' : 'Handyman+Services';
 
-  const title    = `${svc.name} Near ${loc.city}, ${loc.state} | The Fix Wizard`;
+  const titleName = svc.title_name || svc.name;
+  const title    = `${titleName} Near ${loc.city}, ${loc.state} | Fix Wizard`;
   const metaDesc = (content && content.meta_desc)
     ? content.meta_desc.replace(/\{cityState\}/g, cityState).replace(/\{city\}/g, loc.city).replace(/\{state\}/g, loc.state)
-    : `Professional ${svc.name.toLowerCase()} near ${cityState}. ${svc.desc.slice(0, 100)} Licensed & insured. Free estimates. Same-day available.`;
+    : `${titleName} near ${cityState} — licensed, insured experts. Same-day available. Free estimate. The Fix Wizard — call (551) 350-4951.`;
 
   const includesList = svc.includes.map(item =>
     `<li class="flex items-start gap-3 py-2.5 border-b border-white/[.08] last:border-0">

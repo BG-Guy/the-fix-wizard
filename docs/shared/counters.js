@@ -1,5 +1,5 @@
 // counters.js — animates the "500+ projects" style stat numbers by
-// counting up once they scroll into view. Shared by hero, why-us and faq.
+// counting up once they scroll into view. Shared by hero and faq.
 
 import { SITE_STATS } from './site-data.js';
 

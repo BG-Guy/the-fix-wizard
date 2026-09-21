@@ -33,7 +33,6 @@ function navbar(serviceParam) {
             <ul class="hidden md:flex items-center gap-0.5 mx-auto nav-links">
                 <li><a href="/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a></li>
                 <li><a href="/#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
-                <li><a href="/#why-us" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">About</a></li>
                 <li><a href="${contactHref}" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
                 <li class="nav-dropdown">
                     <a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
@@ -144,10 +143,11 @@ function genericPage(svc, type) {
     .replace(/\{state\}/g, GENERIC_STATE)
     : s;
 
-  const title   = `${svc.name} | Professional Home Services | The Fix Wizard`;
+  const titleName = svc.title_name || svc.name;
+  const title   = `${titleName} | Fix Wizard`;
   const metaDesc = content && content.meta_desc
     ? r(content.meta_desc)
-    : `Professional ${svc.name.toLowerCase()} by licensed, insured experts. ${svc.desc.slice(0, 90)}. Free estimates. Same-day available. Serving South Jersey & Greater Philadelphia.`;
+    : `${titleName} — licensed, insured experts serving South Jersey & Greater Philadelphia. Same-day available. Free estimate. Call (551) 350-4951.`;
 
   const schema = JSON.stringify({
     '@context': 'https://schema.org',

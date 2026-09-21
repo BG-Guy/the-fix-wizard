@@ -164,7 +164,6 @@ function navbar(loc, serviceParam = '') {
             <ul class="hidden md:flex items-center gap-0.5 mx-auto nav-links">
                 <li><a href="/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a></li>
                 <li><a href="/#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
-                <li><a href="/#why-us" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">About</a></li>
                 <li><a href="${contactHref}" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
                 <li class="nav-dropdown">
                     <a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
@@ -209,7 +208,6 @@ function navbar(loc, serviceParam = '') {
         <ul class="flex flex-col gap-0.5 mb-5 mobile-nav-links">
             <li><a href="/" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Home</a></li>
             <li><a href="/#services" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Services</a></li>
-            <li><a href="/#why-us" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">About</a></li>
             <li><a href="${contactHref}" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
             <li>
                 <span class="mobile-loc-label">South Jersey &amp; Delaware Valley</span>
@@ -312,7 +310,7 @@ function schema(loc, type, description) {
 
 function hubPage(loc) {
   const cityState = `${loc.city}, ${loc.state}`;
-  const title = `Chimney & Handyman Services in ${loc.city}, ${loc.state} | The Fix Wizard`;
+  const title = `Chimney & Handyman Services in ${loc.city}, ${loc.state} | Fix Wizard`;
   const metaDesc = `Licensed chimney repair and handyman services in ${cityState}. Same-day available. Free estimates. The Fix Wizard — ${loc.county}'s trusted home repair team.`;
 
   return `<!DOCTYPE html>
@@ -512,7 +510,7 @@ ${footer()}
 
 function chimneyPage(loc) {
   const cityState = `${loc.city}, ${loc.state}`;
-  const title = `Chimney Repair in ${loc.city}, ${loc.state} | The Fix Wizard`;
+  const title = `Chimney Repair in ${loc.city}, ${loc.state} | Fix Wizard`;
   const metaDesc = `Expert chimney repair and masonry in ${cityState} — sweeping, tuckpointing, crown repair, liner installation. Licensed &amp; insured. Same-day available. Free estimates.`;
 
   return `<!DOCTYPE html>
@@ -626,7 +624,7 @@ ${footer()}
 
 function handymanPage(loc) {
   const cityState = `${loc.city}, ${loc.state}`;
-  const title = `Handyman Services in ${loc.city}, ${loc.state} | The Fix Wizard`;
+  const title = `Handyman Services in ${loc.city}, ${loc.state} | Fix Wizard`;
   const metaDesc = `Professional handyman services in ${cityState} — drywall, painting, plumbing, electrical, TV mounting, furniture assembly. Same-day available. Free estimates.`;
 
   return `<!DOCTYPE html>
