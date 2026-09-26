@@ -53,7 +53,7 @@ Every town has its own landing page. Examples:
 - Animal & Debris Removal
 - Spalling Brick & Masonry Repair
 
-### Handyman Services (26 services)
+### Handyman Services (27 services)
 [Full overview](https://thefixwizard.com/services/handyman/)
 
 - TV Wall Mounting
@@ -82,6 +82,7 @@ Every town has its own landing page. Examples:
 - Fascia Board Repair
 - Mailbox & Post Installation
 - Door Repair & Installation
+- Garage Door Repair
 
 ## Frequently Asked Questions
 

@@ -607,6 +607,19 @@
         "New section installation with concrete footings"
       ],
       "title_name": "Fence Repair & Installation"
+    },
+    {
+      "icon": "fa-warehouse",
+      "img": "/assets/images/service-card-thumbnails/garage-door-repair.webp",
+      "name": "Garage Door Repair",
+      "slug": "garage-door-repair",
+      "desc": "Spring replacement, opener repair, track realignment, and panel fixes to restore smooth, safe operation.",
+      "includes": [
+        "Spring type diagnosis (torsion vs. extension)",
+        "Spring or cable replacement",
+        "Track alignment and roller inspection",
+        "Opener sync and safety reversal test"
+      ]
     }
   ],
   "chimney_cats": [
@@ -714,7 +727,8 @@
         "roof-leak-repair",
         "fascia-repair",
         "gutter-repair-cleaning",
-        "fence-repair-installation"
+        "fence-repair-installation",
+        "garage-door-repair"
       ]
     }
   ],
@@ -1213,6 +1227,17 @@
       "longevity": "Post reset with concrete in the {city} area runs $175 to $325 per post depending on extraction requirements. Panel replacement runs $125 to $250 per 6 to 8 foot section depending on material and height. New fence installation is priced by the linear foot and quoted by the project. Pressure-treated wood posts installed in concrete footings last 15 to 25 years. Cedar fence panels last 15 to 20 years with periodic staining. Vinyl fence panels are essentially maintenance-free for 25 years or more.",
       "h2_consequences": "A Post Without a Concrete Footing Fails Predictably in {city} Clay",
       "consequences": "Fence posts set without concrete — driven directly into soil or backfilled with tamped dirt — rely entirely on soil friction to stay vertical. In {city} clay soils that expand when wet and contract when dry, that friction is seasonal. Posts set this way lean progressively through repeated wet-dry and freeze-thaw cycles, and the lean accelerates because a leaning post applies a lateral load to the soil that a plumb post does not. Within two to three years, a post set without concrete in local soils has typically moved enough to affect adjacent panels. The entire fence line is only as stable as its weakest post, and a run of fence where the posts were set without concrete footings is a repair project waiting to happen across multiple posts at once."
+    },
+    "garage-door-repair": {
+      "meta_desc": "Garage door repair near {cityState} — spring replacement, opener repair, track fixes. Same-day service. Licensed & insured. Free estimate. (551) 350-4951.",
+      "h2_why_need": "When Your Garage Door Won't Open, the Spring Is Usually Why",
+      "why_need": "A garage door spring absorbs and releases the full weight of the door every time it cycles — typically 150 to 250 pounds, thousands of times per year. Extension springs on older homes are rated for 10,000 cycles; torsion springs for 15,000 to 20,000. At two opens and closes per day, that is 7 to 14 years of service before the spring reaches its rated lifespan. Homes in {city} built between the 1970s and 1990s — which is most of the neighborhood housing stock in the area — are likely running on springs that have exceeded their cycle life. The most common call we receive is a door that opened normally the night before and won't budge in the morning. A two-second visual inspection of the spring almost always confirms the cause before a tool is picked up.",
+      "h2_benefits": "How We Diagnose and Fix Garage Doors in {city} Homes",
+      "benefits": "We start with a visual inspection before touching anything. Torsion springs — mounted on a bar horizontally above the door opening — break cleanly with a visible gap in the coil. Extension springs — running along the horizontal tracks on each side — break at the hook or cable attachment and are sometimes less obvious. After confirming the spring type and break point, we replace both springs simultaneously, even when only one has failed: paired springs wear at the same rate, and returning the next week for the second one is a service call that did not need to happen. After spring replacement, we inspect the cables, rollers, and hinges for wear and test the opener's safety auto-reversal before signing off. A standard double-door spring replacement takes 60 to 90 minutes.",
+      "h2_longevity": "Garage Door Repair Cost in {cityState}, and How Long It Lasts",
+      "longevity": "Spring replacement in the {city} area typically runs $175 to $450 depending on spring type — torsion springs cost more upfront than extension springs but last significantly longer at 20,000 cycles versus 10,000. Opener repairs run $100 to $250 depending on the component. We quote a flat rate before work starts — no hourly billing. New torsion springs are rated for 20,000 cycles, which is 20 to 27 years of normal residential use.",
+      "h2_consequences": "A Broken Torsion Spring Holds 200 Pounds of Tension — Do Not DIY",
+      "consequences": "A torsion spring under load stores significant mechanical energy. When it fails — which happens in a fraction of a second and sounds like a gunshot — that energy releases through the cable and drum system in a controlled direction. Bypassing that system by manually forcing a door with a broken spring removes the cable as the energy path and puts it directly into whatever you are holding. Emergency rooms across Cherry Hill, Voorhees, and Moorestown see injuries from exactly this scenario every year. Beyond the safety issue, a broken spring means the car in the garage stays there. Most homeowners who defer this repair spend the week using the side door and treating it as a scheduling problem — when it is actually a loaded mechanical hazard. The cost of repair does not go up while you wait."
     }
   }
 }
