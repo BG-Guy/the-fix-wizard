@@ -289,123 +289,95 @@
         </div>
     </section>
 
-    <!-- BUBBLE SERVICES -->
-    <section class="py-20 bg-white">
+    <!-- SERVICE CARDS -->
+    <section style="padding:40px 0 64px;background:#f7f8fc;">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">What We Cover</span>
                 <h2 class="section-title">Complete Chimney &amp; <span class='text-accent'>Masonry Services</span></h2>
-                <p class="section-desc">All 18 services we offer — search to find yours instantly.</p>
+                <p class="section-desc">Our most-requested chimney and masonry repairs — click any service to learn more.</p>
             </div>
-
-            <div class="max-w-[580px] mx-auto mb-12 reveal">
-                <div class="srch-wrap">
-                    <i class="fas fa-search srch-icon"></i>
-                    <input id="srch" type="text" class="srch-input" placeholder="Search services…" autocomplete="off" spellcheck="false">
-                    <div id="srch-clr" class="srch-clear" role="button" aria-label="Clear search">
-                        <i class="fas fa-times"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1100px] mx-auto pb-2">
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/service-card-thumbnails/chimney-sweep.webp" alt="Chimney Sweeping" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3"><div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-broom text-orange text-[15px]"></i></div><h3 class="text-[18px] font-bold text-navy-900">Chimney Sweeping</h3></div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Annual Cleaning</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">HEPA-vacuum creosote removal from flue top to bottom. Reduces chimney fire risk and improves draft. NFI-certified inspection included.</p>
+                            <a href="/chimney-inspection-standard-sweep-near-cherry-hill/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
                     </div>
-                </div>
-                <p id="srch-hint" class="srch-hint"></p>
-            </div>
-
-            <div id="svc-container" class="flex flex-col gap-10 max-w-[960px] mx-auto">
-
-            <div class="svc-category">
-                <div class="cat-hdr">
-                    <div class="cat-hdr-icon"><i class="fas fa-magnifying-glass"></i></div>
-                    <span class="cat-hdr-label">Inspections &amp; Sweep Services</span>
-                    <div class="cat-hdr-line"></div>
-                </div>
-                <div class="bubbles-row">
-                    <a class="svc-bubble" href="/chimney-inspection-standard-sweep/" data-s="level 1 inspection and standard sweep" style="--dur:3.6s;--delay:0s">
-                        <i class="fas fa-magnifying-glass b-icon"></i><span>Level 1 Inspection &amp; Standard Sweep</span>
-                    </a>
-                    <a class="svc-bubble" href="/chimney-level-2-inspection/" data-s="level 2 inspection camera scan" style="--dur:4.1s;--delay:0.4s">
-                        <i class="fas fa-camera b-icon"></i><span>Level 2 Inspection (Camera Scan)</span>
-                    </a>
-                    <a class="svc-bubble" href="/creosote-rotary-cleaning/" data-s="heavy creosote rotary cleaning" style="--dur:3.9s;--delay:0.8s">
-                        <i class="fas fa-broom b-icon"></i><span>Heavy Creosote Rotary Cleaning</span>
-                    </a>
-                </div>
-            </div>
-            <div class="svc-category">
-                <div class="cat-hdr">
-                    <div class="cat-hdr-icon"><i class="fas fa-circle-dot"></i></div>
-                    <span class="cat-hdr-label">Caps, Covers &amp; Maintenance</span>
-                    <div class="cat-hdr-line"></div>
-                </div>
-                <div class="bubbles-row">
-                    <a class="svc-bubble" href="/chimney-cap-installation/" data-s="single-flue stainless steel cap" style="--dur:4.4s;--delay:1.2s">
-                        <i class="fas fa-circle-dot b-icon"></i><span>Single-Flue Stainless Steel Cap</span>
-                    </a>
-                    <a class="svc-bubble" href="/custom-chimney-cap-installation/" data-s="multi-flue   custom top-mount cap" style="--dur:3.7s;--delay:0.2s">
-                        <i class="fas fa-layer-group b-icon"></i><span>Multi-Flue / Custom Top-Mount Cap</span>
-                    </a>
-                    <a class="svc-bubble" href="/chase-cover-replacement/" data-s="chase cover replacement" style="--dur:4.2s;--delay:0.6s">
-                        <i class="fas fa-square b-icon"></i><span>Chase Cover Replacement</span>
-                    </a>
-                    <a class="svc-bubble" href="/chimney-waterproofing/" data-s="chimney water repellent application" style="--dur:3.8s;--delay:1.0s">
-                        <i class="fas fa-droplet-slash b-icon"></i><span>Chimney Water Repellent Application</span>
-                    </a>
-                    <a class="svc-bubble" href="/chimney-flashing-repair/" data-s="flashing repair and installation" style="--dur:4.5s;--delay:1.4s">
-                        <i class="fas fa-wrench b-icon"></i><span>Flashing Repair &amp; Installation</span>
-                    </a>
-                    <a class="svc-bubble" href="/chimney-leak-repair/" data-s="chimney leak repair" style="--dur:3.6s;--delay:0s">
-                        <i class="fas fa-droplet b-icon"></i><span>Chimney Leak Repair</span>
-                    </a>
-                    <a class="svc-bubble" href="/chimney-animal-removal/" data-s="animal removal" style="--dur:4.1s;--delay:0.4s">
-                        <i class="fas fa-paw b-icon"></i><span>Animal Removal</span>
-                    </a>
-                </div>
-            </div>
-            <div class="svc-category">
-                <div class="cat-hdr">
-                    <div class="cat-hdr-icon"><i class="fas fa-trowel-bricks"></i></div>
-                    <span class="cat-hdr-label">Masonry &amp; Crown Repairs</span>
-                    <div class="cat-hdr-line"></div>
-                </div>
-                <div class="bubbles-row">
-                    <a class="svc-bubble" href="/chimney-crown-repair/" data-s="crown repair elastomeric coating" style="--dur:3.9s;--delay:0.8s">
-                        <i class="fas fa-helmet-safety b-icon"></i><span>Crown Repair (Elastomeric Coating)</span>
-                    </a>
-                    <a class="svc-bubble" href="/chimney-crown-rebuild/" data-s="full chimney crown rebuild" style="--dur:4.4s;--delay:1.2s">
-                        <i class="fas fa-hat-hard b-icon"></i><span>Full Chimney Crown Rebuild</span>
-                    </a>
-                    <a class="svc-bubble" href="/chimney-tuckpointing/" data-s="tuckpointing and mortar repair" style="--dur:3.7s;--delay:0.2s">
-                        <i class="fas fa-trowel-bricks b-icon"></i><span>Tuckpointing &amp; Mortar Repair</span>
-                    </a>
-                    <a class="svc-bubble" href="/firebox-rebricking/" data-s="firebox re-bricking   refractory panel swap" style="--dur:4.2s;--delay:0.6s">
-                        <i class="fas fa-fire-flame-curved b-icon"></i><span>Firebox Re-bricking / Refractory Panel Swap</span>
-                    </a>
-                    <a class="svc-bubble" href="/firebox-rebuild/" data-s="firebox rebuild" style="--dur:3.8s;--delay:1.0s">
-                        <i class="fas fa-fire b-icon"></i><span>Firebox Rebuild</span>
-                    </a>
-                    <a class="svc-bubble" href="/smoke-chamber-parge/" data-s="smoke chamber parge" style="--dur:4.5s;--delay:1.4s">
-                        <i class="fas fa-cloud b-icon"></i><span>Smoke Chamber Parge</span>
-                    </a>
-                </div>
-            </div>
-            <div class="svc-category">
-                <div class="cat-hdr">
-                    <div class="cat-hdr-icon"><i class="fas fa-pipe"></i></div>
-                    <span class="cat-hdr-label">Components &amp; Liners</span>
-                    <div class="cat-hdr-line"></div>
-                </div>
-                <div class="bubbles-row">
-                    <a class="svc-bubble" href="/chimney-damper-installation/" data-s="top-damper installation" style="--dur:3.6s;--delay:0s">
-                        <i class="fas fa-toggle-on b-icon"></i><span>Top-Damper Installation</span>
-                    </a>
-                    <a class="svc-bubble" href="/chimney-liner-installation/" data-s="stainless steel flue liner installation" style="--dur:4.1s;--delay:0.4s">
-                        <i class="fas fa-pipe b-icon"></i><span>Stainless Steel Flue Liner Installation</span>
-                    </a>
-                </div>
-            </div>
-            </div>
-
-            <div id="srch-none" class="srch-none">
-                No services match your search.
-                <button id="srch-none-clr">Clear search</button>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/chimney-repair-in-new-jersey.webp" alt="Tuckpointing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3"><div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-hammer text-orange text-[15px]"></i></div><h3 class="text-[18px] font-bold text-navy-900">Tuckpointing</h3></div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Mortar Repair</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Deteriorated mortar joints ground out and repacked to stop water infiltration and extend chimney life by decades.</p>
+                            <a href="/chimney-tuckpointing-near-cherry-hill/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/service-card-thumbnails/chimney-crown-repair.webp" alt="Crown Repair" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3"><div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-crown text-orange text-[15px]"></i></div><h3 class="text-[18px] font-bold text-navy-900">Crown Repair</h3></div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Top Sealing</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Cracked crowns repaired with elastomeric sealant or rebuilt to prevent water entering the masonry from above.</p>
+                            <a href="/chimney-crown-repair-near-cherry-hill/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/service-card-thumbnails/chimney-custom-cap.webp" alt="Cap Installation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3"><div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-fire text-orange text-[15px]"></i></div><h3 class="text-[18px] font-bold text-navy-900">Cap Installation</h3></div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Weather Shield</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Stainless steel caps installed to block rain, animals, and debris from entering the flue opening — last a lifetime.</p>
+                            <a href="/chimney-cap-installation-near-cherry-hill/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/service-card-thumbnails/chimney-liner-installation.webp" alt="Liner Installation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3"><div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-grip-lines-vertical text-orange text-[15px]"></i></div><h3 class="text-[18px] font-bold text-navy-900">Liner Installation</h3></div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Full Flue System</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Stainless steel liner systems for safe combustion gas exhaust on oil, gas, and wood-burning appliances. Code-required in NJ.</p>
+                            <a href="/chimney-liner-installation-near-cherry-hill/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/chimney-repair-in-new-jersey.webp" alt="Waterproofing" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3"><div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-droplet text-orange text-[15px]"></i></div><h3 class="text-[18px] font-bold text-navy-900">Waterproofing</h3></div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Masonry Protection</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Penetrating waterproofer applied to block moisture entry while allowing the masonry to breathe — prevents freeze-thaw spalling.</p>
+                            <a href="/chimney-waterproofing-near-cherry-hill/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/service-card-thumbnails/chimney-flashing-repair.webp" alt="Flashing Repair" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3"><div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-wrench text-orange text-[15px]"></i></div><h3 class="text-[18px] font-bold text-navy-900">Flashing Repair</h3></div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Roof-Chimney Seal</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Step and counterflashing replaced and sealed to stop water infiltration at the roof-chimney junction — the most common source of attic leaks.</p>
+                            <a href="/chimney-flashing-repair-near-cherry-hill/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
+                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/service-card-thumbnails/firebox-repair.webp" alt="Firebox Repair" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
+                        <div class="p-6 flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3"><div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-fire-flame-curved text-orange text-[15px]"></i></div><h3 class="text-[18px] font-bold text-navy-900">Firebox Repair</h3></div>
+                            <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Combustion Chamber</p>
+                            <p class="text-sm text-slate-500 leading-relaxed flex-1">Cracked firebrick and failed refractory mortar replaced to restore a safe, code-compliant firebox. Essential before the next burn season.</p>
+                            <a href="/firebox-rebricking-near-cherry-hill/" class="stretched-link inline-flex items-center gap-2 text-sm font-semibold text-orange hover:text-orange-dark transition-colors mt-auto">Book This Service <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></a>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
