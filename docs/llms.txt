@@ -53,13 +53,12 @@ Every town has its own landing page. Examples:
 - Animal & Debris Removal
 - Spalling Brick & Masonry Repair
 
-### Handyman Services (27 services)
+### Handyman Services (26 services)
 [Full overview](https://thefixwizard.com/services/handyman/)
 
 - TV Wall Mounting
 - Ceiling Fan Installation
 - Drywall Repair & Patching
-- Interior & Exterior Painting
 - Kitchen or Bathroom Faucet Replacement
 - Toilet Repair (Reset / Flange / Inner Components)
 - Garbage Disposal Replacement
