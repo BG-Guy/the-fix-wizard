@@ -56,9 +56,9 @@ jobs:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
           SEO_AGENT_MODE: ${{ steps.mode.outputs.mode }}
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          # or, to bill your Claude subscription instead of the API:
-          # claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Billed to the Claude subscription. To pay per use with an API key instead:
+          # anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ github.token }}
           show_full_output: true   # TEMP: diagnosing the first failed run
           plugin_marketplaces: https://github.com/BG-Guy/seo-agent.git
