@@ -1,8 +1,8 @@
 // trust-showcase.js — big animated headline carousel above the gallery
 // cards. Each promise holds, then "burns" apart into ember particles
 // sampled from its own letterforms (a fire-ash take on the site's
-// existing magic-poof motif — see why-us/magic-bubble.js), then the
-// next phrase slides up from below. Loops forever, ~2s per phrase.
+// magic-poof visual motif), then the next phrase slides up from below.
+// Loops forever, ~2s per phrase.
 
 const PHRASES = [
     '100% Satisfaction Guaranteed',

@@ -113,19 +113,21 @@
         </div>
     </div>
 
-    <!-- ===== NAVBAR ===== -->
+    <!-- ===== NAVBAR — the one navbar used on EVERY page (rendered via render-navbar.js).
+         Links are root-absolute so they work from any page. /#contact lets a page
+         pre-select a service in the quote form; it defaults to /#contact. ===== -->
     <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-[100]">
         <div class="max-w-site mx-auto px-6 flex items-center h-full gap-8 nav-container">
 
-            <a href="#home" class="flex items-center shrink-0 logo">
-                <img src="assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="h-auto max-h-[58px] md:max-h-[110px] w-auto object-contain rounded-lg logo-img" width="199" height="110">
+            <a href="/#home" class="flex items-center shrink-0 logo">
+                <img src="/assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="h-auto max-h-[58px] md:max-h-[110px] w-auto object-contain rounded-lg logo-img" width="199" height="110">
             </a>
 
             <ul class="hidden md:flex items-center gap-0.5 mx-auto nav-links">
-                <li><a href="#home"     class="nav-link active text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a></li>
-                <li><a href="#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
-                <li><a href="#gallery"  class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Gallery</a></li>
-                <li><a href="#contact"  class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
+                <li><a href="/#home"     class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a></li>
+                <li><a href="/#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
+                <li><a href="/#gallery"  class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Gallery</a></li>
+                <li><a href="/#contact" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
                 <li class="nav-dropdown">
                     <a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
                     <div class="nav-dropdown-menu">
@@ -149,7 +151,7 @@
                     <i class="fas fa-phone text-orange"></i>
                     <span>(551) 350-4951</span>
                 </a>
-                <a href="#contact" class="btn btn-primary nav-cta relative overflow-hidden">
+                <a href="/#contact" class="btn btn-primary nav-cta relative overflow-hidden">
                     Free Quote
                     <svg class="btn-spark bs-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
                     <svg class="btn-spark bs-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
@@ -171,10 +173,10 @@
             <i class="fas fa-times"></i>
         </button>
         <ul class="flex flex-col gap-0.5 mb-5 mobile-nav-links">
-            <li><a href="#home"     class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Home</a></li>
-            <li><a href="#services" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Services</a></li>
-            <li><a href="#gallery"  class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Gallery</a></li>
-            <li><a href="#contact"  class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
+            <li><a href="/#home"     class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Home</a></li>
+            <li><a href="/#services" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Services</a></li>
+            <li><a href="/#gallery"  class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Gallery</a></li>
+            <li><a href="/#contact" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
             <li>
                 <span class="mobile-loc-label">South Jersey &amp; Delaware Valley</span>
                 <a href="/cherry-hill-repair/"      class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cherry Hill</a>
@@ -192,131 +194,43 @@
         <a href="tel:+15513504951" class="mobile-phone flex items-center gap-2.5 text-white/65 text-sm mb-3.5 px-3.5">
             <i class="fas fa-phone text-orange"></i>(551) 350-4951
         </a>
-        <a href="#contact" class="btn btn-primary mobile-cta mobile-link mt-1.5">Get Free Quote</a>
+        <a href="/#contact" class="btn btn-primary mobile-cta mobile-link mt-1.5">Get Free Quote</a>
     </div>
     <div class="mobile-overlay fixed inset-0 bg-black/50 z-[100] opacity-0 invisible transition-all backdrop-blur-sm" id="mobileOverlay"></div>
 
     <!-- ===== HERO ===== -->
-    <section id="home" class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)] rounded-b-[56px]">
-        <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
-            <div class="grid grid-cols-1 tab:grid-cols-[1fr_420px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
+    <section id="home" class="hero hero--mockup relative flex overflow-hidden min-h-screen pt-[var(--nav-h)]">
+        <div class="max-w-site mx-auto px-6 relative z-[2] w-full grid grid-cols-1 grid-rows-[1fr_auto] tab:grid-cols-[1.2fr_1fr] tab:grid-rows-1 gap-x-10">
 
-                <!-- LEFT -->
-                <div class="flex flex-col items-center tab:items-start text-center tab:text-left">
-                    <div class="inline-flex items-center gap-2 bg-orange/[.14] border border-orange/30 text-orange-light px-4 py-1.5 rounded-full text-[13px] font-semibold mb-7 tracking-wide">
-                        <i class="fas fa-map-marker-alt text-orange text-[11px]"></i>
-                        <span>Serving South Jersey &amp; Philadelphia</span>
-                    </div>
-                    <h1 class="font-cinzel text-[clamp(32px,5vw,64px)] font-black leading-[1.1] tracking-tight text-white mb-6">
-                        Chimney &amp; Handyman<br>
-                        <span class="text-orange">Services <span class="lightning-word">Near You</span></span>
-                    </h1>
-                    <p class="text-[18px] text-white/65 leading-[1.75] mb-6 max-w-[560px]">
-                        The Fix Wizard brings licensed chimney repair, masonry restoration, and handyman services to homeowners across <strong class="text-white/90">South Jersey &amp; Philadelphia</strong>. Same-day available. Free estimates. No obligation.
-                    </p>
-                    <div class="flex items-center gap-3 mb-8 flex-wrap justify-center tab:justify-start">
-                        <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-full px-4 py-2 text-[13px] font-semibold text-white/80">
-                            <i class="fas fa-location-dot text-orange text-[12px]"></i> South Jersey &amp; Philadelphia
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3 mb-12 flex-wrap justify-center tab:justify-start hero-actions">
-                        <a href="/locations/" class="btn btn-primary btn-lg">
-                            <i class="fas fa-map-marker-alt"></i> Our Service Areas
-                        </a>
-                        <a href="#contact" class="btn btn-outline btn-lg">
-                            <i class="fas fa-paper-plane"></i> Get a Free Quote
-                        </a>
-                    </div>
-                    <div class="w-full h-px bg-white/10 mb-8"></div>
-                    <div class="flex items-center gap-8 flex-wrap justify-center tab:justify-start hero-stats">
-                        <div class="text-left">
-                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="mile_radius">0</span></div>
-                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Mile Radius</div>
-                        </div>
-                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
-                        <div class="text-left">
-                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="projects">0</span>+</div>
-                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Jobs Done</div>
-                        </div>
-                        <div class="w-px h-10 bg-white/12 hidden tab:block"></div>
-                        <div class="text-left">
-                            <div class="text-[28px] font-black text-orange leading-none mb-1"><span class="counter" data-stat="specialties">0</span></div>
-                            <div class="text-[12px] text-white/50 font-medium tracking-wider">Specialties</div>
-                        </div>
-                    </div>
+            <!-- LEFT: copy -->
+            <div class="hero-copy self-center flex flex-col items-center tab:items-start text-center tab:text-left">
+                <div class="inline-flex items-center gap-2 bg-orange/[.14] border border-orange/30 text-orange-light px-4 py-1.5 rounded-full text-[13px] font-semibold mb-7 tracking-wide">
+                    <i class="fas fa-map-marker-alt text-orange text-[11px]"></i>
+                    <span>Serving South Jersey &amp; Philadelphia</span>
                 </div>
-
-                <!-- RIGHT -->
-                <div class="flex items-center justify-center tab:justify-end">
-                    <div class="w-full max-w-[520px] bg-white/[.07] backdrop-blur-xl border border-white/[.13] rounded-xl2 p-8 flex flex-col gap-6">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-[52px] h-[52px] shrink-0 bg-orange rounded-md2 flex items-center justify-center text-[22px] text-white">
-                                <i class="fas fa-map-location-dot"></i>
-                            </div>
-                            <div>
-                                <h2 class="text-[16px] font-semibold text-white leading-tight mb-1">Choose Your Location</h2>
-                                <p class="text-[13px] text-white/50">Same-day service · Free estimates</p>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <a href="/cherry-hill-repair/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
-                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Cherry Hill</div><div class="text-[11px] text-white/40">Camden County, NJ</div></div>
-                            </a>
-                            <a href="/philadelphia-repair/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
-                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Philadelphia</div><div class="text-[11px] text-white/40">Philadelphia County, PA</div></div>
-                            </a>
-                            <a href="/moorestown-repair/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
-                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Moorestown</div><div class="text-[11px] text-white/40">Burlington County, NJ</div></div>
-                            </a>
-                            <a href="/princeton-repair/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
-                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Princeton</div><div class="text-[11px] text-white/40">Mercer County, NJ</div></div>
-                            </a>
-                            <a href="/west-chester-repair/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
-                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">West Chester</div><div class="text-[11px] text-white/40">Chester County, PA</div></div>
-                            </a>
-                            <a href="/wilmington-repair/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
-                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Wilmington</div><div class="text-[11px] text-white/40">New Castle County, DE</div></div>
-                            </a>
-                            <a href="/haddonfield-repair/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
-                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Haddonfield</div><div class="text-[11px] text-white/40">Camden County, NJ</div></div>
-                            </a>
-                            <a href="/mount-laurel-repair/" class="group flex items-center gap-2 bg-white/[.07] border border-white/[.1] rounded-lg p-3 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                                <i class="fas fa-location-dot text-orange text-[13px] shrink-0"></i>
-                                <div class="flex-1 min-w-0"><div class="text-[13px] font-bold text-white truncate">Mount Laurel</div><div class="text-[11px] text-white/40">Burlington County, NJ</div></div>
-                            </a>
-                        </div>
-                        <a href="#contact" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i> Request a Free Quote
-                        </a>
-                        <div class="flex gap-3 pt-1 border-t border-white/[.08]">
-                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-shield-halved text-orange text-[13px]"></i><span>Licensed &amp; Insured</span></div>
-                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-clock text-orange text-[13px]"></i><span>Same Day Available</span></div>
-                        </div>
-                    </div>
+                <h1 class="font-cinzel text-[clamp(32px,4.2vw,58px)] font-black leading-[1.1] tracking-tight text-white mb-6">
+                    Chimney &amp; Handyman<br>
+                    <span class="text-orange">Services <span class="lightning-word">Near You</span></span>
+                </h1>
+                <p class="text-[18px] text-white/65 leading-[1.75] mb-9 max-w-[480px]">
+                    Licensed chimney, masonry, and handyman pros. Same-day service, free estimates.
+                </p>
+                <div class="flex items-center gap-3 flex-wrap justify-center tab:justify-start">
+                    <a href="#contact" class="btn btn-primary btn-lg">
+                        <i class="fas fa-paper-plane"></i> Get a Free Quote
+                    </a>
+                    <a href="/locations/" class="btn btn-outline btn-lg">
+                        <i class="fas fa-map-marker-alt"></i> Service Areas
+                    </a>
                 </div>
-
             </div>
-        </div>
 
-        <!-- Sparkles -->
-        <div class="hero-sparkles absolute inset-0 pointer-events-none z-[2] overflow-hidden" aria-hidden="true">
-            <svg class="sparkle sp-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-4" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-5" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-        </div>
+            <!-- RIGHT: mockup photo. Sits on the hero's bottom edge so the dome
+                 curve cuts across it. Drop the file in and uncomment the img. -->
+            <div class="self-end justify-self-center tab:justify-self-end">
+                <!-- <img src="assets/images/hero-mockup.webp" alt="The Fix Wizard" class="block w-auto max-h-[78vh]" width="600" height="800"> -->
+            </div>
 
-        <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/30 text-[10px] font-medium tracking-[2px] uppercase z-[2]">
-            <span>Scroll</span>
-            <i class="fas fa-chevron-down text-[12px]"></i>
         </div>
     </section>
 

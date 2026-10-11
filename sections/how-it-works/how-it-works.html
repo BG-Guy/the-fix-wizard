@@ -431,6 +431,37 @@
     .hiw-screen-7 { background: linear-gradient(160deg, #2c1600 0%, #0c0500 100%); }
     .hiw-screen-8 { background: linear-gradient(160deg, #261e00 0%, #0a0800 100%); }
 
+    /* ── Card content inside the iPhone screen (desktop + tablet) ──────────── */
+    .hiw-iphone-screen .hiw-msg-card {
+        width: 100%; max-width: 100%; height: 100%;
+        border-radius: 0; border: none; box-shadow: none;
+        overflow-y: auto; scrollbar-width: none;
+    }
+    .hiw-iphone-screen .hiw-msg-card::-webkit-scrollbar { display: none; }
+    .hiw-iphone-screen .hiw-msg-statusbar { padding: 6px 12px 2px; font-size: 10.5px; }
+    .hiw-iphone-screen .hiw-msg-head { padding: 3px 10px 7px; }
+    .hiw-iphone-screen .hiw-msg-avatar { width: 26px; height: 26px; font-size: 11px; }
+    .hiw-iphone-screen .hiw-msg-name { font-size: 10px; }
+    .hiw-iphone-screen .hiw-msg-sub { font-size: 8.5px; }
+    .hiw-iphone-screen .hiw-msg-body { padding: 9px 11px 11px; gap: 6px; }
+    .hiw-iphone-screen .hiw-msg-bubble { font-size: 11.5px; padding: 7px 11px; }
+    .hiw-iphone-screen .hiw-msg-link { padding: 5px 8px; gap: 7px; }
+    .hiw-iphone-screen .hiw-msg-link-thumb { width: 28px; height: 28px; font-size: 11px; }
+    .hiw-iphone-screen .hiw-msg-link-title { font-size: 10px; }
+    .hiw-iphone-screen .hiw-msg-link-domain { font-size: 8.5px; }
+    .hiw-iphone-screen .hiw-msg-timestamp { font-size: 8.5px; }
+    .hiw-iphone-screen .hiw-invoice-card {
+        width: 100%; max-width: 100%; min-height: 100%;
+        border-radius: 0; box-shadow: none;
+        padding: 14px; overflow-y: auto; scrollbar-width: none;
+    }
+    .hiw-iphone-screen .hiw-invoice-card::-webkit-scrollbar { display: none; }
+    .hiw-iphone-screen .hiw-invoice-brand { font-size: 12px; }
+    .hiw-iphone-screen .hiw-invoice-num { font-size: 9px; }
+    .hiw-iphone-screen .hiw-invoice-badge { font-size: 9px; padding: 2px 7px; }
+    .hiw-iphone-screen .hiw-invoice-rows { font-size: 10.5px; gap: 5px; }
+    .hiw-iphone-screen .hiw-invoice-total { font-size: 13px; padding-top: 8px; margin-top: 8px; }
+
     /* ── Nav — pinned to section bottom ── */
     .hiw-nav {
         position: absolute;
@@ -667,6 +698,26 @@
         /* iPhone on, mobile card off */
         .hiw-phone-wrap { display: block; }
         .hiw-mobile-visual { display: none; }
+
+        /* Further compress card inside the smaller tablet phone screen */
+        .hiw-iphone-screen .hiw-msg-statusbar { padding: 5px 9px 1px; font-size: 9.5px; }
+        .hiw-iphone-screen .hiw-msg-head { padding: 2px 8px 5px; }
+        .hiw-iphone-screen .hiw-msg-avatar { width: 20px; height: 20px; font-size: 9px; }
+        .hiw-iphone-screen .hiw-msg-name { font-size: 8.5px; }
+        .hiw-iphone-screen .hiw-msg-sub { font-size: 7.5px; }
+        .hiw-iphone-screen .hiw-msg-body { padding: 7px 8px 8px; gap: 5px; }
+        .hiw-iphone-screen .hiw-msg-bubble { font-size: 10px; padding: 5px 8px; }
+        .hiw-iphone-screen .hiw-msg-link { padding: 4px 6px; gap: 5px; }
+        .hiw-iphone-screen .hiw-msg-link-thumb { width: 22px; height: 22px; font-size: 9px; }
+        .hiw-iphone-screen .hiw-msg-link-title { font-size: 9px; }
+        .hiw-iphone-screen .hiw-msg-link-domain { font-size: 7.5px; }
+        .hiw-iphone-screen .hiw-msg-timestamp { font-size: 7.5px; }
+        .hiw-iphone-screen .hiw-invoice-card { padding: 10px; }
+        .hiw-iphone-screen .hiw-invoice-brand { font-size: 10px; }
+        .hiw-iphone-screen .hiw-invoice-num { font-size: 8px; }
+        .hiw-iphone-screen .hiw-invoice-badge { font-size: 8px; padding: 2px 5px; }
+        .hiw-iphone-screen .hiw-invoice-rows { font-size: 9px; gap: 4px; }
+        .hiw-iphone-screen .hiw-invoice-total { font-size: 10.5px; padding-top: 6px; margin-top: 6px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -927,7 +978,7 @@
                     '</div>' +
                     '<div class="hiw-iphone">' +
                         '<div class="hiw-iphone-btns"><span></span><span></span><span></span></div>' +
-                        '<div class="hiw-iphone-screen hiw-screen-' + (idx + 1) + '">' + decoHTML + '</div>' +
+                        '<div class="hiw-iphone-screen hiw-screen-' + (idx + 1) + '">' + (mobileVisualHTML || decoHTML) + '</div>' +
                         '<div class="hiw-iphone-glare"></div>' +
                     '</div>' +
                 '</div>' +

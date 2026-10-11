@@ -1,0 +1,37 @@
+# Every Sunday night: pull the past week from Google Search Console and list
+# "striking distance" queries (positions 6-20, high impressions, low CTR).
+# The table appears on the run's summary page; CSV + Markdown are attached
+# as a downloadable artifact. Needs repo secret GSC_SERVICE_ACCOUNT_JSON.
+name: GSC weekly striking-distance report
+
+on:
+  schedule:
+    # GitHub cron is UTC: Monday 03:00 UTC = Sunday 11pm EDT / 10pm EST.
+    - cron: "0 3 * * 1"
+  workflow_dispatch:   # also runnable on demand from the Actions tab
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - run: pip install -r scripts/requirements.txt
+
+      - name: Pull last 7 days from Search Console
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}   # optional; defaults to sc-domain:thefixwizard.com
+        run: python scripts/gsc_weekly_report.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gsc-striking-distance
+          path: reports/gsc/
+          retention-days: 90

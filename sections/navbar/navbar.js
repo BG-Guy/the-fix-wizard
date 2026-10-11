@@ -1,5 +1,6 @@
 // navbar.js — adds the "scrolled" background once the page scrolls past
 // the hero, and highlights the nav link for whichever section is in view.
+import { isSamePageHash } from '../../shared/smooth-scroll.js';
 
 export function initNavbar() {
     const navbar   = document.getElementById('navbar');
@@ -17,7 +18,7 @@ export function initNavbar() {
             if (!entry.isIntersecting) return;
             navLinks.forEach(link => {
                 link.classList.toggle('active',
-                    link.getAttribute('href') === `#${entry.target.id}`);
+                    isSamePageHash(link) && link.hash === `#${entry.target.id}`);
             });
         });
     }, { threshold: 0.45 });

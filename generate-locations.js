@@ -4,6 +4,7 @@
 // content/copy comes from services-data.json, layout changes go here.
 const fs   = require('fs');
 const path = require('path');
+const { renderNavbar } = require('./render-navbar');
 const ROOT = __dirname;
 
 // ── Location data ─────────────────────────────────────────────────────────────
@@ -155,80 +156,7 @@ const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/css/custom.css">`;
 
 function navbar(loc, serviceParam = '') {
-  const contactHref = serviceParam ? `/?service=${serviceParam}#contact` : '/#contact';
-  return `    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-[100]">
-        <div class="max-w-site mx-auto px-6 flex items-center h-full gap-8 nav-container">
-            <a href="/" class="flex items-center shrink-0 logo">
-                <img src="/assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="h-auto max-h-[58px] md:max-h-[110px] w-auto object-contain rounded-lg logo-img" width="199" height="110">
-            </a>
-            <ul class="hidden md:flex items-center gap-0.5 mx-auto nav-links">
-                <li><a href="/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a></li>
-                <li><a href="/#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
-                <li><a href="${contactHref}" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
-                <li class="nav-dropdown">
-                    <a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="/cherry-hill-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cherry Hill</a>
-                        <a href="/haddonfield-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Haddonfield</a>
-                        <a href="/voorhees-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Voorhees</a>
-                        <a href="/marlton-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Marlton</a>
-                        <a href="/moorestown-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Moorestown</a>
-                        <a href="/mount-laurel-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Mount Laurel</a>
-                        <a href="/philadelphia-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Philadelphia</a>
-                        <a href="/west-chester-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> West Chester</a>
-                        <a href="/wilmington-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Wilmington</a>
-                        <div class="nav-dropdown-divider"></div>
-                        <a href="/locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
-                    </div>
-                </li>
-            </ul>
-            <div class="hidden md:flex items-center gap-4 shrink-0 nav-actions">
-                <a href="tel:+15513504951" class="flex items-center gap-2 text-white/75 text-sm font-medium hover:text-orange transition-colors">
-                    <i class="fas fa-phone text-orange"></i>
-                    <span>(551) 350-4951</span>
-                </a>
-                <a href="${contactHref}" class="btn btn-primary nav-cta relative overflow-hidden">
-                    Free Quote
-                    <svg class="btn-spark bs-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-                    <svg class="btn-spark bs-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-                    <svg class="btn-spark bs-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-                </a>
-            </div>
-            <button class="hamburger md:hidden flex flex-col gap-[5px] cursor-pointer bg-transparent border-none p-2 order-first" id="hamburger" aria-label="Toggle menu">
-                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
-                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
-                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
-            </button>
-        </div>
-    </nav>
-    <div class="mobile-menu fixed top-0 z-[101] w-[min(320px,88vw)] h-screen bg-navy-900 pt-[76px] px-7 pb-9 flex flex-col gap-1.5 overflow-y-auto" id="mobileMenu">
-        <button class="absolute top-[18px] right-[18px] bg-white/10 border-none text-white w-[38px] h-[38px] rounded-full flex items-center justify-center cursor-pointer text-[15px] transition-all hover:bg-orange mobile-menu-close" id="mobileClose" aria-label="Close menu">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="flex flex-col gap-0.5 mb-5 mobile-nav-links">
-            <li><a href="/" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Home</a></li>
-            <li><a href="/#services" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Services</a></li>
-            <li><a href="${contactHref}" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
-            <li>
-                <span class="mobile-loc-label">South Jersey &amp; Delaware Valley</span>
-                <a href="/cherry-hill-repair/"      class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cherry Hill</a>
-                <a href="/haddonfield-repair/"      class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Haddonfield</a>
-                <a href="/voorhees-repair/"         class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Voorhees</a>
-                <a href="/marlton-repair/"          class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Marlton</a>
-                <a href="/moorestown-repair/"       class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Moorestown</a>
-                <a href="/mount-laurel-repair/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Mount Laurel</a>
-                <a href="/philadelphia-repair/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Philadelphia</a>
-                <a href="/west-chester-repair/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> West Chester</a>
-                <a href="/wilmington-repair/"       class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Wilmington</a>
-                <a href="/locations/" class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
-            </li>
-        </ul>
-        <a href="tel:+15513504951" class="mobile-phone flex items-center gap-2.5 text-white/65 text-sm mb-3.5 px-3.5">
-            <i class="fas fa-phone text-orange"></i>(551) 350-4951
-        </a>
-        <a href="${contactHref}" class="btn btn-primary mobile-cta mobile-link mt-1.5">Get Free Quote</a>
-    </div>
-    <div class="mobile-overlay fixed inset-0 bg-black/50 z-[100] opacity-0 invisible transition-all backdrop-blur-sm" id="mobileOverlay"></div>`;
+  return renderNavbar(serviceParam ? `/?service=${serviceParam}#contact` : '/#contact');
 }
 
 function footer() {
@@ -331,7 +259,7 @@ function hubPage(loc) {
 ${navbar(loc)}
 
     <!-- HERO -->
-    <section class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)] rounded-b-[56px]">
+    <section class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)]">
         <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
             <div class="grid grid-cols-1 tab:grid-cols-[1fr_420px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
                 <div class="flex flex-col items-center tab:items-start text-center tab:text-left">
@@ -367,46 +295,6 @@ ${navbar(loc)}
                         <div class="text-left">
                             <div class="text-[28px] font-black text-orange leading-none mb-1">98%</div>
                             <div class="text-[12px] text-white/50 font-medium tracking-wider">Satisfaction</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex items-center justify-center tab:justify-end">
-                    <div class="w-full max-w-[420px] bg-white/[.07] backdrop-blur-xl border border-white/[.13] rounded-xl2 p-8 flex flex-col gap-5">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-[52px] h-[52px] shrink-0 bg-orange rounded-md2 flex items-center justify-center text-[22px] text-white">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div>
-                                <div class="text-[16px] font-semibold text-white leading-tight mb-1">Services in ${loc.city}</div>
-                                <p class="text-[13px] text-white/50">Same-day service · Free estimates</p>
-                            </div>
-                        </div>
-                        <a href="/chimney-services-near-${loc.slug}/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                            <div class="w-10 h-10 bg-orange/20 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-orange/30 transition-colors">
-                                <i class="fas fa-fire text-orange"></i>
-                            </div>
-                            <div class="flex-1">
-                                <div class="text-[14px] font-bold text-white">Chimney &amp; Masonry</div>
-                                <div class="text-[12px] text-white/50">Sweeping · Tuckpointing · Liner Install</div>
-                            </div>
-                            <i class="fas fa-arrow-right text-orange/60 text-[12px] group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                        <a href="/handyman-services-near-${loc.slug}/" class="group flex items-center gap-4 bg-white/[.07] border border-white/[.1] rounded-xl p-4 transition-all hover:bg-orange/[.15] hover:border-orange/40">
-                            <div class="w-10 h-10 bg-orange/20 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-orange/30 transition-colors">
-                                <i class="fas fa-screwdriver-wrench text-orange"></i>
-                            </div>
-                            <div class="flex-1">
-                                <div class="text-[14px] font-bold text-white">Handyman Services</div>
-                                <div class="text-[12px] text-white/50">Drywall · Plumbing · Assembly</div>
-                            </div>
-                            <i class="fas fa-arrow-right text-orange/60 text-[12px] group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                        <a href="/#contact" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i> Request a Free Quote
-                        </a>
-                        <div class="flex gap-3 pt-1 border-t border-white/[.08]">
-                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-shield-halved text-orange text-[13px]"></i><span>Licensed &amp; Insured</span></div>
-                            <div class="flex items-center gap-1.5 text-[12px] font-semibold text-white/55"><i class="fas fa-clock text-orange text-[13px]"></i><span>Same Day Available</span></div>
                         </div>
                     </div>
                 </div>
@@ -530,7 +418,7 @@ function chimneyPage(loc) {
 ${navbar(loc, 'Chimney+%26+Masonry')}
 
     <!-- HERO -->
-    <section class="hero relative flex items-center overflow-hidden min-h-[80vh] pt-[var(--nav-h)] rounded-b-[56px]">
+    <section class="hero relative flex items-center overflow-hidden min-h-[80vh] pt-[var(--nav-h)]">
         <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
             <div class="grid grid-cols-1 tab:grid-cols-[1fr_380px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
                 <div class="flex flex-col items-center tab:items-start text-center tab:text-left">
@@ -644,7 +532,7 @@ function handymanPage(loc) {
 ${navbar(loc, 'Handyman+Services')}
 
     <!-- HERO -->
-    <section class="hero relative flex items-center overflow-hidden min-h-[80vh] pt-[var(--nav-h)] rounded-b-[56px]">
+    <section class="hero relative flex items-center overflow-hidden min-h-[80vh] pt-[var(--nav-h)]">
         <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
             <div class="grid grid-cols-1 tab:grid-cols-[1fr_380px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
                 <div class="flex flex-col items-center tab:items-start text-center tab:text-left">

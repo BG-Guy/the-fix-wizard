@@ -12,6 +12,7 @@ const { generate: generateLocations }        = require('./generate-locations');
 const { generate: generateServicePages }     = require('./generate-service-pages');
 const { generate: generateGenericPages }     = require('./generate-generic-service-pages');
 const { generate: generateSitemap }          = require('./generate-sitemap');
+const { renderNavbar, injectNavbar }         = require('./render-navbar');
 
 const ROOT     = __dirname;
 const DOCS     = path.join(ROOT, 'docs');
@@ -55,13 +56,28 @@ function copyFile(src, dest) {
   if (fs.existsSync(src)) fs.copyFileSync(src, dest);
 }
 
+// Copies hand-written pages (services/, locations/), swapping each
+// <!-- @navbar --> marker for the shared navbar so they match every other page.
+function copyPages(src, dest) {
+  if (!fs.existsSync(src)) return;
+  fs.mkdirSync(dest, { recursive: true });
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const s = path.join(src, entry.name);
+    const d = path.join(dest, entry.name);
+    if (entry.isDirectory()) copyPages(s, d);
+    else if (entry.name.endsWith('.html')) fs.writeFileSync(d, injectNavbar(fs.readFileSync(s, 'utf8')), 'utf8');
+    else fs.copyFileSync(s, d);
+  }
+}
+
 console.log('Rebuilding...');
 fs.mkdirSync(DOCS, { recursive: true });
 fs.mkdirSync(path.join(DOCS, 'css'), { recursive: true });
 
 // Static assets
 copyDir(path.join(ROOT, 'assets'),   path.join(DOCS, 'assets'));
-copyDir(path.join(ROOT, 'services'), path.join(DOCS, 'services'));
+copyPages(path.join(ROOT, 'services'),  path.join(DOCS, 'services'));
+copyPages(path.join(ROOT, 'locations'), path.join(DOCS, 'locations'));
 
 // Section/shared/generated-page JS, mirrored into docs/ at the same
 // relative paths their import statements expect.
@@ -78,10 +94,12 @@ for (const f of staticFiles) copyFile(path.join(ROOT, f), path.join(DOCS, f));
 
 // ---- Homepage: assemble sections/*/*.html in page order ----
 const order = [
-  'head', 'loader', 'navbar', 'hero', 'why-us',
+  'head', 'loader', 'navbar', 'hero',
   'services', 'gallery', 'how-it-works', 'faq', 'cta-banner', 'contact', 'footer', 'sticky-cta',
 ];
-const parts = order.map(n => fs.readFileSync(path.join(SECTIONS, n, `${n}.html`), 'utf8'));
+const parts = order.map(n => n === 'navbar'
+  ? renderNavbar()
+  : fs.readFileSync(path.join(SECTIONS, n, `${n}.html`), 'utf8'));
 const html  = `<!DOCTYPE html>\n<html lang="en">\n${parts[0]}\n<body>\n\n${parts.slice(1).join('\n')}\n</body>\n</html>\n`;
 fs.writeFileSync(path.join(DOCS, 'index.html'), html, 'utf8');
 console.log(`✓ docs/index.html assembled (${order.length} sections)`);
@@ -94,7 +112,6 @@ const cssFiles = [
   'sections/loader/loader.css',
   'sections/navbar/navbar.css',
   'sections/hero/hero.css',
-  'sections/why-us/why-us.css',
   'sections/gallery/gallery.css',
   'sections/faq/faq.css',
   'sections/sticky-cta/sticky-cta.css',

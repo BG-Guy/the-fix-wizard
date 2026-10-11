@@ -1,0 +1,22 @@
+{
+  "site_url": "https://thefixwizard.com",
+  "gsc_property": "sc-domain:thefixwizard.com",
+  "site_type": "local-service",
+  "business": { "name": "The Fix Wizard", "phone": "(551) 350-4951", "primary_location": "Cherry Hill, NJ" },
+  "project_rules": "CLAUDE.md",
+  "content_sources": [
+    { "path": "services-data.json", "what": "Every service's name, description, checklist, and SEO copy overrides (meta_desc, h2_* headings and body sections, with {city}/{cityState}/{state} placeholders). Edit here first." },
+    { "path": "generate-service-pages.js", "what": "Templates for service hub and service-in-town pages (title and H1 patterns, page structure)" },
+    { "path": "generate-generic-service-pages.js", "what": "Templates for the no-town /[service]/ pages" },
+    { "path": "generate-locations.js", "what": "Town hub pages and per-town copy" },
+    { "path": "sections/", "what": "Homepage sections (HTML partials)" },
+    { "path": "services/", "what": "Hand-written chimney and handyman overview pages" },
+    { "path": "locations/index.html", "what": "Hand-written all-locations page" }
+  ],
+  "protected_paths": ["docs/"],
+  "build_command": "node build.js",
+  "key_pages": ["/", "/services/chimney/", "/services/handyman/", "/cherry-hill-repair/", "/locations/"],
+  "timezone": "America/New_York",
+  "weekly_page_budget": 5,
+  "cooldown_days": 28
+}

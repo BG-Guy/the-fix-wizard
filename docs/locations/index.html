@@ -56,33 +56,97 @@
 </head>
 <body>
 
-<!-- ── NAVBAR ─────────────────────────────────────────────────────────── -->
-<nav id="navbar" class="bg-navy-950 shadow-nav">
-  <div class="container h-full flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-    <a href="/" class="flex items-center gap-3 shrink-0">
-      <img src="/assets/logo.svg" alt="The Fix Wizard" class="h-12 w-auto" onerror="this.style.display='none'">
-      <span class="font-cinzel font-bold text-white text-lg hidden sm:block">The Fix Wizard</span>
-    </a>
-    <div class="hidden md:flex items-center gap-1">
-      <a href="/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a>
-      <a href="/cherry-hill-repair/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Cherry Hill</a>
-      <a href="/services/handyman/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Handyman</a>
-      <a href="/services/chimney/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Chimney</a>
+    <!-- ===== NAVBAR — the one navbar used on EVERY page (rendered via render-navbar.js).
+         Links are root-absolute so they work from any page. /#contact lets a page
+         pre-select a service in the quote form; it defaults to /#contact. ===== -->
+    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-[100]">
+        <div class="max-w-site mx-auto px-6 flex items-center h-full gap-8 nav-container">
+
+            <a href="/#home" class="flex items-center shrink-0 logo">
+                <img src="/assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="h-auto max-h-[58px] md:max-h-[110px] w-auto object-contain rounded-lg logo-img" width="199" height="110">
+            </a>
+
+            <ul class="hidden md:flex items-center gap-0.5 mx-auto nav-links">
+                <li><a href="/#home"     class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a></li>
+                <li><a href="/#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
+                <li><a href="/#gallery"  class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Gallery</a></li>
+                <li><a href="/#contact" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
+                <li class="nav-dropdown">
+                    <a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/cherry-hill-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cherry Hill</a>
+                        <a href="/haddonfield-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Haddonfield</a>
+                        <a href="/voorhees-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Voorhees</a>
+                        <a href="/marlton-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Marlton</a>
+                        <a href="/moorestown-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Moorestown</a>
+                        <a href="/mount-laurel-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Mount Laurel</a>
+                        <a href="/philadelphia-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Philadelphia</a>
+                        <a href="/west-chester-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> West Chester</a>
+                        <a href="/wilmington-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Wilmington</a>
+                        <div class="nav-dropdown-divider"></div>
+                        <a href="/locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="hidden md:flex items-center gap-4 shrink-0 nav-actions">
+                <a href="tel:+15513504951" class="flex items-center gap-2 text-white/75 text-sm font-medium hover:text-orange transition-colors">
+                    <i class="fas fa-phone text-orange"></i>
+                    <span>(551) 350-4951</span>
+                </a>
+                <a href="/#contact" class="btn btn-primary nav-cta relative overflow-hidden">
+                    Free Quote
+                    <svg class="btn-spark bs-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+                    <svg class="btn-spark bs-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+                    <svg class="btn-spark bs-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
+                </a>
+            </div>
+
+            <button class="hamburger md:hidden flex flex-col gap-[5px] cursor-pointer bg-transparent border-none p-2 order-first" id="hamburger" aria-label="Toggle menu">
+                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
+                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
+                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 z-[101] w-[min(320px,88vw)] h-screen bg-navy-900 pt-[76px] px-7 pb-9 flex flex-col gap-1.5 overflow-y-auto" id="mobileMenu">
+        <button class="absolute top-[18px] right-[18px] bg-white/10 border-none text-white w-[38px] h-[38px] rounded-full flex items-center justify-center cursor-pointer text-[15px] transition-all hover:bg-orange mobile-menu-close" id="mobileClose" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="flex flex-col gap-0.5 mb-5 mobile-nav-links">
+            <li><a href="/#home"     class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Home</a></li>
+            <li><a href="/#services" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Services</a></li>
+            <li><a href="/#gallery"  class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Gallery</a></li>
+            <li><a href="/#contact" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
+            <li>
+                <span class="mobile-loc-label">South Jersey &amp; Delaware Valley</span>
+                <a href="/cherry-hill-repair/"      class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cherry Hill</a>
+                <a href="/haddonfield-repair/"      class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Haddonfield</a>
+                <a href="/voorhees-repair/"         class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Voorhees</a>
+                <a href="/marlton-repair/"          class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Marlton</a>
+                <a href="/moorestown-repair/"       class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Moorestown</a>
+                <a href="/mount-laurel-repair/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Mount Laurel</a>
+                <a href="/philadelphia-repair/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Philadelphia</a>
+                <a href="/west-chester-repair/"     class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> West Chester</a>
+                <a href="/wilmington-repair/"       class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Wilmington</a>
+                <a href="/locations/" class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
+            </li>
+        </ul>
+        <a href="tel:+15513504951" class="mobile-phone flex items-center gap-2.5 text-white/65 text-sm mb-3.5 px-3.5">
+            <i class="fas fa-phone text-orange"></i>(551) 350-4951
+        </a>
+        <a href="/#contact" class="btn btn-primary mobile-cta mobile-link mt-1.5">Get Free Quote</a>
     </div>
-    <a href="tel:5513504951" class="btn-cta hidden md:inline-flex items-center gap-2 bg-orange hover:bg-orange-dark text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors">
-      <i class="fas fa-phone-alt text-xs"></i>(551) 350-4951
-    </a>
-    <button id="mobile-toggle" class="md:hidden text-white p-2" aria-label="Menu">
-      <i class="fas fa-bars text-xl"></i>
-    </button>
-  </div>
-</nav>
+    <div class="mobile-overlay fixed inset-0 bg-black/50 z-[100] opacity-0 invisible transition-all backdrop-blur-sm" id="mobileOverlay"></div>
+
 
 <!-- ── HERO ───────────────────────────────────────────────────────────── -->
-<section class="hero pt-[var(--nav-h)]">
-  <div class="container py-16 text-center">
+<section class="hero relative overflow-hidden pt-[var(--nav-h)]" style="--hero-curve-bg:#f8fafc">
+  <div class="container relative z-[2] pt-16 text-center">
     <p class="text-orange font-semibold text-sm uppercase tracking-widest mb-4">South Jersey & Surrounding Areas</p>
-    <h1 class="section-title text-white mb-4">All <span class="text-accent">Service Locations</span></h1>
+    <h1 class="section-title !text-white mb-4">All <span class="text-accent">Service Locations</span></h1>
     <p class="text-white/70 text-lg max-w-2xl mx-auto">
       The Fix Wizard covers a 70-mile radius from Cherry Hill, NJ — serving homes across South Jersey, Philadelphia, Delaware, and southeastern Pennsylvania. Same-day handyman and chimney services available.
     </p>
@@ -338,7 +402,7 @@
   <div class="container">
     <div class="flex flex-col md:flex-row justify-between gap-8">
       <div>
-        <p class="font-cinzel font-bold text-white text-xl mb-2">The Fix Wizard</p>
+        <a href="/" class="inline-block mb-3"><img src="/assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="h-[64px] w-auto object-contain rounded-lg" width="199" height="64" loading="lazy"></a>
         <p class="text-white/50 text-sm">Licensed &amp; Insured · South Jersey &amp; Surrounding Areas</p>
         <a href="tel:5513504951" class="text-orange font-semibold text-sm mt-2 inline-block">(551) 350-4951</a>
       </div>
@@ -360,9 +424,11 @@
         </div>
       </div>
     </div>
-    <p class="text-white/30 text-xs text-center mt-10">&copy; 2025 The Fix Wizard. All rights reserved.</p>
+    <p class="text-white/30 text-xs text-center mt-10">&copy; <span id="year"></span> The Fix Wizard. All rights reserved.</p>
   </div>
 </footer>
+
+<script type="module" src="/generated-pages/service-page.js"></script>
 
 </body>
 </html>

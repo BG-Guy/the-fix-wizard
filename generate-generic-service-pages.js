@@ -4,6 +4,7 @@
 // generic pages). Called from build.js.
 const fs   = require('fs');
 const path = require('path');
+const { renderNavbar } = require('./render-navbar');
 const ROOT = __dirname;
 const DOCS = path.join(ROOT, 'docs');
 const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'services-data.json'), 'utf8'));
@@ -24,58 +25,7 @@ const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/css/custom.css">`;
 
 function navbar(serviceParam) {
-  const contactHref = serviceParam ? `/?service=${serviceParam}#contact` : '/#contact';
-  return `    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-[100]">
-        <div class="max-w-site mx-auto px-6 flex items-center h-full gap-8 nav-container">
-            <a href="/" class="flex items-center shrink-0 logo">
-                <img src="/assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="h-auto max-h-[58px] md:max-h-[110px] w-auto object-contain rounded-lg logo-img" width="199" height="110">
-            </a>
-            <ul class="hidden md:flex items-center gap-0.5 mx-auto nav-links">
-                <li><a href="/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Home</a></li>
-                <li><a href="/#services" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Services</a></li>
-                <li><a href="${contactHref}" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors">Contact</a></li>
-                <li class="nav-dropdown">
-                    <a href="/locations/" class="nav-link text-white/80 hover:text-white text-[15px] font-medium px-3.5 py-2 rounded-lg transition-colors flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="/cherry-hill-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cherry Hill</a>
-                        <a href="/haddonfield-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Haddonfield</a>
-                        <a href="/voorhees-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Voorhees</a>
-                        <a href="/marlton-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Marlton</a>
-                        <a href="/moorestown-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Moorestown</a>
-                        <a href="/mount-laurel-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Mount Laurel</a>
-                        <a href="/philadelphia-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Philadelphia</a>
-                        <a href="/west-chester-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> West Chester</a>
-                        <a href="/wilmington-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Wilmington</a>
-                        <div class="nav-dropdown-divider"></div>
-                        <a href="/locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
-                    </div>
-                </li>
-            </ul>
-            <div class="hidden md:flex items-center gap-4 shrink-0 nav-actions">
-                <a href="tel:+15513504951" class="flex items-center gap-2 text-white/75 text-sm font-medium hover:text-orange transition-colors">
-                    <i class="fas fa-phone text-orange"></i><span>(551) 350-4951</span>
-                </a>
-                <a href="${contactHref}" class="btn btn-primary nav-cta relative overflow-hidden">Free Quote</a>
-            </div>
-            <button class="hamburger md:hidden flex flex-col gap-[5px] cursor-pointer bg-transparent border-none p-2 order-first" id="hamburger" aria-label="Toggle menu">
-                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
-                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
-                <span class="block w-6 h-0.5 bg-white rounded-sm transition-all"></span>
-            </button>
-        </div>
-    </nav>
-    <div class="mobile-menu fixed top-0 z-[101] w-[min(320px,88vw)] h-screen bg-navy-900 pt-[76px] px-7 pb-9 flex flex-col gap-1.5 overflow-y-auto" id="mobileMenu">
-        <button class="absolute top-[18px] right-[18px] bg-white/10 border-none text-white w-[38px] h-[38px] rounded-full flex items-center justify-center cursor-pointer text-[15px] transition-all hover:bg-orange mobile-menu-close" id="mobileClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
-        <ul class="flex flex-col gap-0.5 mb-5 mobile-nav-links">
-            <li><a href="/" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Home</a></li>
-            <li><a href="/#services" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Services</a></li>
-            <li><a href="/locations/" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Locations</a></li>
-            <li><a href="${contactHref}" class="mobile-link block text-white/80 text-[17px] font-semibold px-3.5 py-3 rounded-lg transition-all hover:text-white hover:bg-white/[.08]">Contact</a></li>
-        </ul>
-        <a href="tel:+15513504951" class="mobile-phone flex items-center gap-2.5 text-white/65 text-sm mb-3.5 px-3.5"><i class="fas fa-phone text-orange"></i>(551) 350-4951</a>
-        <a href="${contactHref}" class="btn btn-primary mobile-cta mobile-link mt-1.5">Get Free Quote</a>
-    </div>
-    <div class="mobile-overlay fixed inset-0 bg-black/50 z-[100] opacity-0 invisible transition-all backdrop-blur-sm" id="mobileOverlay"></div>`;
+  return renderNavbar(serviceParam ? `/?service=${serviceParam}#contact` : '/#contact');
 }
 
 function footer() {
@@ -227,7 +177,7 @@ function genericPage(svc, type) {
 ${navbar(svcParam)}
 
     <!-- HERO -->
-    <section class="hero relative flex items-center overflow-hidden pt-[var(--nav-h)] pb-14 rounded-b-[48px]">
+    <section class="hero relative flex items-center overflow-hidden pt-[var(--nav-h)]" style="--hero-curve-bg:#fff">
         <div class="max-w-site mx-auto px-6 relative z-[2] w-full pt-8">
             <!-- Breadcrumb -->
             <nav class="flex items-center gap-2 text-[12px] mb-8 flex-wrap" style="color:rgba(255,255,255,.4)">

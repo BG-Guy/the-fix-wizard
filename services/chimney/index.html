@@ -134,60 +134,8 @@
 </style>
 </head>
 <body>
-    <nav id="navbar" class="navbar">
-        <div class="container nav-container">
-            <a href="../../" class="logo"><img src="../../assets/images/the-fix-wizard-logo.webp" alt="The Fix Wizard" class="logo-img" width="199" height="110"></a>
-            <ul class="nav-links">
-                <li><a href="../../" class="nav-link">Home</a></li>
-                <li><a href="../../#services" class="nav-link">Services</a></li>
-                <li><a href="../../?service=Chimney+%26+Masonry#contact" class="nav-link">Contact</a></li>
-                <li class="nav-dropdown">
-                    <a href="../../locations/" class="nav-link flex items-center gap-1.5">Locations <i class="fas fa-chevron-down text-[10px] opacity-50 mt-px"></i></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="/cherry-hill-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Cherry Hill</a>
-                        <a href="/philadelphia-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Philadelphia</a>
-                        <a href="/moorestown-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Moorestown</a>
-                        <a href="/princeton-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Princeton</a>
-                        <a href="/west-chester-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> West Chester</a>
-                        <a href="/wilmington-repair/" class="nav-dropdown-item"><i class="fas fa-location-dot"></i> Wilmington</a>
-                        <div class="nav-dropdown-divider"></div>
-                        <a href="../../locations/" class="nav-dropdown-item" style="color:rgba(255,255,255,.45)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
-                    </div>
-                </li>
-            </ul>
-            <div class="nav-actions">
-                <a href="tel:+15513504951" class="nav-phone"><i class="fas fa-phone"></i><span>(551) 350-4951</span></a>
-                <a href="../../?service=Chimney+%26+Masonry#contact" class="btn btn-primary nav-cta">Free Quote
-                    <svg class="btn-spark bs-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-                    <svg class="btn-spark bs-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-                    <svg class="btn-spark bs-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-                </a>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="mobileClose"><i class="fas fa-times"></i></button>
-        <ul class="mobile-nav-links">
-            <li><a href="../../" class="mobile-link">Home</a></li>
-            <li><a href="../../#services" class="mobile-link">Services</a></li>
-            <li><a href="../../?service=Chimney+%26+Masonry#contact" class="mobile-link">Contact</a></li>
-            <li>
-                <span class="mobile-loc-label">South Jersey &amp; Delaware Valley</span>
-                <a href="/cherry-hill-repair/"  class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Cherry Hill</a>
-                <a href="/philadelphia-repair/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Philadelphia</a>
-                <a href="/moorestown-repair/"   class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Moorestown</a>
-                <a href="/princeton-repair/"    class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Princeton</a>
-                <a href="/west-chester-repair/" class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> West Chester</a>
-                <a href="/wilmington-repair/"   class="mobile-link mobile-loc-sub"><i class="fas fa-location-dot"></i> Wilmington</a>
-                <a href="/locations/"           class="mobile-link mobile-loc-sub" style="color:rgba(255,255,255,.4)"><i class="fas fa-map-marker-alt"></i> All Locations</a>
-            </li>
-        </ul>
-        <a href="tel:+15513504951" class="mobile-phone"><i class="fas fa-phone"></i>(551) 350-4951</a>
-        <a href="../../?service=Chimney+%26+Masonry#contact" class="btn btn-primary mobile-cta mobile-link">Get Free Quote</a>
-    </div>
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <section class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)] rounded-b-[56px]">
+    <!-- @navbar /?service=Chimney+%26+Masonry#contact -->
+    <section class="hero relative flex items-center overflow-hidden min-h-screen pt-[var(--nav-h)]">
         <div class="max-w-site mx-auto px-6 relative z-[2] w-full">
             <div class="grid grid-cols-1 tab:grid-cols-[1fr_420px] gap-14 items-center pt-12 pb-20 md:pt-8 md:pb-12">
                 <div class="flex flex-col items-center tab:items-start text-center tab:text-left">
@@ -276,17 +224,6 @@
                 </div>
             </div>
         </div>
-        <div class="hero-sparkles absolute inset-0 pointer-events-none z-[2] overflow-hidden" aria-hidden="true">
-            <svg class="sparkle sp-1" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-2" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-3" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-4" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-            <svg class="sparkle sp-5" viewBox="0 0 24 24"><path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="currentColor"/></svg>
-        </div>
-        <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/30 text-[10px] font-medium tracking-[2px] uppercase z-[2]">
-            <span>Scroll</span>
-            <i class="fas fa-chevron-down text-[12px]"></i>
-        </div>
     </section>
 
     <!-- SERVICE CARDS -->
@@ -310,7 +247,7 @@
                     </div>
                     <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
                         <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
-                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/chimney-repair-in-new-jersey.webp" alt="Tuckpointing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
+                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/service-card-thumbnails/tuck-pointing.webp" alt="Tuckpointing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
                         <div class="p-6 flex flex-col gap-3 flex-1">
                             <div class="flex items-center gap-3"><div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-hammer text-orange text-[15px]"></i></div><h3 class="text-[18px] font-bold text-navy-900">Tuckpointing</h3></div>
                             <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Mortar Repair</p>
@@ -350,7 +287,7 @@
                     </div>
                     <div class="group relative bg-white rounded-card border border-slate-200 flex flex-col overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(13,27,75,.22)] hover:border-transparent">
                         <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-dark via-orange to-orange-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-card z-10"></div>
-                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/chimney-repair-in-new-jersey.webp" alt="Waterproofing" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
+                        <div class="w-full overflow-hidden shrink-0" style="aspect-ratio:16/9;"><img src="/assets/images/service-card-thumbnails/waterproofing.webp" alt="Waterproofing" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy"></div>
                         <div class="p-6 flex flex-col gap-3 flex-1">
                             <div class="flex items-center gap-3"><div class="w-9 h-9 bg-orange/10 rounded-lg flex items-center justify-center shrink-0"><i class="fas fa-droplet text-orange text-[15px]"></i></div><h3 class="text-[18px] font-bold text-navy-900">Waterproofing</h3></div>
                             <p class="text-[11px] font-bold text-orange/80 uppercase tracking-[.08em]">Masonry Protection</p>
