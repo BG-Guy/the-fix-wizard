@@ -1,0 +1,691 @@
+{
+  "generated_at": "2026-10-11T22:15:52+00:00",
+  "site": "https://thefixwizard.com",
+  "property": "sc-domain:thefixwizard.com",
+  "windows": {
+    "last_7": [
+      "2026-10-04",
+      "2026-10-10"
+    ],
+    "prev_7": [
+      "2026-09-27",
+      "2026-10-03"
+    ],
+    "last_28": [
+      "2026-09-13",
+      "2026-10-10"
+    ],
+    "prev_28": [
+      "2026-08-16",
+      "2026-09-12"
+    ]
+  },
+  "totals": {
+    "last_7": {
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": 0,
+      "position": 0
+    },
+    "prev_7": {
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 17.3
+    },
+    "last_28": {
+      "clicks": 2,
+      "impressions": 83,
+      "ctr": 0.0241,
+      "position": 21.7
+    },
+    "prev_28": {
+      "clicks": 1,
+      "impressions": 379,
+      "ctr": 0.0026,
+      "position": 42.5
+    }
+  },
+  "has_search_data": true,
+  "top_queries_28d": [
+    {
+      "query": "handyman near me",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 22.8,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 18,
+        "ctr": 0,
+        "position": 26.3
+      }
+    },
+    {
+      "query": "chimney wizard",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 28.8,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 42
+      }
+    },
+    {
+      "query": "handyman bridgewater nj",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 49.7,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 54
+      }
+    },
+    {
+      "query": "bathtub repair somerset county nj",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 37.5,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 48.8
+      }
+    },
+    {
+      "query": "fix it wizard",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8,
+      "prev_28": null
+    },
+    {
+      "query": "fix wizard",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 6,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10
+      }
+    },
+    {
+      "query": "handyman booking",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 14,
+      "prev_28": null
+    },
+    {
+      "query": "repair services",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 18
+      }
+    },
+    {
+      "query": "repair wizard",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 30.5,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      }
+    },
+    {
+      "query": "roof wizard nj",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 50.5,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 56.5
+      }
+    },
+    {
+      "query": "chimney contractor new jersey",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 74,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 18,
+        "ctr": 0,
+        "position": 64.4
+      }
+    },
+    {
+      "query": "chimney removal ledgewood nj",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 68,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 74
+      }
+    },
+    {
+      "query": "chimneymannj",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 50,
+      "prev_28": null
+    },
+    {
+      "query": "dent wizard nj",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 66,
+      "prev_28": null
+    },
+    {
+      "query": "handyman services",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 32,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 25
+      }
+    },
+    {
+      "query": "repairs",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11,
+      "prev_28": null
+    },
+    {
+      "query": "roselle handyman",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 90,
+      "prev_28": null
+    },
+    {
+      "query": "somerset county nj home improvement",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 81,
+      "prev_28": null
+    }
+  ],
+  "top_pages_28d": [
+    {
+      "page": "https://thefixwizard.com/locations/handyman-services-in-somerset-county-nj/",
+      "clicks": 1,
+      "impressions": 31,
+      "ctr": 0.0323,
+      "position": 27.1,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 64,
+        "ctr": 0,
+        "position": 33.1
+      }
+    },
+    {
+      "page": "https://thefixwizard.com/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 9.6,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 10.5
+      }
+    },
+    {
+      "page": "https://thefixwizard.com/new-jersey/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 34,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 123,
+        "ctr": 0,
+        "position": 49.7
+      }
+    },
+    {
+      "page": "https://thefixwizard.com/locations/chimney-repair-in-shaker-heights-oh/",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 31.6,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 29.8
+      }
+    },
+    {
+      "page": "https://thefixwizard.com/locations/handyman-services-in-lakewood-oh/",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 9.5,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 5.5
+      }
+    },
+    {
+      "page": "http://thefixwizard.com/locations/chimney-repair-in-morris-county-nj/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 59,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 59.3
+      }
+    },
+    {
+      "page": "http://thefixwizard.com/new-jersey/tv-wall-mounting/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 10,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 4.7
+      }
+    },
+    {
+      "page": "https://thefixwizard.com/locations/handyman-services-in-fairview-park-oh/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8.5,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9
+      }
+    },
+    {
+      "page": "https://thefixwizard.com/new-jersey/drywall-repair/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 6.8
+      }
+    },
+    {
+      "page": "https://thefixwizard.com/cleveland-ohio/",
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 1,
+      "position": 3,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 36.2
+      }
+    },
+    {
+      "page": "http://thefixwizard.com/locations/handyman-services-in-essex-county-nj/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7,
+      "prev_28": null
+    },
+    {
+      "page": "https://thefixwizard.com/locations/handyman-services-in-avon-lake-oh/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      }
+    },
+    {
+      "page": "https://thefixwizard.com/new-jersey/chimney-crown-rebuild/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 80
+      }
+    },
+    {
+      "page": "https://thefixwizard.com/new-jersey/chimney-tuckpointing/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 63,
+        "ctr": 0,
+        "position": 64.9
+      }
+    },
+    {
+      "page": "https://thefixwizard.com/seo-pages/electrical-outlet-safety-new-jersey/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5,
+      "prev_28": {
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 7.4
+      }
+    }
+  ],
+  "opportunities": {
+    "striking_distance": [],
+    "low_ctr_top_positions": [],
+    "declining_pages": [
+      {
+        "page": "https://thefixwizard.com/locations/chimney-repair-in-monmouth-county-nj/",
+        "now": null,
+        "before": {
+          "clicks": 1,
+          "impressions": 56,
+          "ctr": 0.0179,
+          "position": 28.4
+        },
+        "lost_clicks_28d": 1
+      },
+      {
+        "page": "https://thefixwizard.com/new-jersey/",
+        "now": {
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 34
+        },
+        "before": {
+          "clicks": 0,
+          "impressions": 123,
+          "ctr": 0,
+          "position": 49.7
+        },
+        "lost_clicks_28d": 0
+      },
+      {
+        "page": "https://thefixwizard.com/new-jersey/chimney-tuckpointing/",
+        "now": {
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 8
+        },
+        "before": {
+          "clicks": 0,
+          "impressions": 63,
+          "ctr": 0,
+          "position": 64.9
+        },
+        "lost_clicks_28d": 0
+      },
+      {
+        "page": "https://thefixwizard.com/locations/handyman-services-in-somerset-county-nj/",
+        "now": {
+          "clicks": 1,
+          "impressions": 31,
+          "ctr": 0.0323,
+          "position": 27.1
+        },
+        "before": {
+          "clicks": 0,
+          "impressions": 64,
+          "ctr": 0,
+          "position": 33.1
+        },
+        "lost_clicks_28d": -1
+      }
+    ],
+    "cannibalization": [],
+    "content_gaps": []
+  },
+  "tracked_changes": [],
+  "index_health": {
+    "sitemaps": [
+      {
+        "path": "https://thefixwizard.com/sitemap.xml",
+        "last_submitted": "2026-10-11T19:09:57.998Z",
+        "last_downloaded": null,
+        "pending": true,
+        "errors": 0,
+        "warnings": 0,
+        "submitted": 0
+      }
+    ],
+    "url_inspection": [
+      {
+        "url": "https://thefixwizard.com/",
+        "verdict": "PASS",
+        "coverage": "Submitted and indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-10-05T02:37:04Z",
+        "google_canonical": "https://thefixwizard.com/",
+        "user_canonical": null
+      },
+      {
+        "url": "https://thefixwizard.com/services/chimney/",
+        "verdict": "NEUTRAL",
+        "coverage": "URL is unknown to Google",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "last_crawl": null,
+        "google_canonical": null,
+        "user_canonical": null
+      },
+      {
+        "url": "https://thefixwizard.com/services/handyman/",
+        "verdict": "NEUTRAL",
+        "coverage": "URL is unknown to Google",
+        "indexing": "INDEXING_STATE_UNSPECIFIED",
+        "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "last_crawl": null,
+        "google_canonical": null,
+        "user_canonical": null
+      },
+      {
+        "url": "https://thefixwizard.com/cherry-hill-repair/",
+        "verdict": "PASS",
+        "coverage": "Submitted and indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-10-11T21:59:41Z",
+        "google_canonical": "https://thefixwizard.com/cherry-hill-repair/",
+        "user_canonical": "https://thefixwizard.com/cherry-hill-repair/"
+      },
+      {
+        "url": "https://thefixwizard.com/locations/",
+        "verdict": "PASS",
+        "coverage": "Submitted and indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-10-11T22:02:26Z",
+        "google_canonical": "https://thefixwizard.com/locations/",
+        "user_canonical": "https://thefixwizard.com/locations/"
+      },
+      {
+        "url": "https://thefixwizard.com/locations/handyman-services-in-somerset-county-nj/",
+        "verdict": "PASS",
+        "coverage": "Submitted and indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-08-30T10:23:37Z",
+        "google_canonical": "https://thefixwizard.com/locations/handyman-services-in-somerset-county-nj/",
+        "user_canonical": null
+      },
+      {
+        "url": "https://thefixwizard.com/new-jersey/",
+        "verdict": "PASS",
+        "coverage": "Submitted and indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-09-05T15:58:39Z",
+        "google_canonical": "https://thefixwizard.com/new-jersey/",
+        "user_canonical": null
+      },
+      {
+        "url": "https://thefixwizard.com/locations/chimney-repair-in-shaker-heights-oh/",
+        "verdict": "NEUTRAL",
+        "coverage": "Crawled - currently not indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-06-20T03:51:37Z",
+        "google_canonical": "https://thefixwizard.com/locations/chimney-repair-in-shaker-heights-oh/",
+        "user_canonical": null
+      },
+      {
+        "url": "https://thefixwizard.com/locations/handyman-services-in-lakewood-oh/",
+        "verdict": "NEUTRAL",
+        "coverage": "Crawled - currently not indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-08-03T04:32:02Z",
+        "google_canonical": "https://thefixwizard.com/locations/handyman-services-in-lakewood-oh/",
+        "user_canonical": null
+      },
+      {
+        "url": "http://thefixwizard.com/locations/chimney-repair-in-morris-county-nj/",
+        "verdict": "PASS",
+        "coverage": "Submitted and indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-08-13T03:40:59Z",
+        "google_canonical": "http://thefixwizard.com/locations/chimney-repair-in-morris-county-nj/",
+        "user_canonical": null
+      },
+      {
+        "url": "http://thefixwizard.com/new-jersey/tv-wall-mounting/",
+        "verdict": "NEUTRAL",
+        "coverage": "Crawled - currently not indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-08-19T23:00:36Z",
+        "google_canonical": "http://thefixwizard.com/new-jersey/tv-wall-mounting/",
+        "user_canonical": null
+      },
+      {
+        "url": "https://thefixwizard.com/locations/handyman-services-in-fairview-park-oh/",
+        "verdict": "PASS",
+        "coverage": "Submitted and indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-07-31T17:23:54Z",
+        "google_canonical": "https://thefixwizard.com/locations/handyman-services-in-fairview-park-oh/",
+        "user_canonical": null
+      },
+      {
+        "url": "https://thefixwizard.com/new-jersey/drywall-repair/",
+        "verdict": "NEUTRAL",
+        "coverage": "Crawled - currently not indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-06-20T08:54:18Z",
+        "google_canonical": "https://thefixwizard.com/new-jersey/drywall-repair/",
+        "user_canonical": null
+      },
+      {
+        "url": "https://thefixwizard.com/cleveland-ohio/",
+        "verdict": "NEUTRAL",
+        "coverage": "Crawled - currently not indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-07-25T15:18:25Z",
+        "google_canonical": "https://thefixwizard.com/cleveland-ohio/",
+        "user_canonical": null
+      },
+      {
+        "url": "http://thefixwizard.com/locations/handyman-services-in-essex-county-nj/",
+        "verdict": "PASS",
+        "coverage": "Submitted and indexed",
+        "indexing": "INDEXING_ALLOWED",
+        "robots": "ALLOWED",
+        "fetch": "SUCCESSFUL",
+        "last_crawl": "2026-08-13T00:42:46Z",
+        "google_canonical": "http://thefixwizard.com/locations/handyman-services-in-essex-county-nj/",
+        "user_canonical": null
+      }
+    ]
+  }
+}
