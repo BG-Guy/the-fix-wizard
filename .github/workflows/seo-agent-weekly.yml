@@ -60,6 +60,7 @@ jobs:
           # or, to bill your Claude subscription instead of the API:
           # claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ github.token }}
+          show_full_output: true   # TEMP: diagnosing the first failed run
           plugin_marketplaces: https://github.com/BG-Guy/seo-agent.git
           plugins: seo-agent@seo-agent
           prompt: |
